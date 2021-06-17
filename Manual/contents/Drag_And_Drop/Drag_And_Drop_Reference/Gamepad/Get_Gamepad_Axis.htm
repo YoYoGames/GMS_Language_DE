@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Gamepad-Achse holen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Get Gamepad Axis action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Gamepad Axis" />
+  <meta name="search-keywords" content="Get Gamepad Axis" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt=" Gamepad Get Axis Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_Get_Axis.png"> Gamepad-Achse erhalten</h1>
+  <p>Mit dieser Aktion können Sie den Wert der verschiedenen Achsen von einem bestimmten Gamepad abrufen. Sie geben den Gamepad-Index an (dies ist die Nummer des &quot;Steckplatzes&quot;, den ein Gamepad belegt) und wählen die zu prüfende Achse aus, entweder den linken oder rechten Stick, horizontal
+    oder vertikal. Der zurückgegebene Wert liegt zwischen -1 und 1 für jede der verfügbaren horizontalen und vertikalen Achsen: -1 ist links und 1 ist rechts für die horizontale Achse, und -1 ist oben und 1 ist unten für die vertikale Achse. Dieser zurückgegebene Wert wird gespeichert in
+    Dieser Rückgabewert wird in der Zielvariablen gespeichert, die Sie für die zukünftige Verwendung bereitstellen. Sie können diese Variable als &quot;Temp&quot;-Variable kennzeichnen, was bedeutet, dass die Aktion eine neue temporäre (lokale) Variable erstellt, um den Rückgabewert für Sie zu speichern, wie im folgenden Beispiel gezeigt.</p>
+  <p>Es ist erwähnenswert, dass die <a href="Set_Gamepad_Axis_Deadzone.htm">Einstellung der Totzone</a> für die Knüppelachse <em>keinen</em> Einfluss auf den zurückgegebenen Wert hat, der immer zwischen -1 und 1 liegen wird.
+    der Knüppel nach rechts erst dann einen Wert von 0 - 1 zurückgibt, wenn der <em>Rohwert</em> der Achse über 0,2 liegt - wenn der Rohwert also 0,2 ist, ist der Rückgabewert 0, wenn der Rohwert bei 0,5 liegt, ist der Rückgabewert 0,375, oder wenn der Rohwert
+    0,9 ist, dann wäre der Rückgabewert 0,875.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Get Gamepad Axis Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_Get_Axis.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gamepad</td>
+        <td>Der Gamepad-Index.</td>
+      </tr>
+      <tr>
+        <td>Achse</td>
+        <td>Die zu prüfende Achse (linker Stick/rechter Stick, horizontal/vertikal)</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable, in der der zurückgegebene Wert gespeichert werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Get Gamepad Axis Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_Get_Axis.png">Der obige Aktionsblockcode erstellt zwei lokale (temporäre) Variablen und speichert dann die aktuellen
+    Werte für die horizontale und vertikale Achse des linken Gamepad-Sticks. Diese Werte werden dann verwendet, um die Richtung der Instanz einzustellen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Actions.htm">Gamepad-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Get_Gamepad_Trigger.htm">Gamepad Get Trigger</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Gamepad Get Axis
+-->
+  <!-- TAGS
+action_get_gamepad_axis_value
+-->
+</body>
+</html>

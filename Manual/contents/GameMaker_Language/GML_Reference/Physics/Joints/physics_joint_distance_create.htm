@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_gelenk_abstand_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_distance_create" />
+  <meta name="rh-index-keywords" content="physics_joint_distance_create" />
+  <meta name="search-keywords" content="physics_joint_distance_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_gelenk_abstand_erzeugen</h1>
+  <p>Eine der einfachsten Verbindungen ist eine Abstandsverbindung, die besagt, dass der Abstand zwischen zwei Punkten auf zwei Instanzen konstant sein muss. Wenn Sie eine Abstandsfuge angeben, sollten die beiden Instanzen bereits angelegt sein und ein Fixture zugewiesen haben, dann definieren Sie
+    die beiden Ankerpunkte in Raumkoordinaten. Der erste Ankerpunkt ist mit der Instanz 1 verbunden, der zweite Ankerpunkt mit der Instanz 2 und der Abstand zwischen diesen Punkten bedeutet die Länge der Abstandszwangsbedingung. Das folgende Bild zeigt
+    wie dies funktioniert:</p>
+  <p><img alt="Distance joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/direction_joint_image.png">Wie Sie sehen können, werden die Ankerpunkte als Raumkoordinaten angegeben, so dass bei ihrer Definition Vorsicht geboten ist.
+    besonders dann, wenn die Instanzen gleichzeitig mit den Gelenken erstellt werden und nicht über den Raumeditor im Raum platziert werden. Sie sollten sich auch darüber im Klaren sein, dass die Joints unabhängig von der Größe des Sprites der
+    der Instanzen oder der an sie angehängten Fixtures erstellt werden. Wenn Sie also ein Distanzgelenk an einem anderen Ort als dem Ursprung der Instanz erstellen, ist es trotzdem gültig und bindet die beiden Instanzen relativ zu der Position, an der es erstellt wurde. Wenn Sie den
+    Wenn Sie den Wert &quot;col&quot; auf &quot;true&quot; setzen, können <tt>die</tt> beiden Instanzen miteinander interagieren und kollidieren, aber nur, wenn <i>sie</i> Kollisionsereignisse haben; wenn er jedoch auf &quot;false&quot; gesetzt ist, kollidieren <tt>sie</tt> nicht, egal was passiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_distance_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>Die erste Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>Die zweite Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>w_Anker1_x</td>
+        <td>Die erste x-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker1_y</td>
+        <td>Die erste y-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker2_x</td>
+        <td>Die zweite x-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker2_y</td>
+        <td>die zweite y-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Ob die beiden Instanzen kollidieren können (true) oder nicht (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Index des Gelenks)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id=instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Rudder);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_distance_create(id, o_id, x + 50, y, o_id.x - 50, o_id.y, 0);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>Der obige Code erstellt und definiert ein neues Fixture und erstellt dann eine Instanz von &quot;obj_Rudder&quot;. Das Fixture wird dann sowohl der Instanz, die den Code ausführt, als auch der neu erstellten Instanz zugewiesen und eine Verbindung zwischen ihnen wird erstellt. Schließlich
+    wird das Fixture gelöscht, da es nicht mehr benötigt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_revolute_create.htm">physics_joint_revolute_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_distance_create
+-->
+  <!-- TAGS
+physics_joint_distance_create
+-->
+</body>
+</html>

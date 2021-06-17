@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Methoden-Variablen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Method Variables" />
+  <meta name="rh-index-keywords" content="Method Variables" />
+  <meta name="search-keywords" content="Method Variables,methods,method" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Methoden-Variablen</h1>
+  <p>Eine Methodenvariable ist im Wesentlichen eine Variable, der eine Funktion zugewiesen wurde, die die Funktion an eine Instanz &quot;bindet&quot; und es Ihnen ermöglicht, die Variable zu verwenden, um auf die Funktion zu verweisen - ähnlich wie Sie einen <a href="Runtime_Functions.htm"><span class="notranslate">Laufzeitfunktionsnamen</span></a> verwenden <a href="Runtime_Functions.htm">, um</a> auf eine integrierte <span class="notranslate">GML-Funktion</span> zu verweisen <span class="notranslate">.</span> Die verwendete Variable kann einen <em>lokalen</em>, <em>instanziellen</em> oder <em>globalen</em> Gültigkeitsbereich haben (siehe <a href="Variables_And_Variable_Scope.htm">hier</a> für weitere Informationen zum Variablenumfang).</p>
+  <p>Die Syntax zum Erstellen einer Methodenvariable lautet wie folgt:</p>
+  <p class="code">&lt;Variablenname&gt; = function(&lt;parameter1&gt;, &lt;parameter2&gt;, etc... )<br> {
+    <br> &lt;Anweisung1&gt;;<br> &lt;Anweisung1&gt;;<br>...<br> }
+  </p>
+  <p>oder</p>
+  <p class="code">Funktion &lt;Variablenname&gt;(&lt;Parameter1&gt;, &lt;Parameter2&gt;, usw... )<br> {
+    <br> &lt;Anweisung1&gt;;<br> &lt;Anweisung1&gt;;<br>...<br> }
+  </p>
+  <p>Im Allgemeinen würden Sie jedoch die <em>erste </em>Form für Methoden und die zweite Form für die Definition von <a href="Script_Functions.htm">Skriptfunktionen</a> verwenden, da die zweite Form dem Funktionsnamen auch einen Skriptindex zuweist, während die erste
+    Form eine &quot;echte&quot; Methode ist (und die Verwendung des globalen Präfixes erfordert <a href="Variables/Global_Variables.htm">, wenn</a> Sie eine Skriptfunktion definieren).</p>
+  <p class="note"><strong>HINWEIS</strong>: Sie können dies überprüfen, indem Sie beide Formulare im Projekt verwenden und dann die <span class="notranslate">Laufzeitfunktion</span> <a href="../GML_Reference/Variable_Functions/typeof.htm">typeof()</a> für jedes von ihnen aufrufen. Eines wird als &quot;Nummer&quot; eingestuft - da
+    es eine Skriptindex-ID zurückgibt - und das andere wird als &quot;Methode&quot; eingestuft.</p>
+  <p>Beachten Sie also, dass wir uns im Allgemeinen immer auf Funktionen beziehen, die <em>nicht </em>mit einem Skriptindex definiert wurden, wenn wir über Methoden und Methodenvariablen sprechen. </p>
+  <p>Nachfolgend sehen Sie drei einfache Beispiele für die Erstellung einer Methodenvariable unter Verwendung verschiedener Gültigkeitsbereiche:</p>
+  <p class="code">// Lokal<br> var _debug = function(message)<br> {
+    <br> show_debug_message(message);<br> }
+    <br>
+    <br> // Instanz<br> do_maths = function(val1, val2, val3)<br> {
+    <br> return (val1 * val2) - val3;<br> }
+    <br>
+    <br> // Global<br> global.pd = function(_x1, _y1, _x2, _y2);<br> {
+    <br> return point_distance(_x1, _y1, _x2, _y2);<br> }
+  </p>
+  <p>Beachten Sie, dass im obigen Code die verschiedenen Parameter, die als Eingänge für die Funktion angegeben werden, alle benannt sind und diese Namen innerhalb der Funktion verwendet werden sollten, um auf die verschiedenen Eingänge zu verweisen. Beachten Sie auch, dass Sie die Anweisung <span class="inline"><a href="Language_Features/return.htm">return</a></span> verwenden können, um einen Wert aus einer Funktion für die Verwendung an anderer Stelle in Ihrem Code zurückzugeben, und dass eine Funktion, für die <em>kein</em> Rückgabewert definiert ist, standardmäßig <span class="inline">undefined</span>.zurückgibt.</p>
+  <p class="note"><strong>HINWEIS</strong>: Während die Variable im gewählten Bereich liegt, ist die eigentliche Funktion an den Bereich gebunden, in dem sie ursprünglich definiert wurde. <a href="Script_Functions.htm">Skriptfunktionen</a> sind zum Beispiel alle im globalen Bereich und &quot;ungebunden&quot;
+    Wenn Sie jedoch eine Skriptfunktion haben, die eine andere Funktion als Methodenvariable erzeugt, und diese Skriptfunktion dann von einer Instanz aus aufrufen, wird die im Skript verwendete Funktion <strong>als Methode an die Instanzvariable gebunden</strong>.
+    Im Allgemeinen müssen Sie sich darüber keine Gedanken machen, aber bei komplexeren Operationen mit Methodenvariablen ist es eine Überlegung wert. Dies gilt auch bei der Verwendung anderer Konstrukte wie <a href="Language_Features/with.htm"><span class="inline">with</span></a>    - wenn Sie eine Methodenvariable innerhalb eines With erzeugen, wird die Funktion an die Instanz gebunden, die sich gerade im Gültigkeitsbereich befindet.</p>
+  <p>Einmal erstellt, kann die Methodenvariable genauso verwendet werden wie z. B. eine <span class="notranslate">Laufzeitfunktion</span> oder eine Skriptfunktion:</p>
+  <p class="code">create_vec = function(_x1, _y1, _x2, _y2);<br> {
+    <br> var _array;<br> _array[0] = point_distance(_x1, _y1, _x2, _y2);<br> _array[1] = point_direction(_x1, _y1, _x2, _y2);<br> return _array;<br> }
+    <br>
+    <br> vec = create_vec(x, y, mouse_x, mouse_y);</p>
+  <p>Für Variablen, die innerhalb einer Funktion erstellt werden, gelten die gleichen Regeln wie für normale Variablen und sie werden entsprechend dem verwendeten Schlüsselwort oder dem Bereich des Funktionsaufrufs skaliert. Im obigen Beispiel verwenden wir <span class="inline">var</span>, so dass sich die Array-Variable im
+   <em>lokalen </em>Bereich der Funktion. Hätten wir das Schlüsselwort nicht verwendet, dann wäre die Variable im Bereich der Instanz erstellt worden, die die Funktion aufgerufen hat.</p>
+  <p>Methoden können, genau wie Skriptfunktionen, auch optionale Argumente annehmen, die Standardwerte haben, wenn sie nicht übergeben werden:</p>
+  <p class="code">create_attachment = function(_attachment, <strong>_x = x</strong>, <strong>_y = y</strong>)<br> {
+    <br> return instance_create_layer(_x, _y, layer, _attachment);<br> }
+  </p>
+  <p>Die obige Funktion benötigt drei Argumente, wobei die letzten beiden optional sind. Wenn sie beim Aufruf der Funktion nicht übergeben werden, werden standardmäßig die x- und y-Koordinaten der Instanz verwendet.</p>
+  <p>Beachten Sie, dass ein Argument, das nicht übergeben wird und keinen Standardwert hat, gleich <tt>undefiniert</tt> ist.</p>
+  <p>Methoden können auch statische Variablen verwenden, die ihre Werte bei jedem Funktionsaufruf beibehalten. Bitte <a href="Functions/Static_Variables.htm">lesen Sie diese Seite</a> für weitere Informationen.</p>
+  <p>Im Folgenden sind einige Hilfsfunktionen aufgeführt, die mit Methodenvariablen verbunden sind:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/is_method.htm">is_method</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method.htm">Methode</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method_get_self.htm">methode_get_self</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method_get_index.htm">methode_get_index</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="Structs.htm">Strukturen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Functions
+User Defined Functions
+-->
+  <!-- TAGS
+method_variables
+-->
+</body>
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>in_reihenfolge</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the variable in_sequence" />
+  <meta name="rh-index-keywords" content="in_sequence" />
+  <meta name="search-keywords" content="in_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>in_reihenfolge</h1>
+  <p>Dies ist eine <strong>eingebaute Variable</strong>, die Teil der <a href="../Instances/Instance_Variables/Instance_Variables.htm">Instanzvariablen</a> ist, die für jede Objektinstanz in Ihrem Spiel erstellt werden. Wenn die Instanz von einer Sequenz gesteuert wird,
+    gibt diese Variable den Wert <span class="inline">true</span> zurück, andernfalls gibt sie den Wert <span class="inline">false</span> zurück. Dies ist eine <strong>schreibgeschützte</strong> Variable und kann nicht geändert werden.</p>
+  <p>Beachten Sie, dass diese Variable <tt>falsch</tt> wird, nachdem die steuernde Sequenz beendet wurde, auch wenn ihr Sequenzelement noch existiert, und <tt>wahr</tt> wird, wenn dieses Sequenzelement <a href="../Rooms/Sequence_Layers/layer_sequence_play.htm">erneut abgespielt</a> wird.</p>
+  <p>Sie können diese Variable in Ihren spieler- (oder CPU-) gesteuerten Objekten verwenden, um sicherzustellen, dass sie nur dann per Code verschoben werden, wenn sie sich nicht in einer Sequenz befinden. Dies kann sich als nützlich für Zwischensequenzen erweisen, wenn Sie die gleichen Instanzen in einer Sequenz verwenden müssen (mit
+    die <tt><a href="sequence_instance_override_object.htm">sequence_instance_override_object()</a></tt> Funktion) und Sie müssen sicherstellen, dass sie nicht durch ihren üblichen Code bewegt werden können, während die Cutscene aktiv ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">in_reihenfolge</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (!in_sequence)<br> {
+    <br> x += move_x;<br> y += move_y;<br> }
+  </p>
+  <p>Der obige Code prüft die Variable <span class="inline">in_sequence</span>, und wenn sie <span class="inline">false</span> ist (was bedeutet, dass die Instanz nicht von einer Sequenz gesteuert wird), dann fügt er <tt>move_x</tt> und <tt>move_y</tt> zur Position der Instanz
+    Position hinzu, um sicherzustellen, dass sie sich nur bewegt, wenn sie sich nicht in einer Sequenz befindet.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="sequence_exists.htm">sequence_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+in_sequence
+-->
+  <!-- TAGS
+in_sequence
+-->
+</body>
+</html>

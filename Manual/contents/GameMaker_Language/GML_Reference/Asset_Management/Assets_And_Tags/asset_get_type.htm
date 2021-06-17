@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_get_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_get_type" />
+  <meta name="rh-index-keywords" content="asset_get_type,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_unknown" />
+  <meta name="search-keywords" content="asset_get_type,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_unknown" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_get_type</h1>
+  <p>Mit dieser Funktion können Sie den Typ des Assets, auf das verwiesen wird, aus seinem Namen (einer Zeichenkette) ermitteln. Es wird eine der unten aufgeführten <b>Konstanten</b> zurückgegeben.</p>
+  <p> </p>
+  <h4>Syntax:
+    
+  </h4>
+  <p class="code">asset_get_type(name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name des Spiel-Assets, dessen Typ ermittelt werden soll (eine Zeichenkette).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Konstant</p>
+  <blockquote>
+    <table>
+      <tbody>
+        <tr>
+          <th>Konstant</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>Asset_Objekt</td>
+          <td>Der angegebene Name bezieht sich auf ein <a href="../../../../The_Asset_Editors/Objects.htm">Objekt</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_sprite</td>
+          <td>Der angegebene Name bezieht sich auf ein <a href="../../../../The_Asset_Editors/Sprites.htm">Sprite</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_klang</td>
+          <td>Der Vorname bezieht sich auf einen <a href="../../../../The_Asset_Editors/Sounds.htm">Klang</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_raum</td>
+          <td>Der angegebene Name bezieht sich auf einen <a href="../../../../The_Asset_Editors/Rooms.htm">Raum</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_tiles</td>
+          <td>Der angegebene Name bezieht sich auf einen <a href="../../../../The_Asset_Editors/Tile_Sets.htm">Kachelsatz</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_pfad</td>
+          <td>Der angegebene Name verweist auf einen <a href="../../../../The_Asset_Editors/Paths.htm">Pfad</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_script</td>
+          <td>Der angegebene Name verweist auf ein <a href="../../../../The_Asset_Editors/Scripts.htm">Skript</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_font</td>
+          <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Fonts.htm">Schriftart</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_Zeitleiste</td>
+          <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Timelines.htm">Zeitlinie</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_shader</td>
+          <td>Der angegebene Name bezieht sich auf einen <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">Shader</span></a>.</td>
+        </tr>
+        <tr>
+          <td>asset_animationcurve</td>
+          <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Animation_Curves.htm">Animationskurve</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_sequenz</td>
+          <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Sequences.htm">Sequenz</a>.</td>
+        </tr>
+        <tr>
+          <td>asset_unbekannt</td>
+          <td>Der angegebene Name bezieht sich auf ein Asset, das entweder nicht existiert oder nicht zu den oben aufgeführten gehört.</td>
+        </tr>
+      </tbody>
+    </table>
+  </blockquote>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if asset_get_type(&quot;pth_Path_&quot; + string(global.Game)) == asset_unknown<br> {
+    <br> show_debug_message(&quot;Path doesn't exist!!!&quot;);<br> }
+    <br> sonst
+    <br> {
+    <br> path_index = asset_get_index(&quot;pth_Path_&quot; + string(global.Game));<br> }
+  </p>
+  <p>Der obige Code prüft einen dynamisch erstellten Asset-Namen, um zu sehen, ob das Asset vom richtigen Typ ist. Wenn dies nicht der Fall ist, wird eine Debug-Meldung angezeigt, andernfalls wird der Asset-Name verwendet, um das Asset der Instanz zuzuordnen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Assets_And_Tags.htm">Assets und Tags</a></div>
+        <div style="float:right">Weiter: <a href="tag_get_asset_ids.htm">tag_get_asset_ids</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_get_type
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+asset_unknown
+-->
+  <!-- TAGS
+asset_get_type
+-->
+</body>
+</html>

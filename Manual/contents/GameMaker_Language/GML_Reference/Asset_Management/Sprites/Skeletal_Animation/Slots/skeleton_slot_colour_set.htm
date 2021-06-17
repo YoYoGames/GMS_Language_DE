@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skelett_schlitz_farbe_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_slot_colour_set" />
+  <meta name="rh-index-keywords" content="skeleton_slot_colour_set" />
+  <meta name="search-keywords" content="skeleton_slot_colour_set,skeleton_slot_color_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skelett_schlitz_farbe_set</h1>
+  <p>Mit dieser Funktion können Sie die Farbe und das Alpha eines Attachment-Slots setzen, so dass alle daran angehängten Sprites mit diesen Blend-Werten gezeichnet werden. Beachten Sie, dass das Instanz-Sprite eine Blend-Farbe und Alpha-Einstellung haben kann (<a href="../../Sprite_Instance_Variables/image_blend.htm"><tt>image_blend</tt></a> und
+    <a href="../../Sprite_Instance_Variables/image_angle.htm"><tt>bild_alpha</tt></a>), ebenso wie das Attachment (siehe die Funktion <a href="../Attachments/skeleton_attachment_create_colour.htm"><tt>skeleton_attachment_create_colour()</tt></a>), und somit die
+    endgültige Farbe und Alpha, die das zugewiesene Attachment-Sprite für den Slot haben wird, eine Mischung aus all diesen Werten sein wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">skeleton_slot_colour_set(slot, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Steckplatz</td>
+        <td>Der zu setzende Steckplatzname, eine Zeichenkette</td>
+      </tr>
+      <tr>
+        <td>Farbe</td>
+        <td>Die einzustellende Farbe, entweder eine Ganzzahl, eine Konstante oder ein Hex-Wert.</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td>Das einzustellende Alpha von 0 bis 1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">slot_list = ds_list_create();<br> skeleton_find_slot(mouse_x, mouse_y, slot_list);<br> if !ds_list_empty(slot_list)<br> {
+    <br> for (var i = 0; i &lt; ds_list_size(slot_list); ++i;) <br> {
+    <br> if skeleton_slot_colour_get(slot_list[| i]) != c_white<br> {
+    <br> skeleton_slot_colour_set(slot_list[| i], c_white, 1);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code erstellt eine DS-Liste und füllt sie dann mit den Slot-Namen, die an der Position der Maus im Raum gefunden wurden. Anschließend durchläuft er die Slot-Liste und setzt die Farbe für die gefundenen Slots auf Weiß mit einem Alpha-Wert von 1 zurück, wenn die Farbe nicht
+    bereits weiß ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Slots.htm">Schlitze</a></div>
+        <div style="float:right">Weiter: <a href="skeleton_slot_colour_get.htm">skeleton_slot_colour_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_slot_colour_set
+skeleton_slot_color_set
+-->
+  <!-- TAGS
+skeleton_slot_colour_set
+-->
+</body>
+</html>

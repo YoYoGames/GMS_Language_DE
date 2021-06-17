@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gerät_gekippt_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for device_get_tilt_x" />
+  <meta name="rh-index-keywords" content="device_get_tilt_x" />
+  <meta name="search-keywords" content="device_get_tilt_x" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gerät_gekippt_x</h1>
+  <p>Diese Funktion gibt einen Wert zwischen -1 und 1 zurück, abhängig vom &quot;Neigungswinkel&quot; des Geräts. Die tatsächliche Korrelation zwischen Neigungsgrad und dem zurückgegebenen Wert hängt vom Gerät und dem verwendeten Betriebssystem ab, aber im Allgemeinen entspricht ein Wert von 1 oder
+    -1 das gleiche wie +/-90°. Die folgende Abbildung zeigt, wie sich jede der verfügbaren Funktionen auf das Gerät bezieht:</p>
+  <p><img alt="Tilt X/Y/Z on mobile devices" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Game_Input/Tilt_Image.png" /></p>
+  <h4>Syntax:</h4>
+  <p class="code">device_get_tilt_x()</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if display_get_orientation() = display_landscape<br> {
+    <br> x += sign(device_get_tilt_y());<br> }
+    <br> sonst
+    <br> {
+    <br> x += sign(device_get_tilt_x());<br> }
+  </p>
+  <p>Der obige Code prüft die Ausrichtung des Displays und verwendet dann den entsprechenden Neigungswert, um den Player entlang der X-Achse zu bewegen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Device_Input.htm">Geräteeingang</a></div>
+        <div style="float:right">Weiter: <a href="device_get_tilt_y.htm">device_get_tilt_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_get_tilt_x
+-->
+  <!-- TAGS
+device_get_tilt_x
+-->
+
+</body></html>

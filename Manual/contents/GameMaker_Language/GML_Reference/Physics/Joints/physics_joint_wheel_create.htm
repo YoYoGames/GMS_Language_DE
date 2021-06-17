@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_wheel_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_wheel_create" />
+  <meta name="rh-index-keywords" content="physics_joint_wheel_create" />
+  <meta name="search-keywords" content="physics_joint_wheel_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_wheel_create</h1>
+  <p>Ein Radgelenk kombiniert einfach ein Kolben- und ein Drehgelenk, wie ein Rad, das am Stoßdämpfer eines Autos montiert ist. Sie geben den Ankerpunkt für das Gelenk sowie die beiden physikfähigen Instanzen des Gelenks an, und die erste Instanz fungiert als &quot;Körper&quot; für das Gelenk, während die zweite das &quot;Rad&quot; ist und sich frei um das Gelenk bewegen kann.
+    Die erste Instanz fungiert als &quot;Körper&quot; für das Gelenk, während die zweite Instanz das &quot;Rad&quot; ist und sich frei um die Gelenkachse bewegen kann. Sie können auch einen Achsenvektor festlegen, d. h. die imaginäre Linie, entlang der das Gelenk als &quot;Feder&quot; fungiert und das
+    Rad entlang dieser Linie auf und ab hüpfen kann, wenn es auf Hindernisse trifft (ähnlich wie beim Kolbengelenk). Das folgende Bild veranschaulicht dies:</p>
+  <p><img alt="Wheel joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/wheel_joint_image.png">Wenn Sie sich dafür entscheiden, einen Motor zu aktivieren, dann dreht sich die zweite Instanz um die Ankerposition, und
+    können Sie das maximale Motordrehmoment einstellen, mit dem die gewünschte Motordrehzahl erreicht wird (in N/m), sowie die Geschwindigkeit, mit der sich der Motor drehen soll. Da das Radgelenk auch eine Achse hat, entlang der es sich bewegen kann, können Sie die Schwingungsfrequenz (in Hz) sowie
+    Da das Radgelenk auch eine Achse hat, in der es sich bewegen kann, können Sie die Schwingungsfrequenz (in Hz) und das Dämpfungsverhältnis für das Gelenk einstellen - möglicherweise müssen Sie mit diesen Werten spielen, um eine Feinabstimmung vorzunehmen, und es wird empfohlen, mit kleineren Werten zu beginnen und sie zu erhöhen, bis Sie den gewünschten Effekt erzielen.</p>
+  <p>Wie bei allen Gelenken können <tt>die</tt> beiden Instanzen miteinander interagieren und kollidieren, wenn Sie den &quot;col&quot;-Wert auf &quot;true&quot; setzen, aber nur, wenn <i>sie</i> Kollisionsereignisse haben; wenn er jedoch auf &quot;false&quot; gesetzt ist, kollidieren <tt>sie</tt> nicht
+    egal was passiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_wheel_create(inst1, inst2, anchor_x, anchor_y, axis_x, axis_y, enableMotor, max_motor_torque, motor_speed, freq_hz, damping_ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>Die erste Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>Die zweite Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>Anker_x</td>
+        <td>Die x-Koordinate, an der das Gelenk verankert ist, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>Anker_y</td>
+        <td>Die y-Koordinate, an der das Gelenk verankert ist, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>Achse_x</td>
+        <td>Die x-Komponente des Radachsenvektors</td>
+      </tr>
+      <tr>
+        <td>Achse_y</td>
+        <td>Die y-Komponente des Radachsenvektors</td>
+      </tr>
+      <tr>
+        <td>enableMotor</td>
+        <td>Ob der Motor aktiv sein soll (true) oder nicht (false)</td>
+      </tr>
+      <tr>
+        <td>max_motor_drehmoment</td>
+        <td>Legt das maximale Motordrehmoment fest, mit dem die gewünschte Motordrehzahl erreicht wird (in Newton pro Meter)</td>
+      </tr>
+      <tr>
+        <td>Motor_Drehzahl</td>
+        <td>Dies ist die Geschwindigkeit, mit der sich der Motor drehen soll</td>
+      </tr>
+      <tr>
+        <td>freq_hz</td>
+        <td>Dies ist die Schwingungsfrequenz für das Gelenk, in Hertz</td>
+      </tr>
+      <tr>
+        <td>Dämpfungsverhältnis</td>
+        <td>Dieses Dämpfungsverhältnis für das Gelenk</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Ob die beiden Instanzen kollidieren können (true) oder nicht (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Index des Gelenks)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var mainFixture = physics_fixture_create();<br> physics_fixture_set_box_shape(mainFixture, 128, 32);<br> var wheelFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(wheelFixture, 32);<br> var o_id = instance_create_layer(x+25,
+    y + 100, &quot;Instances&quot;, obj_Wheel);<br> physics_fixture_bind(mainFixture, id);<br> physics_fixture_bind(wheelFixture, o_id);<br> physics_joint_wheel_create(id, o_id, o_id.x, o_id.y, 0, 1, true, 10, 1, 15, 6, false);<br> physics_fixture_delete(mainFixture);
+    <br> physics_fixture_delete(wheelFixture);
+  </p>
+  <p>Der obige Code erstellt und definiert zwei neue Fixtures. Diese werden dann an die aufrufende Instanz und eine neue Instanz gebunden, die erstellt wird, bevor ein Radgelenk angewendet wird, um sie zu verbinden, wonach die Fixtures aus dem Speicher gelöscht werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_weld_create.htm">physics_joint_weld_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_wheel_create
+-->
+  <!-- TAGS
+physics_joint_wheel_create
+-->
+</body>
+</html>

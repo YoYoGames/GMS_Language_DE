@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Burst-Partikel</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Burst Particles action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Burst Particles" />
+  <meta name="search-keywords" content="Burst Particles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Burst Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Burst_Particles.png"> Geplatzte Partikel</h1>
+  <p>Mit dieser Aktion können Sie jederzeit Partikel platzen lassen, ohne auf einen Emitter angewiesen zu sein. Sie geben den eindeutigen ID-Wert für das System an, in dem die Partikel erstellt werden sollen (wie bei der Erstellung des Systems mit der Aktion <a href="Create_Particle_System.htm">Partikelsystem erstellen</a> zurückgegeben)
+    und die eindeutige ID des zu erstellenden Partikeltyps (wie bei der Erstellung des Partikeltyps mit der Aktion " <a href="Create_Particle_Type.htm">Partikeltyp erstellen</a>" zurückgegeben) sowie die x/y-Position, an der sie erstellt werden sollen, und die Anzahl der zu erstellenden Partikel.
+    Die Position kann eine absolute Position innerhalb des Raums sein, oder Sie können sie als relative Position zu der Instanz kennzeichnen, die die Aktion aufruft.</p>
+  <p>Sie können diese Aktion bei jedem Spielframe aufrufen, um den Stromeffekt eines Emitters zu replizieren, oder Sie können sie einmal in einem Ereignis (wie dem Zerstörungsereignis) aufrufen, um die Partikel einfach platzen zu lassen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Burst Particles Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Burst_Particles.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>System</td>
+        <td>Der ID-Wert des zu verwendenden Partikelsystems</td>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der ID-Wert des zu burstenden Partikeltyps</td>
+      </tr>
+      <tr>
+        <td>X</td>
+        <td>Die x-Position, an der die Partikel zerplatzen sollen</td>
+      </tr>
+      <tr>
+        <td>Y</td>
+        <td>Sie positionieren die Partikel zum Platzen an</td>
+      </tr>
+      <tr>
+        <td>Zählen Sie</td>
+        <td>Die Anzahl der zu burstenden Partikel</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Burst Particles Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Burst_Particles.png">Der obige Code des Aktionsblocks prüft, ob die Instanz ihre Position seit der letzten Aktualisierung des Spielframes geändert hat.
+    seit der Aktualisierung des letzten Spiel-Frames geändert hat, und wenn dies der Fall ist, werden einige Partikel an der neuen Position gezündet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Actions.htm">Partikel-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Create_Particle_Emitter.htm">Partikelemitter erstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Burst Particles
+-->
+  <!-- TAGS
+action_part_particles_create
+-->
+</body>
+</html>

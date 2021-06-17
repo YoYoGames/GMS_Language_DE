@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_klang_ist_abspielbar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_is_playable" />
+  <meta name="rh-index-keywords" content="audio_sound_is_playable" />
+  <meta name="search-keywords" content="audio_sound_is_playable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_klang_ist_abspielbar</h1>
+  <p>Mit dieser Funktion kann geprüft werden, ob der angegebene Tonindex aktuell abgespielt werden kann. Dies ist aufgrund der unterschiedlichen Handhabung von gestreamter und nicht gestreamter Soundwiedergabe auf der <b>HTML5-Zielplattform</b> erforderlich und gibt
+    gibt <tt>true</tt> zurück, wenn der Sound abgespielt werden kann, und <tt>false</tt>, wenn er nicht abgespielt werden kann. Beachten Sie, dass die Funktion auf allen anderen Plattformen außer HTML5 immer true zurückgibt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_sound_is_playable(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu prüfenden Tons.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if audio_sound_get_pitch(snd_Explode) != 1<br> {
+    <br> audio_sound_pitch(snd_Explode, 1);<br> }
+  </p>
+  <p>Der obige Code ändert die Tonhöhe des abgespielten Tons, der als &quot;snd_Explode&quot; indiziert ist, wenn seine Tonhöhe ungleich 1 ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_falloff_set_model.htm">audio_falloff_set_model</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_is_playable
+-->
+  <!-- TAGS
+audio_sound_is_playable
+-->
+</body>
+</html>

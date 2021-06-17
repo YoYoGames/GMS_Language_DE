@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_width</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_width" />
+  <meta name="rh-index-keywords" content="string_width" />
+  <meta name="search-keywords" content="string_width" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_width</h1>
+  <p>Diese Funktion gibt die Breite (in Pixeln) der eingegebenen Zeichenkette zurück, wobei eventuelle Zeilenumbrüche im Text berücksichtigt werden. Sie ist sehr praktisch, um Abstände zwischen Textelementen zu berechnen, basierend auf der Gesamtbreite der Buchstaben, aus denen die Zeichenkette besteht
+    wie sie mit <a href="../Drawing/Text/draw_text.htm"><tt>draw_text()</tt></a> mit der aktuell definierten Schriftart gezeichnet würde.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">string_width(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Die Zeichenfolge, deren Breite gemessen werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var ww = string_width(str_Name + &quot; &quot;);<br> draw_text(32, 32, str_Name));<br> draw_text(32 + ww, 32, &quot;hat das Spiel gewonnen!&quot;);</p>
+  <p>Der obige Code ermittelt die Breite der angegebenen Zeichenfolge und zeichnet dann zwei Textzeilen, wobei die zurückgegebene Zeichenfolgenbreite als Trennzeichen verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Strings.htm">Streicher</a></div>
+        <div style="float:right">Weiter: <a href="string_width_ext.htm">string_width_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_width
+-->
+  <!-- TAGS
+string_width
+-->
+
+</body></html>

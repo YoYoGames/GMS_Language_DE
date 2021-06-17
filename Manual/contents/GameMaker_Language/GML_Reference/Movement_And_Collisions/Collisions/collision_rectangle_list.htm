@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>kollision_rechteck_liste</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_rectangle_list" />
+  <meta name="rh-index-keywords" content="collision_rectangle_list" />
+  <meta name="search-keywords" content="collision_rectangle_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>kollision_rechteck_liste</h1>
+  <p>Diese Funktion ist die gleiche wie die <a href="collision_rectangle.htm"><tt>collision_rectangle()</tt></a> Funktion, nur dass sie nicht jeweils nur eine Instanz in Kollision erkennt, sondern mehrere Instanzen. Sie geben die x/y-Positionen der
+    Sie geben die x/y-Positionen oben links und unten rechts des zu prüfenden Bereichs sowie das zu prüfende Objekt an, und Sie können festlegen, dass die Prüfung präzise sein soll (in diesem Fall müssen alle geprüften Instanzen <i>präzise</i> Kollisionsmasken haben) und ob die Prüfung die aufrufende Instanz einschließen soll oder nicht.
+    die aufrufende Instanz einschließen soll oder nicht.</p>
+  <p>Sie liefern auch eine <a href="../../Data_Structures/DS_Lists/DS_Lists.htm">DS-Liste</a>, so dass die <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> Werte aller Instanzen, die mit der aufrufenden Instanz kollidieren, werden
+    an das Ende der angegebenen Liste angehängt werden. Sie können die Liste vor dem Aufruf dieser Funktion <a href="../../Data_Structures/DS_Lists/ds_list_clear.htm">löschen</a>, so dass sie nur noch Ergebnisse aus diesem Funktionsaufruf enthält. Sie haben auch die Möglichkeit, die
+    Instanzen basierend auf ihren Abständen vom Mittelpunkt des rechteckigen Bereichs zu ihren Ursprüngen zu ordnen. Die Funktion gibt die Anzahl der gefundenen Instanzen zurück, oder 0, wenn keine gefunden wurden.</p>
+  <p>Beachten Sie, dass Sie anstelle eines Objektindex das <a href="../../../GML_Overview/Instance_Keywords.htm">Instanz-Schlüsselwort</a> <span class="inline">all</span> angeben können, um nach allen Instanzen im aktuellen Raum zu suchen, was auch die Instanz umfassen kann, die
+    den Code ausführt (abhängig vom Argument <span class="inline">notme</span> ).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">collision_rectangle_list(x1, y1, x2, y2, obj, prec, notme, list, ordered);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate der linken Seite des zu prüfenden Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate der oberen Seite des zu prüfenden Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate der rechten Seite des zu prüfenden Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate der unteren Seite des zu prüfenden Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das Objekt, das auf Instanzkollisionen geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Ob die Prüfung auf präzisen Kollisionen<tt>(true</tt>, was langsamer ist) oder allgemein auf der Bounding Box basiert<tt>(false</tt>, schneller).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Ob die aufrufende Instanz, falls relevant, ausgeschlossen werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+      <tr>
+        <td>Liste</td>
+        <td>Die DS-Liste, die zum Speichern der IDs kollidierender Instanzen verwendet wird.</td>
+      </tr>
+      <tr>
+        <td>bestellt</td>
+        <td>Ob die Liste nach Abstand sortiert werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Die Anzahl der gefundenen Instanzen, die sich in Kollision befinden)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _list = ds_list_create();<br> var _num = collision_rectangle_list(x - 100, y - 100, x + 100, y + 100, obj_Enemy, false, true, _list, false);<br> if _num &gt; 0<br> {
+    <br> for (var i = 0; i &lt; _num; ++i;)<br> {
+    <br> instance_destroy(_list[| i]);<br> }
+    <br> }
+    <br> ds_list_destroy(_list);
+  </p>
+  <p>Der obige Code prüft einen rechteckigen Bereich 100 Pixel um die aufrufende Instanzposition auf Kollisionen mit Instanzen von &quot;obj_Enemy&quot;. Wenn es irgendwelche Kollisionen gibt, wird die zuvor erstellte Liste durchlaufen und jede Instanz, die
+    die an der Kollision beteiligt war, wird zerstört.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="point_in_rectangle.htm">Punkt_im_Rechteck</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_rectangle_list
+-->
+  <!-- TAGS
+collision_rectangle_list
+-->
+</body>
+</html>

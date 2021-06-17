@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gif_add_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for gif_add_surface" />
+  <meta name="rh-index-keywords" content="gif_add_surface" />
+  <meta name="search-keywords" content="gif_add_surface" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gif_add_surface</h1>
+  <p>Mit dieser Funktion können Sie ein Bild aus einer Oberfläche in eine GIF-Datei speichern. Sie liefern die ID der GIF-Datei (wie von der Funktion <a href="gif_open.htm"><tt>gif_open()</tt></a>) und eine Oberflächen-ID (zurückgegeben von der Funktion <a href="../Drawing/Surfaces/surface_create.htm"><tt>surface_create()</tt></a>),
+    sowie eine Verzögerungszeit zwischen den Bildern. Die Verzögerungszeit wird in 1/100 Sekunden berechnet, aber beachten Sie, dass nach der Erstellung des GIFs, wenn Sie es z. B. für Werbezwecke verwenden, verschiedene Browser die Frame-Verzögerung etwas anders interpretieren können
+    unterschiedlich interpretieren können - siehe <a href="https://www.deviantart.com/humpy77/journal/Frame-Delay-Times-for-Animated-GIFs-214150546" target="_blank">hier</a> für weitere Details. Sie können (optional) X- und Y-Offset-Werte für die Fläche angeben, die Sie zum GIF hinzufügen möchten.
+    Sie können (optional) X- und Y-Offset-Werte für die Fläche angeben, die zum GIF hinzugefügt werden soll. In diesem Fall beginnt der Teil, der zum GIF gezeichnet wird, an der Offset-Position und nicht an der Standardposition (0,0), so dass Sie nur einen Teil der Fläche zum Hinzufügen auswählen können. Sie können auch einen Quantisierungswert angeben, der eine ganze Zahl zwischen 0
+    und 3, wobei 0 für volle Quantisierung und 3 für Nullquantisierung steht (niedrigere Werte führen zu einer Qualitätsverschlechterung, erzeugen aber ein kleineres GIF). Beachten Sie, dass es keinen großen Unterschied zwischen der Standardqualität von 2 und der höchsten von 3 gibt,
+    und die Verwendung von 3 die Erstellung des GIFs erheblich verlangsamt, so dass man bei der Verwendung des Maximalwerts vorsichtig sein sollte.</p>
+  <p>Beachten Sie, dass es keine eingebauten Grenzen für die Anzahl der Frames oder für die Größe dieser Frames in Ihrem GIF gibt, aber wenn Sie zu viel Speicher verwenden, schlägt die Funktion fehl und gibt -1 zurück, andernfalls gibt sie 0 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gif_add_surface(gif_index, surface, delay_time, [xoffset], [yoffset]);</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>gif_index</td>
+        <td>Die ID des gif, zu dem die Oberflächendaten hinzugefügt werden sollen</td>
+      </tr>
+      <tr>
+        <td>Oberfläche</td>
+        <td>Die ID der Oberfläche, die als hinzugefügter Rahmen verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>delay_time</td>
+        <td>Die Verzögerungszeit für den Frame (in 100stel einer Sekunde)</td>
+      </tr>
+      <tr>
+        <td>[xoffset]</td>
+        <td><b>[Optional</b>] Der Versatz entlang der X-Achse der Oberfläche, der von</td>
+      </tr>
+      <tr>
+        <td>[yOffset]</td>
+        <td><b>[Optional</b>] Der Versatz entlang der Y-Achse der Oberfläche, der von</td>
+      </tr>
+      <tr>
+        <td>[Quantisierung]</td>
+        <td><b>[Optional</b>] Der Quantisierungsbetrag von 0 bis 3 (0 niedrigste Qualität, 3 höchste Qualität, Standard ist 2)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if save_gif == true<br> {
+    <br> if count == 0<br> {
+    <br> gif_image = gif_open(room_width, room_height);<br> }
+    <br> else if count &lt; 30<br> {
+    <br> gif_add_surface(gif_image, application_surface, 6/100);<br> }
+    <br> sonst
+    <br> {
+    <br> gif_save(gif_image, &quot;GameCapture.gif&quot;);<br> count = 0;<br> save_gif = false;<br> }
+    <br> count++;
+    <br> }
+  </p>
+  <p>Der obige Code erstellt eine GIF-Bilddatei mit 30 Bildern aus der Anwendungsoberfläche und speichert sie anschließend.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Kameras und Display</a>
+        <div style="float:left">Zurück: </div>
+        <div style="float:right">Weiter: <a href="gif_save.htm">gif_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gif_add_surface
+-->
+  <!-- TAGS
+gif_add_surface
+-->
+</body>
+</html>

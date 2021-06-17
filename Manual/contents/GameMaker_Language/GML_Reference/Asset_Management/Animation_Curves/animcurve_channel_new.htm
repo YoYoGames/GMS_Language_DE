@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_channel_new</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_channel_new" />
+  <meta name="rh-index-keywords" content="animcurve_channel_new,animcurvetype_linear,animcurvetype_catmullrom" />
+  <meta name="search-keywords" content="animcurve_channel_new,animcurvetype_linear,animcurvetype_catmullrom" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_channel_new</h1>
+  <p>Mit dieser Funktion können Sie eine neue <a href="../../../GML_Overview/Structs.htm">Animationskurven-Kanalstruktur</a> erstellen. Eine Kanal-Struktur hat die folgenden Variablen:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th>Daten Typ</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>String</td>
+        <td>Dies ist der Name des Kanals.</td>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Konstante</td>
+        <td>Dies wird eine der Konstanten <tt><b>animcurvetype_linear</b></tt> - für lineare Interpolation zwischen den Punkten - oder <tt><b>animcurvetype_catmullrom</b></tt> - für eine &quot;glatte&quot; Interpolation zwischen den Punkten mittels Catmull-Rom-Interpolation.</td>
+      </tr>
+      <tr>
+        <td>Iterationen</td>
+        <td>Ganzzahl</td>
+        <td>Wenn der Kanal die Katmull-rom (&quot;glatte&quot;) Interpolation verwendet, wird hier festgehalten, wie viele Punkte für jedes Segment der Kurve generiert wurden (beachten Sie, dass diese zusätzlichen Punkte intern in der Funktion sind und nur für die Laufzeitberechnungen verwendet werden).
+          Wenn der Kanal eine lineare Interpolation verwendet, ist dieser Wert immer noch vorhanden, kann aber ignoriert werden, da er keinen Einfluss darauf hat, wie die Kurve interpoliert wird.</td>
+      </tr>
+      <tr>
+        <td>Punkte</td>
+        <td>Array-Zeiger</td>
+        <td>Dies ist ein Array, wobei jedes Element im Array eine Punktstruktur ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Wenn Sie eine neue Kanalstruktur erstellen, ist standardmäßig die Variable &quot;name&quot; eine leere Zeichenkette, der &quot;type&quot; ist animcurvetype_linear <tt>und die &quot;iterations</tt> &quot; ist 16. Alle diese Variablen können auf die gewünschten Werte gesetzt werden.
+    Werte gesetzt werden (beachten Sie, dass der Wert &quot;iterations&quot; bei linearen Kurventypen keine Wirkung hat). Nach der Erstellung müssen Sie der Kurve Punkte hinzufügen, was durch Hinzufügen verschiedener Punktstrukturen zum Array &quot;points&quot; geschieht.
+    Diese Punkt-Strukturen können mit der Funktion <a href="animcurve_point_new.htm"><tt>animcurve_point_new()</tt></a>erstellt werden und enthalten die folgenden Variablen:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th>Daten Typ</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>posx</td>
+        <td>real</td>
+        <td>Die Position in der Zeit (normiert von 0 bis 1) des Punktes.</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>real</td>
+        <td>Der Wert des Punktes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">animcurve_channel_new();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur-Referenz</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">my_curve = animcurve_create();<br> my_curve.name = &quot;My_Curve&quot;;<br> var _channels = array_create(1);<br> _channels[0] = animcurve_channel_new();<br> _channels[0].name = &quot;alpha&quot;;<br> _channels[0].type = animcurvetype_catmullrom;<br> _channels[0].iterations = 8;<br> var _points = array_create(3);<br> _points[0] = animcurve_point_new();<br> _points[0].posx = 0;<br> _points[0].value = 0;<br> _points[1] = animcurve_point_new();<br> _points[1].posx = 0.5;<br> _points[1].value
+    = 1;<br> _points[2] = animcurve_point_new();<br> _points[2].posx = 1;<br> _points[2].value = 0;<br> _channels[0].points = _points;<br> my_curve.channels = _channels;</p>
+  <p>Der obige Code erzeugt eine neue Animationskurven-Struktur und speichert sie in der Variablen &quot;my_curve&quot;. Diese Struktur wird dann mit einem Namen und einem Kanal-Array befüllt. Das Kanal-Array enthält einen einzelnen Kanal mit drei Punkten.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Animation_Curves.htm">Animation Kurven</a></div>
+        <div style="float:right">Weiter: <a href="animcurve_point_new.htm">animcurve_point_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_channel_new
+animcurvetype_linear
+animcurvetype_catmullrom
+-->
+  <!-- TAGS
+animcurve_channel_new
+-->
+</body>
+</html>

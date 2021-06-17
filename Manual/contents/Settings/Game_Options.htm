@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Spiel-Optionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to setup the different Game options" />
+  <meta name="rh-index-keywords" content="Game Options" />
+  <meta name="search-keywords" content="Game Options,Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Spiel-Optionen</h1>
+  <p>Die Spieloptionen sind in zwei Abschnitte unterteilt, die Hauptoptionen und die Plattformeinstellungen. Die Hauptoptionen beginnen mit den <strong>Allgemeinen</strong> Optionen, in denen Sie bestimmte Dinge einstellen können, die sich auf das Spiel auswirken, unabhängig von der Plattform, für die
+    es für die Ausführung auf der Plattform ausgelegt ist.</p>
+  <p><img alt="General Game Options" class="center" src="../assets/Images/Settings/Game_Options/General_Options.png">Das Fenster hat die folgenden Bereiche:</p>
+  <ul class="colour">
+    <li><strong> <span class="notranslate">DnD™</span></strong> als Standard-Skripttyp verwenden: Wenn diese Option aktiviert ist, werden alle neuen Skripte und Objekt-Events mit dem <span class="notranslate">DnD™-Editor</span>und nicht mit dem Code-Editor geöffnet.</li>
+    <li><strong>Spiel-Frames pro Sekunde</strong>: Dieser Wert legt die Grenze für die Anzahl der Frames pro Sekunde fest, die <span class="notranslate">GameMaker Studio 2</span> versuchen soll, bei der Ausführung Ihrer Spiele beizubehalten. Dieser Wert repräsentiert die Anzahl der Durchläufe der Spielschleife in
+      einer Sekunde durchläuft (eine einzelne Spielschleife wird als ein einziger &quot;Frame&quot; betrachtet) und ist auf einen Standardwert von 60 eingestellt, obwohl häufig auch 30 verwendet wird. Es gibt viele Argumente darüber, welche Raumgeschwindigkeit die ideale ist, aber die tatsächliche Antwort hängt davon ab, welche Art
+      des Spiels, das Sie machen, der Größe des Raums, der Anzahl der Instanzen und wie intensiv der Code ist. Wenn Sie z. B. einen großen Raum und eine Raumgeschwindigkeit von 30 haben, kann das Spiel &quot;abgehackt&quot; wirken, denn je größer der Bereich ist, den Sie betrachten,
+      Je größer der Bereich ist, auf den Sie blicken, desto einfacher ist es für das Auge, niedrige Raumgeschwindigkeiten wahrzunehmen. Wenn das Spiel jedoch sehr intensiv ist, kann die Einstellung der Raumgeschwindigkeit auf 120 dazu führen, dass das Spiel &quot;hinkt&quot;, da die fps aufgrund der Verarbeitungsmenge sinken. Seien Sie also vorsichtig mit diesem Wert
+      und versuchen Sie, ihn immer so einzustellen, wie es Ihr Spiel benötigt.</li>
+    <li><strong>Standard-Zeichenfarbe</strong>: Die Standardfarbe zum Zeichnen von Text oder Foren (und anderen Dingen), wenn keine Farbe per Code eingestellt wurde.</li>
+    <li><strong>Standard-Zeichenfarbe Außerhalb des Raumbereichs</strong>: Die Standardfarbe, die verwendet wird, um den Hintergrund eines Bereichs außerhalb des Spielraums zu löschen.</li>
+    <li><strong>Projektbilder generieren</strong>: Wenn Sie hierauf klicken, wird das Werkzeug "Projektbild-Generator" geöffnet.</li>
+    <li><strong>Projektstartdatum</strong>: Das Datum, an dem das Projekt gestartet wurde.</li>
+    <li><strong>Projektverwendungszeit</strong>: Die Zeitspanne, die vergangen ist, seit Sie das Projekt initiiert haben.</li>
+    <li><strong>Projekt-GUID</strong>: Dies ist der eindeutige Bezeichner, der für jedes Projekt in <span class="notranslate">GameMaker Studio 2</span> erstellt wird. Wenn Sie diese ändern möchten, können Sie auf die Schaltfläche Neue GUID erstellen klicken, um eine neue zu erzeugen.</li>
+    <li><strong>Mipmaps für separate Texturseiten generieren</strong>: Mit dieser Option lässt <span class="notranslate">GameMaker Studio 2</span> Mipmaps für die Sprites erzeugen, die in den Textureinstellungen des Sprite-Editors die Option "Separate Texturseite" markiert haben. Aktivieren von Mipmapping
+      bedeutet, dass die ursprüngliche Texturseite für das Sprite skaliert und in mehrere Auflösungen innerhalb der Texturdatei gefiltert werden soll. Normalerweise ist dies deaktiviert, aber wenn Sie Ansichten verwenden, um große Bereiche des Spielraums zu vergrößern oder zu verkleinern, oder wenn Sie mit einem 3D-Spiel arbeiten, können Sie
+      Wenn Sie jedoch mit Ansichten arbeiten, um große Bereiche des Spielraums zu vergrößern oder zu verkleinern, oder wenn Sie mit einem 3D-Spiel arbeiten, sollten Sie dies aktivieren und dann die Mipmapping-Funktionen verwenden, um einzustellen, wie das Spiel mit den verschiedenen Mipmap-Ebenen umgeht. Beachten Sie, dass Sie, wenn Sie Sprites nicht als individuelle Texturseiten kennzeichnen, trotzdem
+      Mipmapping auf Basis der einzelnen Texturgruppen im Texturgruppen-Manager aktivieren. Diese Option ist standardmäßig ausgeschaltet.</li>
+    <li><strong><span class="notranslate">Steam</span></strong> ID: Wenn Sie ein Spiel erstellen, das über <span class="notranslate">Steam</span> vertrieben werden soll, müssen Sie hier die <span class="notranslate">Steam</span> App ID angeben. Stellen Sie sicher, dass Sie den Pfad zum <span class="notranslate">Steamworks-SDK</span>in den Plattform-Voreinstellungen hinzugefügt haben, wenn Sie diese Option verwenden,
+      und stellen Sie sicher, dass Sie im <span class="notranslate">Steamworks-Dashboard</span>alles richtig eingestellt haben.</li>
+    <li><strong>Aktivieren Sie die Versionskontrolle</strong>: Wenn Sie möchten, dass das Projekt unter SCM (Source Control Management) steht, müssen Sie diese Option aktivieren. Standardmäßig ist es ausgeschaltet (siehe hier für weitere Informationen zur Versionskontrolle).</li>
+    <li><strong>Autor</strong>: Der Name des Spieleautors (oder Herausgebers oder Studios).</li>
+    <li><strong>Project Last Changed</strong>: Dieser Bereich zeigt einfach den Datums-/Zeitstempel für die letzte Änderung des Projekts an (dies ist nicht editierbar).</li>
+    <li><strong>Spine-Lizenz akzeptieren</strong>: Hier können Sie das Kontrollkästchen aktivieren, um die <span class="notranslate">Spine-Laufzeitlizenz</span> anzuzeigen und zu akzeptieren. Dies erlaubt Ihnen, Spine-Sprites in Ihrem Spiel zu verwenden (diese Lizenz wird auch angezeigt, wenn Sie zum ersten Mal versuchen, ein Spine-Sprite
+      zu Ihrem Projekt hinzuzufügen und die Lizenz hier nicht vorher angekreuzt haben).</li>
+  </ul>
+  <p>Im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> stehen Ihnen je nach den für Ihre <a href="../Setting_Up_And_Version_Information/GMS2_Version_Information.htm">Lizenz</a> verfügbaren Zielplattformen auch andere Spieloptionen zur Verfügung, die möglicherweise nicht alle verfügbar oder sichtbar sind.</p>
+  <p>Es gibt die folgenden plattformspezifischen Spieloptionen:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Windows.htm"><span class="notranslate">Windows</span></a></li>
+    <li><a href="Game_Options/macOS.htm"><span class="notranslate">macOS</span></a></li>
+    <li><a href="Game_Options/Ubuntu.htm"><span class="notranslate">Ubuntu</span></a></li>
+    <li><a href="Game_Options/Windows_UWP.htm"><span class="notranslate">Windows UWP</span></a></li>
+    <li><a href="Game_Options/HTML5.htm">HTML5</a></li>
+    <li><a href="Game_Options/Android.htm"><span class="notranslate">Android</span></a></li>
+    <li><a href="Game_Options/iOS.htm"><span class="notranslate">iOS</span></a></li>
+    <li><a href="Game_Options/tvOS.htm"><span class="notranslate">tvOS</span></a></li>
+  </ul>
+  <p class="note"><strong>HINWEIS</strong>: Die verschiedenen <strong>Optionen für Konsolenspiele</strong> sind hier nicht aufgelistet, da es verschiedene rechtliche Einschränkungen gibt, die von den verschiedenen Firmen eingehalten werden. Wenn Sie eine Konsolenlizenz haben, dann können Sie diese Informationen vom <a href="https://help.yoyogames.com/hc/en-us/categories/202590248-Console-Support"><span class="notranslate">YoYo Games</span></a> Helpdesk erhalten,
+    aber Sie müssen zuerst <span class="notranslate">YoYo Games</span> mit Ihrer Konsolen-ID per E-Mail kontaktieren und die Erlaubnis zur Ansicht der verschiedenen Abschnitte anfordern.</p>
+  <p>Einige <span class="notranslate">GameMaker Studio 2-Lizenzen</span> zeigen möglicherweise auch Spieloptionen für das <strong><span class="notranslate">Amazon Feuer</span></strong> Ziel an. Dies sind Legacy-Optionen, da neuere Lizenzen die Fire-Plattform direkt mit den <strong><span class="notranslate">Android</span></strong> Spiel-Optionen. Wenn Ihre Lizenz noch
+    noch <span class="notranslate">Amazon Fire</span> anzeigt, können Sie Informationen zu den Optionen auf der folgenden Seite finden:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Amazon_Fire.htm"><span class="notranslate">Amazon Fire</span> (Legacy)</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Game_Settings.htm">Spiel-Einstellungen</a></div>
+        <div style="float:right">Nächste: <a href="Configurations.htm">Konfigurationen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Game Settings
+-->
+  <!-- TAGS
+game_settings
+-->
+</body>
+</html>

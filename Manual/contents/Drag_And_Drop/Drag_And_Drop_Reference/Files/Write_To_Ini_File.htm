@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Schreiben in Ini-Datei</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Write To Ini File action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Write To Ini File" />
+  <meta name="search-keywords" content="Write To Ini File" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Write To Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Write_To_Ini_File.png"> Schreiben in die Ini-Datei</h1>
+  <p>Mit dieser Aktion können Sie einen numerischen Wert oder einen String in eine Ini-Datei schreiben. Sie müssen die Ini-Datei zuvor mit der Aktion <a href="Open_Ini_File.htm">Ini-Datei öffnen</a> zum Lesen/Schreiben geöffnet haben, und dann geben Sie mit dieser Aktion den Typ der zu schreibenden Daten an (entweder eine reelle Zahl oder eine Zeichenkette, die in "" eingeschlossen ist), sowie die Abschnittsüberschrift, den Schlüssel innerhalb dieses Abschnitts und den Schlüssel des Abschnitts.
+    Daten (entweder eine reelle Zahl oder eine in &quot;&quot; eingeschlossene Zeichenkette), sowie die Abschnittsüberschrift, den Schlüssel innerhalb dieses Abschnitts und den Wert für den Schlüssel. Zur Veranschaulichung der Struktur einer Ini-Datei sehen Sie dieses Bild:</p>
+  <p><img alt="Example Ini File Contents" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/Ini_Example.png">Wie Sie sehen können, werden Ini-Dateien in Abschnitte aufgeteilt - wobei jeder Abschnitt einen eigenen Kopfnamen hat - und
+    dann wird jeder Abschnitt anschließend in verschiedene Schlüssel/Wertpaare aufgeteilt (ähnlich wie eine <a href="../Data_Structures/Create_Map.htm">Map-Datenstruktur</a>). Beachten Sie, dass Sie Ini-Dateien selbst mit einem beliebigen Textverarbeitungsprogramm (wie Notepad unter
+   <span class="notranslate">Windows</span>) selbst erstellen und sie dann als <a href="../../../Settings/Included_Files.htm">eingebundene Datei</a> in Ihr Spiel einbinden, um daraus zu lesen und zu schreiben.</p>
+  <p class="note"><b>WICHTIG!</b> Der Versuch, Daten aus einer Ini-Datei zu lesen, die zuvor nicht mit der Aktion " <a href="Open_Ini_File.htm">Open Ini File</a> " geöffnet wurde, führt zu einem schwerwiegenden Fehler und zum Absturz Ihres Spiels.<b></b></p>
+  <p class="note"><b>WICHTIG!</b> Dadurch werden die Daten nur in den Speicher geschrieben. Um die Daten endgültig in die Datei auf der Festplatte zu schreiben, <b>müssen</b> Sie <b> <a href="Close_Ini_File.htm">Ini-Datei schließen</a></b> aufrufen, sonst werden die Daten nicht gespeichert.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Write To Ini Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Write_To_Ini_File.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der zu schreibenden Daten, entweder eine <tt>Zeichenkette</tt> (eingeschlossen in Anführungszeichen &quot;&quot;) oder eine reelle <tt>Zahl</tt></td>
+      </tr>
+      <tr>
+        <td>Abschnitt</td>
+        <td>Der Abschnitt der Ini-Datei, in den geschrieben werden soll (als String)</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Der Schlüssel innerhalb des Abschnitts, in den geschrieben werden soll (als String)</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der zu schreibende Wert, entweder eine Zeichenkette oder eine reelle Zahl, basierend auf dem Argument &quot;Typ&quot; (oben)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Write To Ini Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Write_To_Ini_File.png">Der obige Aktionsblockcode öffnet eine Ini-Datei und schreibt dann Daten in drei verschiedene Schlüssel unter
+    derselben Abschnittsüberschrift (eine Zeichenkette und zwei reelle Zahlen), bevor er die Ini-Datei wieder schließt (und damit die Daten auf die Festplatte schreibt).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="File_Actions.htm">Datei-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Read_Ini_File.htm">Ini-Datei lesen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Write To Ini File
+-->
+  <!-- TAGS
+action_ini_write
+-->
+
+</body></html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Aktionsblock-Skriptfunktionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining how to make action block script functions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Action Block Script Functions" />
+  <meta name="search-keywords" content="DnD,Code DnD,DnD Scripts,Drag and Drop Scripts" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Aktionsblock-Skriptfunktionen</h1>
+  <p>Eines der wichtigsten Assets im <a href="../../Introduction/The_Asset_Browser.htm">Asset-Browser</a> ist das <a href="../../The_Asset_Editors/Scripts.htm">Script-Asset</a>. Skripte sind besondere Assets, da sie im Wesentlichen &quot;Container&quot; für benutzerdefinierte Funktionen sind
+    für benutzerdefinierte Funktionen sind und selbst nicht direkt von Ihnen in Ihren Spielen aufgerufen werden. Alle Scripts haben einen <strong>globalen</strong> Geltungsbereich und werden vom <span class="notranslate">GameMaker</span> automatisch ausgeführt, wenn Ihr Spiel startet, sodass Sie sie verwenden können, um globale
+    Variablen und Funktionen definieren, die Sie in Ihrem Spiel verwenden möchten.</p>
+  <p>Jedem <span class="notranslate">DnD™-Skript</span>können eine oder mehrere benutzerdefinierte Funktionen hinzugefügt werden. Diese Funktionen werden mit der Aktion <a href="../Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">Eine neue Funktion deklarieren</a> erstellt:</p>
+  <p><img alt="Declare A New Function Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Declare_Function.png">Die Funktionen, die Sie hier definieren, haben einen globalen Geltungsbereich und verhalten sich ähnlich wie jede eingebaute <span class="notranslate">DnD™-Aktion</span>.
+    Aktion, d. h.: Sie können verschiedene Werte - oder gar keine - als<span class="glossextra">Argumente</span> (oder Parameter) annehmen und dann eine Aufgabe ausführen, wobei sie je nach Bedarf einen Wert oder nichts zurückgeben
+    je nach Bedarf. Sie würden dann die Funktion in Ihren Spielen mit der Aktion <a href="../Drag_And_Drop_Reference/Common/Function_Call.htm">Funktionsaufruf</a> <img alt="Function Call Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Execute_Function.png" width="24"> aufrufen, die wie folgt aussieht:</p>
+  <p><img alt="Function Call Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Execute_Function.png">Um ein <span class="notranslate">DnD™-Skript</span>zu erstellen, verwenden Sie einfach die rechte Maustaste <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> an einer beliebigen Stelle im Asset-Browser und wählen Sie " <strong>Erstellen" </strong>und dann " <strong>Skript"</strong>. Dadurch wird ein neues <span class="notranslate">DnD™-Skript</span>erstellt und das Editorfenster geöffnet:</p>
+  <p><img alt="D&amp;D Script editor" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scripts.png">Sie können das Skript benennen, indem Sie im Asset-Browser mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> klicken und <strong>Umbenennen </strong> wählen (oder mit einem langsamen Doppel-Linksklick <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">), aber beachten Sie, dass der Skript
+    Name den allgemeinen Regeln für Assets entsprechen muss, d. h. er muss mit einem Buchstaben beginnen und darf nur Buchstaben, Zahlen oder das &quot;_&quot;-Unterstrich-Symbol enthalten. Ihr Skript wird auch mit einer Aktion " <strong>Eine neue Funktion deklarieren</strong> " vorausgefüllt,
+    und Sie können bei Bedarf weitere Funktionsdeklarationen hinzufügen (ein einzelnes Skript kann mehrere Funktionen enthalten, was nützlich ist, um Funktionen mit ähnlicher oder verbundener Verwendung zu gruppieren).</p>
+  <p>Wie bereits erwähnt, können Sie einer Funktion eine Reihe von Argumenten übergeben, mit denen sie dann die Aufgabe erfüllt, für die Sie sie geschrieben haben. Um dies besser zu verstehen, nehmen Sie - zum Beispiel - eine der eingebauten Aktionen und denken Sie darüber nach, wie sie funktioniert... Sie
+    Sie platzieren sie in einem Ereignis und geben eine Reihe von Werten an, und sie bewirkt, dass Ihre Instanz etwas tut. Benutzerdefinierte Funktionen sind genau das Gleiche, mit dem einzigen Unterschied, dass <em>Sie </em>sie schreiben.</p>
+  <p>Wenn Sie eine neue Funktion definieren, geben Sie ihr einen Namen und definieren auch den Namen der Argumente, die sie annimmt, falls sie welche annimmt (Funktionen können keine oder mehrere Argumente annehmen, je nachdem, was Sie benötigen). Wenn Sie Argumentnamen angeben, werden diese
+    in den Aktionen, die die Funktion aufruft, als <strong>lokale Variablen </strong>verwendet, die die Eingabewerte der Funktion enthalten.</p>
+  <p>Es ist auch eine gute Praxis, einen Kommentar für die Aktion hinzuzufügen, der erklärt, was sie tut, wobei die <a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">JS Doc-Regeln</a> befolgt werden. Betrachten Sie zum Beispiel diese Funktion <span class="inline">set_vec()</span>:</p>
+  <p><img alt="D&amp;D Function Example With Comments" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_FunctionExample.png">Um das obige Skript aufzurufen, würden Sie einfach die Aktion <strong>Call Function</strong> verwenden,
+    etwa so:</p>
+  <p><img alt="Call A Function From A Script" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Declare_Function_2.png">Sie können nicht nur Argumente an eine Funktion übergeben, sondern auch eine Funktion auffordern, einen Wert zurückzugeben
+    zurückgeben (mit der Aktion <a href="../Drag_And_Drop_Reference/Common/Return.htm">Return</a> <img alt="Return Action Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Return.png" width="24"> ), so dass Sie
+    können Sie damit (z. B.) Berechnungsmethoden aufbauen oder eine Instanz-ID nach einer komplexen Kollisionserkennung oder eine beliebige Anzahl von Dingen zurückgeben. Bitte beachten Sie jedoch, dass die Verwendung von return <strong>die Funktion beendet</strong>, so dass keine Aktionen ausgeführt werden, die nach
+    verwendet wurde, ausgeführt werden, und das bedeutet, dass Sie sich Gedanken darüber machen müssen, wie Ihre Funktionen strukturiert sind.</p>
+  <p>Nachfolgend sehen Sie eine <span class="notranslate">Drag-and-Drop-Funktion</span>, die einen Wert zurückgibt:</p>
+  <p><img alt="D&amp;D Script Return Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Example_Return.png" /></p>
+  <p>Die obige Funktion prüft einfach alle Instanzen in einem Raum, um zu sehen, was ihr <span class="inline">object_index</span> ist, und wenn eine von ihnen das Player-Objekt ist, gibt die Funktion <span class="inline">true</span> zurück (und beendet den Funktionsaufruf) oder
+    <span class="inline">false</span> ZURÜCK. Sie würden diese Funktion wie folgt aufrufen:</p>
+  <p><img alt="Call D&amp;D Script With Return Value" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Call_Return.png">Wir rufen also die Funktion auf und lassen sie eine temporäre (lokale) Variable erstellen, um den zurückgegebenen
+    Wert zu speichern (der in diesem Fall entweder <span class="inline">true</span> oder <span class="inline">false</span> ist), und dann wird diese Variable überprüft und eine Aktion ausgeführt.</p>
+  <p>Bei der Erstellung von Funktionen für Ihre <span class="notranslate">DnD™-Skripte</span>können Sie alle dieselben Aktionen verwenden, die Sie auch beim Hinzufügen von Aktionen in ein Objekt-Event verwenden würden, und Sie können sogar Funktionen aus Funktionen heraus aufrufen und auf diese Weise einen &quot;modulareren&quot; Aktionscode erstellen. Der Aufbau von
+    Skripten mit Funktionen auf diese Weise können Sie viel Zeit bei der Erstellung der gleichen Aktionssequenzen sparen und außerdem dazu beitragen, dass Ihre Aktionssequenzen leichter zu lesen und einfacher zu beheben sind.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../../Content.htm">Index</a></div>
+        <div style="float:right">Weiter: <a href="Changing_DnD_To_Code.htm"> <span class="notranslate">DnD™</span></a>in Code umwandeln</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Scripts
+<span class="notranslate">DnD</span> Scripts
+-->
+  <!-- TAGS
+drag_and_drop_scripts
+-->
+
+</body></html>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Textur-Gruppen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to use Texture Groups
+" />
+  <meta name="rh-index-keywords" content="Texture Groups" />
+  <meta name="search-keywords" content="texture groups,texture pages,textures" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Textur-Gruppen</h1>
+  <p><img alt="Texture Group Editor" class="center" src="../assets/Images/Settings/Texture_Groups.png">Der <strong>Texturgruppen-Manager</strong> ist über das <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">Menü "Werkzeuge"</a> in der IDE verfügbar. Hier
+    können Sie<strong>Texturgruppen</strong> <em>hinzufügen</em>, <em>löschen </em>und <em>umbenennen </em>. <span class="notranslate">GameMaker Studio 2</span> erlaubt es Ihnen, jedes der Grafik-Assets (Sprites, Tilesets und Schriften) verschiedenen Texturgruppen zuzuordnen, um die Anzahl der
+    von Texturwechseln zu optimieren, die die Hardware zu einem bestimmten Zeitpunkt in Ihrem Spiel durchführt. Damit das funktioniert, müssen Sie die erforderlichen Texturgruppen in diesem Fenster definieren und dann durch die entsprechenden Asset-Typen gehen und die Gruppe, zu der sie gehören sollen, aus dem Dropdown-Menü auswählen.
+    aus dem Dropdown-Menü auswählen. Alternativ können Sie Assets über das Menü der rechten Maustaste <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> zu einer Texturgruppe hinzufügen.
+    Sie können ein oder mehrere Assets (oder einen ganzen Asset-Gruppen-Ordner) auswählen und dann das RMB-Menü verwenden, um die Assets zu einer beliebigen Gruppe hinzuzufügen, wie unten für Tilesets gezeigt:</p>
+  <p><img alt="Asset Browser RMB Menu For Tilesets" class="center" src="../assets/Images/Settings/QS_RMBMenu_Tilesets.png">ist es wichtig zu wissen, dass eine einzelne Texturgruppe mehrere Texturseiten haben kann und diese <strong>nicht </strong>gleichwertig sind.
+    Wenn Ihr Spiel viele einzigartige Grafiken für jede Ebene hat, dann können Sie eine einzelne <em>Texturgruppe </em>für jede der Ebenen definieren, aber die Grafiken erfordern zwei oder mehr <em>Texturseiten </em>pro Gruppe.</p>
+  <p>Standardmäßig werden alle Bilder in Ihrem Spiel der Texturgruppe &quot;Standard&quot; hinzugefügt, die immer vorhanden ist. Sie können jedoch auf die Schaltfläche " <strong>Neu hinzufügen"</strong> klicken, um eine neue Texturgruppe zu erstellen, und wenn Sie den Namen der Gruppe wählen, können Sie
+    ändern Sie ihn etwas Passendes. Zu Beginn zeigt die Gruppe<em>für</em> jeden Abschnitt der Gruppe (Sprites, Tilesets und Fonts) &quot;Diese<em>Gruppe ist leer&quot;</em> an, und so müssen Sie dann Ihre Grafik-Assets durchgehen und sie hinzufügen. Sie können
+    eine Ressource über die Schaltfläche " <strong>Add Resource" (Ressource hinzufügen</strong> ) am unteren Rand oder durch Auswahl der Texturgruppe im Ressourceneditor für das Bild, das Kachelset oder die Schriftart. Andere Texturgruppen als die &quot;Standard&quot;-Gruppe können auch jederzeit gelöscht werden.
+    Dadurch wird ihr Inhalt in die Gruppe &quot;Standard&quot; verschoben (beachten Sie, dass Sie, wenn Sie eine Gruppe versehentlich löschen, <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">Z</span>&quot; verwenden können, um die Aktion rückgängig zu machen).</p>
+  <p>Sobald Sie Texturgruppen definiert - und ihnen Grafik-Assets zugewiesen - haben, sehen Sie sie links im Hauptfenster des Texturgruppen-Editors aufgelistet, und wenn Sie auf eines der Sprites in dieser Liste klicken, werden sie im Bildvorschau-Fenster auf der
+    auf der rechten Seite. Dies ist besonders hilfreich, wenn Sie an großen Projekten arbeiten und sehen müssen, welche Bilder welcher Gruppe zugewiesen wurden. Beachten Sie, dass, wenn die der Gruppe zugewiesenen Bilder mehrere Unterbilder haben (d. h., sie sind animiert), dann
+   <em>nur das erste Teilbild im Vorschaufenster angezeigt wird</em>. Sie können auch mit der rechten Maustaste <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> auf eine Ressource klicken, um ein kleines Menü zu öffnen, das Ihnen die Möglichkeit gibt
+    um sie in eine andere Texturgruppe zu verschieben oder den Editor für diese Ressource zu öffnen.</p>
+  <p>Es ist erwähnenswert, dass, auch wenn die Assets in der Liste als getrennt angezeigt werden, alle Sprites, Tilesets und Fonts zur gleichen Texturseite (oder Seiten) hinzugefügt werden und nicht für jeden Ressourcentyp eine eigene Seite erhalten. Die einzige Ausnahme von dieser
+    Die einzige Ausnahme von dieser Regel ist, wenn ein Sprite-Asset als &quot;Separate<strong>Textur-Seite&quot;</strong> gekennzeichnet wurde<strong>. In diesem</strong> Fall erhält es eine eigene Textur-Seite (siehe den Abschnitt &quot;Textur-Einstellungen&quot; im Sprite-Editor für <a href="../The_Asset_Editors/Sprites.htm">weitere Details).</a> </p>
+  <p>Weitere Informationen zu Texturseiten und wie sie erzeugt werden, finden Sie auf der folgenden Seite:</p>
+  <ul class="colour">
+    <li><a href="Texture_Information/Texture_Pages.htm">Textur-Seiten</a></li>
+  </ul>
+  <p>Mit den <strong>Gruppeneinstellungen</strong> im Texturgruppen-Editor wird genau festgelegt, wie die Texturseiten für eine bestimmte Gruppe erstellt werden sollen, wobei folgende Optionen zur Verfügung stehen:</p>
+  <ul class="colour">
+    <li><strong>Skalierung zulassen</strong> - Wenn Sie diese Option deaktivieren, wird <span class="notranslate">GameMaker Studio 2</span> gezwungen, die Texturgruppe unter keinen Umständen zu skalieren. Dies kann vor allem bei Universal-Apps nützlich sein, da es Ihnen erlaubt, bestimmte Ressourcen wie
+      Schriftarten in eine eigene Gruppe zu legen, die verwendet wird, wenn die App auf einem bestimmten Gerät läuft. Zum Beispiel können Schriften auf einem Retina-Display großartig aussehen, aber wenn sie herunterskaliert werden, um auf einem normalen Display zu zeichnen, können sie schrecklich aussehen, also können Sie sie einer
+      Wenn Sie für das iPhone entwickeln, sollten Sie diese Option aktivieren, da Apps abgelehnt wurden, weil die Bilder durch die Texturskalierung unscharf wurden. Diese Option ist standardmäßig <em>aktiviert </em>.</li>
+    <li><strong>Automatisch beschneiden</strong> - Wenn Sie Bilder in <span class="notranslate">GameMaker Studio 2</span> hinzufügen, werden diese automatisch beschnitten, wenn sie einen &quot;Raum&quot; um sie herum haben (d. h. 100 % Transparenz), und &quot;Automatisch
+      Zuschneiden&quot; ist markiert. Wenn Sie das Bild jedoch z. B. als nicht-wiederholende Textur für Primitives oder ähnliches verwenden, bedeutet dies, dass die UV-Koordinaten für das Texturmapping nicht korrekt dargestellt werden. In diesen Fällen
+      können Sie diese Option deaktivieren und das Sprite wird der Texturseite &quot;so wie es ist&quot; hinzugefügt, wobei alle Transparenzen an den Rändern erhalten bleiben. Diese Option ist standardmäßig <em>aktiviert </em>.</li>
+    <li><strong>Mipmaps generieren</strong> - Wenn Sie diese Option aktivieren (standardmäßig ist sie ausgeschaltet), teilt <span class="notranslate">GameMaker Studio 2</span> mit, dass die ursprüngliche Texturseite skaliert und in mehrere Auflösungen innerhalb der Texturdatei gefiltert werden soll. Normalerweise ist diese Option <em>ausgeschaltet</em>,
+      aber wenn Sie Kameras verwenden, um große Bereiche des Spielraums zu vergrößern oder zu verkleinern, oder wenn Sie mit einem 3D-Spiel arbeiten, dann sollten Sie dies aktivieren und dann die <a href="../GameMaker_Language/GML_Reference/Drawing/Mipmapping/Mipmapping.htm">Mipmapping-Funktionen</a> verwenden, um
+      einstellen, wie das Spiel mit den verschiedenen Mipmap-Ebenen umgeht. Wenn Sie dieses Kontrollkästchen aktivieren, wird der Wert für &quot;Randgröße&quot; auf 8 gesetzt (wenn er ursprünglich auf weniger als 8 eingestellt war). Das liegt daran, dass Sie bei der Verwendung von Mipmaps größere Ränder zwischen
+      Bildern auf den Textur-Seiten größere Ränder benötigen, da sie sonst bei höheren Mip-Levels zu verschmelzen beginnen. Der Standardwert von 8 erlaubt es, das Bild auf etwa ein Achtel seiner ursprünglichen Größe zu verkleinern, bevor die Teilbilder anfangen, zusammenzubluten, aber Sie können
+      Sie können diesen Wert jedoch auf jeden beliebigen Wert ändern, der für Ihre Bedürfnisse erforderlich ist. Beachten Sie, dass Sie, wenn Sie die Option &quot;Separate<strong>Texture Page&quot;</strong> für Sprites verwenden, hier nicht durch jede Textur gehen und sie markieren müssen, um Mipmaps zu erzeugen,
+      Stattdessen können Sie in den <a href="Game_Options.htm">allgemeinen Spieloptionen</a> die Option &quot;<strong>Mipmaps für separate Texturseiten</strong> generieren<strong>&quot; aktivieren.</strong></li>
+    <li><strong>Randgröße</strong> - Die Randgröße ändert die Überlappung (oder &quot;Pixelverdopplung&quot;) an den Rändern aller Assets auf den für die Texturgruppe generierten Seiten, so dass bei der Skalierung der Bilder keine Lücken (oder Nähte)
+      zwischen ihnen sichtbar sind. Der Standardwert ist 2 Pixel, aber in extremen Fällen, in denen Sie die Ansicht stark vergrößern oder verkleinern, müssen Sie diesen Wert eventuell erhöhen. Beachten Sie, dass der <a href="../The_Asset_Editors/Tile_Sets.htm">Kachelsatz-Editor</a> eine
+      eine Option zum Einstellen des Ausgaberahmens für Kacheln hat (und auch eine Erklärung liefert, warum dies notwendig ist), und dies ist unabhängig von der Rahmeneinstellung hier - im Grunde werden die Kacheln mit einem Ausgaberahmen für jede Kachel auf einer temporären Textur erzeugt,
+      und diese wird dann der Texturseite mit dem hier angegebenen Rand um die Außenkante hinzugefügt. Beachten Sie auch, dass beim Aktivieren von Mipmaps die Standard-Rahmengröße für die Texturseite automatisch auf 8 gesetzt wird, um ein &quot;Ausbluten&quot; zwischen
+      Texturen bei höheren Mip-Levels zu verhindern, aber dies kann geändert werden.</li>
+    <li><strong>Übergeordnete Texturgruppe</strong> - Hier können Sie eine beliebige der vorhandenen Gruppen als &quot;übergeordnete&quot; Gruppe für die aktuell ausgewählte Gruppe auswählen. &quot;Untergeordnete&quot; Gruppen erben alle Änderungen, die an der übergeordneten Texturgruppe vorgenommen werden, und dienen hauptsächlich
+      für die Ressourcenverwaltung bei der Arbeit mit plattformübergreifenden Spielen. Eine Texturgruppe mit einer übergeordneten Gruppe ist immer noch eine eigenständige Texturgruppe und erzeugt Texturseiten wie jede andere Gruppe, aber das Zuweisen einer übergeordneten Gruppe ermöglicht es Ihnen, große Teile für verschiedene Plattformen auszuschließen.
+      große Abschnitte für verschiedene Plattformen. Sie können z. B. eine ganze Reihe von <span class="notranslate">Android-Spieler-Sprites</span> zu einer &quot;player&quot;-Gruppe und <span class="notranslate">Android-Feind-Sprites</span> zu einer &quot;enemy&quot;-Gruppe hinzufügen und dann dafür sorgen, dass beide eine &quot;android&quot;-Elterngruppe verwenden.
+      Wenn Sie dann die übergeordnete Gruppe &quot;android&quot; aus dem Build für Windows oder <span class="notranslate">eine andere</span> Plattform ausschließen, werden auch die untergeordneten Gruppen ausgeschlossen.</li>
+  </ul>
+  <p>Abgesehen von diesen Einstellungen können Sie auch wählen, ob eine bestimmte Texturgruppe für eine bestimmte Plattform exportiert werden soll oder nicht, indem Sie einfach die entsprechenden Kästchen im Abschnitt " <strong>Gruppe verwenden auf</strong>..." des Fensters aktivieren oder deaktivieren. Beachten Sie jedoch, dass
+    die Texturgruppe <span class="inline">&lt;Default&gt;</span> <em>immer auf jede Plattform exportiert</em> wird und Sie keine der Texturgruppen aktivieren/deaktivieren können (nur benutzerdefinierte Texturgruppen erlauben dies).</p>
+  <p>Texturgruppen sind auch mit den Einstellungen für <a href="Configurations.htm">Konfigurationen</a> verknüpft. Das bedeutet, dass Sie Texturgruppen für jede einzelne Konfiguration Ihres Spiels definieren können und dann die Sprite-, Kachel-Set- oder Font-Ressourcen
+    Zuordnungen zu diesen verschiedenen Gruppen festlegen und es wird &quot;gemerkt&quot;, wenn Sie zu einer anderen Konfiguration wechseln. Dasselbe geschieht mit allen Exportoptionen, die Sie im Texturgruppen-Fenster gewählt haben, so dass Sie die Texturgruppen so einstellen können
+    für den Export auf bestimmte Plattformen auf Basis der einzelnen Konfigurationen einstellen.</p>
+  <p>Eine Anwendung dafür ist z. B., dass Sie eine iPad-Konfiguration erstellen könnten und dafür 2048x2048px Textur-Seiten erstellen (dies über die <a href="Game_Options.htm">Spieloptionen</a> einrichten). Sie würden dann alle Grafik-Assets der entsprechenden Texturgruppe zuweisen.
+    Texturgruppe zu, und wenn Sie fertig sind, wechseln Sie zu einer anderen Konfiguration (z. B. für HTML5) und erstellen im Fenster "Texturgruppe" neue Texturgruppen mit 512x512px, denen Sie die Assets zuweisen. Es gibt auch eine
+    eine Schaltfläche am unteren Rand der Seite, mit der Sie die Texturgruppeneinstellungen von einer Konfiguration in eine andere kopieren können.</p>
+  <p>Schließlich sind Texturgruppen nur für <a class="glossterm" data-glossterm="Bitmap" href="#">Bitmap-Bilder</a> relevant, und Nicht-Bitmap-Sprites werden keinen Texturgruppen zugewiesen. Einige von ihnen haben bereits ihre eigene, einzigartige Texturseite (Skelett
+    Animations-Sprites), während andere einfach keine Texturen benötigen, da sie aus Vektoren bestehen <a class="glossterm" data-glossterm="Vektor" href="#">.</a>Weitere Informationen finden Sie im folgenden Abschnitt:</p>
+  <ul class="colour">
+    <li><a href="Texture_Information/Non-Bitmap_Sprites.htm">Nicht-Bitmap-Sprites</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Game_Settings.htm">Spiel-Einstellungen</a></div>
+        <div style="float:right">Nächste: <a href="Game_Options.htm">Spiel-Optionen</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Texture Groups
+Texture Group Manager
+-->
+  <!-- TAGS
+texture_groups
+-->
+
+</body></html>

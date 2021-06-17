@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Neu</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing the New action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - New" />
+  <meta name="search-keywords" content="New" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="New Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_New.png" width="32"> Neu</h1>
+  <p>Diese Aktion wird <strong>nur<em> </em></strong>verwendet, wenn Strukturen mit einer Funktion erstellt werden, die als <strong>Konstruktorfunktion</strong> gekennzeichnet wurde (siehe <a href="Declare_A_New_Function.htm">Deklarieren einer neuen Funktion</a> für weitere Informationen). Diese
+    Aktion nimmt die Funktionsmethode für eine zuvor definierte Funktion sowie eine Reihe von Argumenten entgegen, die Sie bei Bedarf mit dem Symbol <img alt="Expand Arguments Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> auf der linken Seite erweitern können, um weitere hinzuzufügen. Diese Argumente sollten den Eingaben entsprechen, die von der Funktion benötigt werden, und werden verwendet, um die zu erstellende Struktur zu füllen. Die Struktur wird an die Zielvariable zurückgegeben, die als temporäre lokale Variable gekennzeichnet werden kann.
+    Variable gekennzeichnet sein kann oder nicht.<strong></strong></p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="New Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_New.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Skript</td>
+        <td>Der Name des aufzurufenden Skripts oder der benutzerdefinierten Funktion.</td>
+      </tr>
+      <tr>
+        <td>Argument0 ... Argument3</td>
+        <td>Die verschiedenen Argumente (Werte), die an das Skript oder die Funktion übergeben werden sollen (nicht verwendete Argumente können leer gelassen werden)</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Der Name der Variablen, auf die die zurückgegebenen Werte ausgerichtet werden sollen (kann leer bleiben)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p><img alt="New Exmaple 1" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png">Der obige Code des Aktionsblocks würde wahrscheinlich in das <b>Ereignis Create</b> einer Instanz gehen und deklariert
+    eine neue Konstruktorfunktion <tt>init_char_struct</tt> mit vier Argumenten: <tt>_str1</tt>, <tt>_str2</tt>, <tt>_val1</tt> und <tt>_val2</tt>. Diese Argumente werden dann verwendet, um die angegebenen Variablen innerhalb der Struktur, die die Funktion erstellt, zu füllen.
+    Sie würden dann die Funktion mit der Aktion <a href="New.htm">"Neu"</a> in jedem nachfolgenden Ereignis aufrufen, etwa so:</p>
+  <p><img alt="New Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png">Die Funktion wird aufgerufen und gibt ein neues struct zum Array &quot;char&quot; zurück, und das struct
+    wird mit den Variablen &quot;name&quot;, &quot;location&quot;, &quot;hp&quot; und &quot;mana&quot; gefüllt, die auf die für die entsprechenden Argumente in der Funktion verwendeten Werte gesetzt werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Common_Actions_Library.htm">Gemeinsame Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Function_Call.htm">Funktionsaufruf</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Execute Script
+-->
+  <!-- TAGS
+action_execute_script
+-->
+</body>
+</html>

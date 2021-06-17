@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>klickbar_vorhanden</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for clickable_exists" />
+  <meta name="rh-index-keywords" content="clickable_exists" />
+  <meta name="search-keywords" content="clickable_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>klickbar_vorhanden</h1>
+  <p>Diese Funktion gibt zurück, ob ein klickbares DOM-Icon mit dem angegebenen Index existiert oder nicht. Bitte beachten Sie, dass der Wert, der zur Überprüfung verwendet wird, <i>zuvor initialisiert worden sein muss</i>, sonst erhalten Sie einen Fehler, der das <span class="notranslate">GameMaker Studio 2</span> beendet.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">clickable_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu prüfenden Clickables.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !clickable_exists(home_but)<br> {
+    <br> home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;);<br> }
+  </p>
+  <p>Der obige Code prüft die Variable &quot;home_but&quot;, um zu sehen, ob sie bereits vorhanden ist, und wenn nicht, wird ein klickbares DOM-Symbol an der Position (32, 32) der Seite erstellt, auf der das Game Canvas läuft. Das Symbol verwendet das Sprite, das auf der
+    Das Symbol verwendet das Sprite, das von der Texturseite als &quot;spr_MS_Home&quot; referenziert wird, und wenn es angeklickt wird, wird ein neues Fenster für die angegebene URL und mit den definierten Eigenschaften für dieses Fenster geöffnet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Web_And_HTML5.htm">Web und HTML5</a></div>
+        <div style="float:right">Weiter: <a href="clickable_add.htm">clickable_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+clickable_exists
+-->
+  <!-- TAGS
+clickable_exists
+-->
+</body>
+</html>

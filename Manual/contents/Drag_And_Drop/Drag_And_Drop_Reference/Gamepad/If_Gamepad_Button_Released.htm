@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn Gamepad-Taste losgelassen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Gamepad Button Released action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Gamepad Button Released" />
+  <meta name="search-keywords" content="If Gamepad Button Released" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Gamepad Button Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_If_Button_Released.png"> Wenn Gamepad-Taste losgelassen wird</h1>
+  <p>Diese Aktion prüft, wann eine Gamepad-Taste für den angegebenen Gamepad-Index losgelassen wurde. Sie gibt <tt>true</tt> zurück, wenn die Taste bei einem einzigen Spieltick losgelassen wird, und <tt>false</tt> zu allen anderen Zeiten. Wenn Sie den Modifikator <tt>not</tt> aktivieren,
+    Wenn Sie den Modifikator not aktivieren, wird diese Aktion umgekehrt und prüft, ob die Taste <i>nicht</i> losgelassen wurde, und gibt <tt>false</tt> bei dem Spieltick zurück, bei dem sie losgelassen wurde, und <tt>true</tt> zu allen anderen Zeiten.</p>
+  <p>Wenn es sich bei der zu prüfenden Taste um eine analoge Taste handelt, wird das Loslassen erst dann erkannt, wenn der Tastenwert unter den mit der Aktion <a href="Set_Gamepad_Button_Threshold.htm">Gamepad-Tastenschwelle festlegen</a> eingestellten Schwellenwert gefallen ist.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in den &quot;if&quot;-Block diese an der Seite der Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="If Gamepad Button Released drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_If_Gamepad_Button_ReleaseDrop.png">Diese Aktionen werden nun ausgeführt, wenn der &quot;if&quot;-Block zu
+   <tt>wahr ist</tt>, während alle Aktionen, die an anderer Stelle ausgelassen werden, nach dem &quot;if&quot;-Block ausgeführt werden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="If Gamepad Button Released Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_If_Button_Released.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gamepad</td>
+        <td>Der Gamepad-Index.</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Der Name der zu prüfenden Schaltfläche.</td>
+      </tr>
+      <tr>
+        <td>Nicht</td>
+        <td>Negieren der Prüfung (aus true wird false und umgekehrt)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="If Gamepad Button Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_If_Button_Down.png">Der obige Code des Aktionsblocks fragt den Tastenzustand des Gamepads 0 bei jedem Schritt ab und
+    wenn eine Taste gedrückt gehalten wird, prüft er, ob die Taste zum ersten Mal gedrückt wird. Wenn die Prüfung auf den ersten Tastendruck <tt>zutrifft</tt>, wird ein Ton abgespielt und die Instanzgeschwindigkeit auf 10 gesetzt, während die Taste gedrückt wird. Wenn die Taste nicht gedrückt wird
+    wird beim Loslassen der Taste eine Prüfung durchgeführt, um die Geschwindigkeit wieder auf 0 zurückzusetzen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Actions.htm">Gamepad-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Get_Gamepad_Axis.htm">Gamepad Get Axis</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Gamepad Button Released
+-->
+  <!-- TAGS
+action_if_gamepad_button_released
+-->
+</body>
+</html>

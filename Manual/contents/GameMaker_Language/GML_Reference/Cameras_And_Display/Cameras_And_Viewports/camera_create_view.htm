@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>kamera_erzeugen_ansicht</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_create_view" />
+  <meta name="rh-index-keywords" content="camera_create_view" />
+  <meta name="search-keywords" content="camera_create_view" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>kamera_erzeugen_ansicht</h1>
+  <p>Diese Funktion erstellt eine neue Kamera und stellt dann ihre Ansicht im Raum ein, bevor sie den eindeutigen ID-Wert zurückgibt, um die Kamera in zukünftigen Funktionsaufrufen zu identifizieren. Die Kamera wird mit den Werten angelegt, die Sie in dieser Funktion für Position, Größe
+    und andere Details, die mit den Werten korrelieren, die Sie im Raum-Editor eingestellt haben (siehe <a href="../../../../The_Asset_Editors/Rooms.htm">hier</a>). Beachten Sie, dass diese Funktion eine <i>variable Anzahl von Argumenten</i> annehmen kann, wobei nur die Argumente x/y-Position und Breite/Höhe
+    Argumente obligatorisch sind. Alle Argumente, die nicht angegeben werden, verwenden ihre Standardargumente.</p>
+  <p>Beachten Sie, dass Kameras wie alle dynamischen Ressourcen sind und bei ihrer Erstellung Speicher belegen. Das bedeutet, dass Sie darauf achten müssen, Kameras nicht unnötig zu erzeugen und solche zu zerstören, die Sie nicht benötigen, indem Sie die Funktion <a href="camera_destroy.htm"><tt>camera_destroy()</tt></a>.
+    Das bedeutet auch, dass Kameras von Raum zu Raum bestehen bleiben, wenn sie einer <tt>globalen</tt> Variablen zugewiesen werden (sie bleiben auch bestehen, wenn sie Instanz- oder lokalen Variablen zugewiesen werden, aber Sie können nach einem Raumwechsel nicht mehr auf sie zugreifen, daher das Speicherleck), so dass
+    Sie können also z. B. eine neue Kamera erstellen, sie einer globalen Variablen zuweisen und dann zu Beginn eines jeden Raums die <tt>camera_set_*-Funktionen</tt> verwenden, um die Eigenschaften zu setzen, bevor Sie sie einem Ansichtsanschluss zuweisen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_create_view(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>raum_x</td>
+        <td>Die x-Position (innerhalb des Raums) der linken Seite des Bereichs, den die Kameraansicht erfasst.</td>
+      </tr>
+      <tr>
+        <td>raum_y</td>
+        <td>Die y-Position (innerhalb des Raums) des oberen Teils des Bereichs, den die Kameraansicht erfasst.</td>
+      </tr>
+      <tr>
+        <td>Breite</td>
+        <td>Die Breite des Bereichs, den die Ansicht erfasst.</td>
+      </tr>
+      <tr>
+        <td>Höhe</td>
+        <td>Die Höhe des Bereichs, den die Ansicht erfasst.</td>
+      </tr>
+      <tr>
+        <td>Winkel</td>
+        <td>Der Winkel, der für die Kameraansicht eingestellt werden soll (von 0° - 360°, Standard ist 0).</td>
+      </tr>
+      <tr>
+        <td>Objekt</td>
+        <td>Die Objekt-ID (oder Instanz-ID) für die zu verfolgende Kameraansicht (Standard ist -1, kein Objekt).</td>
+      </tr>
+      <tr>
+        <td>x_Geschwindigkeit</td>
+        <td>Die maximale horizontale Geschwindigkeit, mit der sich die Ansicht bewegen kann (gesetzt auf -1 für &quot;sofortiges&quot; Folgen, Standard ist -1).</td>
+      </tr>
+      <tr>
+        <td>y_Geschwindigkeit</td>
+        <td>Die maximale vertikale Geschwindigkeit, mit der sich die Ansicht bewegen kann (gesetzt auf -1 für &quot;sofortiges&quot; Folgen, Standard ist -1).</td>
+      </tr>
+      <tr>
+        <td>x_Rand</td>
+        <td>Der minimale horizontale Abstand zwischen dem Rand des Ansichtsbereichs und der Instanz, der er folgen soll (bevor die Ansicht beginnt, sich zu bewegen, und wenn er eingestellt ist, einer Instanz zu folgen, ist der Standardwert 0).</td>
+      </tr>
+      <tr>
+        <td>y_Rand</td>
+        <td>Der minimale vertikale Abstand zwischen dem Rand des Ansichtsbereichs und der Instanz, der er folgen soll (bevor die Ansicht beginnt, sich zu bewegen, und wenn er eingestellt ist, einer Instanz zu folgen, ist der Standardwert 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (eindeutiger Kamera-ID-Wert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">camera_destroy(view_camera[0]);<br> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1);</p>
+  <p>Der obige Code entfernt die aktuelle, dem Ansichtsfenster[0] zugewiesene Kamera und erstellt dann eine neue Kamera, definiert deren Ansichtseigenschaften und weist diese dann dem Ansichtsfenster[0] zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_destroy.htm">camera_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_create_view
+-->
+  <!-- TAGS
+camera_create_view
+-->
+</body>
+</html>

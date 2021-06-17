@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_get_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_get_gain" />
+  <meta name="rh-index-keywords" content="audio_emitter_get_gain" />
+  <meta name="search-keywords" content="audio_emitter_get_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emitter_get_gain</h1>
+  <p>Diese Funktion gibt die aktuell eingestellte Verstärkung (Lautstärke) für den angegebenen Audioemitter zurück, normalerweise zwischen 0 und 1, wobei 0 stumm und 1 die volle Lautstärke ist. Beachten Sie, dass Sie auf einigen Plattformen eine Verstärkung von mehr als 1 haben können, obwohl ein Wert von 1 als
+    Allerdings gilt ein Wert von 1 als &quot;volle Lautstärke&quot;, und alles, was darüber liegt, kann zu Audio-Clipping führen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_emitter_get_gain(emitter);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Emitter</td>
+        <td>Der Index des zu verwendenden Emitters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if audio_emitter_get_gain(emitter_player) &lt; 1<br> {
+    <br> audio_emitter_gain(emitter_player, 1);<br> }
+  </p>
+  <p>Der obige Code prüft die aktuelle Verstärkung eines bestimmten Emitters und wenn diese kleiner als 1 ist, wird sie auf 1 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Emitters.htm">Audio-Emitter</a></div>
+        <div style="float:right">Weiter: <a href="audio_emitter_get_pitch.htm">audio_emitter_get_pitch</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_get_gain
+-->
+  <!-- TAGS
+audio_emitter_get_gain
+-->
+</body>
+</html>

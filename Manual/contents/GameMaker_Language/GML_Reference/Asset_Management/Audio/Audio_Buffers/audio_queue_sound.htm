@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_queue_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_queue_sound" />
+  <meta name="rh-index-keywords" content="audio_queue_sound" />
+  <meta name="search-keywords" content="audio_queue_sound" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_queue_sound</h1>
+  <p>Diese Funktion fügt die Daten aus einem Puffer in die Audio-Warteschlange ein, die Sie zuvor mit der Funktion <a href="audio_create_play_queue.htm"><tt>audio_erzeugen_wiedergabe_warteschlange()</tt></a>. Sie geben den Index der Warteschlange an, zu der hinzugefügt werden soll, und die
+    Puffer-ID, aus der die Daten geholt werden sollen, sowie die Position (Offset) innerhalb des Puffers und die Anzahl der hinzuzufügenden Bytes. Sobald Sie Audio aus einem Puffer zu einer Warteschlange hinzugefügt haben, kann der Puffer erst gelöscht werden, nachdem Sie die Warteschlange mit der Funktion 
+    <a href="audio_free_play_queue.htm"><tt>audio_free_play_queue()</tt></a>und die Puffereigenschaften sollten mit denen der Warteschlange übereinstimmen, der Sie den Ton hinzufügen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_queue_sound(queueIndex, bufferId, bufferOffset, bufferLength);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>queueIndex</td>
+        <td>Der Index der Warteschlange, zu der hinzugefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>bufferId</td>
+        <td>Der Puffer, der der Warteschlange hinzugefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>BufferOffset</td>
+        <td>Der Offset innerhalb des Quellpuffers, von dem aus gestartet werden soll.</td>
+      </tr>
+      <tr>
+        <td>PufferLänge</td>
+        <td>Die Länge des Puffers (die Anzahl der Bytes im Puffer).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">len = async_load[? &quot;data_len&quot;];<br> audio_buff = buffer_create(len, buffer_fast, 1);<br> buffer_copy(async_load[? &quot;buffer_id&quot;], 0, len, buff, 0);<br> audio_queue_sound(audio_queue, audio_buff, 0, len);<br> audio_play_sound(audio_queue,
+    10, 0);</p>
+  <p>Der obige Code würde im asynchronen <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">Audio-Aufnahme-Ereignis</a> aufgerufen werden und weist einige aufgenommene Daten einem Puffer zu, der
+    dann zu einer Audio-Warteschlange hinzugefügt wird. Diese wird dann abgespielt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Audio.htm">Audio-Puffer</a></div>
+        <div style="float:right">Weiter: <a href="audio_start_recording.htm">audio_start_recording</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_queue_sound
+-->
+  <!-- TAGS
+audio_queue_sound
+-->
+</body>
+</html>

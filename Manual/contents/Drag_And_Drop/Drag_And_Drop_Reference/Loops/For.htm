@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Für</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the For action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - For" />
+  <meta name="search-keywords" content="For" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="For Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_For.png"> Für</h1>
+  <p>Die <b>For-Aktion</b> wird verwendet, um Schleifen auszuführen, die nur beendet werden, wenn ein Wert die angegebene Bedingung erreicht. Sie geben einen Anfangswert als Variable an (die als temporäre lokale Variable gekennzeichnet werden kann - das ist normalerweise das, was Sie wollen), dann geben Sie
+    die Bedingung, gegen die die Variable geprüft werden soll (z. B. ob sie kleiner als ein bestimmter Wert ist), und schließlich den Betrag, um den die Variable bei jeder Iteration der Schleife erhöht werden soll. Der allgemeine Ablauf ist also wie folgt:</p>
+  <ul class="colour">
+    <li>Sie initialisieren eine Variable auf einen Wert</li>
+    <li>Sie legen die Bedingung fest, mit der diese Variable geprüft werden soll</li>
+    <li>Sie stellen ein, um wie viel die Variable bei jeder Iteration der Schleife inkrementiert werden soll</li>
+    <li>Sie fügen dann Aktionen in die Schleife ein, und diese werden bei jeder Iteration ausgeführt, bis die Bedingung <tt>false</tt> zurückgibt oder eine Break-Aktion auftritt.</li>
+  </ul>
+  <p>Beim Hinzufügen von Aktionen, die innerhalb der Schleife ausgeführt werden sollen, werden diese so hinzugefügt, wie Sie eine Aktion zu einem &quot;wenn&quot; hinzufügen würden, d. h.: Sie werden an der Seite der Aktion und nicht darunter eingefügt:</p>
+  <p><img alt="For drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/For_Drop.png">Alle auf der Seite hinzugefügten Aktionen werden in das For aufgenommen und ausgeführt, bevor das Ereignis oder Skript fortgesetzt wird
+    mit den darunter hinzugefügten Aktionen. Beachten Sie, dass Sie jede Schleife vorzeitig beenden können, wenn Sie die Aktion <a href="Break.htm">"Break</a> " aufrufen, und wenn Sie For-Schleifen verwenden, müssen <i>Sie</i> nicht inkrementieren und können sie auch dekrementieren lassen, solange die Bedingung
+    die Sie verwenden, angemessen ist. Setzen Sie z. B. die Anfangsvariable auf 10, setzen Sie die Bedingung so, dass sie auf weniger als 0 prüft und setzen Sie dann den Inkrementwert auf -1 und die Schleife wird 10-mal iterieren, wobei sie von 10 bis 0 rückwärts zählt.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="For Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/a_Loops_For.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Initialisieren</td>
+        <td>Initialisieren Sie die Variable, die zum Zählen verwendet werden soll, auf einen Wert (kann als temporäre lokale Variable gekennzeichnet werden)</td>
+      </tr>
+      <tr>
+        <td>Zustand</td>
+        <td>Die zu prüfende Bedingung, um die Schleife zu unterbrechen</td>
+      </tr>
+      <tr>
+        <td>Inkrement</td>
+        <td>Der Betrag, um den die anfängliche Zählvariable bei jeder Iteration der Schleife erhöht (oder erniedrigt) wird</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="For Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/e_Loops_For.png">Der obige Aktionsblockcode führt eine <tt>for-Schleife</tt> aus, um zu prüfen, ob ein Gamepad an einem der 12 verfügbaren
+    &quot;Steckplätzen&quot; angeschlossen ist. Wenn ein Gamepad entdeckt wird, wird eine globale Variable auf die aktuelle Steckplatznummer gesetzt und die Schleife wird abgebrochen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Loop_Actions.htm">Schleifen-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Break.htm">Pause</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - For
+-->
+  <!-- TAGS
+action_for
+-->
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_speed_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function 
+sprite_get_speed_type" />
+  <meta name="rh-index-keywords" content="sprite_get_speed_type,spritespeed_framespersecond,spritespeed_framespergameframe" />
+  <meta name="search-keywords" content="sprite_get_speed_type,spritespeed_framespersecond,spritespeed_framespergameframe" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_speed_type</h1>
+  <p>Mit dieser Funktion kann der Sprite-Animationstyp abgerufen werden, wie er für die Sprite-Ressource im <a href="../../../../../The_Asset_Editors/Sprites.htm">Sprite-Editor</a> definiert ist. Der zurückgegebene Wert ist eine der folgenden Konstanten:<br>
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><span class="inline">spritespeed_framespersecond</span></td>
+        <td>Das Sprite wurde mit einer Animation in <i>Bildern pro</i> Sekunde definiert.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">spritespeed_framespergameframe</span></td>
+        <td>Das Sprite wurde mit in Animation in <i>Frames pro Spielframe</i> definiert.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Die folgenden zwei Beispiele verdeutlichen den Unterschied, den dies bei der Berechnung der Animationsgeschwindigkeiten für das Sprite machen kann:</p>
+  <ul class="colour">
+    <li>Wenn Sie ein Sprite haben, das 1 Bild pro <i>Sekunde</i> zeichnet, und die Bildgeschwindigkeit auf 0,5 einstellen, wird es mit 0,5 Bildern pro Sekunde gezeichnet. Wenn Ihre Spielbildrate 60 Bilder pro Sekunde beträgt, zeichnet das Sprite 1 Bild pro 120 Spielbilder.</li>
+    <li>Wenn Sie ein Sprite haben, das 1 Bild pro <i>Spielbild</i> zeichnet, und die Bildgeschwindigkeit auf 0,5 einstellen, wird es 0,5 Bilder pro Spielbild zeichnen. Wenn Ihre Spielbildrate 60 Bilder pro Sekunde beträgt, zeichnet das Sprite 30 Bilder pro 60 Spielbilder.</li>
+  </ul>
+  <p>Den Geschwindigkeitswert für die Sprite-Animation können Sie mit der Funktion <a href="sprite_get_speed.htm"><tt>sprite_get_speed()</tt></a>herausfinden und die Animationsgeschwindigkeit <i>und den</i> Animationstyp mit der Funktion <a href="../Sprite_Manipulation/sprite_set_speed.htm"><tt>sprite_set_speed()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_get_speed_type(index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Sprites, um den Animationstyp von</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Konstant (siehe oben)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">s_speed = sprite_get_speed(sprite_index);<br> s_type = sprite_get_speed_type(sprite_index);</p>
+  <p>Der obige Code ruft die Sprite-Geschwindigkeit und den Sprite-Animationstyp ab und speichert sie in Instanzvariablen für die zukünftige Verwendung.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Information.htm">Sprite-Informationen</a></div>
+        <div style="float:right">Weiter: <a href="sprite_get_width.htm">sprite_get_width</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_speed_type
+spritespeed_framespergameframe
+spritespeed_framespersecond
+-->
+  <!-- TAGS
+sprite_get_speed_type
+-->
+</body>
+</html>

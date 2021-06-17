@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_set_position" />
+  <meta name="rh-index-keywords" content="audio_listener_set_position" />
+  <meta name="search-keywords" content="audio_listener_set_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_set_position</h1>
+  <p>Mit dieser Funktion können Sie die Position eines bestimmten <i>Hörers</i> innerhalb des 3D-Audio-Raums ändern. Der Standard-Hörerindex ist 0, aber Sie können die Funktion <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> verwenden, um
+    die verschiedenen für die Zielplattform verfügbaren Indizes abrufen. Das Beispielbild unten zeigt die Standardposition für den Listener im Audio-Raum:</p>
+  <p><img alt="Audio Listener Spacial Position Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener.png">Wie Sie sehen können, ist die Standardposition (0, 0, 0), aber Sie würden diese Funktion normalerweise verwenden
+    verwenden, um den Listener mit dem Player-Objekt in Ihrem Spiel zu verschieben und so die Art und Weise zu ändern, in der die von Emittern erzeugten Audiosignale vom Spieler gehört werden, z. B. in der folgenden Abbildung eines Top-Down-Spiels setzt die Player-Instanz den Listener, der bewirkt, dass
+    die Audiosignale der verschiedenen Emitter &quot;verändern&quot;, wenn sich der Spieler im Level bewegt:</p>
+  <p><img alt="Audio Listener Game Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Game.png" /></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_listener_set_position(index, x, y, z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Listener, für den die Daten abgerufen werden sollen (Standardwert 0).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position des Hörers (Voreinstellung 0).</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position des Hörers (Voreinstellung 0).</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Die z-Position des Hörers (Voreinstellung 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _vmat = camera_get_view_mat(view_camera[0]);<br> audio_listener_set_position(global.Player_Listener, _vmat[0], _vmat[1], _vmat[2]);<br> audio_listener_set_orientation(info[? &quot;index&quot;], _vmat[3], _vmat[4], _vmat[5], _vmat[6], _vmat[7],
+    _vmat[8]);</p>
+  <p>Der obige Code ruft die Ansichtsmatrix für die Kameraansicht [0] ab und verwendet sie dann, um die Position und Ausrichtung des Audio-Hörers für den Hörer mit der in der globalen Variablen &quot;Player_Listener&quot; gespeicherten ID festzulegen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Listeners.htm">Audio-Hörer</a></div>
+        <div style="float:right">Weiter: <a href="audio_listener_set_velocity.htm">audio_listener_set_velocity</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_position
+-->
+  <!-- TAGS
+audio_listener_set_position
+-->
+</body>
+</html>

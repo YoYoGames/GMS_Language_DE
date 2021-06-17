@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_tiled</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_tiled" />
+  <meta name="rh-index-keywords" content="draw_sprite_tiled" />
+  <meta name="search-keywords" content="draw_sprite_tiled" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_tiled</h1>
+  <p>Diese Funktion nimmt ein Sprite und kachelt es dann wiederholt über die gesamte Ansicht (oder den Raum, wenn keine Ansicht definiert ist), ausgehend von den Koordinaten, die Sie in der Funktion angeben. Die Kachelung basiert auf der Breite und Höhe des Sprites, wie sie in den
+   <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">Sprite-Variablen</a> der Instanz, die den Code ausführt. Diese Funktion ist nur für 2D-Projektionen (orthografisch) geeignet und funktioniert nicht korrekt, wenn eine 3D
+    Kameraprojektion verwendet wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_sprite_tiled(sprite, subimg, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>Der Index des zu zeichnenden Sprites.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Das Subimg (Frame) des zu zeichnenden Sprites (image_index oder -1 entsprechen dem aktuellen Frame der Animation im Objekt).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate, an der das Sprite gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate, an der das Sprite gezeichnet werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_sprite_tiled(sprite_index, image_index, x, y);</p>
+  <p>Dadurch wird das der Instanz zugewiesene Sprite (sprite_index) und sein aktuelles Animationsbild (image_index) an der eigenen x- und y-Position der Instanz gezeichnet und horizontal und vertikal über die Ansicht gekachelt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprites_And_Tiles.htm">Sprites und Kacheln</a></div>
+        <div style="float:right">Weiter: <a href="draw_sprite_tiled_ext.htm">draw_sprite_tiled_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_tiled
+-->
+  <!-- TAGS
+draw_sprite_tiled
+-->
+</body>
+</html>

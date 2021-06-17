@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_integer_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for get_integer_async" />
+  <meta name="rh-index-keywords" content="get_integer_async" />
+  <meta name="search-keywords" content="get_integer_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_integer_async</h1>
+  <p>Diese Funktion öffnet ein Fenster und zeigt eine Meldung sowie ein Feld für die Eingabe eines Wertes durch den Benutzer an (das den mitgelieferten Standardwert enthält, mit dem begonnen wird). Dies ist eine asynchrone Funktion, und als solche blockiert <span class="notranslate">GameMaker Studio 2</span> <i>nicht</i> 
+    GameMaker Studio 2 blockiert das Gerät, auf dem sie ausgeführt wird, nicht, während es auf eine Antwort wartet, sondern führt die Ereignisse wie gewohnt weiter aus. Sobald der Benutzer seine Zeichenfolge eingegeben und die Schaltfläche &quot;Okay&quot; gedrückt hat, wird ein asynchrones <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm"><b>Dialog</b></a>    Ereignis ausgelöst, das <i>nur</i> für die Dauer dieses Ereignisses eine DS-Map in der Variablen <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Diese Map enthält die drei Schlüssel &quot; id&quot;,<tt>&quot;</tt> status&quot; und &quot;<tt>value&quot;</tt>. &quot; id&quot; ist der<tt>Wert</tt>, der beim Aufruf<tt>der</tt> Funktion zurückgegeben wurde, der &quot;status&quot; ist entweder true, wenn die Schaltfläche &quot;Okay&quot; gedrückt wurde, oder <tt>false</tt>, wenn die Nachricht abgebrochen wurde (gegebenenfalls, da nicht <tt>alle</tt> Zielplattformen das Abbrechen von Nachrichten erlauben). Schließlich gibt &quot; value<tt>&quot;</tt> die Ganzzahl zurück, die der Benutzer eingegeben hat
+    als Zeichenkette zurück (eine leere Zeichenkette &quot;&quot; wird zurückgegeben, wenn keine Eingabe gemacht wurde).</p>
+  <p class="note"><strong><em>HINWEIS:</em></strong><em> Diese Funktion ist <span data-keyref="Dialog for debug only"> <strong>nur</strong> für <strong>Debugging- und Testzwecke</strong></span>gedacht <span data-keyref="Dialog for debug only">und sollte nicht in veröffentlichten Spielen verwendet werden. Zu diesem Zweck sollten Sie eine benutzerdefinierte Benutzeroberfläche erstellen, um Eingaben von Spielern zu erhalten, so dass Sie die vollständige Kontrolle darüber haben, wie die Dialoge aussehen und sich verhalten.</span></em></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">get_integer_async(string, default);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Zeichenfolge</td>
+        <td>Die Meldung, die im Dialog angezeigt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Standard</td>
+        <td>Der Standardwert.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>Das <b>linke Maustasten-Ereignis</b> (z. B.) des Objekts, das die Nachricht anzeigt, würde den folgenden Code haben:</p>
+  <p class="code">msg = get_integer_async(&quot;Wie alt sind Sie?&quot;, 0);</p>
+  <p>Oben wird eine Meldung angezeigt, die den Benutzer auffordert, eine Zeichenfolge einzugeben und &quot;Okay&quot; zu drücken. Die Funktions-ID wird in der Variablen &quot;msg&quot; gespeichert und im asynchronen Ereignis &quot;Dialoge&quot; wie unten gezeigt verwendet:</p>
+  <p class="code">var i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> global.Age = ds_map_find_value(async_load, &quot;value&quot;);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft den &quot; id&quot;<tt>-Schlüssel</tt> der zurückgegebenen DS-Map <tt>gegen</tt> den in der Variablen &quot;msg&quot; gespeicherten Wert. Wenn sie übereinstimmen, wird geprüft, ob &quot;Okay&quot; gedrückt wurde (und nicht das Fenster
+    Wenn dies der <tt>Fall</tt> ist, wird eine globale Variable mit der zurückgegebenen Ganzzahl gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Dialog.htm">Dialog</a></div>
+        <div style="float:right">Weiter: <a href="show_message_async.htm">show_message_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_integer_async
+-->
+  <!-- TAGS
+get_integer_async
+-->
+</body>
+</html>

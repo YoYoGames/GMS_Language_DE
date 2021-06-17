@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>netzwerk_erzeugen_socket</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_create_socket" />
+  <meta name="rh-index-keywords" content="network_create_socket,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+  <meta name="search-keywords" content="network_create_socket,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>netzwerk_erzeugen_socket</h1>
+  <p>Diese Funktion wird verwendet, um einen neuen Client-Socket für Ihr Spiel zu erstellen, um über das Netzwerk zu kommunizieren. Sie müssen den Socket-Typ definieren (siehe die Liste der Konstanten unten) und die Funktion gibt eine eindeutige <i>ID</i> für diesen Socket zurück, die in allen weiteren Funktionsaufrufen für diesen Socket verwendet werden sollte
+    in allen weiteren Funktionsaufrufen für diesen Socket verwendet werden sollte, oder einen Wert kleiner als 0, wenn die Verbindung fehlschlägt.</p>
+  <p class="note"><b>HINWEIS</b>: Sie können die IP &quot;127.0.0.1&quot; verwenden, um sich wieder mit demselben Gerät zu verbinden, auf dem das Spiel läuft.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>network_socket_tcp</td>
+        <td>Erstellen Sie einen Socket mit TCP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_udp</td>
+        <td>Erstellen Sie einen Socket mit UDP.</td>
+      </tr>
+      <tr>
+        <td>netzwerk_sockel_ws</td>
+        <td>Erstellen Sie einen Websocket<i>(nur</i> für Projekte, die auf HTML5 laufen), unter Verwendung von TCP.</td>
+      </tr>
+      <tr>
+        <td>netzwerk_steckdose_bluetooth</td>
+        <td>Erstellen Sie eine Bluetooth-Buchse<i>(derzeit nicht verfügbar!</i>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">network_create_socket(type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der zu erstellenden Socket-Verbindung (siehe die unten aufgeführten Konstanten).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if os_browser == browser_not_a_browser<br> {
+    <br> client = network_create_socket(network_socket_tcp);<br> network_connect( client, &quot;192.134.0.1&quot;, 6510 );<br> }
+    <br> sonst
+    <br> {
+    <br> client = network_create_socket(network_socket_ws);<br> network_connect( client, &quot;192.134.0.1&quot;, 6520 );<br> }
+  </p>
+  <p>Der obige Code prüft, ob das Spiel in einem Browser läuft oder nicht, und erstellt einen neuen TCP- oder Web-Socket, bevor er versucht, sich über diesen mit der angegebenen IP-Adresse am angegebenen Port zu verbinden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Networking.htm">Networking</a></div>
+        <div style="float:right">Weiter: <a href="network_create_socket_ext.htm">network_create_socket_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_create_socket
+network_socket_tcp
+network_socket_udp
+network_socket_ws
+network_socket_bluetooth
+-->
+  <!-- TAGS
+network_create_socket
+-->
+</body>
+</html>

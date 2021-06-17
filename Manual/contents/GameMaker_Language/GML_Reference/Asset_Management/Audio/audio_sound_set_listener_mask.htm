@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_set_listener_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_set_listener_mask" />
+  <meta name="rh-index-keywords" content="audio_sound_set_listener_mask" />
+  <meta name="search-keywords" content="audio_sound_set_listener_mask" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_set_listener_mask</h1>
+  <p>Mit dieser Funktion können Sie die Bit-Maske für einen Sound setzen, so dass er nur von den angegebenen Hörern abgespielt wird. Sie können eine Bit-Maske mit den Befehlen <a href="Audio_Listeners/audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> und
+    verwenden und dann mit dem bitweisen <tt>Oder</tt> (&quot;|&quot;) eine benutzerdefinierte Maske mit den Hörern erstellen, von denen der Sound abgespielt werden soll, und diese benutzerdefinierte Maske dann nach dem Abspielen auf den Sound anwenden. Diese Maske wird
+    überschreibt die Standardmaske oder die Maske, die Sie möglicherweise mit der Funktion <a href="Audio_Listeners/audio_get_listener_mask.htm"><tt>audio_set_listener_mask()</tt></a>.</p>
+  <p class="note"><b>HINWEIS: </b>Diese Funktion kann nur auf einen Sound angewendet werden, nachdem er zum Abspielen eingestellt wurde, und benötigt die SoundID, die von der Funktion zum Abspielen des Sounds zurückgegeben wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_sound_set_listener_mask(soundID, mask);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>soundID</td>
+        <td>Die eindeutige ID des Klangs, für den die Maske eingestellt werden soll</td>
+      </tr>
+      <tr>
+        <td>Maske</td>
+        <td>Die zu setzenden Bitmasken-Daten für den Sound</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var snd = audio_play_sound(snd_PlayerDead, 10, false);<br> audio_sound_set_listener_mask(snd, global.PlayerMask);</p>
+  <p>Der obige Code spielt einen Ton ab und stellt dann den/die Hörer ein, von dem/denen er abgespielt werden soll, indem er die in einer globalen Variablen gespeicherten Maskendaten verwendet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_sound_get_listener_mask.htm">audio_sound_get_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_set_listener_mask
+-->
+  <!-- TAGS
+audio_sound_set_listener_mask
+-->
+</body>
+</html>

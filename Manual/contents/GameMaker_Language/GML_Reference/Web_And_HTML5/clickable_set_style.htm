@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>klickbar_set_style</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for clickable_set_style" />
+  <meta name="rh-index-keywords" content="clickable_set_style" />
+  <meta name="search-keywords" content="clickable_set_style" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>klickbar_set_style</h1>
+  <p>Mit dieser Funktion können Sie die CSS-Stileigenschaften für die angegebene Schaltfläche über die Schlüssel/Wertpaare in der übergebenen <a href="../Data_Structures/DS_Maps/DS_Maps.htm"><tt>DS-Karte</tt></a>. Sie müssen zuvor sowohl das Button-Element (mit
+    <a href="clickable_add.htm"><tt>clickable_add()</tt></a>) und die <tt>DS-Map</tt> erstellt haben und die gespeicherten Indizes zu beiden als Argumente übergeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">clickable_set_style(index, map)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des anzuklickenden Symbols für den Stil.</td>
+      </tr>
+      <tr>
+        <td>Karte</td>
+        <td>Der Index der <tt>DS Map</tt>, von der aus der Stil gesetzt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var map = ds_map_create();<br> ds_map_add(map, &quot;opacity&quot;, &quot;0.5&quot;);<br> clickable_set_style(button, map);<br> ds_map_destroy();
+  </p>
+  <p>Der obige Code ändert den Stil der anklickbaren Schaltfläche mit dem Index, der in der Variablen &quot;button&quot; gespeichert ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Web_And_HTML5.htm">Web und HTML5</a></div>
+        <div style="float:right">Weiter: <a href="clickable_delete.htm">klickbar_löschen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+clickable_set_style
+-->
+  <!-- TAGS
+clickable_set_style
+-->
+</body>
+</html>

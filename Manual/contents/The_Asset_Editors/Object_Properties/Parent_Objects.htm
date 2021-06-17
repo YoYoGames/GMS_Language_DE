@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Parent-Objekte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing object parenting" />
+  <meta name="rh-index-keywords" content="Objects - Parents" />
+  <meta name="search-keywords" content="parent,child,inheritance,object parenting" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Parent-Objekte</h1>
+  <p>Bei der Arbeit mit Objekten in der <span class="notranslate">GameMaker Studio 2</span> IDE können Sie <strong>Eltern/Kind-Hierarchien </strong> einrichten. Dazu klicken Sie im Objekteditor auf die Schaltfläche &quot;Übergeordnet&quot; und wählen dann ein anderes Objekt aus dem Asset-Browser
+    als &quot;übergeordnetes&quot; Objekt des bearbeiteten Objekts auswählen:</p>
+  <p><img alt="Adding A Parent" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Parent.png">Also, jedes Objekt in Ihrem Spielprojekt kann ein übergeordnetes Objekt haben, aber was bedeutet das? Nun, wenn einem Objekt ein übergeordnetes Objekt zugewiesen ist, kann es
+    Code, Aktionen und Ereignisse mit diesem übergeordneten Objekt teilen. Diese gemeinsame Nutzung wird als &quot;Vererbung&quot; bezeichnet, und ein Objekt, das ein übergeordnetes Objekt hat, wird als &quot;untergeordnetes&quot; Objekt bezeichnet. Ein untergeordnetes Objekt kann nicht nur Code mit seinem übergeordneten Objekt teilen, sondern Sie können auch Prüfungen durchführen und Code
+    auf übergeordneten Objekten durchführen und die untergeordneten Objekte automatisch mit einbeziehen, was eine Menge Zeit und Energie spart.</p>
+  <p>Wenn sich das kompliziert anhört, dann ist eine andere Art, ein übergeordnetes Objekt zu betrachten, eine Möglichkeit, Objekte unter demselben Dach zu &quot;gruppieren&quot; und sie bestimmte Dinge teilen zu lassen, ohne ihre eigene, einzigartige Identität zu verlieren. Vielleicht ist das immer noch nicht
+    Das macht die Dinge vielleicht immer noch nicht klarer, also lassen Sie uns ein paar Beispiele nennen ...</p>
+  <p>Angenommen, Sie haben ein &quot;Spieler&quot;-Objekt und vier verschiedene &quot;Feind&quot;-Objekte. Sie möchten nun, dass der Spieler stirbt, wenn er eines dieser vier Objekte berührt, und dies würde normalerweise vier verschiedene Kollisionsereignisse mit vier verschiedenen Sätzen von
+    Aktionen oder Code, einen für jedes der feindlichen Objekte. ABER wenn wir ein übergeordnetes Objekt für alle Feinde erstellen, dann können wir nur ein Kollisionsereignis mit dem übergeordneten Objekt erzeugen, das unabhängig davon ausgelöst wird, welches der vier &quot;untergeordneten&quot; Feindobjekte den Spieler berührt.
+    Objekten den Spieler berührt. Praktische Sache! Im eigentlichen <span class="notranslate">GameMaker Studio 2</span> Objekt würden Sie so etwas sehen:</p>
+  <p><img alt="Parenting For Collisions" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ParentCollision.png">Auf der linken Seite haben wir vier separate Kollisionsereignisse und auf der rechten Seite haben wir ein einziges Kollisionsereignis, da wir ein
+    &quot;übergeordnetes&quot; Objekt erstellt und ihm alle gegnerischen Objekte zugewiesen haben. Beachten Sie, dass ein übergeordnetes Objekt keine Ereignisse oder Code enthalten muss...</p>
+  <p>Ein weiteres Beispiel für Parenting wäre, wenn Sie ein Spiel haben, in dem Sie 10 unterschiedlich aussehende Objekte erstellen möchten, die sich alle auf die gleiche Weise verhalten sollen. Dazu würden Sie ein übergeordnetes Objekt erstellen und in diesem alle Aktionen oder den Code für das Verhalten
+    in den erforderlichen Ereignissen, und dann würden Sie Ihre zehn Objekte ohne Aktionen oder Code, aber mit unterschiedlichen Sprites, erstellen und ihnen Ihr übergeordnetes Objekt zuweisen. Wenn Sie nun diese Instanzen in einem Raum platzieren, werden sie sich alle gleich verhalten, aber unterschiedlich aussehen,
+    da sie die Ereignisse des Elternobjekts &quot;erben&quot; werden.</p>
+  <p>Schließlich können Sie das Parenting verwenden, um Ereignisse und Verhaltensweisen &quot;zu mischen und anzupassen&quot;. Wir werden dies mit einem letzten Beispiel veranschaulichen... Nehmen wir an, Sie möchten zwei Monster haben: eines, das sich nach oben und unten bewegt, und ein anderes, das sich nach links und rechts bewegt, aber Sie möchten auch, dass die
+    beide die gleiche Gesundheit haben, auf den Spieler schießen und den Spieler verletzen, wenn sie mit ihnen kollidieren. In diesem Fall können Sie sehen, dass fast alle Ereignisse die gleichen Aktionen haben sollten, mit Ausnahme von ein oder zwei, die die Bewegung steuern. Also können wir wieder
+    ein Objekt zum Elternobjekt des anderen machen, aber in diesem Fall definieren wir auch bestimmte Ereignisse für das Kindobjekt. Diese Ereignisse &quot;überschreiben&quot; die übergeordneten Ereignisse, was bedeutet, dass immer dann, wenn ein Ereignis für das Kindobjekt Aktionen enthält, diese ausgeführt werden
+    anstelle der im Ereignis des Elternobjekts enthaltenen Aktionen ausgeführt werden. Wenn Sie auch das übergeordnete Ereignis ausführen möchten, können Sie das sogenannte &quot;geerbte&quot; Ereignis mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><span class="inline">event_inherited()</span></a>,
+    oder die <span class="notranslate">DnD™-Aktion</span> <a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Call_Parent_Event.htm">Übergeordnetes Ereignis aufrufen</a>.</p>
+  <p><img alt="Inheriting Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_InheritEvents.png">Links oben sehen Sie das übergeordnete Objekt mit 5 Ereignissen und rechts das &quot;Kind&quot;-Objekt. Das untergeordnete Objekt
+    hat ebenfalls 5 Ereignisse, aber zwei davon überschreiben die geerbten Ereignisse des übergeordneten Objekts (die Ereignisse <strong>"Step" </strong>und " <strong>Draw" </strong>), und die anderen drei sind ausgegraut, da sie die vom übergeordneten Objekt geerbten Ereignisse sind. Geerbte Ereignisse
+    haben auch das Symbol &quot;Übergeordnetes Ereignis überschreiben&quot; neben ihnen im Ereignis-Editor:</p>
+  <p><img alt="Parent Override" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ParentOverride.png">Wenn Sie auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> auf ein Ereignis klicken, das geerbt wurde,
+    wird der Code-Editor geöffnet, um den geerbten übergeordneten Code anzuzeigen, aber Sie können diesen Code nicht bearbeiten, da Sie ihn nur im übergeordneten Objekt selbst bearbeiten können. Sie können mit der rechten Maustaste <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> auf eines der übergeordneten Ereignisse klicken, um das folgende Menü mit Optionen zu öffnen:</p>
+  <p><img alt="Parent Event RMB Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_Parent_Menu.png">Hier können Sie zwei Optionen wählen <strong>Öffnen Sie </strong>das übergeordnete Ereignis, um den Code zu untersuchen, oder wählen Sie <strong>Vererben </strong>Sie das
+    Ereignis erben oder das Ereignis <strong>außer Kraft setzen </strong>. Wenn Sie " <strong>Erben" </strong>wählen, wird der Code-Editor mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><span class="inline">event_inherited()</span></a> bereits
+    (oder die Aktion " <a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Call_Parent_Event.htm">Übergeordnetes Ereignis aufrufen</a> ", wenn Sie <span class="notranslate">DnD™</span>verwenden). Jeder weitere Code, den Sie in diesem Ereignis platzieren, wird nun ebenso ausgeführt wie der Code, den das übergeordnete Objekt
+    hat. Wenn Sie das Ereignis <strong>überschreiben </strong>, wird das Code-Fenster ebenfalls geöffnet, nur wird jetzt die Funktion <span class="inline">event_inherited()</span> nicht aufgerufen, so dass alles, was Sie hier hinzufügen, <em>anstelle </em>des Codes ausgeführt wird
+    im übergeordneten Objekt ausgeführt.</p>
+  <p class="note"><strong>HINWEIS</strong>: Vom Code-Editor aus können Sie schnell zum übergeordneten Objekt navigieren, indem Sie mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> klicken und im Popup-Menü die Option " <strong>Go To Object</strong> " auswählen oder (wenn das Ereignis überschrieben wurde) die Option <strong>"Open Inherited Event</strong> " auswählen, um direkt zum Code-Editor mit dem Code des übergeordneten Ereignisses zu gelangen.</p>
+  <p>Wenn Sie im Code auf ein übergeordnetes Objekt abzielen, wird der Code auch auf die &quot;Kinder&quot; des übergeordneten Objekts angewandt. Dies geschieht, wenn Sie in einer Aktion angeben, dass die Aktion auf Instanzen eines bestimmten Objekts angewendet werden muss, und im Code geschieht es
+    geschieht, wenn Sie die <a href="../../GameMaker_Language/GML_Overview/Language_Features/with.htm"><span class="inline">with()</span></a> Anweisung. Es funktioniert auch so, wenn Sie im Code Funktionen aufrufen, wie <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_position.htm"><span class="inline">instance_position()</span></a>,
+    <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_number.htm"><span class="inline">instance_number()</span></a>, etc... wobei - wenn Sie ein übergeordnetes Objekt übergeben - alle Instanzen der übergeordneten <em>und </em>untergeordneten Instanzen
+    in die Prüfungen einbezogen werden. Schließlich funktioniert das Parenting auch, wenn Sie sich auf Variablen in anderen Objekten beziehen, wie im obigen Monster-Beispiel, wenn ich die Geschwindigkeit von Feind 1 auf 10 setze, dann wird auch die Geschwindigkeit von Feind 2 auf 10 gesetzt, da es sich um ein Kindobjekt von Feind
+    1.</p>
+  <p>Es gilt in den meisten Fällen als gute Praxis, ein Basis-Elternobjekt zu erstellen und dieses Basisobjekt das gesamte Standardverhalten enthalten zu lassen, aber niemals eine Instanz davon im Spiel zu verwenden. Verwenden Sie stattdessen alle untergeordneten Objekte und verwenden Sie das übergeordnete Objekt nur in
+    Situationen, wie ich sie oben skizziert habe, für Kollisionen, zum Referenzieren von Variablen, etc. Sie sollten auch wissen, dass Eltern auch Eltern haben können! Offensichtlich können Sie keinen Zyklus &quot;Elternteil 1 ist Kind von Elternteil 2 ist Kind von Elternteil
+    1&quot;, aber Sie können eine so genannte &quot;Objekthierarchie&quot; erstellen, in der &quot;Elternteil 3 ist Kind von<em>Elternteil 2 </em>ist Kind von <em>Elternteil 1&quot; </em>. Dies ist äußerst nützlich, um Ihr Spiel strukturiert zu halten, und es wird Ihnen dringend empfohlen
+    zu lernen, diesen Mechanismus zu verwenden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Objects.htm">Der Objekteditor</a></div>
+        <div style="float:right">Nächste: <a href="Physics_Objects.htm">Physik-Objekte</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Parent Objects
+Child Objects
+parent
+child
+inheritance
+-->
+  <!-- TAGS
+parent_objects
+-->
+</body>
+</html>

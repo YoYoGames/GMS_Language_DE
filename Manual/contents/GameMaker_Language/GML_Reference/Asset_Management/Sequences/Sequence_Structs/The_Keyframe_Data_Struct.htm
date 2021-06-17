@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Die Keyframe-Datenstruktur</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Data Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Data Struct" />
+  <meta name="search-keywords" content="The Keyframe Data Struct,seqaudiokey_loop,seqaudiokey_oneshot,channel,spriteIndex,soundIndex,playbackMode,curve,value,colour,sequence,objectIndex,events,event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die <span class="notranslate">Keyframe-Datenstruktur</span> </h1>
+  <p>Wenn Sie eine <a href="The_Keyframe_Struct.htm"><span class="notranslate">Keyframe-Struktur</span></a> für eine Spur definieren, müssen Sie auch die Daten definieren, die mit ihr verbunden werden sollen. Diese setzen sich aus verschiedenen <i>Kanälen</i> zusammen, und jedem Kanal kann ein bestimmter
+    Jeder Kanal kann mit einem bestimmten Datentyp versehen werden, je nachdem, für welche Art von Spur Sie die <span class="notranslate">Keyframe-Daten</span> festlegen. Diese Eigenschaften sind:</p>
+  <ul class="colour">
+    <li><tt>Kanal</tt>: Dies ist der Kanal, auf den die <span class="notranslate">Keyframe-Daten</span> angewendet werden sollen. Es handelt sich um einen positiven ganzzahligen Wert, der bei 0 beginnt. Es ist erwähnenswert, dass Sie beim Erstellen von Parameterspuren für Keyframes &quot;Position&quot; oder &quot;Skalierung&quot;,
+      dann müssen Sie ganz bestimmte Kanalwerte verwenden. Diese sind: Kanal 0 ist die X-Position oder die X-Skala, Kanal 1 ist die Y-Position oder die Y-Skala.</li>
+    <li><tt>spriteIndex</tt>: Der Index des Sprite-Assets, das für die Spur verwendet werden soll. Diese Eigenschaft ist nur für Spuren des Typs <tt>seqtracktype_graphic</tt> verfügbar und Sie können sie abrufen oder festlegen.</li>
+    <li><tt>soundIndex</tt>: Der Index des Audio-Assets, das für die Spur verwendet werden soll. Diese Eigenschaft ist nur für Spuren des Typs <tt>seqtracktype_audio</tt> verfügbar und Sie können sie abrufen oder festlegen.</li>
+    <li><tt>playbackMode</tt>: Der Wiedergabemodus für den Ton. Diese Eigenschaft ist nur für Tracks vom Typ <tt>seqtracktype_audio</tt> verfügbar und Sie können sie abrufen oder setzen. Die Eigenschaft sollte eine der folgenden Konstanten sein:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+        <th>Wert</th>
+      </tr>
+      <tr>
+        <td>seqaudiokey_loop</td>
+        <td>Der Ton wird in einer Schleife abgespielt.</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>seqaudiokey_oneshot</td>
+        <td>Der Ton wird nur einmal abgespielt und stoppt dann.</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>Kurve</tt>: Diese Eigenschaft erfordert eine Animationskurven-Struktur (siehe <a href="../../Animation_Curves/animcurve_channel_new.htm">hier</a> für weitere Informationen) und ist nur für Spuren vom Typ <tt>seqtracktype_real</tt> verfügbar. Wenn keine Kurvenstruktur
+      verwendet wird, ist der Wert für diese Eigenschaft -1.</li>
+    <li><tt>Wert</tt>: Diese Eigenschaft ist einfach ein Wert, der mit dem <span class="notranslate">Keyframe-Datenkanal</span> verknüpft ist, und ist nur für Spuren des Typs <tt>seqtracktype_real</tt> verfügbar, wenn keine <tt>curve</tt> struct
+      geliefert wird.<tt></tt></li>
+    <li><tt>colour</tt>: Diese Eigenschaft gibt ein <a href="../../../../GML_Overview/Arrays.htm">Array</a> für den Farbwert des <span class="notranslate">Keyframes</span> mit dem Format [A, R, G, B] zurück (bzw. erfordert, wenn sie gesetzt ist). Dies ist nur für Spuren des Typs <tt>seqtracktype_colour</tt> verfügbar.
+      Beachten Sie, dass die Werte für jede Komponente als zwischen 0 und 1 ausgedrückt werden sollten, wobei 0 dem HEX-Wert #00 und 1 dem HEX-Wert #FF entspricht (0 - 255, wie in der Farbauswahl für Farbspuren im Sequences Editor angezeigt).</li>
+    <li><tt>Sequenz</tt>: Diese Eigenschaft gibt eine <a href="The_Sequence_Object_Struct.htm">Sequenz-Objektstruktur</a> zurück (oder erfordert, wenn sie gesetzt ist) und ist nur für Spuren vom Typ <tt>seqtracktype_sequence</tt> verfügbar.</li>
+    <li><tt>objectIndex</tt>: Diese Eigenschaft liefert (bzw. erfordert, wenn sie gesetzt ist) einen Objektindex und ist nur für Spuren vom Typ <tt>seqtracktype_instance</tt> verfügbar.</li>
+    <li><tt>Ereignisse</tt>: Diese Eigenschaft ermöglicht den Zugriff auf die <b>Ereignisse</b> und <b>Broadcast-Nachrichten</b>, die mit der <span class="notranslate">Keyframe-Datenstruktur</span> verbunden sind. Sie können diese Eigenschaft abrufen oder setzen, und wenn Sie sie abrufen, wird ein
+      Array von Strings zurückgegeben, und beim Setzen sollte ein Array von Strings angegeben werden. Weitere Informationen zu Ereignissen finden Sie im Abschnitt <a href="../Sequence_Events_Moments_Broadcast.htm">Sequenzereignisse und Momente</a>. Diese
+      Eigenschaft ist nur für Tracks vom Typ <tt>seqtracktype_message</tt> verfügbar.</li>
+    <li><tt>Ereignis</tt>: Diese Eigenschaft gibt die <a href="../../../Variable_Functions/method.htm">Methode</a> zurück (oder kann auf sie gesetzt werden), die mit der <span class="notranslate">Keyframe-Datenstruktur</span> verbunden ist. Wenn keine Methode angegeben wurde oder Sie die Methode entfernen möchten, sollte die Eigenschaft -1 sein.
+      Wenn keine Methode angegeben wurde oder Sie die Methode entfernen möchten, sollte die Eigenschaft -1 sein. Diese Eigenschaft ist nur für Spuren vom Typ <tt>seqtracktype_moment</tt> verfügbar.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="The_Sequence_Object_Struct.htm">Die Sequenz-Objekt-Struktur</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Keyframe</span> Data Struct
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>_data
+-->
+
+</body></html>

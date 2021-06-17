@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_get_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_get_surface" />
+  <meta name="rh-index-keywords" content="buffer_get_surface,buffer_surface_copy (Deprecated)" />
+  <meta name="search-keywords" content="buffer_get_surface,buffer_surface_copy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_get_surface</h1>
+  <p>Mit dieser Funktion können Sie die Informationen aus einer Oberfläche in einen gegebenen Puffer schreiben. Der Puffer muss zuvor erstellt worden sein und sollte ein 1Byte ausgerichteter <i>Wachstumspuffer</i> mit einer ungefähren Größe (in Bytes) der Oberfläche sein, die Sie schreiben wollen.
+    Die Informationen für die Oberfläche werden immer an den Anfang des Puffers geschrieben (unabhängig von der Suchposition), aber Sie können einen Offset-Wert (in Bytes) wählen, um die Schreibposition vom Anfang des Puffers dorthin zu verschieben, wo Sie sie benötigen.
+    Beachten Sie, dass die Funktion jedes Pixel der Oberfläche unter Verwendung einer <b>BGRA-Formatierung</b> auf dem <span class="notranslate">Windows-Ziel</span> in den Puffer schreibt, aber auf anderen Zielen kann dies je nach Betriebssystem oder sogar Gerät anders sein.</p>
+  <p class="note"><strong>HINWEIS</strong>: Diese Funktion hat sich ab dem <span class="notranslate">GameMaker Studio</span> Update 2.3.1 geändert. Frühere Versionen verwendeten die Konstante <span class="inline">buffer_surface_copy</span>, die
+    jetzt veraltet ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_get_surface(buffer, surface, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu verwendenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Oberfläche</td>
+        <td>Der Index der zu verwendenden Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Datenoffsetwert (in Bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">buffer_get_surface(buff, application_surface, 0);</p>
+  <p>Der obige Code kopiert die in der Anwendungsoberfläche gespeicherten Daten ohne Offset in den in der Variablen &quot;buff&quot; indizierten Puffer.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_set_surface.htm">buffer_set_surface</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_get_surface
+buffer_surface_copy
+-->
+  <!-- TAGS
+buffer_get_surface
+-->
+</body>
+</html>

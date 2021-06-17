@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>kollision_kreis</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_circle" />
+  <meta name="rh-index-keywords" content="collision_circle" />
+  <meta name="search-keywords" content="collision_circle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>kollision_kreis</h1>
+  <p><span class="inline">Collision_circle</span> erzeugt eine kreisförmige Zone mit dem vom Benutzer angegebenen Radius um die Punkte x1,y1 und prüft dann diese Zone auf eine Kollision mit <b>einer beliebigen</b> Instanz des durch das Argument &quot;obj&quot; angegebenen Objekts.
+    Diese Prüfung kann entweder präzise oder nicht präzise sein, aber damit präzise Kollisionen aktiviert sind, <i>muss</i> das Objekt oder die Instanz, auf die geprüft wird, auch präzise Kollisionen für ihr Sprite aktiviert haben. Wenn dies nicht der Fall ist, basiert die Standardprüfung auf Bounding Boxes.
+    Das folgende Bild veranschaulicht, wie dies funktioniert:</p>
+  <p><img alt="Collision circle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_circle_illustration.png">Hier verwendet die Instanz in der Mitte einen Kollisionskreis, um auf Ball
+    Objekten. Die blauen Objekte haben <i>keine</i> präzise Bounding Box, und wie Sie sehen können, kann die Kollision auch dann stattfinden, wenn das Sprite den Kreis nicht berührt (selbst wenn Sie die Option precise in der Funktion auf true setzen), da die Bounding Box des Sprites den durch collision_circle definierten kreisförmigen Bereich überlappt.
+    Box dieses Sprites den durch collision_circle definierten Kreisbereich überlappt. Andererseits werden die grünen Kugeln nur dann als Kollisionen betrachtet, wenn das aktuelle Sprite den definierten Kreis überlappt. Denken Sie daran, dass für die Berücksichtigung von präzisen Kollisionen
+    müssen <i>sowohl</i> das Objekt-Sprite als auch die Kollisionsfunktion präzise als ein markiert sein. Es sollte auch beachtet werden, dass der Rückgabewert der Funktion die ID einer <i>beliebigen</i> der Instanzen sein kann, die als in Kollision befindlich betrachtet werden.</p>
+  <p>Beachten Sie, dass Sie anstelle eines Objektindexes auch eine Instanz <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> angeben können, um nach einer bestimmten Instanz zu suchen, oder die <a href="../../../GML_Overview/Instance_Keywords.htm">Instanzschlüsselwörter</a> <span class="inline">all</span> oder <span class="inline">other</span> (je nach Ereignis und aktuellem Codeumfang).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">collision_circle(x1, y1, rad, obj, prec, notme);</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate des Mittelpunkts des zu prüfenden Kreises.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate des Mittelpunkts des zu prüfenden Kreises.</td>
+      </tr>
+      <tr>
+        <td>rad</td>
+        <td>Der Radius (Abstand in Pixeln vom Mittelpunkt zum Rand).</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das Objekt, das auf Instanzkollisionen geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Ob die Prüfung auf pixelgenauen Kollisionen (true = langsam) oder allgemein auf der Bounding Box basiert (false = schnell).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Ob die aufrufende Instanz, falls relevant, ausgeschlossen werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Instanz-ID oder keine</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if collision_circle(x, y, 20, obj_Cursor, false, true)<br> {
+    <br> image_index = 1;<br> }
+    <br> sonst image_index = 0;</p>
+  <p>Der obige Code prüft einen kreisförmigen Bereich mit einem Radius von 20 Pixeln auf eine Kollision mit &quot;obj_Cursor&quot;, und wenn es eine gibt, setzt er den image_index des Objekts, das den Code ausführt, auf 1, aber wenn es keine gibt, setzt er den image_index des Objekts
+    auf 0 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="collision_circle_list.htm">collision_circle_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_circle
+-->
+  <!-- TAGS
+collision_circle
+-->
+</body>
+</html>

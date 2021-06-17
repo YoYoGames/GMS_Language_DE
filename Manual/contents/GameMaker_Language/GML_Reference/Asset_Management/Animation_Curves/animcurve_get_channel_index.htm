@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_get_channel_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_get_channel_index" />
+  <meta name="rh-index-keywords" content="animcurve_get_channel_index" />
+  <meta name="search-keywords" content="animcurve_get_channel_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_get_channel_index</h1>
+  <p>Diese Funktion gibt den Indexwert für einen beliebigen Animationskurvenkanal zurück. Sie übergeben die Animationskurven-ID oder struct, wobei die Kurven-ID der Name der Animationskurve ist, wie sie im Asset-Browser definiert wurde, oder den struct-Zeiger, wie er von der Funktion
+    von der Funktion <tt><a href="animcurve_create.htm">animcurve_create()</a></tt>. Dann geben Sie den Namen des Kanals als String an, und die Funktion gibt den Indexwert zurück, der diesem Kanal zugeordnet ist. Beachten Sie, dass, wenn die Kurve oder der Kanal
+    nicht existiert, erhalten Sie eine Fehlermeldung.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">animcurve_get_channel_index(curve_struct_or_id, channel_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>kurven_strukt_oder_id</td>
+        <td>Die ID oder der Strukturzeiger der Animationskurve, die angepeilt werden soll</td>
+      </tr>
+      <tr>
+        <td>Kanal_Name</td>
+        <td>Der Kanalname (eine Zeichenkette).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _channelindex = animcurve_get_channel_index(ac_ButtonTween, &quot;x_pos&quot;)<br> var _channeldata = animcurve_get_channel(ac_ButtonTween, _channelindex);<br> var _points = _channeldata.points;<br> for (var i = 0; i &lt; array_length(_points);
+    ++i;) <br> {
+    <br> _points[i].value += 1;<br> }
+  </p>
+  <p>Der obige Code ruft die Kanalstruktur für den Kanal mit dem Namen &quot;x_pos&quot; im Kurven-Asset &quot;ac_ButtonTween&quot; ab, läuft dann in einer Schleife durch die Punkte auf der Kanalkurve und fügt ihrem Wert einen hinzu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Animation_Curves.htm">Animation Kurven</a></div>
+        <div style="float:right">Weiter: <a href="animcurve_channel_evaluate.htm">animcurve_channel_evaluate</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_get_channel_index
+-->
+  <!-- TAGS
+animcurve_get_channel_index
+-->
+</body>
+</html>

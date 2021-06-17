@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kacheldaten in Zelle setzen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Tile Data In Cell action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile Data In Cell" />
+  <meta name="search-keywords" content="Set Tile Data In Cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Data In Cell Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_In_Cell.png"> Kacheldaten in Zelle setzen</h1>
+  <p>Mit dieser Aktion können Sie die Kacheldaten für eine Kachelzelle auf einer <a class="glossterm" data-glossterm="Kachelplan" href="#">Kachelkartenebene</a> festlegen. Die Kacheldaten sind einfach ein Wert, der den Index der Kachel zusammen mit den Werten für Spiegeln, Drehen und Spiegeln wiedergibt,
+    sowie alle benutzerdefinierten Kachelmasken, die Sie verwendet haben. Bei dieser Aktion geben Sie zuerst die Ebene an, die Sie anvisieren möchten, indem Sie den Namen der Ebene (eine Zeichenkette) wie im Raumeditor definiert angeben, und dann die Spalte und Zeile auf der Kachelplanschicht, für die die Kacheldaten
+    zu setzen. Die &quot;Zelle&quot; ist der Bereich auf dem Kachelplanraster, der die Kachel enthält, für die Sie die Daten festlegen möchten. Wenn Ihre Kacheln also z. B. 16x16 sind und der Raum 1024x768 groß ist, hat der Kachelplan 64 Spalten und 48 Zeilen.</p>
+  <p class="note"><b>HINWEIS</b>: Die gewählte Ebene <i>muss</i> im Raum-Editor als Kachelkartenebene definiert worden sein, andernfalls können Fehler auftreten.</p>
+  <p>Das letzte Argument für die Aktion sind die Kacheldaten selbst. Normalerweise würden Sie die Kacheldaten für die Kachelkartenzelle mit der Aktion <a href="Get_Tile_Data_In_Cell.htm">Kacheldaten in Zelle holen</a> abrufen und dann mit der Aktion <a href="Set_Tile_Data_Transform.htm">Kacheldatentransformation setzen</a> manipulieren, bevor Sie sie mit dieser Aktion wieder setzen. Weitere Informationen zu Kacheldaten finden Sie im <span class="notranslate">GML-Abschnitt</span> über <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">Kachelkartenfunktionen</a>.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Tile Data In Cell Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_Data_In_Cell.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ebene</td>
+        <td>Die Ebene mit der anzuvisierenden Kachelkarte</td>
+      </tr>
+      <tr>
+        <td>Säulen</td>
+        <td>Die Zellenspaltenposition entlang der horizontalen Achse, um die Kacheldaten für</td>
+      </tr>
+      <tr>
+        <td>Zeile</td>
+        <td>Die Position der Zellreihe entlang der vertikalen Achse zum Setzen der Kacheldaten</td>
+      </tr>
+      <tr>
+        <td>Daten</td>
+        <td>Die Kacheldaten, die für die Einstellung der Zelle verwendet werden sollen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Set Tile Data In Cell Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_In_Cell.png">Der obige Code des Aktionsblocks durchläuft jede Kachelzelle im Raum, holt
+    die Kacheldaten für die Zelle ab, spiegelt sie und setzt die Zelle dann wieder.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Tile_Actions.htm">Kachel-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Get_Tile_Data_In_Cell.htm">Kacheldaten in Zelle holen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Data In Cell
+-->
+  <!-- TAGS
+action_tile_set_data_in_cell
+-->
+
+</body></html>

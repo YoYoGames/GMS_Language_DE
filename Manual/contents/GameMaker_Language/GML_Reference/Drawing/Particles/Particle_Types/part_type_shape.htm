@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teil_art_form</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_shape" />
+  <meta name="rh-index-keywords" content="part_type_shape,pt_shape_pixel,pt_shape_disk,pt_shape_square,pt_shape_line,pt_shape_star,pt_shape_circle,pt_shape_ring,pt_shape_sphere,pt_shape_flare,pt_shape_spark,pt_shape_explosion,pt_shape_cloud,pt_shape_smoke,pt_shape_snow" />
+  <meta name="search-keywords" content="part_type_shape,pt_shape_pixel,pt_shape_disk,pt_shape_square,pt_shape_line,pt_shape_star,pt_shape_circle,pt_shape_ring,pt_shape_sphere,pt_shape_flare,pt_shape_spark,pt_shape_explosion,pt_shape_cloud,pt_shape_smoke,pt_shape_snow" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teil_art_form</h1>
+  <p>Mit dieser Funktion können Sie die Sprite-Form einstellen, die für den Partikeltyp verwendet werden soll, wobei die folgenden Konstanten zulässig sind:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>pt_shape_pixel</td>
+        <td>Ein 1x1-Pixel. (Dies ist die Standardeinstellung.)</td>
+      </tr>
+      <tr>
+        <td>pt_shape_disk</td>
+        <td>Ein gefüllter Kreis.</td>
+      </tr>
+      <tr>
+        <td>pt_form_quadrat</td>
+        <td>Ein gefülltes Quadrat.</td>
+      </tr>
+      <tr>
+        <td>pt_form_linie</td>
+        <td>Eine 8px breite horizontale Linie.</td>
+      </tr>
+      <tr>
+        <td>pt_form_stern</td>
+        <td>Ein fünfzackiger gefüllter Stern.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_circle</td>
+        <td>Ein 3px umrandeter Kreis.</td>
+      </tr>
+      <tr>
+        <td>pt_form_ring</td>
+        <td>Ein Kreis mit einem Glühen nach innen (sieht aus wie eine Blase).</td>
+      </tr>
+      <tr>
+        <td>pt_form_kugel</td>
+        <td>Ein nach außen leuchtender Kreis ' fest in der Mitte, nach außen leuchtend.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_flare</td>
+        <td>Ein grell leuchtender Punkt (sieht aus wie ein echter Stern in der Nacht).</td>
+      </tr>
+      <tr>
+        <td>pt_form_funke</td>
+        <td>Ein Funken-Effekt ' wie ein Stern mit mehreren ausgeblendeten Punkten.</td>
+      </tr>
+      <tr>
+        <td>pt_form_explosion</td>
+        <td>Eine viereckige Rauchwolke ' benötigt mehrere Farben, um einer Explosion zu ähneln.</td>
+      </tr>
+      <tr>
+        <td>pt_form_wolke</td>
+        <td>Eine dünne Wolke, erfordert eine Hochskalierung und mehrere Partikel, um einer Wolke zu ähneln.</td>
+      </tr>
+      <tr>
+        <td>pt_form_rauch</td>
+        <td>Eine glatte Version des Explosionseffekts. Verwenden Sie mehrere, um eine Rauchwolke zu erzeugen.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_snow</td>
+        <td>Eine generische Schneeflockenform.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><img alt="Particle Shapes" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Particle_Sprites.png" /></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_type_shape(ind, shape);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des einzustellenden Partikeltyps.</td>
+      </tr>
+      <tr>
+        <td>Form</td>
+        <td>Die zu wählende Form.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.p1 = part_type_create();<br> part_type_shape(global.p1, pt_shape_square);<br> part_type_size(global.p1, 1, 3, 0, 0);<br> part_type_scale(global.p1, 1, 1);<br> part_type_colour1(global.p1, c_white);<br> part_type_alpha2(global.p1, 1, 0);<br> part_type_speed(global.p1, 2, 4, 0, 0);<br> part_type_direction(global.p1, 0, 180, 0, 0);<br> part_type_gravity(global.p1, 0.20, 270);<br> part_type_orientation(global.p1, 0, 0, 0, 0, 1);<br> part_type_blend(global.p1, 1);<br> part_type_life(global.p1,
+    15, 60);</p>
+  <p>Der obige Code setzt den in der globalen Variablen &quot;p1&quot; indizierten Partikeltyp auf die Form eines Quadrats und setzt dann verschiedene andere Partikeleigenschaften.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Types.htm">Partikel-Typen</a></div>
+        <div style="float:right">Weiter: <a href="part_type_sprite.htm">part_type_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_shape
+pt_shape_pixel
+pt_shape_disk
+pt_shape_square
+pt_shape_line
+pt_shape_star
+pt_shape_circle
+pt_shape_ring
+pt_shape_sphere
+pt_shape_flare
+pt_shape_spark
+pt_shape_explosion
+pt_shape_cloud
+pt_shape_smoke
+pt_shape_snow
+-->
+  <!-- TAGS
+part_type_shape
+-->
+</body>
+</html>

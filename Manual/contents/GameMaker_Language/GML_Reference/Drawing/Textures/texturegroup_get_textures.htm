@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texturegroup_get_textures</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texturegroup_get_textures" />
+  <meta name="rh-index-keywords" content="texturegroup_get_textures" />
+  <meta name="search-keywords" content="texturegroup_get_textures" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>texturegroup_get_textures</h1>
+  <p>Mit dieser Funktion können Sie die <b>Texturseiten-IDs</b> der einzelnen Seiten abrufen, aus denen eine Texturgruppe besteht. Sie geben den Texturgruppen-ID-String an (wie im Texturgruppen-Editor definiert), und die Funktion gibt ein 1D-Array zurück, wobei jeder
+    Eintrag in dem Array eine einzelne Texturseiten-ID ist. Wenn die Funktion fehlschlägt - d. h. eine ungültige Gruppe wird angegeben oder der Gruppe ist keine Textur zugewiesen -, ist das Array leer (0 Länge).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">texturegroup_get_textures(tex_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>tex_id</td>
+        <td>Der Name der zu prüfenden Texturgruppe (eine Zeichenkette)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">1D-Array</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _tex_array = texturegroup_get_textures( &quot;MainMenu&quot;);<br> for (var i = 0; i &lt; array_length(_tex_array); ++i;) <br> {
+    <br> if texture_is_ready(_tex_array[i])<br> {
+    <br> texture_prefetch(_tex_array[i]);
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code ruft die Texturseiten-IDs für die Texturgruppe &quot;MainMenu&quot; ab, prüft dann, ob sie ausgepackt sind, und wenn ja, werden sie im VRAM abgelegt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Textures.htm">Texturen</a></div>
+        <div style="float:right">Weiter: <a href="texturegroup_get_sprites.htm">texturegroup_get_sprites</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+texturegroup_get_textures
+-->
+  <!-- TAGS
+texturegroup_get_textures
+-->
+</body>
+</html>

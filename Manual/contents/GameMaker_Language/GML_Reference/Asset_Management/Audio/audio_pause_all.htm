@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_pause_alle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_pause_all" />
+  <meta name="rh-index-keywords" content="audio_pause_all" />
+  <meta name="search-keywords" content="audio_pause_all" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_pause_alle</h1>
+  <p>Mit dieser Funktion können Sie alle Töne, die gerade abgespielt werden, pausieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_pause_all();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;P&quot;))<br> {
+    <br> global.Pause = !global.Pause;<br> if global.Pause<br> {
+    <br> audio_pause_all();
+    <br> }
+    <br> sonst
+    <br> {
+    <br> audio_resume_all();
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob die Taste &quot;P&quot; auf der Tastatur gedrückt wird, und wenn er dies erkennt, setzt er die globale Variable &quot;Pause&quot; auf true oder false und pausiert <tt>dann</tt> entweder alle Sounds oder startet alle zuvor
+    pausierten Klänge.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_resume_sound.htm">audio_resume_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_pause_all
+-->
+  <!-- TAGS
+audio_pause_all
+-->
+</body>
+</html>

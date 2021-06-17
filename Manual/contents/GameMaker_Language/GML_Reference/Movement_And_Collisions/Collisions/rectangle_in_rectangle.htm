@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Rechteck_im_Rechteck</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion rectangle_in_rectangle" />
+  <meta name="rh-index-keywords" content="rectangle_in_rectangle" />
+  <meta name="search-keywords" content="rectangle_in_rectangle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Rechteck_im_Rechteck</h1>
+  <p>Diese Funktion prüft zwei von Ihnen definierte rechteckige Bereiche darauf, ob das Quellrechteck entweder nicht kollidiert, vollständig innerhalb der Grenzen des Zielrechtecks liegt oder ob sie sich einfach nur berühren. Wenn sie sich überhaupt nicht berühren, gibt die Funktion
+    den Wert 0 zurück, wenn die Quelle vollständig innerhalb des Zielrechtecks liegt, wird der Wert 1 zurückgegeben, und wenn sie sich einfach nur überlappen, wird der Wert 2 zurückgegeben. Das folgende Bild veranschaulicht dies:</p>
+  <p><img alt="Rectangle rectangle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_rectangle.png" /></p>
+  <h4>Syntax:</h4>
+  <p class="code">Rechteck_in_Rechteck(sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sx1</td>
+        <td>Die x-Koordinate der linken Seite des Quellrechtecks.</td>
+      </tr>
+      <tr>
+        <td>sy1</td>
+        <td>Die y-Koordinate der oberen Seite des Quellrechtecks.</td>
+      </tr>
+      <tr>
+        <td>sx2</td>
+        <td>Die x-Koordinate der rechten Seite des Quellrechtecks.</td>
+      </tr>
+      <tr>
+        <td>sy2</td>
+        <td>Die y-Koordinate der unteren Seite des Quellrechtecks.</td>
+      </tr>
+      <tr>
+        <td>dx1</td>
+        <td>Die x-Koordinate der linken Seite des Zielrechtecks, gegen die geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>dy1</td>
+        <td>Die y-Koordinate der oberen Seite des Zielrechtecks, gegen die geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>dx2</td>
+        <td>Die x-Koordinate der rechten Seite des Zielrechtecks, gegen die geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>dy2</td>
+        <td>Die y-Koordinate der unteren Seite des Zielrechtecks, gegen die geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">switch(rechteck_in_rechteck(x - 50, y - 50, x + 50, y + 50, mouse_x - 50, mouse_y - 50, mouse_x + 50, mouse_y + 50))<br> {
+    <br> case 0: image_blend = c_yellow; break;<br> case 1: image_blend = c_red; break;<br> case 2: image_blend = c_orange; break;<br> }
+  </p>
+  <p>Der obige Code prüft zwei rechteckige Bereiche auf Kollision und setzt die Instanz <tt>image_blend</tt> basierend auf dem Rückgabewert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="rectangle_in_triangle.htm">Rechteck_im_Dreieck</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+rectangle_in_rectangle
+-->
+  <!-- TAGS
+rectangle_in_rectangle
+-->
+</body>
+</html>

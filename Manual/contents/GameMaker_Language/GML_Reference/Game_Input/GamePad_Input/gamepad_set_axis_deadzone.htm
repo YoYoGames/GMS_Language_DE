@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_axis_deadzone</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_axis_deadzone" />
+  <meta name="rh-index-keywords" content="gamepad_set_axis_deadzone" />
+  <meta name="search-keywords" content="gamepad_set_axis_deadzone" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_axis_deadzone</h1>
+  <p>Mit dieser Funktion können Sie die &quot;tote Zone&quot; der Joystick-Achse einstellen. Sie geben den Geräte-Slot an, der eingestellt werden soll, und stellen dann einen Wert von 0 bis 1 ein. Wenn der Eingangsbetrag niedriger als der angegebene Wert ist, wird die Joystick-Achse als auf 0 stehend betrachtet.
+    Beachten Sie, dass dies eine globale Einstellung ist, die sich auf <i>alle</i> Achsen aller Joysticks auswirkt, die an den angegebenen Geräte-Slot angeschlossen sind. </p>
+  <p>Die Verwendung dieser Funktion bedeutet nicht, dass der Achsenwert mit dem Wert der Totzone beginnt, da die Funktion <a href="gamepad_axis_value.htm"><span class="inline">gamepad_axis_value()</span></a> gibt <em>immer</em> einen normalisierten Wert zwischen -1
+    Wenn Sie z. B. die Totzone auf 0,2 setzen, bedeutet dies, dass der Knüppel nach rechts erst dann einen Wert von 0 bis 1 zurückgibt, wenn der <em>Rohwert</em> der Achse über 0,2 liegt - wenn der Rohwert also 0,2 ist, ist der Rückgabewert 0,
+    wenn der Rohwert bei 0,5 liegt, wird der Rückgabewert 0,375 sein, oder wenn der Rohwert 0,9 ist, dann wäre der Rückgabewert 0,875.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gamepad_set_axis_deadzone(device, deadzone);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Welcher Gamepad-Geräte-&quot;Steckplatz&quot; zu prüfen ist.</td>
+      </tr>
+      <tr>
+        <td>Totzone</td>
+        <td>Der Wert der Totzone von 0 bis 1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if gamepad_is_connected(0) gamepad_set_axis_deadzone(0, 0.05);<br> if gamepad_is_connected(1) gamepad_set_axis_deadzone(1, 0.05);<br> if gamepad_is_connected(2) gamepad_set_axis_deadzone(2, 0.05);<br> if gamepad_is_connected(3) gamepad_set_axis_deadzone(3,
+    0.05);</p>
+  <p>Der obige Code setzt die Totzone der Joystick-Achse an jedem der 4 angeschlossenen Geräte auf 0,05.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Input.htm">Gamepad-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="gamepad_set_vibration.htm"> gamepad_set_vibration </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_axis_deadzone
+-->
+  <!-- TAGS
+gamepad_set_axis_deadzone
+-->
+</body>
+</html>

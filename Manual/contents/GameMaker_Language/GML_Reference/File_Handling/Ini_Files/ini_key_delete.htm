@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_key_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_key_delete" />
+  <meta name="rh-index-keywords" content="ini_key_delete" />
+  <meta name="search-keywords" content="ini_key_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_key_delete</h1>
+  <p>Mit dieser Funktion können Sie den ausgewählten Schlüssel (und den dazugehörigen Wert) aus einer Ini-Datei entfernen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ini_key_delete(Abschnitt, Schlüssel);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Abschnitt</td>
+        <td>Der Bereich, aus dem eine Taste gelöscht werden soll.</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Die Taste zum Löschen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> ini_write_real(&quot;save1&quot;, &quot;Score&quot;,score);
+    <br> ini_key_delete(&quot;save1&quot;, &quot;Spielstand&quot;);
+    <br> ini_close();
+  </p>
+  <p>In diesem Beispiel wird &quot;savedata.ini&quot; geöffnet und ein Wert in &quot;save1&quot; &gt; &quot;Score&quot; geschrieben. Anschließend wird der Schlüssel &quot;Score&quot; gelöscht und die .ini-Datei geschlossen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Ini_Files.htm">Ini-Dateien</a></div>
+        <div style="float:right">Weiter: <a href="ini_section_delete.htm">ini_section_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_key_delete
+-->
+  <!-- TAGS
+ini_key_delete
+-->
+</body>
+</html>

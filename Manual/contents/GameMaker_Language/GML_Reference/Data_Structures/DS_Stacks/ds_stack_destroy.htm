@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_stack_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_stack_destroy" />
+  <meta name="rh-index-keywords" content="ds_stack_destroy" />
+  <meta name="search-keywords" content="ds_stack_destroy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_stack_destroy</h1>
+  <p>Diese Funktion entfernt die angegebene Stack-Datenstruktur aus dem Speicher, gibt die von ihr verwendeten Ressourcen frei und entfernt alle darin enthaltenen Werte. Diese Funktion sollte immer verwendet werden, wenn Sie den DS-Stack nicht mehr verwenden, um Speicherlecks zu vermeiden
+    die Ihr Spiel verlangsamen und zum Absturz bringen können.</p>
+  <p class="note"><b>WICHTIG!</b> Wenn Sie eine Datenstruktur anlegen, ist der Indexwert zu ihrer Identifizierung ein Integer-Wert, der bei 0 beginnt. Das bedeutet, dass Datenstrukturen unterschiedlichen Typs <b>denselben</b> Indexwert haben können, daher sollten Sie im Zweifelsfall die
+    <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> Funktion verwenden, bevor Sie auf sie zugreifen. Beachten Sie auch, dass Indizes wiederverwendet werden, so dass ein zerstörter Datenstruktur-Indexwert anschließend von einer neu erstellten verwendet werden kann, daher empfehlen wir
+      Wir empfehlen daher, die Variable, die den DS-Index enthielt, nach dem Zerstören immer auf -1 zu setzen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_stack_destroy(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der zu entfernenden Datenstruktur.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (lives == 0)<br> {
+    <br> ds_stack_destroy(AI_stack);
+    <br> AI_stack = -1;<br> room_goto(rm_Menu);
+    <br> }
+  </p>
+  <p>Der obige Code prüft den Wert der eingebauten globalen Variablen &quot;lives&quot; und wenn er 0 ist, zerstört er den in der Variablen &quot;AI_stack&quot; indizierten DS-Stapel und wechselt dann die Räume.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="ds_stack_create.htm">ds_stack_create</a></div>
+        <div style="float:right">Weiter: <a href="ds_stack_clear.htm">ds_stack_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_destroy
+-->
+  <!-- TAGS
+ds_stack_destroy
+-->
+
+</body></html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>surface_get_target</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_get_target" />
+  <meta name="rh-index-keywords" content="surface_get_target" />
+  <meta name="search-keywords" content="surface_get_target" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>surface_get_target</h1>
+  <p>Mit dieser Funktion können Sie die ID der aktuellen Oberfläche ermitteln, auf die gezeichnet werden soll. Wenn Sie diese Oberfläche mit <a href="surface_create.htm"><tt>surface_create()</tt></a>erzeugt haben, dann ist dies die positive Ganzzahl, die die eindeutige ID für
+    diese Oberfläche</p>
+  <p>Wenn keine benutzerdefinierte Oberfläche eingestellt ist, aber die Standard-Anwendungsoberfläche noch aktiviert ist, dann gibt die Funktion normalerweise 0 zurück. Wenn Sie jedoch zuvor die application_surface manipuliert haben, sollten Sie prüfen, ob die erhaltene ID
+    nicht mit dem aktuellen Wert der Variable "application_surface" übereinstimmt, falls dieser nicht mehr 0 ist.</p>
+  <p>Wenn keine benutzerdefinierte Oberfläche eingestellt ist und die standardmäßige application_surface ebenfalls deaktiviert wurde, gibt die Funktion -1 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">surface_get_target();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (-1, wenn kein Oberflächenziel existiert, sonst die ID der Zieloberfläche)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">surface_get_target() != -1<br> {
+    <br> surface_reset_target();
+    <br> }
+    <br> draw_surface(surf, 0, 0);</p>
+  <p>Der obige Code prüft, ob das aktuelle Rendering-Ziel eine Fläche ist oder nicht, und wenn ja, setzt er das Ziel zurück und zeichnet dann eine Fläche.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="surface_get_target_ext.htm">surface_get_target_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_get_target
+-->
+  <!-- TAGS
+surface_get_target
+-->
+</body>
+</html>

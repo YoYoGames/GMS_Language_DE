@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Vorrichtungen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Physics Fixture functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Fixtures,Density,Friction,Linear Damping,Angular Damping,Restitution" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Vorrichtungen</h1>
+  <p>Bevor eine Instanz in <span class="notranslate">GameMaker Studio 2</span> physikalische Eigenschaften haben kann, muss ihr ein Fixture zugewiesen werden. Ein Fixture bindet eine Form oder Gestalt an die Instanz und fügt ihr Materialeigenschaften wie Dichte, Reibung
+    und Restitution. Fixtures können Kästen, Kreise, Polygone oder jede andere einfache Form sein, die Sie wünschen, da <span class="notranslate">GameMaker Studio 2</span> Funktionen bereitstellt, mit denen Sie Ihre eigene Form Punkt für Punkt definieren können, und wenn Sie dann
+    Sobald Sie Ihre Form haben, können Sie auch ihre physikalischen Eigenschaften definieren. Diese Eigenschaften bestimmen die Art und Weise, wie die Instanz mit der ihr zugewiesenen Vorrichtung auf andere Instanzen in der Physikwelt reagiert, und sind im Folgenden aufgeführt:</p>
+  <ul class="colour">
+    <li><b>Dichte:</b> Die Dichte eines Materials ist definiert als seine Masse pro Volumeneinheit. Sie ist im Wesentlichen ein Maß dafür, wie dicht Materie zusammengepresst ist. Wenn Ihr Gerät <i>statisch</i> sein soll (d.h:
+      unbeweglich), dann sollte die Dichte auf 0 gesetzt werden, so dass sie im Grunde unendlich dicht ist. <i>Kinematische</i> Objekte, die sich mit konstanter Geschwindigkeit bewegen und physikalisch nicht von Kollisionen betroffen sind, werden ebenfalls mit einer Dichte
+      von 0 definiert.</li>
+    <li><b>Reibung:</b> Reibung ist die Kraft, die der relativen Bewegung von festen Oberflächen, Flüssigkeitsschichten und Materialelementen, die gegeneinander gleiten, entgegensteht.</li>
+    <li><b>Lineare Dämpfung:</b> Dies ist die verallgemeinerte Kraft, die bewirkt, dass ein bewegtes Objekt an Schwung verliert. In der &quot;realen Welt&quot; geschehen Dinge im Allgemeinen nicht für immer. Zum Beispiel fliegt ein Papierflugzeug eine kurze Zeit, aber schließlich
+      wird er aufgrund der Luftreibung, die auf ihn einwirkt und ihn verlangsamt, fallen. In der physikalischen Welt, die wir erschaffen, sind solche Dinge schwer zu modellieren, und so erhält jede Vorrichtung ihre eigene lineare Dämpfung, um diese Art von &quot;generalisierter
+      Reibung&quot; zu simulieren.</li>
+    <li><b>Winkeldämpfung:</b> Wie oben, ist dies eine verallgemeinerte Kraft, die auf ein Objekt angewendet wird, um es daran zu hindern, sich ewig zu drehen.</li>
+    <li><b>Restitution:</b> In der Physik ist Restitution definiert als &quot;die Rückkehr eines Objekts oder Systems in seinen ursprünglichen Zustand nach elastischer Verformung&quot;, aber da die Fixtures im GameMaker <span class="notranslate">Studio 2</span> 
+      Da es sich bei den Fixtures in GameMaker Studio 2 um starre Körper handelt, die nicht verformt werden können, kann man sich darunter vorstellen, wie &quot;federnd&quot; das Fixture ist.</li>
+  </ul>
+  <p>Wie Sie also sehen, können Sie mit <span class="notranslate">GameMaker Studio 2</span> mit nur wenigen einfachen Funktionen komplexe Systeme und Interaktionen erstellen, die Ihren Spielen einen noch nie dagewesenen Realismus verleihen.</p>
+  <p class="note"><b>HINWEIS: </b>Sie können ein Fixture definieren und es an mehrere Instanzen binden (denken Sie an einen Billardtisch, bei dem alle Kugeln die gleichen physikalischen Eigenschaften haben, aber jede einzelne eine diskrete Einheit ist). Sie können auch mehrere Fixtures an eine
+    Instanz binden und die physikalischen Eigenschaften kombinieren (z. B. zwei dreieckige Polygon-Fixtures verwenden, um einen Stern zu erzeugen)</p>
+  <p>Die folgenden Funktionen dienen zum Anlegen, Binden, Setzen von Kollisionen und anschließendem Löschen von Fixtures:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_create.htm">physics_fixture_create</a></li>
+    <li><a href="physics_fixture_bind.htm">physics_fixture_bind</a></li>
+    <li><a href="physics_fixture_bind_ext.htm">physics_fixture_bind_ext</a></li>
+    <li><a href="physics_fixture_set_collision_group.htm">physics_fixture_set_collision_group</a></li>
+    <li><a href="physics_fixture_delete.htm">physics_fixture_delete</a></li>
+    <li><a href="physics_remove_fixture.htm">physics_remove_fixture</a></li>
+  </ul>
+  <p> </p>
+  <p>Einem Einbauteil muss eine Form gegeben werden, sonst wird es von der Physikwelt nicht erkannt, und diese Form kann mit den folgenden Funktionen definiert werden:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_set_box_shape.htm">physics_fixture_set_box_shape</a></li>
+    <li><a href="physics_fixture_set_circle_shape.htm">physics_fixture_set_circle_shape</a></li>
+    <li><a href="physics_fixture_set_edge_shape.htm">physics_fixture_set_edge_shape</a></li>
+    <li><a href="physics_fixture_set_chain_shape.htm">physics_fixture_set_chain_shape</a></li>
+    <li><a href="physics_fixture_set_polygon_shape.htm">physics_fixture_set_polygon_shape</a></li>
+    <li><a href="physics_fixture_add_point.htm">physics_fixture_add_point</a></li>
+  </ul>
+  <p> </p>
+  <p>Damit Ihre physikfähige Instanz richtig auf die Welt um sie herum reagiert, müssen die verwendeten Fixtures bestimmte Eigenschaften haben, die dem Fixture Sprungkraft, Reibung, Masse usw. verleihen. Die folgenden Funktionen werden verwendet, um diese Eigenschaften einzustellen
+    des Fixtures:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_set_density.htm">physics_fixture_set_density</a></li>
+    <li><a href="physics_fixture_set_friction.htm">physics_fixture_set_friction</a></li>
+    <li><a href="physics_fixture_set_linear_damping.htm">physics_fixture_set_linear_damping</a></li>
+    <li><a href="physics_fixture_set_angular_damping.htm">physics_fixture_set_angular_damping</a></li>
+    <li><a href="physics_fixture_set_restitution.htm">physics_fixture_set_restitution</a></li>
+    <li><a href="physics_fixture_set_sensor.htm">physics_fixture_set_sensor</a></li>
+    <li><a href="physics_fixture_set_kinematic.htm">physics_fixture_set_kinematic</a></li>
+    <li><a href="physics_fixture_set_awake.htm">physics_fixture_set_awake</a></li>
+  </ul>
+  <p> </p>
+  <p>Sie können auch bestimmte Eigenschaften des Fixtures einstellen <i>, nachdem</i> es an eine Instanz gebunden wurde. Beim Binden des &quot;Basis&quot;-Fixtures können Sie wählen, ob der eindeutige Index für die gebundenen physikalischen Eigenschaften in einer Variablen gespeichert werden soll.
+    Diese kann dann in den folgenden Funktionen verwendet werden, um bestimmte Eigenschaften zu ändern oder die aktuellen Werte für sie zu erhalten:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_get_friction.htm">physics_get_friction</a></li>
+    <li><a href="physics_get_density.htm">physics_get_density</a></li>
+    <li><a href="physics_get_restitution.htm">physics_get_restitution</a></li>
+    <li><a href="physics_set_friction.htm">physics_set_friction</a></li>
+    <li><a href="physics_set_density.htm">physics_set_density</a></li>
+    <li><a href="physics_set_restitution.htm">physik_set_restitution</a></li>
+    <li><a href="../physics_mass_properties.htm">physik_masse_eigenschaften</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Physics.htm">Physik</a></div>
+        <div style="float:right">Nächste: <a href="../Joints/Joints.htm">Gelenke</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Fixtures
+-->
+  <!-- TAGS
+physics_fixture_functions
+-->
+
+</body></html>

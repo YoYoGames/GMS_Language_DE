@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wiederholen Sie</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Repeat action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Repeat" />
+  <meta name="search-keywords" content="Repeat" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Repeat Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_Repeat.png"> Wiederholung</h1>
+  <p>Diese Aktion wiederholt alle ihr hinzugefügten Aktionen so oft, wie angegeben. Sie geben an, wie oft die Aktionen wiederholt werden sollen, und fügen dann die Aktion zur Wiederholungsschleife hinzu, ähnlich wie Sie eine Aktion zu einem &quot;wenn&quot; hinzufügen würden, d. h.: Sie fügen die Aktion
+    Sie wird neben der Aktion eingefügt und nicht unter ihr:</p>
+  <p><img alt="Repeat drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/Repeat_Drop.png">Alle auf der Seite hinzugefügten Aktionen werden in die Wiederholung einbezogen und ausgeführt, bevor das Ereignis oder Skript
+    mit den darunter hinzugefügten Aktionen fortfährt (wie im folgenden Beispiel gezeigt). Beachten Sie, dass Sie jede Schleife vorzeitig beenden können, wenn Sie die Aktion " <a href="Break.htm">Abbrechen</a> " aufrufen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Repeat Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/a_Loops_Repeat.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Zeiten</td>
+        <td>Die Anzahl der Wiederholungen (ein ganzer Integer-Wert)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Repeat Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/e_Loops_Repeat.png">Der obige Code des Aktionsblocks ermittelt die Anzahl der Einträge in einer Liste und speichert den Wert in einer temporären lokalen Variablen.
+    Diese Variable wird dann verwendet, um die Anzahl der Durchläufe einer Wiederholungsschleife festzulegen. In der Wiederholungsschleife werden die Einträge aus der Liste in eine andere temporäre Variable eingelesen, die dann verwendet wird, um die Instanzen zu zerstören, auf die sie verweisen. Nach Beendigung der Schleife
+    beendet ist, wird die Datenstruktur freigegeben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Loop_Actions.htm">Schleifen-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="While.htm">Während</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Repeat
+-->
+  <!-- TAGS
+action_repeat
+-->
+</body>
+</html>

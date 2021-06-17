@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sequenz_keyframedaten_neu</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_keyframedata_new" />
+  <meta name="rh-index-keywords" content="sequence_keyframedata_new" />
+  <meta name="search-keywords" content="sequence_keyframedata_new,seqtracktype_graphic,seqtracktype_audio,seqtracktype_instance,seqtracktype_sequence,seqtracktype_clipmask,seqtracktype_clipmask_mask,seqtracktype_clipmask_subject,seqtracktype_group,seqtracktype_colour,seqtracktype_real,seqtracktype_message,seqtracktype_moment,seqtracktype_bool,seqtracktype_string,seqtracktype_spriteframes,seqtracktype_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sequenz_keyframedaten_neu</h1>
+  <p>Mit dieser Funktion können Sie eine neue <a href="../../../GML_Overview/Structs.htm">Keyframe-Datenstruktur</a> erstellen und den Typ der Spur angeben, auf die die <span class="notranslate">Keyframe-Daten</span> angewendet werden sollen:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+        <th>Wert</th>
+      </tr>
+      <tr>
+        <td>seqtracktype_graphic</td>
+        <td>Dies ist eine Grafik- (Sprite-) Asset-Spur.</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_audio</td>
+        <td>Dies ist eine Audio-Asset-Spur.</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_instance</td>
+        <td>Dies ist eine Instance-Asset-Spur.</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_sequence</td>
+        <td>Dies ist ein Sequenz-Asset-Track.</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask</td>
+        <td>Dies ist eine Clip-Masken-Gruppen-Asset-Spur.</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_mask</td>
+        <td>Dies ist eine Clip-Masken-Sprite-Asset-Spur, die zum Generieren der Clip-Maske verwendet wird.</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_subject</td>
+        <td>Dies ist eine Clip-Masken-Sprite-Asset-Spur, die maskiert wird.</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_group</td>
+        <td>Dieser Gruppenordner Asset-Track.</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_colour</td>
+        <td>Dies ist eine Farbdaten-Parameterspur.</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_real</td>
+        <td>Dies ist eine reale Zahlenwert-Parameterspur.</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_message</td>
+        <td>Dies ist eine Spur für Broadcast-Nachrichten.</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_moment</td>
+        <td>Dies ist ein Ereignis-/Moment-Track.</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_bool</td>
+        <td>Derzeit nicht verwendet.</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_string</td>
+        <td>Derzeit nicht verwendet.</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_spriteframes</td>
+        <td>Derzeit nicht verwendet.</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_empty</td>
+        <td>Derzeit nicht verwendet.</td>
+        <td>12</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Die Funktion gibt eine <a href="Sequence_Structs/The_Keyframe_Data_Struct.htm"><span class="notranslate">Spur-Keyframe-Datenstruktur</span></a> zurück, zu der dann Werte hinzugefügt werden können, bevor sie einer <a href="Sequence_Structs/The_Keyframe_Struct.htm"><span class="notranslate">Keyframe-Struktur</span></a> zugewiesen wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sequence_keyframedata_new(type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der zu erstellenden <span class="notranslate">Keyframe-Daten</span>, eine Konstante, die oben aufgeführt ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">myseq = sequence_create();<br> var mytracks = array_create(1);<br> mytracks[0] = sequence_track_new(seqtracktype_graphic);<br> var graphickeys = array_create(1);<br> graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);<br> graphickeys[0].frame
+    = 0;<br> graphickeys[0].length = 1;<br> graphickeys[0].stretch = true;<br> graphickeys[0].disabled = false;<br> var graphickeydata = array_create(1);<br> graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);<br> graphickeydata[0].spriteIndex
+    = spr_Platform;<br> graphickeydata[0].channel = 0;<br> graphickeys[0].channels = graphickeydata;<br> mytracks[0].name = &quot;TestGraphicTrack&quot;;<br> mytracks[0]. keyframes<span class="notranslate">= graphickeys</span>;<br> myseq.tracks = mytracks;</p>
+  <p>Der obige Code erstellt eine neue Sequenz und erstellt dann eine Grafik-Asset-Spur und setzt einige <span class="notranslate">Keyframe-Daten</span> auf die Spur. Diese Spur wird dann der Instanz zugewiesen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="sequence_get_objects.htm">sequence_get_objects</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_<span class="notranslate">keyframe</span>data_new
+seqtracktype_graphic
+seqtracktype_audio
+seqtracktype_instance
+seqtracktype_sequence
+seqtracktype_clipmask
+seqtracktype_clipmask_mask
+seqtracktype_clipmask_subject
+seqtracktype_group
+seqtracktype_colour
+seqtracktype_real
+seqtracktype_message
+seqtracktype_moment
+seqtracktype_bool
+seqtracktype_string
+seqtracktype_spriteframes
+seqtracktype_empty
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>data_new
+-->
+
+</body></html>

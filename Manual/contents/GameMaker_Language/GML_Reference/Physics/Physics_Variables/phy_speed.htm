@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_Drehzahl</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_speed" />
+  <meta name="rh-index-keywords" content="phy_speed" />
+  <meta name="search-keywords" content="phy_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_Drehzahl</h1>
+  <p>Diese <b>schreibgeschützte</b> Variable gibt die aktuelle Geschwindigkeit der physikalisch aktivierten Instanz zurück, definiert in Pixel pro Schritt. Sollten Sie diesen Wert ändern wollen, müssen Sie dies tun, indem Sie die x- und y-Vektoren mit den Variablen <a href="phy_speed_x.htm"><tt>phy_Geschwindigkeit_x</tt></a>    und <tt><a href="phy_speed_y.htm">phy_speed_y</a></tt>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">phy_speed;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Fließkommawert mit einfacher Genauigkeit, oder <tt>undefiniert</tt>, wenn die Instanz nicht physikaktiviert ist)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if phy_speed &gt; 10<br> {
+    <br> phy_linear_damping += 0,01;<br> }
+    <br> sonst
+    <br> {
+    <br> phy_linear_damping = 2;<br> }
+  </p>
+  <p>Der obige Code prüft die Geschwindigkeit der physikalisch aktivierten Instanz und ändert dann die lineare Dämpfung basierend auf dem zurückgegebenen Wert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Physics_Variables.htm">Physik-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="phy_com_x.htm">phy_com_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_speed
+-->
+  <!-- TAGS
+phy_speed
+-->
+</body>
+</html>

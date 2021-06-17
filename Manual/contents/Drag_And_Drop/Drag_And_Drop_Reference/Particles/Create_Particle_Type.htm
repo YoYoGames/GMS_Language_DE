@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Partikeltyp erstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Create Particle Type action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Particle Type" />
+  <meta name="search-keywords" content="Create Particle Type" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Particle Type Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Type.png"> Partikeltyp erstellen</h1>
+  <p>In Ihren Projekten können Sie mehrere verschiedene <i>Partikeltypen</i> haben, jeder mit seinen eigenen Eigenschaften wie Richtung und Farbe usw., die mit den verschiedenen Partikeltyp-Aktionen eingestellt werden. Sie müssen jedoch zunächst einen <b>Partikeltyp</b> mit dieser Aktion erstellen, die im Wesentlichen eine kleine Menge an Speicher zuweist, um alle Partikeldetails zu halten, so dass Sie die Partikel jederzeit in der Zukunft verwenden können. Sie geben eine Variable an, um den eindeutigen ID-Wert für den Partikeltyp zu halten, und dann in
+    allen zukünftigen Aktionen, die sich auf diesen Partikel beziehen, können Sie die Variable aufrufen. Sie können diese Variable als temporäre lokale Variable kennzeichnen, aber das bedeutet, dass sie am Ende des Aktionsskripts oder Ereignisses verworfen wird, was bedeutet, dass der Partikeltyp
+    Typ immer noch existiert, aber Sie keine Möglichkeit haben, darauf zuzugreifen, so dass Vorsicht geboten ist, wenn Sie dies verwenden (im Allgemeinen müssen Partikeltypen nie in einer temporären lokalen Variablen gespeichert werden, aber für bestimmte Dinge, wie das Zeichnen von Partikeln auf eine Oberfläche,
+    kann dies erforderlich sein).</p>
+  <p class="note"><b>HINWEIS</b>: Ein einmal erstellter Partikeltyp bleibt für die Dauer des Spiels im Systemspeicher resident. Wenn Sie ihn also zu irgendeinem Zeitpunkt neu erstellen müssen (zum Beispiel, wenn Sie die Aktion " <a href="../Game/Restart_Game.htm">Spiel neu starten</a> " aufrufen),
+    dann <b>müssen</b> Sie <b>den aktuellen Partikeltyp zerstören</b>, da Sie sonst ein Speicherleck erhalten. Dies geschieht, wenn eine Ressource dem Speicher hinzugefügt und dann &quot;de-referenziert&quot; wird, was bedeutet, dass GameMaker <span class="notranslate">Studio 2 keine</span> Möglichkeit mehr hat, mit dieser Ressource zu interagieren
+    mehr. Dies führt dazu, dass der Speicher durch unzugängliche Ressourcen verstopft wird, was wiederum zu Problemen in Ihrem Spiel führen kann. Um einen Partikeltyp zu zerstören, wenn er nicht mehr benötigt wird, verwenden Sie die Aktion <a href="Destroy_Particle_Type.htm">Partikeltyp zerstören</a>.</p>
+  <p>Sie können auch den für die Partikel zu verwendenden <b>Überblendungsmodus</b> einstellen. Standardmäßig werden sie mit einem &quot;normalen&quot; Überblendungsmodus gezeichnet, d. h. die Farben werden nicht durch das, was unter dem Partikel gezeichnet wurde, verändert.
+    aktiviert ist, werden sie mit <i>additiver</i> Überblendung gezeichnet, was bedeutet, dass die Farben je nach dem, was unter dem Partikel gezeichnet wurde, verändert werden. Additives Überblenden ergibt sehr helle und &quot;leuchtende&quot; Effekte und ist
+    ideal für Explosionen, Laser, Feuer usw., während normales Blending besser für Dinge wie Regen, Rauch und Trümmer geeignet ist. Das Bild unten zeigt denselben Effekt mit deaktivierter (links) und aktivierter (rechts) additiver Überblendung:</p>
+  <p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Particle_Blending.gif" /></p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Create Particle Type Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Create_Particle_Type.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable, die den zurückgegebenen Typ-ID-Wert enthält</td>
+      </tr>
+      <tr>
+        <td>Blend</td>
+        <td>Ob der Partikeltyp additives Blending verwenden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">Der obige Code des Aktionsblocks erstellt einen neuen Partikeltyp und weist seinen eindeutigen
+    ID-Wert einer globalen Variablen zu. Anschließend werden alle Eigenschaften für den Partikeltyp festgelegt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Actions.htm">Partikel-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Destroy_Particle_Type.htm">Partikeltyp zerstören</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Particle Type
+-->
+  <!-- TAGS
+action_part_type_create
+-->
+</body>
+</html>

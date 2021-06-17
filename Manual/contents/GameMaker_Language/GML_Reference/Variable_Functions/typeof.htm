@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>typeof</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function typeof" />
+  <meta name="rh-index-keywords" content="typeof" />
+  <meta name="search-keywords" content="typeof" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>typeof</h1>
+  <p>Diese Funktion gibt den Datentyp einer beliebigen Variablen als Zeichenkette zurück. Die möglichen Rückgabewerte sind in der folgenden Tabelle aufgeführt:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Zeichenfolge</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Nummer</td>
+        <td>Die Variable enthält eine reelle (Fließkomma-)Zahl - dies kann <tt>NaN</tt> und <tt>Unendlich</tt>beinhalten</td>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Die Variable enthält eine Zeichenkette</td>
+      </tr>
+      <tr>
+        <td>Array</td>
+        <td>Die Variable referenziert ein Array</td>
+      </tr>
+      <tr>
+        <td>bool</td>
+        <td>Die Variable enthält einen booleschen Wert<tt>(true</tt> / <tt>false</tt>)</td>
+      </tr>
+      <tr>
+        <td>int32</td>
+        <td>Die Variable enthält eine 32-Bit-Ganzzahl</td>
+      </tr>
+      <tr>
+        <td>int64</td>
+        <td>Die Variable enthält eine 64-Bit-Ganzzahl</td>
+      </tr>
+      <tr>
+        <td>ptr</td>
+        <td>Die Variable enthält einen Zeiger</td>
+      </tr>
+      <tr>
+        <td>undefiniert</td>
+        <td>Die Variable ist undefiniert</td>
+      </tr>
+      <tr>
+        <td>null</td>
+        <td>Die Variable enthält einen Nullwert (dies sollte normalerweise nicht zu sehen sein)</td>
+      </tr>
+      <tr>
+        <td>vec3</td>
+        <td>Die Variable enthält einen Vektor mit 3 Werten</td>
+      </tr>
+      <tr>
+        <td>vec4</td>
+        <td>Die Variable enthält einen Vektor mit 4 Werten</td>
+      </tr>
+      <tr>
+        <td>Methode</td>
+        <td>Die Variable enthält eine Funktionsreferenz</td>
+      </tr>
+      <tr>
+        <td>struct</td>
+        <td>Die Variable enthält eine struct-Referenz</td>
+      </tr>
+      <tr>
+        <td>unbekannt</td>
+        <td>Wert ist unbekannt. Dies sollte <i>niemals</i> gesehen werden und bedeutet, dass etwas auf der grundlegendsten Ebene schief gelaufen ist, wie z. B. ein Speicherüberschreiben</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Bitte beachten Sie, dass es Fälle gibt, in denen diese Funktion möglicherweise nicht den richtigen Wert für eine <strong>Methode</strong> zurückgibt. Betrachten Sie die folgenden zwei Funktionsdefinitionen:</p>
+  <p class="code">a = function()<br> {<br> // irgendwas<br> } <br>
+    <br> function b()<br> {<br> // irgendwas<br> }</p>
+  <p>Technisch gesehen werden beide als Methoden betrachtet, da sie eine Funktion an eine Instanzbereichsvariable binden, jedoch gibt der Aufruf von <span class="inline">typeof()</span> für die Funktion <span class="inline">b</span> &quot;number&quot; und nicht &quot; <em>method </em>&quot; zurück <em>, </em>
+    während der Aufruf auf <span class="inline">a</span> &quot;Methode&quot; zurückgibt. Das liegt daran, dass Methoden, die wie die für <span class="inline">b</span> erstellt werden, Skript-Indizes zugewiesen werden (die Integer-Werte sind), da dies die
+    Art und Weise, wie der Compiler Skriptfunktionen erkennt, auch wenn die Funktion nicht in einem Skript definiert wurde.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">typeof(Variable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>variabel</td>
+        <td>Die Variable, deren Datentyp ermittelt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">String (siehe Tabelle, oben)</p>
+  <p> </p>
+  <h4><b>Beispiel:</b></h4>
+  <p class="code">var _str = typeof(global.ExtensionInput);<br> show_debug_message(&quot; <strong>global.ExtensionInput ist ein &quot; + _str);</strong></p>
+  <p>Der obige Code ruft den Datentyp ab, der von der angegebenen globalen Variablen gehalten wird, und gibt die Zeichenkette an eine lokale Variable zurück, die dann zur Ausgabe einer Meldung auf der Konsole verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="bool.htm">bool</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+typeof
+-->
+  <!-- TAGS
+typeof
+-->
+</body>
+</html>

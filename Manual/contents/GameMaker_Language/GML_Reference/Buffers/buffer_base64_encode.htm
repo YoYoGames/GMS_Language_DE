@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_base64_encode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_base64_encode" />
+  <meta name="rh-index-keywords" content="buffer_base64_encode" />
+  <meta name="search-keywords" content="buffer_base64_encode" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_base64_encode</h1>
+  <p>Diese Funktion konvertiert die Daten aus dem angegebenen Puffer in eine im Base64-Format kodierte Zeichenfolge. Dies ist ein gängiges Kodierungsschema, das häufig für Medien verwendet wird, die als Text gespeichert oder über das Internet übertragen werden müssen, und macht die
+    Ausgabe für das menschliche Auge unlesbar. Um dies zu verwenden, müssen Sie einen bereits erstellten Puffer, den Offset-Wert (das ist der Punkt innerhalb des Puffers, an dem Sie mit der Kodierung beginnen möchten) sowie die Größe des zu kodierenden Pufferspeichers in Bytes angeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_base64_encode(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu verwendenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Datenoffsetwert.</td>
+      </tr>
+      <tr>
+        <td>Größe</td>
+        <td>Die Größe des Puffers.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var b_str = buffer_base64_encode(buff, 0, buffer_get_size(buff))</p>
+  <p>Der obige Code erzeugt eine Kodierung der vollständigen Daten, die in dem durch die Variable &quot;buff&quot; indizierten Puffer gespeichert sind, und speichert die zurückgegebene Zeichenfolge in der lokalen Variablen &quot;b_str&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_base64_decode.htm">buffer_base64_decode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_base64_encode
+-->
+  <!-- TAGS
+buffer_base64_encode
+-->
+</body>
+</html>

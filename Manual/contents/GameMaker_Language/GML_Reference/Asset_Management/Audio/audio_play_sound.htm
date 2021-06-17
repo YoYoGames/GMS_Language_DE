@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound" />
+  <meta name="rh-index-keywords" content="audio_play_sound" />
+  <meta name="search-keywords" content="audio_play_sound" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_play_sound</h1>
+  <p>Mit dieser Funktion können Sie jede Sound-Ressource in Ihrem Spiel abspielen. Sie geben den Sound-Index an und weisen ihm eine Priorität zu, die dann verwendet wird, um zu bestimmen, wie mit den Sounds umgegangen wird, wenn die Anzahl der abgespielten Sounds über dem von der Funktion festgelegten Limit liegt 
+    <a href="audio_channel_num.htm"><tt>audio_channel_num()</tt></a>. Klänge mit niedrigerer Priorität werden zugunsten von Klängen mit höherer Priorität gestoppt, und der Prioritätswert kann eine beliebige reale Zahl sein (der tatsächliche Wert ist willkürlich und kann zwischen 0 und 1 oder 0 und 100 liegen, da <span class="notranslate">GameMaker Studio 2</span> 
+      sie gleich priorisiert). Beachten Sie, dass die Priorität umso <i>höher ist, je</i> <i>höher</i> die Zahl ist, d. h. ein Sound mit der Priorität 100 wird gegenüber einem Sound mit
+      Priorität 1. Das letzte Argument dient dazu, den Sound in einer Schleife abzuspielen. Wenn Sie es auf <tt>true</tt> setzen, wird der Sound in einer Schleife abgespielt, bis er gestoppt wird, und wenn Sie es auf <tt>false</tt> setzen, wird der Sound nur einmal abgespielt
+      nur.</p>
+  <p>Diese Funktion gibt auch eine eindeutige Indexnummer für den abgespielten Ton zurück, die dann in einer Variablen gespeichert werden kann, so dass Sie ihn dann mit den entsprechenden Funktionen anhalten oder stoppen können. Das bedeutet, dass Sie, wenn Sie mehrere Instanzen desselben
+    Wenn Sie also mehrere Instanzen desselben Tons gleichzeitig abspielen, können Sie mit den Audiofunktionen nur eine Instanz dieses Tons bearbeiten.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_play_sound(index, priority, loop);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des abzuspielenden Tons.</td>
+      </tr>
+      <tr>
+        <td>Priorität</td>
+        <td>Stellen Sie die Kanalpriorität für den Ton ein.</td>
+      </tr>
+      <tr>
+        <td>Schleife</td>
+        <td>Legt fest, ob der Ton eine Schleife bilden soll oder nicht.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Index (Sound-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if health &lt;= 0<br> {
+    <br> lives -= 1;<br> audio_play_sound(snd_PlayerDead, 10, false);<br> }
+  </p>
+  <p>Der obige Code prüft die globale Variable &quot;health&quot; und wenn sie kleiner oder gleich 0 ist, wird 1 aus der globalen Variable &quot;lives&quot; entfernt und ein Ton abgespielt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_play_sound_at.htm">audio_play_sound_at</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound
+-->
+  <!-- TAGS
+audio_play_sound
+-->
+</body>
+</html>

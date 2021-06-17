@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instanz_holen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_get" />
+  <meta name="rh-index-keywords" content="variable_instance_get" />
+  <meta name="search-keywords" content="variable_instance_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_instanz_holen</h1>
+  <p>Mit dieser Funktion können Sie den Wert einer gegebenen benannten Variablen abrufen. Sie geben den eindeutigen Wert der Instanz-ID an (den Sie in den <a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">Instanz-Eigenschaften</a> im Raum
+    Editor gefunden werden kann oder beim Aufruf der Funktion zurückgegeben wird <a href="../Asset_Management/Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>) sowie den Namen der Variable, deren Wert Sie abrufen wollen, <i>als String</i> (siehe Beispielcode
+    unten). Die Funktion gibt den Wert zurück, den die Variable enthält, oder <span class="inline">undefined</span>, wenn die Variable nicht existiert.</p>
+  <p class="note"><b>WICHTIG!</b> Wenn die Variable, die Sie erhalten, nicht existiert, gibt die Funktion das Schlüsselwort <tt>undefiniert</tt> zurück und Sie können Fehler erhalten, die das Spiel zum Stillstand bringen, verwenden Sie also im Zweifelsfall zuerst die Funktion <a href="variable_instance_exists.htm"><tt>variable_instanz_existiert</tt></a>    zuerst.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">variable_instance_get(instance_id, name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>Der eindeutige ID-Wert der zu verwendenden Instanz</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name der zu erhaltenden Variablen (als String)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Wert (beliebiger Datentyp) oder <tt>undefiniert</tt> (wenn die benannte Variable nicht existiert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if variable_instance_exists(id, &quot;shields&quot;)<br> {
+    <br> var ss = variable_instance_get(id, &quot;shields&quot;);<br> }
+    <br> sonst
+    <br> }
+    <br> var ss = -1;<br> }
+  </p>
+  <p>Der obige Code prüft, ob eine Variable existiert und wenn ja, dann wird der Wert, den sie enthält, abgerufen und in einer lokalen Variable gespeichert. Wenn sie nicht vorhanden ist, wird die lokale Variable auf -1 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="variable_instance_set.htm">variable_instance_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_get
+-->
+  <!-- TAGS
+variable_instance_get
+-->
+</body>
+</html>

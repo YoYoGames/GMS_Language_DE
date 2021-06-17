@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_get_axis_deadzone</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_axis_deadzone" />
+  <meta name="rh-index-keywords" content="gamepad_get_axis_deadzone" />
+  <meta name="search-keywords" content="gamepad_get_axis_deadzone" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_axis_deadzone</h1>
+  <p>Mit dieser Funktion können Sie den &quot;Totzonen&quot;-Wert der Joystick-Achse ermitteln. Die Funktion gibt einen Wert zwischen 0 und 1 zurück, wobei der Wert den Schwellenwert angibt, unter dem die Joystick-Achse als
+    auf 0 steht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gamepad_get_axis_deadzone(device);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Welcher Gamepad-Geräte-&quot;Steckplatz&quot; zu prüfen ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if gamepad_get_axis_deadzone(global.PadId) != 0.5<br> {
+    <br> gamepad_set_axis_deadzone(global.PadId, 0.5);<br> }
+  </p>
+  <p>Der obige Code prüft den Schwellenwert der analogen Achse des an das Gerät &quot;slot&quot; angeschlossenen Gamepads, der in der globalen Variablen gespeichert ist, und wenn er nicht der Standardwert von 0,5 ist, wird er auf diesen Wert gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Input.htm">Gamepad-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="gamepad_get_option.htm"> gamepad_get_option </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_axis_deadzone
+-->
+  <!-- TAGS
+gamepad_get_axis_deadzone
+-->
+
+</body></html>

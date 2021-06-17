@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_begin_script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_begin_script" />
+  <meta name="rh-index-keywords" content="camera_set_begin_script" />
+  <meta name="search-keywords" content="camera_set_begin_script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_begin_script</h1>
+  <p>Mit dieser Funktion können Sie eine <a href="../../../GML_Overview/Script_Functions.htm">Skriptfunktion</a> festlegen, die zu Beginn jedes Spielframes aufgerufen wird, in dem die Kamera einem sichtbaren und aktiven Viewport zugewiesen ist. Sie geben den eindeutigen Kamera
+    ID-Wert (wie er von den verschiedenen <tt><a href="camera_create.htm">camera_create()</a></tt> Funktionen zurückgegeben wird) und die ID der aufzurufenden Funktion. Die Reihenfolge, in der Skripte an Kameras angehängt werden, und das tatsächliche Rendern der Kameraansicht ist wie folgt:</p>
+  <ul class="colour">
+    <li>Die Kameras für alle sichtbaren und aktiven Ansichtsports haben ihre <b>Aktualisierungsfunktion</b> mit</li>
+    <li>Dann für jede Ansicht:
+      <ul>
+        <li>Die <b>begin-Funktion </b>für die Kamera für diese Ansicht wird aufgerufen</li>
+        <li>Die Zeichenereignisse werden für diese Ansicht ausgeführt</li>
+        <li>Die <b>Endfunktion </b>für die Kamera wird aufgerufen</li>
+      </ul>
+    </li>
+    <li>Zur nächsten aktiven sichtbaren Ansicht wechseln und wiederholen...</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_set_begin_script(camera_id, script)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde.</td>
+      </tr>
+      <tr>
+        <td>Skript</td>
+        <td>Die Skriptfunktion zum Ausführen jedes Spielframes</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">camera_set_begin_script(view_camera[0], beginCamera);</p>
+  <p>Der obige Code setzt die Skriptfunktion begin für die Kamera, die dem Ansichtsanschluss [0] zugewiesen ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_set_end_script.htm">camera_set_end_script</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_begin_script
+-->
+  <!-- TAGS
+camera_set_begin_script
+-->
+</body>
+</html>

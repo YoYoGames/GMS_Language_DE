@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_activate_overlay_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_activate_overlay_user" />
+  <meta name="rh-index-keywords" content="steam_activate_overlay_user" />
+  <meta name="search-keywords" content="steam_activate_overlay_user" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_activate_overlay_user</span></h1>
+  <p>Diese Funktion öffnet das <span class="notranslate">Steam-Overlay</span> zu einem der ausgewählten Dialoge, die sich auf die angegebene Benutzer-ID beziehen. Die möglichen Dialogstrings sind:</p>
+  <ul class="colour">
+    <li>&quot; steamid<b><span class="notranslate">&quot; -</span></b> öffnet den Webbrowser der <span class="notranslate">Steam-Community</span> auf der Seite des Benutzers oder der Gruppe</li>
+    <li>&quot; chat&quot;<b>-</b> öffnet ein Chat-Fenster für den angegebenen Benutzer</li>
+  </ul>
+  <p>Beachten Sie, dass <span class="notranslate">Steam-IDs</span> große Zahlen sein können und dass Sie daher Ihren ID-Wert möglicherweise als <a href="../../Variable_Functions/int64.htm"><tt>int64()</tt></a> kodieren, bevor Sie ihn an die Funktion übergeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="notranslate">steam_activate_overlay_user</span>(dialog_name, <span class="notranslate">steamid</span>);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>dialog_name</td>
+        <td>Der Dialog, in dem das Overlay geöffnet werden soll (siehe unten).</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">steamid</span></td>
+        <td>Die zu verwendende <span class="notranslate">Steam-Benutzer-ID</span> oder Gruppen-ID.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var key = keyboard_lastkey;<br> switch (key)<br> {
+    <br> case vk_f1: <span class="notranslate">steam_activate_overlay_user</span>(&quot; steamid<span class="notranslate">&quot;,</span>global.GameGroupID); break;<br> case vk_f2: steam_activate_overlay_user(&quot;chat&quot;, global.FriendID); break;<br> }
+  </p>
+  <p>Der obige Code fragt die zuletzt gedrückte Tastaturtaste ab, und wenn es die Funktionstaste 1 oder die Funktionstaste 2 ist, wird das <span class="notranslate">Steam-Overlay</span> geöffnet, um entweder die in der globalen Variable &quot;GamegroupID&quot; gespeicherte <span class="notranslate">Steam-Gruppe</span> zu sehen, oder es wird das Chat-Fenster geöffnet, um
+    mit dem Benutzer zu chatten, der in der globalen Variablen &quot;FriendID&quot; gespeichert ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Steam_Overlay.htm"><span class="notranslate">Dampf-Overlay</span></a></div>
+        <div style="float:right">Weiter: <a href="steam_is_overlay_enabled.htm"><span class="notranslate">steam_is_overlay_enabled</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_activate_overlay_user
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_activate_overlay_user
+-->
+</body>
+</html>

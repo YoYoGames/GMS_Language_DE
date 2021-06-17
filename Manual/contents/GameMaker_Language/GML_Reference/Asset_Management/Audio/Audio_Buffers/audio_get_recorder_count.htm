@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_recorder_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_recorder_count" />
+  <meta name="rh-index-keywords" content="audio_get_recorder_count" />
+  <meta name="search-keywords" content="audio_get_recorder_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_recorder_count</h1>
+  <p>Diese Funktion gibt die Anzahl der Audioaufnahmequellen (wie Mikrofone, etc...) zurück, die derzeit für Ihr Spiel verfügbar sind. Wenn Sie also einen Rückgabewert von z. B. vier haben, dann haben Sie Audioeingang an den Quellen 0, 1, 2 und 3, wobei einer
+    dieser Werte ist derjenige, von dem aus Sie die Aufnahme mit der Funktion <a href="audio_start_recording.htm"><tt>audio_start_aufzeichnung()</tt></a>. Dieser Wert kann sich jederzeit ändern, wenn Sie Mikrofone oder andere Eingangsquellen an das Gerät anschließen/abziehen.
+    Eingangsquellen an das Gerät angeschlossen werden. Beachten Sie, dass Sie mit der Funktion <a href="audio_get_recorder_info.htm"><tt>audio_get_recorder_info()</tt></a> verwenden können, um Informationen über jedes angeschlossene Gerät zu erhalten.</p>
+  <p class="note"><b>WICHTIG!</b> Diese Funktion gibt immer 0 zurück, wenn sie auf dem HTML5-Ziel verwendet wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_get_recorder_count();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if audio_get_recorder_count() &gt; 0<br> {
+    <br> channel_index = audio_start_recording(0);<br> }
+  </p>
+  <p>Der obige Code prüft die verfügbaren Audiorecorder und wenn es 1 oder mehrere gibt, beginnt er die Aufnahme vom ersten indizierten (Quelle 0).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Audio.htm">Audio-Puffer</a></div>
+        <div style="float:right">Weiter: <a href="audio_get_recorder_info.htm">audio_get_recorder_info</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_recorder_count
+-->
+  <!-- TAGS
+audio_get_recorder_count
+-->
+</body>
+</html>

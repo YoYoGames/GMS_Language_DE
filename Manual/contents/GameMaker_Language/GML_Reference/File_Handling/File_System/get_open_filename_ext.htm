@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_open_filename_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for get_open_filename_ext" />
+  <meta name="rh-index-keywords" content="get_open_filename_ext" />
+  <meta name="search-keywords" content="get_open_filename_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_open_filename_ext</h1>
+  <p>Diese Funktion öffnet einen Dialog und fragt den Spieler nach einem Dateinamen, der mit dem angegebenen Filter geöffnet werden soll. Der Filter hat die Form &quot; name1|mask1|name2|mask2|<i>... &quot;,</i> wobei die Maske die verschiedenen Optionen mit einem Semikolon dazwischen enthalten kann und
+    Sie können auch einen &quot;*&quot; verwenden, um eine beliebige Zeichenfolge zu bezeichnen. Zum Beispiel: &quot; bitmaps|*<i>.bmp;*.wmf&quot;,</i> würde den Benutzer auffordern, den Namen einer Bitmap-Datei aus dem System auszuwählen, aber nur solche, die die beiden angegebenen Erweiterungen haben (bmp und
+   <tt>png</tt>). Diese Funktion öffnet <b>nicht</b> die Datei selbst! Sie gibt nur eine Zeichenkette mit dem vollständigen Namen und Pfad der Datei zurück. Wenn der Benutzer &quot;<b>Abbrechen&quot;</b> drückt, wird<b>eine</b> leere Zeichenkette &quot;&quot; zurückgegeben. Sie können auch ein Verzeichnis
+    angeben, von dem aus die Suche gestartet werden soll, und eine Beschriftung, die am oberen Rand des Fensters anstelle der Standardbeschriftung angezeigt werden soll.</p>
+  <p>Wichtig bei der Verwendung dieser Funktion ist, dass sie Ihnen bestimmte Rechte für diese Datei gewährt, und zwar für die Dauer Ihres Spiels. Wenn Sie also einmal den Dateipfad vom Benutzer erhalten haben, können Sie immer wieder darauf zugreifen, ohne fragen zu müssen. Wie auch immer,
+    da es sich bei dieser Funktion um das Lesen einer Datei handelt, sind die gewährten Berechtigungen <i>nur zum Lesen</i> und Speichern vom Betriebssystem nicht erlaubt. Sollten Sie die Datei lesen und schreiben müssen, können Sie die Berechtigung mit der Funktion <a href="get_save_filename.htm"><tt>get_save_filename()</tt></a>.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion ist nur für die Ziele <span class="notranslate">Windows</span> und <span class="notranslate">macOS</span> gültig.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">get_open_filename_ext(filter, fname, directory, caption);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Filter</td>
+        <td>Der Dateitypfilter und/oder der Name.</td>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Der vorgeschlagene Dateiname, der verwendet werden soll.</td>
+      </tr>
+      <tr>
+        <td>Verzeichnis</td>
+        <td>Das Verzeichnis, von dem aus die Suche gestartet werden soll.</td>
+      </tr>
+      <tr>
+        <td>Beschriftung</td>
+        <td>Die Beschriftung für das Fenster.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var file;<br> file = get_open_filename_ext(&quot;text file|*.txt&quot;, &quot;&quot;, working_directory, &quot;Open a saved level&quot;);<br> if file != &quot;&quot;<br> {
+    <br> file_text_open_read(file);
+    <br> }
+  </p>
+  <p>Der obige Code fordert den Benutzer auf, eine Textdatei zum Öffnen aus dem <tt>Verzeichnis "working_directory"</tt> auszuwählen, und prüft dann den zurückgegebenen Dateinamen und -pfad, und öffnet die Datei zum Lesen, wenn sie existiert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="File_System.htm">Dateisystem</a></div>
+        <div style="float:right">Weiter: <a href="get_save_filename.htm">get_save_filename</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_open_filename_ext
+-->
+  <!-- TAGS
+get_open_filename_ext
+-->
+</body>
+</html>

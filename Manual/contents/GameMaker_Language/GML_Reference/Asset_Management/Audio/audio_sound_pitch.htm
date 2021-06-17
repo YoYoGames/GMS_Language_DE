@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_pitch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_pitch" />
+  <meta name="rh-index-keywords" content="audio_sound_pitch" />
+  <meta name="search-keywords" content="audio_sound_pitch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_pitch</h1>
+  <p>Diese Funktion kann verwendet werden, um die Tonhöhe eines bestimmten Sounds zu ändern. Der Sound kann entweder aus einem Index für einen einzelnen abgespielten Sound referenziert werden, der in einer Variablen gespeichert wurde, wenn die Funktion <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> oder 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> Funktionen gespeichert wurde, oder ein tatsächliches Sound-Asset aus dem Asset-Browser. Wenn es sich um einen Index eines abgespielten Sounds handelt, wird nur diese Instanz geändert, bei Verwendung eines Sound-Assets aus dem Asset-Browser werden jedoch alle
+      werden jedoch alle weiteren Instanzen dieses Sounds geändert, die gerade abgespielt werden.</p>
+  <p>Das Argument "Tonhöhe" ist ein <i>Tonhöhenmultiplikator</i>, d. h., der Eingabewert multipliziert die aktuelle Tonhöhe mit diesem Wert, so dass der Standardwert 1 keine Tonhöhenänderung bedeutet, während ein Wert von weniger als 1 die Tonhöhe senkt und ein Wert von mehr als 1 die
+    die Tonhöhe erhöhen. Es ist am besten, kleine Schritte für diese Funktion zu verwenden, da ein Wert unter 0 oder über 5 möglicherweise ohnehin nicht hörbar ist. Es ist zu beachten, dass die zulässige Gesamttonhöhenänderung auf (1/256) - 256 Oktaven begrenzt ist, so dass jeder Wert über oder unter
+    nicht registriert wird.</p>
+  <p class="note"><b>HINWEIS: </b>Der oben angegebene geklammerte Wert ist der, auf den <span class="notranslate">GameMaker Studio 2</span> versucht, den Bereich zu klammern, aber dieser Wert ist <b>nicht</b> auf allen Zielplattformen garantiert. <span class="notranslate">iOS</span>, zum Beispiel,
+    auf (1/256) - 8 geklemmt, so dass Sie möglicherweise auf jeder Zielplattform experimentieren und verschiedene Versionen einer Sound-Ressource haben müssen, die jeweils vorverschiebt sind, falls Sie höhere oder niedrigere Oktavwerte benötigen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_sound_pitch(index, pitch);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu ändernden Tons.</td>
+      </tr>
+      <tr>
+        <td>Stellplatz</td>
+        <td>Der Pitch-Multiplikator (Voreinstellung 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var s_engine = audio_play_sound(snd_CarEngine, 10, false);<br> switch (gear)<br> {
+    <br> case 1: audio_sound_pitch(s_engine, 0.8); break;<br> case 2: audio_sound_pitch(s_engine, 0.9); break;<br> case 3: audio_sound_pitch(s_engine, 0.95); break;<br> case 4: audio_sound_pitch(s_engine, 1); break;<br> case 5: audio_sound_pitch(s_engine,
+    1.2); break;<br> }
+  </p>
+  <p>Der obige Code ändert die Tonhöhe des abgespielten Tons, der in der Variablen &quot;s_engine&quot; indiziert ist, basierend auf dem Wert der Variablen &quot;gear&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_sound_get_pitch.htm">audio_sound_get_pitch</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_pitch
+-->
+  <!-- TAGS
+audio_sound_pitch
+-->
+</body>
+</html>

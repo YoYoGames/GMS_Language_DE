@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_check_permission</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_check_permission" />
+  <meta name="rh-index-keywords" content="os_check_permission,os_permission_granted,os_permission_denied,os_permission_denied_dont_request" />
+  <meta name="search-keywords" content="os_check_permission,os_permission_granted,os_permission_denied,os_permission_denied_dont_request" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_check_permission</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob dem Spiel vom Benutzer eine bestimmte Berechtigung erteilt wurde. Sie geben die zu prüfende Berechtigung als String im Format &quot; android<tt>.permission.&lt;Permission&gt; &quot;</tt> an<tt>, d. h., um</tt> z. B. die <tt>RECORD_AUDIO-Berechtigung</tt> zu prüfen, würden Sie</p>
+  <p class="code">os_check_permission(&quot;android.permission.RECORD_AUDIO&quot;);</p>
+  <p>Die Funktion gibt eine von drei Konstanten zurück - siehe unten - um dem Spiel mitzuteilen, wie der Status der Berechtigung ist. Weitere Informationen zu App-Berechtigungen finden Sie in der <a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank"><span class="notranslate">Android-Dokumentation</span></a>.</p>
+  <p class="note"><b>WICHTIG!</b> Diese Funktion ist nur für das <b><span class="notranslate">Android</span></b> nur für das Ziel.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">os_check_permission(erlaubnis)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Genehmigung</td>
+        <td>Die zu prüfende Berechtigung (eine Zeichenkette)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Konstant</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>os_erlaubnis_erteilt</td>
+        <td>Dies zeigt an, dass die Genehmigung erteilt wurde</td>
+      </tr>
+      <tr>
+        <td>os_erlaubnis_verweigert</td>
+        <td>Dies zeigt an, dass die Genehmigung nicht erteilt wurde</td>
+      </tr>
+      <tr>
+        <td>os_erlaubnis_verweigert_keine_anforderung</td>
+        <td>Dies zeigt an, dass die Berechtigung entweder durch die Telefoneinstellungen blockiert wurde oder dass der Benutzer die Anfrage zuvor abgelehnt und &quot;Nicht mehr nachfragen&quot; ausgewählt hat.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (os_type == os_android)<br> {
+    <br> if (os_check_permission(&quot;android.permission.INTERNET&quot;) == os_permission_denied)<br> {
+    <br> os_request_permission(&quot;android.permission.INTERNET&quot;);
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft den Betriebssystemtyp und wenn es sich um <span class="notranslate">Android</span> handelt, führt er eine Überprüfung der Berechtigungen durch und fordert die Berechtigung &quot;INTERNET&quot; an, wenn sie noch nicht erteilt wurde.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="OS_And_Compiler.htm">OS und Compiler</a></div>
+        <div style="float:right">Weiter: <a href="os_request_permission.htm">os_request_permission</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_check_permission
+os_permission_granted
+os_permission_denied
+os_permission_denied_dont_request
+-->
+  <!-- TAGS
+os_check_permission
+-->
+</body>
+</html>

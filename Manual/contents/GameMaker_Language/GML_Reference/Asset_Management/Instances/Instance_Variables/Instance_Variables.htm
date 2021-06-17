@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz-Variablen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different instance variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Instance Variables" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Instanz-Variablen</h1>
+  <p>Wenn Sie ein neues Objekt erstellen, wird es mit bestimmten Variablen geliefert, die bereits mit Standardwerten initialisiert sind. Diese Variablen nennen wir <b>Instanzvariablen</b>, da sie für jede Instanz, die Sie von dem Objekt in Ihren Spielräumen platzieren, erstellt werden, und
+    Sobald eine Instanz erstellt wurde, sind die Werte dieser Variablen eindeutig für diese Instanz und <i>nur</i> für diese Instanz. Einige dieser Variablen werden Sie häufig verwenden, wie <tt>x</tt> und <tt>y</tt>, während andere weniger benötigt werden, je nachdem, was Sie tun wollen.
+    aber im Allgemeinen sind sie sehr nützlich und Sie sollten sie nach Möglichkeit verwenden, anstatt eigene benutzerdefinierte Variablen zu erstellen.</p>
+  <p>Die meisten Instanzvariablen können nicht nur gelesen, sondern auch gesetzt werden, so dass Sie die Eigenschaften und das Verhalten einer Instanz ändern können, indem Sie einfach den Wert einer bestimmten Variablen ändern - Sie können zum Beispiel verhindern, dass eine Instanz gezeichnet wird, indem Sie einfach die
+   <tt>visible</tt> auf <tt>false</tt> gesetzt wird. Im Folgenden finden Sie die verschiedenen Variablen, die für alle Instanzen aller Objekte in Ihrem Spiel initialisiert werden.</p>
+  <p class="note"><strong>WICHTIG!</strong> Wenn sich eine Instanz in einer <a href="../../../../../The_Asset_Editors/Sequences.htm">Sequenz</a> befindet, werden einige dieser Variablen - wie <span class="inline"><span style="font-size:14px;">image_xscale</span> / <span class="inline"><span style="font-size:14px;">image_yscale</span> /
+    <span class="inline"><span style="font-size:14px;">image_angle</span> / <span class="inline"><span style="font-size:14px;">x</span> / <span class="inline"><span style="font-size:14px;">y</span> - überschrieben werden, wenn die Sequenz
+    jeden Schritt aktualisiert, nachdem sie begonnen hat, abgespielt zu werden.</p>
+  <p> </p>
+  <h2><label for="one">Allgemeine Variablen</label></h2>
+  <p>Diese Variablen befassen sich mit allgemeinen Instanzeigenschaften:</p>
+  <ul class="colour">
+    <li><a href="id.htm">id</a></li>
+    <li><a href="visible.htm">sichtbar</a></li>
+    <li><a href="solid.htm">solide</a></li>
+    <li><a href="persistent.htm">beständig</a></li>
+    <li><a href="depth.htm">Tiefe</a></li>
+    <li><a href="layer.htm">Ebene</a></li>
+    <li><a href="alarm.htm">Alarm</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="four">Bewegung und Position</label></h2>
+  <p>Diese Variablen befassen sich mit der Position und Bewegung der Instanz:</p>
+  <ul class="colour">
+    <li><a href="direction.htm">Richtung</a></li>
+    <li><a href="friction.htm">Reibung</a></li>
+    <li><a href="gravity.htm">Schwerkraft</a></li>
+    <li><a href="gravity_direction.htm">Schwerkraft_Richtung</a></li>
+    <li><a href="hspeed.htm">hspeed</a></li>
+    <li><a href="vspeed.htm">vspeed</a></li>
+    <li><a href="speed.htm">Geschwindigkeit</a></li>
+    <li><a href="xstart.htm">xstart</a></li>
+    <li><a href="ystart.htm">ystart</a></li>
+    <li><a href="x.htm">x</a></li>
+    <li><a href="y.htm">y</a></li>
+    <li><a href="xprevious.htm">xprevious</a></li>
+    <li><a href="yprevious.htm">yvorherige</a></li>
+  </ul>
+  <p> </p>
+  <h2>Objekt-Eigenschaften</h2>
+  <p>Die folgende Variable enthält die eindeutige Index-ID des Objekts, aus dem die Instanz erstellt wurde:</p>
+  <ul class="colour">
+    <li><a href="../../Objects/object_index.htm">Objekt_Index</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="two">Sprite-Eigenschaften</label></h2>
+  <p>Diese Variablen beziehen sich alle auf das der Instanz zugewiesene Sprite und können verwendet werden, um zu ändern, was und wie gezeichnet wird:</p>
+  <ul class="colour">
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_width.htm">sprite_width</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_height.htm">sprite_height</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">sprite_xoffset</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">sprite_yoffset</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_angle.htm">Bild_Winkel</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_number.htm">Bild_Nummer</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_speed.htm">image_speed</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_xscale.htm">Bild_x-Skala</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_yscale.htm">image_yscale</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="three">Maske und Bounding Box</label></h2>
+  <p>Diese Variablen befassen sich mit der Kollisionsmaske:</p>
+  <ul class="colour">
+    <li><a href="../../Sprites/Sprite_Instance_Variables/mask_index.htm">maske_index</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_bottom.htm">bbox_bottom</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_left.htm">bbox_left</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_right.htm">bbox_right</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_top.htm">bbox_top</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="five">Pfade</label></h2>
+  <p>Diese Variablen beziehen sich auf Pfade und darauf, wie die Instanz mit einem solchen interagiert, wenn er zugewiesen ist:</p>
+  <ul class="colour">
+    <li><a href="../../Paths/Path_Variables/path_index.htm">Pfad_Index</a></li>
+    <li><a href="../../Paths/Path_Variables/path_position.htm">weg_position</a></li>
+    <li><a href="../../Paths/Path_Variables/path_positionprevious.htm">weg_positionvorher</a></li>
+    <li><a href="../../Paths/Path_Variables/path_speed.htm">Weg_Geschwindigkeit</a></li>
+    <li><a href="../../Paths/Path_Variables/path_scale.htm">Pfad_Skala</a></li>
+    <li><a href="../../Paths/Path_Variables/path_orientation.htm">Pfad_Orientierung</a></li>
+    <li><a href="../../Paths/Path_Variables/path_endaction.htm">Pfad_Aktion</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="six">Zeitleisten</label></h2>
+  <p>Diese Variablen dienen zum Einstellen einer Instanz zur Verwendung einer Zeitleiste:</p>
+  <ul class="colour">
+    <li><a href="../../Timelines/timeline_index.htm">zeitleiste_index</a></li>
+    <li><a href="../../Timelines/timeline_running.htm">timeline_running</a></li>
+    <li><a href="../../Timelines/timeline_speed.htm">timeline_speed</a></li>
+    <li><a href="../../Timelines/timeline_position.htm">zeitleiste_position</a></li>
+    <li><a href="../../Timelines/timeline_loop.htm">timeline_loop</a></li>
+  </ul>
+  <p> </p>
+  <h2>Sequenzen</h2>
+  <p>Die folgenden Variablen speichern Informationen über die Sequenz, die die Instanz zu einem bestimmten Zeitpunkt steuern kann:</p>
+  <ul class="colour">
+    <li><a href="../../Sequences/in_sequence.htm">in_reihenfolge</a></li>
+    <li><a href="../../Sequences/sequence_instance.htm">Reihenfolge_Instanz</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="seven">Physik</label></h2>
+  <p>Es gibt eine große Anzahl eingebauter Variablen für die Verwendung mit den Physikfunktionen von <span class="notranslate">GameMaker Studio 2</span>. Der Übersichtlichkeit halber finden Sie diese in dem Teil des Handbuchs, der alles rund um die Physiksimulation behandelt:</p>
+  <ul class="colour">
+    <li><a href="../../../Physics/Physics.htm">Physik</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="../Deactivating_Instances/Deactivating_Instances.htm">Deaktivieren von Instanzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Instance Variables
+-->
+  <!-- TAGS
+instance_variables
+-->
+</body>
+</html>

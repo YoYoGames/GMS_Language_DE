@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>bewegen_umwickeln</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_wrap" />
+  <meta name="rh-index-keywords" content="move_wrap" />
+  <meta name="search-keywords" content="move_wrap" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>bewegen_umwickeln</h1>
+  <p>Mit dieser Funktion wird eine Instanz, die den Raum entweder auf der horizontalen oder vertikalen (oder auf beiden) Achsen verlassen hat, automatisch &quot;umbrochen&quot;. Sie können einen Rand außerhalb der Raumkanten angeben, damit dies geschieht, und wenn die Instanz außerhalb dieses Randes
+    Wenn sich die Instanz außerhalb dieses Randes bewegt hat, wird sie von <span class="notranslate">GameMaker Studio 2</span> automatisch auf der anderen Seite wieder in den Raum eingefügt. Beachten Sie, dass die Instanz eine Geschwindigkeit haben muss, damit das Einwickeln funktioniert, da die Richtung des Einwickelns auf der Richtung der Bewegung basiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">move_wrap(hor, vert, margin);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>hor</td>
+        <td>Ob ein horizontaler Umbruch erfolgen soll (true) oder nicht (false).</td>
+      </tr>
+      <tr>
+        <td>vert</td>
+        <td>Ob vertikal umgebrochen werden soll (true) oder nicht (false).</td>
+      </tr>
+      <tr>
+        <td>Marge</td>
+        <td>Wie weit außerhalb des Raums, in Pixeln, sich das Objekt befinden muss, um das Wrapping einzuleiten.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">move_wrap(true, false, sprite_width);</p>
+  <p>Dies bewirkt, dass die Instanz horizontal, aber nicht vertikal umbrochen wird, wenn sie sich außerhalb des Raums über ihre eigene Sprite-Breite hinaus befindet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Movement.htm">Uhrwerk</a></div>
+        <div style="float:right">Weiter: <a href="place_snapped.htm">place_snapped</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_wrap
+-->
+  <!-- TAGS
+move_wrap
+-->
+</body>
+</html>

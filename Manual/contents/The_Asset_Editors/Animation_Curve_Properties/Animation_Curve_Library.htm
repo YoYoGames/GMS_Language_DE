@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Die Animationskurven-Bibliothek</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page explaining the Animation Curve Library" />
+  <meta name="rh-index-keywords" content="Animation Curve Editor" />
+  <meta name="search-keywords" content="Aniimation Curves,Anim Curves,Curves,Animation Curve Library,Preset Library" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die Animationskurven-Bibliothek</h1>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library.png" style="cursor: nesw-resize;">Im Fenster <strong>Animationskurvenbibliothek</strong> können Sie den Kurventyp für die Animationskurve ändern und eine Voreinstellung auf den ausgewählten Kanal anwenden.
+    eine Voreinstellung auf den ausgewählten Kanal anwenden. Es kann geöffnet werden, indem Sie <img class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> mit der linken Maustaste auf die Schaltfläche <img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" width="13"> im <a href="../Animation_Curves.htm">Animationskurven-Editor</a> oder im <a href="../Sequence_Properties/Using_Animation_Curves.htm">Sequence <span class="notranslate">Dope Sheet</span></a> klicken oder indem Sie <img class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> mit der rechten Maustaste
+    irgendwo im Kanal-Editor klicken.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Kurven-Typ</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Der <strong>Kurventyp</strong> steuert, wie ein Kanal von Punkt zu Punkt fließt, der auf eine der folgenden Optionen eingestellt werden kann:</p>
+    <ul class="colour">
+      <li class="dropspot"><strong>Linear</strong>: Dadurch wird ein linearer Verlauf zwischen den Punkten auf dem Kanal erzeugt</li>
+      <li class="dropspot"><strong>Glatt</strong>: Dies verwendet die <a class="glossterm" data-glossterm="Katmull-Rom-Interpolation" href="../Animation_Curves.htm#">Katmull-Rom-Interpolation</a>, um einen glatten Verlauf zwischen den Punkten auf dem Kanal zu erzeugen</li>
+      <li class="dropspot"><strong>Bezier</strong>: Hier wird die Mathematik der Bezier-Kurve verwendet, um einen sanften Verlauf zwischen den Punkten des Kanals zu erzeugen, wobei Sie das Aussehen der Kurve durch Manipulation der &quot;Griffe&quot; an den Punkten steuern können</li>
+    </ul>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Types.png" style="cursor: nwse-resize;">Beachten Sie, dass das Ändern des Kurventyps diesen Typ auf <em>alle</em> Kanäle in der Animationskurve anwendet.</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Kurvenvoreinstellungen</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Eine<strong>Kurvenvoreinstellung</strong> ändert die Form Ihrer Kurve. <img class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> Wenn Sie mit der linken Maustaste auf eine Voreinstellung im Menü "Voreinstellungen" klicken, wird diese Voreinstellung auf den ausgewählten Kanal angewendet.
+      Wenn Sie mit der linken Maustaste auf eine Voreinstellung im Menü Voreinstellungen klicken, wird diese Voreinstellung auf den ausgewählten Kanal angewendet.</p>
+    <p class="dropspot"><span class="dropspotnote"><strong>HINWEIS</strong>: Voreinstellungen können nur angewendet werden, wenn der Kurventyp auf <strong>Bezier</strong> eingestellt ist.</span></p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Preset0.gif">Standardmäßig wird eine Voreinstellung auf den gesamten Kanal angewendet. Sie können einen Bereich Ihres Kanals auswählen, indem Sie mit der linken Maustaste <img class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> im <strong>Kanal-Editor</strong> ziehen und dann das Fenster "Animationskurven-Bibliothek" über die Schaltfläche <img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" width="13"> oder durch einen Rechtsklick auf <img class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> öffnen, wodurch alle Voreinstellungen nur auf den ausgewählten Bereich angewendet werden.</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Preset1_Selection.gif">Beachten Sie, dass Ihr Kurvenkanal (oder eine Auswahl innerhalb dieses Kanals) eine Steigung haben muss, damit eine Voreinstellung eine Wirkung hat, da jede angewandte
+      Interpolation auf der vertikalen Differenz zwischen dem Anfangs- und Endpunkt basiert. Eine flache Kurve hat keinen solchen Unterschied zwischen den beiden Punkten, so dass Sie nach dem Anwenden einer Voreinstellung auf eine solche Kurve keine Ergebnisse sehen werden.</p>
+    <p class="dropspot">Es gibt zwei <strong>Anwendungsmodi</strong>, aus denen Sie wählen können, was sich darauf auswirkt, wie eine Voreinstellung auf Ihren Kanal (oder auf Ihre Auswahl innerhalb dieses Kanals) angewendet wird:</p>
+    <p class="dropspot"><br />
+      <img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Apply_Modes.png" style="cursor: nwse-resize;" /></p>
+    <ul class="colour">
+      <li class="dropspot"><strong>Überschreiben:</strong> Dies ist die Standardeinstellung, wenn das Fenster über die Schaltfläche <img class="icon" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png"> im Animationskurven-Editor oder im Sequence <span class="notranslate">Dope Sheet</span> geöffnet wird. Es überschreibt
+        alle Punkte zwischen dem Anfangs- und Endpunkt Ihres Kanals oder Ihrer Auswahl.</li>
+      <li class="dropspot"><strong>Zwischen:</strong> Dies ist die Standardeinstellung, wenn das Fenster durch einen Rechtsklick auf <img class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> an einer beliebigen Stelle im Kanal-Editor geöffnet wird. Es wendet die Voreinstellung zwischen jedem Paar von ausgewählten Punkten an,
+        und fügt alle neuen Punkte hinzu, die benötigt werden, ohne vorhandene Punkte zu entfernen.</li>
+    </ul>
+    <p class="dropspot">Die folgende Abbildung zeigt die Voreinstellung <img class="icon" src="../../assets/Images/Icons/Curve_Expo.png"> <strong>Expo-Kurve </strong>, die mit den Anwendungsmodi <strong>"Between" </strong>und <strong>"Overwrite" </strong>auf einen Kanal angewendet wurde:</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Apply_Modes_Difference.png" /></p>
+    <p class="dropspot">Wie Sie in der obigen Abbildung sehen können, wendet <strong>Zwischen </strong>die Kurvenvorgabe auf jedes Punktpaar an und fügt alle neuen Punkte ein, die benötigt werden. <strong>Overwrite</strong> entfernt alle Punkte zwischen dem Start- und Endpunkt und wendet dann
+      wendet die Voreinstellung an.</p>
+    <p class="dropspot">Es gibt auch drei <strong>Easing-Modi </strong>, aus denen Sie wählen können, die steuern, wie eine Kurve beschleunigt oder verlangsamt wird. Der Standard-Easing-Modus ist " <strong>Ease Out</strong>".</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Easings.png" /></p>
+    <ul class="colour">
+      <li class="dropspot"><strong>Langsam einfahren:</strong> Die Kurve beginnt mit einer schnelleren Beschleunigung und verlangsamt sich dann</li>
+      <li class="dropspot"><strong>Ausklingen</strong> lassen: Die Kurve beginnt mit einer langsameren Beschleunigung und beschleunigt sich dann mit der Zeit</li>
+      <li class="dropspot"><strong>Ease In-Out:</strong> Die Kurve beginnt mit langsamerer Beschleunigung, beschleunigt mit der Zeit und verlangsamt sich dann</li>
+    </ul>
+    <p class="dropspot">Die folgende Abbildung zeigt die Voreinstellung der <b>Quart-Kurve </b>in allen drei Entspannungsmodi:</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Easings_Quart.png" /></p>
+  </div>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Animation_Curves.htm">Animation Kurven</a></div>
+        <div style="float:right">Nächste: <a href="../Extensions.htm">Erweiterungen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Animation Curve Library
+Animation Curve Preset Library
+Curve Library
+Curve Presets
+-->
+  <!-- TAGS
+animation_curve_library
+-->
+
+</body></html>

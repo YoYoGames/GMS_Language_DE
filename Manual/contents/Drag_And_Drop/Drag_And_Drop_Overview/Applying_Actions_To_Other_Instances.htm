@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Anwenden von Aktionen auf andere Instanzen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining how to apply actions to other instances" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Applying Actions To Other Instances" />
+  <meta name="search-keywords" content="DnD,Code DnD,Apply DnD" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Anwenden von Aktionen auf andere Instanzen</h1>
+  <p>Die meisten Aktionen in den <span class="notranslate">DnD™-Bibliotheken</span>verfügen über eine Option, um die Aktion auf verschiedene Arten anzuwenden. Dies wird als Einstellen des <strong>Aktionsbereichs</strong> bezeichnet und kann eine von mehreren Möglichkeiten sein:</p>
+  <p><img alt="DnD™ Applies To" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Applies_To.png">Im Wesentlichen teilen Sie <span class="notranslate">GameMaker Studio 2</span> mit, welche Instanz die Aktion ausführen soll. Der Standard-Aktionsbereich
+    ist <span class="inline">self</span>, was bedeutet, dass, sobald das Objekt als Instanz im Raum angelegt ist, diese Instanz den Aktionscode ausführen wird. Dies ist jedoch nicht immer das, was Sie wollen, und Sie möchten vielleicht, dass einige Aktionen andere oder sogar
+    alle Instanzen im Raum auswirken. An dieser Stelle kommt das Ändern des Aktionsbereichs ins Spiel.</p>
+  <p>Die verschiedenen Bereiche für die Durchführung von Aktionen sind unten aufgeführt, aber es ist zu beachten, dass das Ändern des Bereichs einer Aktion auf diese Weise nur den neuen Bereich auf diese Aktion <em>und nicht auf nachfolgende Aktionen in der Kette</em> anwendet. Wenn Sie
+    Wenn Sie eine Änderung des Aktionsbereichs auf mehrere verkettete Aktionen anwenden möchten, verwenden Sie zuerst die Aktion <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">Anwenden auf.</a>...</p>
+  <p> </p>
+  <p><img alt="Self Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Self.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Selbst</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Dies ist der Standardbereich für eine Aktion und besagt einfach, dass die Aktion nur von der Instanz aufgerufen werden soll, die den Code ausführt.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Other Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Other.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Andere</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Der Bereich <span class="inline">other</span> hat zwei Hauptfunktionen, und der Wert, den er zurückgibt, hängt davon ab, wo und wie Sie ihn verwenden. Im <strong>Ereignis "Kollision</strong>" gibt <span class="inline">other</span> den eindeutigen Wert der Instanz-ID zurück
+      (ein eindeutiger Wert, der verwendet wird, um einzelne Instanzen jedes Objekts zu unterscheiden), so dass Sie z. B. eine &quot;bullet&quot;-Instanz erstellen und ein Kollisionsereignis mit einer &quot;player&quot;-Instanz haben können und in diesem den Bereich <span class="inline">other</span> verwenden, um Trefferpunkte vom &quot;player&quot;-Objekt zu entfernen und dann zum Bereich <span class="inline">self</span> zurückzukehren, um die &quot;bullet&quot;-Instanz zu zerstören.</p>
+    <p class="dropspot">Außerhalb des Kollisionsereignisses verhält sich die Einstellung <span class="inline">other</span> so, als ob sie auf <span class="inline">noone</span> gesetzt wäre, es sei denn, sie wird innerhalb eines begrenzten Aktionsblocks aufgerufen. Das bedeutet, dass, wenn Sie den
+      Bereich einer Gruppe von Aktionen auf ein bestimmtes Objekt ändern, dann gibt der Bereich <span class="inline">other</span> während des Aufrufs dieser Aktionen die Instanz-ID der Instanz zurück, die die Aktionsgruppe ursprünglich aufgerufen hat. Zum Beispiel könnten Sie
+      eine Aktion " <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">Anwenden auf..</a>." ausführen und dann im nächsten Codeblock den Bereich auf <span class="inline">other</span> setzen, um eine Aktion für die Instanz auszuführen, die den gesamten Ereignisblock ausführt, und nicht für die
+      Instanz auszuführen, die in den "Anwenden auf"-Codeblöcken erfasst wird. Das folgende Bild zeigt ein Beispiel:</p>
+    <p class="dropspot"><img alt="DnD™ Scope" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Other.png">Im Bild wird geprüft, ob in der Instanz ein Mausklick vorliegt, und wenn einer erkannt wird, wird der Bereich mit der Aktion " <strong>Anwenden auf.</strong>.." geändert. Die nächsten beiden Aktionsblöcke werden nun von der Instanz &quot;obj_Player&quot; aufgerufen (wenn es mehr als eine gibt, wird sie für alle ausgeführt), und so wird das Objekt sein Sprite ändern und dann ein Objekt an der anderen Position erzeugen,
+      d. h. an der Position des Objekts, das das Ereignis ausführt und den Mausdruck erkannt hat.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="All Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_All.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Alle</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Wenn Sie eine Aktion für alle einrichten, weisen Sie <span class="notranslate">GameMaker Studio 2</span> an, diesen Block für <strong>jede einzelne aktive Instanz im aktuellen Raum</strong> auszuführen. Wenn Sie zum Beispiel eine Aktion <a href="../Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">"Objektinstanz zerstören</a> 
+      und setzen ihren Gültigkeitsbereich auf <span class="inline">all</span>, so wird jede Instanz im Raum verschwinden, unabhängig davon, aus welchem Objekt sie erzeugt wurde.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Object Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Object.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Objekt</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Einer Aktion kann auch ein <strong>Objekt</strong> als Geltungsbereich zugewiesen werden. Das bedeutet, dass alle Instanzen des angegebenen Objekts diese Aktion zum gleichen Zeitpunkt ausführen, zu dem sie aufgerufen wird. Wenn Sie also z. B. 100 Feind-Instanzen im Raum haben und
+      Sie wollen sie alle auf einen bestimmten Punkt ausrichten. Sie rufen die Aktion &quot;Set <a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">Point Direction</a> &quot; auf <a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">und</a> legen den Aktionsbereich auf das Objekt &quot;obj_Enemy&quot; fest, und wenn die Aktion
+      aufgerufen wird, ändern alle Instanzen dieses Objekts ihre Richtung.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Ausdruck</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">In das Eingabefeld "Ausdruck" können Sie die ID einer bestimmten Instanz eingeben, auf die die Aktion angewendet werden soll. Es kann der eindeutige ID-Wert sein, der einer Instanz aus dem Raum-Editor zugewiesen wurde, oder es kann die ID einer Instanz sein, die Sie
+      in einer Variablen gespeichert haben (wobei die Variable der Eingabewert wäre), oder es kann sogar ein Ausdruck mit Code sein, wie im Bild unten gezeigt:</p>
+    <p class="dropspot"><img alt="DnD™ Target" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Target.png">In diesem Fall ruft eine Instanz das <a href="../Drag_And_Drop_Reference/Instance/Set_Sprite.htm">Set Sprite</a> von
+      der Instanz auf, die durch den für den Ausdruck angegebenen Code erstellt wurde. Beachten Sie, dass in diesem Fall die erstellte Instanz zuerst ihr Create-Event ausführt, bevor die Aktion auf sie angewendet wird.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../../Content.htm">Index</a></div>
+        <div style="float:right">Nächste: <a href="Action_Block_Functions.htm">Aktionsblock-Skripte</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Applying Actions
+-->
+  <!-- TAGS
+drag_and_drop_applying
+-->
+</body>
+</html>

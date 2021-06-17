@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_colour_rgb</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_colour_rgb" />
+  <meta name="rh-index-keywords" content="part_type_colour_rgb,part_type_color_rgb" />
+  <meta name="search-keywords" content="part_type_colour_rgb,part_type_color_rgb" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_colour_rgb</h1>
+  <p>Mit dieser Funktion können Sie die Mischung der Farben Rot, Grün und Blau für alle erzeugten Partikel des angegebenen Typs festlegen. Sie geben einen Minimal- und einen Maximalwert für jede der drei Komponenten an und die erzeugten Partikel haben eine zufällige Farbe, die auf dem angegebenen Bereich
+    basierend auf dem angegebenen Parameterbereich. Alle Werte müssen zwischen 0 und 255 liegen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_type_colour_rgb(ind, rmin, rmax, gmin, gmax, bmin, bmax p&gt;</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu ändernden Partikeltyps.</td>
+      </tr>
+      <tr>
+        <td>rmin</td>
+        <td>Das Minimum, das der Rotanteil der endgültigen Farbe sein kann.</td>
+      </tr>
+      <tr>
+        <td>rmax</td>
+        <td>Das Maximum, das der Rotanteil der endgültigen Farbe sein kann.</td>
+      </tr>
+      <tr>
+        <td>gmin</td>
+        <td>Das Minimum, das der Grünanteil der endgültigen Farbe sein kann.</td>
+      </tr>
+      <tr>
+        <td>gmax</td>
+        <td>Das Maximum, das der Grünanteil der endgültigen Farbe sein kann.</td>
+      </tr>
+      <tr>
+        <td>bmin</td>
+        <td>Das Minimum, das der Blauanteil der endgültigen Farbe sein kann.</td>
+      </tr>
+      <tr>
+        <td>bmax</td>
+        <td>Das Maximum, das der Blauanteil der endgültigen Farbe sein kann.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">part_type_rgb(global.Blood_Part, 0, 255, 0, 0, 0, 0);</p>
+  <p>Der obige Code setzt jedes emittierte Partikel des in der globalen Variablen &quot;Blood_Part&quot; indizierten Partikeltyps nur auf unterschiedliche Rottöne.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Types.htm">Partikel-Typen</a></div>
+        <div style="float:right">Weiter: <a href="part_type_colour_hsv.htm">part_type_colour_hsv</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_colour_rgb
+part_type_color_rgb
+-->
+  <!-- TAGS
+part_type_colour_rgb
+-->
+</body>
+</html>

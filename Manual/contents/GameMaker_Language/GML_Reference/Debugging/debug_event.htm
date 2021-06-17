@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Debug_Ereignis</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for debug_event" />
+  <meta name="rh-index-keywords" content="debug_event" />
+  <meta name="search-keywords" content="debug_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Debug_Ereignis</h1>
+  <p>Diese Funktion erzeugt ein benutzerdefiniertes Debug-Ereignis, das in der Graph-Ansicht des Debuggers angezeigt wird, wenn ein Spiel im <a href="../../../Introduction/Debugging.htm">Debug-Modus</a> ausgeführt wird. Wenn Sie Meldungen benötigen, die angezeigt werden, wenn Sie sich <i>nicht</i> im Debug
+    Modus angezeigt werden, dann sollten Sie die Funktion <a href="show_debug_message.htm"><tt>show_debug_message()</tt></a>. Es ist erwähnenswert, dass die Funktion auch zwei reservierte Zeichenketten entgegennimmt, um das Debuggen mit externen Anwendungen wie <span class="notranslate">Visual Studio</span> zu erleichtern. Diese
+    Zeichenketten sind:</p>
+  <ul class="colour">
+    <li>&quot;<tt>OutputDebugOn&quot; -</tt> Dies aktiviert einen Aufruf von OutputDebugString <tt>für das</tt> <b><span class="notranslate">Windows</span></b> Ziel, was bedeutet, dass die gesamte Debug-Ausgabe - alles, was Sie im Ausgabefenster sehen - von <span class="notranslate">Visual Studio</span> oder von Drittanbieter-Apps angezeigt werden kann.</li>
+    <li>&quot;BreakOnError<tt>&quot; -</tt> Diese Option ist nur für Windows <b><span class="notranslate">YYC-Builds</span></b> und bedeutet, dass Projekte nicht den üblichen Code-Fehler-Bildschirm <i>anzeigen</i>, wenn die Laufzeit einen Fehler <span class="notranslate">erkennt</span>, sondern einfach weitermachen und abstürzen. Damit können Sie
+      den Stacktrace innerhalb von <span class="notranslate">Visual Studio</span> zu sehen, wenn Sie debuggen.</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">debug_event(zeichenkette)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Die zu verwendende benutzerdefinierte Debug-Ereigniszeichenkette.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4><b>Beispiel:</b></h4>
+  <p class="code">if !surface_exists(global.EffectsSurface)<br> {
+    <br> debug_event(&quot;Recreating Effects Surface&quot;);<br> global.EffectsSurface = surface_create(room_width, room_height);<br> }</p>
+  <p>Der obige Code prüft, ob eine Oberfläche vorhanden ist, und wenn nicht, wird ein Debug-Ereignis in der Grafikansicht des Debuggers ausgelöst (das Spiel muss im Debug-Modus ausgeführt worden sein, damit dies sichtbar ist) und die Oberfläche wird neu erstellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Debugging.htm">Fehlersuche</a></div>
+        <div style="float:right">Weiter: <a href="debug_get_callstack.htm">debug_get_callstack</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+debug_event
+-->
+  <!-- TAGS
+debug_event
+-->
+</body>
+</html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kollisions_Rechteck</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_rectangle" />
+  <meta name="rh-index-keywords" content="collision_rectangle" />
+  <meta name="search-keywords" content="collision_rectangle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Kollisions_Rechteck</h1>
+  <p><span class="inline">Collision_rectangle</span> verwendet die ersten vier Argumente (x1,y1,x2,y2), um einen Bereich innerhalb des aktuellen Raums zu definieren, und prüft dann, ob <b>ein</b> Objekt, das durch das Argument &quot;obj&quot; definiert ist, mit diesem Bereich kollidiert
+    Bereich befindet. Diese Kollision kann als genau oder nicht geprüft werden, und Sie können auch wählen, ob die Instanz, die den Code ausführt, selbst geprüft werden soll oder nicht. Betrachten Sie dieses Bild:</p>
+  <p><img alt="Collision rectangle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_rectangle_illustration.png">Hier verwendet die Instanz in der Mitte ein Kollisionsrechteck zur Überprüfung
+    für Ball-Objekte. Die blauen Objekte haben <i>kein</i> präzises Begrenzungsrechteck, und wie Sie sehen können, wird die Kollision auch dann ausgelöst, wenn das Sprite das Rechteck nicht berührt (selbst wenn Sie die Option precise in der Funktion auf true setzen)
+    da die Bounding Box des Sprites das collision_rectangle überlappt. Auf der anderen Seite werden die grünen Kugeln nur dann als Kollision betrachtet, wenn das aktuelle Sprite das Rechteck überlappt. Denken Sie daran, dass für die Berücksichtigung von präzisen Kollisionen <i>sowohl</i> das Objekt-Sprite als auch die Kollisionsfunktion als präzise markiert sein müssen. Es sollte auch beachtet werden, dass der Rückgabewert der Funktion die ID <i>einer</i> der Instanzen sein kann, die als kollidierend betrachtet werden.</p>
+  <p>Beachten Sie, dass Sie anstelle eines Objektindexes auch eine Instanz <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> angeben können, um nach einer bestimmten Instanz zu suchen, oder die <a href="../../../GML_Overview/Instance_Keywords.htm">Instanzschlüsselwörter</a> <span class="inline">all</span> oder <span class="inline">other</span> (je nach Ereignis und aktuellem Codeumfang).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">collision_rectangle(x1, y1, x2, y2, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate der linken Seite des zu prüfenden Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate der oberen Seite des zu prüfenden Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate der rechten Seite des zu prüfenden Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate der unteren Seite des zu prüfenden Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das Objekt, das auf Instanzkollisionen geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Ob die Prüfung auf präzisen Kollisionen<tt>(true</tt>, was langsamer ist) oder allgemein auf der Bounding Box basiert<tt>(false</tt>, schneller).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Ob die aufrufende Instanz, falls relevant, ausgeschlossen werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Instanz-ID oder keine</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var inst;<br> inst = collision_rectangle(50, 50, 200, 100, obj_Ball, false, true);<br> if inst != noone<br> {
+    <br> with (inst) instance_destroy();<br> }
+  </p>
+  <p>Dieser kurze Code verwendet collision_rectangle, um einen Bereich im Raum von 50x, 50y (oben links im Rechteck) bis 200x, 200y (unten rechts im Rechteck) nach einer Instanz eines Objekts namens &quot;obj_ball&quot; zu überprüfen. Es speichert den Rückgabewert in einer temporären
+    Variable, die dann daraufhin überprüft wird, ob dieser Wert eine Instanz-ID oder das Schlüsselwort <a href="../../../GML_Overview/Instance_Keywords.htm"><b>noone</b></a>. Wenn dies <i>nicht</i> <b>der</b> Fall ist, wird die gespeicherte Instanz-ID verwendet, um das Objekt zu zerstören.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="collision_rectangle_list.htm">collision_rectangle_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_rectangle
+-->
+  <!-- TAGS
+collision_rectangle
+-->
+</body>
+</html>

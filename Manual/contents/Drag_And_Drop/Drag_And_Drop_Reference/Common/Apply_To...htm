@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Anwenden auf...</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Apply To..." />
+  <meta name="rh-index-keywords" content="DnD™ Action - Apply To..." />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Apply To... Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Apply_To.png" width="32"> Anwenden auf...</h1>
+  <p>Diese Aktion kann verwendet werden, um den <a href="../../Drag_And_Drop_Overview/Applying_Actions_To_Other_Instances.htm">Aktionsumfang</a> für alle weiteren Aktionen zu ändern, die mit dieser verkettet sind. Wie bei einer <a href="If_Variable.htm">if-Aktion</a>, wenn Sie weitere
+    Aktionen rechts von der Aktion <b>Anwenden auf.</b>.. ablegen, werden sie von dem Objekt oder der Instanz mit dem Geltungsbereich ausgeführt. Der Gültigkeitsbereich wird aus dem Einblendmenü ausgewählt, das angezeigt wird, wenn Sie auf den kleinen Pfeil oben rechts neben der Aktion klicken, und auf diese Weise können Sie
+    Auf diese Weise können Sie einem anderen Satz von Objekten - oder sogar einer einzelnen Instanz, wenn Sie die Instanz-ID haben - mitteilen, dass mehrere Aktionen ausgeführt werden sollen, bevor Sie mit dem Code des aktuellen Objekts fortfahren.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in den &quot;Gilt für&quot;-Block, diese an der Seite der <i>Aktion</i> abgelegt werden sollten, wie in der folgenden Abbildung gezeigt:</p>
+  <p><img alt="Apply To... drop actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/Drop_Applies_To.png">Diese Aktionen werden jetzt von dem Objekt oder der Instanz ausgeführt, auf die der
+    &quot;Gilt für&quot; Block, während alle Aktionen, die an anderer Stelle abgelegt werden, nach dem &quot;Gilt für&quot; Block ausgeführt werden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Apply To... Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Apply_To.png" /></p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Apply To... Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Apply_To.png">Der obige Code des Aktionsblocks prüft eine Variable, um zu sehen, ob sie gleich 100 ist, und wenn dies der Fall ist, ändert er den Bereich
+    auf die Instanzen von &quot; <span class="inline">obj_Player</span>&quot; und weist sie an, die <a href="../Instance/Set_Sprite.htm">Aktion</a> &quot;Sprite setzen&quot; auszuführen <a href="../Instance/Set_Sprite.htm">(</a> alle Instanzen dieses Objekts im Raum ändern zu diesem Zeitpunkt ihr Sprite), bevor sie fortfahren
+    die Variable innerhalb der Instanz, die den vollständigen Codeblock ausführt, um 1 zu erweitern.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Common_Actions_Library.htm">Gemeinsame Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Return.htm">Rückkehr</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Apply To
+-->
+  <!-- TAGS
+action_apply_to
+-->
+</body>
+</html>

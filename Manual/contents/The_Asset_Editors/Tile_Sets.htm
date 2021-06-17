@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kachel-Sets</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor works" />
+  <meta name="rh-index-keywords" content="Tile Set Editor" />
+  <meta name="search-keywords" content="tiles,tile sets,tile set editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Kachelsatz-Editor</h1>
+  <p><img alt="Tile Set Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets.png">Ein <strong>Kachelsatz</strong> ist eine Grafikressource zum Zeichnen von Ebenen und anderen statischen Komponenten Ihres Spiels. Ein Kachelsatz besteht aus einem einzelnen Bild
+    das dann in verschiedene &quot;Zellen&quot; (Kacheln) aufgeteilt wird, und jede Kachel kann dann im Raumeditor platziert werden, um ein vollständiges Bild zu erstellen. Unten sehen Sie zwei Beispiel-Sprites, die als Kachelsätze verwendet werden können:</p>
+  <p><img alt="Tile Set Example" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Example.png" style="margin-top: -10px; margin-bottom: -20px;" /></p>
+  <p style="text-align:center;padding-top:0.5em;padding-right:1em;padding-bottom:1.5em;padding-left:1em"><span style="font-size:14px;font-style:italic">Bilder von <a href="http://www.lostgarden.com/2006/07/more-free-game-graphics.html">Lost Garden</a></span></p>
+  <p>Dies sind die häufigsten Arten, wie Leute Kachelsätze erstellen - entweder alle zusammengestopft oder mit kleinen Zwischenräumen, die sie voneinander trennen, und <span class="notranslate">GameMaker Studio 2</span> kann mit beiden Arten umgehen. Im Wesentlichen müssen alle Kachelsätze aus Bildern bestehen, die in ein klar definiertes Raster passen.
+    (Beachten Sie, dass die oben gezeigten Bilder zwar alle aus quadratischen Kacheln bestehen, ein Kachelsatz aber auch aus rechteckigen Kacheln erstellt werden kann).</p>
+  <p>Denken Sie beim Erstellen Ihrer Kachelsätze daran, dass <strong>die obere linke Rasterzelle <em>immer </em></strong> leer sein muss, da dies die Kachel ist, die <span class="notranslate">GameMaker Studio 2</span> für &quot;leere&quot; Kacheln in einem Raum und zum Löschen vorhandener Kacheln verwendet (und selbst wenn
+    wenn Sie Pixel in diesem Teil des Bildes haben, werden diese ignoriert).</p>
+  <p>Wenn Sie zum ersten Mal eine Kachelsatz-Ressource erstellen, wird das Fenster "Kachelsatz-Editor" mit den folgenden Optionen geöffnet:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Name</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Hier können Sie Ihrem Kachelsatz einen Namen geben. Namen können nur alphanumerisch sein und dürfen nur das Unterstrich-Symbol &quot;_&quot; verwenden, und sie dürfen nicht mit einer Zahl beginnen.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Sprite</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Hier können Sie das <a href="../Quick_Start_Guide/Creating_Sprites.htm">Sprite-Asset</a> auswählen, aus dem unser Kachelset erstellt werden soll. Wenn Sie auf die Hauptschaltfläche klicken, wird der Asset Explorer geöffnet, in dem Sie das Sprite auswählen können, das Sie für das Kachelset verwenden möchten:<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Tilesets_AssetExplorer.png" src="../assets/Images/Asset_Editors/Editor_Tilesets_AssetExplorer.png" class="center" alt="The Asset Explorer Window">Sie können auch auf die Schaltfläche <strong>New Sprite</strong> <img data-cke-saved-src="../assets/Images/Icons/Icon_NewSprite.png" src="../assets/Images/Icons/Icon_NewSprite.png" width="24" height="24" alt="New Sprite Icon" class="icon"> klicken, um ein neues Sprite-Asset zu erstellen (wodurch der <a href="Sprites.htm">Sprite-Editor</a> für das neue Asset innerhalb des Arbeitsbereichs zur Bearbeitung geöffnet wird), oder Sie können das aktuell ausgewählte Sprite mit der Schaltfläche <strong>Edit Sprite</strong> <img data-cke-saved-src="../assets/Images/Icons/Icon_EditSprite.png" src="../assets/Images/Icons/Icon_EditSprite.png" class="icon" alt="Edit Sprite Icon"> bearbeiten oder sogar das Sprite-Bild selbst im <a href="Image_Editor.htm">Bild-Editor</a> bearbeiten, indem Sie auf die Schaltfläche <img data-cke-saved-src="../assets/Images/Icons/Icon_EditImage.png" src="../assets/Images/Icons/Icon_EditImage.png" alt="Edit Image Icon" class="icon"> drücken.</p>
+    <p class="dropspot">Standardmäßig wird beim Öffnen eines Kachelsatzes auch das Fenster " <strong>Kachelsatzeigenschaften</strong> " angezeigt (siehe unten), aber wenn Sie es schließen, können Sie auf die Schaltfläche hier klicken, um es wieder zu öffnen.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Eigenschaften</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><strong></strong>Im Fenster " <strong>Eigenschaften des Kachelsatzes</strong> " können Sie die Basisgröße der Kacheln (die Voreinstellung ist 16 px im Quadrat), den Versatz und den Abstand zwischen den Kacheln festlegen (die letzten beiden Optionen sind für die Verwendung mit Sprites wie dem im Beispielbild weiter unten gezeigten
+      im Beispielbild weiter oben auf dieser Seite, wo es Lücken zwischen den einzelnen Teilen der Kacheln gibt). Sie können auch die Werte für <strong>den Ausgaberand</strong> des Kachelsatzbildes einstellen, der steuert, wie das Bild auf der Festplatte gespeichert wird und
+      nach Bedarf zusätzliche Pixel um jede Kachel herum hinzufügen.</p>
+    <p class="dropspot">Aufgrund der Art und Weise, wie Kacheln gerendert werden, müssen sie vorher mit einem Rand um jede Kachel herum vorbereitet werden, um die Kanten zu &quot;verwischen&quot;. Das unten gezeigte Bild veranschaulicht, wie Kacheln im Allgemeinen von den Gerätegrafiktreibern abgebildet werden, wobei die rote Linie um
+      (Die Buchstaben &quot;U&quot; und &quot;V&quot; werden zur Beschreibung des 2D-Texturnetzes verwendet, da &quot;X&quot;, &quot;Y&quot; und &quot;Z&quot; bereits zur Beschreibung von Raum- und Objektkoordinaten verwendet werden.
+      Koordinaten verwendet werden):
+    </p>
+    <p class="dropspot"><img alt="Single Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Single.png" style="margin-top: -20px; margin-bottom: -10px;">Wie Sie sehen können, wählt es die Mitte des <a class="glossterm" data-glossterm="texel" href="#">Texels</a> aus, um
+      direkt zuzuordnen, wenn das Bild im Raum gezeichnet wird. Bei einem Maßstab von 1:1 ist das alles schön und gut, aber was passiert, wenn wir diese Kachel verkleinern? Das Problem beim Verkleinern ist, dass beim Verkleinern des Bildes auch die UVs verkleinert werden und versuchen
+      Das Problem beim Verkleinern ist, dass beim Verkleinern des Bildes auch die UVs verkleinert werden und versuchen, in den komprimierten Raum zu passen, was natürlich nicht möglich ist.</p>
+    <p class="dropspot">Wenn wir uns also &quot;nur&quot; in ein neues Bildschirmpixel bewegen, dann wird, da die Grafiktreiber das Zentrum des Pixels verwenden, um zu entscheiden, womit gezeichnet werden soll, ein Texel ausgewählt, das die Kachel umgibt, nicht ein Texel auf der Kachel selbst.</p>
+    <p class="dropspot"><img alt="Texel Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Texel.png" style="margin-top: -20px; margin-bottom: -20px;" /></p>
+    <p class="dropspot">Die obige Abbildung zeigt eine Kachel, die auf 6 Bildschirmpixel skaliert wurde. Dies zeigt, dass der Grafiktreiber bei einer kleinen Überlappung in das nächste Bildschirmpixel entweder das Texel fallen lassen oder versuchen muss, es mit dem zu füllen, was er für
+      ein gültiges Texel ist. Sagen wir mal, in diesem Fall entscheidet er sich dafür, das überlappende Texel in das Bildschirmpixel zu zeichnen, und da es nun eindeutig außerhalb unserer Kachel liegt, holt er sich dieses Pixel entweder von der nächsten Kachel oder von den kleinen Platzstücken, die Sie
+      um die Kacheln herum zur Verfügung gestellt haben, was bedeutet, daß Sie beim Schrumpfen Risse zwischen den Kacheln bekommen, &quot;Glitches&quot;, wie sie gezeichnet werden, und das ist der Punkt, an dem eine Menge Verwirrung entsteht... Jeder Grafiktreiber und jedes Gerät macht das auf seine eigene Weise.
+      Jeder Grafiktreiber und jedes Gerät macht das auf seine eigene Weise, was bedeutet, dass die Ergebnisse unvorhersehbar sein und schrecklich aussehen können... aber wenn Sie vorsichtig sind und vorausplanen, können Sie das Problem umgehen.</p>
+    <p class="dropspot">Bei High-End-Spielen, wenn Sie von einer einzelnen Textur zeichnen (nicht auf einer Texturseite oder einem Texturatlas), haben Sie die Möglichkeit, einen Texturmodus namens <strong>Clamp </strong>zu verwenden, der die letzte Pixelreihe unendlich oft wiederholt.
+      Dies ermöglicht Ihnen eine problemlose Skalierung, da die Hardware gezwungen wird, die letzte Pixelreihe zu erhalten, egal was passiert. Dies ist, was die <strong>Output Border-Einstellungen </strong>hier für Sie tun:</p>
+    <p class="dropspot"><img alt="Smear Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Smear.png" style="margin-top: -10px;margin-bottom: 1px">Das oben gezeigte &quot;feste&quot; Kachel-Sprite hat nun einen wiederholten Abschnitt um jede Kachel.
+      Das heißt, wenn die Hardware überläuft, wird immer das letzte Texel der Kachel gewählt und nicht eines der Leerzeichen oder die Kachel danach. Wenn Sie also einen Kachelsatz erstellen, denken Sie daran, dass Sie, wenn Sie die Spielansicht
+      Wenn Sie die Spielansicht vergrößern oder verkleinern oder die Kacheln skaliert rendern, müssen Sie möglicherweise eine größere Breite oder Höhe für den Ausgaberahmen wählen als den Standardwert von 2.</p>
+    <p class="dropspot">Als nächstes können Sie die <strong>Texturgruppe</strong> auswählen, zu der die Tileset-Ressource gehören soll. Grundsätzlich ist eine Texturgruppe (zuvor im <a href="../Settings/Texture_Groups.htm">Texturgruppen-Manager</a> definiert) etwas, das Sie
+      einrichten können, damit alle Bild-Assets, die Sie für bestimmte Räume oder Ebenen Ihres Spiels benötigen, zusammen gespeichert werden können. So können Sie z. B. alle Bilder der Ebene 1 in einer Texturgruppe haben, alle Bilder der Ebene 2 in einer anderen usw... und <span class="notranslate">GameMaker</span>
+      Studio 2 wird versuchen, alle diese gruppierten Assets auf derselben <a class="glossterm" data-glossterm="Textur-Seite" href="#">Texturseite</a> zu platzieren, um das Vertauschen von Texturseiten zu reduzieren, während Ihr Spiel auf der gewählten Zielplattform läuft.</p>
+    <div class="dropspotnote"><strong>HINWEIS</strong>: Dies ist möglicherweise nicht immer erforderlich und die Leistungssteigerung durch diese Methode hängt davon ab, ob das Zielgerät CPU- oder GPU-gebunden ist.</div>
+    <p class="dropspot">Die letzte Option in den Eigenschaften des Kachelsatzes ist " <strong>Disable Source Sprite Export</strong>". Diese Option ist standardmäßig aktiviert und bewirkt, dass das Quell-Sprite-Asset bei der Generierung der Texturseite für Ihr Projekt ausgelassen wird. Diese
+      funktioniert unter der Annahme, dass ein Sprite, das als Kachelsatz verwendet wird, nicht für etwas anderes verwendet wird und daher nur einmal exportiert werden muss. Wenn Sie jedoch die Basis-Sprite-Ressource für etwas anderes als Kacheln verwenden, dann sollten Sie
+      deaktivieren, damit sowohl das Basis-Sprite <em>als auch </em>das Kachelset beim Kompilieren zur Textur-Seite hinzugefügt werden.</p>
+    <p class="dropspot"><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Herausgeber</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Jede der Schaltflächen im Bereich " <strong>Editoren" </strong>öffnet einen anderen Editor für bestimmte Kachelsatzfunktionen. Sie können <em>Kachelsatzpinsel </em>erstellen, die auf mehreren Kacheln zusammen basieren, <em>animierte Kacheln</em>, die verschiedene Kacheln
+      Sie können auch <em>automatische Kacheln</em> erstellen, die sich auf der Grundlage der sie umgebenden Kacheln &quot;zusammenfügen&quot;. Jeder dieser Editoren wird in den Abschnitten, die am Ende dieser Seite verlinkt sind, im Detail erklärt.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Vorschau-Toolbox</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Dies sind die Werkzeuge, mit denen Sie eine Vorschau des für den Kachelsatz ausgewählten Sprites anzeigen können. Diese Schaltflächen steuern die aktuelle Zoomstufe der Vorschau und Sie können sie zum Vergrößern oder Verkleinern verwenden. Wenn Sie auf die Schaltfläche <img alt="Zoom Reset Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_ZoomReset.png" src="../assets/Images/Icons/Icon_ZoomReset.png"> klicken, wird die Vorschau auf 1:1 mit dem bearbeiteten Kachelsatz-Sprite zurückgesetzt. Sie können auch auf die Schaltfläche <strong>Window Fit</strong> ( <img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasFit.png" src="../assets/Images/Icons/Icon_CanvasFit.png" alt="Canvas Fit Icon" class="icon"> ) klicken, um das gesamte Kachelset in das aktuelle Vorschaufenster einzupassen (dadurch wird es entsprechend vergrößert/verkleinert, damit es passt). Beachten Sie, dass Sie auch vergrößern und verkleinern können
+      <img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" alt="Control Icon" class="icon"> / <img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" alt="CMD Icon" class="icon"> und das Mausrad <img data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png" class="icon" alt="MMB Icon"> verwenden, und durch Drücken von <img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" alt="Control Icon" class="icon"> / <img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" alt="CMD Icon" class="icon"> + <img data-cke-saved-src="../assets/Images/Icons/Icon_Enter.png" src="../assets/Images/Icons/Icon_Enter.png" width="55" height="20" alt="Enter Icon" class="icon"> wird die Leinwand 1:1 mit dem Kachelsatz-Sprite eingestellt.<br></p>
+    <p class="dropspot">Eine weitere Funktion ist, dass Sie die Rasteransicht ein- oder ausschalten können, indem Sie auf die Schaltfläche <img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasGrid.png" src="../assets/Images/Icons/Icon_CanvasGrid.png" class="icon" alt="Grid Icon"> klicken, ebenso wie Sie
+      die Farbe für das zu verwendende Raster einstellen (durch Klicken auf die Schaltfläche <img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasOptions.png" src="../assets/Images/Icons/Icon_CanvasOptions.png" alt="Preview Options Button" class="icon"> ). Wenn das Raster
+      aktiv ist, wird ein farbiger Umriss für jede der Kacheln im Raster angezeigt, wobei die Einstellungen für die Trennung usw. berücksichtigt werden.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Vorschau</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Dieser Bereich ist das Kachelsatz-Vorschaufenster. Um in der Vorschau zu navigieren, können Sie dieselben grundlegenden Steuerelemente wie für allgemeine Arbeitsbereiche verwenden, d. h.: Verwenden Sie die mittlere Maustaste <img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png"> und ziehen Sie, um die Vorschau zu verschieben (oder verwenden Sie alternativ die Kombination <img alt="Space Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Space.png" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> ), und Sie können mit dem Mausrad <img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png"> horizontal scrollen oder mit der Taste <img alt="Control Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> und dem Mausrad <img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png"> vergrößern und verkleinern. Sie können auch die verschiedenen Schaltflächen in der <strong>Vorschau-Toolbox</strong> verwenden, um den Zoom zu ändern und die Überlagerung der Gitterzellen zu aktivieren/deaktivieren.</p>
+  </div>
+  <p> </p>
+  <p>Wie im obigen Abschnitt über <strong>Editoren</strong> erwähnt, stehen weitere Werkzeuge zur Verfügung, um Kachelsätze zu bearbeiten und spezielle <em>Pinsel </em>(Kombinationen von Kacheln, die in einen Raum gemalt werden können), <em>animierte </em>Kacheln und <em>automatische Kacheln</em> 
+    (das sind spezielle Kacheln, die sich automatisch verbinden, wenn sie in einem Raum platziert werden). Jeder dieser Editoren wird auf den folgenden Seiten eingehend erläutert:</p>
+  <ul class="colour">
+    <li><a href="Tile_Set_Editors/Brush_Builder.htm">Der Pinsel-Bauer</a></li>
+    <li><a href="Tile_Set_Editors/Animated_Tiles.htm">Animierte Kacheln</a></li>
+    <li><a href="Tile_Set_Editors/Auto_Tiles.htm">Auto-Kacheln</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Timelines.htm">Timelines</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Tile Set Editor
+Tiles
+Tile Sets
+-->
+  <!-- TAGS
+tile_set_editor
+-->
+
+</body></html>

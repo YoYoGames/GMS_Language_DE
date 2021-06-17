@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_copy" />
+  <meta name="rh-index-keywords" content="string_copy" />
+  <meta name="search-keywords" content="string_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_copy</h1>
+  <p>Mit dieser Funktion können Sie ganz einfach eine Anzahl von Zeichen aus einer Zeichenkette auswählen, die in eine andere kopiert werden sollen. Das erste Zeichen in einer Zeichenkette wird immer als 1 indiziert und nicht als 0, wie Sie vielleicht erwarten, so dass Sie zum Kopieren (zum Beispiel) der ersten fünf Zeichen
+    einer Zeichenkette zu kopieren, würden Sie <tt>string_copy(str, 1, 5)</tt> verwenden. Ein weiteres Beispiel finden Sie weiter unten.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">string_copy(str, index, count);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>Die Zeichenkette, aus der kopiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Die Position des ersten Zeichens in der Zeichenkette, aus der kopiert werden soll (nummeriert ab 1)</td>
+      </tr>
+      <tr>
+        <td>zählen</td>
+        <td>Die Anzahl der zu kopierenden Zeichen, ausgehend von der Position des ersten Zeichens</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">name = keyboard_string;<br> if (string_length(name) &gt; 15)<br> {<br> keyboard_string = string_copy(name, 1, 15);<br> }</p>
+  <p>Mit dem obigen Code kann der Spieler eine Zeichenfolge über die Tastatur eingeben, die dann in der Variablen <tt>name</tt> gespeichert wird. Diese Variable wird dann daraufhin überprüft, ob sie die maximale Länge von 15 Zeichen überschreitet, und wenn dies der Fall ist, wird die Zeichenkette keyboard_string
+    durch eine 15-stellige Kopie der Zeichenkette <tt>name</tt> ersetzt. Dadurch wird die Spielereingabe effektiv auf 15 Zeichen begrenzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Strings.htm">Streicher</a></div>
+        <div style="float:right">Weiter: <a href="string_count.htm">string_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_copy
+-->
+  <!-- TAGS
+string_copy
+-->
+
+</body></html>

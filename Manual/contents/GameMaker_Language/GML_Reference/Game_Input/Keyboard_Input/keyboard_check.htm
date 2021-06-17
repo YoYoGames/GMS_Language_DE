@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keyboard_check</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_check" />
+  <meta name="rh-index-keywords" content="keyboard_check" />
+  <meta name="search-keywords" content="keyboard_check" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>keyboard_check</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob eine Taste gedrückt ist oder nicht. Anders als die <a href="keyboard_check_pressed.htm"><tt>keyboard_check_pressed()</tt></a> oder <a href="keyboard_check_released.htm"><tt>keyboard_check_released()</tt></a> Funktionen, die
+    nur einmal ausgelöst werden, wenn die Taste gedrückt oder losgelassen wird, wird diese Funktion bei jedem Schritt ausgelöst, bei dem die Taste gedrückt gehalten wird. Die Funktion nimmt einen Keycode-Wert, wie er von der Funktion <a href="../../Strings/ord.htm"><tt>ord()</tt></a>    zurückgegeben wird (nur <i>Großbuchstaben</i> von A-Z oder Zahlen von 0-9), oder eine der <tt>vk_*-Konstanten</tt>, die auf der Hauptseite <a href="Keyboard_Input.htm">Tastatureingabe</a> aufgeführt sind.</p>
+  <p> </p>
+  <h4><b>Syntax:</b></h4>
+  <p class="code">keyboard_check(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Die Taste zum Überprüfen des heruntergefahrenen Zustands von.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Rückgabe:</b></h4>
+  <p class="code"><b></b>Boolesch</p>
+  <p> </p>
+  <h4><b><b>Beispiel:</b></b>
+  </h4>
+  <p class="code">if keyboard_check(vk_left)<br> {
+    <br> x -= 5;<br> }
+  </p>
+  <p>Der obige Code prüft, ob die Pfeiltaste gedrückt wird, und verschiebt die Instanz bei jedem Schritt, bei dem er true zurückgibt, um 5 Pixel nach links.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Keyboard_Input.htm">Tastatur-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="keyboard_check_pressed.htm">keyboard_check_pressed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_check
+-->
+  <!-- TAGS
+keyboard_check
+-->
+
+</body></html>

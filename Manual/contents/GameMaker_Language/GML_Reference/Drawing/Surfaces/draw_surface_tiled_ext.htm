@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fläche_gekippt_ext zeichnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_tiled_ext" />
+  <meta name="rh-index-keywords" content="draw_surface_tiled_ext" />
+  <meta name="search-keywords" content="draw_surface_tiled_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fläche_gekippt_ext zeichnen</h1>
+  <p>Diese Funktion nimmt eine Fläche und kachelt sie dann wiederholt über den gesamten Raum, ausgehend von den Koordinaten, die Sie in der Funktion angeben, und mit jeder Kachel skaliert, farblich überblendet und mit dem von Ihnen definierten Alpha (diese Eigenschaften sind die gleichen, die
+    wie die, die in <a href="draw_surface_ext.htm"><tt>draw_surface_ext()</tt></a>).</p>
+  <p class="note"><b></b><b>HINWEIS</b>: Bei der Arbeit mit Oberflächen besteht die Möglichkeit, dass diese jederzeit aufhören können zu existieren, da sie im Texturspeicher abgelegt sind. Sie sollten <b>IMMER</b> prüfen, ob eine Oberfläche existiert, indem Sie <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    überprüfen, bevor Sie sie direkt referenzieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_surface_tiled_ext(id, x, y, xscale, yscale, col, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Der eindeutige ID-Wert der zu zeichnenden Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate, an der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate, an der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td>Die horizontale Skalierung der Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Die vertikale Skalierung der Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe des Bereichs, den die gestreckte Fläche einnimmt.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Die Farbe, mit der die Oberfläche überblendet werden soll.</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td>Das Alpha der Oberfläche.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_surface_tiled_ext(surf, x, y, 2, 2, c_red, 0.5);</p>
+  <p>Dadurch wird die in &quot;surf&quot; indizierte Fläche an der eigenen x- und y-Position der Instanz gezeichnet, doppelt so groß wie gespeichert und in alle Richtungen im Raum gekachelt sowie mit der Farbe Rot überblendet und teiltransparent.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="draw_surface_general.htm">draw_surface_general</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_tiled_ext
+-->
+  <!-- TAGS
+draw_surface_tiled_ext
+-->
+</body>
+</html>

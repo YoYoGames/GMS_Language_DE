@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_hash_to_newline</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_hash_to_newline" />
+  <meta name="rh-index-keywords" content="string_hash_to_newline" />
+  <meta name="search-keywords" content="string_hash_to_newline" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_hash_to_newline</h1>
+  <p>Diese Funktion gibt eine Zeichenkette zurück, bei der das Symbol &quot;#&quot; in eine neue Zeile umgewandelt wurde. Also eine Zeichenkette, die als formatiert ist:</p>
+  <p class="code">&quot;Hallo#Welt&quot;</p>
+  <p>Würde auf dem Bildschirm ausgedruckt werden als:</p>
+  <p class="code">Hallo<br> Welt
+  </p>
+  <p class="note"><b>WICHTIG!</b> Diese Funktion dient der Importkompatibilität zwischen <span class="notranslate">GameMaker Studio 2</span> und früheren Versionen der Software und sollte daher nicht verwendet werden, es sei denn, es ist notwendig, veraltete Funktionen zu replizieren. Stattdessen
+    sollten Sie die <a href="Strings.htm">Escape-Zeichen</a> verwenden, um eine neue Zeile zu markieren. Weitere Informationen zur Importkompatibilität finden Sie <a href="../../../Additional_Information/Obsolete_Functions.htm">hier</a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">string_hash_to_newline(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Die zu konvertierende Zeichenkette über mehrere Zeilen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var str = string_hash_to_newline(&quot;Hello#World&quot;);<br> draw_text(32, 32, str);</p>
+  <p>Der obige Code wandelt die Zeichenkette mit dem Raute-Symbol in eine auf zwei Zeilen aufgeteilte Zeichenkette um und gibt sie dann auf dem Bildschirm aus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Strings.htm">Streicher</a></div>
+        <div style="float:right">Weiter: <a href="clipboard_has_text.htm">clipboard_has_text</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_hash_to_newline
+-->
+  <!-- TAGS
+string_hash_to_newline
+-->
+
+</body></html>

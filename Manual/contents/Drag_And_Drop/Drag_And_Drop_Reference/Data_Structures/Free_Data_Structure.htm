@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Freie Datenstruktur</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Free Data Structure action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Free Data Structure" />
+  <meta name="search-keywords" content="Free Data Structure" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Free Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Free_Data_Structure.png"> Freie Datenstruktur</h1>
+  <p>Diese Aktion gibt die Datenstruktur aus dem Speicher frei und sollte immer dann aufgerufen werden, wenn eine Datenstruktur nicht mehr benötigt wird, z. B. beim Destroy-Event einer Instanz oder dem Room-End-Event, etc. Das Freigeben einer Datenstruktur bedeutet, dass keine weiteren Aktionen
+    referenziert werden kann, da sie nicht mehr existiert, obwohl Sie dies auch mit der Aktion <a href="If_Data_Structure_Exists.htm">If Data Structure Exists</a> überprüfen können.</p>
+  <p>Beachten Sie, dass die Datenstruktur nicht von einem Raum in einen anderen übertragen wird, es sei denn, der Index der Datenstruktur ist einer Variablen des globalen Bereichs zugewiesen. Wenn Sie z. B. eine Player-Instanz erstellen und eine Listendatenstruktur einer Variablen in dieser Instanz zugewiesen ist,
+    muss die Liste freigegeben werden, wenn der Player zerstört wird <i>oder</i> wenn sich der Raum mit der Player-Instanz darin ändert (es sei denn, die Player-Instanz ist als persistent gekennzeichnet), so dass die Player-Instanz zwei "Free Data Structure"-Aktionen für diese beiden Ereignisse enthält.
+    diese beiden Ereignisse. Es ist wichtig, dass alle erstellten Datenstrukturen auf diese Weise zerstört werden, wenn sie nicht mehr benötigt werden, um Speicherlecks zu vermeiden, die zu Leistungsproblemen oder sogar zum Absturz Ihres Spiels führen können.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Free Data Structure Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Free_Data_Structure.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der Datenstruktur, die Sie freigeben (Liste, Map, Grid oder Stack)</td>
+      </tr>
+      <tr>
+        <td>Variabel</td>
+        <td>Die Variable, die den Index der freizugebenden Datenstruktur enthält</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Free Data Structure Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Free_Data_Structure.png">Der obige Aktionsblockcode ruft die Größe der Liste ab, auf die in der globalen
+    referenziert wird, und verwendet dann eine for-Schleife, um sie durchzugehen und die Instanzen mit den in der Liste gespeicherten IDs zu zerstören. Nachdem die Schleife beendet ist, wird die Liste aus dem Speicher freigegeben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Data_Structure_Actions.htm">Datenstruktur-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Add_To_List.htm">Zur Liste hinzufügen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Free Data Structure
+-->
+  <!-- TAGS
+action_ds_free
+-->
+</body>
+</html>

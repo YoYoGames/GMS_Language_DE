@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Das Gleis-Panel</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the sequence canvas" />
+  <meta name="rh-index-keywords" content="Sequences - The Track Panel" />
+  <meta name="search-keywords" content="tracks,track panel,track editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Das Gleis-Panel</h1>
+  <p><img alt="The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel.png">Was Ihre Sequenzen tun, wird von den Assets und Parametern bestimmt, die dem <strong>Spurbedienfeld</strong> hinzugefügt wurden. Sie können eine Spur zum
+    Editor hinzufügen, indem Sie entweder:</p>
+  <ul class="colour">
+    <li>Ziehen eines Assets in die Sequenz <a href="The_Sequence_Canvas.htm">Canvas</a></li>
+    <li>Ziehen eines Assets in den Spurbereich selbst</li>
+    <li>indem Sie auf die Schaltfläche &quot;Asset hinzufügen&quot; <img alt="Add Track Icon" class="icon" src="../../assets/Images/Icons/Icon_AddAsset.png"> am unteren Rand des Spurfensters klicken.</li>
+  </ul>
+  <p>Diese letzte Methode öffnet den Asset Explorer für Sie, wo Sie das hinzuzufügende Asset auswählen können.</p>
+  <p>Unabhängig davon, welche Methode Sie wählen, wird eine neue <a class="glossterm" data-glossterm="Anlagenspur" href="#">Asset-Spur</a> für das Asset erstellt. Diese Spur ist die Hauptspur für das Asset in der Sequenz und hat eine entsprechende <a class="glossterm" data-glossterm="Anlagenschlüssel" href="#">Asset-Key-Spur</a>, die für das Asset im <span class="notranslate">Dope Sheet</span> an der <a class="glossterm" data-glossterm="Abspielkopf" href="#">Abspielkopfposition</a> erstellt wird:</p>
+  <p><img alt="Add An Asset To The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Asset.gif">Beachten Sie, dass die Farbe des Asset-Schlüssels im <span class="notranslate">Dope Sheet</span> über das Spurbedienfeld eingestellt werden kann, indem Sie auf den farbigen Balken am
+    Ende klicken. Dadurch wird der <strong>Farbwähler</strong> geöffnet, in dem Sie die Farbe für die Key-Spuren im Dope <span class="notranslate">Sheet</span> auswählen können.</p>
+  <p>Zu jeder Kühlstelle im Track-Editor kann auch ein Satz von <a class="glossterm" data-glossterm="Parameterspuren" href="#">Parameterspuren</a> hinzugefügt werden. Diese Spuren steuern die verschiedenen Eigenschaften (Parameter), die im Laufe der Zeit für die Spur geändert werden können.
+    für die Spur im Laufe der Zeit geändert werden können. Die verschiedenen verfügbaren Parameter werden im Abschnitt &quot;Hinzufügen von<strong>Parameter-Tracks&quot;</strong> weiter unten auf dieser Seite ausführlich behandelt:</p>
+  <ul class="colour">
+    <li><strong>Alle Assets</strong>: <em>Position </em>und <em>Rotation</em>.</li>
+    <li><strong>Töne</strong>: <em>Tonhöhe </em>und <em>Lautstärke</em>.</li>
+    <li><strong>Sequenzen</strong>: <em>Ursprung </em>und <em>Maßstab</em>.</li>
+    <li><strong>Sprites und Objekte</strong>: <em>Ursprung</em>, <em>Skalierung</em>, <em>Bildindex</em>, <em>Bildgeschwindigkeit</em> und <em>Farbmultiplikation</em>.</li>
+  </ul>
+  <p>Um eine Parameterspur im Editor hinzuzufügen, können Sie im Spurbedienfeld die Option &quot;<strong>Änderungen automatisch aufzeichnen&quot;</strong> <img alt="Record Changes Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> aktivieren, die dann Parameterschlüssel
+    für alle Änderungen, die Sie an einem Asset im Canvas an der aktuellen Abspielkopfposition vornehmen, wie hier gezeigt:</p>
+  <p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif">Alternativ können Sie auf die Schaltfläche &quot; Add<strong>Parameter Track&quot;</strong> <img alt="Add Parameter Track Button" src="../../assets/Images/Icons/Icon_Add_Param.png"> klicken, woraufhin sich ein Menü öffnet, das Ihnen die verschiedenen verfügbaren Optionen anzeigt:</p>
+  <p><img alt="Adding A Parameter Track To An Asset In The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Parameter.png">Wenn Sie eine Option aus diesem Menü auswählen oder direkt in der IDE aufnehmen, werden eine oder mehrere
+    Parameter-Spuren unterhalb der Haupt-Asset-Spur und fügt außerdem eine <a class="glossterm" data-glossterm="Parametertaste" href="#">Parameter-Taste</a> zum <span class="notranslate">Dope Sheet</span> hinzu, die die gleiche Farbe wie die Haupt-Asset-Spur hat:</p>
+  <p><img alt="Parameter Tracks In The Track Panel And Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_ParameterTracks.png">Sobald Sie eine Parameterspur zu Ihrer Haupt-Asset-Spur hinzugefügt haben, wird das <span class="notranslate">Dope-Sheet</span> einen farbigen Balken haben
+    um die Länge der Asset-Spur in Frames anzuzeigen, und es werden <strong>Parameterschlüssel </strong><span class="notranslate">(Keyframes</span>) an den Punkten hinzugefügt, an denen eine Änderung des Parameters erfolgen soll. Diese Schlüssel sind im obigen Bild als einfache &quot;Punkte&quot; zu sehen
+    auf einem Rahmen. Wenn eine Spur solche Parameterschlüssel hat, wird der Parameter, auf den sie sich beziehen, standardmäßig zwischen jedem der angezeigten Punkte interpoliert (mit <a class="glossterm" data-glossterm="lineare Interpolation" href="#">linearer Interpolation</a>).
+    Wenn Sie z. B. einen Rotationsparameter haben und dieser bei Frame 0 auf 90° eingestellt ist, dann ist er bei Frame 30 auf 180° eingestellt, und bei Frame 15 auf 135°. Sie können die Änderung der Werte im Laufe der Zeit sehen, indem Sie die Parameterspur auswählen und dann mit dem Abspielkopf im Dope Sheet &quot;scrubben&quot;.
+    Sie können die Änderung der Werte im Laufe der Zeit sehen, indem Sie die Parameterspur auswählen und dann den Abspielkopf in der <span class="notranslate">Folie</span>"schrubben":</p>
+  <p><img alt="Interpolating Between Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Changing_Parameter.gif" /></p>
+  <p>Beachten Sie, dass Sie für alle Parameterspuren die standardmäßige lineare Interpolation zwischen verschiedenen Tasten über das Menü der rechten Maustaste <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> deaktivieren können, was bedeutet, dass die Übergänge zwischen den Parameterwerten sofort und nicht schrittweise erfolgen.
+    was bedeutet, dass die Übergänge zwischen den Parameterwerten <em>sofort </em>auf dem gegebenen Frame und nicht allmählich über die Zeit erfolgen:</p>
+  <p><img alt="Disable Linear Interpolation On Parameter Track" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_RMB_Menu_Params.png">Neben der Möglichkeit, den Übergangstyp für Parameterspuren zu wählen, bietet Ihnen das RMB-Menü auch
+    die folgenden Optionen:</p>
+  <ul class="colour">
+    <li><strong>Ausschneiden</strong>, <strong>Kopieren</strong> und <strong>Einfügen</strong>: Mit diesen Optionen können Sie Asset- oder Parameterspuren ausschneiden/kopieren/einfügen.</li>
+    <li><strong>Spur(en) duplizieren</strong>: Damit wird ein Duplikat der aktuell ausgewählten Spur(en) erstellt. Wenn es sich um eine Asset-Spur handelt, werden auch die mit ihr verbundenen Parameterspuren dupliziert.</li>
+    <li><strong>Spur(en) löschen</strong>: Dies löscht die ausgewählte(n) Spur(en). Wenn Sie eine Kühlstellenspur löschen, werden auch die mit ihr verbundenen Parameterspuren entfernt, Sie können jedoch Parameterspuren einzeln löschen.</li>
+    <li><strong>Gruppe</strong>: Wenn Sie diese Option auf einem leeren Platz im Spurbedienfeld verwenden, wird ein Gruppenordner erstellt, den Sie dann verwenden können, um Ihre Assets in einem geordneteren Format zu halten. Sie können ein Asset zu einer Gruppe hinzufügen, indem Sie es einfach anklicken und in den Ordner ziehen.
+      es in den Ordner ziehen. Wenn Sie bereits eine oder mehrere Spuren ausgewählt haben, wird mit dieser Option nicht nur ein Gruppenordner erstellt, sondern auch die Spur(en) dazu hinzugefügt.</li>
+    <li><strong>Umbenennen</strong>: Mit dieser Option können Sie beliebige Asset-Spuren oder Gruppenordner umbenennen.</li>
+  </ul>
+  <p>Eine wichtige Funktion von Asset- und Parameterspuren ist die Möglichkeit, Spuren und Gruppen zu <strong>überordnen </strong>. Wenn Sie eine Kühlstellenspur auf eine andere im Spurfenster ziehen, wird die erste Kühlstelle zu einem <strong>untergeordneten </strong>Element der Kühlstelle, auf der sie abgelegt wurde.
+    auf die sie gezogen wurde, die wiederum zur <strong>übergeordneten</strong> Kühlstelle wird. Alle Parameterspuren, die der übergeordneten Asset-Spur zugewiesen sind, werden dann automatisch auf die untergeordneten Asset-Spuren angewendet, so dass Sie z. B. mehrere Sprites haben können, die alle eine einzige Position verwenden
+    Asset-Spur zu verschieben:<img alt="Parent And Child Sprites Share Parameters" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Parenting.gif" style="cursor: nwse-resize;">Das Gleiche kann mit Gruppen gemacht werden. Sie können einen Gruppenordner erstellen
+    Sie können einen Gruppenordner erstellen, indem Sie auf die Schaltfläche unten im Spurbedienfeld klicken und dann die Asset-Spuren, die gruppiert werden sollen, auf den Gruppenordner ziehen und ablegen. Diese Kühlstellen behalten weiterhin ihre eigenen Parameterspuren, aber Sie können dann der Gruppe und allen Kühlstellen zusätzliche Parameterspuren zuweisen.
+    Sie können der Gruppe jedoch zusätzliche Parameterspuren zuweisen, und alle Kühlstellen in der Gruppe werden von diesen Parameterspuren sowie von ihren eigenen individuellen Parameterspuren beeinflusst.</p>
+  <p>Bei der Arbeit mit dem Track-Panel können auch die üblichen Tastenkombinationen verwendet werden, d.h.: <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> und die linke Maustaste <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">, um einen oder mehrere Tracks in beliebiger Reihenfolge auszuwählen, <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> und die linke Maustaste <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">, um aufeinanderfolgende Tracks auszuwählen, und Sie können sie auch mit den Tastenkombinationen <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +&quot;<span class="inline">X</span>&quot;, <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; und <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot; ausschneiden, kopieren und einfügen.</p>
+  <p>Das sind die Grundlagen der Verwendung des Track-Editors, aber im Folgenden gehen wir etwas mehr ins Detail, wofür die verschiedenen Abschnitte da sind und wie man sie verwendet:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Orientierung ändern</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Mit der Schaltfläche "Ausrichtung ändern" <img data-cke-saved-src="../../assets/Images/Icons/Icon_ChangeOrientation.png" src="../../assets/Images/Icons/Icon_ChangeOrientation.png" class="icon" alt="Change Orientation Icon"> können Sie die Art und Weise ändern, wie der
+      Sequenz-Editor die Anzeige der verschiedenen Abschnitte. Standardmäßig befindet sich die Cnavas-Ansicht oben und der Track-Editor und das Dopesheet unten, aber dies kann geändert werden, indem Sie auf die Schaltfläche klicken, um die verschiedenen Layouts zu durchlaufen, oder indem Sie auf
+      die Schaltfläche "Options" <img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_CanvasOptions.png" src="../../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> klicken, um ein Menü zu öffnen und das gewünschte Layout auszuwählen.
+      das Sie wünschen. Die folgenden Layouts sind verfügbar:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" alt="Split Window Sequence Editor Button" /></td>
+          <td class="icons"><strong>Geteiltes Fenster</strong></td>
+          <td class="text">
+            <p>Mit dieser Option wird der Sequenz-Editor in zwei getrennte Fenster aufgeteilt, wobei das Haupt-IDE-Fenster die Canvas-Ansicht in der vollen Arbeitsfläche zeigt und das neue Fenster das <span class="notranslate">Dope Sheet</span> und den Track Editor. Ein erneuter Klick auf die Schaltfläche
+              wird das Layout wieder geändert und das zusätzliche Fenster entfernt.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Top.png" src="../../assets/Images/Icons/Icon_Seq_Top.png" alt="Snap Top Sequence Editor Button" /></td>
+          <td class="icons"><b>Schnappdeckel</b></td>
+          <td class="text">
+            <p>Mit dieser Option werden der Track-Editor und das Dopesheet an den oberen Rand der IDE geschoben.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Right.png" src="../../assets/Images/Icons/Icon_Seq_Right.png" alt="Snap Right Sequence Editor Button" /></td>
+          <td class="icons"><strong>Rechts einrasten</strong></td>
+          <td class="text">
+            <p>Mit dieser Option werden der Track-Editor und das Dopesheet rechts neben der IDE eingeblendet.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Bottom.png" src="../../assets/Images/Icons/Icon_Seq_Bottom.png" alt="Snap Bottom Sequence Editor Button" /></td>
+          <td class="icons"><strong>Schnapp-Boden</strong></td>
+          <td class="text">
+            <p>Mit dieser Option werden der Spureditor und das Dopesheet am unteren Rand der IDE eingerastet (dies ist die Standardansicht.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Left.png" src="../../assets/Images/Icons/Icon_Seq_Left.png" alt="Snap Left Sequence Editor Button" /></td>
+          <td class="icons"><strong>Schnapper links</strong></td>
+          <td class="text">
+            <p>Mit dieser Option werden der Track-Editor und das Dopesheet auf der linken Seite der IDE eingerastet.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Sie können das Layout des Sequenzeditors auch jederzeit zurücksetzen, indem Sie auf die Option Zurücksetzen <img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Reset.png" src="../../assets/Images/Icons/Icon_Seq_Reset.png" class="icon" alt="Reset Editor Layout Button"> klicken. Dadurch wird der Editor auf den Standardzustand zurückgesetzt und alle Abschnitte, die geschlossen waren, werden wieder geöffnet.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Spurensuche</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Dieses Suchfeld ermöglicht es Ihnen, die verschiedenen Spuren der Sequenz schnell zu durchsuchen, um diejenige zu finden, die Sie bearbeiten möchten. Wenn Sie hier einen beliebigen Text eingeben, wird angezeigt, wie viele Asset-Spuren mit dieser Zeichenfolge gefunden wurden, und die Pfeile
+      an der Seite des Suchfelds. Wenn Sie auf diese Pfeile klicken, wird zu den ersten und nachfolgenden Kühlstellen gesprungen, die die Suchkriterien erfüllen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Asset-Spuren</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Jede Kühlstelle, die zu einer Sequenz hinzugefügt wird, erhält eine eigene Spur, die hier aufgelistet ist. Wenn für die Kühlstellenspur Parameter eingestellt sind, werden diese auch darunter als Parameterspuren angezeigt. Sie können die Parameterspuren erweitern oder einschränken, indem Sie auf den Pfeil
+      Sie können die Parameterspuren erweitern oder verkleinern, indem Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf das Pfeilsymbol links neben dem Spurnamen klicken, und Sie können den Spurnamen bearbeiten, indem Sie einen langsamen Doppelklick <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf die Spur ausführen und ihr dann einen Namen Ihrer Wahl geben. Beachten Sie, dass es keine Einschränkungen für den Namen gibt, den Sie vergeben, und Sie können Leerzeichen, nicht alphanumerische Zeichen
+      und mit einer Zahl beginnen, wenn Sie möchten.</p>
+    <p class="dropspot">Die verschiedenen verfügbaren Typen von Parameterspuren werden im Abschnitt &quot; Hinzufügen von<strong>Parameterspuren&quot;</strong> weiter unten auf dieser Seite näher erläutert.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Tastensteuerungen</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Nachdem Sie eine Parameterspur hinzugefügt haben, können Sie bestimmten Frames Parameterschlüssel hinzufügen und entfernen, um den Wert für diesen Parameter einzustellen. Dies kann mit Hilfe der &quot;<strong>Aufnahmetaste&quot;</strong> <img alt="Add Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> oder der &quot; Löschtaste&quot; <strong><img alt="Delete Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"> </strong>Taste erfolgen (weitere Informationen finden Sie im Abschnitt &quot; Track<strong>Key Controls&quot;</strong>),
+      oder Sie können es mit den <strong>Tastensteuerungen</strong> auf dem Parameter selbst tun. Um diese Steuerelemente zu verwenden, müssen Sie den Abspielkopf im <span class="notranslate">Dope Sheet</span> auf den Frame positionieren, den Sie bearbeiten möchten, und dann können Sie auf das kreisförmige &quot;Key&quot;-Symbol
+      auf der linken Seite der Parameterspur klicken. Wenn dem Frame keine Taste zugewiesen ist, ist der Kreis &quot;leer&quot; und wenn Sie darauf klicken, wird eine neue Taste hinzugefügt und Sie können den Parameterwert bearbeiten. Wenn der Rahmen bereits eine Taste hat, ist der Kreis "gefüllt".
+      Wenn der Rahmen bereits eine Taste hat, ist der Kreis &quot;gefüllt&quot;, und wenn Sie darauf klicken, wird die Taste aus dem Rahmen entfernt:</p>
+    <p class="dropspot"><img alt="Adding And Removing Parameter Keys Using The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Param_Key.gif">Sie werden auch feststellen, dass Sie im obigen Bild die Pfeiltasten auf beiden Seiten
+      auf beiden Seiten der Parametertastenmarkierung verwenden können, um schnell zwischen den Schlüsselbildern <span class="notranslate">zu</span> springen, ohne den Abspielkopf manuell positionieren zu müssen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Parameterwerte</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Wenn eine Parameterspur hinzugefügt wurde, können Sie die Werte für einige von ihnen bearbeiten, indem Sie einfach den Abspielkopf im <span class="notranslate">Dope Sheet</span> auf den Frame mit dem zu ändernden Schlüssel setzen und dann die verschiedenen Canvas-Widgets verwenden, um die Position, die Drehung,
+      Skalierung oder Ursprung des Assets bearbeiten. Diese Änderungen werden in dem Schlüsselwert für dieses Bild wiedergegeben. Allerdings können nicht alle Parameter auf diese Weise bearbeitet werden, oder es ist vielleicht nicht präzise genug für Ihre Bedürfnisse, und in diesen Fällen können Sie den Parameterwert
+      In diesen Fällen können Sie den Parameterwert direkt bearbeiten, indem Sie auf ihn in der Spur klicken und ihn auf den gewünschten Wert für den Parametertyp setzen.</p>
+    <p class="dropspot">Beachten Sie, dass einige Parameterspuren neben ihren Werten ein &quot;Link&quot;-Symbol <img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14"> haben, was bedeutet, dass sie miteinander verknüpft werden können. Dies geschieht durch
+      Klicken Sie auf das Symbol, um die Verknüpfung zu aktivieren/deaktivieren. Wenn die Verknüpfung aktiviert ist, wird beim Bearbeiten eines Wertes auch der andere eingestellt.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Ereignisse</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Ähnlich wie bei regulären Objekten können Sequenzen Ereignisse haben, die einen ihnen zugewiesenen Code ausführen können. Der Code wird in Form einer <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">geskripteten Funktion</a> zugewiesen, die
+      keine Argumente annehmen kann und aufgerufen wird, wenn das Ereignis ausgelöst wird.</p>
+    <p class="dropspot">Ereignisse werden hinzugefügt, indem Sie auf die Schaltfläche " <strong>Ereignis hinzufügen</strong> " <img alt="Add Event Icon" src="../../assets/Images/Icons/Icon_AddEvent.png"> klicken, woraufhin sich das folgende Fenster öffnet:</p>
+    <p class="dropspot"><img alt="Sequence Editor Add Event Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Events.png" /></p>
+    <p class="dropspot">Die hier aufgeführten Ereignisse sind wie folgt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Erstellen </strong>- Dieses Ereignis tritt ein, wenn eine Instanz der Sequenz zum ersten Mal erstellt wird, und ist das allererste, was innerhalb einer über den Raumeditor in den Raum platzierten Sequenz passiert, wenn ein Raum betreten wird.</li>
+      <li class="dropspot"><strong>Zerstören </strong>- Dieses Ereignis wird ausgeführt, wenn eine Instanz der Sequenz zerstört wird, und wird vor dem Ereignis "Aufräumen" (siehe unten) ausgeführt.</li>
+      <li class="dropspot"><strong>Aufräumen</strong> - Dieses Ereignis wird nach jedem Ereignis aufgerufen, das eine Instanz der Sequenz aus dem Raum entfernt. Es wird also ausgelöst, wenn die Sequenz zerstört wird, wenn der Raum endet oder wenn das Spiel endet, und ist dazu gedacht, folgende Aufgaben auszuführen
+        jede Aufgabe, die einmal ausgeführt werden muss, wenn die Sequenzinstanz aus irgendeinem Grund aus dem Spiel entfernt wird. Wenn Sie die Sequenzinstanz z. B. mit layer_sequence_destroy() zerstört haben, dann wird dieses Ereignis nach dem Destroy
+        Ereignis (siehe oben).</li>
+      <li class="dropspot"><strong>Begin Step</strong> / <strong>Step </strong>/ <strong>End Step</strong> - Das Step-Ereignis ist ein Ereignis, das bei jedem einzelnen Schritt (Frame) des Spiels überprüft wird, während die Sequenzinstanz existiert, und ist in drei Teile aufgeteilt: begin, step und
+        Ende. Für die meisten Dinge reicht das Standard-Schritt-Ereignis aus, aber manchmal möchten Sie etwas mehr Kontrolle darüber haben, welcher Code zu welchem Zeitpunkt ausgeführt wird, und dafür gibt es die Schritt-Ereignisse "Beginn" und "Ende".
+        Diese Ereignisse werden immer in der gleichen Reihenfolge bei jedem Schritt (Frame) des Spiels ausgelöst. <strong>Wichtig!</strong> Wenn die Sequenz angehalten wird, werden diese Ereignisse <em>nicht </em>ausgelöst, und wenn das Spiel fortgesetzt wird, werden sie im <em>nächsten Frame</em> ausgelöst <em>, nachdem die Sequenz wieder zu spielen beginnt</em>.
+        Beachten Sie auch, dass die Reihenfolge der Ereignisse nicht von der Abspielkopfrichtung beeinflusst wird, und selbst wenn die Sequenz rückwärts abgespielt wird, werden die Ereignisse immer noch als Beginn, Schritt und Ende ausgeführt.</li>
+      <li class="dropspot"><strong>Asynchrones Ereignis</strong>: Dies ist das Äquivalent zum Objekt <a href="../Object_Properties/Async_Events.htm">Asynchronous System Event</a>. <strong>Wichtig!</strong> Wenn die Sequenz pausiert ist, wird dieses Ereignis <em>nicht </em>ausgelöst.</li>
+    </ul>
+    <p class="dropspot">Jedem Ereignis kann eine einzelne Funktion zugewiesen werden, die aufgerufen wird, wenn das Ereignis ausgelöst wird. Sie können die Funktion über das Eingabefeld für den Entlüftungspunkt zuweisen, und durch Klicken auf die Pfeilschaltfläche wird der Skript-Editor für die zu bearbeitende Funktion geöffnet.
+      Sie können auch auf die Schaltfläche &quot;Neu erstellen&quot; am unteren Rand klicken, um eine neue Skript-Ressource mit bereits definierten &quot;Boilerplate&quot;-Funktionen zu erstellen, die nur noch ausgefüllt werden müssen. Beachten Sie, dass Sie die Funktionsnamen nach Belieben ändern können und nicht
+      Sie müssen nicht die vordefinierten Namen verwenden und Sie können auch alle Funktionsdefinitionen entfernen, die Sie nicht benötigen. Es ist wichtig zu beachten, dass Funktionen, die für Sequenzereignisse verwendet werden, keine Argumente annehmen können.</p>
+    <p class="dropspot">Sequenzereignisse können auch über Code hinzugefügt und bearbeitet werden. Für weitere Informationen siehe <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">hier</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span class="notranslate">Keyframe-Steuerungen</span> </a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Die Schaltflächen für die <span class="notranslate">Keyframe-Steuerung</span> sind eine der Möglichkeiten, mit denen Sie bestimmte Tasten im <span class="notranslate">Dotierungsblatt</span> hinzufügen, entfernen oder bearbeiten können. Die Schaltflächen sind wie folgt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Split Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Split.png"> - Dies ist die Schaltfläche &quot;Ausgewählte Tasten teilen&quot;. Wenn Sie eine oder mehrere Parametertasten im <span class="notranslate">Dope-Sheet</span> ausgewählt haben, können Sie auf diese Schaltfläche klicken und sie werden
+        Sie können dann auf diese Schaltfläche klicken und sie werden in zwei separate Tasten an der Abspielposition der Zeitleiste aufgeteilt:<br>
+        <img alt="Split Asset and Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Split.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Delete Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"> - Dies ist die Schaltfläche &quot;Ausgewählte Tasten löschen&quot;. Wenn Sie eine oder mehrere Parametertasten im <span class="notranslate">Datenblatt</span> ausgewählt haben, können Sie auf diese Schaltfläche klicken und sie werden
+        werden gelöscht:<br>
+        <img alt="Delete Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Delete.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Add Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> - Dies ist die Schaltfläche &quot;Eine neue Taste aufzeichnen&quot;. Wenn Sie einen Asset-Schlüssel im <span class="notranslate">Dope-Sheet</span> ausgewählt haben und diese Schaltfläche drücken, werden neue Parameterschlüssel zur
+        Asset-Spur als Parameterspuren hinzugefügt, und die Parametertasten werden als Punkte in der Timeline des <span class="notranslate">Dope-Sheets</span> an der Abspielkopfposition hinzugefügt:<br>
+        <img alt="Add Parameter Keys At Playhead Position" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Record.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Record Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> - Dies ist die Schaltfläche &quot;Änderungen automatisch aufzeichnen&quot;. Wenn dies aktiviert ist, werden alle Änderungen am Asset im Canvas automatisch aufgezeichnet
+        und die entsprechenden Parameterspuren und Parameterschlüssel an der Abspielkopfposition im <span class="notranslate">Dope Sheet</span> hinzugefügt. Wenn Sie beispielsweise den Abspielkopf von Bild 0 auf Bild 10 bewegen und dann im Canvas das Asset um 100 Pixel nach rechts verschieben, wird eine Parameterspur
+        Spur für die Position hinzugefügt, und die Parametertasten werden bei Bild 0 (der Anfangsposition) und bei Bild 10 (der Abspielkopfposition) hinzugefügt, und wenn Sie in der Sequenz auf &quot;Play&quot; drücken, bewegt sich die Kühlstelle 100 Pixel nach rechts über zehn Bilder.
+        Bilder.
+       <br>
+        <img alt="Automatically Record Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Auto.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Sichtbar / Sperren Umschaltknöpfe</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Sowohl Asset-Spuren als auch Parameter-Spuren verfügen über eine Schaltfläche zum Umschalten der Sichtbarkeit der Spur <img alt="Track Visibility Icon" src="../../assets/Images/Icons/Icon_Track_Visible.png"> und zum Sperren der Spur <img alt="Track Lock Icon" src="../../assets/Images/Icons/Icon_Track_Lock.png">. Wenn Sie die Sichtbarkeit der Spur deaktivieren, wird sie weder beim Ausführen der Sequenz in einem Raum noch beim Testen im Sequenz-Canvas angezeigt, und das Umschalten der Sichtbarkeit einer Asset-Spur schaltet auch die Sichtbarkeit
+      der zugehörigen Parameterspuren. Das Sperren einer Spur bedeutet einfach, dass diese Spur nicht mehr in irgendeiner Weise bearbeitet werden kann. Beachten Sie, dass Spuren, die unsichtbar sind, auf dem <span class="notranslate">Dope-Sheet</span> ausgeblendet gezeichnet werden, während Spuren, die gesperrt sind, mit einem Overlay gezeichnet werden,
+      so dass Sie sofort sehen können, in welchem Zustand sich jede Spur befindet:</p>
+    <p class="dropspot"><img alt="Locked And Invisible Tracks In The Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Locked_And_Visible.png" /> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Spur Farbe</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Jeder Asset-Spur, die Sie erstellen, wird von der IDE eine zufällige Farbe zugewiesen, um sie auf dem <span class="notranslate">Dope Sheet</span> leichter identifizieren zu können. Diese Farbe kann jederzeit geändert werden, indem Sie einfach auf den Farbbalken für die Spur klicken und dann die gewünschte Farbe aus dem sich öffnenden Farbauswahlfenster auswählen.
+      die Sie verwenden möchten, aus dem sich öffnenden Farbauswahlfenster. Jede für eine Kühlstellenspur gewählte Farbe wird automatisch auf alle zugehörigen Parameterspuren angewendet, Sie können jedoch die Farbe jeder Parameterspur einzeln bearbeiten, so dass sie sich unterscheidet
+      falls erforderlich. Beachten Sie, dass eine erneute Änderung der Farbe der Kühlstellenspur alle Änderungen an den Parameterspuren außer Kraft setzt.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Hinzufügen von Parameterspuren</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">Mit der Schaltfläche Parameter hinzufügen <img alt="Add Parameter Track Icon" height="15" src="../../assets/Images/Icons/Icon_Add_Param.png" width="15"> können Sie der ausgewählten Kühlstellenspur eine einzelne Parameterspur hinzufügen. Wie bereits auf dieser Seite erwähnt, können Parameter
+      Spuren je nach Kühlstelle, auf die sie sich beziehen, verschiedene Typen haben. Nachfolgend finden Sie eine Liste der verschiedenen verfügbaren Parameterspuren und ihrer Bezeichnungen sowie der Kühlstellen, auf die sie angewendet werden können:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Position</strong>: Diese Parameterspur kann zu jedem der vier Sequenz-Assettypen<em>(Sprites</em>, <em>Objekte</em>, <em>Sounds </em>oder <em>Sequenzen</em>) hinzugefügt werden und wird verwendet, um die räumliche Position innerhalb der Sequenz für das
+        Asset. Er nimmt einen X- und einen Y-Wert an.</li>
+      <li class="dropspot"><strong>Drehung</strong>: Wie der Parameter "Position" ist auch der Parameter "Rotation" für <em>alle </em>Sequenz-Assets verfügbar und kann verwendet werden, um die Rotation in Grad für das Asset festzulegen. Beachten Sie, dass <span class="notranslate">GameMaker Studio 2</span> die Drehung <em>gegen den Uhrzeigersinn</em> berechnet,
+        beginnend mit 0° rechts, also 90° ist oben, 180° ist links und 270° ist unten.</li>
+      <li class="dropspot"><strong>Ursprung</strong>: Der Ursprungsparameter ist für <em>Sprite-</em>, <em>Objekt- </em>und <em>Sequenz-Assets </em>verfügbar und kann verwendet werden, um die X- und Y-Position des Ursprungs des Assets festzulegen. Das Ändern des Ursprungs wirkt sich darauf aus, wie das Asset
+        positioniert, gedreht und skaliert wird.</li>
+      <li class="dropspot"><strong>Skala</strong>: Der Parameter scale ist für <em>Sprite-</em>, <em>Objekt- </em>und <em>Sequenz-Assets </em>verfügbar und wird verwendet, um den horizontalen und vertikalen Maßstab des Assets festzulegen. Dies wirkt sich darauf aus, wie das Asset in der IDE und zur Laufzeit gerendert wird.
+        zur <span class="notranslate">Laufzeit</span> und wird als skalarer Wert berechnet, wobei 100 % die Standardgröße des Assets ist, 50 % wäre die halbe Größe und 200 % wäre die doppelte Größe. Beachten Sie, dass Sie die Möglichkeit haben, die horizontalen und vertikalen Skalenwerte zu verknüpfen, indem Sie auf
+        die Schaltfläche &quot;link&quot; <img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14">. Das bedeutet, dass die Änderung eines Wertes automatisch auch den anderen ändert.</li>
+      <li class="dropspot"><strong>Bildindex</strong> und <strong>Bildgeschwindigkeit</strong>: Diese Parameter sind nur für <em>Sprite- </em>und <em>Objekt-Assets </em>verfügbar und können verwendet werden, um das aktuelle Animationsbild zu ändern (weitere Informationen finden Sie auf der Seite über den <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a> 
+        Weitere Informationen finden Sie auf der Seite zum image_index) sowie die aktuelle Animationsgeschwindigkeit, die mit FPS eingestellt wird und genauso funktioniert wie der Wert, den Sie für das verwendete Sprite im Sprite-Editor einstellen.</li>
+      <li class="dropspot"><strong>Farbe multiplizieren</strong>: Dieser Parameter ist nur für <em>Sprite- </em>und <em>Objekt-Assets </em>verfügbar und kann verwendet werden, um die aktuelle Mischfarbe für das gezeichnete Sprite zu ändern. Dies ist das Äquivalent zum Setzen des <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend-Wertes</a> 
+        und alle hier eingestellten Farben werden mit der Farbe des Sprites &quot;multipliziert&quot; (d. h. überblendet), und ein Wert von Weiß (#ffffffff) bedeutet, dass keine Überblendung stattfinden soll. Beachten Sie, dass Sie beim Arbeiten mit diesem Spurtyp die Farbe
+        Farbe einstellen können, indem Sie den Hexadezimalwert manuell eingeben, oder Sie können auf das Farbfeld klicken, um den <span class="notranslate">GameMaker Studio 2-Farbwähler</span> zu öffnen. Beachten Sie, dass Farben im <a class="glossterm" data-glossterm="ARGB" href="#">ARGB-Format</a> angegeben werden, so dass Sie einen Wert
+        für Alpha mit dieser Art von Parameterspur einstellen (der Farbwähler erlaubt Ihnen auch, den Alpha-Wert einzustellen). Dies wäre das Äquivalent zum Setzen des <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a> für
+        das Sprite.</li>
+      <li class="dropspot"><strong>Lautstärke</strong>: Der Lautstärke-Parameter gilt nur für <em>Sound-Asset-Spuren </em>und kann verwendet werden, um die Verstärkung des Sounds einzustellen (die eigentliche Sound-Asset-Verstärkung wird nicht geändert, da es sich im Wesentlichen um einen Emitter handelt, der für die Asset
+        Spur in Sequenzen verwendet wird). Der Lautstärkewert wird als Prozentsatz berechnet, wobei 0 % keine Lautstärke und 100 % die volle Lautstärke bedeutet.</li>
+      <li class="dropspot"><strong>Tonhöhe</strong>: Der Pitch-Parameter gilt nur für <em>Sound-Asset-Spuren </em>und kann verwendet werden, um die Tonhöhe des Sounds einzustellen (wie bei der Lautstärke wird die eigentliche Sound-Asset-Verstärkung nicht verändert, da es sich im Wesentlichen um einen Emitter handelt, der
+        für die Asset-Spur in Sequenzen). Der Tonhöhenwert wird als Prozentsatz berechnet, 100 % ist die &quot;natürliche&quot; Tonhöhe des Klangs, und weniger als 100 % senkt sie, während mehr als 100 % sie anhebt.</li>
+      <li class="dropspot"><strong>Falloff</strong>: Der Falloff-Parameter gilt nur für <em>Tonelementspuren </em>und ist derzeit nicht implementiert.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Aktionen verfolgen</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">Die Schaltflächen am unteren Rand des Track-Editors sind die verschiedenen Spielaktionen und können für folgende Zwecke verwendet werden:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Add Track Icon" src="../../assets/Images/Icons/Icon_AddAsset.png"> - Diese Schaltfläche öffnet den Asset-Explorer, in dem Sie ein Asset auswählen können, das Sie als neue Spur verwenden möchten. Nach der Auswahl wird die Asset-Spur erstellt und die Frames werden an der aktuellen Abspielposition in das Dope
+        Sheet an der aktuellen Abspielkopfposition hinzugefügt.</li>
+      <li class="dropspot"><img alt="Duplicate Asset Icon" src="../../assets/Images/Icons/Icon_DuplicateAsset.png"> - Wenn Sie eine oder mehrere Asset-Spuren im Track-Editor ausgewählt haben, werden sie durch Klicken auf diese Schaltfläche dupliziert (zusammen mit allen Parameterspuren, die sie enthalten können
+        enthalten).
+      </li>
+      <li class="dropspot"><img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png"> - Wenn Sie hierauf klicken, wird eine spezielle <strong>Beschneidungsmaskengruppe</strong> erstellt, in der Sie Sprites angeben können, die als Masken verwendet werden sollen, und Sprites, die maskiert werden sollen. Siehe <a href="Clipping_Masks.htm">hier</a> für weitere Informationen.</li>
+      <li class="dropspot"><img alt="Group Folder Icon" height="18" src="../../assets/Images/Icons/Icon_AddGroup.png" width="25"> - Wenn Sie hierauf klicken, wird dem Track-Editor ein neuer Gruppenordner hinzugefügt, der dann zur besseren Organisation von Tracks verwendet werden kann. Sie können eine Spur zu einer Gruppe hinzufügen
+        hinzufügen, indem Sie die Spur auf den Gruppenordner ziehen, und Sie können sie wieder entfernen, indem Sie sie aus dem Ordner herausziehen. Beachten Sie, dass jedes Asset, das zu einem Gruppenordner hinzugefügt wird, automatisch die Farbe des Ordners erhält, obwohl Sie anschließend die Spur
+        Sie können jedoch die Farbe für einzelne Spuren bearbeiten, so dass sie bei Bedarf anders ist.</li>
+      <li class="dropspot"><img alt="Track Delete Icon" src="../../assets/Images/Icons/Icon_DeleteTrack.png"> - Wie zu erwarten, wird durch Klicken auf diese Schaltfläche die ausgewählte(n) Spur(en) gelöscht. Wenn es sich um eine Asset-Spur handelt, werden auch alle darin enthaltenen Parameter-Spuren gelöscht, obwohl
+        Sie können die Funktion auch auf ausgewählte Parameterspuren anwenden, um sie allein zu löschen, ohne die mit ihnen verbundenen Asset-Spuren zu entfernen. Wenn Sie diese Funktion auf einen leeren Gruppenordner anwenden, wird der Ordner gelöscht, aber wenn sich Spuren im Ordner befinden, wird eine Warnung angezeigt.
+        Wenn sich jedoch Spuren in dem Ordner befinden, wird eine Warnung angezeigt, da beim Löschen eines Ordners auch alle darin befindlichen Spuren gelöscht werden.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>Es gibt zwei weitere Seiten mit Informationen zu Spuren und Parametern, die ebenfalls von Interesse sind. Die erste Seite behandelt die Verwendung von <a href="../Animation_Curves.htm">Animationskurven-Assets</a> zum Erzeugen von Parameterspuren, und die zweite Seite beschreibt, wie
+    wie man <strong>Clipping-Masken</strong> erstellt:</p>
+  <ul class="colour">
+    <li><a href="Using_Animation_Curves.htm">Animationskurven verwenden</a></li>
+    <li><a href="Clipping_Masks.htm">Clipping-Masken</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Nächste: <a href="Clipping_Masks.htm">Clipping-Masken</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences - The Track Panel
+Track Panel
+-->
+  <!-- TAGS
+sequences_track_panel
+-->
+
+</body></html>

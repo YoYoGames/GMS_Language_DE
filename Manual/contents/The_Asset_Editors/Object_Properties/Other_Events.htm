@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Andere Ereignisse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the other events." />
+  <meta name="rh-index-keywords" content="Objects - Other Events" />
+  <meta name="search-keywords" content="other events,outside room,intersect boundary,view events,room start event,room end event,game start event,game end event,path ended,user events,broadcast message,animation end,animation update,animation event" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die anderen Ereignisse</h1>
+  <p><img alt="The Other Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_OtherEvents.png" /></p>
+  <p>Auf dieser Seite werden die verschiedenen Ereignisse erläutert, die unter der Kategorie " <strong>Andere</strong> Ereignisse" im Objekteditor gesammelt werden:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Außerhalb Raum</a> </p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Dieses Ereignis wird ausgelöst, wenn eine Instanz den Raum verlässt, und basiert auf einer Prüfung, die gegen das zugewiesene Sprite (und seine Eigenschaften) der Instanz durchgeführt wird, so dass selbst wenn Sie die x- oder y-Skalierung des Bildes auf einen anderen Wert als eins gesetzt haben, dieses Ereignis
+      nur ausgelöst wird, wenn das gesamte Sprite außerhalb des Bildschirms liegen würde. Wenn die Instanz kein Sprite hat, dann wird die Position der Instanz verwendet und in dem Moment, in dem ihre x- oder y-Position außerhalb des Raumes liegt, wird das Ereignis ebenfalls ausgelöst. Dieses Ereignis
+      wird typischerweise für Dinge wie Kugeln verwendet, wo sie zerstört werden, sobald sie den Raum verlassen, damit Sie nicht mit Millionen von Kugeln enden, die unendlich weit wegfliegen und Ihr Spiel verlangsamen. Beachten Sie, dass dieses Ereignis nur einmal ausgelöst wird
+      wenn die Instanz den Raum zunächst verlässt.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Schnittpunkt Begrenzung</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Dieses Ereignis wird ausgelöst, wenn eine Instanz die Innenkante des Raums &quot;berührt&quot;, und basiert wie das Ereignis &quot;Außerhalb des Raums&quot; auf einer Prüfung, die gegen das zugewiesene Sprite der Instanz durchgeführt wird, so dass dieses Ereignis auch dann ausgelöst wird, wenn Sie die x- oder y-Skala des Bildes auf einen anderen Wert als eins gesetzt haben
+      einen anderen Wert als 1 gesetzt haben, wird dieses Ereignis trotzdem ausgelöst, sobald ein Teil des Sprites die Raumgrenze schneidet. Wenn die Instanz <em>kein </em>Sprite hat, dann wird die Position der Instanz verwendet und in dem Moment, in dem ihre x- oder y-Position die
+      Raumbegrenzung schneidet, wird das Ereignis ebenfalls ausgelöst. Sie können dieses Ereignis verwenden, um z. B. einer Instanz zu sagen, dass sie wieder in den Raum &quot;hüpfen&quot; soll, anstatt nach draußen zu gehen.</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Ansichten</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Kameraansichten werden normalerweise im Raumeditor definiert und dazu verwendet, immer nur einen kleinen Bereich eines großen Raums zu zeigen. Diese Ereigniskategorie hat zwei getrennte Unterkategorien<strong>(Outside View</strong> und <strong>Intersect Boundary</strong>), mit
+      mit jeweils acht verschiedenen Ereignissen, die den acht verfügbaren Ansichtsports entsprechen. Diese beiden Kategorien funktionieren genauso wie die entsprechenden Raum-Ereignisse, nur dass die Instanz nicht den Raum, sondern die Begrenzung der Kameraansicht prüft
+      und nicht den Raum.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Spiel Start</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Dieses spezielle Ereignis wird nur einmal im gesamten Spiel und nur für die Instanzen ausgelöst, deren Aktionen oder Code im Ereignis platziert sind. Diese Instanzen müssen im ersten Raum des Spiels vorhanden sein und dort im Raumeditor platziert worden sein, und nicht
+      und nicht dynamisch mit Code oder Aktionen erzeugt worden sein. Es ist zu beachten, dass dieses Ereignis <em>nach dem </em>Erstellungsereignis aller Instanzen stattfindet und daher Code oder Aktionen mit Variablen enthalten kann, die zuvor in diesem Ereignis definiert wurden.
+      Dieses Ereignis ist typischerweise nur in einem &quot;Controller&quot;-Objekt definiert und wird typischerweise verwendet, um globale Variablen zu initialisieren, Musik zu starten, aus Dateien zu lesen und alle anderen Dinge, die normalerweise nur einmal beim Start eines Spiels gemacht werden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Spiel Ende</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Ähnlich wie das oben erwähnte Spielstart-Ereignis wird dieses Ereignis nur einmal im gesamten Spiel ausgelöst, und zwar kurz bevor das Spielfenster tatsächlich geschlossen wird. Damit eine Instanz mit diesem Ereignis tatsächlich etwas tun kann, muss sie sich im Raum befinden, wenn
+      das Spiel geschlossen wird. Bitte beachten Sie, dass dieses Ereignis wirklich nur für <strong><span class="notranslate">Windows</span></strong>, <strong><span class="notranslate">Ubuntu</span> </strong><span class="notranslate">(Linux</span>) und <strong><span class="notranslate">macOS</span></strong> Spiele geeignet ist, da mobile Geräte das Spiel möglicherweise einfach schließen, ohne <span class="notranslate">GameMaker Studio 2</span> die Möglichkeit zu geben, dieses Ereignis
+      Gelegenheit zu geben, dieses Ereignis aufzurufen. Bei Browserspielen, die mit dem HTML5-Modul erstellt wurden, sollte dieses Ereignis funktionieren, wenn die Registerkarte des Spiels oder der Browser geschlossen wird, aber nicht alle Browser unterstützen diese Funktion (Firefox, Chrome und Safari tun dies zum Zeitpunkt des Schreibens).
+      Vorsicht walten lassen, wenn Sie es verwenden. Normalerweise würden Sie dieses Ereignis verwenden, um Daten zu speichern.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Raum Start</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Dieses Ereignis tritt für alle Instanzen ein, die sich anfänglich in einem Raum befinden, wenn der Raum startet. Bitte beachten Sie, dass es <em>nach dem </em>Erstellungsereignis eintritt und daher von Variablen und Dingen abhängen kann, die zuvor in diesem Ereignis definiert wurden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Raum Ende</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Dieses Ereignis tritt bei allen Instanzen ein, die sich im Raum befinden, wenn der Raum endet. Dieses Ereignis ist sehr nützlich für das &quot;Aufräumen&quot; nach dem Ende eines Levels, z. B. können Sie hier geladene Ressourcen löschen, oder ein Partikelsystem entfernen, um Speicherlecks zu vermeiden
+      Lecks zu verhindern usw...</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Animation Ende</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">In <span class="notranslate">GameMaker Studio 2</span> sind Sprites keine statischen Dinge, denn sie können Unterbilder haben und mit unterschiedlichen Geschwindigkeiten animiert werden. Jeder Frame einer Animation (Sub-Image genannt) hat seine eigene Nummer, beginnend bei 0, die im Code oder durch Aktionen überprüft werden kann,
+      aber manchmal muss man einfach nur wissen, wann die Animation beendet ist. Dann wird dieses Ereignis ausgelöst, und zwar genau am Ende der Animation, wenn der Index des Unterbildes anzeigt, dass das letzte Bild erreicht wurde. Dieses Ereignis ist wirklich nützlich
+      für viele Dinge, zum Beispiel für ein Explosionsobjekt, bei dem Sie die Instanz so einstellen können, dass sie sich selbst zerstört, wenn das letzte Bild der Animation erreicht ist.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Animation Update</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Dieses Ereignis ist nur für die Verwendung mit den <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Skelettanimationsfunktionen</a> vorgesehen. Es ist ein spezielles Ereignis, das bei jedem Schritt in einer Instanz ausgelöst wird
+      Es ist ein spezielles Ereignis, das bei jedem Schritt in einer Instanz ausgelöst wird, die ein Skelettanimations-Sprite verwendet, und das dazu dient, die Bone-Daten &quot;abzufangen&quot;, nachdem die Ausrichtung der Bones für den aktuellen Animationszustand berechnet wurde, aber bevor diese Daten für die Verwendung beim Zeichnen festgelegt werden.
+      Dadurch können Sie Änderungen an den Bone-Daten mit den entsprechenden Funktionen vornehmen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Animation Ereignis</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><strong></strong>Dieses Ereignis ist nur für die Verwendung mit den <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Skelettanimationsfunktionen</a> vorgesehen. Dieses Ereignis wird in einem Objekt ausgelöst
+      ausgelöst, dem ein Skelett-Animationssprite zugewiesen ist und das Objekt die Standard-Zeichnung für das zugewiesene Sprite verwendet oder das Sprite mittels draw_self() gezeichnet wird. Es wird derzeit nicht auf Skelett-Animationssprites ausgelöst, die auf andere
+      Weise gezeichnet werden. Das Ereignis ist dazu gedacht, Daten zu erfassen und zu übertragen, die bestimmten Ereignissen in der Sprite-Animation zugewiesen wurden, wie sie im Editor definiert sind, mit dem sie erstellt wurden.</p>
+    <p class="dropspot">Wenn das Animationsereignis ausgelöst wird, wird eine spezielle <a href="../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> erstellt, die event_data-Map (ähnlich wie die async_load-Map für ein asynchrones Ereignis).
+      Diese Map enthält alle der folgenden Schlüssel/Wertpaare, die Sie analysieren können, um Informationen über das Ereignis zu erhalten:</p>
+    <ul class="dropspotlist">
+      <li>&quot;<span class="inline">name</span>&quot;: der Name des Ereignisses (wie im Animationsprogramm definiert)</li>
+      <li>&quot;<span class="inline">track</span>&quot;: der Index der Spur, auf der die Animation abgespielt wird (Standard ist 0)</li>
+      <li>&quot;<span class="inline">integer</span>&quot;: ein ganzzahliger Wert, der dem Ereignis zugeordnet ist (wie im Animationsprogramm definiert, Standard ist 0)</li>
+      <li>&quot;<span class="inline">float</span>&quot;: ein Fließkommawert, der dem Ereignis zugeordnet ist (wie im Animationsprogramm definiert, Standard ist 0,0)</li>
+      <li>&quot;<span class="inline">string</span>&quot;: ein String-Wert, der dem Ereignis zugeordnet ist (wie im Animationsprogramm definiert, Standard ist ein leerer String &quot;&quot;)</li>
+    </ul>
+    <p> </p>
+    <p><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Pfad Beendet</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><a href="../Paths.htm">Pfade</a> können ein wichtiger Bestandteil eines Spiels sein, sei es ein Tower-Defense-Spiel, ein Shoot-em-up oder was auch immer, und es ist oft sehr wichtig, dass eine Instanz eine bestimmte Aktion ausführt, wenn sie das Ende ihres Pfades erreicht.
+      das Ende ihres Pfades erreicht. Dieses Ereignis erkennt dies und wird ausgelöst, wenn es passiert, so dass Sie Code oder Aktionen hinzufügen können, um mit den Umständen umzugehen, zum Beispiel in einem Turmverteidigungsspiel würden Sie dies verwenden, um die Instanz zu zerstören und einen Lebenspunkt vom Zielobjekt zu entfernen.
+      Punkt vom Zielobjekt zu entfernen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Benutzer-Ereignisse</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">Dabei handelt es sich um spezielle Ereignisse, die nicht automatisch von <span class="notranslate">GameMaker Studio 2</span> ausgelöst werden, sondern von Ihnen <em>implizit </em>durch Code oder Aktionen während des Spielablaufs aufgerufen werden müssen. Es gibt insgesamt 12 Benutzerereignisse und sie können Code oder Aktionen enthalten
+      enthalten und können zu jedem beliebigen Zeitpunkt in der Spielschleife aufgerufen werden, was sie sehr nützlich macht, um eigene Ereignisse zu erstellen, die dann eintreten, wenn <em>Sie </em>es wünschen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Broadcast-Nachricht</a></p>
+  <div class="droptext" data-targetname="drop-down12">
+    <p class="dropspot">Dieses Ereignis wird ausgelöst, wenn ein Sprite oder eine Sequenz einen Broadcast-Message-String erzeugt. Weitere Informationen finden Sie auf der Seite zu <a href="../Sequence_Properties/Broadcast_Messages.htm">Broadcast-Nachrichten</a>.</p>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Object_Events.htm">Objekt-Ereignisse</a></div>
+        <div style="float:right">Nächste: <a href="Draw_Events.htm">Ereignisse einzeichnen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Other Events
+Outside Room
+Intersect Boundary
+View Events
+Outside View
+Interect View
+Game Start
+Game End
+Room Start
+Room End
+Animation End
+Animation Update
+Animation Event
+Path Ended
+User Events
+Broadcast Message
+-->
+  <!-- TAGS
+other_events
+-->
+</body>
+</html>

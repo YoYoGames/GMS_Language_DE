@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ausgang</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the exit function" />
+  <meta name="rh-index-keywords" content="exit" />
+  <meta name="search-keywords" content="exit" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ausgang</h1>
+  <p>Die <tt>Exit-Anweisung</tt> hat die folgende Syntax:</p>
+  <p class="code">Ausgang;</p>
+  <p><tt>exit</tt> beendet einfach die Ausführung der aktuellen <a href="../Script_Functions.htm">Skriptfunktion</a>, <a href="../Method_Variables.htm">Methode</a> oder des <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Ereignisses</a>. Beachten Sie, dass
+    gibt es hier einen leichten Unterschied in der Verwendung je nach Anwendungsbereich:</p>
+  <ul class="colour">
+    <li>Wenn Sie <tt>exit</tt> in einer Skriptfunktion oder -methode verwenden, wird die Funktion einfach beendet und zu dem Code zurückgekehrt, der die Funktion aufgerufen hat.</li>
+    <li>Wenn Sie <tt>exit</tt> in einem Codeblock innerhalb des Ereignisses eines Objekts verwenden, wird das <i>gesamte Ereignis</i> beendet, auch wenn nach dem Aufruf von <span class="inline">exit</span> verschiedene separate Codeblöcke vorhanden sind.</li>
+    <li>Wenn Sie <tt>exit</tt> in einem übergeordneten Ereignis verwenden und dieses Ereignis mit <a href="../../GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><tt>event_inherited()</tt></a> in einem untergeordneten Objekt aufrufen, wird nur das übergeordnete Ereignis beendet und das
+      Ereignis des Kindobjekts (das <tt>event_inherited()</tt> aufgerufen hat <tt>)</tt> wird fortgesetzt.</li>
+  </ul>
+  <p>Wenn es in einem Ereignis verwendet wird, wird <tt>Exit</tt> typischerweise verwendet, um zu verhindern, dass eine Instanz weiteren Code ausführt, wenn eine bestimmte Bedingung erfüllt ist (oder nicht). Der folgende Code zeigt ein Beispiel für seine Verwendung, in diesem Fall innerhalb eines Kollisionsereignisses,
+    obwohl er in jedem Ereignis verwendet werden kann.</p>
+  <p class="code">if (!visible)<br> {
+    <br> exit;
+    <br> }
+    <br>
+    <br> other.hp -= attack;<br> other.coins -= 4;<br> coins += 4;</p>
+  <p>Der obige Code prüft, ob die aktuelle Instanz nicht sichtbar ist, in diesem Fall verlässt er den Codeblock, andernfalls geht er weiter und führt den Rest des Codes aus.</p>
+  <p class="note"><b>HINWEIS</b>: Es beendet nicht die Ausführung des Spiels. Dazu müssen Sie die Funktion <span style="font-size:1px;"><a href="../../GML_Reference/General_Game_Control/game_end.htm"><tt style="font-size: 14px">game_end()</tt></a></span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="with.htm">mit</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+exit
+-->
+  <!-- TAGS
+exit
+-->
+</body>
+</html>

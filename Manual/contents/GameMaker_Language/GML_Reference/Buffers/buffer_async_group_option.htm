@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>puffer_async_gruppe_option</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_async_group_option" />
+  <meta name="rh-index-keywords" content="buffer_async_group_option" />
+  <meta name="search-keywords" content="buffer_async_group_option" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>puffer_async_gruppe_option</h1>
+  <p>Mit dieser Funktion können Sie einige plattformspezifische Optionen für die zu speichernde Puffergruppe einstellen. Die verfügbaren Optionen sind wie folgt:</p>
+  <ul class="colour">
+    <li>&quot; subtitle<b>&quot; oder</b>&quot; slottitle&quot; -<b>Der Wert</b> für diese Option wäre eine Zeichenfolge, die dem Benutzer beim Verwalten seiner Speicherdaten im Betriebssystem angezeigt wird. Dies ist nur beim Speichern von Daten wichtig, nicht beim erneuten Laden.</li>
+    <li>&quot;showdialog<b>&quot; -</b> Der Wert für diese Option ist ein boolesches true oder <tt>false.</tt> Wenn sie auf <tt>true</tt> gesetzt ist, zeigt <span class="notranslate">GameMaker Studio 2</span> beim Speichern <i>oder</i> Laden die System-Benutzeroberfläche an, andernfalls wird ein QuickSave/Quickload
+      ohne Anzeige der Benutzeroberfläche. Normalerweise benötigen Sie diese Option nur, wenn Sie mehrere Speicherplätze unterstützen, damit der Benutzer einen Speicherplatz auswählen kann, aber wenn Sie nur einen Speicherplatz pro Benutzer unterstützen, setzen Sie diese Option auf <tt>false.</tt></li>
+    <li>&quot; savepadindex<b>&quot; -</b> Bei dieser Option geben Sie den Pad-Index <i>des</i> Spielers an, der gerade speichert oder lädt, und das System schreibt Daten in den Speicherordner dieses Spielers und liest Daten daraus.</li>
+    <li>&quot; saveslotsize<b>&quot; -</b> Diese Option erfordert, dass Sie die tatsächliche Größe in Bytes angeben, die Sie speichern wollen (so können Sie eine <a href="buffer_seek.htm"><tt>buffer_seek()</tt></a> und <a href="buffer_tell.htm"><tt>buffer_tell()</tt></a> erhalten
+      das zum Beispiel). Beachten Sie, dass es nicht zwingend erforderlich ist, diesen Wert anzugeben, da allen Speicherungen ein Mindestplatz zugewiesen wird, der normalerweise etwa 10 MB beträgt.</li>
+  </ul>
+  <p class="note"><b>WICHTIG!</b> Diese Funktion ist derzeit nur für die Zielmodule PSVita, PS4 und <span class="notranslate">XBox One</span> gültig. Bei allen anderen Targets bewirkt sie nichts.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_async_group_option(option, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Option</td>
+        <td>Die Option zum Einstellen.</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der zu setzende Wert (kann je nach Option ein String oder Real sein).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p>N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">buffer_async_group_begin(&quot;save_folder_name&quot;);<br> buffer_async_group_option(&quot;showdialog&quot;, false);<br> buffer_async_group_option(&quot;slottitle&quot;, &quot;Catch The Haggis Save&quot;);<br> buffer_async_group_option(&quot;subtitle&quot;,
+    &quot;Alle Ihre Haggis sind hier gespeichert!&quot;);<br> save = buffer_save_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);<br> buffer_async_group_end();
+  </p>
+  <p>Der obige Code startet eine Puffergruppe und legt dann die Gruppenoptionen fest, bevor er 4 Dateien zum asynchronen Speichern einstellt. Die Gruppendefinition wird dann beendet (zu diesem Zeitpunkt beginnt das Speichern).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_async_group_end.htm">buffer_async_group_end</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_async_group_option
+-->
+  <!-- TAGS
+buffer_async_group_option
+-->
+</body>
+</html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>zeichnen_skelett_instanz</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton_instance" />
+  <meta name="rh-index-keywords" content="draw_skeleton_instance" />
+  <meta name="search-keywords" content="draw_skeleton_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>zeichnen_skelett_instanz</h1>
+  <p>Diese Funktion ist <i>nur</i> für die Verwendung mit Instanzen gedacht, denen Sprites zugewiesen sind, die mit dem Skelett-Animationsprogramm Spine erstellt wurden. Sie können diese Sprites zwar mit den normalen Zeichenfunktionen (wie <a href="../../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>),
+    können Sie zwar diese Sprites mit den normalen Zeichenfunktionen (z. B. ) zeichnen, aber es kann vorkommen, dass Sie ein einzelnes Bild zeichnen oder eine Änderung der Hauttextur anzeigen möchten, ohne die Sprite-Eigenschaften für eine Instanz zu ändern. In diesen Fällen können Sie das Sprite, das der Instanz zugewiesen wurde, mit dieser Funktion zeichnen,
+    wobei Sie die eindeutige Instanz-ID und dann den Namen der Animation angeben, von der Sie das Einzelbild abrufen möchten (eine Zeichenkette, wie sie in dem Programm festgelegt wurde, mit dem das Sprite erstellt wurde). Als Nächstes geben Sie den Namen des zu verwendenden Skins an (wieder so, wie er bei der Erstellung des Sprites festgelegt wurde), und einen
+    Frame-Wert. Der Frame-Wert dient dazu, <span class="notranslate">GameMaker Studio 2</span> mitzuteilen, welcher Teil der Animation gezeigt werden soll, und ist ein Wert zwischen 0 und dem <a href="../../Sprite_Instance_Variables/image_number.htm"><tt>image_number</tt></a>. Der Rest der Argumente ist
+    Die übrigen Argumente sind die gleichen wie beim normalen Zeichnen von Sprites und ändern die Skalierung, den Winkel, die Überblendungsfarbe und das Alpha des endgültigen Animationsframes, das gezeichnet wird.</p>
+  <p class="note"><b>WARNUNG!</b> Aufgrund der Art und Weise, wie Skelett-Animationen zwischen verschiedenen &quot;Schlüssel&quot;-Frames interpoliert werden, ist mit diesem Aufruf ein zusätzlicher Overhead verbunden, und es wird daher empfohlen, dass Sie es vermeiden, skelettbasierte Sprites mit
+    dieser Methode zu vermeiden, es sei denn, es ist absolut notwendig.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_skeleton_instance(instance, animname, skinname, frame, x, y, xscale, yscale, rot, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Instanz</td>
+        <td>Der Index der Instanz, von der das Sprite gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>Der Name der Animation, aus der das Bild geholt werden soll (eine Zeichenkette).</td>
+      </tr>
+      <tr>
+        <td>Skinname</td>
+        <td>Der Name des zu verwendenden Skins (eine Zeichenkette).</td>
+      </tr>
+      <tr>
+        <td>Rahmen</td>
+        <td>Das zu zeichnende Animationsbild (von 0 bis image_number - 1).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate, an der das Sprite gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate, an der das Sprite gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td>Die horizontale Skalierung des Sprites, als Multiplikator: 1 = normale Skalierung, 0,5 ist die Hälfte usw...</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Die vertikale Skalierung des Sprites, als Multiplikator: 1 = normale Skalierung, 0,5 ist die Hälfte usw...</td>
+      </tr>
+      <tr>
+        <td>rot</td>
+        <td>Die Drehung des Sprites. 0=normal, 90=um 90 Grad gegen den Uhrzeigersinn gedreht usw.</td>
+      </tr>
+      <tr>
+        <td>Farbe</td>
+        <td>Die Farbe, mit der das Sprite überblendet werden soll.</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td>Das Alpha des Sprites (von 0 bis 1, wobei 0 transparent und 1 undurchsichtig ist).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_skeleton_instance(obj_Player, &quot;jump&quot;, &quot;skin1&quot;, 0, x, y, 1, 1, 0, c_white, 1);</p>
+  <p>Der obige Code zeichnet das erste Bild des Skelett-Animationssprites, das der angegebenen Instanz zugewiesen ist, unter Verwendung des Animationssets &quot;jump&quot; und des als &quot;skin1&quot; definierten Skins.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Drawing_And_Miscellaneous.htm">Zeichnung und Sonstiges</a></div>
+        <div style="float:right">Weiter: <a href="draw_skeleton_collision.htm">draw_skeleton_collision</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton_instance
+-->
+  <!-- TAGS
+draw_skeleton_instance
+-->
+</body>
+</html>

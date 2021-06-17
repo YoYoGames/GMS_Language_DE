@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Primitive und Vertex-Formate</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Primitive And Vertex Format functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Primitives And Vertex Formats,Primitives,Vertex Buffers,Vertex Formats" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Primitive und Vertex-Formate</h1>
+  <p>Ein Primitiv ist eine Art von Zeichnung, die mit Punkten erstellt wird, um zu definieren, was auf dem Bildschirm angezeigt wird. Sie können aus einzelnen Punkten, Linien oder Dreiecken bestehen und können eingefärbt, mit Alpha-Blending versehen und sogar mit einer Textur versehen werden, was bedeutet, dass sie verwendet werden können
+    um einige sehr aufregende Effekte in einem 2D-Spiel zu erzeugen! Sie können z. B. ein Rechteck mit mehreren Dreiecks-Primitiven erstellen, es dann mit einem Flaggen-Sprite texturieren und im Draw-Event einer Instanz die Flagge im Wind &quot;winken&quot; lassen und
+    das verwendete Sprite verzerren, indem Sie einfach die Punkte ändern, die das Primitiv bilden.</p>
+  <p class="note"><b>WARNUNG! </b>Diese Funktionen funktionieren nicht mit dem HTML5-Modul, es sei denn, Sie haben OpenGL in den <a href="../../../../Settings/Game_Options/HTML5.htm">Spieloptionen</a> aktiviert.</p>
+  <p>Informationen zu Zeichenprimitiven finden Sie auf den folgenden Seiten:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_primitive_begin.htm">draw_primitive_begin</a></li>
+    <li><a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></li>
+    <li><a href="draw_primitive_end.htm">zeichnen_primitiv_ende</a></li>
+    <li><a href="draw_vertex.htm">zeichnen_vertex</a></li>
+    <li><a href="draw_vertex_colour.htm">draw_vertex_colour</a></li>
+    <li><a href="draw_vertex_texture.htm">draw_vertex_texture</a></li>
+    <li><a href="draw_vertex_texture_colour.htm">draw_vertex_texture_colour</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span> erlaubt es Ihnen, eigene <strong>Vertex-Formate</strong> zu definieren, aus denen Sie Ihre eigenen benutzerdefinierten Primitive erstellen können. Damit können Sie <span class="notranslate">Shader-Operationen</span> erheblich beschleunigen oder deren Möglichkeiten erweitern und überraschende Effekte erzeugen.
+    Effekte. Informationen dazu finden Sie in den folgenden Abschnitten:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="vertex_format_begin.htm">vertex_format_begin</a></li>
+    <li><a href="vertex_format_add_colour.htm">vertex_format_add_colour</a></li>
+    <li><a href="vertex_format_add_position.htm">vertex_format_add_position</a></li>
+    <li><a href="vertex_format_add_position_3d.htm">vertex_format_add_position_3d</a></li>
+    <li><a href="vertex_format_add_texcoord.htm">vertex_format_add_texcoord</a></li>
+    <li><a href="vertex_format_add_normal.htm">vertex_format_add_normal</a></li>
+    <li><a href="vertex_format_add_custom.htm">vertex_format_add_custom</a></li>
+    <li><a href="vertex_format_end.htm">vertex_format_end</a></li>
+    <li><a href="vertex_format_delete.htm">vertex_format_delete</a></li>
+  </ul>
+  <p> </p>
+  <p>Wenn Sie Ihr Scheitelpunktformat erstellt haben (siehe den obigen Abschnitt), können Sie es dann verwenden, um die Primitive zu erstellen, die Sie mit den folgenden Veretx-Pufferfunktionen zeichnen möchten:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="vertex_create_buffer.htm">vertex_create_buffer</a></li>
+    <li><a href="vertex_create_buffer_ext.htm">vertex_erzeugen_puffer_ext</a></li>
+    <li><a href="vertex_create_buffer_from_buffer.htm">vertex_create_buffer_from_buffer</a></li>
+    <li><a href="vertex_create_buffer_from_buffer_ext.htm">vertex_create_buffer_from_buffer_ext</a></li>
+    <li><a href="vertex_get_buffer_size.htm">vertex_get_buffer_size</a></li>
+    <li><a href="vertex_get_number.htm">vertex_get_number</a></li>
+    <li><a href="vertex_delete_buffer.htm">vertex_delete_buffer</a></li>
+    <li><a href="vertex_begin.htm">vertex_begin</a></li>
+    <li><a href="vertex_colour.htm">vertex_colour</a></li>
+    <li><a href="vertex_normal.htm">scheitel_normal</a></li>
+    <li><a href="vertex_position.htm">vertex_position</a></li>
+    <li><a href="vertex_position_3d.htm">scheitel_lage_3d</a></li>
+    <li><a href="vertex_argb.htm">vertex_argb</a></li>
+    <li><a href="vertex_texcoord.htm">vertex_texcoord</a></li>
+    <li><a href="vertex_float1.htm">vertex_float1</a></li>
+    <li><a href="vertex_float2.htm">vertex_float2</a></li>
+    <li><a href="vertex_float3.htm">vertex_float3</a></li>
+    <li><a href="vertex_float4.htm">vertex_float4</a></li>
+    <li><a href="vertex_ubyte4.htm">vertex_ubyte4</a></li>
+    <li><a href="vertex_end.htm">vertex_end</a></li>
+    <li><a href="vertex_freeze.htm">vertex_freeze</a></li>
+    <li><a href="vertex_submit.htm">vertex_submit</a></li>
+  </ul>
+  <p> </p>
+  <p class="note"><b>WICHTIG!</b> Die Primitive, die Sie erstellen, sollten dem Format folgen, das Sie mit den Funktionen für das Scheitelpunktformat festgelegt haben; wenn Sie also ein Scheitelpunktformat mit nur Positionsdaten definiert haben, hat es keinen Sinn, Ihr Primitiv mit
+    Farbdaten. Sie sollten beachten, dass die Reihenfolge, in der Sie dem Primitiv, das Sie aufbauen, Eigenschaften hinzufügen, durch die Reihenfolge definiert wird, in der Sie diese Eigenschaften beim Erstellen des Scheitelpunktformats hinzugefügt haben, wenn Sie also das Vektorformat mit der
+    Reihenfolge Position, Farbe und Texturkoordinate definiert haben, <i>müssen</i> Sie diese Eigenschaften dem zu erstellenden Primitiv in der gleichen Reihenfolge hinzufügen, da Sie sonst Fehler erhalten.</p>
+  <p>Eine Übersicht über die Erstellung von Primitiven mit Hilfe der Scheitelpunktfunktionen finden Sie unter:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm">Anleitung zu Primitiven und Vertexaufbau</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Drawing.htm">Zeichnung</a></div>
+        <div style="float:right">Nächste: <a href="../Surfaces/Surfaces.htm">Oberflächen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Primitives And Vertex Formats
+-->
+  <!-- TAGS
+primitive_vertex_functions
+-->
+</body>
+</html>

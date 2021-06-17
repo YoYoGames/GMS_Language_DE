@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_visible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_visible" />
+  <meta name="rh-index-keywords" content="layer_background_visible" />
+  <meta name="search-keywords" content="layer_background_visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_visible</h1>
+  <p>Mit dieser Funktion können Sie die Sichtbarkeit eines Hintergrundelements umschalten. Sie übergeben die ID des Hintergrundelements (die Sie erhalten, wenn Sie ein Hintergrundelement mit <a href="layer_background_create.htm"><tt>layer_hintergrund_erstellen()</tt></a> oder wenn
+    verwenden Sie die Funktion <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), und setzen dann das Argument visible auf <tt>true</tt> oder <tt>false</tt>. Wenn es auf <tt>true</tt> gesetzt ist, wird das Element angezeigt, und wenn es auf <tt>false</tt> gesetzt ist,
+    wird das Element nicht angezeigt. Beachten Sie, dass dies von der Ebenensichtbarkeit abhängig ist. Selbst wenn das Hintergrundelement als sichtbar gekennzeichnet ist, wird es nicht gezeichnet, wenn die Ebene, auf der es sich befindet, als nicht sichtbar gekennzeichnet ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_background_visible(background_element_id, visible)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>hintergrund_element_id</td>
+        <td>Der eindeutige ID-Wert des zu ändernden Hintergrundelements</td>
+      </tr>
+      <tr>
+        <td>sichtbar</td>
+        <td>Die Sichtbarkeitsumschaltung, die <tt>true</tt> oder <tt>false</tt>sein kann</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> var back = layer_background_get_id(layer);<br> if layer_background_get_visible(back)<br> {
+    <br> layer_background_visible(back, false);<br> }
+    <br> sonst
+    <br> {
+    <br> layer_background_visible(back, true);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob eine Maustaste gedrückt wurde, und wenn dies erkannt wird, schaltet er die Hintergrundsichtbarkeit des Hintergrundelements um, das der Ebene zugeordnet ist, auf der sich die Instanz befindet, die den Code ausführt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Background_Layers.htm">Hintergrund-Ebenen</a></div>
+        <div style="float:right">Weiter: <a href="layer_background_sprite.htm">layer_background_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_visible
+-->
+  <!-- TAGS
+layer_background_visible
+-->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Tilemap-Variable holen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Get Tilemap Variable action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Tilemap Variable" />
+  <meta name="search-keywords" content="Get Tilemap Variable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Timemap Variable Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tilemap_Variable.png" width="32"> Tilemap-Variable holen</h1>
+  <p>Mit dieser Aktion können Sie eine beliebige aus einer vorgegebenen Anzahl von Variablen für das <a class="glossterm" data-glossterm="Kachelplan" href="#">Kachel-Map-Element</a> auf einer Ebene abrufen. Wenn Sie im Raum-Editor eine Kachel-Ebene erstellen, enthält diese Ebene ein <b>Kachel-Map-Element</b>, das dann mit Kacheln aus einem Kachel-Set bestückt wird. Diesem Tile-Map-Element sind bestimmte Werte zugeordnet, wie z. B. eine Offset-Position, das verwendete Tile-Set, die Breite, Höhe usw... Die vollständige Liste der Werte, die Sie erhalten können, ist:</p>
+  <ul class="colour">
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_x.htm">X-Koordinate</a><span>:</span> Die Position entlang der X-Achse auf der Ebene, auf der das Kachelkartenelement platziert wurde.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_y.htm">Y-Koordinate</a><span>:</span> Die Position entlang der y-Achse auf der Ebene, auf der das Kachelkartenelement platziert wurde.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_width.htm">Spalten</a><span>:</span> Die Breite (definiert als die Anzahl der Spalten der Kachelzellen) des Kachelkartenelements.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_height.htm">Zeilen</a><span>:</span> Die Höhe (definiert als die Anzahl der Reihen von Kachelzellen) des Kachelkartenelements.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_tile_width.htm">Kachelbreite</a><span>:</span> Die Breite einer einzelnen Kachelzelle.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_tile_height.htm">Kachelhöhe</a><span>:</span> Die Höhe einer einzelnen Kachelzelle.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_tileset.htm">Kachelsatz-Ressource</a><span>:</span> Die Tile-Set-Ressource, die dem Tile-Map-Element zum Zeichnen zugewiesen wurde.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_frame.htm">Aktueller Rahmen</a><span>:</span> Der aktuelle Rahmen, der für animierte Kacheln gezeichnet wird.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_mask.htm">Maske</a><span>:</span> Die Maskendaten für das Tile-Map-Element.</li>
+    <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_global_mask.htm">Globale Maske</a><span>:</span> Die globalen Maskendaten für alle Tile-Map-Elemente.</li>
+  </ul>
+  <p>Wenn Sie diese Aktion verwenden, geben Sie den Namen der Ebene (eine Zeichenkette, wie im Raum-Editor definiert) an, von der Sie die Daten des Kachelkartenelements abrufen möchten, und dann den Typ der Daten, die Sie abrufen möchten (wie in der Liste oben gezeigt). Der zurückgegebene Wert wird dann in
+    der Zielvariable gespeichert, die zuvor erstellt worden sein kann oder eine neue temporäre Variable sein kann (wenn Sie das Kontrollkästchen &quot;Temp&quot; aktivieren). Beachten Sie, dass Sie weitere Werte abrufen können, indem Sie auf das Plus-Symbol <span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>neben
+    der Aktion klicken und eine andere Variable auswählen und eine weitere Variable zum Speichern des zurückgegebenen Wertes angeben.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Get Tilemap Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Get_Tilemap_Variable.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ebene</td>
+        <td>Die Ebene, von der Daten abgerufen werden</td>
+      </tr>
+      <tr>
+        <td>Variabel</td>
+        <td>Die Variable, deren Wert abgerufen werden soll (wie oben aufgeführt)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Get Tilemap Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Set.png">Der obige Aktionsblock-Code prüft, ob die Kacheln auf der Ebene &quot;Floor_Tiles&quot;
+    das Kachelset &quot;tl_PalaceRuins&quot; verwenden, und wenn nicht, dann werden sie so eingestellt, dass sie es verwenden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Tile_Actions.htm">Kachel-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Tile_Data_At_Pixel.htm">Kacheldaten am Pixel einstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get Tilemap Variable
+-->
+  <!-- TAGS
+action_tilemap_get_variable
+-->
+
+</body></html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Partikel-Emitter</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Particle Emitter functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Particle Emitters" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Partikel-Emitter</h1>
+  <p> <strong>Partikel-Emitter </strong>werden von <span class="notranslate">GameMaker Studio 2</span> verwendet, um Partikel über einen Bereich des Bildschirms zu emittieren, die unterschiedliche Formen und Verteilungen haben können. Außerdem können sie entweder einen kontinuierlichen Strom von Partikeln erzeugen
+    oder sie können eine Anzahl von Partikeln auf einmal ausstoßen, je nachdem, wie die Funktionen verwendet werden.</p>
+  <p>Da ein Partikelemitter eine dynamisch erstellte Ressource ist, müssen Sie ihn erstellen und den zurückgegebenen Index in einer Variablen speichern, um den Emitter in allen weiteren Funktionsaufrufen referenzieren zu können, und es ist sehr wichtig, dass Sie den Emitter auch zerstören, wenn er nicht mehr benötigt wird
+    Sie müssen den Emitter unbedingt zerstören, wenn er nicht mehr benötigt wird, da sonst ein Speicherleck entsteht, das Ihr Spiel verlangsamt und schließlich zum Absturz bringt. Es ist auch erwähnenswert, dass Partikelemitter für immer weiterleben, nachdem sie erstellt wurden, auch wenn der Index nicht mehr gespeichert ist. Selbst wenn Sie also
+    den Raum wechseln oder das Spiel neu starten, bleiben die Systeme und die Partikel in allen weiteren Räumen sichtbar, so dass Sie sicherstellen sollten, dass Sie sie zerstören, wenn Sie sie nicht mehr benötigen.</p>
+  <p>Die folgenden Funktionen stehen zur Verfügung, um die Emitter zu setzen und um sie Partikel erzeugen zu lassen. Beachten Sie, dass jede von ihnen den Index des <a href="../Particle_Systems/Particle_Systems.htm">Partikelsystems</a>, zu dem sie gehört, als erstes Argument erhält.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_emitter_exists.htm">part_emitter_exists</a></li>
+    <li><a href="part_emitter_create.htm">part_emitter_create</a></li>
+    <li><a href="part_emitter_clear.htm">part_emitter_clear</a></li>
+    <li><a href="part_emitter_region.htm">part_emitter_region</a></li>
+    <li><a href="part_emitter_burst.htm">part_emitter_burst</a></li>
+    <li><a href="part_emitter_stream.htm">part_emitter_stream</a></li>
+    <li><a href="part_emitter_destroy.htm">part_emitter_destroy</a></li>
+    <li><a href="part_emitter_destroy_all.htm">part_emitter_destroy_all</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Particles.htm">Partikel</a></div>
+        <div style="float:right">Nächste: <a href="../Particle_Systems/Particle_Systems.htm">Partikel-Systeme</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Particle Emitters
+-->
+  <!-- TAGS
+particle_emitter_functions
+-->
+</body>
+</html>

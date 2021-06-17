@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_instance_get_instance</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_instance_get_instance" />
+  <meta name="rh-index-keywords" content="layer_instance_get_instance" />
+  <meta name="search-keywords" content="layer_instance_get_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_instance_get_instance</h1>
+  <p>Diese Funktion kann verwendet werden, um die eindeutige Instanz-ID des angegebenen Instanzelements zu erhalten. Sie geben die ID des <i>Instanzelements</i> an (siehe das Code-Beispiel unten), und die Funktion gibt einen realen Wert zurück, der die eindeutige
+   <a href="../../Instances/Instance_Variables/id.htm">Instanz-ID</a> für das Element darstellt. Wenn das Element keine Instanz ist, gibt die Funktion -1 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_instance_get_instance(element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>element_id</td>
+        <td>Der eindeutige ID-Wert des Instanzelements, um die ID von</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Eindeutiger ID-Wert für eine Instanz)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">elements = layer_get_all_elements(&quot;Instances&quot;);<br> for (var i = 0; i &lt; array_length(elements); i++)<br> {
+    <br> if (layer_get_element_type(elements[i]) == layerelementtype_instance)<br> {
+    <br> var layerelement = elements[i];<br> var inst = layer_instance_get_instance(layerelement);<br> inst.x = inst.x + 10;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code überprüft alle Instanz-Elemente auf einer Ebene, ermittelt dann ihren eindeutigen ID-Wert und verwendet diesen, um sie um 10px nach rechts zu verschieben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_destroy_instances.htm">layer_destroy_instances</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_instance_get_instance
+-->
+  <!-- TAGS
+layer_instance_get_instance
+-->
+</body>
+</html>

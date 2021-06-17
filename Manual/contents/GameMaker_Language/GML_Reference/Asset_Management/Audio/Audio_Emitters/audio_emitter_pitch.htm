@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_pitch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_pitch" />
+  <meta name="rh-index-keywords" content="audio_emitter_pitch" />
+  <meta name="search-keywords" content="audio_emitter_pitch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emitter_pitch</h1>
+  <p>Diese Funktion kann verwendet werden, um die Tonhöhe aller vom angegebenen Emitter ausgegebenen Töne zu ändern. Es handelt sich um einen <i>Tonhöhenmultiplikator</i>, d. h. der Eingabewert multipliziert die aktuelle Tonhöhe mit dem entsprechenden Betrag, so dass der Standardwert 1 keine Tonhöhenänderung bedeutet,
+    Der Standardwert von 1 bedeutet also keine Tonhöhenänderung, während ein Wert kleiner als 1 die Tonhöhe senkt und ein Wert größer als 1 die Tonhöhe anhebt. Es ist am besten, kleine Schritte für diese Funktion zu verwenden, da ein Wert unter 0 oder über 5 möglicherweise ohnehin nicht hörbar ist.</p>
+  <p class="note"><b>HINWEIS: </b>Wenn ein Ton durch den Sender geloopt wird, wird die Änderung der Tonhöhe erst erkannt, wenn der Ton gestoppt und erneut geloopt wird!</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_emitter_pitch(emitter, pitch);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Emitter</td>
+        <td>Der Index des zu ändernden Emitters.</td>
+      </tr>
+      <tr>
+        <td>Stellplatz</td>
+        <td>Der Pitch-Multiplikator (Voreinstellung 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">switch (gear)<br> {
+    <br> case 1: audio_emitter_pitch(s_emit, 0.8); break;<br> case 2: audio_emitter_pitch(s_emit, 0.9); break;<br> case 3: audio_emitter_pitch(s_emit, 0.95); break;<br> case 4: audio_emitter_pitch(s_emit, 1); break;<br> case 5: audio_emitter_pitch(s_emit,
+    1.2); break;<br> }
+  </p>
+  <p>Der obige Code ändert die Tonhöhe des vom Emitter abgespielten Tons, der in der Variablen &quot;s_emit&quot; indiziert ist, basierend auf dem Wert der Variablen &quot;gear&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Emitters.htm">Audio-Emitter</a></div>
+        <div style="float:right">Weiter: <a href="audio_emitter_set_listener_mask.htm">audio_emitter_set_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_pitch
+-->
+  <!-- TAGS
+audio_emitter_pitch
+-->
+</body>
+</html>

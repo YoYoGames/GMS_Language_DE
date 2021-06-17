@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Raum-Eigenschaften</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the different room properties" />
+  <meta name="rh-index-keywords" content="Rooms - Room Settings" />
+  <meta name="search-keywords" content="room settings,cameras,viewports,room size,room properties,view cameras" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Raum-Eigenschaften</h1>
+  <p><img alt="Room Editor Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomSettings.png">Im Abschnitt "Raumeigenschaften" können Sie die Vererbung der Einstellungen umschalten, den Raum benennen und festlegen, ob er
+   <strong>persistent </strong>ist oder nicht. Wenn Sie einen Raum verlassen und später in denselben Raum zurückkehren, wird dieser Raum normalerweise auf seine ursprünglichen Einstellungen zurückgesetzt. Das ist für die meisten Spiele in Ordnung, aber es ist vielleicht nicht das, was Sie wollen, z. B. in einem RPG oder einem
+    RPG oder einem nicht-linearen Spiel, in dem Sie zwischen Räumen hin- und herwechseln und sie so vorfinden möchten, wie Sie sie beim letzten Mal verlassen haben. Wenn Sie das Kontrollkästchen " <strong>Persistent" </strong>aktivieren, wird genau das erreicht. Der Zustand des Raums wird gespeichert und wenn Sie später in den Raum
+    Wenn Sie später in den Raum zurückkehren, ist er genau so, wie Sie ihn verlassen haben, und wird nur beim Neustart des Spiels auf den Anfangszustand zurückgesetzt. Beachten Sie, dass es hier <em>eine </em>Ausnahme gibt - wenn Sie bestimmte Objekte als persistent markiert haben, bleiben Instanzen dieser
+    Objekts <em>nicht </em>in dem Raum bleiben, sondern in den nächsten Raum wechseln.</p>
+  <p>Danach haben Sie die Möglichkeit, den <strong>Anzeigepuffer zu löschen</strong>. Wenn diese Option aktiviert ist, füllt sich der <a class="glossterm" data-glossterm="Display-Puffer" href="#">Anzeigepuffer</a> mit einer Farbe. Wenn Sie wissen, dass die Ansichten
+    Wenn Sie wissen, dass die Ansichten immer den gesamten Bildschirm bedecken oder dass ein bildschirmfüllender Hintergrund gezeichnet wird, können Sie diese Option deaktivieren (was ein erneutes Zeichnen erspart und somit zur Optimierung Ihres Spiels beiträgt), aber wenn Sie überlappende Ansichten haben, die, wenn sie auf dem Bildschirm sind, offene Bereiche lassen,
+    Wenn Sie jedoch überlappende Ansichten haben, die auf dem Bildschirm offene Bereiche hinterlassen, oder wenn Ihr Hintergrund transparent ist, sollten Sie diese Option aktivieren, damit die Bereiche, in denen sich keine Ansicht befindet, mit der von Ihnen gewählten Farbe gefüllt werden. Zurzeit kann diese Farbe nur über Code eingestellt werden, indem Sie <a href="../../GameMaker_Language/GML_Reference/Cameras_And_Display/The_Game_Window/window_set_colour.htm"><span class="inline">window_set_colour()</span></a>.</p>
+  <p class="note"><strong>HINWEIS</strong>: Wenn Sie die automatische Seitenverhältniskorrektur verwenden (wie in den <a href="../../Settings/Game_Options.htm">Spieloptionen</a> eingestellt), dann sollten Sie dies <strong>immer </strong>aktiviert haben, da Sie sonst seltsame Effekte über die
+    &quot;Letterbox&quot;, in der Ihr Spiel gezeichnet wird. Wenn Sie diese Option nicht verwenden, können Sie das Häkchen entfernen und so einen kleinen Leistungsschub für Ihr Spiel erhalten (besonders spürbar auf <span class="notranslate">Android</span> und anderen mobilen Plattformen).</p>
+  <p>Ein Raum muss eine Größe haben, und diese wird durch die Werte definiert, die Sie für seine Breite und Höhe in Pixeln eingeben, und sobald das festgelegt wurde, können Sie dann fortfahren, <strong>Erstellungscode</strong> hinzuzufügen, falls Sie ihn benötigen. Der Erstellungscode wird über die Schaltfläche
+    Schaltfläche unten hinzugefügt (zusammen mit dem Umschalter "inherit", der angibt, ob der Raum den Erstellungscode erben soll oder nicht), und wenn Sie darauf klicken, wird ein Code- oder DnD™-Editor geöffnet. In diesem Editor können Sie Funktionen/Aktionen und Code eingeben, die
+    beim <em>Start </em>des Raums ausgeführt werden, und zwar nach dem Erstellungsereignis aller Instanzen, aber vor ihrem Raumstart-Ereignis (weitere Informationen zur Ereignisreihenfolge finden Sie <a href="../Object_Properties/Event_Order.htm">hier</a>). Dieser Code wird jedes Mal ausgeführt
+    Dieser Code wird jedes Mal ausgeführt, wenn Sie den Raum betreten, es sei denn, der Raum ist als persistent gekennzeichnet; in diesem Fall wird er nur einmal beim ersten Betreten des Raums ausgeführt, aber nicht bei späteren Besuchen des Raums.</p>
+  <p>Mit der letzten Schaltfläche in den Raumeigenschaften können Sie das Fenster <strong>Instanzerstellungsauftrag</strong> öffnen:</p>
+  <p><img alt="Instance Creation Order Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_CreationOrder.png">In diesem Fenster werden alle Instanzen des Raums in der Reihenfolge aufgelistet, in der sie angelegt werden (von oben nach unten). Sollten Sie
+    eine bestimmte Instanz vor einer anderen erstellt werden soll, können Sie einfach auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> klicken und sie an die gewünschte Position ziehen. Beachten Sie, dass die Instanzen in der Reihenfolge erstellt werden, die
+    Reihenfolge von oben nach unten in der Liste erstellt werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <h1>Kameras und Sichtfenster</h1>
+  <p>Die nächste Gruppe von Eigenschaften für den Raum, die Sie definieren können, sind die, die sich auf die <strong>Raumkamera</strong> und die <strong>Ansichtsfenster</strong> beziehen. Kameraansichten bieten einen Mechanismus zum Zeichnen verschiedener Teile Ihres Raums an verschiedenen Stellen auf dem Bildschirm,
+    oder um nur einen Teil des Raums zu zeichnen, der den gesamten Bildschirm abdeckt. In den meisten Jump'n'Run-Spielen folgt die Kameraansicht beispielsweise der Hauptfigur, denn wenn man den gesamten Level auf dem Bildschirm sehen könnte, wäre die Figur zu klein, um sie zu sehen und es gäbe
+    würde es keine Überraschungen für den Spieler geben. Kameraansichten können auch in Multiplayer- oder Koop-Spielen verwendet werden, da sie es ermöglichen, einen geteilten Bildschirm zu erstellen, in dem Sie in einem Teil des Bildschirms einen Spieler und in einem anderen Teil den anderen Spieler sehen
+    Spieler sehen. Dies alles lässt sich in <span class="notranslate">GameMaker Studio 2</span> mit Hilfe von Kameraansichten leicht realisieren.</p>
+  <p><img alt="Camera And Viewport Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomViews.png">Oben in den Eigenschaften der Ansichten können Sie die Ansichtsvererbung ein- oder ausschalten, dann gibt es ein Kästchen mit der Aufschrift " <strong>Ansichtsfenster aktivieren"</strong>.
+    Dieses Kästchen <em>muss markiert sein</em>, bevor eine der Kameraansichten in Ihrem Spiel aktiv sein kann.</p>
+  <p class="note"><strong>HINWEIS</strong>: Sie können die Vererbung für die drei Hauptansichtsport-Einstellungen ein- oder ausschalten und dann die Vererbung für jede einzelne Kameraansicht ein- oder ausschalten.</p>
+  <p>Das nächste Kontrollkästchen heißt <strong>"Clear Viewport Background" (Hintergrund des Ansichtsfensters löschen</strong>) und kann deaktiviert werden, wenn Sie wissen, dass Sie die gesamte <a class="glossterm" data-glossterm="Anwendungsfläche" href="#">Oberfläche</a> mit der Fensterfarbe
+    Sie zeichnen, um die gesamte Oberfläche abzudecken.</p>
+  <p>Eine Kameraansicht wird durch zwei verschiedene Sätze von Werten definiert, die Kameraansicht selbst und den Anschluss auf dem Bildschirm, an dem diese Ansicht gezeichnet werden soll. Dies kann manchmal zu Verwirrung führen, also lassen Sie uns dies ein wenig erklären, bevor wir erläutern, wie wir die beiden definieren:</p>
+  <ul class="colour">
+    <li><strong>Die Kamera</strong>: Ein Punkt innerhalb des Raums, mit dem festgelegt wird, wie der Raum auf dem Bildschirm angezeigt wird (dies ist ein abstrakter Punkt im Raumeditor und seine Position wird automatisch auf der Grundlage der Einstellungen für die Ansicht und den Ansichtsanschluss festgelegt)</li>
+    <li><strong>Die Ansicht</strong>: Was die Kamera sieht, basierend auf der Position, Projektion und Drehung der Kamera</li>
+    <li><strong>Der Ansichtsanschluss</strong>: Der Bereich des physischen Bildschirms, in dem die Kameraansicht angezeigt wird</li>
+  </ul>
+  <p><img alt="Camera View Example" class="center" src="../../assets/Images/Asset_Editors/Camera_Example.png">Das bedeutet zum Beispiel, dass Sie eine 640x480-Kameraansicht in Ihrem Raum haben können und dann den Port auf 320x240 einstellen, wodurch die Ansicht
+    Sie können aber auch die Ansicht auf einen kleineren Wert und den Port auf einen größeren Wert einstellen, so dass das Bild auf die Größe des Ports skaliert und auf dem Bildschirm größer angezeigt wird als es ist. Auf diese Weise können Sie
+    eine Bildschirmgröße (Port) beibehalten, während Sie die Kameraansicht ändern, um mehr oder weniger des Raums im gleichen Bereich des Bildschirms anzuzeigen.</p>
+  <p>Die Kameraansicht wird immer als rechteckiger Bereich im Raum definiert, wobei Sie die Position der linken oberen Ecke, die Breite und die Höhe dieses Bereichs festlegen. Dann müssen Sie festlegen, wo dieser Bereich im Fenster auf dem Bildschirm angezeigt wird, indem Sie
+    Hier geben Sie wiederum die Position der linken oberen Ecke und die Größe an (beachten Sie, dass alles andere als 0,0 für die linke obere Ecke zu seltsamen Ergebnissen führen kann). Sie können mehr als einen Anschluss haben und sie können sich überlappen.
+    werden sie in der angegebenen Reihenfolge übereinander gezeichnet.</p>
+  <p>Bitte beachten Sie, dass der gesamte Bildschirmbereich <em>immer als rechteckiger Bereich definiert</em> ist, so dass Ihre Ports, auch wenn sie versetzt sind, ein Rechteck bilden, wobei alle leeren Bereiche durch die Fensterfarbe des <a class="glossterm" data-glossterm="Display-Puffer" href="#">Anzeigepuffers</a> ausgefüllt werden, was bedeutet, dass Sie unter diesen Umständen immer die Option " <strong>Clear Display Buffer" (Anzeigepuffer löschen)</strong> aktiviert haben sollten, da Sie sonst seltsame Artefakte in den Bereichen zwischen den Ports erhalten. Das folgende Bild veranschaulicht dies, in dem
+    zwei versetzte View-Ports sichtbar sind, die jedoch ein quadratisches Fenster bilden, und &quot;darunter&quot; werden Linien in den Anzeigepuffer gezeichnet:</p>
+  <p><img alt="Object Editor Post Draw" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_PostDraw.png">Kameras verfügen auch über die Option <strong>Objektverfolgung </strong>. Diese Option ist dafür gedacht, dass die Kamera einem bestimmten Objekt &quot;folgt&quot; (d. h.: die
+    (d. h. die Ansicht auf ein bestimmtes Objekt fokussieren). Klicken Sie dazu auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> auf das Menüsymbol und wählen Sie ein Objekt aus der Liste, die sich öffnet (wenn es mehrere Instanzen dieses Objekts im Raum gibt, wird nur eine von der Kamera verfolgt).
+    Wenn es mehrere Instanzen dieses Objekts im Raum gibt, wird nur eine von ihnen von der Kamera verfolgt).</p>
+  <p>Das normale Verhalten einer Kamera besteht darin, sich nur zu bewegen, wenn die verfolgte Instanz zu nahe an eine &quot;Pufferzone&quot; kommt, die eine unsichtbare Grenze um den Rand der Ansicht bildet. Diese Zone können Sie mit den Werten <strong>Horizontal Border </strong>und
+    Wenn Sie diese Werte beispielsweise auf 64 einstellen, bedeutet dies, dass die Ansicht erst dann beginnt, sich zu bewegen und der Figur zu folgen, wenn sie 64 Pixel vom Rand der Ansicht entfernt ist.</p>
+  <p>Schließlich können Sie die <strong>horizontale</strong> und <strong>vertikale Geschwindigkeit </strong>angeben, mit der sich die Kamera bewegt, wenn der Charakter die Pufferzone erreicht hat, und dies hat einen Standardwert von -1. Dieser Standardwert ist im Grunde &quot;augenblicklich&quot;
+    und bedeutet, dass in dem Moment, in dem sich die Verfolgungsinstanz außerhalb der Pufferzone für den horizontalen oder vertikalen Rand befindet, die Ansicht zur aktuellen Position springt. Dies ist nicht immer das, was Sie wollen, und deshalb können Sie die vertikale und horizontale Scrollgeschwindigkeit
+    Geschwindigkeit für die Kamera einstellen, indem Sie die Werte auf etwas anderes als -1 setzen. Beachten Sie, dass ein Wert von 0 dazu führt, dass sich die Ansicht überhaupt nicht bewegt, und dass jeder andere positive Wert angibt, um wie viele Pixel sie sich in jedem Bild bewegt, so dass die Einstellung der horizontalen Geschwindigkeit auf 5 dazu führt, dass
+    Wenn Sie also die horizontale Geschwindigkeit auf 5 einstellen, folgt die Ansicht dem Objekt mit 5 Pixeln pro Bild in horizontaler Richtung.</p>
+  <p> </p>
+  <p> </p>
+  <h1>Raum-Physik</h1>
+  <p>Bevor Sie die eingebauten Physikfunktionen in Ihren Spielen verwenden können, müssen Sie <span class="notranslate">GameMaker Studio 2</span> mitteilen, dass der Raum ein Physikraum ist. Dazu müssen Sie die Option " <strong>Physik aktivieren </strong>" oben im Abschnitt " <em>Raumphysik</em> " ankreuzen
+    (Sie können die Vererbung dieses Abschnitts auch unabhängig von den übrigen Raumeinstellungen umschalten). Wenn Sie das getan haben, können Sie mit dem Einrichten der Physikwelt-Eigenschaften fortfahren, d. h. mit einigen grundlegenden Eigenschaften, die Sie vordefiniert haben müssen
+    bevor Ihr Raum Physikinstanzen als solche arbeiten lässt. Für eine genauere Kontrolle über die Welt können Sie Code verwenden (siehe die <a href="../../GameMaker_Language/GML_Reference/Physics/Physics.htm">Physikfunktionen</a> für weitere Informationen).</p>
+  <p><img alt="Room Physics Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomPhysics.png">Als nächstes müssen Sie die <strong>Schwerkraft </strong>der Welt einstellen. Deren Stärke und Richtung wird berechnet
+    als <a class="glossterm" data-glossterm="Vektor" href="#">Vektor</a> der x/y-Position, die Sie um einen (0, 0)-Punkt setzen. Bei einem x-Wert von 0 und einem y-Wert von 1 wird die Schwerkraft also mit einer Kraft von 1 Meter pro Sekunde <em>nach unten </em>gerichtet sein (für eine genauere Erklärung siehe
+    eine detailliertere Erklärung finden Sie unter - <a href="../../GameMaker_Language/GML_Reference/Physics/The_Physics_World/The_Physics_World.htm">Die Welt der Physik</a>).</p>
+  <p>Schließlich müssen Sie das Verhältnis von<strong> Pixeln zu Metern</strong> einstellen, das <span class="notranslate">GameMaker Studio 2</span> als Basis für alle seine Physikberechnungen verwenden soll. Das liegt daran, dass die Physikfunktionen mit realen Maßen arbeiten, weshalb wir diesen Wert einstellen müssen,
+    und Sie werden diese Einstellung so lange anpassen wollen, bis die durchschnittliche Pixelgröße der von Ihnen verwendeten Objekte in etwa in simulierte Physikobjekte einer angemessenen Größe übersetzt wird.</p>
+  <p>Es ist zu beachten, dass das Aktivieren der Physik in einem Raum bedeutet, dass alle Instanzen im Raum <em>die Physik-Funktionen und -Variablen verwenden müssen, um sich zu bewegen</em>. Grundsätzlich gibt es die &quot;traditionelle&quot; Bewegung, bei der Sie die X/Y-Position einer Instanz festlegen können
+    oder ihre Geschwindigkeit und Richtung einstellen können, und dann haben Sie die &quot;Physik&quot;-Bewegung, die physikalische Kräfte und Impulse benötigt, um sich zu bewegen. Diese Systeme <strong>schließen sich gegenseitig aus</strong>, und Sie können eine Physik-Instanz nicht mit Nicht-Physik
+    Funktionen bewegen und Sie können eine Nicht-Physik-Instanz nicht mit den Physik-Funktionen bewegen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Rooms.htm">Der Raum-Editor</a></div>
+        <div style="float:right">Nächste: <a href="Room_Inheritance.htm">Raumvererbung</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Properties
+View Ports
+View Cameras
+-->
+  <!-- TAGS
+rooms_properties
+-->
+
+</body></html>

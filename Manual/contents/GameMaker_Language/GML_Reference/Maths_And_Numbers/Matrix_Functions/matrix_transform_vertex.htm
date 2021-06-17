@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_transform_vertex</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_transform_vertex" />
+  <meta name="rh-index-keywords" content="matrix_transform_vertex" />
+  <meta name="search-keywords" content="matrix_transform_vertex" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_transform_vertex</h1>
+  <p>Diese Funktion transformiert einen Vektor durch eine Matrix. Sie übergeben die ID der Transformationsmatrix (wie sie von der Funktion <a href="matrix_build.htm"><tt>matrix build()</tt></a>zurückgegeben wird), sowie die x-, y- und z-Werte für den zu transformierenden Vektor. Die Funktion gibt zurück
+    ein <a href="../../../GML_Overview/Arrays.htm">Array</a> mit 3 Elementen zurück, wobei:</p>
+  <ul class="colour">
+    <li>array[0] = x</li>
+    <li>array[1] = y</li>
+    <li>array[2] = z.</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">matrix_transform_vertex(matrix, x, y, z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Matrix</td>
+        <td>Die zu verwendende Matrix</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Komponente des Transformationsvektors</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Komponente des Transformationsvektors</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Die z-Komponente des Transformationsvektors</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Array (3 Elemente)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">t_matrix = matrix_build(0, 0, 0, 0, 90, 0, 1, 2, 1);<br> verts = matrix_transform_vertex(t_matrix, x, y, z);</p>
+  <p>Der obige Code transformiert die angegebenen Werte mit Hilfe der in der Variablen &quot;t_matrix&quot; gespeicherten Matrix und speichert sie im Array &quot;verts&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Matrix_Functions.htm">Matrix-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="matrix_stack_is_empty.htm">matrix_stack_is_empty</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_transform_vertex
+-->
+  <!-- TAGS
+matrix_transform_vertex
+-->
+
+</body></html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Oberfläche_erstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_create" />
+  <meta name="rh-index-keywords" content="surface_create" />
+  <meta name="search-keywords" content="surface_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Oberfläche_erstellen</h1>
+  <p>Diese Funktion wird verwendet, um eine Fläche zu erzeugen und gibt den Index der Fläche zurück, der in einer Variablen für zukünftige Funktionsaufrufe gespeichert werden sollte. Wenn die Oberfläche zum ersten Mal erstellt wird, kann sie &quot;Rauschen&quot; enthalten, da es sich im Grunde nur um einen Bereich von
+    Speicherbereich ist, der für diesen Zweck zur Seite gelegt wird (und dieser Speicher kann noch Informationen enthalten), daher sollten Sie die Oberfläche vor der Verwendung mit einer Funktion wie <a href="../Colour_And_Alpha/draw_clear_alpha.htm"><tt>draw_clear_alpha()</tt></a>.</p>
+  <p>Es wird dringend empfohlen, alle Oberflächen mit einer Größe zu erstellen, die eine Potenz von 2 ist, d. h. z. B. 16, 128, 512 oder 1024 Pixel groß ist. Dies ist auf bestimmten Plattformen (wie <span class="notranslate">Windows</span> und MacOS) nicht unbedingt notwendig, aber es erhöht sicherlich die
+    Kompatibilität auf diesen Zielen, während es für HTML5 und Geräte unerlässlich ist und es ist sehr wichtig, dass Sie sich daran erinnern, sonst könnten Sie später Probleme bekommen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">surface_create(w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die Breite der zu erstellenden Fläche.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe der zu erstellenden Fläche.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !surface_exists(surf)<br> {
+    <br> surf = surface_create(1024, 1024);<br> surface_set_target(surf);
+    <br> draw_clear_alpha(c_black, 0);<br> surface_reset_target();
+    <br> view_surface_id[0] = surf;<br> }
+  </p>
+  <p>Der obige Code prüft, ob eine Oberfläche existiert, und wenn nicht, wird eine Oberfläche mit einer Breite von 1024 Pixeln und einer Höhe von 1024 Pixeln erstellt, wobei der Index der Variablen &quot;surf&quot; zugewiesen wird. Das Zeichenziel wird dann auf die neue Fläche gesetzt, die
+    wird gelöscht und transparent gemacht, bevor das Zeichenziel auf die Anzeige zurückgesetzt wird. Abschließend wird die Fläche einer Ansicht zugewiesen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="surface_create_ext.htm">surface_create_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_create
+-->
+  <!-- TAGS
+surface_create
+-->
+</body>
+</html>

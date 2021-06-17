@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_group_get_data</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_get_data" />
+  <meta name="rh-index-keywords" content="physics_particle_group_get_data,phy_particle_data_flag_typeflags,phy_particle_data_flag_position,phy_particle_data_flag_velocity,phy_particle_data_flag_colour,phy_particle_data_flag_category,phy_particle_data_flag_color" />
+  <meta name="search-keywords" content="physics_particle_group_get_data,phy_particle_data_flag_typeflags,phy_particle_data_flag_position,phy_particle_data_flag_velocity,phy_particle_data_flag_colour,phy_particle_data_flag_category,phy_particle_data_flag_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_group_get_data</h1>
+  <p>Diese Funktion gibt verschiedene Informationen über eine Gruppe von Teilchen in der Physiksimulation zurück, wobei die angegebenen Flags überprüft werden. Der Gruppenindex (seine ID) ist derjenige, der von der Funktion zurückgegeben wurde <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>,
+    zurückgegeben wurde, und der verwendete Puffer muss zuvor mit der Funktion <a href="../../Buffers/buffer_create.htm"><tt>buffer_create()</tt></a>. Er sollte vom Typ &quot;grow&quot; sein, wobei die Größe ungefähr der erwarteten Rückgabe entspricht
+    Daten. Die Flags selbst werden mit den unten angegebenen Konstanten gesetzt, und Sie würden die <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitweise <i>oder</i></a> &quot;|&quot; verwenden, um einen einzelnen Flag-Wert zu erzeugen, um die gewünschten Informationen zu erhalten.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+        <th>Daten Typ</th>
+      </tr>
+      <tr>
+        <td>phy_particle_data_flag_typeflags</td>
+        <td>Der Flaggenwert für den Partikel.</td>
+        <td>Puffer_u32</td>
+      </tr>
+      <tr>
+        <td>phy_particle_data_flag_position</td>
+        <td>Die x- und y-Position des Partikels.</td>
+        <td>2 x Puffer_f32</td>
+      </tr>
+      <tr>
+        <td>phy_particle_data_flag_velocity</td>
+        <td>Die horizontale und vertikale Geschwindigkeit.</td>
+        <td>2 x Puffer_f32</td>
+      </tr>
+      <tr>
+        <td>phy_particle_data_flag_colour</td>
+        <td>Die Farbe und der Alphawert (hexadezimal).</td>
+        <td>Puffer_f32</td>
+      </tr>
+      <tr>
+        <td>phy_particle_data_flag_category</td>
+        <td>Die Partikelkategorie (wie beim Erstellen der Gruppe, zu der sie gehört, definiert).</td>
+        <td>Puffer_u32</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_particle_group_get_data(group, buffer, flags)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gruppe</td>
+        <td>Der Gruppenindex (ID) der Partikelgruppe, von der die Daten abgerufen werden sollen.</td>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der (zuvor erstellte) Puffer, der zum Speichern der Daten verwendet werden soll.</td>
+      </tr>
+      <tr>
+        <td>Flaggen</td>
+        <td>Die Flags, die verwendet werden, um Daten über bestimmte Partikeltypen zu extrahieren.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Daten puffern</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var count = physics_particle_group_count(gp);<br> var flags = phy_particle_data_flag_position | phy_particle_data_flag_colour;<br> if (count &gt; 0)<br> {
+    <br> var buffer = buffer_create(count * 12, buffer_grow, 4);<br> physics_particle_group_get_data(gp, buffer, flags);<br> for (var n = 0; n &lt; count; n++;)<br> {
+    <br> var xx = buffer_read(buffer, buffer_f32);<br> var yy = buffer_read(buffer, buffer_f32);<br> var argb = buffer_read(buffer, buffer_u32);<br> var alpha = (argb &gt;&gt; 24) &amp; 255;<br> draw_sprite_ext(sprBlob,
+    0, xx, yy, 1, 1, 0, c_green, alpha);<br> }
+    <br> buffer_delete(buffer);
+    <br> }
+  </p>
+  <p>Der obige Code holt sich die Position und Geschwindigkeit jedes Partikels in der Gruppe, die durch die Variable &quot;gp&quot; indiziert wird, speichert die Pufferdaten in einer Reihe von Variablen und verwendet diese dann, um ein Sprite an der Position jedes Partikels in der Gruppe zu zeichnen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Soft_Body_Particles.htm">Weichkörperpartikel</a></div>
+        <div style="float:right">Weiter: <a href="physics_particle_create.htm">physik_teilchen_erzeugen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_group_get_data
+phy_particle_data_flag_typeflags
+phy_particle_data_flag_position
+phy_particle_data_flag_velocity
+phy_particle_data_flag_colour
+phy_particle_data_flag_category
+-->
+  <!-- TAGS
+physics_particle_group_get_data
+-->
+</body>
+</html>

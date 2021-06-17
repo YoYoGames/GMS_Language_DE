@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kachelindex in Zelle setzen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Tile Index In Cell action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile Index In Cell" />
+  <meta name="search-keywords" content="Set Tile Index In Cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Index In Cell Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_In_Cell.png"> Kachelindex in Zelle setzen</h1>
+  <p>Mit dieser Aktion können Sie eine Kachel auf einer bestimmten Ebene auf einen neuen Index setzen. Die Ebene wird anhand des angegebenen Ebenennamens (eine Zeichenkette, wie sie für die Benennung der Ebene im Raumeditor verwendet wird) angegeben, und dann geben Sie die Zeile und Spalte der Zelle innerhalb der Ebene an, um die
+    die Kachel zu setzen. Schließlich geben Sie den Kachelindex an, auf den die Kachel gesetzt werden soll (Kacheln werden von links nach rechts von oben nach unten indiziert, mit 0 oben links). Beachten Sie, dass Sie den Kachelindex jederzeit auf 0 setzen können, um die Kachel zu löschen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Tile Index In Cell Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_In_Cell.png" /></p>
+  <h4>Argumente:</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argument</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>Ebene</td>
+          <td>Die Ebene, auf die die Kachel gesetzt werden soll</td>
+        </tr>
+        <tr>
+          <td>Säule</td>
+          <td>Die Spalte (von links nach rechts) der Zelle</td>
+        </tr>
+        <tr>
+          <td>Zeile</td>
+          <td>Die Zeile (von oben nach unten) der Zelle</td>
+        </tr>
+        <tr>
+          <td>Fliese</td>
+          <td>Der Kachelindex, auf den die Zelle gesetzt werden soll</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Set Tile Index In Cell Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_In_Cell.png">Der obige Code des Aktionsblocks erzeugt eine Schleife, die durch die oberste Zeile der angegebenen Raumebene geht.
+    der angegebenen Raumebene zu durchlaufen, und prüft dabei, ob die Kachel, die mit der Zelle für die Spalte indiziert ist, auf 0 gesetzt ist. Ist dies nicht der Fall, wird der Kachelindex für diese Zelle auf 0 gesetzt, und die temporäre (lokale) Variable wird inkrementiert, bevor die Schleife einen weiteren
+    Satz von Prüfungen durchführt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Tile_Actions.htm">Kachel-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Get_Tile_Index_In_Cell.htm">Kachelindex in Zelle holen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Index In Cell
+-->
+  <!-- TAGS
+action_tile_set_in_cell
+-->
+</body>
+</html>

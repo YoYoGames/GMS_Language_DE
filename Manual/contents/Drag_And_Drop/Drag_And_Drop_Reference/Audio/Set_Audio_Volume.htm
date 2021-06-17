@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Audio-Lautstärke einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Audio Volume action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Audio Volume" />
+  <meta name="search-keywords" content="Set Audio Volume" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Audio Volume Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Audio_Volume.png" style="cursor: nesw-resize;" width="32"> Audio-Lautstärke einstellen</h1>
+  <p>Mit dieser Aktion können Sie die Lautstärke eines bestimmten Tons einstellen. Sie wählen den Ton aus dem Asset-Explorer aus und stellen dann den Lautstärkewert ein. Die Lautstärke kann zwischen 0 (stumm) und 1 (volle Lautstärke) liegen und die Skala ist linear, so dass ein Wert von 0,5 der
+    halbe Lautstärke. Beachten Sie, dass sich diese Aktion auf alle Instanzen des Sounds auswirkt, die derzeit im Raum abgespielt werden, und auf alle zukünftigen Instanzen des abgespielten Sounds.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Audio Volume Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Set_Audio_Volume.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ton</td>
+        <td>Die Klangressource zum Einstellen der Lautstärke von</td>
+      </tr>
+      <tr>
+        <td>Band</td>
+        <td>Die neue Lautstärke für den Ton (von 0 bis 1, Voreinstellung 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><span><img alt="Set Audio Volume Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Get_Audio_Volume.png"></span>Der obige Code des Aktionsblocks prüft eine globale Variable, um zu sehen, ob sie <tt>wahr</tt> oder falsch ist. Wenn sie <tt>wahr</tt> ist, wird die Lautstärke des angegebenen Tons abgerufen und in einer temporären lokalen Variablen gespeichert. Der Wert wird dann überprüft, um zu sehen, ob er ungleich 0,5 ist, und wenn nicht, dann wird die Lautstärke des Sounds auf 0,5 gesetzt. Wenn
+    die globale Variable den Wert <tt>false</tt>, dann wird die Lautstärke des Sounds auf 1 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Actions.htm">Audio-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Get_Audio_Volume.htm">Audio-Lautstärke abrufen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Audio Volume
+-->
+  <!-- TAGS
+action_audio_set_volume
+-->
+</body>
+</html>

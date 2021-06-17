@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Puffer_md5</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_md5" />
+  <meta name="rh-index-keywords" content="buffer_md5" />
+  <meta name="search-keywords" content="buffer_md5" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Puffer_md5</h1>
+  <p>In der Kryptografie ist MD5 (Message-Digest-Algorithmus 5) eine weit verbreitete kryptografische <a class="glossterm" data-glossterm="Hashing" href="#">Hash-Funktion</a> mit einem 128-Bit-Hash-Wert und wurde in einer Vielzahl von Sicherheitsanwendungen eingesetzt.
+    Sie wird auch häufig verwendet, um die Integrität von Daten zu prüfen. Diese Funktion nimmt die Eingabedaten aus einem gegebenen Puffer (oder einem Teil des Puffers) und gibt den 32-stelligen hexadezimalen MD5-Hashwert zurück, der für diese Daten eindeutig ist. Auf diese Weise können Sie einen
+    einen sicheren Schlüssel, der gespeichert und verwendet werden kann, um die Integrität der Informationen zu prüfen, die z. B. an einen externen Server gesendet (oder von diesem empfangen) werden. Wenn Sie dies mit dieser Funktion auf Puffer anwenden, müssen Sie die Puffer-ID des zu verwendenden Puffers angeben.
+    verwenden, dann einen Offset-Wert (in Bytes) für die Stelle, an der begonnen werden soll, und dann eine Größe (wieder in Bytes) für den zu hashenden Bereich.</p>
+  <p class="note"><strong>HINWEIS</strong>: MD5 ist nicht vollständig sicher und kann geknackt werden. Siehe <a href="https://en.wikipedia.org/wiki/MD5">diese Seite</a> für weitere Informationen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_md5(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu verwendenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Datenoffsetwert.</td>
+      </tr>
+      <tr>
+        <td>Größe</td>
+        <td>Die Größe des Puffers.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">check_string = buffer_md5(buff, 0, buffer_get_size(buff));</p>
+  <p>Der obige Code erstellt einen md5-Hash für die vollständigen Daten, die in dem durch die Variable &quot;buff&quot; indizierten Puffer gespeichert sind, und speichert den zurückgegebenen Hash in der Variablen &quot;check_string&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_sha1.htm">buffer_sha1</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_md5
+-->
+  <!-- TAGS
+buffer_md5
+-->
+
+</body></html>

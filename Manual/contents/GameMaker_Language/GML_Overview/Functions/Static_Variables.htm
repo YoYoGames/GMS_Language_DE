@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Statische Variablen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Static Variables" />
+  <meta name="rh-index-keywords" content="Static Variables" />
+  <meta name="search-keywords" content="Static Variables,static" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Statische Variablen</h1>
+  <p>Eine interessante Eigenschaft von <a href="../Script_Functions.htm">Skriptfunktionen</a> und <a href="../Method_Variables.htm">Methodenvariablen</a> ist, dass sie <strong>statische Variablen</strong> haben können. Eine statische Variable ist eine, die beim ersten Aufruf der Funktion definiert wird
+    die Funktion aufgerufen wird, und die ihren Wert von da an beibehält. Um eine statische Variable zu erstellen, müssen Sie sie mit dem Schlüsselwort <span class="inline">static</span> definieren, wie in diesem einfachen Beispiel gezeigt:</p>
+  <p class="code">counter = function()<br> {
+    <br> static num = 0;<br> return num++;<br> }
+  </p>
+  <p>Im obigen Beispiel ist die Variable <span class="inline">num</span> eine statische Variable und wird daher beim ersten Aufruf der Funktion als <tt>0</tt> definiert, aber jedes Mal, wenn die Funktion danach aufgerufen wird, wird die Variableninitialisierung
+    ignoriert. Wenn Sie diese Funktion also wie folgt aufrufen:</p>
+  <p class="code">for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> show_debug_message(counter());<br> }
+  </p>
+  <p>Die Ausgabe wird sein:</p>
+  <p class="code">0<br> 1
+    <br> 2
+    <br> 3
+    <br> 4
+    <br> 5
+    <br> 6
+    <br> 7
+    <br> 8
+    <br> 9
+  </p>
+  <p>Wenn Sie hier nicht das Schlüsselwort <span class="inline">static</span> verwenden würden, wäre die Ausgabe <tt>bei</tt> jeder Iteration der Schleife einfach 0, da die Variable <span class="inline">num</span> jedes Mal als 0 definiert wird, wenn
+    die Funktion aufgerufen wird, bevor sie zurückgegeben wird. Beachten Sie, dass eine statische Variable nur innerhalb der ursprünglichen Funktion geändert werden kann, und bei der Rückgabe erhalten Sie lediglich eine Kopie ihres Wertes - im Wesentlichen kann die gemeinsam genutzte statische Variable nur von der
+    Funktion geändert werden, die sie enthält.</p>
+  <p>Eine statische Variable wird immer am Anfang der Funktion initialisiert, d. h. unabhängig davon, wo Sie eine statische Variable in der Funktion definieren, steht sie immer zum Lesen und Ändern in der gesamten Funktion zur Verfügung (auch wenn sie verwendet wird, bevor sie definiert wurde).
+    Siehe das folgende Beispiel:</p>
+  <p class="code">function add_health()<br> {
+    <br> my_health++;<br> show_debug_message(my_health);<br> static my_health = 1;<br> }
+  </p>
+  <p>Hier wird die statische Variable &quot; my_health<tt>&quot;</tt> geändert und in die Compilerausgabe ausgegeben, bevor <em>sie</em> initialisiert <em>wird</em>. Das sieht zwar falsch aus, ist aber völlig in Ordnung, da statische Variablen initialisiert werden <em>, bevor </em>irgendein
+    Funktionscode ausgeführt wird. Beachten Sie, dass bei mehreren statischen Variablen in einer Funktion die Reihenfolge, in der sie definiert wurden, beibehalten wird, wenn sie am Anfang initialisiert werden.</p>
+  <p>Sie können auch das Schlüsselwort <span class="inline">static</span> innerhalb einer Funktion verwenden, um eine <strong>statische Funktion</strong> zu erstellen, was - wie bei Variablen - einfach bedeutet, dass die Funktion nur einmal definiert wird, nämlich beim ersten Aufruf der Funktion
+    aufgerufen wird, zum Beispiel:</p>
+  <p class="code">function(_x, _y) Vector2 constructor<br> {
+    <br> x = _x;<br> y = _y;<br>
+    <br> static Add = function( _other )<br> {<br> x += _other.x;<br> y += _other.y;<br> } <br> }
+  </p>
+  <p>Im obigen Beispiel wird mit der Konstruktorfunktion <tt><span class="inline">Vector2</span></tt> verwendet werden, um ein struct zu erzeugen, und das struct wird einige Variablen haben, von denen eine die Methodenvariable <tt><span class="inline">Add</span></tt>. Da
+    Da diese Variable als statisch definiert wurde, wird die darin enthaltene Funktion nur <em>einmal </em>beim ersten Aufruf der Funktion <span class="inline">Vector2</span> initialisiert, und alle weiteren mit diesem Konstruktor erstellten Structs referenzieren
+    die Funktion <span class="inline">Add</span> referenzieren, die anfangs erstellt wurde, anstatt für jede struct eine neue Funktion zu erstellen (weitere Informationen zu structs und dem Schlüsselwort <span class="inline">constructor</span> finden Sie <a href="../Structs.htm">hier</a>).</p>
+  <p>Bei der Verwendung von Vererbung mit Konstruktoren werden alle statischen Variablen im untergeordneten Konstruktor erst dann initialisiert, wenn der übergeordnete Konstruktor ausgeführt wurde, sodass die statischen Variablen des untergeordneten Konstruktors nicht die statischen
+    Variablen überschreiben. Siehe das folgende Beispiel:</p>
+  <p class="code">function Parent() constructor<br> {
+    <br> show_debug_message(value);<br> static value = 10;<br> }
+    <br>
+    <br> function Child() : Parent() constructor<br> {
+    <br> show_debug_message(value);<br> static value = 20;<br> }
+    <br>
+    <br> var _child = new Child();</p>
+  <p>Der Aufruf des <tt>Child()</tt> -Konstruktors gibt dies in das Ausgabeprotokoll aus:</p>
+  <p class="code">10<br> 20
+  </p>
+  <p>Der erste Wert stammt aus dem Parent-Konstruktor, der zweite aus dem Child-Konstruktor. Dies zeigt, dass der <tt>Wert</tt> der statischen Variable des untergeordneten Objekts nicht initialisiert <tt>wurde</tt>, bevor der übergeordnete Konstruktor beendet war, und dass in jedem Konstruktor
+    die statische Variable vor dem <tt>show_debug_message()</tt> -Aufruf initialisiert wurde.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="../Structs.htm">Strukturen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Static Variables
+static
+-->
+  <!-- TAGS
+static
+-->
+</body>
+</html>

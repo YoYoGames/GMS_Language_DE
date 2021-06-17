@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_get_visible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_get_visible" />
+  <meta name="rh-index-keywords" content="object_get_visible" />
+  <meta name="search-keywords" content="object_get_visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_get_visible</h1>
+  <p>Diese Funktion teilt Ihnen mit, ob das Objekt, das Sie prüfen, als &quot;sichtbar&quot; gekennzeichnet wurde (führt sein Draw-Ereignis aus) oder nicht (führt sein Draw-Ereignis nicht aus). Bitte beachten Sie, dass es sich hierbei nicht um eine Instanzfunktion handelt! Sie können also ein sichtbares Objekt
+    und eine unsichtbare Instanz desselben Objekts haben und umgekehrt. Sie können die Sichtbarkeit einer einzelnen Instanz mit der <a href="../Instances/Instance_Variables/visible.htm"><tt>sichtbar</tt></a> Instanz-Variable einstellen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">object_get_visible(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Der Index des zu prüfenden Objekts.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (!visible) &amp;&amp; (object_get_visible(object_index))<br> {<br> visible = true;<br> }</p>
+  <p>Der obige Code prüft die laufende Instanz, um zu sehen, ob sie sichtbar ist oder nicht, sowie den Objektindex der Instanz, um zu sehen, ob sie als sichtbar gekennzeichnet ist oder nicht. Wenn die Instanz noch <i>nicht</i> sichtbar ist, wird der Objektindex als "on" gekennzeichnet,
+    setzt es &quot;visible&quot; für diese Instanz auf true.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Objects.htm">Objekte</a></div>
+        <div style="float:right">Weiter: <a href="object_get_physics.htm">object_get_physics</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_get_visible
+-->
+  <!-- TAGS
+object_get_visible
+-->
+</body>
+</html>

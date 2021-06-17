@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>schicht_hintergrund_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_create" />
+  <meta name="rh-index-keywords" content="layer_background_create" />
+  <meta name="search-keywords" content="layer_background_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>schicht_hintergrund_erzeugen</h1>
+  <p>Mit dieser Funktion können Sie einer Ebene eine Sprite-Ressource zuweisen, die als Hintergrund in Ihrem Projekt verwendet werden soll. Sie geben die Ebenen-ID an (die Sie erhalten, wenn Sie die Ebene mit <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>)
+    oder den Ebenennamen (als String - dies wirkt sich auf die Leistung aus) und einen Sprite-Index (das wäre der Name des Sprites, wie er im Asset-Browser angezeigt wird), und schon wird es der Ebene hinzugefügt. Die Funktion gibt den eindeutigen ID-Wert für das Element zurück,
+    der dann in weiteren Ebenenfunktionen für Hintergründe verwendet werden kann.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_background_create(layer_id, sprite)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Ebene (oder der Ebenenname als String)</td>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>Der zu verwendende Sprite-Index</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Hintergrund-Element ID (Real)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.back_layer = layer_create(10000);<br> global.back_trees = layer_background_create(global.back_layer, spr_Trees);</p>
+  <p>Der obige Code erstellt eine neue Ebene und fügt ihr dann ein neues Hintergrundelement hinzu, wobei ein Sprite als Hintergrundbild verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Background_Layers.htm">Hintergrund-Ebenen</a></div>
+        <div style="float:right">Weiter: <a href="layer_background_destroy.htm">layer_background_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_create
+-->
+  <!-- TAGS
+layer_background_create
+-->
+</body>
+</html>

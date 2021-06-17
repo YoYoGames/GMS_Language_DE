@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_name" />
+  <meta name="rh-index-keywords" content="layer_get_name" />
+  <meta name="search-keywords" content="layer_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_name</h1>
+  <p>Sie können diese Funktion verwenden, um den <i>Namen</i> der angegebenen Ebene zu erhalten. Sie geben den eindeutigen Wert der Ebenen-ID an und wenn die Ebene eine der benannten Ebenen ist, die im Raum-Editor erstellt wurden, dann gibt die Funktion eine Zeichenkette mit dem Namen der Ebene zurück. Wenn die Ebene
+    keine der im Raum-Editor angelegten Ebenen ist (d. h.: sie wurde mit <a href="layer_create.htm"><tt>layer_create()</tt></a>), wird eine leere Zeichenkette zurückgegeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_get_name(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der Ebene, deren Name ermittelt werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var a = layer_get_all();<br> var layer_list = ds_list_create(); for (var i = 0; i Alt; array_length(a); i++;) <br> {
+    <br> if layer_get_name(a[i]) != &quot;&quot;<br> {
+    <br> ds_list_add(layer_list, a[i])<br> }
+    <br> }
+  </p>
+  <p>Der obige Code ruft die IDs für alle Ebenen im Raum ab und durchläuft dann eine Schleife, um zu prüfen, ob es sich um benannte Ebenen handelt. Wenn dies der Fall ist, wird ihre ID zu einer Liste hinzugefügt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_get_all.htm">layer_get_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_name
+-->
+  <!-- TAGS
+layer_get_name
+-->
+</body>
+</html>

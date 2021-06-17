@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_multiplizieren</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_multiply" />
+  <meta name="rh-index-keywords" content="matrix_multiply" />
+  <meta name="search-keywords" content="matrix_multiply" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_multiplizieren</h1>
+  <p>Mit dieser Funktion können Sie zwei Matrix-Arrays miteinander multiplizieren, um eine neue Transformationsmatrix zu erstellen. Die Funktion gibt den Index der neuen Matrix zurück, der zur späteren Verwendung in einer Variablen gespeichert werden sollte.</p>
+  <p class="note"><b>HINWEIS</b>: Sie können mit dieser Funktion keine Matrixkonstante als Argument verwenden. Wenn Sie also die (z. B.) View-Matrix mit einer von Ihnen erstellten benutzerdefinierten Matrix multiplizieren wollen, müssen Sie zuerst <span style="font-size:1px;"><a href="matrix_get.htm"><tt style="font-size: 14px">matrix_get()</tt></a></span>    aufrufen und die Werte der Ansichtsmatrix einer Array-Variablen zuweisen, diese dann mit Ihrer benutzerdefinierten Matrix multiplizieren und dann die gewählte Matrix (Ansicht, Projektion oder Welt) setzen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">matrix_multiply(matrix1, matrix2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Matrix1</td>
+        <td>Der erste zu verwendende Matrixindex.</td>
+      </tr>
+      <tr>
+        <td>Matrix2</td>
+        <td>Der zweite zu verwendende Matrixindex.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Matrix-Index (4x4-Matrix)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var v_matrix = matrix_get(matrix_view);<br> var new_matrix = matrix_multiply(v_matrix, my_matrix);<br> matrix_set(matrix_view, new_matrix);</p>
+  <p>Der obige Code ermittelt die aktuelle Ansichtsmatrix, multipliziert diese dann mit einer benutzerdefinierten Matrix und verwendet den resultierenden Matrixindex, um die Ansichtsmatrix erneut zu setzen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Matrix_Functions.htm">Matrix-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="matrix_build_identity.htm">matrix_build_identity</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_multiply
+-->
+  <!-- TAGS
+matrix_multiply
+-->
+
+</body></html>

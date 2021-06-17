@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_bbox_left</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_bbox_left" />
+  <meta name="rh-index-keywords" content="sprite_get_bbox_left" />
+  <meta name="search-keywords" content="sprite_get_bbox_left" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_bbox_left</h1>
+  <p>Diese Funktion gibt die relative Position der linken Seite des Sprite-Begrenzungsrahmens zurück. Dieser Wert wird als relativer Wert angegeben, basierend auf der linken oberen Ecke des Basis-Sprite-Assets, die (0,0) ist. Es ist derselbe Wert, der im Sprite-Editor zu finden ist
+    für die <a href="../../../../../The_Asset_Editors/Sprites.htm">Eigenschaften der Kollisionsmaske</a>. Das Bild unten zeigt, wie er berechnet wird:</p>
+  <p><img alt="BBox Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_bbox.png" /></p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_get_bbox_left(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu prüfenden Sprites.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var ww, hh;<br> ww = sprite_get_bbox_left(sprite_index) - sprite_get_bbox_right(sprite_index);<br> hh = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index);</p>
+  <p>Der obige Code berechnet die Breite und Höhe der Kollisionsmaske basierend auf den relativen Seitenpositionen des Begrenzungsrahmens.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Information.htm">Sprite-Informationen</a></div>
+        <div style="float:right">Weiter: <a href="sprite_get_bbox_right.htm">sprite_get_bbox_right</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_bbox_left
+-->
+  <!-- TAGS
+sprite_get_bbox_left
+-->
+</body>
+</html>

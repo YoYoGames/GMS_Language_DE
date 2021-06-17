@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_group_set_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_group_set_gain" />
+  <meta name="rh-index-keywords" content="audio_group_set_gain" />
+  <meta name="search-keywords" content="audio_group_set_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_group_set_gain</h1>
+  <p>Mit dieser Funktion können Sie eine Gruppe von Klängen über eine bestimmte Zeit ein- oder ausblenden, oder sie kann verwendet werden, um die Gruppenverstärkung sofort einzustellen. Die Zeit wird in Millisekunden gemessen, und die Funktion erfordert die Eingabe eines Endpegels, den die
+    Gruppe am Ende dieser Zeit erreicht haben soll. Diese Verstärkung kann zwischen 0 (leise) und 1 (volle Lautstärke) liegen, und die Skala ist linear, so dass ein Wert von 0,5 der halben Lautstärke entsprechen würde. Um die Verstärkung sofort zu ändern, setzen Sie einfach das Argument time auf 0. Beachten Sie, dass
+    auf einigen Plattformen eine Verstärkung von mehr als 1 möglich ist, obwohl ein Wert von 1 als &quot;volle Lautstärke&quot; gilt und alles, was darüber hinausgeht, zu Audio-Clipping führen kann.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_group_set_gain(groupID, volume, time);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>groupID</td>
+        <td>Der Index der zu stoppenden Audiogruppe (wie im <a href="../../../../../Settings/Audio_Groups.htm">Fenster "Audiogruppen</a>" definiert)</td>
+      </tr>
+      <tr>
+        <td>Lautstärke</td>
+        <td>Der endgültige Wert für das Gruppenvolumen.</td>
+      </tr>
+      <tr>
+        <td>Zeit</td>
+        <td>Die Länge der Änderung der Verstärkung in Millisekunden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> audio_group_set_gain(audiogroup1, 0, 5000);<br> }
+  </p>
+  <p>Der obige Code prüft auf die &quot;Leertaste&quot; und blendet dann den gesamten Ton für &quot;audiogroup1&quot; über 5 Sekunden auf 0 aus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Groups.htm">Audio-Gruppen</a></div>
+        <div style="float:right">Weiter: <a href="audio_group_load.htm">audio_group_load</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_group_set_gain
+-->
+  <!-- TAGS
+audio_group_set_gain
+-->
+</body>
+</html>

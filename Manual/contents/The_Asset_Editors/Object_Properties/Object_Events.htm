@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Objekt-Ereignisse</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the events system and the different events in an object" />
+  <meta name="rh-index-keywords" content="Objects - Events" />
+  <meta name="search-keywords" content="events,object events,events list" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Objekt-Ereignisse</h1>
+  <p>Was sind also <strong>Objekt-Events</strong>? Im Grunde sind dies diskrete Momente in der Spielschleife, in denen Dinge auf der Grundlage dessen, was Sie für sie programmiert haben, geschehen sollen. <span class="notranslate">GameMaker Studio 2</span> arbeitet mit Zyklen dieser Ereignisse - von dem Moment, in dem ein
+    Von dem Moment an, in dem ein Raum gestartet wird, bis zu dem Moment, in dem er beendet wird, läuft eine Spielschleife, in der bei jedem <strong>Schritt </strong>eine Reihe von Ereignissen ausgeführt oder überprüft wird, und Sie können wählen, ob Sie Code oder <span class="notranslate">DnD™-Aktionen</span>in Ihren Objekten platzieren, die auf diese Ereignisse reagieren (ein Schritt
+    ist ein Moment in der Spielzeit, der durch die Einstellung der Raumgeschwindigkeit bestimmt wird und auch als <strong>Frame</strong> bezeichnet werden kann) .</p>
+  <p>Schauen wir uns ein typisches Objekt-Setup mit Ereignissen und Code an:</p>
+  <p><img alt="Object Editor Events View" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Events.png">Wie Sie in unserem Beispielobjekt sehen können, sind eine Reihe von Ereignissen aufgelistet, auf die es reagieren soll, aber anfangs, wenn Sie ein
+    Wenn Sie jedoch ein Objekt erstellen, ist diese Liste zunächst leer und Sie müssen entscheiden, welche Ereignisse Sie benötigen und was die Instanzen dieses Objekts tun sollen, wenn diese Ereignisse ausgelöst werden. Um dem Objekt Ereignisse hinzuzufügen, drücken Sie die Schaltfläche " <em>Ereignis hinzufügen</em> ", die sich am unteren Rand der Ereignisliste befindet.
+    Liste, woraufhin das folgende Fenster angezeigt wird:</p>
+  <p><img alt="Object Editor Events List" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_EventList.png">Dies ist die Liste aller grundlegenden Ereignisse und Ereigniskategorien, auf die ein Objekt reagieren kann, und innerhalb jeder Kategorie gibt es Unter
+    Ereignisse, um das Verhalten weiter zu verfeinern. Wenn Sie z. B. auf die Ereigniskategorie "<strong>Tastendruck</strong> " <img alt="Key Press Icon" height="16" src="../../assets/Images/Icons/Icon_KeyboardPress.png" width="16"> klicken, öffnet sich ein weiteres Fenster mit den Ereignissen, mit denen Sie das Verhalten weiter verfeinern können.
+    Wenn Sie beispielsweise auf die Ereigniskategorie "Tastendruck"  klicken, wird ein weiteres Fenster mit den Ereignissen eingeblendet, in dem Sie auswählen können, auf <em>welche </em>Taste das Objekt reagieren soll. Wenn Sie Ihr Ereignis ausgewählt haben, wird das Code-Fenster (oder <span class="notranslate">DnD™-Arbeitsbereich-Fenster</span>) damit verkettet und öffnet sich auf der rechten Seite.
+    Sie können nun den Code bearbeiten, um Ihrem Objekt ein bestimmtes Verhalten oder eine Reaktion auf dieses Ereignis zu geben.</p>
+  <p>Sie können mit der rechten Maustaste <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png" style=""> auf ein beliebiges Event klicken, das einem Objekt hinzugefügt wurde, um die folgenden Menüoptionen zu erhalten:</p>
+  <p><img alt="Object Editor Events Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_RMBMenu.png">Diese Optionen sind:</p>
+  <ul class="colour">
+    <li><strong>Ereignis hinzufügen</strong> - Fügt ein neues Ereignis aus der Ereignisliste hinzu.</li>
+    <li><strong>Ausschneiden </strong>/ <strong>Kopieren </strong>/ <strong>Einfügen von Events</strong> - Ausschneiden, Kopieren oder Einfügen des ausgewählten Events. Sie können auch die Standard-Tastaturkürzel verwenden: <img alt="CTRL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">X</span>, <img alt="CTRL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">C</span> und <img alt="CTRL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">V</span>.</li>
+    <li><strong>Ereignis duplizieren</strong> - Dupliziert das gewählte Ereignis. Dies nimmt den Inhalt des gewählten Events und dupliziert ihn in einem anderen Event, das Sie angeben.</li>
+    <li><strong>Ereignis ändern</strong> - Ändern Sie das Ereignis. Dadurch werden Sie aufgefordert, eine andere Ereigniskategorie zu wählen. Sobald Sie diese ausgewählt haben, wird der Inhalt des aktuellen Ereignisses auf das neue Ereignis geändert (wobei das ursprüngliche Ereignis entfernt wird).</li>
+    <li><strong>In <span class="notranslate">Drag and Drop</span></strong> / Code konvertieren - Objekt-Events werden mit der Methode erstellt, die Sie beim Erstellen des Projekts gewählt haben, entweder mit Code oder mit <span class="notranslate">Drag and Drop™-Aktionen</span>. Mit dieser Option können Sie von der einen zur anderen Methode konvertieren, unabhängig
+      des Projekttyps.</li>
+    <li><strong>Ereignis löschen</strong> - Löschen Sie das Ereignis (oder die Ereignisse).</li>
+  </ul>
+  <p>Beim Entfernen von Ereignissen können Sie mit <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> mehrere Ereignisse auswählen und diese dann gemeinsam löschen.
+    Jedes Objekt, das Sie erstellen, hat seine eigene diskrete Liste von Ereignissen, die im <strong>Objekteditor</strong> hinzugefügt werden. Diese Ereignisse fallen in zwei Kategorien:</p>
+  <ul class="colour">
+    <li>die, die jeden einzelnen Spielschritt ausführen</li>
+    <li>solche, die durch ein Spielereignis &quot;ausgelöst&quot; werden, wie z. B. das Erreichen der Raumkante durch die Instanz oder einen Tastatur- oder Mausdruck.</li>
+  </ul>
+  <p>Die vollständige Liste der Veranstaltungen finden Sie unten:</p>
+  <p> </p>
+  <p><img alt="Create Event Icon" src="../../assets/Images/Icons/Icon_Create.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">erstellen.</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Dieses Ereignis tritt ein, wenn eine Instanz des Objekts zum ersten Mal erstellt wird, und ist das allererste, was innerhalb einer Instanz passiert, die über den Raum-Editor in den Raum gelegt wird, wenn ein Raum betreten wird. Das bedeutet, dass dieses Ereignis der ideale Ort ist, um Variablen zu initialisieren
+     <span class="glossextra">Variablen</span> zu initialisieren, <a href="../Timelines.htm">Zeitleisten</a> zu starten, <a href="../Paths.htm">Pfade</a> zu setzen usw... und alles andere zu tun, was im Allgemeinen nur
+      einmalig oder nur beim ersten Anlegen einer Instanz im Raum durchgeführt werden muss. Wenn Ihr Objekt im Objekteditor oder im Raumeditor <strong>Objektvariablen</strong> oder <strong>Instanzvariablen</strong> hinzugefügt hat, dann werden diese Variablen
+      Diese Variablen werden zuerst initialisiert und dann wird das <strong>Ereignis "Create</strong> " ausgeführt.</p>
+    <p class="dropspot">Denken Sie daran, dass Sie alles, was Sie im Erstellungsereignis eingerichtet haben, über den <a href="../Room_Properties/Layer_Properties.htm">Instanzerstellungscode</a> im Raumeditor ändern können, da dieser direkt nach dem Erstellungsereignis für die Instanz ausgeführt wird und
+      verwendet werden, um <strong>Instanzvariablen</strong> zu erstellen oder um Variablen zu überschreiben, die als Objektvariablen oder im eigentlichen Erstellungsereignis hinzugefügt wurden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Destroy Event Icon" src="../../assets/Images/Icons/Icon_Destroy.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Zerstören</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">Dieses Ereignis ist das Ereignis, das ausgeführt wird, wenn eine Instanz zerstört wird. Es wird beim Hinzufügen von Verhaltensweisen zu Objekten oft übersehen, kann aber sehr nützlich sein, z. B. durch das Erzeugen von Explosions- oder Partikeleffekten, wenn ein Feind getötet wird, oder für das Re-Spawnen
+      eine neue Instanz des Objekts in einem anderen Teil des Raums oder sogar zum Hinzufügen von Punkten zu einem Spielstand.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Clean Up Event Icon" src="../../assets/Images/Icons/Icon_Destroy.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Aufräumen</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><span>Dieses Ereignis wird nach jedem Ereignis aufgerufen, das eine Instanz des Objekts aus dem Raum entfernt. Es wird also ausgelöst, wenn:</span></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span>die Instanz wird zerstört</span></li>
+      <li class="dropspot"><span>der Raum endet</span></li>
+      <li class="dropspot"><span>das Spiel endet</span></li>
+    </ul>
+    <p class="dropspot"><span>Es ist für Sie gedacht, um alle dynamischen Ressourcen zu &quot;bereinigen&quot;, die Sie möglicherweise in Ihrem Spiel haben (wie Oberflächen, Datenstrukturen, etc...) oder um jede Aufgabe auszuführen, die Sie einmalig benötigen, wenn <em>die </em>Instanz in irgendeiner Weise aus dem Spiel entfernt wird.</span></p>
+    <p class="dropspot"><span>Beachten Sie, dass dieses Ereignis <em>sofort </em>nach dem Ereignis, das es ausgelöst hat, aufgerufen wird, die Instanz aber <strong>erst nach dem Ende des aktuellen Ereignisses</strong> tatsächlich aus dem Spiel entfernt wird. Wenn Sie z. B. <span class="inline">instance_destroy()</span> im Step-Event aufrufen, wird das Destroy-Event aufgerufen, dann das Clean Up-Event, und dann <em>wird der Rest des Step-Events beendet</em>. Das bedeutet, dass jeglicher Code, den Sie nach dem Aufruf von <span class="inline">instance_destroy()</span> haben, noch ausgeführt wird und eine potenzielle Fehlerursache darstellt, wenn Sie eine Datenstruktur oder eine andere Ressource, die der Code benötigt, aufgeräumt haben, daher ist bei der Verwendung dieses Ereignisses Vorsicht geboten.</span>
+    </p>
+    <p> </p>
+  </div>
+  <p><img alt="Alarm Event Icon" src="../../assets/Images/Icons/Icon_Alarm.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Alarm</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">Die Alarmkategorie ist in 12 Ereignisse unterteilt, eines für jeden der möglichen Alarme, die in einer Instanz eingestellt werden können. Wenn Sie also auf die Kategorie " <em>Alarm hinzufügen" </em>klicken, wird dieses Fenster angezeigt:</p>
+    <p class="dropspot"><img alt="Object Editor Alarm Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_AlarmEvents.png">Hier wählen Sie den Alarm aus, den Sie erstellen möchten, und sobald dies geschehen ist, sehen Sie, dass er dem Ereignisfenster hinzugefügt wurde.
+      Fenster hinzugefügt wurde, so dass Sie ihm wie gewohnt Code hinzufügen können. Aber was ist ein Alarm? Nun, es ist ein spezielles Ereignis, das nichts tut, es sei denn, der Alarm wurde vorher gesetzt, und dann wird gewartet, bis der Alarm auf 0 heruntergezählt ist, bevor die Aktionen oder der Code ausgeführt werden, die Sie hinzugefügt haben
+      oder Code ausführt, den Sie ihm hinzugefügt haben.</p>
+    <p class="dropspot">Wenn der Alarm 0 erreicht hat und der Code ausgeführt wird, zählt er dann auf -1 zurück, wo er bleibt, bis er wieder gesetzt wird (das heißt, Sie können den Wert eines Alarms überprüfen, um zu sehen, ob er größer als -1 ist, was Ihnen sagt, ob er läuft oder nicht). Also, sagen wir
+      Sie setzen <span class="inline">alarm[0]</span> im Ereignis "create" des Objekts auf 30, bedeutet dies, dass <span class="notranslate">GameMaker Studio 2</span> 30 Spielschritte herunterzählt, bevor es die Aktionen oder den Code ausführt, die im Ereignis <span class="inline">alarm[0]</span> platziert sind. Beachten Sie, dass das Setzen eines Alarms auf 0 <em>nicht </em>dazu führt, dass der Alarmcode ausgeführt wird, da das Ereignis zwar ausgelöst wird, aber der Alarm sofort auf -1 gesetzt wird, so dass der Code übersprungen wird. Wenn Sie einen Alarm benötigen, um gleich den nächsten Schritt auszuführen, dann sollten Sie ihn auf 1 setzen.</p>
+    <p class="dropspot">Dies kann sehr nützlich sein, da es Ihnen erlaubt, Dinge zu bestimmten Zeitpunkten in Bewegung zu setzen, und Sie können sie sogar wiederholen lassen, da nichts dagegen spricht, einen Alarm in seinem eigenen Ereignis zu setzen. Stellen Sie sich vor, Sie haben ein Monster und wollen, dass es sich alle drei Sekunden nach rechts dreht.
+      Sie würden einen Alarm in seinem Erstellungsereignis auf die Raumgeschwindigkeit * 3 setzen (wenn die Raumgeschwindigkeit 30 ist, sind das 30 Schritte pro Sekunde, also multiplizieren Sie das mit 3 und Sie erhalten 3 Sekunden!) und dann würden Sie im Alarmereignis den Code oder die Aktion haben, um seine Richtung einzustellen, sowie
+      Aktion, um die Richtung einzustellen, sowie die Aktion (oder den Code), um den Alarm wieder auf Raumgeschwindigkeit * 3 zu setzen. Auf diese Weise können Sie einfache Spielschleifen einrichten, in denen Dinge nur in bestimmten Intervallen passieren.</p>
+    <p class="dropspot">Es ist erwähnenswert, dass ein Alarm, der keine Aktionen oder Code enthält, <em>nicht </em>herunterzählt. Aber auch mit nur einem Kommentar und ohne Code oder Aktionen, dann wird der Alarm weiter herunterzählen und kann wie gewohnt eingestellt und überprüft werden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Step Event Icon" src="../../assets/Images/Icons/Icon_Step.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Schritt</a></p>
+  <div class="droptext" data-targetname="drop-down12">
+    <p class="dropspot"><span class="notranslate">GameMaker Studio 2</span> unterteilt die Zeit in <strong>Schritte </strong>, wobei die Raumgeschwindigkeit definiert, wie viele dieser Schritte es pro Sekunde geben soll (ein Schritt kann auch als <strong>Frame</strong> bezeichnet werden). Ein einzelner Schritt, ist im Grunde die Schleife, die
+      ständig mit allen Ereignissen, die geprüft und bei Bedarf ausgelöst werden, während das Spiel läuft. Wie Sie sich also vorstellen können, ist das <strong>Step-Ereignis </strong>ein Ereignis, das bei jedem einzelnen Schritt des Spiels geprüft wird, solange die Instanz existiert.</p>
+    <p class="dropspot">Das Step-Ereignis besteht eigentlich aus drei Unterereignissen, die im Folgenden beschrieben werden:</p>
+    <p class="dropspot"><img alt="Object Editor Step Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Step.png">Für die meisten Dinge ist das Standard-Schritt-Ereignis gut geeignet, aber manchmal möchten Sie ein wenig mehr Kontrolle darüber haben, welcher Code zu welchem Zeitpunkt ausgeführt wird.
+      Zu diesem Zweck gibt es die Step-Ereignisse <strong>Begin </strong>und <strong>End </strong>. Alle drei werden bei jedem Schritt überprüft, aber ihre Reihenfolge wird sich nie ändern, selbst wenn zukünftige Updates der <span class="notranslate">GameMaker Studio 2-Engine</span> andere
+      Ereignisse ändern, was bedeutet, dass dies die einzige zuverlässige Methode ist, um sicherzustellen, dass etwas immer vor etwas anderem passiert.</p>
+    <p class="dropspot">Wofür kann das Schritt-Ereignis verwendet werden? Nun, es kann für Aktionen oder Code verwendet werden, der kontinuierlich ausgeführt werden muss. Wenn zum Beispiel ein Objekt einem anderen folgen soll, können Sie hier die Bewegungsrichtung in Richtung des Objekts, dem wir folgen, anpassen
+      anpassen, damit es sich gleichmäßig hinterher bewegt. Seien Sie jedoch vorsichtig mit diesem Ereignis und packen Sie nicht viele komplizierte Aktionen in das step-Ereignis von Objekten, vor allem, wenn Sie planen, viele Instanzen des Objekts in Ihrem Spielraum zu haben, denn das könnte
+      das Spiel verlangsamen. Viele Dinge können in Alarmen untergebracht werden oder so eingestellt werden, dass sie mit einigen der <strong>anderen </strong>Ereignisse ausgelöst werden, anstatt ständig zu passieren.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Collision Event Icon" src="../../assets/Images/Icons/Icon_Collision.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">Kollision</a></p>
+  <div class="droptext" data-targetname="drop-down13">
+    <p class="dropspot">Beim Erstellen eines Spiels ist es natürlich sehr wichtig, dass Sie wissen, wann zwei (oder mehr) Instanzen eines Objekts kollidiert sind, und dafür haben wir das <strong>Kollisionsereignis</strong>. Dies ist ein Ereignis, das Sie in einem Objekt platzieren und dann angeben, gegen
+      welches andere Objekt auf Kollisionen überprüft werden soll.</p>
+    <p class="dropspot">Wenn Sie die Physik nicht eingeschaltet haben, werden diese Kollisionen auf der Grundlage der Maske der beiden Objekte berechnet (die Maske wird in den Sprite-Eigenschaften definiert oder kann unabhängig in den Objekteigenschaften zugewiesen werden) und ob sie sich überschneiden
+      oder nicht. Beachten Sie, dass, wenn eine der beiden Instanzen in der Kollision keine Maske zugewiesen hat (oder die Sprite-Maske auf nichts eingestellt ist), <em>selbst wenn sie etwas zeichnet</em>, keine Kollisionen erkannt werden.</p>
+    <p class="dropspot">Wenn Sie <strong>Physik </strong>eingeschaltet haben, basiert die Kollision auf dem Typ der <strong>Kollisionsform</strong><em>(Fixture</em>), den Sie für das Objekt in seinen Physikeigenschaften definiert haben, ebenso wie seine Reaktion auf die Kollision. Diese
+      bedeutet, dass Sie möglicherweise keinen Code benötigen, um die Kollision zu behandeln, aber dieses Ereignis <em>muss </em>trotzdem <em>mindestens einen Kommentar enthalten </em>, damit die Kollisionen erkannt werden.</p>
+    <p class="dropspot">Schließlich ist zu beachten, dass alle Kollisionen einmal pro Spielschritt berechnet werden, bevor das Kollisionsereignis ausgelöst wird, so dass beim Ausführen des Kollisionsereignisses alle Kollisionen bereits berechnet und vorbelegt sind. Das bedeutet, dass
+      wenn Sie eine Instanz in diesem Ereignis erstellen und dann versuchen, eine Kollision damit zu überprüfen, wird die Kollision erst bei der nächsten <a class="glossterm" data-glossterm="Iteration" href="#">Iteration</a> der Spielschleife erkannt oder aufgelöst.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Keyboard Icon" src="../../assets/Images/Icons/Icon_Keyboard.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Tastatur,</a>  <img alt="Keyboard Press Icon" src="../../assets/Images/Icons/Icon_KeyboardPress.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Tastatur drücken,</a>  <img alt="Keyboard Release Icon" height="16" src="../../assets/Images/Icons/Icon_KeyboardRelease.png" style="cursor: nwse-resize;" width="15">    <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Tastaturfreigabe</a></p>
+  <div class="droptext" data-targetname="drop-down14">
+    <p class="dropspot">Es ist sehr wichtig, dem Spieler die Möglichkeit zu geben, die verschiedenen Aspekte Ihres Spiels zu steuern, und zu diesem Zweck bietet Ihnen <span class="notranslate">GameMaker Studio 2</span> eine sehr umfassende Liste von Tastaturereignissen, die in jeder der drei Hauptkategorien der Tastatur verwendet werden können. Für die
+      allgemeine Tastaturkategorie wird es kontinuierlich bei jedem Schritt ausgelöst, solange die ausgewählte Taste gedrückt ist, während die Ereignisse der Kategorie "Drücken und Loslassen" nur einmal ausgelöst werden, wenn die Taste anfangs gedrückt oder losgelassen wird.</p>
+    <p class="dropspot">Es ist zu beachten, dass Tastaturereignisse tatsächlich in allen aktiven Instanzen in einem Raum ausgelöst werden, wenn eine Taste betätigt wird, aber nur die Instanzen reagieren, für die ein Ereignis für diese bestimmte Taste definiert ist, und Sie können mehrere Tastaturereignisse in
+      Sie können mehrere Tastaturereignisse in einem beliebigen Objekt erstellen, und die Instanzen dieses Objekts reagieren auf alle, während das Spiel läuft.</p>
+    <p class="dropspot">Wenn Sie ein beliebiges Tastaturereignis zu einem Objekt hinzufügen, wird das Untermenü "Tastaturereignis" angezeigt, in dem Sie die Taste angeben können, auf die Sie prüfen möchten:</p>
+    <p class="dropspot"><img alt="Object Editor Keyboard Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Keyboard.png">Die meisten davon sind ziemlich offensichtlich, aber lassen Sie uns die Abschnitte kurz durchgehen - ganz oben haben wir die Pfeiltasten,
+      gefolgt von den am häufigsten benutzten Modifikatortasten, dann der Rest der Tastatur (aufgeteilt in weitere Unterabschnitte, damit Sie die genau benötigte Taste bekommen können, wie <img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55"> oder <img alt="Insert Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Insert.png" width="55">) und schließlich zwei sehr spezielle Unterereignisse, <strong>No Key</strong> und <strong>Any Key</strong>. Wie ihre Namen schon andeuten, sind dies Unter
+      Ereignisse, die prüfen, wann <em>keine </em>Taste gedrückt wird oder wann <em>eine beliebige </em>Taste gedrückt wird. Bitte beachten Sie, dass die Tasten des Ziffernblocks nur dann die entsprechenden Ereignisse erzeugen, wenn die <strong>Zahlensperre </strong>aktiviert ist.</p>
+    <p class="dropspot">Die Ereignisse <strong>"Drücken" </strong>und " <strong>Loslassen" </strong>für die Tastatur sind fast genau die gleichen wie das reguläre Tastaturereignis, außer dass sie nicht kontinuierlich, sondern nur einmal ausgelöst werden. Wenn die Tastatur zum ersten Mal registriert
+      Wenn die Tastatur zum ersten Mal registriert, dass eine Taste gedrückt wurde, wird ein Ereignis " <strong>Tastatur gedrückt"</strong> (sowie ein reguläres Tastaturereignis) erzeugt, und das erste Mal danach, wenn eine Taste nicht mehr als gedrückt erkannt wird, wird ein einzelnes Ereignis <strong>"Tastatur loslassen"</strong> ausgelöst.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt=" Mouse Icon" height="16" src="../../assets/Images/Icons/Icon_MouseEvent.png" width="16"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">Maus</a></p>
+  <div class="droptext" data-targetname="drop-down16">
+    <p class="dropspot">Die Kategorie "Maus" ist in eine Reihe von Ereignissen unterteilt, die ausgewählt werden können, um Ihnen eine genauere Kontrolle darüber zu geben, was in Ihrem Spiel passiert. Hier können Sie genau sehen, was diese Ereignisse sind:</p>
+    <p class="dropspot"><img alt="Object Editor Mouse Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Mouse.png">Die Tastenereignisse links <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">, rechts <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> und mitte <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> (egal ob <strong>normal</strong>, <strong>gedrückt </strong>oder <strong>losgelassen</strong>) wirken alle
+      wirken auf die Maske der Instanz, die das Ereignis hat. Das bedeutet, dass <span class="notranslate">GameMaker Studio 2</span> die Position der Maus im Raum, wenn diese Tasten betätigt werden, mit den Kollisionsmasken der Instanzen vergleicht, die ein Mausereignis haben. Wenn
+      Wenn es eine &quot;Kollision&quot; mit dem <a class="glossterm" data-glossterm="Begrenzungsrechteck" href="#">Begrenzungsrahmen</a> der Instanz gibt <a class="glossterm" data-glossterm="Begrenzungsrechteck" href="#">, wird das</a> Ereignis ausgelöst. Stellen Sie also sicher, dass jede Instanz mit diesen Ereignissen ein Sprite mit einer gültigen Kollisionsmaske hat
+      Maske hat oder dass das Objekt in den Objekteigenschaften ein Maskensprite ausgewählt hat. Wie ihre Namen andeuten, werden diese Ereignisse entweder einmalig ausgelöst, wenn die gewählte Maustaste zum ersten Mal gedrückt oder losgelassen wird, oder kontinuierlich bei jedem Schritt, während die Taste
+      beibehalten wird.
+    </p>
+    <p class="dropspot">Die Mauseintritts- und -austrittsereignisse ähneln den Tastenereignissen insofern, als dass sie ebenfalls von der Maske der Instanz abhängen, aber diesmal werden sie ausgelöst, wenn die Maus die Instanz zum ersten Mal &quot;betritt&quot; (berührt) oder wenn die Maus sie &quot;verlässt&quot;
+      (aufhört, die Instanz zu berühren). Diese Ereignisse sind jedoch nicht kontinuierlich, sondern werden nur einmal ausgelöst, wenn die Maus das Objekt betritt oder verlässt - sie sind also eine ideale Methode, um z. B. Schaltflächen zu erstellen, die sich ändern müssen, wenn die Maus
+      Sie sind daher ideal für Schaltflächen, die sich ändern müssen, wenn die Maus über sie fährt, und die sich wieder normalisieren, wenn die Maus entfernt wird.</p>
+    <p class="dropspot">Schließlich haben wir noch einen weiteren Bereich zu den Mausereignissen, der sich <strong>Global Mouse</strong> nennt. In diesem Untermenü finden Sie eine Auswahl von Ereignissen, die zur Aufzeichnung von Mausereignissen in Instanzen dienen, auch wenn sich die Maus nicht über ihnen oder sogar
+      in ihrer Nähe ist. Dies sind Ereignisse, die für <em>alle </em>Instanzen generiert werden, und wenn für das angegebene Ereignis Aktionen oder Code definiert sind, werden diese ausgeführt, unabhängig von der Position der Maus innerhalb des Spielraums.</p>
+    <p class="dropspot">Bitte beachten Sie, dass bei mobilen Geräten oder Geräten mit Touchscreen die linke Maustaste <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> auch zur Prüfung auf einen Fingertab auf einem Touchscreen verwendet werden kann und die rechte Maustaste <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> durch einen Doppeltipp auf den Bildschirm ausgelöst wird (dieses Verhalten kann per Code geändert werden).</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Gestures Icon" src="../../assets/Images/Icons/Icon_Gesture.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#">Gesten</a></p>
+  <div class="droptext" data-targetname="drop-down18">
+    <p class="dropspot">Dieses Ereignis ist dasjenige, das ausgelöst wird, wenn der Benutzer den Bildschirm berührt (auf mobilen Geräten) oder klickt und die Maus bewegt (auf allen anderen Plattformen). Diese Ereignisse sind den Mausereignissen insofern ähnlich, als dass es reguläre Versionen und <em>globale</em> Versionen gibt.
+      Die regulären Versionen dieser Ereignisse werden nur ausgelöst, wenn die Berührungen auf einer Instanz stattfinden, die ein Sprite (oder eine Maske) hat und die Berührungen innerhalb ihrer <a class="glossterm" data-glossterm="Begrenzungsrechteck" href="#">Bounding Box</a> stattfinden. Die globalen
+      Versionen dieser Ereignisse werden jedoch ausgelöst, wenn der Benutzer eine <em>beliebige </em>Stelle auf dem Bildschirm berührt.</p>
+    <p class="dropspot">Die Gestenereignisse erkennen Folgendes:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Tap Icon" class="icon" src="../../assets/Images/Icons/Icon_Tap.png"> <strong>taps </strong>- wenn ein Benutzer schnell klickt/berührt und loslässt</li>
+      <li class="dropspot"><img alt="Drag Icon" class="icon" src="../../assets/Images/Icons/Icon_Drag.png"> <strong>zieht </strong>- wenn ein Benutzer berührt/klickt und es beibehält und dann seinen Finger/Cursor bewegt</li>
+      <li class="dropspot"><img alt="Flick Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Flick.png" width="20"> <strong>flicks </strong>- wenn der Benutzer einen Touch/Klick in einer Bewegung bewegt und loslässt</li>
+      <li class="dropspot"><img alt="Pinch Icon" class="icon" src="../../assets/Images/Icons/Icon_Pinch.png"> <strong>pinches </strong>- wenn der Benutzer zwei Finger auf dem Bildschirm hat und sie dann zusammen/ auseinander bewegt</li>
+      <li class="dropspot"><img alt="Rotate Icon" class="icon" src="../../assets/Images/Icons/Icon_Rotate.png"> <strong>rotiert </strong>- wenn der Benutzer zwei Finger auf dem Bildschirm hat und sie dann um einen Punkt dreht</li>
+    </ul>
+    <p class="dropspot"><img alt="Object Editor Gesture Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Gesture.png">Die verschiedenen Ereignisse enthalten immer eine DS-Map mit der Bezeichnung &quot;<span class="inline">event_data</span>&quot;, die
+      eine Reihe von Schlüssel/Wert-Paaren mit Daten über die Berührungs-/Klickposition und Bewegung enthält. Ausführliche Informationen zu allen verfügbaren Unterereignissen und deren Funktionsweise finden Sie im folgenden Abschnitt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Gesture_Events.htm">Das Gestenereignis</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Other Icon" height="16" src="../../assets/Images/Icons/Icon_Other.png" width="16"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down19" href="#">Andere</a></p>
+  <div class="droptext" data-targetname="drop-down19">
+    <p class="dropspot">Es gibt eine Reihe von speziellen Ereignissen für die Verwendung bei der Erstellung von Spielen mit <span class="notranslate">GameMaker Studio 2</span>. Sie sind meist unter dem Ereignis "Andere" gruppiert und können aus dem Einblendmenü der Unterereignisse ausgewählt werden, das angezeigt wird, wenn Sie dieses auswählen. Hier ist ein
+      Bild all dieser anderen Ereignisse:</p>
+    <p class="dropspot"><img alt="Object Editor Other Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_OtherEvents.png">Weitere Informationen zu den einzelnen Ereignissen, die in der obigen Abbildung aufgeführt sind, finden Sie im folgenden Abschnitt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Other_Events.htm">Die anderen Ereignisse</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Draw Event" src="../../assets/Images/Icons/Icon_Draw.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down20" href="#">Zeichnen</a></p>
+  <div class="droptext" data-targetname="drop-down20">
+    <p class="dropspot">Diese Ereigniskategorie ist diejenige, die bestimmt, was Sie auf dem Bildschirm sehen, wenn Sie Ihr Spiel ausführen, und ist in verschiedene diskrete Ereignisse unterteilt:</p>
+    <p class="dropspot"><img alt="Draw Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Draw.png">Wie Sie sehen können, hat die Ereignis-Kategorie "Zeichnen" mehrere verschiedene Ereignistypen. <strong>Draw Begin</strong>, <strong>Draw </strong>und <strong>Draw End</strong> sind die &quot;Standard&quot;-Zeichenereignisse, die Sie wahrscheinlich am häufigsten verwenden werden. Standardmäßig wird das Hauptereignis "Draw" immer für jede Instanz aufgerufen, unabhängig davon, ob sie ein Sprite hat oder nicht, obwohl, wenn Sie die Instanz als unsichtbar kennzeichnen, das Ereignis
+      nicht ausgelöst wird (denken Sie also daran, wenn Sie Spiellogik im Draw-Ereignis eines unsichtbaren Objekts haben, da diese nicht ausgeführt wird). Das Haupt-Zeichenereignis ist auch der Ort, an dem <span class="notranslate">GameMaker Studio 2</span> das Instanz-Sprite standardmäßig zeichnet, wenn weder Code noch
+      Aktionen im Ereignis gibt (d. h.: Sie haben es nicht in die Ereignisliste für das Objekt aufgenommen). Das Standard-Zeichnen verwendet das Sprite, das mit der Instanz verknüpft ist, und zeichnet dieses mit allen Transformationen, die im Code gesetzt sind, oder mit angewendeten Aktionen.</p>
+    <p class="dropspot">Die normalen Draw-Ereignisse zeichnen <em>vor </em>den <strong>Draw-GUI-Ereignissen </strong>und <em>zwischen </em>den <strong>Pre-Draw- </strong>und <strong>Post-Draw-Ereignissen </strong>, was bedeutet, dass alles, was in diesem Ereignis gezeichnet wird, unter dem
+      des <strong>Draw-GUI-Ereignisses </strong>gezeichnet wird, unabhängig von der Ebene (d. h.: alles, was im Draw-GUI-Ereignis gezeichnet wird, wird immer über allem gezeichnet, was im normalen Draw-Ereignis gezeichnet wird, unabhängig von der Ebenenreihenfolge).</p>
+    <p class="dropspot">Beachten Sie, dass der obige Abschnitt lediglich einen Überblick über die Funktionsweise der Draw-Events gibt, aber alle Details zu allen verfügbaren Unter-Events finden Sie im folgenden Abschnitt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Draw_Events.htm">Das Auslosungsereignis</a></li>
+    </ul>
+    <p> </p>
+    <p> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Async Event" src="../../assets/Images/Icons/Icon_Async.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down21" href="#">Asynchron</a></p>
+  <div class="droptext" data-targetname="drop-down21">
+    <p class="dropspot">Diese Ereigniskategorie ist insofern besonders, als die darin enthaltenen Ereignisse nicht standardmäßig von <span class="notranslate">GameMaker Studio 2</span> ausgelöst werden, sondern durch das Ende einer anderen Aktion, z. B. das Laden einer Datei oder die Antwort eines Web-Servers. Die Kategorie ist unterteilt in die
+      folgende Ereignisse:</p>
+    <p class="dropspot"><img alt="Object Editor Asynchronous Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Async.png" /></p>
+    <p class="dropspot">Nehmen wir also an, Sie wollen eine Bilddatei in <span class="notranslate">GameMaker Studio 2</span> hinzufügen. Nun, Sie würden dies in einem anderen Ereignis (vielleicht dem "Create"-Ereignis) eines Objekts kodieren und dann dieses Objekt einen Ladebalken zeichnen lassen, während Sie warten (zum Beispiel), indem Sie das entsprechende asynchrone
+      Ereignis ab, bis der <a class="glossterm" data-glossterm="Rückruf" href="#">Callback</a> kommt, der <span class="notranslate">GameMaker Studio 2</span> mitteilt, dass die Datei geladen ist. Sie können dann die in diesem Ereignis zurückgegebenen Daten verwenden, um andere Dinge zu tun, z. B. den Raum zu wechseln oder einen Gegenstand zu kaufen.</p>
+    <p class="dropspot">Beachten Sie, dass das oben Gesagte nur ein Überblick über die Funktionsweise des asynchronen Ereignisses ist, aber die vollständigen Details zu allen verfügbaren Unterereignissen finden Sie im folgenden Abschnitt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Async_Events.htm">Asynchrone Ereignisliste</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>Sie sollten auch beachten, dass Sie Ereignisse benennen oder ihnen zumindest einen kurzen beschreibenden Text geben können, der neben ihnen im Event-Editor angezeigt wird. Fügen Sie dazu einfach das Folgende in die allererste Zeile des Code-Editors für das Ereignis ein:</p>
+  <p class="code">/// @description Ihr Text hier</p>
+  <p>Sie könnten also z. B. in einem <strong>Alarm-Ereignis </strong>etwas wie folgt haben</p>
+  <p class="code">/// @description Dies ist der KI-Kampfalarm</p>
+  <p>Und jetzt sehen Sie in Ihrem Event-Editor dies:</p>
+  <p><img alt="Object Editor Named Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_NamedEvents.png" /></p>
+  <p>Für <span class="notranslate">DnD™-Benutzer</span>erfordert das Hinzufügen eines Kommentars die Verwendung der Aktion " <strong>Code ausführen</strong> ", die ganz oben in den Aktionen für das Ereignis platziert werden sollte, vor allem anderen. Wenn Sie diese Aktion hinzufügen, geben Sie ihr dann die gleiche Codezeile
+    die oben gezeigt wird, um das Ereignis zu benennen, z. B:</p>
+  <p><img alt="Naming An Event In DnD" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_DnD_NamedEvents.png">Weitere Informationen zu einigen der oben genannten Ereignisse und zur allgemeinen Reihenfolge der Ereignisse finden Sie in den folgenden Abschnitten:</p>
+  <ul class="colour">
+    <li><a href="Event_Order.htm">Ereignis Bestellung</a></li>
+    <li><a href="Other_Events.htm">Die anderen Ereignisse</a></li>
+    <li><a href="Draw_Events.htm">Die Auslosungsereignisse</a></li>
+    <li><a href="Async_Events.htm">Die asynchronen Ereignisse</a></li>
+    <li><a href="Gesture_Events.htm">Die Gestenereignisse</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Objects.htm">Der Objekteditor</a></div>
+        <div style="float:right">Nächste: Parent-Objekte</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Object Events
+Named Events
+-->
+  <!-- TAGS
+object_events
+-->
+
+</body></html>

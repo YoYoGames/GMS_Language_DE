@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_get_sampler_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_get_sampler_index" />
+  <meta name="rh-index-keywords" content="shader_get_sampler_index" />
+  <meta name="search-keywords" content="shader_get_sampler_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_get_sampler_index</span></h1>
+  <p>Da Sie den Wert eines <span class="notranslate">Shader-Samplers</span> nicht im <span class="notranslate">Shader</span> selbst ändern können, müssen Sie ihn vor dem Aufruf des <span class="notranslate">Shaders</span> mit einer der verfügbaren <strong>Uniform-Set-Funktionen</strong> einstellen. <i>Dazu</i> müssen Sie jedoch
+    müssen Sie jedoch zuerst diese Funktion aufrufen, um das &quot;Handle&quot; des Shader-Samplers zu erhalten, den Sie setzen wollen.</p>
+  <p class="note"><b>HINWEIS</b>: Obwohl ein <span class="notranslate">Shader</span> aus zwei diskreten Programmen (Vertex und Fragment) besteht, unterscheidet diese Funktion nicht zwischen den beiden und gibt das Handle des <span class="notranslate">Shader-Samples</span> aus einem der beiden Programme zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="notranslate">shader_get_sampler_index</span><span class="notranslate">(shader</span>, uniform);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Shader</span></td>
+        <td>Der Index des zu verwendenden <span class="notranslate">Shaders</span>.</td>
+      </tr>
+      <tr>
+        <td>einheitlich</td>
+        <td>Der <span class="notranslate">Shader-Sampler</span>, dessen Handle abgerufen werden soll (eine Zeichenkette).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">glassshader_bgsampler = <span class="notranslate">shader_get_sampler_index</span>(GlassShader, &quot;s_BackgroundSampler&quot;)<br> spr = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(GlassShader</span>);
+    <br> texture_set_stage(glassshader_bgsampler, spr);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Der obige Code holt sich das <i>Handle</i> für den Sampler innerhalb des als &quot;GlassShader<span class="notranslate">&quot;</span> indizierten <span class="notranslate">Shaders</span><span class="notranslate">und</span> setzt dann diese <span class="notranslate">Shader-Konstante</span> auf die angegebene Sprite-Textur.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Shaders.htm"><span class="notranslate">Shader</span></a></div>
+        <div style="float:right">Weiter: <a href="shader_set.htm"><span class="notranslate">shader_set</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_get_sampler_index
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_get_sampler_index
+-->
+</body>
+</html>

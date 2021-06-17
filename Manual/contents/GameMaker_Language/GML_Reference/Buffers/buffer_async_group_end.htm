@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_async_group_end</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_async_group_end" />
+  <meta name="rh-index-keywords" content="buffer_async_group_end" />
+  <meta name="search-keywords" content="buffer_async_group_end" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_async_group_end</h1>
+  <p>Diese Funktion beendet die Definition einer Pufferspeichergruppe. Sie müssen zuvor die Funktion <a href="buffer_async_group_begin.htm"><tt>buffer_async_group_begin()</tt></a> aufrufen, um die Gruppe zu initiieren, und dann die Funktion <a href="buffer_save_async.htm"><tt>buffer_save_async()</tt></a>    für jede Datei auf, die Sie ausspeichern wollen. Schließlich rufen Sie diese Funktion auf, die das Speichern der Dateien startet. Die Funktion gibt einen eindeutigen ID-Wert für die Speicherung zurück, der dann im <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">Ereignis "Asynchrones Speichern/Laden</a> " verwendet werden kann, um die Ergebnisse aus der DS-Map " <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> " zu analysieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_async_group_end();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>Die Funktion <tt>buffer_async_group_end()</tt> kann von jedem Ereignis aus aufgerufen werden, und da sie asynchron ist, kann der Callback fast sofort erfolgen oder mehrere Sekunden dauern. Der Aufruf der Funktion ist einfach und würde in etwa wie folgt aussehen:</p>
+  <p class="code">buffer_async_group_begin(&quot;SaveGame&quot;);<br> save1 = buffer_save_async(buff1, &quot;Player_Save1.sav&quot;, 0, 16384);<br> save2 = buffer_save_async(buff2, &quot;Player_Save2.sav&quot;, 0, 16384);<br> save3 = buffer_save_async(buff3, &quot;Player_Save3.sav&quot;,
+    0, 16384);<br> save4 = buffer_save_async(buff4, &quot;Player_Save4.sav&quot;, 0, 16384);<br> save_id = buffer_async_group_end();</p>
+  <p>Der obige Code startet eine Puffergruppe und setzt sie dann so, dass 4 Dateien asynchron gespeichert werden. Die Gruppendefinition wird dann beendet (zu diesem Zeitpunkt beginnt das Speichern), wobei die ID des Funktionsaufrufs in der Variablen &quot; save_id<i>&quot;</i> gespeichert wird<i>.</i> Wenn das Speichern
+    abgeschlossen ist, wird das asynchrone Speichern/Laden-Ereignis ausgelöst, und Sie können die <tt>async_load-Map</tt> nach der korrekten ID der Funktion parsen, etwa so:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == saveid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == false<br> {
+    <br> show_debug_message(&quot;Speichern fehlgeschlagen!&quot;);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft zunächst die ID der erstellten DS-Map, dann den Status des Callbacks und gibt eine Debug-Meldung aus, wenn es Probleme gab.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_copy.htm">buffer_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_async_group_end
+-->
+  <!-- TAGS
+buffer_async_group_end
+-->
+</body>
+</html>

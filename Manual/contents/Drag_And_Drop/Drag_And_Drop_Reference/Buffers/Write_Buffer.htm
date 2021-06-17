@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Schreibpuffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Write Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Write Buffer" />
+  <meta name="search-keywords" content="Write Buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Write Buffer Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Write_Buffer.png" width="32"> Schreibpuffer</h1>
+  <p>Diese Aktion kann verwendet werden, um Daten in einen Puffer zu schreiben. Sie geben die eindeutige Puffer-ID an, in die geschrieben werden soll (wie von der Aktion " <a href="Create_Buffer.htm">Puffer erstellen</a>" zurückgegeben) und dann den zu schreibenden Wert, der entweder ein Real oder ein String sein kann, aber beachten Sie, dass
+    Beachten Sie jedoch, dass <b>alle Werte als Zeichenketten gespeichert werden</b>. Wenn Sie also aus dem Puffer lesen (mit <a href="Read_Buffer.htm">Puffer lesen</a>), müssen Sie eventuell eine der <a href="../Data_Types/Data_Type_Actions.htm">Datentyp-Aktionen</a> verwenden, um den Wert von einer Zeichenkette
+    zurück in den ursprünglichen Wert zu konvertieren. Denken Sie auch daran, dass Puffer <i>sequentiell</i> gelesen und beschrieben werden, so dass das Schreiben in einen Puffer die &quot;Suchposition&quot; um eins verschiebt, was bedeutet, dass Sie zum Schreiben verschiedener Daten einfach die Aktion
+    so oft wie nötig aufrufen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Write Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Write_Buffer.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Pufferindex (gespeichert in einer Variablen)</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der Wert, der in den Puffer eingefügt werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Write Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Create_Buffer.png">Der obige Code des Aktionsblocks erstellt eine globale Variable und dann einen Puffer, indem er die eindeutige
+    Puffer-ID an die Variable. In diesen Puffer werden dann zwei Daten geschrieben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffer_Actions.htm">Puffer-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Get_Buffer_Size.htm">Puffer suchen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Write Buffer
+-->
+  <!-- TAGS
+action_buffer_write
+-->
+</body>
+</html>

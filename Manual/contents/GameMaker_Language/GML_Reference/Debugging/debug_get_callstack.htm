@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>debug_get_callstack</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for debug_get_callstack" />
+  <meta name="rh-index-keywords" content="debug_get_callstack" />
+  <meta name="search-keywords" content="debug_get_callstack" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>debug_get_callstack</h1>
+  <p>Diese Funktion erzeugt ein Array von Strings als &quot;Callstack&quot;, in dem das aktuelle Skript zuerst aufgelistet wird und dann alle anderen Skripte, die in der Reihenfolge ausgeführt wurden, in der das aktuelle Skript ausgeführt wird. Das genaue String-Format variiert je nach
+    Das genaue String-Format variiert je nach gewählter Zielplattform, enthält aber meist den Skript-/Ereignisnamen, dann einen Doppelpunkt : und die Zeilennummer, ähnlich wie hier:</p>
+  <p class="code"><tt>&quot;gml_Script_script2:1&quot;<br>
+&quot;gml_Script_script1:32&quot;<br>
+&quot;gml_Script_script0:64&quot;<br>
+&quot;gml_Object_object0_Create_0:1&quot;</tt></p>
+  <p>Die Funktion erlaubt die Übergabe eines optionalen Arguments, das die maximale Tiefe des zurückgegebenen Aufrufstapels angibt. Dieser Wert ist die Anzahl der Skripte, die in dem zurückgegebenen Array enthalten sind, beginnend mit dem aktuellen Skript. Wenn dieses Argument nicht
+    angegeben wird, dann wird der vollständige Aufrufstapel zurückgegeben.</p>
+  <p>Beachten Sie, dass das zurückgegebene Array an der letzten Position, nach Auflistung der Callstack-Skripte, immer 0 enthält.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">debug_get_callstack([maxdepth])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>[maxdepth]</td>
+        <td>Die maximale Tiefe des Aufrufstapels</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4><b>Beispiel:</b></h4>
+  <p class="code">if debug_mode<br> {
+    <br> if keyboard_check(vk_escape)<br> {
+    <br> var _a = debug_get_callstack(4);<br> for (var i = 0; i &lt; array_length_id(_a); ++i;) <br> {
+    <br> show_debug_message(_a[i]);
+    <br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob der Debug-Modus aktiviert ist und wenn ja, prüft er, ob eine Taste gedrückt gehalten wird. In diesem Fall gibt er den aktuellen Aufrufstapel auf der Konsole aus, mit einer maximalen Tiefe von 4.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Debugging.htm">Fehlersuche</a></div>
+        <div style="float:right">Weiter: <a href="exception_unhandled_handler.htm">exception_unhandled_handler</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+debug_get_callstack
+-->
+  <!-- TAGS
+debug_get_callstack
+-->
+</body>
+</html>

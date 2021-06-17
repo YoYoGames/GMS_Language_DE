@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pfad_Aktion</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_endaction" />
+  <meta name="rh-index-keywords" content="path_endaction" />
+  <meta name="search-keywords" content="path_endaction,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pfad_Aktion</h1>
+  <p>Diese Variable kann verwendet werden, um die Reaktion einer Instanz zu erhalten oder zu ändern, wenn sie das Ende des aktuellen Pfades erreicht. Normalerweise würden Sie diese setzen, wenn Sie den Pfad mit <a href="../path_start.htm"><tt>pfad_start()</tt></a> aber
+    können Sie dieses Verhalten in Abhängigkeit von einer beliebigen Anzahl von Ereignissen in Ihrem Spiel ändern. Die verfügbaren Werte werden durch die folgenden Konstanten ausgedrückt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>pfad_action_stop</td>
+        <td>den Weg anhalten</td>
+      </tr>
+      <tr>
+        <td>pfad_aktion_neustart</td>
+        <td>von der Startposition aus fortfahren und zum Start springen, wenn der Pfad nicht geschlossen ist</td>
+      </tr>
+      <tr>
+        <td>Pfad_Aktion_Weiter</td>
+        <td>den Weg ab der aktuellen Position neu beginnen</td>
+      </tr>
+      <tr>
+        <td>Pfad_Aktion_Umkehr</td>
+        <td>die Geschwindigkeit des Pfades umkehren (den Pfad in umgekehrter Richtung fahren)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_endaction;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Konstante (siehe Beschreibung)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p></p>
+  <p class="code">if (pfad_endaction == pfad_action_stop)<br> {
+    <br> path_endaction = path_action_reverse;<br> }
+  </p>
+  <p>Der obige Code prüft die Endaktion des Pfades und wenn diese auf "Stop" gesetzt ist, wird die Endaktion in "Reverse" geändert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Variables.htm">Pfadvariablen</a></div>
+        <div style="float:right">Weiter: <a href="../path_start.htm">path_start</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_endaction
+path_action_stop
+path_action_restart
+path_action_continue
+path_action_reverse
+-->
+  <!-- TAGS
+path_endaction
+-->
+</body>
+</html>

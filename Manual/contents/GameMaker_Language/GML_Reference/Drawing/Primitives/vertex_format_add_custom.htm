@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_format_add_custom</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_format_add_custom" />
+  <meta name="rh-index-keywords" content="vertex_format_add_custom,vertex_type_float1,vertex_type_float2,vertex_type_float3,vertex_type_float4,vertex_type_colour,vertex_type_ubyte4,vertex_usage_position,vertex_usage_colour,vertex_usage_normal,vertex_usage_textcoord,vertex_usage_blendweight,vertex_usage_blendindices,vertex_usage_depth,vertex_usage_tangent,vertex_usage_binormal,vertex_usage_fog,vertex_usage_sample" />
+  <meta name="search-keywords" content="vertex_format_add_custom,vertex_type_float1,vertex_type_float2,vertex_type_float3,vertex_type_float4,vertex_type_colour,vertex_type_ubyte4,vertex_usage_position,vertex_usage_colour,vertex_usage_normal,vertex_usage_textcoord,vertex_usage_blendweight,vertex_usage_blendindices,vertex_usage_depth,vertex_usage_tangent,vertex_usage_binormal,vertex_usage_fog,vertex_usage_sample" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_format_add_custom</h1>
+  <p>Mit dieser Funktion können Sie einen benutzerdefinierten Datentyp für bestimmte Scheitelpunktformatattribute als Teil des neu zu erstellenden Scheitelpunktformats verwenden. Die verfügbaren Werte, die verwendet werden können, werden durch die unten aufgeführte Datentypkonstante definiert, die Sie auswählen:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>vertex_type_float1</td>
+        <td>Ein einzelner Fließkommawert</td>
+      </tr>
+      <tr>
+        <td>vertex_type_float2</td>
+        <td>Zwei Fließkommawerte</td>
+      </tr>
+      <tr>
+        <td>vertex_type_float3</td>
+        <td>Drei Fließkommawerte</td>
+      </tr>
+      <tr>
+        <td>vertex_type_float4</td>
+        <td>Vier Fließkommawerte</td>
+      </tr>
+      <tr>
+        <td>vertex_type_colour</td>
+        <td>Vier Komponentenwerte (r, g, b, a)</td>
+      </tr>
+      <tr>
+        <td>vertex_type_ubyte4</td>
+        <td>Vier Komponenten Byte-Werte ohne Vorzeichen (von 0 bis 255)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Die Verwendung dieser Konstanten muss ebenfalls definiert werden, damit die Werte innerhalb des <span class="notranslate">zu erstellenden</span> Shaders richtig &quot;gebunden&quot; werden können. Dies ist notwendig, da DX und OpenGL unterschiedliche Anforderungen haben.
+    Wenn Sie die Werte nicht richtig binden, werden sie im Shader nicht richtig dargestellt. Die verfügbaren Verwendungskonstanten, die Sie wählen können, sind unten aufgelistet und die, die Sie verwenden, hängen von den Besonderheiten des zu erstellenden <span class="notranslate">Shaders</span> ab:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>vertex_verwendung_position</td>
+        <td>Positionswerte (x, y, z)</td>
+      </tr>
+      <tr>
+        <td>vertex_verwendung_farbe</td>
+        <td>Farbwerte (r, g, b, a)</td>
+      </tr>
+      <tr>
+        <td>Scheitelpunkt_Verwendung_normal</td>
+        <td>Scheitelnormalwerte (nx, ny, nz)</td>
+      </tr>
+      <tr>
+        <td>vertex_verwendung_textkoordinate</td>
+        <td>UV-Koordinaten (u, v)</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_blendweight</td>
+        <td>das Blendgewicht der Eingangsmatrix (z. B. für Skelettanimation)</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_blendindices</td>
+        <td>die Indizes der zu verwendenden Matrizen (z. B. für Skelettanimationen)</td>
+      </tr>
+      <tr>
+        <td>vertex_nutzen_tiefe</td>
+        <td>Scheitelpunkttiefen-Pufferwert</td>
+      </tr>
+      <tr>
+        <td>vertex_benutzung_tangente</td>
+        <td>Tangentenwerte</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_binormal</td>
+        <td>binormale Werte</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_fog</td>
+        <td>Nebelwerte</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_sample</td>
+        <td>Probenehmer-Index</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Bei der Verwendung solcher benutzerdefinierten Formate gibt es einige wichtige Dinge zu beachten:</p>
+  <ul class="colour">
+    <li>Die Funktion <tt>vertex_format_add_custom()</tt> unterstützt <tt>vertex_usage_position</tt>, <tt>vertex_usage_colour</tt>, <tt>vertex_usage_normal</tt> und <tt>vertex_usage_textcoord</tt> nur bei Verwendung von <span class="notranslate">GLSL-Shadern</span>. Diese werden auf die <span class="notranslate">Shader-Attribute</span> 
+     <tt>in_Position</tt>, <tt>in_Colour[0 - ...]</tt>, <tt>in_Normal</tt> (alles, was nicht eines dieser drei Attribute ist - z. B. Texturkoordinaten - kann auf jedes von Ihnen definierte Attribut abgebildet werden).</li>
+    <li>Im Allgemeinen sollten Sie, wenn möglich, <tt>vertex_usage_textcoord</tt> für alle zusätzlichen Parameter verwenden, da Typen wie <tt>vertex_usage_blendweight</tt> und <tt>vertex_usage_tangent</tt> in den meisten <span class="notranslate">Shader-Sprachen</span> so gut wie veraltet sind und wahrscheinlich nicht
+      richtig konvertieren. Verwenden Sie stattdessen <tt>vec</tt>, <tt>vec2</tt>, <tt>vec3</tt> oder <tt>vec4</tt> Typen <tt>vertex_usage_textcoord</tt> und alles sollte gut funktionieren.</li>
+    <li>GLSL ES unterstützt <i>keine</i> Integer-Attribute, daher funktioniert die Übergabe von <tt>ivec4</tt>'s nicht (dieser Typ wird normalerweise bei der Übergabe von vertex_usage_blendindices verwendet <tt>).</tt> Sie müssen Texturkoordinaten übergeben und diese dann im
+     <span class="notranslate">Shader</span> wie folgt in <tt>ivec4</tt> konvertieren:</li>
+  </ul>
+  <p> </p>
+  <p class="code">attribute vec3 in_Position;<br> attribute vec4 in_BlendIndices;<br> attribute vec4 in_BlendWeights;<br>
+    <br> varying vec4 v_vColour;<br> varying mat4 v_mat;<br>
+    <br> void main()<br> {
+    <br> gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * vec4( in_Position.xyz, 1.0);<br> v_vColour = in_BlendWeights;<br> ivec4 t = ivec4(in_BlendIndices);<br> v_mat = gm_Matrices[ t.x ];<br> }
+  </p>
+  <ul class="colour">
+    <li>Überblendungsgewichte werden normalerweise in einem Array gespeichert und dann über Überblendungsindizes aufgerufen, aber Sie können hier sehen, dass <tt>in_BlendIndices</tt> nicht als <tt>ivec4-Attribut</tt> definiert ist, sondern ein vec4 <tt>, der</tt> dann <tt>im</tt> Code in einen ivec4
+      dem Code. Dies wird dann verwendet, um das mit der <tt>gm_Matrix</tt> erstellte Array zu indizieren (Sie können nur mit einem <tt>INT-Wert</tt> auf ein Array zugreifen - nicht mit einem Float).</li>
+    <br />
+  </ul>
+  <h4>Syntax:</h4>
+  <p class="code">vertex_format_add_custom(type, usage);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Datentyp, den diese benutzerdefinierten Scheitelpunktdaten enthalten werden (siehe die <b><i>Typ-Konstanten</i></b> unten aufgeführt).</td>
+      </tr>
+      <tr>
+        <td>Verwendung</td>
+        <td>Die Verwendung, die die Daten erhalten werden (siehe die <b><i>Verwendungskonstanten</i></b> unten aufgeführt).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_textcoord();
+    <br> vertex_format_add_custom(vertex_type_float3, vertex_usage_position);<br> my_format = vertex_format_end();</p>
+  <p>Der obige Code erstellt ein neues Vertex-Format mit nur Textur und 3 benutzerdefinierten Fließkommawerten für die Position. Er speichert dann die Format-ID in der Variablen &quot;my_format&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Primitives_And_Vertex_Formats.htm">Primitive und Vertex-Formate</a></div>
+        <div style="float:right">Weiter: <a href="vertex_format_end.htm">vertex_format_end</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_format_add_custom
+vertex_type_float1
+vertex_type_float2
+vertex_type_float3
+vertex_type_float4
+vertex_type_colour
+vertex_type_ubyte4
+vertex_usage_position
+vertex_usage_colour
+vertex_usage_normal
+vertex_usage_textcoord
+vertex_usage_blendweight
+vertex_usage_blendindices
+vertex_usage_depth
+vertex_usage_tangent
+vertex_usage_binormal
+vertex_usage_fog
+vertex_usage_sample
+-->
+  <!-- TAGS
+vertex_format_add_custom
+-->
+
+</body></html>

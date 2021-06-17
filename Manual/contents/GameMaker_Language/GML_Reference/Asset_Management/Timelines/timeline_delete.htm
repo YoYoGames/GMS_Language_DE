@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>zeitleiste_löschen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_delete" />
+  <meta name="rh-index-keywords" content="timeline_delete" />
+  <meta name="search-keywords" content="timeline_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>zeitleiste_löschen</h1>
+  <p>Mit dieser Funktion können Sie eine beliebige Zeitleiste aus Ihrem Spiel löschen. Wenn diese Zeitleiste im Asset Browser von <span class="notranslate">GameMaker Studio 2</span> erstellt wurde, beachten Sie bitte, dass sie vollständig aus dem Spiel entfernt wird und der Versuch, die indizierte
+    Zeitleiste erneut aufzurufen, nachdem Sie diese Funktion verwendet haben, führt zu einem Fehler. Wurde die Zeitleiste dynamisch mit der <a href="timeline_add.htm"><tt>timeline_add()</tt></a> Funktion dynamisch erstellt wurde, dann sollte diese Funktion in dem Moment verwendet werden
+    wenn die Zeitleiste nicht mehr benötigt wird, um Speicherlecks zu vermeiden, die Ihr Spiel verlangsamen (und schließlich zum Absturz bringen) könnten.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">timeline_delete(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index der zu löschenden Zeitleiste.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if timeline_exists(global.tl)<br> {<br> timeline_delete(global.tl);<br> }</p>
+  <p>Der obige Code prüft, ob eine Zeitleiste existiert und in der globalen Variablen &quot;tl&quot; indiziert ist, und wenn ja, dann wird diese Zeitleiste gelöscht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Timelines.htm">Timelines</a></div>
+        <div style="float:right">Weiter: <a href="timeline_moment_add_script.htm">timeline_moment_add_script</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_delete
+-->
+  <!-- TAGS
+timeline_delete
+-->
+</body>
+</html>

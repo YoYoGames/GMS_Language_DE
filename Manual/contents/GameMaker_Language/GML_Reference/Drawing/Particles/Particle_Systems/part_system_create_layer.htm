@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_create_layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_create_layer" />
+  <meta name="rh-index-keywords" content="part_system_create_layer" />
+  <meta name="search-keywords" content="part_system_create_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_system_create_layer</h1>
+  <p>Diese Funktion erzeugt ein neues Partikelsystem auf einem gegebenen Layer. Sie geben die eindeutige Layer-ID, wie sie von der Funktion <a href="../../../Asset_Management/Rooms/General_Layer_Functions/layer_create.htm"><tt>schicht_erzeugen()</tt></a> oder den Namen der
+    der Ebene als Zeichenkette an - z. B. &quot;instance_layer&quot; - und kennzeichnen dann das System als persistent oder nicht. Wenn das System nicht als dauerhaft gekennzeichnet ist, wird es am Ende des Raums, in dem es erstellt wurde, automatisch zerstört
+    (dies ist dasselbe, als hätten Sie die Funktion <a href="part_system_destroy.htm"><tt>part_system_destroy()</tt></a> aufgerufen hätten, und es werden auch alle mit dem System verbundenen Emitter zerstört). Wenn es jedoch als persistent gekennzeichnet ist, wird das System
+    Wenn der folgende Raum <i>keine</i> Ebene mit dem gleichen Namen oder der gleichen Tiefe wie die zugewiesene Ebene hat, wird eine neue Ebene für das System erstellt, die über die Räume hinweg bestehen bleibt.
+    denselben Namen wie die ursprüngliche Ebene. Wenn beim Wechseln von Räumen in den folgenden Räumen eine andere Ebene mit demselben Namen vorhanden ist, wird die persistierte Instanz der Ebene mit diesem Namen zugewiesen <i>, unabhängig von der Tiefe der Ebene</i>. Zum Schluss,
+    Wenn schließlich ein persistiertes System in einen Raum mit einer Ebene in der gleichen Tiefe wie die Ebene, auf der das System erstellt wurde, wechselt, wird es <i>nicht</i> dieser Ebene zugewiesen, sondern es wird eine neue Ebene in der gleichen Tiefe (mit dem gleichen Namen wie die ursprüngliche
+    Ebene).</p>
+  <p>Die Funktion gibt einen eindeutigen ID-Wert für das Partikelsystem zurück, der in allen weiteren Funktionsaufrufen verwendet werden sollte, bei denen Sie eine System-ID angeben müssen.</p>
+  <p class="note"><b>WICHTIG!</b> Wenn Sie das Partikelsystem als persistent kennzeichnen, müssen Sie es (und alle ihm zugewiesenen Emitter) manuell mit den entsprechenden Zerstörungsfunktionen bereinigen, wenn es nicht verwendet wird, sonst riskieren Sie ein Speicherleck, das sich negativ
+    das endgültige Spiel auswirkt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_system_create_layer(layer_id, persistent);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ebene</td>
+        <td>Der Layer-ID-Wert oder String, dem das Partikelsystem zugewiesen werden soll (kann ein beliebiger Layertyp sein)</td>
+      </tr>
+      <tr>
+        <td>beständig</td>
+        <td>Kennzeichnet das Partikelsystem als persistent (auf <tt>true</tt> gesetzt) oder nicht (auf <tt>false</tt> gesetzt)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (eindeutiger Partikelsystem-ID-Wert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.p_sys = part_system_create_layer(&quot;effects_layer&quot;, true);</p>
+  <p>Der obige Code erstellt ein neues Partikelsystem auf der angegebenen Ebene und kennzeichnet es als dauerhaft für nachfolgende Räume. Die ID für das Partikelsystem wird in einer globalen Bereichsvariablen für zukünftige Referenzen gespeichert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Systems.htm">Partikel-Systeme</a></div>
+        <div style="float:right">Weiter: <a href="part_system_get_layer.htm">part_system_get_layer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_create_layer
+-->
+  <!-- TAGS
+part_system_create_layer
+-->
+</body>
+</html>

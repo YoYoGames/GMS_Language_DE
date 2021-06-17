@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teil_art_leben</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_life" />
+  <meta name="rh-index-keywords" content="part_type_life" />
+  <meta name="search-keywords" content="part_type_life" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teil_art_leben</h1>
+  <p>Dies ist die Funktion, die bestimmt, wie lange jedes einzelne Partikel des angegebenen Typs auf dem Bildschirm bleibt. Wie bei anderen Partikelfunktionen geben Sie einen Minimal- und einen Maximalwert (in Schritten) an, und jede Partikel-Lebensdauer wird eine zufällige Anzahl
+    von Schritten innerhalb des angegebenen Bereichs. Um alle Partikel mit der gleichen Lebensdauer zu haben, stellen Sie die beiden Werte gleich ein.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_type_life(ind, life_min, life_max);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu ändernden Partikeltyps.</td>
+      </tr>
+      <tr>
+        <td>Lebensdauer_min</td>
+        <td>Die Mindestlebensdauer der Partikel.</td>
+      </tr>
+      <tr>
+        <td>Lebensdauer_max</td>
+        <td>Die maximale Lebensdauer der Partikel.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">part_type_life(part_Flare, room_speed, room_speed * 2);</p>
+  <p>Der obige Code setzt alle erzeugten Partikel des in der Variablen &quot;part_Flare&quot; indizierten Partikeltyps auf eine Lebensdauer zwischen 1 und 2 Sekunden, basierend auf der aktuellen Raumgeschwindigkeit.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Types.htm">Partikel-Typen</a></div>
+        <div style="float:right">Weiter: <a href="part_type_step.htm">part_type_step</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_life
+-->
+  <!-- TAGS
+part_type_life
+-->
+</body>
+</html>

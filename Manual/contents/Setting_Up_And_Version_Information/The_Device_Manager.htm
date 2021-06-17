@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Der Geräte-Manager</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section dedicated explaining the Device Manager
+" />
+  <meta name="rh-index-keywords" content="Device Manager" />
+  <meta name="search-keywords" content="Device Manager,device,device setup" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Geräte-Manager</h1>
+  <p>Der <strong>Geräte-Manager</strong> wird durch Klicken auf <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf die Bleistift-Schaltfläche <img alt="Icon Pencil" class="icon" src="../assets/Images/Icons/Icon_Pencil.png"> innerhalb der <a href="../Introduction/Compiling.htm">Zielliste</a> aufgerufen:</p>
+  <p><img alt="Target List" class="center" src="../assets/Images/Setup_And_Version/TargetList.png">Wenn Sie auf diese Schaltfläche klicken, wird der <strong>Geräte-Manager</strong> geöffnet, in dem Sie verschiedene Geräte für die Zielplattformen konfigurieren können, die Sie kompilieren und testen möchten.
+    und testen möchten (beachten Sie, dass die verfügbaren Plattformen von Ihrer <a href="GMS2_Version_Information.htm">Lizenz</a> abhängen und möglicherweise nicht alle sichtbar sind). Im Folgenden finden Sie Details zur Konfiguration von Geräten für jede der Zielplattformen:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="notranslate">Android</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_Android.png" src="../assets/Images/Setup_And_Version/Device_Manager_Android.png" class="center" alt="Android Device Manager"> Hier können Sie auf die Schaltfläche
+     <em>Neues Gerät hinzufügen</em> klicken, um ein neues <span class="notranslate">Android-Gerät</span> manuell zur Liste hinzuzufügen, oder Sie können auf die Schaltfläche
+     <em>Gerät erkennen</em> klicken, damit <span class="notranslate">GameMaker Studio 2</span> automatisch alle Geräte erkennt, die über eine Kabelverbindung angeschlossen sind. Sie können auch ein
+     <strong><span class="notranslate">Android</span></strong> Virtual Device einrichten, indem Sie auf die Schaltfläche
+     <em>AVD ausführen</em>. Dadurch wird der <span class="notranslate">Android</span> Virtual Device Manager geöffnet, in dem Sie ein neues AVD erstellen können (siehe
+     <a href="https://developer.android.com/studio/run/managing-avds.html">hier</a> für weitere Informationen). Sobald Sie ein AVD erstellt haben, müssen Sie es aus dem AVD-Manager starten und dann in <span class="notranslate">GameMaker Studio 2</span> auf die Schaltfläche
+     <em>Gerät erkennen</em> klicken und es sollte automatisch zur Geräteliste hinzugefügt werden:
+     <br></p>
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_AVD.png" src="../assets/Images/Setup_And_Version/Device_Manager_AVD.png" alt="Android Virtual Device" class="center"> Sobald Sie ein Gerät (physisch oder virtuell) hinzugefügt haben,
+      können Sie dann die Verbindung über die Schaltfläche
+      Schaltfläche <em>Verbindung testen</em> überprüfen oder es wieder aus der Liste entfernen, indem Sie die
+       Schaltfläche <em> Gerät entfernen</em>.</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">HTML5</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">
+      <img alt="HTML5 Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_HTML5.png"> Der HTML5-Gerätemanager dient dazu, verschiedene Browser zur Geräteliste hinzuzufügen, um sie bei der Ausführung anzusprechen. Für den Anfang sollten Sie
+      auf die Schaltfläche
+     <em>Browser erkennen</em> klicken, wodurch Geräte für jeden der auf Ihrem Rechner installierten Browser erstellt werden sollten. Wenn Ihr Browser nicht aufgelistet ist, können Sie auch auf die Schaltfläche
+     <em>Neuen Browser hinzufügen</em> klicken und dann dem Gerät einen Namen geben und <span class="notranslate">GameMaker Studio 2</span> auf den Pfad für die ausführbare Datei des Browsers verweisen.</p>
+    <p class="dropspot">Die zusätzlich verfügbaren Felder können eingerichtet werden, um zu steuern, wie der Browser Ihre Projekte ausführt, wobei die folgenden Optionen zur Verfügung stehen:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>Browser-Befehlszeilenargumente</strong>: Hier können Sie beliebige Kommandozeilenargumente eintragen, die an den Browserpfad angehängt werden sollen. Eine Liste dieser Argumente finden Sie unter den folgenden Links zu den wichtigsten gängigen Browsern:
+        <ul>
+          <li>
+            <a href="https://peter.sh/experiments/chromium-command-line-switches/">Chromium (Chrom)</a></li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options">Firefox</a></li>
+          <li>
+            <a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/general-info/hh826025(v=vs.85)">Internet Explorer</a></li>
+        </ul>
+      </li>
+      <li class="dropspot">
+       <strong>Web-Server-Adresse</strong>: Die Adresse des Webservers
+       <a data-glossterm="Server" class="glossterm" href="#">Servers</a> (Standard ist 127.0.0.1). Möglicherweise müssen Sie dies je nach den Spezifikationen der verschiedenen APIs ändern, z. B. muss dies für Facebook auf
+        <span class="inline">http://localhost</span> gesetzt werden (und dann in der App-Konsole auf die Whitelist gesetzt werden).</li>
+      <li class="dropspot">
+       <strong>Webserver-Port</strong>: Legen Sie die
+       <a data-glossterm="Portnummer" class="glossterm" href="#">Portnummer</a> für den Webserver ein (Standard ist 51264).</li>
+      <li class="dropspot">
+       <strong>Erlaubte Webserver-IPs / CIDR-IP-Bereiche</strong>: Stellen Sie die erlaubten Webserver, Hostnamen und CIDR-IP-Bereiche nach Bedarf ein.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="notranslate">iOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_iOS.png" src="../assets/Images/Setup_And_Version/Device_Manager_iOS.png" class="center" alt="iOS Device Manager"> Bevor Sie Ihre <span class="notranslate">iOS-Geräte</span> einrichten können, müssen Sie
+      müssen Sie Ihr Mac-Gerät einrichten und dessen Verbindung testen (siehe unten für Details). Sobald das geschehen ist, können Sie den Mac, den Sie ansteuern möchten, aus dem Dropdown-Menü oben im Fenster auswählen und dann auf die Schaltfläche
+     <em>Gerät erkennen</em> klicken, damit <span class="notranslate">GameMaker Studio 2</span> automatisch alle angeschlossenen <span class="notranslate">iOS-Geräte</span>, einschließlich Simulatoren, findet. Sobald eine Verbindung besteht, werden die Gerätedetails in der Liste in diesem Fenster angezeigt, und Sie können den Gerätenamen bearbeiten, um ihn benutzerfreundlicher zu gestalten (diese Änderung wirkt sich auf den Namen aus).
+      Sie können den Gerätenamen bearbeiten, um ihn benutzerfreundlicher zu gestalten (diese Änderung wirkt sich nur darauf aus, wie das Gerät im Target Manager dargestellt wird, und auf nichts anderes).</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="notranslate">tvOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_tvOS.png" src="../assets/Images/Setup_And_Version/Device_Manager_tvOS.png" class="center" alt="tvOS Device Manager"> Bevor Sie Ihre <span class="notranslate">tvOS-Geräte</span> einrichten können, müssen Sie
+      Ihr Mac-Gerät eingerichtet und seine Verbindung getestet haben (siehe unten für Details). Sobald das geschehen ist, können Sie den Mac, den Sie ansteuern möchten, aus dem Dropdown-Menü oben im Fenster auswählen und dann auf die Schaltfläche
+     <em>Gerät erkennen</em> klicken, damit <span class="notranslate">GameMaker Studio 2</span> automatisch alle angeschlossenen <span class="notranslate">tvOS-Geräte</span>, einschließlich Simulatoren, findet. Sobald die Verbindung hergestellt ist, werden die Gerätedetails in der Liste in diesem Fenster angezeigt, und Sie können den Gerätenamen bearbeiten, um ihn benutzerfreundlicher zu gestalten (diese Änderung wirkt sich auf die
+      Sie können den Gerätenamen bearbeiten, um ihn benutzerfreundlicher zu gestalten (diese Änderung wirkt sich nur darauf aus, wie das Gerät im Target Manager dargestellt wird, und auf nichts anderes).</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span class="notranslate">macOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_Mac.png" src="../assets/Images/Setup_And_Version/Device_Manager_Mac.png" class="center" alt="Mac Device Manager"> Um ein Mac-Gerät zum Manager hinzuzufügen, müssen Sie zunächst auf
+      auf die Schaltfläche mit der Aufschrift
+     <em>Neues Gerät hinzufügen</em> klicken, wodurch das Gerät hinzugefügt wird und einige leere Felder erstellt werden, die Sie ausfüllen müssen, um die Verbindung zu aktivieren.
+     <br></p>
+    <p class="dropspot">Zuerst müssen Sie
+      das Gerät <strong>benennen </strong>, damit Sie es in der Zielliste identifizieren können, und geben dann den
+     <strong>Hostnamen</strong> (oder IP) des Macs angeben. Anschließend müssen Sie den
+     <strong>Benutzernamen </strong>des Benutzers, mit dem Sie eine Verknüpfung herstellen möchten, und das
+     <strong>Kennwort </strong>, das sie verwendet haben. Wenn Sie möchten, können Sie auch den
+     <strong>Installationsordner</strong> auf dem Mac dorthin ändern, wo <span class="notranslate">GameMaker Studio 2</span> die Build-Dateien für Ihre Projekte speichern soll.</p>
+    <p class="dropspot">Wenn das alles erledigt ist, können Sie auf die Schaltfläche
+     <em>Verbindung testen</em> klicken, um sicherzustellen, dass <span class="notranslate">GameMaker Studio 2</span> mit dem Mac kommunizieren kann.</p>
+    <p class="note">
+     <strong>HINWEIS</strong>: Wenn Sie für <span class="notranslate">iOS</span> entwickeln, müssen Sie dies zuerst getan haben und eine funktionierende Verbindung zu dem Mac herstellen, den Sie für die Entwicklung verwenden möchten.
+     <br></p>
+    <p class="note">
+     <strong>HINWEIS</strong>: Sie
+     <strong>müssen </strong>aktiviert haben
+     <strong>Remote-Anmeldung</strong> auf dem Ziel-Mac aktiviert haben. Dies können Sie tun, indem Sie zu
+     <strong>Voreinstellungen </strong>-&gt;
+     <strong>Freigabe</strong> und
+     <strong>Aktivieren Sie Remote Login</strong> für den Benutzer, der sich anmelden können soll.</p>
+    <p class="dropspot"></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot"><img alt="Ubuntu (Linux) Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_Ubuntu.png">Um ein <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)-Gerät zum Manager hinzuzufügen, müssen Sie zunächst auf die Schaltfläche <em>Neues Gerät hinzufügen </em>klicken.
+      Dadurch wird das Gerät hinzugefügt und es werden einige leere Felder erstellt, die Sie ausfüllen müssen, um die Verbindung zu aktivieren.</p>
+    <p class="dropspot">Zuerst müssen Sie das Gerät <strong>benennen </strong>, damit Sie es in der Zielliste identifizieren können, und dann den <strong>Hostnamen</strong> (oder die IP) des <span class="notranslate">Ubuntu-Rechners</span> (oder der VM) angeben. Dann müssen Sie den <strong>Benutzernamen </strong>des Benutzers angeben, den
+      Sie verknüpfen möchten, und das <strong>Kennwort </strong>, das sie verwendet haben. Außerdem müssen Sie einen <strong>Installationsordner </strong>auf dem <span class="notranslate">Ubuntu-Rechner</span> angeben, den Sie für die Installation Ihrer Projekte verwenden möchten. Wenn das alles erledigt ist, können Sie auf
+      auf die Schaltfläche <em>Verbindung testen</em>, um sicherzustellen, dass <span class="notranslate">GameMaker Studio 2</span> mit dem <span class="notranslate">Ubuntu-Rechner</span> kommunizieren kann.</p>
+    <p class="dropspot">Beachten Sie, dass die endgültige ausführbare Datei, die von <span class="notranslate">GameMaker</span> erstellt wird, <strong>von der Architektur des angepeilten Geräts abhängt</strong>, die entweder <strong>x64</strong> oder <strong>ARM</strong> sein kann. Wenn Sie zum Beispiel einen Raspberry Pi 3 oder 4 anschließen,
+      wird die erstellte ausführbare Datei eine 32-Bit-ARM-Datei sein, und wenn Sie einen <span class="notranslate">Linux-PC</span> anschließen, wird es eine 64-Bit-x64-Datei sein.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#"><span class="notranslate">Windows UWP</span></a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">Bevor Sie ein Gerät für das <span class="notranslate">Windows 10</span> UWP-Ziel hinzufügen können, müssen Sie den <strong>Entwicklermodus</strong> aktiviert haben und das <strong>Geräteportal</strong> auf dem Gerät einrichten. Wenn Sie dies nicht tun, kann <span class="notranslate">GameMaker Studio 2</span> weder mit dem Gerät kommunizieren
+      mit dem Gerät kommunizieren und Ihre UWP-Apps korrekt erstellen.</p>
+    <p class="dropspot">Der einfachste Weg, den Entwicklermodus zu aktivieren, ist, einfach &quot; <em>Entwicklermodus&quot;</em> in die <span class="notranslate">Windows-Suche</span> einzugeben und dann auf den <em>angezeigten</em> Eintrag &quot; Einstellungen&quot; zu klicken. Daraufhin öffnet sich das folgende Fenster:</p>
+    <p class="dropspot"><img alt="Windows UWP Device Developer Mode" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP_DeveloperMode.png">Sie müssen die Option " <strong>Entwicklermodus"</strong> auswählen (was möglicherweise erfordert, dass <span class="notranslate">Windows</span> einige zusätzliche Pakete herunterlädt und
+      einige zusätzliche Pakete herunterladen und installieren muss), und wählen Sie dann die Option darunter, <strong>Geräteportal aktivieren</strong>. Das Geräteportal ermöglicht es <span class="notranslate">GameMaker Studio 2</span>, mit dem <span class="notranslate">Windows 10</span> PC zu kommunizieren, und wenn es aktiviert ist, müssen Sie
+      einen <em>Benutzernamen</em> und ein <em>Passwort</em> eingeben:</p>
+    <p class="dropspot"><img alt="Windows UWP Device Settings" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP_ShowDevMode.png">Beachten Sie, dass der Benutzername und das Kennwort für das Portal eindeutig sein sollten und nicht denen entsprechen dürfen, die von Ihrem Microsoft-Konto
+      oder anderen <span class="notranslate">Windows-Anmeldeinformationen</span>. Wenn Sie diese Angaben gemacht haben, klicken Sie auf die Schaltfläche <em>Übernehmen </em>, schließen Sie den Einstellungsmanager und kehren Sie zu <span class="notranslate">GameMaker Studio 2</span> zurück.</p>
+    <p class="dropspot">Weitere Informationen über das Geräteportal finden Sie in diesem Microsoft-Artikel: <a href="https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop">Geräteportal für Desktop</a>.</p>
+    <p class="dropspot">Sie können nun den <strong>Geräte-Manager</strong> in <span class="notranslate">GameMaker Studio 2</span> öffnen und ein Gerät (oder mehrere Geräte) zur Verwendung einrichten:</p>
+    <p class="dropspot"><img alt="Windows UWP Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP.png">Um ein <span class="notranslate">Windows 10</span> UWP-kompatibles Gerät zum Manager hinzuzufügen, müssen Sie zunächst auf die Schaltfläche " <em>Neues Gerät hinzufügen</em> " klicken.
+      Dadurch wird das Gerät hinzugefügt und es werden einige leere Felder erstellt, die Sie ausfüllen müssen, um die Verbindung zu aktivieren.</p>
+    <p class="dropspot">Zuerst müssen Sie das Gerät <strong>benennen </strong>, damit Sie es in der Zielliste identifizieren können, und dann den <strong>Host </strong> angeben - dies ist die IP-Adresse des <span class="notranslate">Windows 10-Geräts</span> im Netzwerk, das das Spiel hosten soll, und <strong>muss mit dem Suffix</strong> &quot; <span class="inline">:50443</span>&quot; <strong>versehen</strong> werden, um die Portnummer festzulegen. Danach fügen Sie den <strong>Benutzernamen</strong> und das <strong>Passwort </strong>hinzu, die Sie im Geräteportal eingerichtet haben (wie zuvor erwähnt). Sie können die PIN leer lassen, da sie
+      für UWP <span class="notranslate">Windows 10</span> Desktop nicht erforderlich ist.</p>
+    <p class="dropspot">Für spezifischere Einrichtungsdetails, die die verschiedenen UWP-Ausgaben (Desktop, XboxOne) abdecken, besuchen Sie bitte den YYG Helpdesk: Einrichten von <a href="https://help.yoyogames.com/hc/en-us/sections/115000309028-UWP">UWP</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>Alle verschiedenen Gerätefenster haben am unteren Rand eine Option zum <strong>Löschen von Geräten</strong>, die, wenn sie angeklickt wird, alle angeschlossenen Geräte aus der Liste entfernt.</p>
+  <p>Sobald Sie Ihre Geräte eingerichtet haben, können Sie über die Zieloptionen oben in der <span class="notranslate">GameMaker Studio 2-IDE</span> eine Verbindung zu einem beliebigen Gerät herstellen und beim Testen/Bauen Ihres Spiels wird das Projekt auf dieses Gerät übertragen:</p>
+  <p><img alt="Device Manager Target List" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_TargetList.png" /></p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GMS2_Version_Information.htm">GMS2-Einrichtung und -Versionen</a></div>
+        <div style="float:right">Weiter: <a href="Error_Reporting.htm">Fehlerberichterstattung</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences
+-->
+  <!-- TAGS
+preferences
+-->
+
+</body></html>

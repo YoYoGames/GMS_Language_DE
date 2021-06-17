@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>timeline_moment_add_script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_moment_add_script" />
+  <meta name="rh-index-keywords" content="timeline_moment_add_script" />
+  <meta name="search-keywords" content="timeline_moment_add_script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>timeline_moment_add_script</h1>
+  <p>Mit dieser Funktion können Sie dynamisch eine <a href="../../../GML_Overview/Script_Functions.htm">Skriptfunktion</a> zu einem beliebigen &quot;Moment&quot; innerhalb dieser Zeitleiste hinzufügen, wobei ein &quot;Moment&quot; einem Spieltick (oder
+    Schritt). Auf diese Weise können Sie eine neue Zeitleiste mit der <a href="timeline_add.htm"><tt>timeline_add()</tt></a> Funktion eine neue Zeitleiste erstellen und an jedem beliebigen Punkt verschiedene Verhaltensweisen hinzufügen oder einfach eine zuvor erstellte Zeitleistenressource mit neuen Verhaltensweisen ändern. Beachten Sie
+    dass die Funktion keine zusätzlichen Argumente benötigt, wenn Sie diese Funktion verwenden, und wenn Sie sie verwenden, um ein im Asset-Browser vorhandenes Zeitleisten-Asset zu ändern, dann sind alle Instanzen betroffen, die diese Zeitleiste verwenden, und die Änderung dauert bis
+    das Ende des Spiels (der Aufruf von <span class="inline">game_restart()</span> setzt die Änderung auch nicht zurück).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">timeline_moment_add_script(ind, step, script);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index der Zeitleiste, zu der ein Moment hinzugefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Schritt</td>
+        <td>Der Moment (Schritt), zu dem hinzugefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Skript</td>
+        <td>Der Index der Skriptfunktion, die in den Moment eingefügt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.tl = timeline_add();<br> var i = room_speed * 60;<br> repeat(3)
+    <br> {
+    <br> timeline_moment_add_script(global.tl, i, choose(Attack_1, Attack_2, Attack_3);<br> i += room_speed * 60;<br> }
+  </p>
+  <p>Der obige Code erstellt eine neue Zeitleiste und speichert ihren Index in der Variablen &quot;global.tl&quot;. Er fügt dann drei zufällig ausgewählte Skripte im Abstand von einer Minute in die Zeitleiste ein.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Timelines.htm">Timelines</a></div>
+        <div style="float:right">Weiter: <a href="timeline_moment_clear.htm">timeline_moment_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_moment_add_script
+-->
+  <!-- TAGS
+timeline_moment_add_script
+-->
+</body>
+</html>

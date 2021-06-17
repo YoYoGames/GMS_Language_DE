@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_prefetch_multi</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_prefetch_multi" />
+  <meta name="rh-index-keywords" content="sprite_prefetch_multi" />
+  <meta name="search-keywords" content="sprite_prefetch_multi" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_prefetch_multi</h1>
+  <p>Diese Funktion kann verwendet werden, um eine Anzahl von Texturseiten, die die angegebenen Sprites enthalten, vorzuholen (im Texturspeicher zu platzieren). Sie liefern ein Array mit den Sprite-Indizes (wie beim Erstellen des Sprite-Assets definiert) und die Textur-Seiten, auf denen sie sich befinden, werden in den Speicher geladen.
+    auf denen sie sich befinden, werden in den Speicher geladen. Beachten Sie, dass die Funktion <tt>-1</tt> zurückgibt, wenn Prefetch für die gewählte Ressource nicht unterstützt wird oder die Zielplattform HTML5 ist, oder sie gibt <tt>0</tt> zurück, wenn
+    alles korrekt funktioniert hat.</p>
+  <p class="note"><b>HINWEIS</b>: Es gibt einen Leistungseinbruch, da die Textur auf den meisten Geräten in den Texturspeicher hochgeladen wird, daher wird empfohlen, dass Sie <span style="font-size:1px;"><tt style="font-size: 14px">sprite_prefetch_multi()</tt></span> auf
+    am Anfang eines Levels aufzurufen, um einen Stillstand zu vermeiden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_prefetch_multi</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Array</td>
+        <td>Array mit den zu holenden Sprite-Indizes</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Int (-1 oder 0)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">spr_a[0] = spr_Player_Aura1;<br> spr_a[1] = spr_Player_Aura2;<br> spr_a[2] = spr_Player_Aura3;<br> spr_a[3] = spr_Player_Aura4;<br> sprite_prefetch_multi(spr_a);
+  </p>
+  <p>Der obige Code erstellt ein Array, in dem jedes Element einen Sprite-Index enthält. Dieses Array wird dann verwendet, um diese Sprite-Texturen im Speicher zu platzieren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Manipulation.htm">Sprite-Manipulation</a></div>
+        <div style="float:right">Weiter: <a href="../Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_prefetch_multi
+-->
+  <!-- TAGS
+sprite_prefetch_multi
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skelett_animation_set_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_set_ext" />
+  <meta name="rh-index-keywords" content="skeleton_animation_set_ext" />
+  <meta name="search-keywords" content="skeleton_animation_set_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skelett_animation_set_ext</h1>
+  <p>Wenn Sie ein Animationsset für Ihr Skelettanimationssprite einstellen, wird es intern der <i>Spur 0</i> zugewiesen. Sie können jedoch weitere Sets weiteren Spuren (1 und höher) zuweisen und auf diese Weise Ihr Sprite zwei (oder
+    (oder mehr) Animationen gleichzeitig abspielen. Beachten Sie, dass das Sprite in Ihrem Animationsprogramm so gestaltet sein sollte, dass die &quot;Basis&quot;-Animation in Spur 0 nur Keyframes <span class="notranslate">für</span> bestimmte Bones hat, während die nächsten Spuren Keyframes
+    für die anderen. Wenn Sie z. B. eine &quot;Geh&quot;-Animation haben und deren Keyframes <span class="notranslate">nur</span> die Beine des Sprites betreffen, können Sie dann einen Satz von Kopf- und Arm-Animationen haben, die Sie in Spur 1 bzw. 2 setzen können, so dass
+    so dass Sie eine Basisbewegung haben und diese in Echtzeit anpassen können, während das Spiel gespielt wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">skeleton_animation_set_ext(animname, track);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>Der Name (eine Zeichenkette) des zu verwendenden Animationssets.</td>
+      </tr>
+      <tr>
+        <td>Spur</td>
+        <td>Die zu verwendende Spur für das Animationsset.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if mouse_check_button(mb_left)<br> {
+    <br> skeleton_animation_set_ext(&quot;bodyfight&quot;, 1);<br> }
+    <br> sonst
+    <br> {
+    <br> skeleton_animation_set_ext(&quot;bodywalk&quot;, 1);<br> }
+  </p>
+  <p>Der obige Code ändert das Animations-Set, das von Spur 1 verwendet wird, in das &quot;bodyfight&quot;-Set oder das &quot;bodywalk&quot;-Set, wenn die linke Maustaste gedrückt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Animation.htm">Animation</a></div>
+        <div style="float:right">Weiter: <a href="skeleton_animation_get_duration.htm">skeleton_animation_get_duration</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_set_ext
+-->
+  <!-- TAGS
+skeleton_animation_set_ext
+-->
+</body>
+</html>

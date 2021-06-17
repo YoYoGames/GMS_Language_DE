@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Rückgabe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the return function" />
+  <meta name="rh-index-keywords" content="return" />
+  <meta name="search-keywords" content="return" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Rückgabe</h1>
+  <p>Die <tt>Return-Anweisung</tt> hat die folgende Syntax:</p>
+  <p class="code">return (&lt;Ausdruck&gt;)</p>
+  <p>Die <tt>return-Anweisung</tt> wird nur in<span> <a href="../Script_Functions.htm">Skriptfunktionen</a> und <a href="../Method_Variables.htm">-methoden</a></span> verwendet und dient dazu, einen Wert aus der Funktion zurückzugeben, der in weiterem Code oder Funktionsaufrufen verwendet werden kann
+    Aufrufen verwendet wird. Es ist zu beachten, dass die <i>Ausführung der Funktion an der Anweisung <span class="inline">return</span> endet</i>, was bedeutet, dass jeglicher Code, der nach dem Aufruf von <span class="inline">return</span> kommt, nicht ausgeführt wird. Hier ist ein kurzes
+    Beispielskript namens <tt>sqr_calc</tt>, das das Quadrat eines beliebigen Wertes berechnet, der ihm übergeben wird, und es enthält eine Fehlerabfangfunktion, falls der übergebene Parameter keine reelle Zahl ist:</p>
+  <p class="code">/// @function sqr_calc(val);<br> /// @param {real} val Der Wert, von dem das Quadrat berechnet werden soll<br> /// @description Berechne das Quadrat des angegebenen Wertes<br>
+    <br> function sqr_calc(value)<br> {
+    <br> if !is_real(wert)<br> {
+    <br> return 0;<br> }
+    <br> sonst
+    <br> {
+    <br> return (Wert * Wert);<br> }
+    <br> }
+  </p>
+  <p>Um eine Funktion aus einem Stück Code heraus aufzurufen, verwenden Sie sie einfach auf die gleiche Weise wie beim Aufruf von <span class="notranslate">Laufzeitfunktionen</span> - das heißt, Sie schreiben den Funktionsnamen mit den Parameterwerten in Klammern. Die obige Funktion würde also wie folgt aufgerufen werden:</p>
+  <p class="code">if keyboard_check_pressed(vk_enter)<br> {
+    <br> val = scr_sqr(Betrag);<br> }
+  </p>
+  <p>Hier wird die Variable <span class="inline">val</span> entweder 0 sein (weil die Variable <span class="inline">amount</span> keine reelle Zahl ist) oder die Summe für <span class="inline">value * value</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="begin_end.htm">Anfang / Ende</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+return
+-->
+  <!-- TAGS
+return
+-->
+</body>
+</html>

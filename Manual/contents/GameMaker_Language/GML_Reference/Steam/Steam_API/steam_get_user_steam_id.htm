@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_get_user_steam_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_get_user_steam_id" />
+  <meta name="rh-index-keywords" content="steam_get_user_steam_id" />
+  <meta name="search-keywords" content="steam_get_user_steam_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_get_user_steam_id</span></h1>
+  <p>Mit dieser Funktion können Sie die eindeutige <b>Steam-Benutzerkennung</b> des Benutzers zurückgeben, der gerade im <span class="notranslate">Steam-Client</span> angemeldet ist. Dies ist ein eindeutiger 64-Bit-Wert, der verwendet werden kann, um einzelne Benutzer zu identifizieren und <i>nicht</i> ihren Benutzernamen auf dem Bildschirm (dieser kann
+    mit der Funktion <a href="steam_get_persona_name.htm"><tt><span class="notranslate">steam_get_persona_name</span>()</tt></a>). Da es sich um einen int64-Wert handelt, müssen Sie ihn möglicherweise als solchen casten, wenn Sie ihn in nachfolgenden Funktionen mit der <a href="../../Variable_Functions/int64.htm"><tt>int64()</tt></a>    Funktion.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="notranslate">steam_get_user_steam_id</span>();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Ganzzahl (int64)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if <span class="notranslate">steam_initialised</span>()<br> {
+    <br> global.u_id = <span class="notranslate">steam_get_user_steam_id</span>();<br> }
+  </p>
+  <p>Der obige Code setzt eine globale Variable auf die eindeutige <span class="notranslate">Steam-ID</span> des aktuellen Benutzers, wenn die <span class="notranslate">Steam-Client-API</span> korrekt initialisiert ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Steam_API.htm">Allgemeine <span class="notranslate">Dampf-API</span></a></div>
+        <div style="float:right">Weiter: <a href="steam_get_persona_name.htm"><span class="notranslate">steam_get_persona_name</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_get_user_<span class="notranslate">steam</span>_id
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_get_user_<span class="notranslate">steam</span>_id
+-->
+</body>
+</html>

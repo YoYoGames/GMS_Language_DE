@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_replace_sprite_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_replace_sprite_ext" />
+  <meta name="rh-index-keywords" content="font_replace_sprite_ext" />
+  <meta name="search-keywords" content="font_replace_sprite_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_replace_sprite_ext</h1>
+  <p>Diese Funktion ersetzt einen Sprite-Font, den Sie zuvor mit der Funktion <a href="font_add_sprite_ext.htm"><tt>font_add_sprite_ext()</tt></a>. Sie verwendet einen &quot;Sprite-Streifen&quot;, wobei jedes Teilbild ein einzelnes Symbol oder ein Buchstabe ist,
+    und die Bilder werden auf der Grundlage des Arguments &quot;string_map&quot; der Funktion auf Buchstaben abgebildet. Dieses Argument ist eine Zeichenkette, mit der Sie <span class="notranslate">GameMaker Studio 2</span> mitteilen können, in welcher Reihenfolge die Teilbilder des Sprite-Fonts angeordnet sind, und es wird diese automatisch zuordnen
+    beim Schreiben von Text. Wenn Sie also z. B. eine String-Map von &quot;AaBbCcDdEeFfGgHh&quot; haben, muss Ihr Sprite-Font <i>die</i> Unterbilder in dieser Reihenfolge haben.</p>
+  <p>Sie können auch den Abstand für die Schrift proportional<tt>(true</tt>) oder nicht proportional<tt>(false</tt>) einstellen, wobei eine proportionale Schrift den Abstand auf der Basis der tatsächlichen Breite der Buchstaben hat (so nimmt der Buchstabe &quot;i&quot; weniger Platz ein als der Buchstabe &quot;w&quot;,
+    ), während eine nicht-proportionale Schriftart auf der Basis der Breite des Teilbildes platziert wird, wie eine monospaced Schriftart. Schließlich können Sie den Abstand zwischen den einzelnen Buchstaben beim Schreiben definieren, und dies kann ein beliebiger ganzzahliger Wert sein, wobei 0 kein Abstand ist (die
+    Buchstaben werden sich &quot;berühren&quot;, wenn sie proportional sind). Die Funktion gibt einen <i>Indexwert</i> zurück, der in einer Variablen gespeichert werden sollte, da dieser in allen weiteren Codes, die sich auf diese Schriftart beziehen, benötigt wird.</p>
+  <p>Wenn die Funktion fehlschlägt, dann schlägt sie stillschweigend fehl, ohne die angegebene Sprite-Schriftart zu ersetzen.</p>
+  <p class="note"><b>HINWEIS: </b>Diese Funktion setzt voraus, dass Sie zuvor einen Sprite-Font mit <span style="font-size:1px;"><a href="font_add_sprite.htm"><tt style="font-size: 14px">font_add_sprite()</tt></a></span>hinzugefügt haben, denn sie ersetzt diese und kann nicht verwendet werden
+    auf Schriftarten, die als Teil der Spielressourcen enthalten sind.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">font_replace_sprite_ext(font, spr, string_map, prop, sep);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Schriftart</td>
+        <td>Die zu ersetzende Schriftart.</td>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td>Das Sprite, auf dessen Basis eine Schrift hinzugefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>string_map</td>
+        <td>String, aus dem die Reihenfolge der Sprite-Subbilder entnommen wird.</td>
+      </tr>
+      <tr>
+        <td>Stütze</td>
+        <td>Als Proportionalschrift einstellen oder nicht.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>Der Abstand, der zwischen den einzelnen Buchstaben gelassen werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p> </p>
+  <p class="code">font_replace_sprite_ext(global.Font, spr_CalcFont, &quot;0123456789+-*/=&quot;, true, 2);</p>
+  <p>Der obige Code ersetzt ein Sprite-Font-Asset, das in der Variablen &quot;global.Font&quot; indiziert ist, durch Sprite-Bilder, die in der Variablen &quot;spr_CalcFont&quot; indiziert sind.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fonts.htm">Schriftarten</a></div>
+        <div style="float:right">Weiter: <a href="font_delete.htm">font_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_replace_sprite_ext
+-->
+  <!-- TAGS
+font_replace_sprite_ext
+-->
+</body>
+</html>

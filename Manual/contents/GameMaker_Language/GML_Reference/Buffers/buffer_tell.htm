@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>puffer_erzählen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_tell" />
+  <meta name="rh-index-keywords" content="buffer_tell" />
+  <meta name="search-keywords" content="buffer_tell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>puffer_erzählen</h1>
+  <p>Wenn Sie Daten in einen Puffer lesen oder schreiben, indem Sie die <a href="buffer_read.htm"><tt>buffer_read()</tt></a> oder <a href="buffer_write.htm"><tt>buffer_write()</tt></a> in einen Puffer schreiben oder lesen, wird die aktuelle &quot;seek&quot;-Position um die geschriebenen oder gelesenen Bytes vorverlegt, und mit
+    Mit dieser Funktion können Sie die aktuelle &quot;seek&quot;-Position zur Verwendung in anderen Pufferfunktionen ermitteln. Wenn Ihre Pufferausrichtung z. B. auf 4 Byte eingestellt ist und Sie ein einzelnes Datenstück schreiben, das 1 Byte groß ist, führen Sie eine <tt>buffer_tell()</tt> aus,
+    Wenn Sie jedoch ein weiteres Stück Daten schreiben, das ebenfalls 1 Byte groß ist, und dann eine <tt>buffer_tell() ausführen,</tt> erhalten Sie einen Rückgabewert von 5, da die Ausrichtung die Daten auf diese Position &quot;aufgefüllt&quot; hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_tell(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu verwendenden Puffers.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var pos = buffer_tell(buff); buffer_seek(buff, buffer_seek_start, 0);<br> val[0] = buffer_read(buff, buffer_S16);<br> val[1] = buffer_read(buff, buffer_S16);<br> val[2] = buffer_read(buff, buffer_S16);<br> buffer_seek(buff, buffer_seek_start, pos);</p>
+  <p>Der obige Code speichert die aktuelle Suchposition innerhalb des in der Variablen &quot;buff&quot; indizierten Puffers in der lokalen Variablen &quot;pos&quot;. Die Puffersuchposition wird dann auf den Anfang des Puffers gesetzt, und drei Daten werden
+    in ein Array gelesen, bevor die Puffersuchposition wieder auf die vorherige Position gesetzt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_peek.htm">buffer_peek</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_tell
+-->
+  <!-- TAGS
+buffer_tell
+-->
+</body>
+</html>

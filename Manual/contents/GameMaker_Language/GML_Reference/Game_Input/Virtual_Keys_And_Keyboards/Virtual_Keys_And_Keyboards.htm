@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Virtuelle Tasten und virtuelle Tastaturen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Virtual Keys And Virtual Keyboards" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Virtual Keys And Virtual Keyboards,Virtual Keyboard,Virtual Key" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Virtuelle Tasten und virtuelle Tastaturen</h1>
+  <p><b></b>Bei der Entwicklung von Spielen für Touchscreen-Geräte ist es oft wichtig, Tastatureingaben vom Benutzer zu erhalten. Bei Verwendung von <span class="notranslate">GameMaker Studio 2</span> kann dies auf zwei Arten geschehen:</p>
+  <ul class="colour">
+    <li>Erstellen Sie Ihre eigenen <b>virtuellen Tasten</b> auf dem Bildschirm, um Eingaben zu erhalten</li>
+    <li>Einblenden der <b>virtuellen Tastatur</b> des Betriebssystems und Abrufen von Eingaben über diese</li>
+  </ul>
+  <p>Was Sie verwenden, hängt sehr stark vom Spiel und Ihren Bedürfnissen ab, aber im Allgemeinen würden Sie virtuelle Tasten verwenden, wenn Sie Bildschirmtasten für die Spielersteuerung oder für Menüs haben möchten, während Sie die virtuelle Tastatur verwenden würden, wenn Sie Spielereingaben benötigen,
+    wie das Abrufen eines Namens oder das Setzen eines Wertes.</p>
+  <p>Damit Ihre Spiele auf mobilen Geräten mit einem Touchscreen ordnungsgemäß funktionieren, müssen Sie möglicherweise in der Lage sein, Bereiche des Bildschirms zuzuweisen, die auf bestimmte Dinge reagieren, wenn sie vom Benutzer berührt werden. Dies geschieht durch Zuweisung einer &quot;virtuellen Taste&quot;
+    einer intern gemappten Standard-Tastaturtaste zuweisen und dann die von ihr erzeugten Tastaturereignisse zur Steuerung Ihrer Anwendung verwenden. Es ist zu beachten, dass diese &quot;virtuellen Tasten&quot; auf die <i>Bildschirmposition</i> und nicht auf die Raumposition abgebildet werden
+    und somit die x/y-Werte absolut sind, basierend auf der Bildschirmgröße. Das bedeutet, dass Sie sich nicht um die Verwendung von Ansichten oder die relativen Raumkoordinaten kümmern müssen und die Tasten einfach im Create-Event eines Objekts definieren können (Sie müssen eine virtuelle Taste nur einmal pro Raum definieren).
+    Sie können die Tasten einfach im Create-Event eines Objekts definieren (Sie müssen eine virtuelle Taste nur einmal pro Raum definieren) und dann Ihre Tasten-Sprites im <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">Draw-GUI-Event</a> zeichnen, wobei die Größe der GUI-Ebene mit der des Bildschirms übereinstimmen muss.</p>
+  <p class="note"><b>HINWEIS: </b>Diese Funktionen funktionieren nicht auf den Zielplattformen <span class="notranslate">Windows</span>, <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux)</span> und MacOS, die einen Touchscreen verwenden, obwohl sie Mausklicks als &quot;Berührungen&quot; empfangen.</p>
+  <p>Die verfügbaren virtuellen Tastenfunktionen sind:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="virtual_key_add.htm">virtual_key_add</a></li>
+    <li><a href="virtual_key_show.htm">virtual_key_show</a></li>
+    <li><a href="virtual_key_hide.htm">virtual_key_hide</a></li>
+    <li><a href="virtual_key_delete.htm">virtual_key_delete</a></li>
+  </ul>
+  <p> </p>
+  <p>Wenn Sie in Ihrem Spiel auf einem Touchscreen-Gerät eine Text- oder Zahleneingabe benötigen, können Sie die bereitgestellten Funktionen für die <b>virtuelle Tastatur</b> verwenden, um die OS-Tastatur des Geräts zu nutzen. Diese Funktionen rufen die OS-Tastatur auf oder blenden sie aus und akzeptieren Eingaben von ihr,
+    Sie lösen jedoch <i>nicht</i> die regulären Tastaturereignisse aus, sondern aktualisieren die <tt><a href="../Keyboard_Input/keyboard_string.htm">tastatur_zeichenkette</a></tt> Variable mit der Benutzereingabe (dies ist darauf zurückzuführen, dass die virtuelle Tastatur ganze Wörter und nicht nur einzelne Zeichen eingeben kann).
+    ganze Wörter und nicht nur einzelne Zeichen eingeben kann).</p>
+  <p>Das Öffnen oder Schließen der virtuellen Tastatur erzeugt <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">asynchrone Systemereignisse</a>, bei denen der <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> DS
+    Map mit den folgenden Schlüssel/Wert-Paaren befüllt wird:</p>
+  <ul class="colour">
+    <li>&quot; event_type<b>&quot; -</b> der Typ des empfangenen Systemereignisses, bei virtuellen Tastaturen ist dies &quot; virtual<b>keyboard status&quot;</b>.</li>
+    <li>&quot;<b>screen_height&quot; -</b> die Höhe der virtuellen Tastatur (in Pixel). Dieser Wert ist 0, wenn die Tastatur unsichtbar ist.</li>
+    <li>&quot;<b>keyboard_status&quot; -</b> der aktuelle Status der Tastatur, zurückgegeben als eine der folgenden Zeichenketten:
+      <ul class="colour">
+        <li>&quot;versteckt&quot;</li>
+        <li>&quot;versteckt&quot;</li>
+        <li>&quot;zeigend&quot;</li>
+        <li>&quot;sichtbar&quot;</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Die verfügbaren Funktionen der virtuellen Tastatur sind:</p>
+  <p class="note"><b>HINWEIS: </b>Diese Funktionen gelten nur für die <strong><span class="notranslate">Android</span></strong> (einschließlich <strong><span class="notranslate">AndroidTV</span></strong>), <strong><span class="notranslate">iOS</span> </strong>(einschließlich <strong><span class="notranslate">tvOS</span></strong>), und <strong>UWP-Zielplattformen </strong>.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="keyboard_virtual_show.htm">keyboard_virtual_show</a></li>
+    <li><a href="keyboard_virtual_hide.htm">keyboard_virtual_hide</a></li>
+    <li><a href="keyboard_virtual_status.htm">keyboard_virtual_status</a></li>
+    <li><a href="keyboard_virtual_height.htm">keyboard_virtual_height</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Game_Input.htm">Spiel-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="../Keyboard_Input/Keyboard_Input.htm">Tastatur-Eingabe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Virtual Keys
+Virtual Keyboards
+Virtual Keys And Keyboards
+-->
+  <!-- TAGS
+virtual_key_functions
+-->
+</body>
+</html>

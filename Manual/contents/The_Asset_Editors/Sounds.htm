@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Klingt</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the sound editor works" />
+  <meta name="rh-index-keywords" content="Sound Editor" />
+  <meta name="search-keywords" content="Sounds,Sound Editor,wav,ogg,mp3,compressed,streamed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Ton-Editor</h1>
+  <p><img alt="Sound Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Sound.png">Im <strong>Sound-Editor</strong> können Sie Sounds in eine neue Audio-Ressource laden sowie deren Eigenschaften einstellen. Um einen Sound zu laden, drücken Sie die Schaltfläche <strong>Load Sound</strong> rechts neben dem Soundnamen. Es öffnet sich ein Dateiauswahldialog, in dem Sie die Sounddatei auswählen können. Dies kann entweder eine <span class="inline">WAV</span>, eine <span class="inline">MP3 </span>oder eine <span class="inline">OGG</span> Datei sein. In
+    Im Allgemeinen wird <span class="inline">*.wav</span> für kurze Soundeffekte verwendet, denn obwohl es sich in der Regel um größere Dateien handelt, werden sie sofort abgespielt, da sie nicht dekodiert werden müssen. Dateien im Format <span class="inline">*.mp3</span> oder <span class="inline">*.ogg</span> sollten für Hintergrundmusik oder für Soundeffekte verwendet werden, die länger oder umfangreicher sind. Diese Dateien sind viel kleiner als eine Wave-Datei, haben aber einen geringen CPU-Overhead, da sie vor der Wiedergabe dekodiert werden müssen
+    dekodiert werden müssen, bevor sie abgespielt werden.</p>
+  <p>Sobald Sie Ihre Datei geladen haben, können Sie eine Vorschau des Klangs anzeigen, indem Sie die Wiedergabetaste verwenden, die ihn in einer Endlosschleife wiedergibt. Das ist sehr praktisch, denn so können Sie die Lautstärke mit dem Schieberegler am unteren Rand des Fensters verändern und hören, wie sich das auf den Klang auswirkt.
+    Auswirkungen auf den Klang haben. Es gibt auch eine Stopp-Schaltfläche, so dass Sie die Vorschau jederzeit stoppen können.</p>
+  <p>Das Tonfenster hat noch weitere Optionen, die im Folgenden erläutert werden:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Name und Datei</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Hier können Sie auf die Schaltfläche " <em>Öffnen"</em> klicken, um den Datei-Explorer zu öffnen und eine Audiodatei zum Laden auszuwählen. Sie können auch den Namen der neuen Ressource im Feld &quot;Name&quot; auf der linken Seite festlegen. Namen können nur alphanumerisch sein und dürfen nur das
+      Unterstrich &quot;_&quot; verwenden und dürfen nicht mit einer Zahl beginnen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Attribute</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">In diesem Abschnitt werden die Tonattribute eingestellt. Dies sind die Attribute, die beim Exportieren Ihres Spiels festgelegt werden und sich darauf auswirken, wie der Sound zur <span class="notranslate">Laufzeit</span> wiedergegeben wird. Für Soundeffekte (Format<span class="inline">WAV </span>) sollten Sie
+     <em>unkomprimiert </em>sein, damit sie schnell abgespielt werden und nicht dekodiert werden müssen. Beachten Sie, dass bei Verwendung dieser Option Ihre Audiodaten während der Kompilierung in das <tt>WAV-Format</tt> konvertiert werden (wenn jedoch die im Sound-Editor eingestellten Attribute mit den Attributen der
+      mit den Attributen der <tt>WAV-Quelldatei</tt> übereinstimmen, wird sie einfach kopiert). Für <span class="inline">OGG</span> und <span class="inline">MP3</span> sollten Sie in der Regel eine der anderen drei verfügbaren Optionen wählen.</p>
+    <p class="dropspot">Mit der Option "<em>Komprimiertes </em>Audio" werden alle Ihre Audiodateien (unabhängig davon, ob es sich um <span class="inline">WAV</span> oder <span class="inline">MP3</span> handelt) für <em>alle </em>Plattformen in Dateien im Format Ogg Vorbis <span class="inline">OGG</span> komprimiert
+      (wenn die Audioquelle jedoch bereits <tt>OGG</tt> ist, wird sie einfach kopiert, ohne neu komprimiert zu werden). Diese Sounds sind auf der Disc kleiner, haben aber einen leichten CPU-Overhead, da sie vor dem Abspielen dekomprimiert und in den Speicher geladen werden müssen.
+      Sie sollten dies also im Hinterkopf behalten, wenn Sie die <a class="glossterm" data-glossterm="Kompression" href="#">Komprimierung</a> in einem bereits CPU-intensiven Spiel verwenden möchten.</p>
+    <p class="dropspot">Sie können diesen CPU-Overhead etwas abmildern, indem Sie <em>beim Laden dekomprimieren</em>, wodurch alle Sounds im Gerätespeicher abgelegt werden, um eine schnellere Wiedergabe zu ermöglichen, allerdings auf Kosten eines erhöhten Speicherbedarfs.</p>
+    <p class="dropspot">Wenn Sie komprimiertes Audio gewählt haben, können Sie auch wählen, dass der Ton <em>von der Festplatte gestreamt werden</em> soll. Bei einem gestreamten Ton handelt es sich um einen unkomprimierten Ton, der in Echtzeit abgespielt wird und von der Disk gestreamt und nicht in den Speicher geladen wird. Streaming
+      ist ideal für Musik, da es den einmaligen Overhead des Dekomprimierens der gesamten Datei reduziert - was zu einer Pause im Spiel führen kann -, wird aber nicht für einfache Soundeffekte empfohlen, bei denen die Belastung der CPU viel geringer ist. Wenn Sie gestreamtes Audio wählen, können Sie
+      Wenn Sie gestreamtes Audio auswählen, können Sie den Sound <em>nicht</em> einer <a href="../Settings/Audio_Groups.htm">Audiogruppe</a> zuweisen und diese Option ist deaktiviert, da gestreamte Sounds nicht auf die gleiche Weise wie andere Sounds verpackt werden und Sie die volle Kontrolle darüber haben, wann
+      sie geladen, abgespielt und mittels Code entladen werden.</p>
+    <p class="dropspot">Es ist wichtig zu beachten, dass bei der Ausrichtung auf die HTML5-Plattform gestreamte Audiodaten nicht abgespielt werden, wenn die Abspielanforderung nicht direkt aus einer Benutzerinteraktion stammt (d. h.: ein Touch-Ereignis usw.). Da <span class="notranslate">GameMaker Studio 2</span> jedoch Klick-Ereignisse in eine Warteschlange stellt
+      in eine Warteschlange stellt und sie erst beim nächsten Frame verarbeitet, ist es unmöglich, gestreamtes Audio abzuspielen, ohne dass der Browser es blockiert. Um dies zu umgehen, behandelt jedes HTML5-Spiel, das ausgeführt wird, alle gestreamten Audiodaten in der Engine als nicht gestreamt, mit der Ausnahme, dass gestreamte Audiodaten
+      nicht vorgeladen wird.</p>
+    <p class="dropspot">Das bedeutet, dass, wenn Ihr Spiel in einem Browser läuft und Sie z. B. 10 Musiktitel haben, die alle als gestreamte <span class="inline">mp3 </span>Dateien eingestellt sind, alle 10 initialisiert werden, wie es bei nicht gestreamtem Audio der Fall wäre, aber sie werden nicht
+      aber sie werden nicht sofort dekodiert, bevor das Spiel geladen wird, im Gegensatz zu normalem gestreamten Audio, das sofort während der Ladebildschirmphase vorgeladen/dekodiert wird.</p>
+    <p class="dropspot">Dies umgeht zwar das Problem und verhindert eine enorme Erhöhung der anfänglichen Ladezeiten, aber es kann zu einem Zustand führen, in dem Ihr Spiel zwar geladen ist, aber bestimmte gestreamte Sounds noch heruntergeladen oder dekodiert werden. Um dies zu umgehen, können Sie
+      die <span class="notranslate">GML-Funktion</span> <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_sound_is_playable.htm"><span class="inline">audio_sound_is_playable()</span></a> verwenden, die überprüft, ob ein bestimmter Sound tatsächlich abgespielt werden kann. Bei HTML5
+      wird <span class="inline">false </span>zurückgegeben, wenn der Sound noch nicht vollständig geladen oder dekodiert ist, und <span class="inline">true </span>, wenn er es ist und abgespielt werden kann (auf allen anderen Plattformen wird immer true zurückgegeben).</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Band</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Hier können Sie die Wiedergabelautstärke für den angegebenen Sound einstellen. Dieser Wert ist einfach der <em>Standardwert</em>, bei dem, wenn der Schieberegler z. B. in der Mitte steht, die Lautstärke für diesen Sound bei Verwendung im Spiel 0,5 beträgt. Dies wird jedoch überschrieben
+      durch eine Änderung der Verstärkung mit den Audiofunktionen in Ihrem Projekt überschrieben. Neben den Lautstärkereglern stehen Ihnen auch die Wiedergabesteuerungen zur Verfügung, mit denen Sie eine Vorschau des Tons anzeigen, ihn auf Loop oder Rücklauf einstellen können. Sie können auch auf das Symbol <img alt="Open Mixer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_OpenMixer.png" width="24"> klicken, um den Sound im <a href="../IDE_Tools/Sound_Mixer.htm">Soundmixer</a> zu öffnen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Zieloptionen</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Im Bereich "Zieloptionen" legen Sie die Konvertierungsraten für Ihr Spiel fest. Diese Einstellungen wirken sich darauf aus, wie der Sound für die Zielplattform exportiert wird, und <span class="notranslate">GameMaker Studio 2</span> konvertiert Ihre Sounddateien automatisch für Sie - Sie steuern lediglich
+      Sie steuern lediglich die endgültige Qualität dieser Sounds bei der Konvertierung. Im Allgemeinen sind die Standardeinstellungen von 16 Bit Qualität (oder <a class="glossterm" data-glossterm="Bittiefe" href="#">Bittiefe</a>), 44100kHz <a class="glossterm" data-glossterm="Abtastrate" href="#">Abtastrate</a> und
+      128kbps <a class="glossterm" data-glossterm="Bitrate" href="#">Bitrate</a> vollkommen ausreichend, aber es kann sein, dass Sie z.B. für Soundeffekte eine niedrigere Qualität und für Musik eine höhere Qualität wünschen, dann können diese Einstellungen
+      geändert werden können.</p>
+    <p class="dropspot">Sie können auch wählen, ob die Umwandlung in <strong>Mono</strong>, <strong>Stereo</strong> oder <strong>3D</strong> erfolgen soll. Wenn Sie vorhaben, die <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Emitters/Audio_Emitters.htm">Audio-Emitter-Funktionen</a> zur Erzeugung von
+      Wenn Sie die Audioemitter-Funktionen zur Erzeugung von 3D-Soundeffekten verwenden möchten, sollten Sie dies hier angeben, andernfalls wählen Sie Mono oder Stereo, je nachdem, wofür die Sounds verwendet werden sollen. Wenn Sie sich dafür entscheiden, den Sound für 3D-Audio zu verwenden, wird <em>er als Mono-Sound exportiert</em>.</p>
+    <p class="note">HINWEIS: Je höher die Qualität des Tons ist, desto größer ist die Datei. Dies sollte bei der Wahl der Bitrate und der Abtastrate berücksichtigt werden.</p>
+    <p class="note"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Audio-Gruppe</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Sie können Ihre Audiodatei einer bestimmten <strong>Audiogruppe</strong> zuordnen. Diese werden im Fenster " <a href="../Settings/Audio_Groups.htm">Audiogruppen</a> " erstellt und dienen der Gruppierung von Audio-Assets zur einfacheren Speicherverwaltung und Lautstärkeregelung
+      Steuerung.
+    </p>
+    <p class="dropspot">Sobald eine Audiodatei einer Gruppe zugewiesen wurde, können Sie die spezifischen Audiogruppenfunktionen verwenden, um sie zu ändern und aus dem Speicher zu laden/entladen. Weitere Informationen finden Sie im Referenzabschnitt über <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/Audio_Groups.htm">Audiofunktionen</a> 
+      weitere Informationen.</p>
+    <p class="dropspot">Wenn Sie <em>gestreamtes </em>Audio ausgewählt haben, ist diese Option <strong>deaktiviert</strong>, da gestreamte Sounds nicht wie andere Sounds verpackt sind und nicht in den Speicher geladen werden, sondern direkt vom Speichermedium gestreamt werden
+      Medium gestreamt werden.
+    </p>
+    <p class="dropspot">Beachten Sie, dass die übrigen Audioeigenschaften zwar konfigurationsabhängig sind, die Einstellung der Audiogruppe jedoch <em>nicht </em>, so dass ein Sound bei <em>allen verwendeten Konfigurationen</em> zur gleichen Gruppe gehört.</p>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Sprites.htm">Sprites</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sound Editor
+Sounds
+Compressed
+Streamed
+ogg
+wav
+mp3
+-->
+  <!-- TAGS
+sound_editor
+-->
+
+</body></html>

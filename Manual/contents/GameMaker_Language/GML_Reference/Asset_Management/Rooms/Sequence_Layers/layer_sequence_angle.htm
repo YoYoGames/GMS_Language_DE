@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_angle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_angle" />
+  <meta name="rh-index-keywords" content="layer_sequence_y" />
+  <meta name="search-keywords" content="layer_sequence_angle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_angle</h1>
+  <p>Mit dieser Funktion können Sie den Drehwinkel für das angegebene Sequenzelement setzen. Sie übergeben die Sequenzelement-ID, wie sie von <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> oder von einer der <a href="../General_Layer_Functions/General_Layer_Functions.htm">Ebenenelement-Funktionen</a> zurückgegeben wird, zusammen mit dem neu zu setzenden Winkel und die Sequenz wird um ihren Ursprung an die neue Position gedreht. Winkel werden im <span class="notranslate">GameMaker</span> mit 0º nach rechts berechnet und verlaufen gegen den Uhrzeigersinn - 90º ist also oben, 180º ist links und 270º ist unten - und der Standardwinkel
+    für eine Sequenz wäre 0º.</p>
+  <p>Beachten Sie, dass Sie die Variablen <span class="inline">image_xscale</span> \ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span> für alle Instanzen nicht ändern sollten
+    in einer Sequenz, die diese Funktion verwendet, ändern sollten, da sie überschrieben werden, sobald die Sequenz nach dem Aufruf der Funktion aktualisiert wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_sequence_angle(sequence_element_id, angle)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sequenz_element_id</td>
+        <td>Der eindeutige ID-Wert des Sequenzelements, auf das abgezielt werden soll</td>
+      </tr>
+      <tr>
+        <td>Winkel</td>
+        <td>Der neue Winkel, in den das Sequenzelement gedreht werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if current_angle &lt; 90<br> {
+    <br> current_angle += 1;<br> layer_sequence_angle(my_seq, current_angle);<br> }
+  </p>
+  <p>Der obige Code prüft den Wert, der in der Variablen <span class="inline">current_angle</span> gehalten wird, und wenn er kleiner als 90 ist, addiert er ihn und verwendet den Wert, um den Winkel des Sequenzelements einzustellen, auf das in der Variablen <span class="inline">my_seq</span> verwiesen wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequence_Layers.htm">Sequenzschichten</a></div>
+        <div style="float:right">Weiter: <a href="layer_sequence_xscale.htm">layer_sequence_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_angle
+-->
+  <!-- TAGS
+layer_sequence_angle
+-->
+</body>
+</html>

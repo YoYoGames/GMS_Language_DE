@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Erstellen von Kachelsätzen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of what a tile set is and how to make one." />
+  <meta name="rh-index-keywords" content="Quick Start - Tile Sets" />
+  <meta name="search-keywords" content="tiles,tilesets,tileset,tile set,tile sets" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Erstellen von Kachelsätzen</h1>
+  <p><strong>Kachel-Sets</strong> werden aus Sprites erstellt, aber sie werden auch als separater Asset-Typ klassifiziert, da die Art und Weise, wie <span class="notranslate">GameMaker Studio 2</span> sie behandelt, etwas anders ist als bei Sprites und Objekten. Ein Kachelset ist also eine Sammlung von Kacheln, die
+    zusammen in einem Sprite, und eine Kachel ist einfach eine grafische Ressource, die zu einem <span class="notranslate">GameMaker Studio 2-Raum</span> als Teil eines <strong> <a class="glossterm" data-glossterm="Kachelplan" href="#">Kachelsatz</a></strong>. Diese Kachel-Maps werden dann auf den Bildschirm gezeichnet
+    Diese Kachelkarten werden dann mit sehr wenig CPU-/GPU-Verarbeitung auf den Bildschirm gezeichnet, was sie ideal für die Gestaltung beliebiger statischer Elemente in Levels macht.</p>
+  <p>Um die Verarbeitung von Kacheln so schnell zu machen, haben sie bestimmte Einschränkungen, wobei die grundlegendste darin besteht, dass sie <strong>nur rechteckig oder quadratisch sein</strong> können (wenn Sie etwas anderes als das wollen, müssen Sie ein reguläres Sprite erstellen
+    erstellen und den <em>Asset-Layer</em> im Raum-Editor verwenden, aber das besprechen wir im späteren Abschnitt über <a href="Rooms.htm">Räume).</a> Zu den weiteren Einschränkungen gehört die Tatsache, dass sie nur um 90° gedreht, gespiegelt oder umgedreht werden können, und sie können
+    Sie können nur mit Frames animiert werden, die eine <strong>Potenz von 2</strong> sind (d. h. 2, 4, 8, 16 usw...).</p>
+  <p>Werfen wir einen Blick auf ein einfaches Beispiel für einen Fliesensatz - einige quadratische Wandfliesen für ein Top-Down-Spiel:</p>
+  <p><img alt="Example Tile Set Sprite" class="center" src="../assets/Images/QS_Guide/QS_ExampleTileset.png" /></p>
+  <p>Zunächst müssen wir daraus ein <strong>Kachelsatz-Sprite</strong> machen, was im<a href="../The_Asset_Editors/Image_Editor.htm">Sprite-Editor/Bild-Editor</a> (oder einem externen Bild-Editor) geschehen würde.
+    (oder einem externen Bildeditor und dann als Sprite importiert). Das endgültige Sprite sollte etwa so aussehen:</p>
+  <p><img alt="Tile Set Sprite" class="center" src="../assets/Images/QS_Guide/QS_Tileset_Sprite.png"> <strong>Beachten Sie, dass die allererste Kachel in diesem Bild leer ist</strong>. Die Art und Weise, wie die Kachel-Map für den Raum in <span class="notranslate">GameMaker Studio 2</span> gespeichert wird, bedeutet
+    Die Art und Weise, wie die Kachel-Map für den Raum in GameMaker Studio 2 gespeichert wird, bedeutet, dass die erste Kachel immer leer sein muss, da sie im Wesentlichen die &quot;Lösch&quot;-Kachel oder die &quot;Leerraum&quot;-Kachel ist (diese &quot;leere&quot; Kachel hat einen Indexwert von 0 - Kacheln werden mit einem Wert indiziert, der
+    Kacheln werden mit einem Wert indiziert, der bei 0 beginnt und von links nach rechts, von oben nach unten, hochzählt). Wenn Sie also Ihre Kachelsätze erstellen, muss die Kachel in der linken oberen Ecke immer auf diese Weise leer sein. Beachten Sie auch, dass die obige Abbildung zwar ein komplettes Wandkachelset mit 47 Kacheln zeigt, Sie aber möglicherweise
+    nicht so viele benötigen, da Sie die Fliesen später beim Platzieren im Raumeditor drehen und spiegeln können.</p>
+  <p>Nachdem das Sprite erstellt wurde, können wir fortfahren und das Kachelset selbst definieren, was bedeutet, dass Sie zuerst eine neue Kachelset-Ressource erstellen müssen, indem Sie mit der rechten Maustaste auf <img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> den Ordner Tile Set asset
+    klicken und " <em>Erstellen</em>" wählen. Dadurch wird der <a href="../The_Asset_Editors/Tile_Sets.htm">Kachelsatz-Editor</a> geöffnet, in dem Sie dann das Sprite hinzufügen und seine Eigenschaften festlegen können:</p>
+  <p><img alt="Tile set Editor" class="center" src="../assets/Images/QS_Guide/QS_Tileset_Editor.png" /></p>
+  <p>Wir haben die Größe des Kachelsatzes auf 64 px gesetzt und den Rest der Optionen auf ihren Standardwerten belassen, da wir keine Offsets oder ähnliches benötigen (die Offset-Werte sind für jedes Kachelsatz-Sprite nützlich, das Leerzeichen um jede der
+    Kacheln hat). Sie sollten das Kachelset-Asset mit einem geeigneten Präfix wie &quot; <span class="inline">ts_</span>&quot; benennen, damit Sie es später leicht identifizieren können, und beachten Sie, dass die gleichen Einschränkungen wie für Sprites gelten, d. h. der Name darf nicht mit einer Zahl beginnen und nur
+    mit einer Zahl beginnen und darf nur den Unterstrich &quot;_&quot; und alphanumerische Zeichen enthalten.</p>
+  <p>Sie können nun den Kachelsatz-Editor schließen, da Sie den Kachelsatz &quot;so wie er ist&quot; zum Erstellen von Kachelplan-Ebenen im Raum-Editor verwenden können. Wenn Sie jedoch mehr über die erweiterten Funktionen des Kachelsatz-Editors wissen möchten, dann lesen Sie den folgenden Abschnitt des
+    des Handbuchs:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Tile_Sets.htm">Editoren: Der Kachelsatz-Editor</a></li>
+  </ul>
+  <p>Um nun auf das Hinzufügen von <strong>Soundeffekten</strong> zu sprechen zu kommen...</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Weiter: <a href="Creating_Sound_Effects.htm">Toneffekte erstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Tilesets
+Quick Start: Creating Tilesets
+-->
+  <!-- TAGS
+qs_tilesets
+-->
+
+</body></html>

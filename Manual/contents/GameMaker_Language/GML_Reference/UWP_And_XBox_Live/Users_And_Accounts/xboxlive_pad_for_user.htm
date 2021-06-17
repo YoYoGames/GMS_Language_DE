@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_pad_für_benutzer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_pad_for_user" />
+  <meta name="rh-index-keywords" content="xboxlive_pad_for_user" />
+  <meta name="search-keywords" content="xboxlive_pad_for_user" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_pad_für_benutzer</h1>
+  <p>Xbox-Benutzer können ihrer Benutzer-ID verschiedene Pads zuweisen, wobei jedes Pad einen &quot;Steckplatz&quot; füllt. Diese Steckplätze sind von 0 an nummeriert und können einen beliebigen Pad-Index enthalten, so dass Steckplatz 0 dem Pad 3 und Steckplatz 1 dem Pad 2 zugewiesen werden könnte. Diese Funktion
+    kann verwendet werden, um das Pad zu ermitteln, das einem bestimmten Steckplatz zugewiesen ist, und ist besonders nützlich, wenn ein Benutzer ein Gamepad für eine bestimmte Zeit ohne Eingabe lässt, da es sich selbst ausschaltet, so dass Sie jede beliebige Benutzer-ID mit dieser Funktion
+    überprüfen, ob der Benutzer ein aktives Gamepad hat, und wenn nicht, entsprechend reagieren, indem Sie z. B. das Spiel pausieren. Wenn das Pad aktiv ist, wird sein Indexwert zurückgegeben, wenn nicht, gibt die Funktion -1 zurück.</p>
+  <p>Beachten Sie, dass, wenn ein Pad in einem Slot inaktiv wird, spätere Slots in die freie Position &quot;rutschen&quot;. Wenn Sie also drei aktive Pads den Slots 0, 1 und 2 zugewiesen haben und das Pad in Slot 0 inaktiv wird, werden die Slots 1 und to nun zu Slots 0 und
+    1, so dass Steckplatz 0 immer ein aktives Pad enthalten sollte, es sei denn, alle Pads sind ausgeschaltet (in diesem Fall wird er -1 zurückgeben).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_pad_for_user(user_id, slot);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Die zu prüfende Benutzer-ID (ein Zeiger)</td>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Der Index (eine Ganzzahl) des zu prüfenden Gamepad-Steckplatzes</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeiger</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (xboxlive_pad_for_user(user_id, 0) == -1)<br> {
+    <br> for(var i = 0; i &lt; gamepad_get_device_count(); i++;) <br> {
+    <br> var u_id = xboxlive_user_for_pad(i);<br> if (u_id == -1)<br> {
+    <br> async_ID = xboxlive_pad_for_user(i, u_id);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft den Steckplatz 0 für den gegebenen Benutzer-ID-Zeiger, um zu sehen, ob irgendwelche Gamepads zugewiesen wurden, und wenn nicht, wird eines zugewiesen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Users_And_Accounts.htm">Benutzer und Konten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_pad_count_for_user.htm">xboxlive_pad_count_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_pad_for_user
+-->
+  <!-- TAGS
+xboxlive_pad_for_user
+-->
+</body>
+</html>

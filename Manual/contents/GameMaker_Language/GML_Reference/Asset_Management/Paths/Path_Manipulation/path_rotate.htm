@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pfad_rotieren</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_rotate" />
+  <meta name="rh-index-keywords" content="path_rotate" />
+  <meta name="search-keywords" content="path_rotate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pfad_rotieren</h1>
+  <p>Sie können diese Funktion verwenden, um einen gegebenen Pfad um seinen Mittelpunkt zu drehen. Denken Sie daran, dass in <span class="notranslate">GameMaker Studio 2</span> (sofern Sie nicht mit Physik arbeiten) die Winkel gegen den Uhrzeigersinn berechnet werden, so dass eine Drehung des Pfades um 90 Grad den Pfad
+    den Pfad nach <i>links</i> drehen. <strong>Diese Funktion ändert die tatsächliche Pfadressource</strong> und wirkt sich somit dauerhaft darauf aus, wie der Pfad von allen Instanzen im Spiel ab dem Zeitpunkt der Verwendung der Funktion bis zum Ende des Spiels verwendet wird.
+    des Spiels. Wenn Sie dies nicht wünschen, sollten Sie eine Funktion wie <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> verwenden, um zunächst eine Kopie des Pfades zu erstellen und dann diese Funktion für das duplizierte Asset aufzurufen (vergessen Sie nicht, für das Asset aufzurufen).
+    Vergessen Sie nicht, <span class="inline"><a href="path_delete.htm">path_delete()</a></span> für das Asset aufzurufen, wenn es nicht mehr benötigt wird).</p>
+  <p><img alt="Rotate path example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/pathrotated.png" /></p>
+  <p class="note"><strong>HINWEIS</strong>: Sobald ein Pfad einer Instanz mit der <span style="font-size:1px;"><span class="inline"><a href="../path_start.htm" style="font-size: 14px">path_start()</a></span></span> Funktion zugewiesen wurde, können Sie mit der Variable <span class="inline"><a href="../Path_Variables/path_orientation.htm" style="font-size: 14px">path_orientation</a></span> 
+    verwenden, um auch die Pfadrotation zu ändern.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_rotate(index, angle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu spiegelnden Pfades.</td>
+      </tr>
+      <tr>
+        <td>Winkel</td>
+        <td>Der Winkel der Drehung in Grad.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">path_rotate(pth_Patrol, 90);</p>
+  <p>Dies würde den angegebenen Wert um 90 Grad gegen den Uhrzeigersinn drehen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Manipulation.htm">Pfadmanipulation</a></div>
+        <div style="float:right">Weiter: <a href="path_rescale.htm">path_rescale</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_rotate
+-->
+  <!-- TAGS
+path_rotate
+-->
+</body>
+</html>

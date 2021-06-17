@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Variable zuweisen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Assign Variable" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Assign Variable" />
+  <meta name="search-keywords" content="Assign Variable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Assign Variable Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Assign_Var.png"> Variable zuweisen</h1>
+  <p>Diese Aktion wird verwendet, um entweder einer Variablen einen Wert zuzuweisen (und sie dabei zu erstellen) oder um den Wert einer vorhandenen Variablen zu ändern. Sie geben den Namen der Variablen an und dann den Wert, der bei Bedarf <i>relativ</i> zum ursprünglichen Wert hinzugefügt werden kann.
+    erforderlich. Wenn Sie einen neuen Variablennamen angeben (d. h. eine Variable, die noch nie zuvor in der Instanz zugewiesen wurde), wird die neue Variable erstellt und ihr der von Ihnen angegebene Wert zugewiesen, während, wenn Sie den Namen einer vorhandenen Variable angeben
+    einfach den Wert in den neuen Wert ändern. Beachten Sie, dass die Überprüfung von <b>Is Relative</b> den Wert zum bestehenden Variablenwert addiert (verwenden Sie eine negative Zahl, um zu subtrahieren) und Sie können auch <a class="glossterm" data-glossterm="Ausdruck" href="#">Expression</a> <span class="glossextra">s</span> und zuvor erstellte Variablen als Wert verwenden.</p>
+  <p>Es ist erwähnenswert, dass wir, wenn wir von &quot;Werten&quot; sprechen, nicht nur numerische Werte meinen, da eine Variable eine Zeichenkette, ein Zeiger, eine Ressourcen-ID oder etwas anderes sein kann, das eine Funktion zurückgeben oder verwenden kann. Im Fall einer Zeichenkette wird die Überprüfung von <b>Relative</b> 
+    Wenn Ihre Variable also &quot;Hallo&quot; war und Sie ihr mit der Relativprüfung &quot;Welt&quot; zuweisen, wird der endgültige Variablenwert &quot;Hallo Welt&quot; sein. Es muss darauf geachtet werden,
+    Es muss jedoch darauf geachtet werden, dass die Variablenwerte beide vom gleichen <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">Datentyp</a> sind, da der Versuch, z. B. eine Ganzzahl und eine Zeichenkette zu addieren, zu einem Compilerfehler führt.</p>
+  <p>Beachten Sie, dass Sie weitere Variablen in derselben Aktion hinzufügen können, indem Sie auf das Plus-Symbol <img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> neben der Aktion klicken und einen weiteren Variablennamen und
+    Wert angeben. Weitere fortgeschrittene Informationen zu Variablen finden Sie im Abschnitt über <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">Variablen und Variablenumfang</a>.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Assign Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Assign_Var.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name der neuen Variable, die zugewiesen werden soll, oder der Name einer vorhandenen Variable, die geändert werden soll.</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der Wert, den die Variable enthalten soll.</td>
+      </tr>
+      <tr>
+        <td>Relativ</td>
+        <td>Prüfen Sie, ob der Wert relativ zum vorherigen Wert eingestellt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Assign Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Assign_Var.png">Der obige Code des Aktionsblocks prüft zwei Instanzvariablen und wenn eine größer ist als die andere (
+    wenn &quot;<span class="inline">my_score</span>&quot; größer ist als &quot;<span class="inline">level_score</span>&quot;), dann setzt er eine Anzahl von Instanzvariablen auf neue Werte.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Common_Actions_Library.htm">Gemeinsame Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Declare_Temporary_Variable.htm">Temporäre Variable deklarieren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Assign Variable
+-->
+  <!-- TAGS
+action_variable
+-->
+
+</body></html>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_get" />
+  <meta name="rh-index-keywords" content="animcurve_get" />
+  <meta name="search-keywords" content="animcurve_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_get</h1>
+  <p>Diese Funktion gibt eine <a href="../../../GML_Overview/Structs.htm">Struktur</a> zurück, die alle Daten für die angegebene Animationskurve enthält. Sie geben die Asset-ID der Animationskurve an (wie im Asset-Browser definiert), und die Funktion gibt eine struct
+    mit den folgenden Variablen zurück:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th>Daten Typ</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>String</td>
+        <td>Dies ist der Name der Animationskurve.</td>
+      </tr>
+      <tr>
+        <td>Kanäle</td>
+        <td>Array-Zeiger</td>
+        <td>Dies ist ein Array, wobei jedes Element im Array eine Kanalstruktur ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Die <tt>Kanalvariable</tt> in der Struktur ist ein <a href="../../../GML_Overview/Arrays.htm">Array</a>, wobei jedes Array-Element eine Struktur mit Daten ist, die sich auf einen Kanal innerhalb der Kurve beziehen. Die Kanal-Struktur hat die folgenden Variablen:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th>Daten Typ</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>String</td>
+        <td>Dies ist der Name des Kanals.</td>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Konstante</td>
+        <td>Dies wird eine der Konstanten <tt><b>animcurvetype_linear</b></tt> für eine lineare Interpolation zwischen den Punkten, oder <tt><b>animcurvetype_catmullrom</b></tt> für eine &quot;glatte&quot; Interpolation zwischen den Punkten mittels Catmull-Rom-Interpolation.</td>
+      </tr>
+      <tr>
+        <td>Iterationen</td>
+        <td>Ganzzahl</td>
+        <td>Wenn der Kanal die Katmull-rom (&quot;glatte&quot;) Interpolation verwendet, wird hier festgehalten, wie viele Punkte für jedes Segment der Kurve generiert wurden (beachten Sie, dass diese zusätzlichen Punkte intern in der Funktion sind und nur für die Laufzeitberechnungen verwendet werden).
+          Wenn der Kanal eine lineare Interpolation verwendet, ist dieser Wert immer noch vorhanden, kann aber ignoriert werden, da er keinen Einfluss darauf hat, wie die Kurve interpoliert wird.</td>
+      </tr>
+      <tr>
+        <td>Punkte</td>
+        <td>Array-Zeiger</td>
+        <td>Dies ist ein Array, wobei jedes Element im Array eine Punktstruktur ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Wie bei Kanälen werden die Punkte eines einzelnen Kanals als Strukturen in einem Array gespeichert, wobei jedes Element im Array eine einzelne Punktstruktur ist. Die Punktstruktur hat die folgenden Variablen:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th>Daten Typ</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>posx</td>
+        <td>real</td>
+        <td>Die Position in der Zeit (normiert von 0 bis 1) des Punktes.</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>real</td>
+        <td>Der Wert des Punktes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Beachten Sie, dass die Funktion -1 zurückgibt, wenn sie fehlschlägt (d. h.: die angegebene Animationskurven-ID existiert nicht).</p>
+  <p> </p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">animcurve_get(curve_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kurven_id</td>
+        <td>Die Asset-Browser-ID (Index) der abzurufenden Animationskurve.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur oder -1</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _curve = animcurve_get(ac_ButtonTween);<br> var _channel = _curve.channels[0];<br> if _channel.type != animcurvetype_linear<br> {
+    <br> _channel.type = animcurvetype_linear;<br> }
+  </p>
+  <p>Der obige Code ruft die Animationskurvenstruktur für das Kurven-Asset &quot;ac_ButtonTween&quot; ab, überprüft dann den Kurventyp für den ersten Kanal und setzt ihn, wenn er nicht linear ist, auf linear.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Animation_Curves.htm">Animation Kurven</a></div>
+        <div style="float:right">Weiter: <a href="animcurve_get_channel.htm">animcurve_get_channel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_get
+-->
+  <!-- TAGS
+animcurve_get
+-->
+</body>
+</html>

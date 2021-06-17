@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_lettersdigits</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_lettersdigits" />
+  <meta name="rh-index-keywords" content="string_lettersdigits" />
+  <meta name="search-keywords" content="string_lettersdigits" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_lettersdigits</h1>
+  <p>Diese Funktion gibt eine Kopie einer gegebenen Zeichenkette zurück, bei der alles außer den Buchstaben und Ziffern entfernt wurde, was bedeutet, dass sie verwendet werden kann, um unerwünschte Zeichen (wie &quot;#&quot; oder &quot;?&quot;) z. B. aus einem Anmeldenamen oder einem Passwort zu entfernen.</p>
+  <p class="note">HINWEIS: Diese Funktion gibt nur das englische Alphabet mit 26 Buchstaben von A - Z (Groß- oder Kleinschreibung) und die Zahlen 0 - 9 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">string_lettersdigits(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Die in Buchstaben und Ziffern zu konvertierende Zeichenfolge.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (string_length(password) &gt; string_length(string_lettersdigits(password)))<br> {
+    <br> draw_text(32,32, &quot;Ungültiges Passwort! Nur Buchstaben und Zahlen bitte!&quot;);<br> }
+  </p>
+  <p>Der obige Code prüft die Länge einer Zeichenkette gegen die Länge der gleichen Zeichenkette, bei der jedoch alle Symbole entfernt wurden. Wenn sie nicht gleich sind, wird eine Meldung auf den Bildschirm gezeichnet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Strings.htm">Streicher</a></div>
+        <div style="float:right">Weiter: <a href="string_lower.htm">string_lower</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_lettersdigits
+-->
+  <!-- TAGS
+string_lettersdigits
+-->
+
+</body></html>

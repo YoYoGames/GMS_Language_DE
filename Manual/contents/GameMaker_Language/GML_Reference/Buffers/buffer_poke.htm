@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Puffer_Stange</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_poke" />
+  <meta name="rh-index-keywords" content="buffer_poke,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_poke" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Puffer_Stange</h1>
+  <p>Mit der Funktion <a href="buffer_write.htm"><tt>buffer_write()</tt></a> Funktion können Sie Daten in den angegebenen Puffer an der aktuellen &quot;seek&quot;-Position schreiben, wobei jedes Datenstück diese Position um die zu schreibenden oder zu lesenden Bytes weiterrückt. Es kann jedoch
+    kann es jedoch notwendig sein, ein bestimmtes Datenstück zu ändern, ohne die aktuelle Suchposition zu verändern, und in diesem Fall würden Sie diese Funktion verwenden. Sie übergeben der Funktion einfach einen Pufferindex und dann die Offset-Position vom
+    Pufferstart (in Bytes) innerhalb dieses Puffers, in den geschrieben werden soll, sowie den Datentyp und den zu schreibenden Wert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_poke(buffer, offset, type, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu verwendenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Die Offsetposition (in Bytes) innerhalb des Puffers, in die die angegebenen Daten geschrieben werden sollen.</td>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der Daten, die in den Puffer geschrieben werden sollen (siehe die Liste der Konstanten <a href="buffer_write.htm">hier</a>).</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Die Daten, die dem Puffer hinzugefügt werden sollen, entsprechend dem angegebenen Typ.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">buffer_poke(buff, 3, buffer_u8, colour_get_blue(image_blend));</p>
+  <p>Der obige Code fügt den Wert der Blaukomponente der für die Bildüberblendung verwendeten Farbe in den Puffer ein, der in der Variablen &quot;buff&quot; indiziert ist, und zwar an der dritten Position im Puffer und als 8-Bit-Wert ohne Vorzeichen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_save.htm">buffer_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_poke
+-->
+  <!-- TAGS
+buffer_poke
+-->
+</body>
+</html>

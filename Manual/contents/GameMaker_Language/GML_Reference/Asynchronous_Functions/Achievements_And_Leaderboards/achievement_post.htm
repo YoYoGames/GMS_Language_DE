@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>leistung_post</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for achievement_post" />
+  <meta name="rh-index-keywords" content="achievement_post" />
+  <meta name="search-keywords" content="achievement_post" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>leistung_post</h1>
+  <p>Mit dieser Funktion können Sie Ihre Erfolge an den gewählten Leaderboard- und Achievement-Dienst senden. Auf <span class="notranslate">Android</span> benötigen Sie die ID der Errungenschaft als String (dies ist die eindeutige ID der Errungenschaft, die beim Einrichten der Errungenschaft zugewiesen wurde),
+    während Sie auf allen anderen Plattformen den Namen des Achievements als String liefern und dann den Prozentsatz angeben, den Sie auf dem Weg zum Erhalt des Achievements erreicht haben (0 - Keine, 100 - Abgeschlossen). Die Funktion löst ein <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">soziales asynchrones Ereignis</a> aus, bei dem die zurückgegebene <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> DS-Map die folgenden Schlüssel/Wertpaare enthält:</p>
+  <ul class="colour">
+    <li>&quot; type&quot;<b>-</b> Dies ist der Typ des Ereignisses, das ausgelöst wurde, was<tt>für diese</tt> Funktion die Zeichenfolge &quot; achievement_post_result<tt>&quot;</tt> sein wird.</li>
+    <li>&quot; id&quot; - Dies ist die ID des Ereignisses, und für diese Funktion wird eine <span class="notranslate">GML-Konstante</span> GooglePlayServices_EVENT_ID_POST_ACHIEVEMENT zurückgegeben <tt>.</tt></li>
+    <li>&quot;<b>achievement_id&quot; -</b> Dies ist die eindeutige ID der Leistung, die aktualisiert wurde.</li>
+    <li>&quot;<b>Status&quot; -</b> Dieser Wert ist 1, wenn die Leistung erfolgreich aktualisiert wurde, oder 0, wenn die Anfrage fehlgeschlagen ist</li>
+  </ul>
+  <p> </p>
+  <h4><b>Syntax:</b></h4>
+  <p class="code">achievement_post(Leistung, Prozent)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Leistung</td>
+        <td>Der Name/die ID der Leistung.</td>
+      </tr>
+      <tr>
+        <td>Prozent</td>
+        <td>Der Prozentsatz der abgeschlossenen Leistung.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if achievement_available()<br> {<br> achievement_post(global.Achievement[0], 100);<br> }
+  </p>
+  <p>Der obige Code prüft, ob der gewählte Ranglisten- und Achievement-Dienst verfügbar ist, und wenn ja, dann wird ein Achievement gepostet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Achievements_And_Leaderboards.htm">Errungenschaften und Bestenlisten</a></div>
+        <div style="float:right">Weiter: <a href="achievement_post_score.htm">achievement_post_score</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+achievement_post
+-->
+  <!-- TAGS
+achievement_post
+-->
+</body>
+</html>

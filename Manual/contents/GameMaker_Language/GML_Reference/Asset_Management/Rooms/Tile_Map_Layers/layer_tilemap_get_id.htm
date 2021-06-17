@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_tilemap_get_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_tilemap_get_id" />
+  <meta name="rh-index-keywords" content="layer_tilemap_get_id" />
+  <meta name="search-keywords" content="layer_tilemap_get_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_tilemap_get_id</h1>
+  <p>Mit dieser Funktion können Sie den eindeutigen ID-Wert des Kachelkartenelements auf einer Ebene abrufen. Sie liefern die Ebenen-ID (die Sie beim Erstellen der Ebene mit <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>) oder
+    den Ebenennamen (als String - dies wirkt sich auf die Leistung aus) und die Funktion gibt den ID-Wert zurück, der mit dem Kachelzuordnungselement auf der Ebene verknüpft ist. Beachten Sie, dass diese Funktion speziell für die Verwendung mit Kachelmaps gedacht ist, die
+    Wenn Sie eine Tile-Map zu einer Ebene durch Code hinzufügen, der die Funktion <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>hinzufügen, gibt sie die eindeutige ID für das hinzugefügte Tilemap-Element zurück. Wenn die angegebene Tilemap-ID
+    falsch ist oder die Tilemap nicht existiert, gibt die Funktion -1 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_tilemap_get_id(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Ebene (oder der Ebenenname als String)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Kachelkartenelement-ID-Wert (Real) oder -1</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;tilemap_trees&quot;);<br> var tile_id = layer_tilemap_get_id(lay_id);<br> layer_tilemap_destroy(tile_id);
+  </p>
+  <p>Der obige Code ermittelt die Ebenen-ID für die Ebene mit dem Namen &quot;tilemap_trees&quot; und verwendet diese dann, um die ID des Kachelkartenelements auf dieser Ebene zu ermitteln. Diese ID wird dann zum Entfernen der Kachelkarte aus der Ebene verwendet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Tile_Map_Layers.htm">Kachelkartenebenen</a></div>
+        <div style="float:right">Weiter: <a href="layer_tilemap_exists.htm">layer_tilemap_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_tilemap_get_id
+-->
+  <!-- TAGS
+layer_tilemap_get_id
+-->
+</body>
+</html>

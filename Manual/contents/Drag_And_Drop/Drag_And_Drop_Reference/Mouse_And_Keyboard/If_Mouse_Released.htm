@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn die Maus freigegeben ist</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Mouse Released action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Mouse Released" />
+  <meta name="search-keywords" content="If Mouse Released" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Mouse Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Released.png"> Wenn die Maus losgelassen wird</h1>
+  <p>Diese Aktion prüft, wann eine Maustaste losgelassen wurde. Sie gibt bei dem einen Spielschritt (Frame), bei dem die Maustaste losgelassen wird, <tt>true</tt> zurück und zu allen anderen Zeiten <tt>false</tt>. Wenn Sie den Modifikator <tt>not</tt> aktivieren, wird diese Aktion
+    umgekehrt und prüft, ob die Maustaste <i>nicht</i> losgelassen wurde, und gibt <tt>false</tt> bei dem Spielschritt (Frame) zurück, bei dem sie losgelassen wurde, und <tt>true</tt> zu allen anderen Zeiten.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in den &quot;if&quot;-Block diese an der Seite der Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="If Mouse Released drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Mouse_ReleasedDrop.png" /></p>
+  <p>Diese Aktionen werden nun ausgeführt, wenn der &quot;if&quot;-Block als wahr ausgewertet wird, <tt>während</tt> alle an anderer Stelle ausgelassenen Aktionen nach dem &quot;if&quot;-Block ausgeführt werden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="If Mouse Released Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_Released.png" /></p>
+  <h4>Argumente:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Maustaste</td>
+        <td>Der Name der zu prüfenden Maustaste (links, Mitte, rechts).</td>
+      </tr>
+      <tr>
+        <td>Nicht</td>
+        <td>Negieren der Prüfung (aus wahr wird falsch und umgekehrt)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="If Mouse Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_Down.png">Der obige Code des Aktionsblocks fragt bei jedem Schritt den Zustand der Maustaste ab und wenn sie
+    gedrückt gehalten wird, prüft er, ob die Maustaste beim ersten Drücken gedrückt wird. Wenn die Prüfung auf den anfänglichen Tastendruck <tt>wahr</tt> ist, wird die Instanzgeschwindigkeit gesetzt, dann wird, während die Taste gedrückt ist, die Sprite-Überblendung auf rot geändert. Wenn die Maus nicht gedrückt gehalten wird
+    wird beim Loslassen der Maus geprüft, ob die Überblendungsfarbe auf Weiß zurückgesetzt und die Geschwindigkeit auf 0 gesetzt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Mouse_And_Keyboard_Actions.htm">Maus- und Tastatur-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="If_Key_Pressed.htm">Wenn die Tastatur gedrückt wird</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Mouse Released
+-->
+  <!-- TAGS
+action_if_mouse_released
+-->
+</body>
+</html>

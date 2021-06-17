@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_add_instance</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_add_instance" />
+  <meta name="rh-index-keywords" content="layer_add_instance" />
+  <meta name="search-keywords" content="layer_add_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_add_instance</h1>
+  <p>Diese Funktion kann verwendet werden, um eine bestimmte Instanz von der Ebene, auf der sie sich gerade befindet, auf eine andere Ebene zu verschieben. Sie geben die Layer-ID (die Sie beim Erstellen des Layers mit <a href="layer_create.htm"><tt>layer_create()</tt></a>) oder den Ebenennamen (als
+    eine Zeichenkette - dies hat Auswirkungen auf die Leistung) und die Instanz-ID der Instanz, die zwischen den Ebenen verschoben werden soll. Angenommen, Ihr Player befindet sich auf einer Ebene, die eine geringere Tiefe als eine andere Ebene hat, und Sie möchten, dass er hinter den Ebenen zwischen
+    den beiden. Sie können diese Funktion verwenden, um den Player von der Vordergrundebene zur Hintergrundebene zu wechseln und ihn hinter den anderen gezeichneten Ebenen erscheinen zu lassen.</p>
+  <p class="note"><b>HINWEIS:</b> Diese Funktion kann nicht verwendet werden, um eine neue Instanz zu einer Ebene hinzuzufügen. Sie <b>müssen</b> die Instanz zuvor erstellt und ihre ID in einer Variablen gespeichert haben.</p>
+  <p class="note"><strong>HINWEIS</strong>: Diese Funktion ist nur innerhalb des Bereichs des aktuellen Raums gültig und kann nicht verwendet werden, wenn der Bereich mit der Funktion <span class="inline"><a href="layer_set_target_room.htm" style="font-size: 14px">layer_set_target_room()</a></span> geändert wurde.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_add_instance(layer_id, instance_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Instanzschicht (oder der Schichtname als String)</td>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>Der eindeutige Instanz-ID-Wert der Instanz, die in die Zielebene verschoben werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var near = instance_nearest(x, y, obj_Tree);<br> var layer_id = layer_get_id(&quot;Instances Front&quot;);<br> layer_add_instance(layer_id, near);</p>
+  <p>Der obige Code ermittelt zunächst den Index der nächstgelegenen Instanz zur angegebenen x/y-Position und speichert ihn in einer lokalen Variablen. Dann wird die eindeutige Instanz-Layer-ID für den Layer mit dem Namen &quot;Instances Front&quot; ermittelt und die gefundene Instanz auf
+    diese Ebene.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_has_instance.htm">layer_has_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_add_instance
+-->
+  <!-- TAGS
+layer_add_instance
+-->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_texrepeat_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_texrepeat_ext" />
+  <meta name="rh-index-keywords" content="gpu_set_texrepeat_ext" />
+  <meta name="search-keywords" content="gpu_set_texrepeat_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texrepeat_ext</h1>
+  <p>Mit dieser Funktion kann eingestellt werden, ob ein einzelner Sampler-&quot;Slot&quot; die angegebene Textur wiederholt, wenn man <a href="../../Asset_Management/Shaders/Shaders.htm"><span class="notranslate">Sampler</span></a> in <span class="notranslate">GameMaker Studio 2</span>. Die Einstellung <tt>true</tt> wiederholt die
+    Textur wiederholt, wenn die UV-Koordinaten außerhalb des Bereichs 0-1 liegen, während die Einstellung <tt>false</tt> keine Wiederholung bedeutet. Der wahrscheinliche Anwendungsfall für diese Funktionen ist das Wiederholen einer Textur in 3D, aber damit es funktioniert und nicht Bilder vom Rest der Texturseite
+    der Texturseite zu ziehen, muss das verwendete Sprite im Sprite-Editor als &quot;Separate Texture Page&quot; markiert werden.</p>
+  <p class="note"><b>HINWEIS: </b>Diese Einstellung wird durch den Wert überschrieben, der beim Aufruf der Funktion <span style="font-size:1px;"><a href="gpu_set_texrepeat.htm"><tt style="font-size: 14px">gpu_set_texrepeat()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_set_texrepeat_ext(sampler_id, enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sampler_id</td>
+        <td>Die Sampler-ID aus dem <span class="notranslate">Shader</span>.</td>
+      </tr>
+      <tr>
+        <td>aktivieren.</td>
+        <td>Aktivieren oder Deaktivieren der Texturfilterung<tt>(true</tt> / <tt>false</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var s_tex = <span class="notranslate">shader_get_sampler_index</span><span class="notranslate">(shader_glass</span>, &quot;s_NoiseSampler&quot;);<br> if gpu_get_texfilter_ext(s_tex)<br> {
+    <br> gpu_set_texfilter_ext(s_tex, false);<br> }
+    <br> sonst
+    <br> {
+    <br> gpu_set_texfilter_ext(s_tex, true);<br> }
+  </p>
+  <p>Der obige Code prüft, ob die Texturfilterung für eine bestimmte Sampler-ID (gespeichert in einer lokalen Variablen) ein- oder ausgeschaltet ist und schaltet sie entsprechend um.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GPU_Control.htm">GPU-Steuerung</a></div>
+        <div style="float:right">Weiter: <a href="gpu_push_state.htm">gpu_push_state</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_texrepeat_ext
+-->
+  <!-- TAGS
+gpu_set_texrepeat_ext
+-->
+</body>
+</html>

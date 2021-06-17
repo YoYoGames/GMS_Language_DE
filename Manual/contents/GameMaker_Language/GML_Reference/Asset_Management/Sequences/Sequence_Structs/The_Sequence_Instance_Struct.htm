@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Die Sequenz-Instanz-Struktur</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Sequence Instance Struct" />
+  <meta name="rh-index-keywords" content="Sequence Instance Struct" />
+  <meta name="search-keywords" content="The Sequence Instance Struct,seqdir_right,seqdir_left,sequence,headPosition,headDirection,speedScale,paused,finished,elementID,activeTracks,matrix,posx,posy,scalex,scaley,xorigin,yorigin,width,height,imageindex,imagespeed,colourMultiply,gain,pitch,track,parent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die Sequenz-Instanz-Struktur</h1>
+  <p>Eine Sequenz wird, wenn sie in einem Raum platziert wird, als <strong>Element</strong> auf der Ebene platziert, und dieses Element enthält eine <strong>Sequenzinstanz</strong>. Diese Sequenzinstanz hat die folgenden Eigenschaften in ihrer <a href="../../../../GML_Overview/Structs.htm">Struktur</a>:</p>
+  <ul class="colour">
+    <li><tt>Sequenz</tt>: Dies ist die ID der <b>Sequenzobjekt-Struktur</b>, aus der die Sequenzinstanz erstellt wurde (siehe <a href="The_Sequence_Object_Struct.htm">hier für</a>weitere Details). Sie können diese Struktur abrufen oder setzen und so die Basis
+      Sequenz, auf die die Instanz verweist, ändern.</li>
+    <li><tt>headPosition</tt>: Dies ist die aktuelle <a class="glossterm" data-glossterm="Abspielkopf" href="#">Abspielkopfposition</a> (in Frames) für die Sequenzinstanz. Sie können diesen Wert abrufen oder setzen, aber beachten Sie, dass das Setzen auf einen Wert, der größer oder kleiner ist als
+      den aktuell definierten Abspielbereich hat unterschiedliche Auswirkungen, je nachdem, welche Art der Wiedergabe für die Sequenz eingestellt ist. Siehe <a href="../../Rooms/Sequence_Layers/layer_sequence_headpos.htm"><tt>layer_sequence_headpos()</tt></a> für weitere Informationen.</li>
+    <li><tt>headDirection</tt>: Dies ist die aktuelle Wiedergaberichtung für die Sequenzinstanz. Sie können diesen Wert mit den folgenden Konstanten abrufen oder setzen (Beachten Sie, dass Sie die Layer-Funktionen <a href="../../Rooms/Sequence_Layers/layer_sequence_get_headdir.htm"><tt>layer_sequence_get_headdir()</tt></a> und
+      <a href="../../Rooms/Sequence_Layers/layer_sequence_headdir.htm"><tt>layer_sequence_headdir()</tt></a> verwenden können, um diesen Wert zu erhalten oder zu setzen, ohne direkt auf die Struktur zugreifen zu müssen):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+        <th>Wert</th>
+      </tr>
+      <tr>
+        <td>seqdir_right</td>
+        <td>Die Sequenz spielt die Bilder in einer inkrementellen Reihenfolge von links nach rechts ab</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>seqdir_left</td>
+        <td>Die Sequenz spielt die Frames in einer absteigenden Reihenfolge von rechts nach links ab</td>
+        <td>-1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>speedScale</tt>: Mit dieser Eigenschaft können Sie die Skala für die Wiedergabegeschwindigkeit abrufen oder festlegen. Die Geschwindigkeitsskala ist ein <i>Multiplikator</i>, wobei 1 die Standard-Wiedergabegeschwindigkeit ist und Werte kleiner als 1 die Wiedergabe verlangsamen und Werte größer als 1 sie beschleunigen.
+      Werte größer als 1 beschleunigen die Wiedergabe, z. B.: Ein Wert von 0,5 würde die halbe Wiedergabegeschwindigkeit bedeuten, während ein Wert von 2 die doppelte Wiedergabegeschwindigkeit bedeuten würde. Beachten Sie, dass Sie mit den Ebenenfunktionen <a href="../../Rooms/Sequence_Layers/layer_sequence_get_speedscale.htm"><tt>layer_sequence_get_speedscale()</tt></a> und  verwenden können.
+      <a href="../../Rooms/Sequence_Layers/layer_sequence_speedscale.htm"><tt>layer_sequence_speedscale()</tt></a> verwenden können, um diesen Wert zu erhalten oder zu setzen, ohne direkt auf die Struktur zugreifen zu müssen.</li>
+    <li><tt>pausiert</tt>: Sie können diese Eigenschaft überprüfen, um zu sehen, ob eine Sequenz pausiert wurde oder nicht, und sie wird <tt>true</tt> sein, wenn dies der Fall ist, oder <tt>false</tt> andernfalls. Dies ist eine <b>schreibgeschützte</b> Eigenschaft, aber Sie können die Ebenenfunktion <a href="../../Rooms/Sequence_Layers/layer_sequence_pause.htm"><tt>layer_sequence_pause()</tt></a> verwenden, um
+      die Wiedergabe anzuhalten und <a href="../../Rooms/Sequence_Layers/layer_sequence_play.htm"><tt>layer_sequence_play()</tt></a> um sie bei Bedarf wieder fortzusetzen. Sie können diese Eigenschaft auch mit der Ebenenfunktion <a href="../../Rooms/Sequence_Layers/layer_sequence_is_paused.htm"><tt>layer_sequence_is_paused()</tt></a> stattdessen
+      anstatt die Eigenschaft direkt in der Struktur zu prüfen.</li>
+    <li><tt>beendet</tt>: Sie können diese Eigenschaft überprüfen, um zu sehen, ob die Wiedergabe einer Sequenz beendet ist oder nicht, wobei <tt>true</tt> zurückgegeben wird, wenn die Wiedergabe beendet ist, und <tt>false</tt> andernfalls. Diese Eigenschaft ist <b>schreibgeschützt</b> und gibt nur <tt>true</tt> für Spuren zurück, die nicht auf Loop oder Ping-Pong eingestellt sind. Sie können diese Eigenschaft auch mit der Layer-Funktion <a href="../../Rooms/Sequence_Layers/layer_sequence_is_finished.htm"><tt>layer_sequence_is_finished()</tt></a> überprüfen, anstatt die Eigenschaft
+      in der Struktur direkt zu prüfen.</li>
+    <li><tt>elementID</tt>: Diese Eigenschaft enthält die ID des <i>Sequenzelements</i>. Diese iD ist ein einfacher Identifizierungswert, der mit einer Ebene im Raumeditor verknüpft ist, und kann dann mit den entsprechenden <a href="../../Rooms/General_Layer_Functions/General_Layer_Functions.htm">Ebenenfunktionen</a> verwendet werden, um
+      um die Ebene zu finden, der die Sequenz zugewiesen wurde, oder um bestimmte Sequenzeigenschaften zu ändern, ohne sich mit der Struktur befassen zu müssen.</li>
+    <li><tt>activeTracks</tt>: Diese Eigenschaft enthält ein Array von &quot;Auswertungs&quot;-Strukturen, die Informationen über den aktuellen Zustand jeder <b>Asset-Spur in der</b> Sequenz (Grafik, Sequenz, Audio usw.) enthalten. Dies sind nur die Spuren der obersten Ebene,
+      und das zurückgegebene Array ist <b>schreibgeschützt</b>. Für den Inhalt der Asset-Spur-Struktur, die in jedem Array-Eintrag zurückgegeben wird, lesen Sie bitte den Abschnitt unten.</li>
+  </ul>
+  <p>Die folgende Liste enthält die Eigenschaften, die Ihnen beim Zugriff auf eine Spurstruktur zur Verfügung stehen können (wie von der Eigenschaft <tt>activeTracks</tt> der übergeordneten Sequenzstruktur zurückgegeben, siehe oben). Jede Asset-Spurstruktur kann einige oder alle der folgenden Eigenschaften haben
+    (Beachten Sie, dass Sie alle diese Eigenschaften abrufen oder einstellen können, außer wenn sie als schreibgeschützt angegeben sind), und alle zurückgegebenen Werte gelten für die <i>aktuelle Abspielkopfposition</i>:</p>
+  <ul class="colour">
+    <li><tt>Matrix</tt>: Dies ist die Transformationsmatrix, die zum Zeichnen der Spur (Sprite-, Instanz- und Sequenzspuren) verwendet wird.</li>
+    <li><tt>posx</tt>: Die Position des Assets in der Sequenz entlang der X-Achse für die Spur an der aktuellen Abspielkopfposition (alle Assets).</li>
+    <li><tt>posy</tt>: Die Position des Assets in der Sequenz entlang der Y-Achse für die Spur an der aktuellen Abspielkopfposition (alle Assets).</li>
+    <li><tt>scalex</tt>: Der Maßstab des Assets in der Sequenz entlang der X-Achse für die Spur an der aktuellen Abspielkopfposition (Sprite-, Instanz- und Sequenzspuren).</li>
+    <li><tt>scaley</tt>: Der Maßstab des Assets in der Sequenz entlang der Y-Achse für die Spur an der aktuellen Abspielkopfposition (Sprite-, Instanz- und Sequenzspuren).</li>
+    <li><tt>xUrsprung</tt>: Der X-Ursprung des Assets für die Spur (alle Assets).</li>
+    <li><tt>yUrsprung</tt>: Der Y-Ursprung des Assets für die Spur (alle Assets).</li>
+    <li><tt>width</tt>: Die Breite (in Pixel) des Assets für die Spur (Sprite-, Instanz- und Sequenzspuren).</li>
+    <li><tt>Höhe</tt>: Die Höhe (in Pixel) des Assets für die Spur (Sprite-, Instanz- und Sequenzspuren).</li>
+    <li><tt>Bildindex</tt>: Der Bildindex für das Asset auf der Spur in der Sequenz an der aktuellen Abspielkopfposition (Sprite- und Instanzspuren).</li>
+    <li><tt>imagespeed</tt>: Die Bildgeschwindigkeit für das Asset auf der Spur in der Sequenz an der aktuellen Abspielkopfposition (Sprite- und Instanzspuren).</li>
+    <li><tt>FarbeMultiplizieren</tt>: Der Farbmultiplikationswert für das Asset auf der Spur in der Sequenz an der aktuellen Abspielkopfposition (Sprite-, Instanz- und Sequenzspuren). Dieser Wert ist ein <a href="../../../../GML_Overview/Arrays.htm">Array</a> aus
+      vier <a class="glossterm" data-glossterm="ARGB" href="#">ARGB-Werten</a> mit dem Format [A, R, G, B]. Beachten Sie, dass die Werte für jede Komponente als zwischen 0 und 1 ausgedrückt werden, wobei 0 dem HEX-Wert #00 und 1 dem HEX
+      Wert #FF entspricht (0 - 255, wie im Farbwähler für Farbmultiplexspuren im Sequenzeditor angezeigt).</li>
+    <li><tt>Verstärkung</tt>: Die Verstärkung (Lautstärke) der Spur an der aktuellen Abspielkopfposition (Audiospuren).</li>
+    <li><tt>Tonhöhe</tt>: Die Tonhöhe der Spur an der aktuellen Abspielkopfposition (Audiospuren).</li>
+    <li><tt>Spur</tt>: Die Spurdatenstruktur, auf der diese Spur basiert (alle Assets, ein <b>schreibgeschützter</b> Wert).</li>
+    <li><tt>parent</tt>: Die übergeordnete Sequenzinstanz-ID für die Spur (alle Assets, ein <b>schreibgeschützter</b> Wert).</li>
+    <li><tt>activeTracks</tt>: Dies ist ein Array von Auswertungs-Strukturen für jeden Parameter Track, den die Asset-Spur enthält (alle Assets, ein <b>schreibgeschützter</b> Wert). Die Inhalte der einzelnen Structs im Array sind im Abschnitt Parameter <a href="The_Track_Struct.htm">Track Struct</a> aufgeführt.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="The_Track_Struct.htm">Die Spur Struktur</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequence Instance Struct
+seqdir_right
+seqdir_left
+sequence
+headPosition
+headDirection
+speedScale
+paused
+finished
+elementID
+activeTracks
+matrix
+posx
+posy
+scalex
+scaley
+xorigin
+yorigin
+width
+height
+imageindex
+imagespeed
+colourMultiply
+gain
+pitch
+track
+parent
+-->
+  <!-- TAGS
+sequence_instance
+-->
+
+</body></html>

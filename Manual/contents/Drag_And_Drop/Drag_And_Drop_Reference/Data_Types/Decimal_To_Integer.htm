@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dezimal zu Integer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Decimal To Integer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Decimal To Integer" />
+  <meta name="search-keywords" content="Decimal To Integer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Decimal To Integer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_Decimal_To_Integer.png"> Dezimal zu Integer</h1>
+  <p>Diese Aktion nimmt eine Dezimalzahl und wandelt sie in eine Ganzzahl um. Sie geben den zu konvertierenden Wert an und wählen dann die Art der Rundung, die durchgeführt werden soll, um ihn in einen Ganzzahlwert umzuwandeln. Die verfügbaren Rundungstypen sind:<b></b></p>
+  <ul class="colour">
+    <li><b>Runden</b>: Nimmt eine Dezimalzahl und rundet sie auf die nächste ganzzahlige Zahl auf <i>oder</i> ab. In dem speziellen Fall, dass die übergebene Zahl genau eine halbe ganze Zahl ist (z. B. 1,5, 17,5, -2,5 usw.), wird die Zahl auf den nächsten geraden Wert gerundet.
+      Die Zahl wird auf den nächsten <b>geraden</b> Wert gerundet, z. B. 2,5 wird auf 2 gerundet, während 3,5 auf 4 gerundet wird. Diese Art der Rundung wird <i>Banker-Rundung</i> genannt und ergibt bei einer großen Anzahl von Iterationen oder bei der Verwendung von Fließkomma-Mathematik eine statistisch bessere Rundung als die traditionellere
+      eine statistisch bessere Rundung als der traditionellere Ansatz &quot;aufrunden, wenn über 0,5 und sonst abrunden&quot;.</li>
+    <li><b>Ceil</b>: Nimmt einen Dezimalwert und rundet ihn <i>auf</i> die nächste Ganzzahl auf. Im Gegensatz zu round (oben) wird hier der Dezimalteil des Wertes nicht berücksichtigt, so dass eine Zahl wie 5.0000001 immer noch auf 6 aufgerundet würde. Es ist erwähnenswert
+      Wenn Sie die Zufallsaktion " <a href="../Random/Get_Random_Number.htm">Zufallszahl ermitteln</a> " verwenden, um einen zufälligen Dezimalwert zu generieren, und dann diese Aktion aufrufen, um ihn aufzurunden, <i>können</i> Sie unerwartete Ergebnisse erhalten. Die Zufalls
+      Aktion könnte möglicherweise 0 zurückgeben, und wenn Sie &quot;Ceil&quot; darauf anwenden, erhalten Sie nicht 1, sondern 0. Wenn Sie also eine zufällige Dezimalzahl von 0 bis 9 erhalten und diese Funktion verwenden, erwarten Sie möglicherweise, dass Sie ganze Zahlen von 1 bis 10 erhalten, aber in Wirklichkeit könnten Sie ganze Zahlen von
+      0 bis 10 erhalten. Dies ist eine entfernte Möglichkeit, sollte aber bei der Verwendung dieser Aktion berücksichtigt werden.</li>
+    <li><b>Stockwerk</b>: Dies nimmt einen Dezimalwert und rundet ihn auf den nächsten ganzzahligen Wert <i>ab</i>. Im Gegensatz zum Runden (oben) wird der Dezimalteil des Wertes nicht berücksichtigt, so dass eine Zahl wie 5,9999999 trotzdem auf
+      5.</li>
+  </ul>
+  <p>Nachdem Sie den Rundungstyp ausgewählt haben, müssen Sie die zu rundende Zahl angeben (dies kann eine Variable sein) und dann eine Zielvariable, an die der neue Ganzzahlwert zurückgegeben werden soll (die als temporäre lokale Variable gekennzeichnet sein kann).</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Decimal To Integer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_Decimal_To_integer.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Abrunden</td>
+        <td>Die Art der Rundung, die verwendet wird, um die Ganzzahl zu erhalten (siehe Beschreibung oben)</td>
+      </tr>
+      <tr>
+        <td>Nummer</td>
+        <td>Die Dezimalzahl zum Runden auf eine ganze Zahl</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable zum Speichern der zurückgegebenen Ganzzahl</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Decimal To Integer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_Decimal_To_Integer.png">Der obige Aktionsblockcode nimmt einen Dezimalwert und konvertiert ihn in eine Ganzzahl,
+    und speichert den zurückgegebenen Wert in einer temporären lokalen Variablen. Dieser Wert wird dann in eine Zeichenkette umgewandelt und auf den Bildschirm gezeichnet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Data_Type_Actions.htm">Datentyp-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="String_To_Number.htm">String in Zahl</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Decimal To Integer
+-->
+  <!-- TAGS
+action_decimal_to_integer
+-->
+</body>
+</html>

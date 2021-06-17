@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Master-Lautstärke einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Master Volume action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Master Volume" />
+  <meta name="search-keywords" content="Set Master Volume" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Master Volume Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Master_Volume.png"> Master-Lautstärke einstellen</h1>
+  <p>Mit dieser Aktion können Sie die Lautstärke für das gesamte Soundsystem einstellen. Der Lautstärkewert, den Sie angeben, kann zwischen 0 (stumm) und 1 (volle Lautstärke) liegen und die Skala ist linear, so dass ein Wert von 0,5 der halben Lautstärke entsprechen würde. Beachten Sie, dass sich diese Aktion auf alle
+    Instanzen aller Klänge, die gerade im Raum gespielt werden, und alle zukünftigen Instanzen aller gespielten Klänge beeinflusst. Diese Aktion ist auch unabhängig von der eingestellten Lautstärke für jeden einzelnen Sound, wenn Sie also einen Sound auf 0,5 Lautstärke eingestellt haben
+    eingestellt haben und dann die Master-Lautstärke auf 0,5 einstellen, wird der Sound mit einer Lautstärke von 0,25 abgespielt.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Master Volume Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Set_Master_Volume.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Band</td>
+        <td>Die neue Master-Lautstärke für alle Töne (von 0 bis 1, Voreinstellung 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Set Master Volume Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Set_Master_Volume.png">Der obige Aktionsblock-Code prüft eine globale Variable, um zu sehen, ob sie <tt>wahr</tt> oder
+    falsch ist. Wenn sie <tt>wahr</tt> ist, wird die Master-Lautstärke für das Soundsystem abgerufen und in einer temporären lokalen Variablen gespeichert. Der Wert wird dann überprüft, um festzustellen, ob er ungleich 0,5 ist, und wenn dies nicht der Fall ist, dann wird die Master-Lautstärke des Soundsystems
+    auf 0,5 gesetzt. Wenn die globale Variable auf <tt>false</tt> ausgewertet wird, dann wird die Master-Lautstärke auf 1 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Actions.htm">Audio-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Get_Master_Volume.htm">Master-Lautstärke abrufen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Master Volume
+-->
+  <!-- TAGS
+action_audio_set_master_volume
+-->
+</body>
+</html>

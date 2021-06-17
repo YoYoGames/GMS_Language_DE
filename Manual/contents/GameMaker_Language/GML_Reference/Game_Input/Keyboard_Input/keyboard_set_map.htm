@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keyboard_set_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_set_map" />
+  <meta name="rh-index-keywords" content="keyboard_set_map" />
+  <meta name="search-keywords" content="keyboard_set_map" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>keyboard_set_map</h1>
+  <p>Manchmal, wenn Sie ein Spiel erstellen, möchten Sie vielleicht, dass eine Taste dasselbe tut wie eine andere. Zum Beispiel benutzen viele Leute die Tasten WASD für die Bewegung, aber dann benutzen viele Leute <i>auch</i> die Pfeiltasten! Was ist also zu tun? Nun, man <i>könnte</i> das Bewegungssystem
+    zweimal codieren, aber das ist ein bisschen kompliziert und zum Glück überflüssig, da diese Funktion es Ihnen erlaubt, eine Taste auf eine andere zu &quot;mappen&quot;, so dass jede Eingabe von einer der beiden Tasten als dieselbe interpretiert wird. Dazu wählen Sie eine Taste, die Sie mappen wollen (Taste2
+    - dies wird die Taste sein, für die Sie den Code schreiben) und eine Taste, <i>auf die</i> sie abgebildet werden soll (Taste1). Danach werden Tastendrücke auf beide Tasten von <span class="notranslate">GameMaker Studio 2</span> so interpretiert, als kämen sie von Taste2. Sie können diese Funktion auch verwenden, um
+    Sie können diese Funktion auch verwenden, um ein System zu entwerfen, bei dem der Benutzer seine eigenen Tasten zum Spielen definieren kann, indem er einfach die Benutzereingabetaste der Taste zuordnet, die Sie im Spiel kodiert haben.</p>
+  <p>Die Funktion nimmt einen Keycode-Wert, wie er von der Funktion <a href="../../Strings/ord.htm"><tt>ord()</tt></a> zurückgegeben wird (nur <i>Großbuchstaben</i> von A-Z oder Zahlen von 0-9), oder eine der <tt>vk_*-Konstanten</tt>, die auf der Hauptseite <a href="Keyboard_Input.htm">Tastatureingabe</a> aufgeführt sind.</p>
+  <p class="note"><strong>WICHTIG!</strong> Die Taste, die Sie zuordnen (Taste1), ist nicht mehr als ihr eigentliches Tastensymbol verwendbar, sobald Sie diese Funktion verwenden. Wenn Sie z. B. den Pfeil nach oben auf &quot;W&quot; abbilden, können Sie das Drücken der Taste &quot;W&quot; nicht mehr als &quot;W&quot; erkennen.
+    der Taste &quot;W&quot; nicht mehr als &quot;W&quot; erkannt werden, sondern wird immer als Aufwärtspfeil betrachtet. Um dies rückgängig zu machen, ordnen Sie entweder die Taste sich selbst zu - so wären sowohl Taste1 als auch Taste2 <span class="inline">ord(&quot;W&quot;)</span> - oder verwenden Sie die Funktion <span class="inline"><a href="keyboard_unset_map.htm">keyboard_unset_map()</a></span>.</p>
+  <p> </p>
+  <h4><b>Syntax:</b></h4>
+  <p class="code">keyboard_set_map(key1, key2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Taste1</td>
+        <td>Dies ist der Schlüssel, auf den Taste1 abgebildet werden soll</td>
+      </tr>
+      <tr>
+        <td>Taste2</td>
+        <td>Dies ist die Taste, die abgebildet werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Rückgabe:</b></h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4><b>Beispiel:</b></h4>
+  <p class="code">keyboard_set_map(ord(&quot;A&quot;), vk_left);</p>
+  <p>Im obigen Beispielcode wird die Taste &quot;A&quot; der linken Pfeiltaste zugeordnet. Das bedeutet, dass der Spieler entweder die Taste &quot;A&quot; oder die <i>linke</i> Pfeiltaste verwenden kann und dass der gesamte Code, der für den linken Pfeil geschrieben wurde, auch auf die Taste &quot;A&quot;
+    Taste reagiert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Keyboard_Input.htm">Tastatur-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="keyboard_get_map.htm">keyboard_get_map</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_set_map
+-->
+  <!-- TAGS
+keyboard_set_map
+-->
+</body>
+</html>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_get_channel</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_get_channel" />
+  <meta name="rh-index-keywords" content="animcurve_get_channel" />
+  <meta name="search-keywords" content="animcurve_get_channel,animcurvetype_linear,animcurvetype_catmullrom" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_get_channel</h1>
+  <p>Diese Funktion gibt die <a href="../../../GML_Overview/Structs.htm">Struktur</a> zurück, die die Kanaldaten für den in einem Animationskurven-Asset angegebenen Kanal enthält. Sie geben die Animationskurven-ID oder struct sowie den Kanalnamen oder Index an,
+    und die Funktion gibt eine Struktur mit dem folgenden Format zurück:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th>Daten Typ</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>String</td>
+        <td>Dies ist der Name des Kanals.</td>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Konstante</td>
+        <td>Dies wird eine der Konstanten sein <tt><b>animcurvetype_linear</b></tt> für eine lineare Interpolation zwischen den Punkten, oder <tt><b>animcurvetype_catmullrom</b></tt> für eine &quot;glatte&quot; Interpolation zwischen den Punkten mittels Katmull-Rom-Interpolation.</td>
+      </tr>
+      <tr>
+        <td>Iterationen</td>
+        <td>Ganzzahl</td>
+        <td>Wenn der Kanal die Katmull-rom (&quot;glatte&quot;) Interpolation verwendet, wird hier festgehalten, wie viele Punkte für jedes Segment der Kurve generiert wurden (beachten Sie, dass diese zusätzlichen Punkte intern in der Funktion sind und nur für die Laufzeitberechnungen verwendet werden).
+          Wenn der Kanal eine lineare Interpolation verwendet, ist dieser Wert immer noch vorhanden, kann aber ignoriert werden, da er keinen Einfluss darauf hat, wie die Kurve interpoliert wird.</td>
+      </tr>
+      <tr>
+        <td>Punkte</td>
+        <td>Array-Zeiger</td>
+        <td>Dies ist ein Array, wobei jedes Element im Array eine Punktstruktur ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Die Animationskurven-ID ist der Name der Animationskurve, wie sie im Asset-Browser definiert wurde, oder der Strukturzeiger, wie er von der Funktion <a href="animcurve_create.htm"><tt>animcurve_create()</tt></a>. Der Kanalname ist eine Zeichenkette, die
+    Der Kanalname ist eine Zeichenkette, die sich auf den Kanal bezieht, wie er im Animationskurven-Asset definiert wurde, oder Sie können einen Indexwert angeben, der von 0 bis <i>n</i> reicht, wobei <i>n</i> der letzte Kanal im Kurven-Asset ist (z. B.: Wenn eine Animationskurve 4 Kanäle hat, werden sie indiziert
+    von 0 bis 3 indiziert). Beachten Sie, dass die Übergabe eines Indexwerts weniger Verarbeitung erfordert als die Übergabe eines Kanalnamens. Wenn die Funktion fehlschlägt (d. h.: es existiert kein Kanal mit dem angegebenen Namen oder Index), erhalten Sie eine Fehlermeldung.</p>
+  <p>Die Punkte auf einem einzelnen Kanal werden als Structs in einem <a href="../../../GML_Overview/Arrays.htm">Array</a> gespeichert, wobei jedes Element im Array ein einzelnes Punkt-Struct ist. Die Punktstruktur hat die folgenden Variablen:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th>Daten Typ</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>posx</td>
+        <td>real</td>
+        <td>Die Position in der Zeit (normiert von 0 bis 1) des Punktes.</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>real</td>
+        <td>Der Wert des Punktes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">animcurve_get_channel(curve_struct_or_id, channel_name_or_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>kurven_strukt_oder_id</td>
+        <td>Die ID oder der Strukturzeiger der Animationskurve, die angepeilt werden soll</td>
+      </tr>
+      <tr>
+        <td>kanal_name_oder_index</td>
+        <td>Der Kanalname (eine Zeichenfolge) oder der Kanalindex (eine ganze Zahl).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _channeldata = animcurve_get_channel(ac_ButtonTween, 0);<br> var _points = _channeldata.points;<br> for (var i = 0; i &lt; array_length(_points); ++i;) <br> {
+    <br> _points[i].value += 1;<br> }
+  </p>
+  <p>Der obige Code ruft die Kanalstruktur für Kanal 0 im Kurven-Asset &quot;ac_ButtonTween&quot; ab, läuft dann in einer Schleife durch die Punkte auf der Kanalkurve und fügt zu ihrem Wert einen hinzu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Animation_Curves.htm">Animation Kurven</a></div>
+        <div style="float:right">Weiter: <a href="animcurve_channel_evaluate.htm">animcurve_channel_evaluate</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_get_channel
+-->
+  <!-- TAGS
+animcurve_get_channel
+-->
+</body>
+</html>

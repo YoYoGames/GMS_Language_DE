@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Skript ausführen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Execute Script" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Execute Script" />
+  <meta name="search-keywords" content="Execute Script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Execute Script Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Execute_Script.png"> Skript ausführen</h1>
+  <p>Diese Aktion kann verwendet werden, um eine Skriptfunktion oder eine <a href="Declare_A_New_Function.htm">benutzerdefinierte Funktion</a> aufzurufen. Im Allgemeinen würde diese Aktion nur für Legacy-Support verwendet werden und sollte nicht wirklich in aktuellen oder neuen Projekten verwendet werden. Zur Verwendung der
+    Aktion zu verwenden, geben Sie das aufzurufende Skript-Asset an - oder den Variablennamen der benutzerdefinierten Funktion, die aufgerufen werden soll - und liefern dann alle erforderlichen <i>Argumente</i>, d. h. alle Werte (Strings, Ganzzahlen, Ressourcenindizes usw.), die Sie in das Skript
+    oder Funktion eingeben möchten, damit es sie verwenden kann. Sie können bei Bedarf weitere Argumente hinzufügen, indem Sie auf das Plus-Symbol <span><img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>neben der Aktion klicken.</p>
+  <p>Einige Skripte und benutzerdefinierte Funktionen können auch einen Wert zur späteren Verwendung in der Aktionsblockliste zurückgeben, und so können Sie die <b>Zielvariable</b> angeben, die diesen Rückgabewert speichern soll. Diese kann vorher erstellt worden sein oder eine neue temporäre
+    lokale Variable sein (wenn Sie das Kontrollkästchen &quot;Temp&quot; aktivieren). Sowohl das Ziel- als auch das Argumentfeld können leer gelassen werden, wenn sie nicht benötigt werden.</p>
+  <p>Beachten Sie, dass es im Allgemeinen besser ist, die Aktion <a href="Function_Call.htm">Funktionsaufruf</a> zu verwenden, um benutzerdefinierte Funktionen aufzurufen, und dass Sie diese Aktion im Allgemeinen nicht verwenden oder ein Skript-Asset direkt im Code aufrufen sollten.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Execute Script Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Execute_Script.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Skript</td>
+        <td>Der Name des aufzurufenden Skripts oder der benutzerdefinierten Funktion.</td>
+      </tr>
+      <tr>
+        <td>Argument0 ... Argument3</td>
+        <td>Die verschiedenen Argumente (Werte), die an das Skript oder die Funktion übergeben werden sollen (nicht verwendete Argumente können leer gelassen werden)</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Der Name der Variablen, auf die die zurückgegebenen Werte ausgerichtet werden sollen (kann leer bleiben)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Execute Script Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Execute_Script.png">Der obige Aktionsblock-Code ruft eine benutzerdefinierte Funktion auf und übergibt zwei Argumente für eine
+    zufällige Position innerhalb des Raums. Er gibt nichts zurück.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Common_Actions_Library.htm">Gemeinsame Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="New.htm">Neu</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Execute Script
+-->
+  <!-- TAGS
+action_execute_script
+-->
+</body>
+</html>

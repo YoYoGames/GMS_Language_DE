@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_chain_shape</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_chain_shape" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_chain_shape" />
+  <meta name="search-keywords" content="physics_fixture_set_chain_shape" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_chain_shape</h1>
+  <p>Diese Funktion definiert eine &quot;Ketten&quot;-Einbauteilform. Eine Ketteneinspannung besteht aus einer Anzahl von Punkten, die dann mit Hilfe von Kantenformen miteinander verbunden werden, um sie zu verbinden. Die Funktion selbst nimmt den Index (ID) des Einbauteils und kann dem Einbauteil sagen
+    eine Schleife bilden soll oder nicht. Wenn Sie diese Funktion auf <tt>true</tt> setzen, wird der letzte Punkt mit dem ersten Punkt durch eine Kante verbunden, wenn Sie sie auf <tt>false</tt> setzen, nicht. Beachten Sie, dass diese Funktion das Spannzeug für die Aufnahme der Punkte vorbereitet, die zur Bildung der Kette benötigt werden,
+    und diese sollten nach dem Aufruf dieser Funktion mit <a href="physics_fixture_add_point.htm"><tt>physics_fixture_add_point()</tt></a>hinzugefügt werden, ähnlich wie bei der Erstellung einer Polygon-Fixture.</p>
+  <p>Wenn Sie eine Kettenbefestigung erstellen, müssen Sie ihr mindestens zwei Punkte geben, aber Sie sind in der Anzahl der nachfolgenden Punkte, die Sie hinzufügen können, um die fertige Befestigung zu bilden, nicht begrenzt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_fixture_set_chain_shape(fixture, loop)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Halterung</td>
+        <td>Der Index der Halterung</td>
+      </tr>
+      <tr>
+        <td>Schleife</td>
+        <td>Ob die Kette geschlossen werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var xx = -100;<br> var yy = raum_höhe / 2;<br> var fix = physics_fixture_create(); physics_fixture_set_chain_shape(fix, false);<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> physics_fixture_add_point(fix, xx, yy);<br> xx += 50 + random(150);<br> yy = (room_height / 2) - 250 + irandom(500);<br> }
+    <br> physics_fixture_bind(fix, id);</p>
+  <p>Der obige Code erzeugt eine Reihe von &quot;Rand&quot;-Einbauten mit unterschiedlichen Höhen über die Länge des Raums.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fixtures.htm">Fixtures</a></div>
+        <div style="float:right">Weiter: <a href="physics_fixture_set_polygon_shape.htm">physics_fixture_set_polygon_shape</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_chain_shape
+-->
+  <!-- TAGS
+physics_fixture_set_chain_shape
+-->
+</body>
+</html>

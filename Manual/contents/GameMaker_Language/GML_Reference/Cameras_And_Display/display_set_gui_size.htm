@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_gui_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_set_gui_size" />
+  <meta name="rh-index-keywords" content="display_set_gui_size" />
+  <meta name="search-keywords" content="display_set_gui_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>display_set_gui_size</h1>
+  <p>Diese Funktion wirkt sich nur auf Dinge aus, die im <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">Draw-GUI-Ereignis</a> gezeichnet werden, und kann verwendet werden, um eine bestimmte Breite und Höhe für alle GUI-Komponenten in diesem Ereignis festzulegen, wobei es keine Rolle spielt, welche
+    unabhängig von der Größe des Displays oder des Fensters, in dem die GUI angezeigt wird, korrekt skaliert wird. Wo die GUI positioniert wird (d. h. die (0,0)-Position), hängt davon ab, ob Sie die Funktion <a href="display_set_gui_maximise.htm"><tt>display_set_gui_maximise()</tt></a>    verwendet haben oder nicht. Wenn Sie diese Funktion nicht verwenden (Standardeinstellung), wird der GUI-Layer mit seinem (0,0)-Punkt an der gleichen Position positioniert wie die Anwendungsoberfläche (der Bereich, in dem Ihr Spiel gezeichnet wird) und die Breite und Höhe wird
+    Wenn Sie mit dieser Funktion eine GUI-Breite von 256 Pixel einstellen, während die Anwendungsoberfläche 512 Pixel groß ist, werden diese 256 Pixel gestreckt, so dass die Pixel doppelt so groß sind. Dies ist ideal für jene Spiele
+    die eine Seitenverhältniskorrektur in den globalen Spieleinstellungen eingestellt haben.</p>
+  <p>Wenn Sie die Funktion <tt>display_set_gui_maximise()</tt> verwendet haben, wird die Position (0,0) für die GUI-Ebene standardmäßig auf die linke obere Ecke des Spielfensters oder des Displays (im Vollbildmodus oder auf Geräten) gesetzt, wobei der Skalierungsfaktor durch diese Funktion festgelegt wird,
+    und die Breite und Höhe durch diese Funktion festgelegt werden. Sie können die GUI-Ebene jederzeit auf die Standardkonfiguration zurücksetzen, indem Sie diese Funktion mit -1 als Breite und Höhe aufrufen - dadurch wird die Position (0, 0) auf die Anwendungsoberfläche gesetzt und die Breite
+    und Höhe werden ebenfalls auf 1:1 mit der Oberfläche zurückgesetzt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">display_set_gui_size(Breite, Höhe);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Breite</td>
+        <td>Die Breite der GUI</td>
+      </tr>
+      <tr>
+        <td>Höhe</td>
+        <td>Die Höhe der GUI</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">display_set_gui_size(768, 1024);</p>
+  <p>Der obige Code sperrt das Draw-GUI-Ereignis auf die angegebene Breite und Höhe und skaliert alle Komponenten so, dass sie entweder auf die Anwendungsoberfläche oder auf das Display passen, wobei dieses Verhältnis verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Kameras und Display</a>
+        <div style="float:left">Zurück: </div>
+        <div style="float:right">Weiter: <a href="display_set_gui_maximise.htm">display_set_gui_maximise</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_gui_size
+-->
+  <!-- TAGS
+display_set_gui_size
+-->
+</body>
+</html>

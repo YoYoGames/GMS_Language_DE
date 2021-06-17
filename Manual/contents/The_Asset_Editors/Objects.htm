@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Objekte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the object editor works" />
+  <meta name="rh-index-keywords" content="Object Editor" />
+  <meta name="search-keywords" content="objects,object editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Objekt-Editor</h1>
+  <p><img alt="The Object Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Objects.png">Objekte sind die Ressource, die wir verwenden, um Aspekte eines Spiels zu steuern und um bestimmte Dinge zu tun. Meistens sind sie mit einem Sprite verbunden
+    so dass man sie in den Spielräumen sieht, aber manchmal werden sie als Controller &quot;hinter den Kulissen&quot; verwendet, um Dinge in Bezug auf den Benutzer oder für das Timing usw. zu tun. Man kann ihnen Verhaltensweisen zuweisen und sie können auf bestimmte Ereignisse reagieren, sowie auf
+    und die meisten Dinge, die Sie in einem Spiel sehen, basieren auf Objekten und ihren Interaktionen. Das meiste, was Sie in einem Spiel sehen, basiert auf Objekten und ihren Interaktionen. Wir sagen &quot;basiert auf&quot;, weil Sie nicht wirklich Objekte direkt in die Spielräume platzieren, sondern Instanzen <strong>dieser</strong> Objekte, die im Grunde genommen Kopien (oder Klone, wenn Sie so wollen) der Objektressource sind. Dies ist sehr wichtig zu wissen, da Instanzen und Objekte <em>nicht dasselbe sind</em> und beide ihre eigenen Funktionen haben, die sie beeinflussen können
+    sie beeinflussen können.</p>
+  <p>Um dies zu verdeutlichen, denken Sie an ein Spiel, das mit <span class="notranslate">GameMaker Studio 2</span> erstellt wurde. Alle Charaktere, Monster, Bälle, Wände usw... sind alles Objekte, die Sie im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> erstellen. Sie ziehen das <em>Objekt </em>dann in einen
+    einen Raum im <a href="Rooms.htm">Raum-Editor</a>, um eine <em>Instanz </em>zu erzeugen, die aus der Basisobjekt-Vorlage kopiert wird. Die Instanz im Raum kann dann im Editor selbst oder durch Code verändert werden, so dass sie skaliert, eingefärbt oder in anderen Details gegenüber der "Basis" verändert werden kann.
+    andere Details aus dem &quot;Basis&quot;-Objekt geändert werden. Wenn wir also davon sprechen, dass sich etwas auf eine <strong>Instanz</strong> auswirkt oder diese verändert, meinen wir damit, dass es diese <em>eine bestimmte Kopie eines Objekts in einem Raum</em> betrifft. Nur diese eine Instanz wird
+    wird beeinflusst, während alle anderen nicht betroffen sind. Wenn wir aber von der Beeinflussung oder Änderung eines <strong>Objekts</strong> sprechen, meinen wir damit, dass wir das Objekt im Asset-Browser modifizieren, und dass alles, was wir an ihm tun, sich auch auf alle Instanzen auswirkt, die von diesem Zeitpunkt an erstellt werden.
+    Instanzen, die von diesem Zeitpunkt an erstellt werden. Das Objekt ist also die Vorlage für die Instanz, und die Instanz ist das, was wir in einem Raum platzieren, um unser Spiel zu machen.</p>
+  <p>Um ein Objekt in Ihrem Spiel zu erstellen, können Sie mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png" style=""> im Asset-Browser klicken und die Option <em>Objekt erstellen</em> wählen. Daraufhin wird das oben auf dieser Seite abgebildete Fenster
+    oben auf dieser Seite abgebildete Fenster mit den folgenden Abschnitten:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Details</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Hier können Sie Ihrem Objekt einen Namen geben. Dieser Name sollte weder Leerzeichen noch unzulässige Zeichen enthalten (nur alphanumerische Zeichen und der Unterstrich &quot;_&quot; sind erlaubt) und sollte kurz, aber einprägsam sein, damit Sie die Ressourcen später leicht identifizieren können
+      später leicht identifizieren können, wenn Sie möglicherweise viele davon haben. Zum Beispiel verwenden viele Leute ein Präfix oder ein Suffix, um die Unterschiede zwischen Ressourcen zu kennzeichnen, wie &quot;<span class="inline">obj_Ship</span>&quot; oder &quot;<span class="inline">Ship_obj</span>&quot;.</p>
+    <p class="dropspot">Als Nächstes können Sie das Sprite für das Objekt auswählen, falls es eines haben soll. Klicken Sie mit der linken Maustaste <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf das Sprite-Feld und der <strong>Asset-Explorer</strong> erscheint mit einer Liste aller verfügbaren Sprites aus dem Asset-Browser:</p>
+    <p class="dropspot"><img alt="The Asset Explorer" class="center" src="../assets/Images/Asset_Editors/Editor_Objects_AssetExplorer.png">Sie können dann dasjenige auswählen, das Sie für das Objekt verwenden möchten. Wenn dem Objekt ein Sprite zugewiesen ist, können Sie auf die Schaltfläche " <em>Sprite bearbeiten</em> " <img alt="Edit Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_EditSprite.png"> klicken, um die <a href="Sprites.htm">Sprite-Eigenschaften</a> zu ändern, oder - wenn Sie kein Sprite für das Objekt haben, aber eines erstellen möchten - können Sie auf
+      die Schaltfläche " <em>Sprite hinzufügen</em> " <img alt="Add Sprite Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_NewSprite.png" width="24"> klicken, um ein neues Sprite-Asset zu erstellen und dieses zuzuweisen. Sie können auch das zugewiesene Sprite-Asset-Bild bearbeiten
+      bearbeiten, indem Sie auf die Schaltfläche <em>Edit Image</em> <img alt="Edit Image Icon" class="icon" src="../assets/Images/Icons/Icon_EditImage.png"> klicken, um den <a href="Image_Editor.htm">Bildeditor</a> zu öffnen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Kollisionsmaske</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Unterhalb des Sprite-Zuweisungsbereichs befindet sich eine Schaltfläche zur Auswahl einer bestimmten <strong>Kollisionsmaske</strong>. Standardmäßig generiert ein Objekt Kollisionseigenschaften auf der Grundlage des ihm zugewiesenen Sprites, aber es gibt Fälle, in denen Sie möchten, dass
+      Kollisionen auf einer anderen Form eines anderen Sprites basieren sollen. Sie können z. B. ein Top-Down-Spiel haben, bei dem das Hauptsprite eine rechteckige Kollisionsmaske hat, aber um Kollisionen weicher zu machen, kann eine kreisförmige Maske besser sein. In diesen Fällen
+      können Sie auf die Schaltfläche "Kollisionsmaske" klicken und eine andere Sprite-Ressource auswählen, so dass nun Instanzen des Objekts das zugewiesene Sprite <em>zeichnen </em>, aber <em>Kollisionen </em>auf der Basis des Masken-Sprites. Weitere Informationen zu Kollisionsmasken finden Sie
+      Masken finden Sie auf der Seite über den <a href="Sprites.htm">Sprite-Editor</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Eigenschaften</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Hier werden Ihnen die folgenden Optionen für Ihr Objekt angeboten:<strong></strong></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Sichtbar</strong>: Sichtbar gibt an, ob Instanzen dieses Objekts beim Start des Raums sichtbar sind. Normalerweise sind die meisten Instanzen sichtbar, aber manchmal ist es nützlich, unsichtbare Instanzen zu haben - zum Beispiel können Sie sie als Wegpunkte verwenden, um
+        ein sich bewegendes Monster zu steuern, oder um Werte zu verfolgen und bestimmte zeitlich festgelegte Aktionen durchzuführen. Unsichtbare Objekte reagieren trotzdem auf Ereignisse und wenn ihnen ein Sprite oder eine Maske zugewiesen ist, reagieren sie auch, wenn andere Instanzen mit ihnen kollidieren...
+        sie können nur nicht gesehen werden und führen ihr <strong>Draw-Event</strong> <em>nicht </em>aus. Standardmäßig ist das Sichtbar-Flag markiert.<strong></strong></li>
+      <li class="dropspot"><strong>Solide</strong>: Wenn Sie eine Instanz als solide kennzeichnen, teilen Sie <span class="notranslate">GameMaker Studio 2</span> mit, dass es versuchen soll, alle Kollisionen aufzulösen, bevor es ein <strong>Kollisionsereignis</strong> auslöst. Dies ist eine sehr grundlegende Funktion, und in Wirklichkeit
+        Es handelt sich um eine sehr grundlegende Funktion, die in Wirklichkeit nur dazu dient, die Instanz in die Position zurückzubringen, in der sie sich vor der Erkennung einer Kollision befand, bevor der im Kollisionsereignis selbst enthaltene Code oder <span class="notranslate">DnD™</span>ausgeführt wird, und ist daher von begrenztem Nutzen.</li>
+      <li class="dropspot"><strong>Persistent</strong>: Ein persistentes Objekt ist eines, das nicht verschwindet, wenn der Raum gewechselt wird, sondern es &quot;persistiert&quot; und wird in den neuen Raum übernommen. Es verschwindet erst, wenn Sie es explizit zerstören, entweder mit
+        einer Zerstörungsaktion oder im Code. Das heißt, wenn Sie ein persistentes Objekt in einem Raum platzieren, ist es in allen nachfolgenden Räumen weiterhin verfügbar und führt weiterhin alle Aktionen aus, die den Ereignissen in seinen Objekteigenschaften zugeordnet sind, <em>mit Ausnahme </em>des
+       <strong>Erstellungsereignis</strong>, das nur <em>einmal </em>beim ersten Anlegen abgefeuert wird und nicht, wenn Sie in einen neuen Raum wechseln. Dies ist praktisch, wenn Sie z. B. einen Hauptcharakter haben, der sich von Raum zu Raum bewegt, und Sie wollen
+        die Variablen innerhalb der Instanz gleich bleiben sollen, aber Sie sollten sehr darauf achten, persistente Objekte korrekt zu erstellen und zu zerstören, da sich leicht aus Versehen Fehler in Ihr Projekt einschleichen können.</li>
+    </ul>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#" style="margin-left:88px">Persistenz und Raumschichten</a>  </p>
+    <div class="droptext" data-targetname="drop-down7">
+      <p class="dropspot" style="margin-left: 132px">Wenn Sie eine Instanz mit aktivierter Persistenz in einem Raum erstellen, wird ihr eine Ebene oder eine Tiefe zugewiesen (je nachdem, welche Funktion Sie zum Erstellen der Instanz des Objekts verwendet haben). Wenn der Raum gewechselt wird und der folgende Raum nicht über
+        eine Ebene mit demselben Namen oder derselben Tiefe wie die zugewiesene hat, wird<strong> eine neue Ebene für die Instanz erstellt, die über die Räume hinweg bestehen bleibt</strong>. Wenn Sie beim Anlegen der Instanz eine benannte Ebene angegeben haben, wird auch die neue Ebene
+        Wenn Sie der Instanz eine Tiefe zugewiesen haben, erhält die neue Ebene den Namen &quot;<span class="inline">_layer_XXX</span>&quot;, wobei &quot;<span class="inline">XXX</span>&quot; ein Hexadezimalwert ist, der verwendet wird, um der Ebene einen eindeutigen Namen zu geben.
+        der Ebene einen eindeutigen Namen zu geben. Diese Ebenen werden bei <strong>Raumende</strong> aus dem Raum entfernt. <br>
+        <br> Ein weiterer Hinweis zu Ebenen und persistenten Instanzen ist, dass, wenn Sie der Instanz bei der Erstellung eine benannte Ebene zugewiesen haben und es in den folgenden Räumen eine andere Ebene mit demselben Namen gibt, die persistente Instanz
+        der Ebene mit demselben Namen zugewiesen, unabhängig von der Tiefe der Ebene.<br>
+        <br> Wenn sich eine persistente Instanz schließlich in einen Raum mit einer Ebene auf <em>derselben</em> Tiefe bewegt, auf der die Instanz erstellt wurde, wird sie <em>nicht </em>dieser Ebene zugewiesen, sondern es wird eine neue Ebene auf derselben Tiefe erstellt (gemäß der
+        der oben erläuterten Benennungskonvention).</p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#" style="margin-left: 88px">Persistenz und Ereignisse</a></p>
+    <div class="droptext" data-targetname="drop-down6">
+      <p class="dropspot" style="margin-left: 132px">Wie bereits erwähnt, führt ein persistentes Objekt nur <em>einmal</em> sein <strong>Erstellungsereignis</strong> aus, aber es werden auch seine Ereignisse " <strong>Spielstart"</strong>, <strong>"Spielende"</strong>, " <strong>Raumstart"</strong> und <strong>"Raumende"</strong> zu den entsprechenden Zeiten ausgelöst. Wenn Sie jedoch das Spiel neu starten (z. B. mit der Funktion <span class="inline">game_restart()</span> ) <em>, werden alle persistenten Objekte entfernt und existieren erst wieder, wenn sie vom Spiel neu erstellt werden</em>.<br>
+        <br> Beachten Sie auch, dass ein persistentes Objekt, wenn Sie es <strong>deaktivieren </strong>, nicht mehr von einem Raum in einen anderen übergeht, es sei denn, es wird vor dem Auslösen des <strong>Raumende-Ereignisses</strong> erneut aktiviert. Für die Reaktivierung <em>ist ein ganzer Spielschritt erforderlich</em>,
+        Wenn Sie also das <strong>Raumende-Ereignis</strong> dafür verwenden, funktioniert das nicht, da es dem Spiel keinen vollen Schritt gibt, um das Objekt zu reaktivieren, also müssen Sie dies im Hinterkopf behalten, wenn Sie die Deaktivierung zusammen mit persistenten Objekten verwenden und Ihren
+        Code entsprechend planen.</p>
+    </div>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Verwendet Physik</strong>: Wenn Sie das Kontrollkästchen "Verwendet Physik" aktivieren, teilen Sie <span class="notranslate">GameMaker Studio 2</span> mit, dass dieses Objekt Teil einer Physikwelt sein soll (wie im <strong></strong><a href="Rooms.htm">Raumeditor</a> eingestellt). Wenn Sie dies ankreuzen, wird auch
+        ein weiteres verkettetes Fenster geöffnet, in dem Sie die physikalischen Eigenschaften aller Instanzen dieses Objekts definieren können. Weitere Informationen dazu finden Sie im Abschnitt über <a href="Object_Properties/Physics_Objects.htm">Physik-Objekte</a>.</li>
+    </ul>
+  </div>
+  <p> </p>
+  <p>Der letzte Teil des Objekteditors ist den verschiedenen <strong>Objektoptionen</strong> gewidmet, die jeweils auf einer eigenen, unten verlinkten Seite erläutert werden:</p>
+  <ul class="colour">
+    <li><a href="Object_Properties/Object_Events.htm">Objekt-Ereignisse</a></li>
+    <li><a href="Object_Properties/Parent_Objects.htm">Parent-Objekte</a></li>
+    <li><a href="Object_Properties/Physics_Objects.htm">Physik-Objekte</a></li>
+    <li><a href="Object_Properties/Object_Variables.htm">Objekt-Variablen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Paths.htm">Pfade</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Object Editor
+Objects
+-->
+  <!-- TAGS
+object_editor
+-->
+</body>
+</html>

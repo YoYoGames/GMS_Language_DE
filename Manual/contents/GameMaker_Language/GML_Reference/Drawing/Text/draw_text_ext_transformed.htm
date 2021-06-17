@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_text_ext_transformed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_text_ext_transformed" />
+  <meta name="rh-index-keywords" content="draw_text_ext_transformed" />
+  <meta name="search-keywords" content="draw_text_ext_transformed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_text_ext_transformed</h1>
+  <p>Diese Funktion ist eine Kombination aus der Basis <a href="draw_text.htm"><tt>zeichnen_text</tt><tt>()</tt><tt></tt></a> Funktion mit der <a href="draw_text_ext.htm"><tt>zeichne_text_ext</tt><tt>()</tt><tt></tt></a> und <a href="draw_text_transformed.htm"><tt>draw_text_transformiert</tt><tt>()</tt><tt></tt></a>    Funktionen. Sie ermöglicht das Skalieren und Drehen von Text unter Beibehaltung eines bestimmten Zeilenabstands und einer maximalen Breite pro Zeile. Beachten Sie, dass das Argument &quot;Breite&quot; auf einer Skalierung von 1 basiert; wenn die Skalierung also anders ist, sollte dieser Wert
+    proportional geändert werden. Wenn z. B. die Basisbreite für einen Zeilenumbruch 300 ist und Sie die Skala auf 2 setzen, dann wird der Text falsch angezeigt, da er die angegebene Breite überschreitet. Stattdessen hätten Sie die Breite auf 150 setzen sollen, um die Skalierung auszugleichen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_text_ext_transformed(x, y, string, sep, w, xscale, yscale, angle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate der gezeichneten Zeichenfolge.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate der gezeichneten Zeichenfolge.</td>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Die Schnur zum Ziehen.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>Der Abstand in Pixeln zwischen den Textzeilen.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die maximale Breite der Zeichenkette in Pixel vor einem Zeilenumbruch.</td>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td>Die horizontale Skala.</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Die vertikale Skala.</td>
+      </tr>
+      <tr>
+        <td>Winkel</td>
+        <td>Der Winkel des Textes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_set_halign(fa_center);<br> draw_set_valign(fa_middle);
+    <br> image_angle += 1;<br> draw_text_ext_transformed(room_width / 2, room_height / 2, keyboard_string, 10, 300, 2, 2, image_angle);</p>
+  <p>Der obige Code zeichnet den angegebenen Text in der Mitte des Raums, mit einer maximalen Zeichenfolgelänge von 300 Pixeln, einem Abstand zwischen den einzelnen Zeilen von 10 Pixeln, umlaufend und auf die doppelte Größe skaliert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Text.htm">Text</a></div>
+        <div style="float:right">Weiter: <a href="draw_text_transformed_colour.htm">draw_text_transformed_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_ext_transformed
+-->
+  <!-- TAGS
+draw_text_ext_transformed
+-->
+</body>
+</html>

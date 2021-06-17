@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>weg_positionvorher</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_positionprevious" />
+  <meta name="rh-index-keywords" content="path_positionprevious" />
+  <meta name="search-keywords" content="path_positionprevious" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>weg_positionvorher</h1>
+  <p>Diese Variable kann verwendet werden, um die Position einer Instanz entlang ihres aktuellen Pfades im vorherigen Schritt zu erhalten oder zu setzen, und ist ein normalisierter Wert zwischen 0 und 1, d. h.: 0 ist die Startposition des Pfades und 1 wäre die Endposition. Er ist ähnlich wie der
+    <a href="../../Instances/Instance_Variables/xprevious.htm"><tt>xprevious</tt></a> und <a href="../../Instances/Instance_Variables/yprevious.htm"><tt>yvorherige</tt></a> Variablen, nur ist sie spezifisch für Pfade. Sie kann nützlich sein für
+    Dinge wie das vorübergehende Anhalten eines Pfadverfolgers, wenn etwas im Weg ist (siehe den Beispielcode unten).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_positionprevious;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _x = x + lengthdir_x(16, direction);<br> var _y = y + lengthdir_y(16, direction);<br> if collision_circle(xx, yy, 16, obj_Player, false,true)<br> {<br> path_position = path_positionprevious;<br> }
+  </p>
+  <p>Der obige Code prüft einen Bereich vor der Instanz auf eine Kollision mit dem Objekt &quot;obj_Player&quot; und wenn es eine gibt, setzt er die Instanz zurück auf die vorherige Position, die sie auf dem aktuellen Pfad eingenommen hat, wie von der Funktion
+    <span class="inline"><a href="../path_start.htm">path_start()</a></span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Variables.htm">Pfadvariablen</a></div>
+        <div style="float:right">Weiter: <a href="path_speed.htm">path_speed</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_positionprevious
+-->
+  <!-- TAGS
+path_positionprevious
+-->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_sortieren</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_sort" />
+  <meta name="rh-index-keywords" content="array_sort" />
+  <meta name="search-keywords" content="array_sort" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span>array_sortieren</span></h1>
+  <p>Mit dieser Funktion können Sie ein Array in aufsteigender oder absteigender Reihenfolge sortieren oder eine benutzerdefinierte Funktion verwenden, um die Sortierreihenfolge zu definieren. Die Funktion erfordert, dass Sie das zu sortierende Array und dann eine der folgenden Optionen angeben:</p>
+  <ul class="colour">
+    <li>Die Konstanten <span class="inline">true</span> oder <span class="inline">false</span> zur Angabe der <span>aufsteigenden (<span class="inline">true</span>) oder absteigenden (<span class="inline">false</span>) Sortierreihenfolge</span>
+    </li>
+    <li>Eine benutzerdefinierte Funktion, um die Sortierreihenfolge zu definieren</li>
+  </ul>
+  <p>Wenn Sie eine benutzerdefinierte Funktion für die Sortierung verwenden, muss diese 2 Argumente annehmen, die jeweils die Werte des aktuellen Elements und des nächsten Elements erhalten. Die Funktion sollte einen der folgenden Werte zurückgeben, um die Sortierreihenfolge zu beeinflussen (wobei <tt>elm1</tt> 
+    das aktuelle Element und <tt>elm2</tt> das nächste Element ist):</p>
+  <ul class="colour">
+    <li><tt>0</tt>: wenn <tt>elm1</tt> und <tt>elm2</tt> gleich sind</li>
+    <li><tt>&lt;0 (</tt> negative Zahl): wenn elm1 vor elm2 geht</li>
+    <li><tt>&gt;0 (</tt> positive Zahl): wenn elm1 nach elm2 geht</li>
+  </ul>
+  <p>Wenn das Array eine Reihe von Zeichenketten enthält, werden die Zeichenketten bei Verwendung des standardmäßigen Sortiertyps "Aufsteigend/Absteigend" alphabetisch nach dem englischen Alphabet sortiert. Alle anderen Datentypen werden auf der Basis ihres numerischen Wertes sortiert, wobei die genauen
+    Werte hängen vom Datentyp selbst ab (z. B. würde ein Array von Puffern nach dem numerischen Wert ihrer Speicheradressen sortiert werden).</p>
+  <p>Beachten Sie, dass diese Funktion den Inhalt des übergebenen Original-Arrays verändert. Um eine sortierte Kopie zu erstellen, verwenden Sie <tt><a href="array_copy.htm">array_copy()</a></tt> um das Array zunächst zu duplizieren und es dann an diese Funktion zu übergeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">array_sort(variable, sorttype_or_function);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>variabel</td>
+        <td>Die Variable, die das Array enthält.</td>
+      </tr>
+      <tr>
+        <td><span>sorttype_oder_funktion<span> </span></span>
+        </td>
+        <td>Der Sortiertyp (<span><span class="inline">true</span> für aufsteigend oder <span class="inline">false</span> für absteigend) oder ein Funktionsverweis, der für die Sortierung verwendet werden soll.</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _a = [10, 9, 8, 7, 6, 5];<br>
+    <br> array_sort(_a, function(elm1, elm2)<br> {<br> return elm1 - elm2;<br> });</p>
+  <p>Der obige Code verwendet eine benutzerdefinierte Sortierfunktion, um das Array in einer aufsteigenden Reihenfolge zu sortieren. Die Sortierfunktion nimmt die beiden Array-Elemente als <tt>elm1</tt> und <tt>elm2</tt> und führt eine Subtraktion an ihnen durch. Wenn <tt>elm1</tt> größer als <tt>elm2</tt> ist,
+    ergibt die Subtraktion eine positive Zahl, die <tt>elm1</tt> nach <tt>elm2</tt> verschiebt und sie somit in eine aufsteigende Reihenfolge bringt.</p>
+  <p>Hier ist ein erweitertes Beispiel:</p>
+  <p class="code">var _xx, _yy, _a;<br> for (var i = 0; i &lt; 10; i++)<br> {<br> _xx = irandom(room_width);<br> _yy = irandom(room_height);<br> _a[i] = instance_create_layer(_xx, _yy, layer, obj_Bullet);<br> } <br>
+    <br> show_debug_message(_a);
+    <br>
+    <br> var _f = function(inst1, inst2)<br> {<br> return inst1.x - inst2.x;<br> } <br>
+    <br> array_sort(_a, _f);<br> show_debug_message(_a);
+  </p>
+  <p>Der obige Code erzeugt ein Array mit 10 Instanzen, die an zufälligen Positionen im Raum platziert werden. Die Debug-Meldung zeigt etwas wie das Folgende:</p>
+  <p class="code">[ 100003,100004,100005,100006,100007,100008,100009,100010,100011,100012 ]</p>
+  <p>Der Code erstellt dann eine Methode, die in der Funktion <span class="inline">array_sort()</span> verwendet wird und die die Differenz zwischen den einzelnen X-Positionen der Instanzen im Raum zurückgibt. Dann wird die Funktion <span class="inline">array_sort()</span> 
+    unter Verwendung dieser Methode ausgeführt und sortiert die Instanzen nach X vom niedrigsten zum höchsten Wert. Die Ausgabe für das Array würde dann etwa so aussehen:</p>
+  <p class="code">[ 100011,100004,100009,100006,100012,100008,100010,100005,100007,100003 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="array_length.htm">array_length</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_sort
+-->
+  <!-- TAGS
+array_sort
+-->
+</body>
+</html>

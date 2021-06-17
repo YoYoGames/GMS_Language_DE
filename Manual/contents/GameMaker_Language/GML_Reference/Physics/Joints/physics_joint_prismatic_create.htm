@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_gelenk_prismatisch_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_prismatic_create" />
+  <meta name="rh-index-keywords" content="physics_joint_prismatic_create" />
+  <meta name="search-keywords" content="physics_joint_prismatic_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_gelenk_prismatisch_erzeugen</h1>
+  <p>Wie ein Drehgelenk hat das prismatische Gelenk nur einen Freiheitsgrad, aber bei diesem Gelenk ist es relativ zu einer Achse gerichtet und nicht rotierend und verhindert eigentlich jede Form von Rotation. Hier ist ein Bild, um Ihnen die Funktionsweise zu verdeutlichen:</p>
+  <p><img alt="Prismatic joint anchor points illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/prismatic_joint_image_1.png">Wir haben zwei Instanzen, die am Ankerpunkt verbunden sind, mit einer Achse für die Bewegung
+    definiert aus dem Vektor der beiden x/y-Koordinaten der w_Achse relativ zu den (0,0)-Koordinaten der Physikwelt (eine x-Komponente von 0 und eine y-Komponente von 1 (0,1) würde das Gelenk also zu einem vertikalen prismatischen Gelenk machen). Dieses Gelenk kann sich dann <i>nur</i> 
+    relativ zu dieser Achse bewegen, wie eine Feder oder ein Kolben. Wenn Sie die untere oder obere Trans-Grenze setzen, begrenzen Sie im Grunde die Bewegungsmenge entlang dieser Achse, wobei die 0-Position genau der Punkt ist, den Sie mit w_anchor x/y definiert haben, so dass ein negativer
+    Wert würde also nach &quot;links&quot; von diesem Punkt entlang der Achse gehen und ein positiver Wert nach &quot;rechts&quot;, wie im folgenden Diagramm gezeigt (beachten Sie, dass &quot;links&quot; und &quot;rechts&quot; relative Begriffe sind!):</p>
+  <p><img alt="Prismatic joint limits illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/prismatic_joint_image_2.png">Sie können auch festlegen, ob das Gelenk einen Motor hat oder nicht. Das bedeutet, dass das Gelenk, wenn es unbeeinflusst
+    Diese Richtung wird durch die Motorgeschwindigkeit definiert, wobei eine positive Zahl in Richtung der Achsenkoordinaten (&quot;rechts&quot;) und eine negative Zahl in Richtung des Ankerpunkts (&quot;links&quot;) bedeutet.
+    Das Argument &quot;max_motor_force&quot; dient dazu, die Geschwindigkeit der Bewegung zu begrenzen, damit Sie keinen ständig beschleunigenden Motor erhalten und um den Einfluss, den eine Kollision auf die Bewegung haben kann, zu begrenzen. Auf diese Weise können Sie mit einem Gelenkmotor
+    verwenden, um die Gelenkreibung zu simulieren, indem Sie die Gelenkgeschwindigkeit auf Null und die maximale Kraft auf einen kleinen, aber signifikanten Wert setzen. Der Motor wird versuchen, die Bewegung des Gelenks zu verhindern, wird aber bei einer erheblichen Belastung nachgeben.</p>
+  <p>Wie bei allen Gelenken können <tt>die</tt> beiden Instanzen miteinander interagieren und kollidieren, wenn Sie den &quot;col&quot;-Wert auf &quot;true&quot; setzen, aber nur, wenn <i>sie</i> Kollisionsereignisse haben; wenn er jedoch auf &quot;false&quot; gesetzt ist, kollidieren <tt>sie</tt> nicht
+    egal was passiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_prismatic_create(inst1, inst2, w_anchor_x, w_anchor_y, w_axis_x, w_axis_x, lower_trans_limit, upper_trans_limit, limit, max_motor_force, motor_speed, motor, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>Die erste Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>Die zweite Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>w_Anker_x</td>
+        <td>Die x-Koordinate, an der das Gelenk verankert ist, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker_y</td>
+        <td>Die y-Koordinate, an der das Gelenk verankert ist, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Achse_x</td>
+        <td>Die x-Komponente des Achsenvektors</td>
+      </tr>
+      <tr>
+        <td>w_Achse_y</td>
+        <td>Die y-Komponente des Achsenvektors</td>
+      </tr>
+      <tr>
+        <td>unteres_trans_limit</td>
+        <td>Die untere zulässige Grenze für die Gelenkbewegung</td>
+      </tr>
+      <tr>
+        <td>oberes_trans_limit</td>
+        <td>Die untere zulässige Grenze für die Gelenkbewegung</td>
+      </tr>
+      <tr>
+        <td>Grenze</td>
+        <td>Ob die Bewegung des Gelenks begrenzt werden soll (wahr) oder nicht (falsch)</td>
+      </tr>
+      <tr>
+        <td>max_motor_force</td>
+        <td>Legt die maximale Bewegungsgeschwindigkeit für den Motor fest</td>
+      </tr>
+      <tr>
+        <td>Motor_Drehzahl</td>
+        <td>Dies ist die Geschwindigkeit, mit der sich der Motor bewegen soll</td>
+      </tr>
+      <tr>
+        <td>Motor</td>
+        <td>Ob der Motor aktiv sein soll (true) oder nicht (false)</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Ob die beiden Instanzen kollidieren können (true) oder nicht (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Index des Gelenks)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id = instance_create_layer(x+25, y, &quot;Instances&quot;, obj_Piston);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_prismatic_create(id, o_id, x, y, 0, 10, 0, 0, 0, 5, 0, 1, 1);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>Der obige Code erstellt und definiert eine neue Einspannvorrichtung und erzeugt dann eine Instanz von &quot;obj_Piston&quot;, wobei die erstellte Einspannvorrichtung an die beiden neuen Objekte gebunden wird. Sie werden dann durch ein prismatisches Gelenk verbunden, wobei die Ankerposition an den gleichen x/y-Koordinaten
+    der ersten Instanz und einer Achse, die durch den Vektor der x/y-Position und der Achse x/y gebildet wird (in diesem Fall 0,10, was &quot;unten&quot; ist). Es gibt keine Grenzen für die Bewegung entlang dieser Achse, aber wir haben einen Motor mit der Geschwindigkeit 0
+    und einer maximalen Kraft von 5 hinzugefügt, um die Gelenkreibung zu simulieren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_pulley_create.htm">physics_joint_pulley_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_prismatic_create
+-->
+  <!-- TAGS
+physics_joint_prismatic_create
+-->
+</body>
+</html>

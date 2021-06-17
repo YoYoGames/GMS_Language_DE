@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_set_restitution</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_set_restitution" />
+  <meta name="rh-index-keywords" content="physics_set_restitution" />
+  <meta name="search-keywords" content="physics_set_restitution" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_set_restitution</h1>
+  <p>Wenn Sie ein Fixture an eine Instanz binden, indem Sie <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a> binden, wird eine &quot;id&quot; für das gebundene Fixture zurückgegeben. Sie können diese Id verwenden, um den Restitutionswert des gebundenen Fixtures, <i>nicht</i> des &quot;Basis&quot;-Fixtures, jederzeit mit dieser Funktion zu setzen. Die Restitution wird normalerweise als Wert zwischen 0 und 1 gesetzt, aber Sie können bei Bedarf auch höhere Werte verwenden, obwohl die Ergebnisse unvorhersehbar sein können.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_set_restitution(fixture, restitution)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Halterung</td>
+        <td>die ID des gebundenen Fixtures</td>
+      </tr>
+      <tr>
+        <td>Rückerstattung</td>
+        <td>der neu anzuwendende Rückstellungswert</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var rest = physics_get_restitution(fix_id);<br> physics_set_restitution(fix_id, rest * 2);</p>
+  <p>Der obige Code ruft den aktuellen Restitutionswert für die gebundenen Physikeigenschaften der Instanz ab und setzt sie dann auf einen anderen Wert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fixtures.htm">Fixtures</a></div>
+        <div style="float:right">Weiter: <a href="physics_fixture_create.htm">physics_fixture_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_set_restitution
+-->
+  <!-- TAGS
+physics_set_restitution
+-->
+</body>
+</html>

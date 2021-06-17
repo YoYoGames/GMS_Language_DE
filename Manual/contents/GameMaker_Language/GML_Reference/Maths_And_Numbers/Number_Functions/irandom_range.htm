@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>irandom_range</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for irandom_range" />
+  <meta name="rh-index-keywords" content="irandom_range" />
+  <meta name="search-keywords" content="irandom_range" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>irandom_range</h1>
+  <p>Diese Funktion ist vergleichbar mit <a href="random_range.htm"><tt>random_range()</tt></a> nur mit ganzzahligen Werten als Eingabe. Sie geben den unteren Wert für den Bereich sowie den oberen Wert an, und die Funktion gibt einen zufälligen ganzzahligen Wert innerhalb (und
+    einschließlich) des angegebenen Bereichs zurück. Beispiel: <tt>irandom_range(10, 35)</tt> gibt eine ganze Zahl zwischen 10 und 35 <i>einschließlich</i> zurück.</p>
+  <p>Wie bei der Funktion <a href="irandom.htm"><tt>irandom()</tt></a> Funktion können reelle Zahlen verwendet werden, die dann auf die nächste ganze Zahl abgerundet werden EG: irandom_range(6.2,9.9) ergibt einen Wert zwischen 6 und 9.</p>
+  <p class="note"><b>HINWEIS:</b> Diese Funktion gibt bei jedem neuen Durchlauf des Spiels denselben Wert zurück, da <span class="notranslate">GameMaker</span>: Studio jedes Mal denselben anfänglichen Zufallswert erzeugt, um das Debuggen von Code zu erleichtern. Um dieses Verhalten zu vermeiden, verwenden Sie
+    <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">randomise()</tt></a></span> am Anfang Ihres Spiels.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">irandom_range(n1, n2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>n1</td>
+        <td>Das untere Ende des Bereichs, aus dem die Zufallszahl ausgewählt wird.</td>
+      </tr>
+      <tr>
+        <td>n2</td>
+        <td>Das obere Ende des Bereichs, aus dem die Zufallszahl ausgewählt wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">score += irandom_range(500, 600);</p>
+  <p>Dadurch wird ein ganzzahliger Wert zwischen 500 und 600 (einschließlich) zur Gesamtpunktzahl hinzugefügt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Number_Functions.htm">Zahlenfunktionen</a></div>
+        <div style="float:right">Weiter: <a href="random_set_seed.htm">random_set_seed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+irandom_range
+-->
+  <!-- TAGS
+irandom_range
+-->
+
+</body></html>

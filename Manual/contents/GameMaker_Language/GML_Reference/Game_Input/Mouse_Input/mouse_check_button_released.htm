@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mouse_check_button_released</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for mouse_check_button_released" />
+  <meta name="rh-index-keywords" content="mouse_check_button_released" />
+  <meta name="search-keywords" content="mouse_check_button_released" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mouse_check_button_released</h1>
+  <p>Diese Funktion gibt <tt>true</tt> zurück, wenn die überprüfte Maustaste losgelassen wurde, oder <tt>false</tt>, wenn dies nicht der Fall ist. Diese Funktion wird für jede Maustaste nur <i>einmal</i> ausgelöst, wenn sie losgelassen wird, und um sie erneut auszulösen, muss die Taste
+    muss die Taste gedrückt und wieder losgelassen worden sein. Sie geben die zu prüfende Maustaste aus einer der folgenden Konstanten an:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>mb_links</td>
+        <td>Die linke Maustaste</td>
+      </tr>
+      <tr>
+        <td>mb_middle</td>
+        <td>Die mittlere Maustaste (dies ist möglicherweise nicht für alle Zielplattformen gültig)</td>
+      </tr>
+      <tr>
+        <td>mb_rechts</td>
+        <td>Die rechte Maustaste</td>
+      </tr>
+      <tr>
+        <td>mb_side1*</td>
+        <td>Seitliche Maustaste 1</td>
+      </tr>
+      <tr>
+        <td>mb_side2*</td>
+        <td>Seitliche Maustaste 2</td>
+      </tr>
+      <tr>
+        <td>mb_beliebig</td>
+        <td>Eine der Maustasten</td>
+      </tr>
+      <tr>
+        <td>mb_keine</td>
+        <td>Keine Maustaste</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><br> *
+   <strong>HINWEIS</strong>: Die Schaltflächen <strong>mb_side1</strong> und <strong>mb_side2 </strong>sind nur unter <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span>, <span class="notranslate">Ubuntu</span> und HTML5 verfügbar.</p>
+  <h4>Syntax:</h4>
+  <p class="code">mouse_check_button_released(numb);</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>taub</td>
+        <td>Auf welche Maustastenkonstante geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if mouse_check_button_released(mb_right)<br> {
+    <br> speed = point_distance(x, y, mouse_x, mouse_y) / 10;<br> }
+  </p>
+  <p>Der obige Code prüft, ob die rechte Maustaste losgelassen wurde, und wenn ja, setzt er die Geschwindigkeit der Instanz auf ein Zehntel des Abstands zwischen der aktuellen x/y-Position und der x/y-Position der Maus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Mouse_Input.htm">Maus-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="mouse_clear.htm">mouse_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mouse_check_button_released
+-->
+  <!-- TAGS
+mouse_check_button_released
+-->
+</body>
+</html>

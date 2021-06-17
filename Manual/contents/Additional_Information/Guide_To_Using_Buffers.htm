@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Anleitung zur Verwendung von Puffern</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how buffers work" />
+  <meta name="rh-index-keywords" content="Guide To Using Buffers" />
+  <meta name="search-keywords" content="Using Buffers,buffers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Anleitung zur Verwendung von Puffern</h1>
+  <p>Ein Puffer (in der Programmierung) ist im Grunde ein Bereich innerhalb des Systemspeichers, der dazu dient, kleine Datenpakete für so ziemlich alles zu speichern (zum Beispiel: Datentransfer, Kollisionen, Farbdaten usw...). Da er im Systemspeicher gehalten wird, ist er sehr schnell
+    Ein Puffer wird im Allgemeinen für sehr kurzfristige Speicherungen verwendet, z. B. für den Empfang von Netzwerkinformationen vor deren Verarbeitung oder für die Speicherung eines Checkpoints im Spiel (dies wird im Beispiel weiter unten auf der Seite erklärt).</p>
+  <p><img alt="Buffer Memory" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Buffer_Memory.png">Puffer werden erstellt, indem ein Platz im Systemspeicher zugewiesen wird, der in <a class="glossterm" data-glossterm="Byte" href="#">Byte</a>
+   <span class="glossextra">s</span>, der dann für Ihr Spiel reserviert wird, solange Ihr Spiel läuft oder bis Sie den Puffer mit der entsprechenden Funktion löschen (alle <span class="notranslate">GML-Pufferfunktionen</span> finden Sie <a href="../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">hier</a> aufgelistet).
+      Das bedeutet, dass auch dann, wenn Ihr Spiel nicht im Fokus ist (z. B. auf einem mobilen Gerät, wenn Sie einen Anruf entgegennehmen, wird das Spiel in den Hintergrund gestellt), der Puffer noch vorhanden ist, aber wenn das Spiel geschlossen oder neu gestartet wird, geht der Puffer verloren.</p>
+  <p class="note"><strong>HINWEIS</strong>: Durch einen Neustart des Spiels wird der Puffer nicht geleert oder gelöscht! Es wird jedoch jeder weitere Zugriff auf den zuvor erstellten Puffer verhindert, da das ID-Handle verloren gegangen ist, was zu einem Speicherleck führt, das Ihr Spiel schließlich zum Absturz bringt.
+    Wenn Sie also ein Spiel neu starten, denken Sie daran, zuerst alle Puffer zu löschen.</p>
+  <p><span class="notranslate">GameMaker Studio 2</span> erlaubt das Anlegen von vier verschiedenen Puffertypen. Der Grund dafür ist, dass Puffer als hoch optimiertes temporäres Speichermedium konzipiert sind und Sie daher einen Puffer anlegen sollten, der für die Art der Daten
+    Sie sollten daher einen Puffer erstellen, der für die Art von Daten geeignet ist, die Sie darin speichern möchten, da es sonst zu Fehlern oder Engpässen in Ihrem Code kommen kann. Bevor wir dies näher erläutern, schauen wir uns die vier verfügbaren Puffertypen an ( <strong>in </strong>GML als Konstanten definiert) <span class="notranslate">:</span></p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_fixed</span></td>
+        <td><br> Ein Puffer mit einer festen Größe in Bytes. Die Größe wird beim Anlegen des Puffers festgelegt und kann nicht mehr geändert werden.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_grow</span></td>
+        <td><br> Ein Puffer, der dynamisch <i>wächst</i>, wenn Daten hinzugefügt werden. Sie erstellen ihn mit einer Anfangsgröße (die eine Annäherung an die Größe der zu speichernden Daten sein sollte), und dann wird er erweitert, um weitere Daten zu akzeptieren, die diese Anfangsgröße
+          diese anfängliche Größe.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_wrap</span></td>
+        <td><br> Ein Puffer, in dem die Daten <i>umbrochen</i> werden. Wenn die hinzugefügten Daten die Grenze der Puffergröße erreichen, wird der Überschreiber wieder an den Anfang des Puffers gesetzt und das weitere Schreiben wird von diesem Punkt an fortgesetzt.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_fast</span></td>
+        <td><br> Dies ist ein spezieller &quot;abgespeckter&quot; Puffer, der extrem schnell zu lesen/schreiben ist. Er kann jedoch nur mit den Datentypen <span class="inline"><tt>buffer_u8</tt></span> verwendet werden und muss auf 1 Byte ausgerichtet sein. (Informationen zu <b>Datentypen</b> und <b>Byte-Alignment</b> finden Sie weiter unten auf dieser Seite).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Das sind die Puffertypen, die Ihnen bei der Verwendung von <span class="notranslate">GameMaker Studio 2</span> zur Verfügung stehen. Welchen Sie wählen, hängt stark davon ab, wofür Sie ihn verwenden möchten. Ein Wachstumspuffer wird z. B. zum Speichern eines &quot;Schnappschusses&quot; von Daten verwendet, um ein
+    Ein schneller Puffer wird verwendet, wenn Sie wissen, dass die Werte, mit denen Sie arbeiten, alle zwischen 0 und 255 oder -128 und 127 liegen, z. B. bei der Verarbeitung von
+   <a class="glossterm" data-glossterm="ARGB" href="#">ARGB-Daten</a> aus einem Bild.</p>
+  <p><img alt="Buffer Types" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Buffer_Types.png">Wenn Sie einen Puffer erstellen, sollten Sie immer versuchen, ihn in einer für den Typ geeigneten Größe zu erstellen, wobei die allgemeine Regel lautet
+    dass er so angelegt werden sollte, dass er die maximale Größe der zu speichernden Daten aufnehmen kann, und dass Sie im Zweifelsfall einen Wachstumspuffer verwenden sollten, um Überschreibfehler zu vermeiden.</p>
+  <p>Der eigentliche Code zum Erstellen eines Puffers würde etwa so aussehen:</p>
+  <p class="code">player_buffer = buffer_create(16384, buffer_fixed, 2);</p>
+  <p><br> Das würde einen festen Puffer von 16384 Bytes und byte-aligned to 2 erzeugen, wobei die Funktion einen eindeutigen ID-Wert zurückgibt, der in einer Variablen für die spätere Referenzierung dieses Puffers gespeichert wird.</p>
+  <p>Wenn Sie Daten in einen Puffer lesen und schreiben, tun Sie dies in &quot;Datenpaketen&quot;, die durch ihren &quot;Datentyp&quot; definiert sind. Der &quot;Datentyp&quot; legt die Anzahl der Bytes fest, die innerhalb des Puffers für den zu schreibenden Wert reserviert sind, und es ist wichtig
+    Es ist wichtig, dass Sie dies richtig machen, da Sie sonst sehr seltsame Ergebnisse (oder sogar Fehler) in Ihrem Code erhalten.</p>
+  <p>Puffer werden <strong>sequentiell</strong> beschrieben (und ausgelesen), d. h. ein Datenelement wird nach dem anderen geschrieben, wobei jedes Datenelement von einem bestimmten Typ ist. Das bedeutet, dass Sie sich idealerweise immer bewusst sein sollten, welche Daten Sie in den Puffer schreiben
+    schreiben. Diese Datentypen werden in <span class="notranslate">GML</span> durch die folgenden Konstanten definiert:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Datentyp Konstante</th>
+        <th>Bytes</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_u8</span></td>
+        <td>1</td>
+        <td><br> Eine vorzeichenlose, 8-Bit-Ganzzahl. Dies ist ein positiver Wert von 0 bis 255.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_s8</span></td>
+        <td>1</td>
+        <td><br> Eine vorzeichenbehaftete, 8-Bit-Ganzzahl. Dies kann ein positiver oder negativer Wert von -128 bis 127 sein (0 wird als positiv eingestuft).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_u16</span></td>
+        <td>2</td>
+        <td><br> Eine vorzeichenlose, 16-Bit-Ganzzahl. Dies ist ein positiver Wert von 0 - 65.535.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_s16</span></td>
+        <td>2</td>
+        <td><br> Eine vorzeichenbehaftete, 16-Bit-Ganzzahl. Dies kann ein positiver oder negativer Wert von -32.768 bis 32.767 sein (0 wird als positiv eingestuft).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_f16</span></td>
+        <td>2</td>
+        <td><br> Eine 16-Bit-Gleitkommazahl. Dies kann ein positiver oder negativer Wert innerhalb des Bereichs von +/- 65504 sein. <b>(Wird derzeit nicht unterstützt!)</b></td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_u32</span></td>
+        <td>4</td>
+        <td><br> Eine vorzeichenlose, 32-Bit-Ganzzahl. Dies ist ein positiver Wert von 0 bis 4.294.967.295.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_s32</span></td>
+        <td>4</td>
+        <td><br> Eine vorzeichenbehaftete, 32-Bit-Ganzzahl. Dies kann ein positiver oder negativer Wert von -2.147.483.648 bis 2.147.483.647 sein (0 wird als positiv eingestuft).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_f32</span></td>
+        <td>4</td>
+        <td><br> Eine 32-Bit-Gleitkommazahl. Dies kann ein positiver oder negativer Wert innerhalb des Bereichs von +/-16777216 sein.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_u64</span></td>
+        <td>8</td>
+        <td><br> Ein 64bit Ganzzahlwert ohne Vorzeichen.<b>(Wird derzeit nicht von allen Pufferfunktionen unterstützt!)</b></td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_f64</span></td>
+        <td>8</td>
+        <td><br> Eine 64-Bit-Gleitkommazahl.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_bool</span></td>
+        <td>1</td>
+        <td><br> Ein boolescher Wert. Kann nur entweder 1 oder 0 sein<tt>(wahr</tt> oder <tt>falsch</tt>)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">buffer_string</span></td>
+        <td>N/A</td>
+        <td><br> Dies ist ein UTF-8 null-terminierter (0x00) String. Grundsätzlich wird eine <span class="notranslate">GameMaker-Zeichenkette</span> in den Puffer ausgegeben und eine 0 an das Ende gesetzt.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Angenommen, Sie haben einen Puffer erstellt und möchten Informationen in ihn schreiben, dann würden Sie etwa folgenden Code verwenden:</p>
+  <p class="code">buffer_write(buff, buffer_bool, global.Sound);<br> buffer_write(buff, buffer_bool, global.Music);<br> buffer_write(buff, buffer_s16, obj_Player.x);<br> buffer_write(buff, buffer_s16, obj_Player.y);<br> buffer_write(buff, buffer_string, global.Player_Name);</p>
+  <p>Wenn Sie das obige Beispiel betrachten, können Sie sehen, dass Sie verschiedene Datentypen gleichzeitig in einen Puffer schreiben können (Sie sind nur auf einen bestimmten Datentyp beschränkt, wenn Sie den <em>schnellen </em>Puffertyp verwenden), und diese Daten werden nacheinander in den Puffer eingefügt
+    (obwohl ihre tatsächliche Position im Puffer von ihrer Byte-Ausrichtung abhängt, die weiter unten erklärt wird). Dies gilt auch für das Lesen von Informationen aus dem Puffer, und im Fall des oben genannten Beispiels würden Sie in der gleichen Reihenfolge aus dem Puffer lesen
+    lesen, in der Sie die Daten geschrieben haben, und dabei auf den gleichen Datentyp achten, z. B:</p>
+  <p class="code">global.Sound = buffer_read(buff, buffer_bool);<br> global.Music = buffer_read(buff, buffer_bool);<br> obj_Player.x = buffer_read(buff, buffer_s16);<br> obj_Player.y = buffer_read(buff, buffer_s16);<br> global.Player_Name = buffer_read(buff, buffer_string);</p>
+  <p>Wie Sie sehen können, lesen Sie die Informationen in der gleichen Reihenfolge aus, in der Sie sie in den Puffer einlesen. Weitere Informationen zum Hinzufügen und Entfernen von Daten aus dem Puffer finden Sie in den unten angegebenen Beispielen.</p>
+  <p>Wenn Sie diese Seite durchgelesen haben, werden Sie Hinweise auf das <strong>Byte-Alignment </strong>eines Puffers gesehen haben. Dies bezieht sich im Wesentlichen auf die Position, an der neue Daten innerhalb eines bestimmten Puffers gespeichert werden. Wie funktioniert das? Nun, bei einem einzelnen
+    Byte ausgerichteten Puffer wird jedes Datenstück nacheinander in den Puffer geschrieben, wobei jedes neue Datenstück direkt nach dem vorherigen hinzugefügt wird. Bei einem 2-Byte-Puffer werden die Daten jedoch in Intervallen von 2 Byte geschrieben, so dass selbst wenn
+    der erste Schreibvorgang aus 1 Byte Daten besteht, wird der nächste Schreibvorgang so verschoben, dass er sich an zwei Bytes ausrichtet:</p>
+  <p><img alt="Buffer Byte Alignment" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Buffer_Byte_Alignment.png">Wenn also Ihre Byte-Ausrichtung auf, sagen wir, 4 Bytes eingestellt ist und Sie ein einzelnes Datenstück schreiben, das 1 Byte groß ist
+    Größe schreiben und dann einen <strong>Puffer-Tell </strong> ausführen (ein Tell liefert die aktuelle Position zum Lesen/Schreiben für den Puffer), erhalten Sie einen <strong>Offset von 1 </strong>Byte (der Offset ist in diesem Fall die Anzahl der Bytes vom Anfang des Puffers bis zur
+    der aktuellen Lese-/Schreibposition).</p>
+  <p>Wenn Sie jedoch ein weiteres Stück Daten schreiben, das ebenfalls 1 Byte groß ist, und <em>dann </em>eine Pufferausrichtung durchführen, erhalten Sie einen Offset von 5 Byte (obwohl Sie nur 2 Byte Daten geschrieben haben), da die Ausrichtung die Daten aufgefüllt hat, um sie an der 4-Byte
+    Pufferausrichtung auszurichten.</p>
+  <p>Im Grunde bedeutet dies, dass die Ausrichtung sich nur darauf auswirkt <em>, wohin </em>etwas geschrieben wird. Wenn Sie also nach dem Schreiben von etwas einen Puffer-S tell durchführen, wird die aktuelle Schreibposition zurückgegeben, die unmittelbar auf die Daten folgt, die Sie zuvor
+    geschrieben haben. Beachten Sie jedoch, dass, wenn Sie dann ein weiteres Stück Daten schreiben, der Puffer intern die Schreibposition auf das nächste Vielfache der Ausrichtungsgröße verschiebt, bevor er das Stück Daten tatsächlich schreibt.</p>
+  <p>Im Folgenden finden Sie einige Beispiele für die Verwendung von Puffern in einem Projekt:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Puffer Checkpoint</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Ein einfaches Beispiel dafür, wie ein Puffer in einem <span class="notranslate">GameMaker Studio 2</span> Spiel für jede Plattform verwendet werden kann, ist die Funktion <a href="../GameMaker_Language/GML_Reference/General_Game_Control/game_save_buffer.htm"><span class="inline">game_save_buffer()</span></a>.
+      Diese Funktion macht einen &quot;Schnappschuss&quot; des aktuellen Spielzustands und speichert ihn in einem vordefinierten Puffer, aus dem dann gelesen werden kann, um das Spiel an diesem Punkt wieder zu laden.</p>
+    <p class="note"><strong>HINWEIS</strong>: Diese Funktion ist sehr begrenzt und für den Anfänger gedacht, um ein Checkpoint-System schnell zum Laufen zu bringen, aber fortgeschrittene Benutzer ziehen es vielleicht vor, ihr eigenes System mit den Dateifunktionen zu programmieren, aufgrund der Tatsache, dass
+      das Spiel keine der dynamischen Ressourcen speichert, die Sie zur Laufzeit erstellen können, wie z. B. Datenstrukturen, Oberflächen, hinzugefügte Sprites, usw..</p>
+    <p class="dropspot">Das erste, was wir tun müssen, ist ein neues Objekt zu erstellen, um das Speichern und Laden zu steuern, also würden Sie eines erstellen und ihm ein <strong>Create-Event</strong> geben. In diesem Ereignis könnten Sie den folgenden Code platzieren:</p>
+    <p class="code">SaveBuffer = buffer_create(1024, buffer_grow, 1);<br> StateSaved = false;</p>
+    <p class="dropspot">Die erste Zeile erzeugt einen Wachstumspuffer (da wir die endgültige Größe der gespeicherten Daten nicht kennen) von 1024 Bytes und ausgerichtet auf 1 Byte. Dann wird eine Variable erstellt, mit der geprüft wird, ob das Spiel gespeichert wurde oder nicht (diese wird zum Laden verwendet).</p>
+    <p class="dropspot">Als Nächstes würden wir ein <strong>Keypress-Ereignis</strong> hinzufügen (zum Beispiel), bei dem wir den aktuellen Spielzustand in den erstellten Puffer speichern:</p>
+    <p class="code">StateSaved = true;<br> buffer_seek(SaveBuffer, buffer_seek_start, 0);<br> game_save_buffer(SaveBuffer);
+    </p>
+    <p class="dropspot">Im obigen Beispiel wird zuerst die Steuerungsvariable auf <span class="inline">true </span> gesetzt (so dass diese gespeichert wird, wenn wir das Spiel im Puffer speichern) und dann zum Anfang des Puffers gesucht, bevor der aktuelle Speicherzustand in den Puffer geschrieben wird. Warum verwenden wir
+      <a href="../GameMaker_Language/GML_Reference/Buffers/buffer_seek.htm"><span class="inline">buffer_seek()</span></a>? Nun, wie bereits auf dieser Seite erwähnt, lesen und schreiben Sie in einen Puffer ab der letzten Position, an der Daten in den Puffer eingefügt wurden. Das bedeutet
+      Wenn Sie den Puffer-Tell nicht auf den Anfang zurücksetzen, werden die Daten beim Speichern an der aktuellen Lese-/Schreibposition in den Puffer eingefügt. Wir verwenden also die Funktion <span class="inline">buffer_seek()</span>, um den tell
+      an den Pufferanfang zu setzen.</p>
+    <p class="dropspot">Wir haben nun den aktuellen Spielzustand in einem Puffer gespeichert. Der nächste Schritt wäre, zu codieren, wie er geladen wird, wahrscheinlich in einem weiteren <strong>Keypress-Event</strong>:</p>
+    <p class="code">if StateSaved<br> {<br> buffer_seek(SaveBuffer, buffer_seek_start, 0);<br> game_load_buffer(SaveBuffer);<br> }</p>
+    <p class="dropspot">Das Spiel wird dann am Ende des Ereignisses, in dem Sie den obigen Code platzieren, geladen.</p>
+    <p class="note"><strong>HINWEIS</strong>: Dies ist nur für die Verwendung im selben Raum gedacht und nicht für das Erzeugen kompletter Spielstände, nachdem das Spiel geschlossen oder neu gestartet wurde!</p>
+    <p class="dropspot">Das letzte, was dem Controller-Objekt hinzugefügt werden muss, ist etwas &quot;Aufräumcode&quot;. Puffer werden im Speicher gespeichert und wenn Sie nicht aufräumen, wenn Sie mit ihnen fertig sind, können Sie Speicherlecks bekommen, die schließlich lag und Ihr Spiel abstürzen.
+      Sie würden also wahrscheinlich ein <strong>Raum-Ende-Ereignis</strong> (aus der Kategorie " <strong>Andere</strong> Ereignisse") mit hinzufügen:</p>
+    <p class="code">buffer_delete(SaveBuffer);</p>
+    <p class="dropspot">Dieses Objekt kann nun in einem Raum platziert werden und auf Tastendruck den Raumzustand aus einem Puffer speichern und laden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Netzwerk-Puffer</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Wenn Sie mit den <a href="../GameMaker_Language/GML_Reference/Networking/Networking.htm">Netzwerkfunktionen</a> von <span class="notranslate">GameMaker Studio 2</span> arbeiten, müssen Sie Puffer verwenden, um das Datenpaket zu erstellen, das über die Netzwerkverbindung gesendet wird. Dieses Beispiel
+      soll zeigen, wie dies geschieht, aber aufgrund des Umfangs der Netzwerkmöglichkeiten soll es nur zeigen, wie man die Puffer selbst verwendet, und nicht das gesamte Netzwerksystem.</p>
+    <p class="dropspot">Als erstes werden wir die Erstellung und Verwendung eines Puffers für die Client-Seite der Netzwerkverbindung zeigen. Dieser Puffer wird verwendet, um kleine Datenpakete zu erstellen, die dann an den Server gesendet werden können, so dass im <strong>Ereignis "Create</strong> " einer
+      Instanz würden wir einen Puffer wie folgt zuweisen:</p>
+    <p class="code">send_buff = buffer_create(256, buffer_grow, 1);</p>
+    <p class="dropspot">Wir machen den Puffer klein (256 Bytes) - da er nicht dafür gedacht ist, große Datenmengen zu speichern - dann machen wir ihn zu einem Wachstumspuffer, um sicherzustellen, dass keine Fehler auftreten, falls wir zu irgendeinem Zeitpunkt mehr Daten zum Senden hinzufügen müssen, und die Ausrichtung wird der Einfachheit halber auf eins gesetzt.</p>
+    <p class="dropspot">Nehmen wir nun an, dass unser Client Daten an den Server senden soll. Dafür müssen wir ein Puffer-&quot;Paket&quot; erstellen, und in diesem Beispiel werden wir ein <strong>Tastendruck-Ereignis</strong> senden <strong>, z. B.</strong> wenn der Spieler den linken Pfeil drückt <em>, um </em>
+      um sich im Spiel zu bewegen. Dazu schreiben wir zuerst die notwendigen Daten in den Puffer und senden sie dann ab:</p>
+    <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br> buffer_write(buff, buffer_u8, 1);<br> buffer_write(buff, buffer_s16, vk_left);<br> buffer_write(buff, buffer_bool, true);<br> network_send_packet(client, buff, buffer_tell(buff));</p>
+    <p class="dropspot">Bevor wir in den Puffer schreiben, haben wir den &quot;tell&quot; auf den Anfang des Puffers gesetzt, da das Networking die Daten immer vom Anfang eines Puffers nimmt. Dann schreiben wir den Prüfwert (dieser wird vom Server verwendet, um den Typ des zu verarbeitenden Ereignisses zu bestimmen).
+      zu verarbeiten), dann die verwendete Taste und dann den Zustand der Taste (in diesem Fall true für gedrückt). Dieser Puffer wird dann als Datenpaket von der Netzwerkfunktion gesendet. Beachten Sie, dass wir nicht den gesamten Puffer senden! Wir senden nur die geschriebenen Daten,
+      indem wir die Funktion buffer_tell verwenden, um die aktuelle Lese-/Schreibposition des Puffers zurückzugeben (denken Sie daran, dass das Schreiben in den Puffer den &quot;tell&quot; an das Ende des Geschriebenen verschiebt). Dies dient einfach dazu, das Senden von mehr Bytes als nötig zu vermeiden.</p>
+    <p class="dropspot">Was ist mit dem Empfang der Daten auf dem Server? Das empfangene Datenpaket, das in den Puffer auf dem Server geschrieben werden muss und dann zur Aktualisierung des Spiels verwendet wird. Dafür würden wir das <a href="../The_Asset_Editors/Object_Properties/Async_Events.htm">Networking Asynchronous Event</a> im Network Controller Objekt des Servers verwenden, wie dieser vereinfachte Code unten zeigt:</p>
+    <p class="code">var buff = ds_map_find_value(async_load, &quot;buffer&quot;);<br> if cmd == buffer_read(buff, buffer_u8);<br> {<br> key = buffer_read(buff, buffer_s16);<br> key_state = buffer_read(buff, buffer_bool);<br> }</p>
+    <p class="dropspot">Das asynchrone Ereignis enthält eine spezielle temporäre DS-Karte <span class="inline">async_load</span> (sie wird am Ende des Ereignisses automatisch aus dem Speicher entfernt), die je nach Art der eingehenden Daten vom
+      dem Netzwerk. In diesem Fall gehen wir davon aus, dass die Map geprüft und als ein von einem Client gesendetes Pufferdatenpaket erkannt wurde. Wir überprüfen nun das erste Datenpaket, das sich im Puffer befindet, um zu sehen, welche Art von Ereignis gesendet wurde - in diesem Fall steht der
+      In diesem Fall steht der Wert &quot;1&quot; für ein Tastenereignis. Bei der Codierung dieser Dinge sollten Sie jedoch zur Vereinfachung Konstanten definieren, die diese Werte halten - und dann die gedrückte Taste und ihren Zustand speichern (<span class="inline">true</span> = gedrückt,
+      <span class="inline">false</span> = losgelassen). Diese Informationen würden dann verwendet werden, um alle Clients mit dem neuen Status des sendenden Client-Players zu aktualisieren.</p>
+    <p class="note"><strong>HINWEIS</strong>: Der Puffer, der aus der DS-Map erstellt wird, wird am Ende des asynchronen Netzwerkereignisses automatisch entfernt, sodass hier keine Notwendigkeit besteht, <span class="inline" style="font-size: 14px">buffer_delete()</span> zu verwenden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Additional_Information.htm">Zusätzliche Informationen</a></div>
+        <div style="float:right">Nächste: <a href="Bitwise_Operators.htm">Bitweise Operatoren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Buffers
+Using Buffers
+-->
+  <!-- TAGS
+using_buffers
+-->
+
+</body></html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_get_view_border_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_get_view_border_x" />
+  <meta name="rh-index-keywords" content="camera_get_view_border_x" />
+  <meta name="search-keywords" content="camera_get_view_border_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_get_view_border_x</h1>
+  <p>Mit dieser Funktion kann der Grenzwert für die Objekt-/Instanzverfolgung der angegebenen Kamera entlang der x-Achse (horizontaler Rand) abgefragt werden. Der Rückgabewert wird in Pixel angegeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_get_view_border_x(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var xb = camera_get_view_border_x(view_camera[0]);<br> var yb = camera_get_view_border_y(view_camera[0]);<br> if xb != 200 || yb != 200<br> {
+    <br> camera_set_view_border(view_camera[0], 200, 200);<br> }
+  </p>
+  <p>Der obige Code ruft die xborder- und yborder-Werte der Kamera ab, die dem Ansichtsport[0] zugewiesen ist, und prüft dann, ob diese mit dem angegebenen Wert übereinstimmen. Wenn dies nicht der Fall ist, wird die Fachkamera auf den angegebenen Wert gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_get_view_border_y.htm">camera_get_view_border_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_get_view_border_x
+-->
+  <!-- TAGS
+camera_get_view_border_x
+-->
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>kollisions_linie</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_line" />
+  <meta name="rh-index-keywords" content="collision_line" />
+  <meta name="search-keywords" content="collision_line" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>kollisions_linie</h1>
+  <p><span class="inline">Collision_line</span> prüft entlang einer Linie vom Punkt x1,y1 zum Punkt x2,y2 auf eine Kollision mit <b>einer beliebigen</b> Instanz des durch das Argument &quot;obj&quot; angegebenen Objekts. Diese Prüfung kann entweder präzise oder nicht präzise sein, aber damit präzise
+    Kollisionen aktiviert werden, <i>muss</i> für das Objekt oder die Instanz, auf die Sie prüfen, auch präzise Kollisionen für ihr Sprite aktiviert sein. Wenn nicht, basiert die Standardprüfung auf Bounding Boxes. Das folgende Bild veranschaulicht, wie dies funktioniert:</p>
+  <p><img alt="Collision line example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_line_illustration.png">Denken Sie daran, dass für die Berücksichtigung präziser Kollisionen <i>sowohl</i> das Objekt-Sprite
+    als auch die Kollisionsfunktion als präzise markiert sein müssen. Es sollte auch beachtet werden, dass der Rückgabewert der Funktion die ID einer <i>beliebigen</i> Instanz sein kann, die als kollidierend entlang der Linie betrachtet wird, wenn also drei Instanzen die
+    Wenn also drei Instanzen die definierte Linie überlappen, könnte jede ihrer IDs der Rückgabewert der Funktion sein.</p>
+  <p>Beachten Sie, dass Sie anstelle eines Objektindexes auch eine Instanz <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> angeben können, um nach einer bestimmten Instanz zu suchen, oder die <a href="../../../GML_Overview/Instance_Keywords.htm">Instanz-Schlüsselwörter</a> <span class="inline">all</span> bzw. <span class="inline">other</span> (je nach Ereignis und aktuellem Codeumfang).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">collision_line(x1, y1, x2, y2, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate des Beginns der Linie.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate des Beginns der Linie.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate des Endes der Linie.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate des Endes der Linie.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das Objekt, das auf Instanzkollisionen geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Ob die Prüfung auf präzisen Kollisionen<tt>(true</tt>, was langsamer ist) oder allgemein auf der Bounding Box basiert<tt>(false</tt>, schneller).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Ob die aufrufende Instanz, falls relevant, ausgeschlossen werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Instanz-ID oder keine</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">with (obj_Enemy)<br> {
+    <br> if collision_line(100, 400, 100, 600, id, false, false) instance_destroy();<br> }
+  </p>
+  <p>Dieser Code veranlasst alle Instanzen von &quot;obj_Enemy&quot;, entlang einer Linie von 100x, 400y bis 100x, 600y auf eine Kollision mit sich selbst zu prüfen, und wenn es eine gibt, werden sie zerstört.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="collision_line_list.htm">collision_line_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_line
+-->
+  <!-- TAGS
+collision_line
+-->
+</body>
+</html>

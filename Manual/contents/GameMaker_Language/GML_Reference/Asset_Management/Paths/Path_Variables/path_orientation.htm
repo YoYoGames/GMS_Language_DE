@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pfad_Orientierung</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_orientation" />
+  <meta name="rh-index-keywords" content="path_orientation" />
+  <meta name="search-keywords" content="path_orientation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pfad_Orientierung</h1>
+  <p>Diese Variable enthält die aktuelle Ausrichtung des Pfades, die der Instanz beim Aufruf der Funktion <span class="inline"><a href="../path_start.htm">path_start()</a></span> zugewiesen wurde. Wenn ein Pfad erstellt wird, ist seine Ausrichtung der Standardwert
+    0 Grad, aber Sie können diesen Wert damit auf jeden beliebigen Wert setzen. Denken Sie daran, dass in <span class="notranslate">GameMaker Studio 2</span> (sofern Sie nicht mit Physik arbeiten) die Winkel gegen den Uhrzeigersinn berechnet werden, so dass das Setzen der Pfadausrichtung
+    auf 90° setzen, würde den Pfad nach <i>links</i> drehen.</p>
+  <p><img alt="Path Orientation Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/pathrotated.png" /></p>
+  <h4>Syntax:</h4>
+  <p class="code">Pfad_Orientierung;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">mypath = path_duplicate(choose(path_1, path_2, path_3, path_4));<br> path_start(path, 4, path_action_reverse, 0);<br> path_orientation = 90;</p>
+  <p>Der obige Code dupliziert ein zufälliges, vorgefertigtes Pfad-Asset in die Variable &quot;mypath&quot;. Dieser neue Pfad wird dann gestartet und um 90° gedreht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Variables.htm">Pfadvariablen</a></div>
+        <div style="float:right">Weiter: <a href="path_endaction.htm">path_endaction</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_orientation
+-->
+  <!-- TAGS
+path_orientation
+-->
+</body>
+</html>

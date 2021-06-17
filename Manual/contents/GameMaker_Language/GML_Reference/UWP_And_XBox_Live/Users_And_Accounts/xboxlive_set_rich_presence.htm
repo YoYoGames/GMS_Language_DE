@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_set_rich_presence</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_set_rich_presence" />
+  <meta name="rh-index-keywords" content="xboxlive_set_rich_presence" />
+  <meta name="search-keywords" content="xboxlive_set_rich_presence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_set_rich_presence</h1>
+  <p>Mit dieser Funktion wird die Rich Presence-Zeichenkette für den angegebenen Benutzer festgelegt. Eine Rich Presence-Zeichenkette zeigt die In-Game-Aktivität eines Benutzers nach dem Namen des Spiels, das der Benutzer gerade spielt, getrennt durch einen Bindestrich. Diese Zeichenfolge wird unter dem Gamertag eines Spielers
+    Gamertag in der Liste &quot;Freunde &amp; Clubs&quot; sowie im Xbox Live-Benutzerprofil des Spielers angezeigt.</p>
+  <p>Wenn Sie diese Funktion verwenden, müssen Sie den Zeiger für die Benutzer-ID des Benutzers angeben, und dann können Sie den Benutzer als derzeit im Spiel aktiv oder nicht aktiv kennzeichnen (mit <tt>true/false</tt>). Wenn auf <tt>false</tt> gesetzt, wird der Rich Presence String
+    mit &quot;/afk&quot; oder etwas entsprechendem angehängt. Das nächste Argument ist die ID der Rich Presence-Zeichenkette, die angezeigt werden soll, und schließlich können Sie (optional) eine <tt>service_config_id-Zeichenkette</tt> angeben. Beachten Sie, dass dies ein optionales Argument ist, denn wenn Sie
+    aufgerufen haben <a href="../Stats_And_Leaderboards/xboxlive_stats_setup.htm"><tt>xboxlive_stats_setup()</tt></a> aufgerufen haben, brauchen Sie die <tt>service_config_id</tt> hier nicht zu übergeben.</p>
+  <p>Weitere Informationen zu Rich Presence und zum Einrichten der Strings für die Verwendung im Partnercenter finden Sie in der folgenden Microsoft-Dokumentation:</p>
+  <ul>
+    <li><a href="https://docs.microsoft.com/en-us/gaming/xbox-live/features/social/rich-presence/" target="_blank">Übersicht der Anwesenheitsstrings</a></li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_set_rich_presence(user_id, is_user_active, rich_presence_string, [service_config_id])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Der ID-Zeiger des zu prüfenden Benutzers.</td>
+      </tr>
+      <tr>
+        <td>ist_benutzer_aktiv</td>
+        <td>Kennzeichnen Sie den Benutzer als aktiv oder nicht.</td>
+      </tr>
+      <tr>
+        <td>reich_präsenz_string</td>
+        <td>Die zu verwendende Rich Presence String ID (wie im Partner Center definiert - max. 50 Zeichen)</td>
+      </tr>
+      <tr>
+        <td>service_config_id</td>
+        <td>[OPTIONAL] Dies ist die config_id-Zeichenfolge für das Spiel.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var pad_uid = xboxlive_user_for_pad(0);<br> xboxlive_set_rich_presence(pad_uid, true, &quot;Playing_Challenge&quot;);</p>
+  <p>Der obige Code ruft den Benutzer-ID-Zeiger für den Benutzer ab, der dem Gamepad [0]-Steckplatz zugewiesen ist, und setzt dann die Rich-Present-String für diesen Benutzer.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Users_And_Accounts.htm">Benutzer und Konten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_gamedisplayname_for_user.htm">xboxlive_gamedisplayname_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_set_rich_presence
+-->
+  <!-- TAGS
+xboxlive_set_rich_presence
+-->
+</body>
+</html>

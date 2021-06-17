@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_potential_settings</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_settings" />
+  <meta name="rh-index-keywords" content="mp_potential_settings" />
+  <meta name="search-keywords" content="mp_potential_settings" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_potential_settings</h1>
+  <p>Die <tt>mp_potential_-Funktionen</tt> verrichten ihre Arbeit mit einer Reihe von Parametern, die mit dieser Funktion geändert werden können. Im Großen und Ganzen arbeitet die Methode wie folgt: Sie versucht zunächst, sich geradeaus auf das Ziel zuzubewegen, wobei sie eine Anzahl von Schritten vorausschaut, die mit dem Parameter
+    mit dem Parameter &quot;ahead&quot; eingestellt werden kann (Standardwert ist 3). Eine Verringerung dieses Wertes bedeutet, dass die Instanz später mit der Richtungsänderung beginnt, da sie nicht so weit voraus &quot;sieht&quot;, und eine Erhöhung bedeutet, dass sie früher mit der Richtungsänderung beginnt
+    früher. Wenn diese Prüfung zu einer Kollision führt, beginnt sie, Richtungen links und rechts von der idealen, geradlinigen Richtung zu betrachten. Dies geschieht in Schritten der Größe &quot;rotstep&quot; (Standardwert ist 10).
+    die Instanz mehr Bewegungsmöglichkeiten, wird aber langsamer, da sie mehr Rechenleistung benötigt.</p>
+  <p>Der Parameter &quot;maxrot&quot; ist etwas schwieriger zu erklären! Die Instanz hat eine aktuelle Bewegungsrichtung, und "maxrot" (der Standardwert ist 30) gibt an, um wie viel sie ihre Richtung in einem Schritt zu beiden Seiten dieser aktuellen Richtung ändern darf
+    Schritt. Selbst wenn sie sich also z. B. geradeaus zum Ziel bewegen kann, wird sie dies nur tun, wenn sie diese maximale Richtungsänderung nicht verletzt. Wenn Sie maxrot zu einem großen Wert machen, dann kann die Instanz in jedem Schritt die Richtung sehr oft ändern, und das macht es einfacher
+    einen kurzen Pfad zu finden, aber der Pfad wird hässlicher und weniger natürlich. Wenn Sie den Wert kleiner machen, dann wird der Pfad glatter sein, aber er könnte längere Umwege nehmen (und manchmal sogar das Ziel nicht finden). Schließlich, wenn kein Schritt gemacht werden kann, hängt das Verhalten
+    von dem Wert des Parameters &quot;onspot&quot; ab. Wenn &quot;onspot&quot; true ist (der Standardwert), dann dreht sich die Instanz auf ihrem Punkt um den mit &quot;maxrot&quot; angegebenen Betrag, und wenn er false ist, dann bewegt sie sich überhaupt nicht. Das Setzen auf false
+    ist z. B. für Autos nützlich, verringert aber die Chance, dass die Instanz einen Weg findet.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_potential_settings(maxrot, rotstep, ahead, onspot)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>maxrot</td>
+        <td>Die Anzahl der Grad beiderseits der aktuellen Richtung, um die sich die Instanz in einem Schritt drehen kann</td>
+      </tr>
+      <tr>
+        <td>Rotschritt</td>
+        <td>Die Anzahl der Grad auf beiden Seiten der aktuellen Richtung, die die Instanz auf eine Kollision prüfen kann</td>
+      </tr>
+      <tr>
+        <td>voraus</td>
+        <td>Die Anzahl der Schritte im Voraus, die die Instanz auf eine Kollision prüfen kann. Größere Werte sind langsamer als kleinere Werte.</td>
+      </tr>
+      <tr>
+        <td>onspot</td>
+        <td>Verwenden Sie dies, um der Instanz zu erlauben, an Ort und Stelle zu rotieren, wenn kein Pfad gefunden wird (true) oder nicht (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">mp_potential_settings(45, 5, 5, 0);</p>
+  <p>Der obige Code setzt die <tt>mp_potential_-Funktionen</tt> so, dass folgende Einstellungen verwendet werden: die Instanz kann fünf Schritte vorausschauen, bei jedem Schritt die Richtung um 45 Grad ändern, bei einem Hindernis um 5 Grad nach beiden Seiten der aktuellen Richtung schauen und
+    sich nicht auf der Stelle drehen, wenn es eine Kollision gibt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_potential_step.htm">mp_potential_step</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_potential_settings
+-->
+  <!-- TAGS
+mp_potential_settings
+-->
+</body>
+</html>

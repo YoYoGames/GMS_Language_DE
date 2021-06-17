@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Datei-Handhabung</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the File Handling functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="File Handling" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Datei-Handhabung</h1>
+  <p>Irgendwann bei der Erstellung Ihres Spiels wird es notwendig sein, Informationen extern zu speichern und in der Lage zu sein, diese Informationen abzurufen. Zum Beispiel möchten Sie vielleicht Anmeldedaten oder Highscores speichern, oder vielleicht den Fortschritt des Spielers durch Ihre
+    Levels. Was auch immer der Grund ist, Sie müssen wissen, wie Sie die verschiedenen Dateifunktionen verwenden, die Ihnen beim Arbeiten mit <span class="notranslate">GameMaker Studio 2</span> zur Verfügung stehen.</p>
+  <p>Es ist sehr wichtig, sich darüber im Klaren zu sein, dass <span class="notranslate">GameMaker Studio 2</span> standardmäßig <b>sandboxed </b>ist, was bedeutet, dass es eine Reihe von Einschränkungen und kleineren Komplikationen bei der Verwendung der verfügbaren Dateisystemfunktionen gibt, und es ist auch erwähnenswert, dass das Dateisystem
+    System je nach Plattform etwas anders funktioniert. Weitere Informationen hierzu finden Sie im folgenden Abschnitt:</p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/The_File_System.htm">Das Dateisystem</a></li>
+  </ul>
+  <p>Sie können das Sandboxing auf den Desktop-Zielen<span class="notranslate">(Windows</span>, <span class="notranslate">macOS</span> und <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)) in den Spieloptionen für die gewählte Plattform ausschalten, was bedeutet, dass Sie dann von überall aus speichern und laden können, innerhalb der Grenzen der Betriebssystemberechtigungen.</p>
+  <p>Wenn Sie von <span class="notranslate">Steam</span> die Erlaubnis erhalten haben, ihre dedizierte API mit Ihrem Spiel zu verwenden, werden Sie feststellen, dass Ihnen auch ein neuer Satz von Dateifunktionen zur Verfügung steht. Diese werden im Abschnitt " <a href="../Steam/Steam.htm"><span class="notranslate">Steam-API</span></a> " in diesem
+    Handbuchs erläutert.</p>
+  <p>Schließlich sollten Sie noch beachten, dass es einige deutliche Unterschiede zwischen bestimmten Zielplattformen gibt, die bei der Verwendung der Dateifunktionen zu berücksichtigen wären. Diese sind:<b></b></p>
+  <ul class="colour">
+    <li><b><span class="notranslate">iOS</span></b>: Wenn Sie unter <span class="notranslate">iOS</span> eine eingebundene Datei aus einem Ordner laden, d. h. mit einem Pfad wie &quot;<tt>Backgrounds/background1.png&quot;,</tt> müssen Sie den Ordner NICHT als Teil des Pfades angeben, sondern es genügt, den Dateinamen anzugeben.
+      ausreichend. Auf allen anderen Plattformen müssen Sie den/die Ordner als Teil des Pfades zur Datei angeben.<b></b></li>
+    <li><b><span class="notranslate">macOS</span> und <span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span></b>): Auf <span class="notranslate">macOS</span> und <span class="notranslate">Ubuntu</span> wird bei Dateinamen und Pfaden auf diesen Plattformen zwischen Groß- und Kleinschreibung unterschieden. Um mögliche Probleme zu vermeiden, verwendet <span class="notranslate">GameMaker Studio 2</span> daher standardmäßig für alle Namen/Pfade automatisch Kleinschreibung.<b></b></li>
+    <li><b>HTML5</b>: Bei HTML5 funktioniert das Speichern und Laden in und aus dem <b>lokalen Speicher</b> wie auf den verschiedenen Funktionsseiten beschrieben. Wenn Sie jedoch eine Datei von einem Server laden, <b>dürfen Sie nur die Funktion <a href="../Buffers/buffer_load_async.htm"><tt>buffer_load_async()</tt></a></b> verwenden, da das synchrone Laden in den meisten Browsern veraltet ist und irgendwann überflüssig wird. Beachten Sie auch, dass Sie im lokalen Speicher des Browsers keine Verzeichnisse erstellen oder zerstören können.</li>
+  </ul>
+  <p>Informationen zu den verschiedenen Dateifunktionen finden Sie auf den folgenden Seiten:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="File_System/File_System.htm">Dateisystem</a></li>
+    <li><a href="Ini_Files/Ini_Files.htm">Ini-Dateien</a></li>
+    <li><a href="Text_Files/Text_Files.htm">Text-Dateien</a></li>
+    <li><a href="Binary_Files/Binary_Files.htm">Binäre Dateien</a></li>
+    <li><a href="File_Directories/File_Directories.htm">Dateiverzeichnisse</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span> enthält auch eine Reihe von Funktionen zum <a class="glossterm" data-glossterm="Kodierung" href="#">Verschlüsseln</a> und <a class="glossterm" data-glossterm="Hashing" href="#">Hashing</a> von Dateien und Daten, die Sie hier finden:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="Encoding_And_Hashing/Encoding_And_Hashing.htm">Kodierung und Hashing</a></li>
+  </ul>
+  <p> </p>
+  <p>Beachten Sie auch, dass auf den folgenden Seiten einige grundlegende Dateifunktionen zum Speichern von Spielen zur Verfügung stehen (beachten Sie, dass diese Funktionen für Anfänger gedacht sind, um möglichst schnell ein grundlegendes Speichersystem zum Laufen zu bringen, aber für komplexere Projekte,
+    sollten Sie Ihr eigenes Speichersystem mit Hilfe der in den obigen Abschnitten aufgeführten Funktionen erstellen):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../General_Game_Control/game_load.htm">Spiel_laden</a></li>
+    <li><a href="../General_Game_Control/game_load_buffer.htm">spiel_laden_puffer</a></li>
+    <li><a href="../General_Game_Control/game_save.htm">Spiel_sichern</a></li>
+    <li><a href="../General_Game_Control/game_save_buffer.htm">game_save_buffer</a></li>
+  </ul>
+  <p> </p>
+  <p>Schließlich finden Sie auf den folgenden Seiten weitere erweiterte <a href="../Buffers/Buffers.htm">Pufferfunktionen</a>, die zum Laden und Speichern von Daten verwendet werden können:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Buffers/buffer_save.htm">puffer_sichern</a></li>
+    <li><a href="../Buffers/buffer_save_ext.htm">puffer_speichern_ext</a></li>
+    <li><a href="../Buffers/buffer_save_async.htm">buffer_save_async</a></li>
+    <li><a href="../Buffers/buffer_load.htm">Puffer_laden</a></li>
+    <li><a href="../Buffers/buffer_load_ext.htm">puffer_laden_ext</a></li>
+    <li><a href="../Buffers/buffer_load_async.htm">puffer_laden_async</a></li>
+    <li><a href="../Buffers/buffer_load_partial.htm">puffer_laden_teilweise</a></li>
+    <li><a href="../Buffers/buffer_async_group_begin.htm">buffer_async_group_begin</a></li>
+    <li><a href="../Buffers/buffer_async_group_option.htm">puffer_async_gruppe_option</a></li>
+    <li><a href="../Buffers/buffer_async_group_end.htm">buffer_async_group_end</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../GML_Reference.htm"><span class="notranslate">GML-Referenz</span></a></div>
+        <div style="float:right">Nächste: <a href="../Buffers/Buffers.htm">Puffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+File Handling
+-->
+  <!-- TAGS
+file_functions
+-->
+
+</body></html>

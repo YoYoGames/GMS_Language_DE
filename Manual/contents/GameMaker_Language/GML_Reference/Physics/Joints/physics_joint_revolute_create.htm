@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_revolute_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_revolute_create" />
+  <meta name="rh-index-keywords" content="physics_joint_revolute_create" />
+  <meta name="search-keywords" content="physics_joint_revolute_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_revolute_create</h1>
+  <p>Ein Revolventengelenk zwingt zwei Körper dazu, einen gemeinsamen Ankerpunkt (oft als Scharnierpunkt bezeichnet) zu teilen, und das Gelenk hat einen einzigen Freiheitsgrad - die relative Drehung der beiden Körper um diesen Punkt. Um ein Revolut zu spezifizieren, müssen Sie zwei Instanzen angeben
+    und einen einzelnen Ankerpunkt im Raum angeben, wie Sie im mitgelieferten Bild sehen können:</p>
+  <p><img alt="Revolute joint anchor points illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/revolute_joint_image_1.png">Wenn Sie sich das Bild ansehen, können Sie erkennen, dass die beiden Instanzen so erstellt wurden
+    überlappen und an der Stelle, an der sie sich berühren, haben wir ein Drehgelenk definiert. Dieses Gelenk kann nun durch die Werte &quot;ang_min_limit&quot; und &quot;ang_max_limit&quot; in seiner Drehfreiheit begrenzt werden. Wie funktioniert das? Nun,
+    schauen wir uns ein anderes Bild an:</p>
+  <p><img alt="Revolute joint angle limits illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/revolute_joint_image_2.png">Wie Sie sehen können, entsprechen die Winkel in der Physikwelt <i>nicht</i> den Standard
+   <span class="notranslate">GameMaker Studio 2-Winkel</span>, bei denen rechts 0 Grad ist und es dann gegen den Uhrzeigersinn weitergeht, so dass oben 90, links 180 und unten 270 ist. Nein, wenn es sich um ein Drehgelenk handelt, verläuft die 0-Grad-Achse von der Gelenkposition zum Ursprung der
+    zweiten durch die Funktion definierten Instanz und die Winkel werden dann im Uhrzeigersinn berechnet. Wenn Sie die Winkelbegrenzung einschalten, werden die Grenzen relativ zu dieser 0-Grad-Achse definiert und der Grenzbereich <i>sollte den Wert Null beinhalten</i>, sonst
+    schlingert das Gelenk, wenn der Raum beginnt. Schließlich können Sie definieren, ob das Gelenk einen Motor hat oder nicht. Das bedeutet, dass sich das Gelenk, wenn es nicht durch eine Kollision beeinflusst wird, in eine Richtung bewegt, die durch die Motordrehzahl definiert ist, wobei eine positive Zahl
+    im Uhrzeigersinn und eine negative Zahl gegen den Uhrzeigersinn ist. Das &quot;max_motor_torque&quot;-Argument dient zur Begrenzung der Rotationsgeschwindigkeit, damit Sie keinen ständig beschleunigenden Motor erhalten und um den Einfluss einer Kollision
+    auf die Rotation zu begrenzen. Auf diese Weise können Sie einen Gelenkmotor verwenden, um die Gelenkreibung zu simulieren, indem Sie die Gelenkgeschwindigkeit auf Null und das maximale Drehmoment auf einen kleinen, aber signifikanten Wert setzen. Der Motor wird versuchen, die Drehung des Gelenks zu verhindern, wird aber
+    einer signifikanten Last nach.</p>
+  <p>Wie bei allen Gelenken können <tt>die</tt> beiden Instanzen miteinander interagieren und kollidieren, wenn Sie den &quot;col&quot;-Wert auf &quot;true&quot; setzen, aber nur, wenn <i>sie</i> Kollisionsereignisse haben; wenn er jedoch auf &quot;false&quot; gesetzt ist, kollidieren <tt>sie</tt> nicht
+    egal was passiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_revolute_create(inst1, inst2, w_anchor_x, w_anchor_y, ang_min_limt, ang_max_limit, ang_limit, max_motor_torque, motor_speed, motor, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>Die erste Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>Die zweite Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>w_Anker_x</td>
+        <td>Die x-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker_y</td>
+        <td>Die y-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>ang_min_limit</td>
+        <td>Die untere zulässige Grenze für den Gelenkwinkel</td>
+      </tr>
+      <tr>
+        <td>ang_max_limit</td>
+        <td>Die obere zulässige Grenze für den Gelenkwinkel</td>
+      </tr>
+      <tr>
+        <td>ang_limit</td>
+        <td>Ob der den Winkel des Gelenks begrenzen soll (true) oder nicht (false)</td>
+      </tr>
+      <tr>
+        <td>max_motor_drehmoment</td>
+        <td>Legt das maximale Motordrehmoment fest, mit dem die gewünschte Motordrehzahl erreicht wird (in Newton pro Meter)</td>
+      </tr>
+      <tr>
+        <td>Motor_Drehzahl</td>
+        <td>Dies ist die Geschwindigkeit, mit der sich der Motor drehen soll</td>
+      </tr>
+      <tr>
+        <td>Motor</td>
+        <td>Ob der Motor aktiv sein soll (true) oder nicht (false)</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Ob die beiden Instanzen kollidieren können (true) oder nicht (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Index des Gelenks)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id=instance_create_layer(x+25, y, &quot;Instances&quot;, obj_Door);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_revolute_create(id, o_id, x+25, y, -90, 90, 1, 0, 0, 0, 0);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>Der obige Code erstellt und definiert eine neue Halterung und erzeugt dann eine Instanz von &quot;obj_Door&quot;, wobei die erstellte Halterung mit den beiden neuen Objekten verbunden wird. Die beiden Objekte werden dann über ein Drehgelenk ohne Motor verbunden, wobei die Winkel auf +/- 90 Grad begrenzt sind.
+    schwingen. Abschließend wird das Fixture gelöscht, da es nicht mehr benötigt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_prismatic_create.htm">physics_joint_prismatic_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_revolute_create
+-->
+  <!-- TAGS
+physics_joint_revolute_create
+-->
+</body>
+</html>

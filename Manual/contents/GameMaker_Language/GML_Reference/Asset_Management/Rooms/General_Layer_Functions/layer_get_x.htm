@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_x" />
+  <meta name="rh-index-keywords" content="layer_get_x" />
+  <meta name="search-keywords" content="layer_get_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_x</h1>
+  <p>Mit dieser Funktion können Sie die x-Position der Ebene innerhalb des aktuell bearbeiteten Raums abfragen. Sie übergeben die Ebenen-ID (die Sie beim Anlegen der Ebene mit <a href="layer_create.htm"><tt>schicht_erzeugen()</tt></a>) oder den Ebenennamen (als
+    eine Zeichenkette - dies hat Auswirkungen auf die Performance) und die Funktion gibt eine reelle Zahl für die x-Position der Ebene zurück, relativ zur (0,0)-Position des Raums. Voreinstellung ist 0.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_get_x(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der Ebene, um die x-Position von</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Sprites&quot;);<br> if layer_get_x(lay_id) != 0 || layer_get_y(lay_id) != 0<br> {
+    <br> layer_x(lay_id, 0);<br> layer_y(lay_id, 0);<br> }
+  </p>
+  <p>Der obige Code prüft die angegebene Schichtposition und wenn sie nicht auf (0, 0) gesetzt ist, wird sie auf diese Position gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_get_y.htm">layer_get_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_x
+-->
+  <!-- TAGS
+layer_get_x
+-->
+</body>
+</html>

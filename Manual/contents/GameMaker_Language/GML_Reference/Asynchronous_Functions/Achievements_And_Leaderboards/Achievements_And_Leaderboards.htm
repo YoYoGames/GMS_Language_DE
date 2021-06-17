@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Errungenschaften und Bestenlisten</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for all the Achievements And Leaderboard functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Achievements And Leaderboards" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Errungenschaften und Bestenlisten</h1>
+  <p>Spiele, die für Geräte mit <span class="notranslate">iOS-</span> oder <span class="notranslate">Android-Betriebssystemen</span> entwickelt wurden, können auch mit einer von zwei APIs für Bestenlisten und Erfolge verbunden werden. Für <span class="notranslate">iOS</span> gibt es <b>iTunes Connect</b> und für <span class="notranslate">Android</span> können Sie <b>Google Play</b> verwenden, wobei beide
+    Beide nutzen die Funktionen, die Sie auf dieser Seite finden. Diese Funktionen ermöglichen es Ihrem Spiel, Informationen über Spielstände und Erfolge an die Bestenlisten zu senden, die Sie im Entwicklerkonto für das von Ihnen erstellte Spiel eingerichtet haben, und sind eine hervorragende Möglichkeit, um
+    Dies ist eine hervorragende Möglichkeit, die Spieler in die soziale Seite des Spiels einzubinden, da sie dann sehen können, was andere Personen, die Ihr Spiel gespielt haben, erreicht haben, und versuchen können, sie zu übertreffen.</p>
+  <p>Wenn Sie diese Funktionen verwenden, sollten Sie beachten, dass sie Achievements und Spielstände <i>nicht</i> automatisch für Sie verfolgen. Sie zeigen nur die Daten an, die Sie ihnen von Ihrem Spiel schicken, also müssen Sie Ihr eigenes Achievement- und
+    Hi-Score-System programmieren, um den Status der Personen im Spiel zu verfolgen, und dann diese Funktionen verwenden, um die Daten zum gewählten Netzwerk hinzuzufügen (Sie <i>können</i> jedoch Fortschrittsinformationen für Erfolge mit der   <a href="achievement_load_progress.htm"><tt>achievement_load_progress()</tt></a> Funktion).</p>
+  <p>Einige dieser Funktionen lösen einen Callback <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">Social Asynchronous Event</a> aus, der eine <tt>DS-Map</tt> mit Daten enthält, die sich auf
+    zu der Funktion, die es ausgelöst hat. Die Funktionen, die das Ereignis auslösen, geben auch die Schlüssel/Wertpaare der Map an, die vom Callback zurückgegeben werden, aber ein Callback <b>Social Event</b> kann auch ausgelöst werden, wenn Ihr Spiel
+    externe Benachrichtigungen über Herausforderungen usw. erhält. </p>
+  <p class="note"><b>HINWEIS</b>: Damit diese Funktionen mit <span class="notranslate">iOS</span> funktionieren, müssen Sie über ein gültiges Game Center-Konto und eine <b>iOS-App-ID</b> für Ihr Spiel verfügen.</p>
+  <p class="note"><b>HINWEIS</b>: Damit diese Funktionen mit <span class="notranslate">Android</span> funktionieren, müssen Sie Ihr Spiel bei Google Play einreichen und die erforderlichen Abschnitte eingerichtet haben sowie die API in den <a href="../../../../Settings/Game_Options/Android.htm"><span class="notranslate">Android-Spieloptionen</span></a> für
+    Ihr Spiel aktiviert haben.</p>
+  <p>Die unten aufgeführten Funktionen sind die grundlegenden, die für die Integration Ihres Spiels mit der gewählten Zielplattform für soziale Spiele verwendet werden:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="achievement_login_status.htm">leistung_anmeldung_status</a></li>
+    <li><a href="achievement_login.htm">leistung_anmeldung</a></li>
+    <li><a href="achievement_logout.htm">Leistung_Abmeldung</a></li>
+    <li><a href="achievement_available.htm">Leistung_verfügbar</a></li>
+    <li><a href="achievement_post.htm">leistung_post</a></li>
+    <li><a href="achievement_post_score.htm">leistung_post_score</a></li>
+    <li><a href="achievement_increment.htm">Leistung_Zunahme</a></li>
+    <li><a href="achievement_show_achievements.htm">leistung_zeigen_erfolge</a></li>
+    <li><a href="achievement_show_leaderboards.htm">Leistung_Anzeigen_Leuchttafeln</a></li>
+    <li><a href="achievement_show_challenge_notifications.htm">achievement_show_challenge_notifications</a></li>
+    <li><a href="achievement_get_challenges.htm">leistung_holen_herausforderungen</a></li>
+    <li><a href="achievement_get_pic.htm">leistung_get_pic</a></li>
+    <li><a href="achievement_load_friends.htm">leistung_laden_freunde</a></li>
+    <li><a href="achievement_load_leaderboard.htm">leistung_laden_leittafel</a></li>
+    <li><a href="achievement_load_progress.htm">leistung_laden_fortschritt</a></li>
+    <li><a href="achievement_send_challenge.htm">Leistung_senden_Herausforderung</a></li>
+    <li><a href="achievement_reset.htm">Leistung_zurücksetzen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Asynchronous_Functions.htm">Asynchrone Funktionen</a></div>
+        <div style="float:right">Nächste: <a href="../HTTP/HTTP.htm">HTTP</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Achievements And Leaderboards
+-->
+  <!-- TAGS
+achievement_leaderboard_functions
+-->
+</body>
+</html>

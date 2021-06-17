@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Was ist Programmieren?</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="A brief description of what makes a program, generally and specifically using GameMaker Studio 2." />
+  <meta name="rh-index-keywords" content="Quick Start - What Is Programming?" />
+  <meta name="search-keywords" content="programming" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Was ist Programmieren?</h1>
+  <p>Im <a href="Quick_Start_Guide.htm">vorherigen Abschnitt</a> haben wir beschrieben, wie <span class="notranslate">GameMaker Studio 2</span> arbeitet, um Ihr Spiel zu erstellen, aber unabhängig von den Sprites, Objekten oder Räumen, die Sie hinzugefügt haben, wird nichts passieren, wenn Sie es nicht <strong>programmiert </strong>haben
+    dass es passiert. Aber, was ist ein Programm?</p>
+  <p>Im allgemeinen Sinne ist ein Programm einfach ein Satz von Anweisungen (oder <strong> <a class="glossterm" data-glossterm="Anweisung" href="#">Anweisung</a></strong><span class="glossextra">s</span>), die Sie dem Computer geben, um ihn zu veranlassen, bestimmte
+    Aufgaben. Diese Aufgaben können sehr unterschiedlich sein, von der einfachen Anweisung an den Computer, etwas auf den Bildschirm zu zeichnen, bis hin zur Berechnung eines Wertes auf der Basis einer Benutzereingabe und der anschließenden Reaktion darauf, aber in allen Fällen handelt es sich um eine logische Struktur, die ein bestimmtes Ergebnis liefern wird.
+    Auf der vorigen Seite haben wir über das Verschieben einer Instanz eines Objekts um 2 Pixel nach rechts gesprochen, also lassen Sie uns einen Blick auf das eigentliche Programm werfen, das das tun würde:</p>
+  <p>In <span class="notranslate">Drag And Drop™</span><span class="notranslate">(DnD™</span>) würde es so aussehen:</p>
+  <p><img alt="DnD Example" class="center" src="../assets/Images/QS_Guide/QS_DnD_Example.png" /></p>
+  <p>Und mit der <span class="notranslate">GameMaker Language</span><span class="notranslate">(GML</span>) würde es so aussehen:</p>
+  <p class="code">x = x + 2;</p>
+  <p>Um zu verstehen, was hier vor sich geht, müssen wir zuerst über Variablen sprechen <strong>,</strong> dann über <strong>Funktionen und </strong>schließlich über <strong>Konditionale, da diese </strong>drei Dinge im Allgemeinen das sind, was den
+    den Großteil eines jeden Programms ausmachen.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="What_Is_Programming_.htm#">Variablen</a></p>
+  <div class="droptext" data-targetname="drop_down">
+    <p class="dropspot">Variablen sind neben <strong>Funktionen </strong>(auf die wir gleich noch zu sprechen kommen werden) der Grundstein der Programmierung. Eine Variable ist einfach ein <em>benannter Wert</em>, und im obigen Fall heißt die Variable &quot;<span class="inline">x</span>&quot;.
+      Nun kann &quot;<span class="inline">x</span>&quot; ein beliebiger Wert sein, wie -126 oder 583 oder sogar 1,56378, aber der tatsächliche Wert von &quot;<span class="inline">x</span>&quot; ist irrelevant, da er variieren kann (daher der Name &quot;Variable&quot;). Was wichtig ist
+      ist, dass wir &quot;<span class="inline">x</span>&quot; nehmen und 2 dazu addieren. Es ist erwähnenswert, dass &quot;<span class="inline">x</span>&quot; in diesem Fall eine eingebaute <strong>Variable</strong> ist <strong>, was bedeutet</strong>, dass es sich um eine Variable handelt, die
+      von <span class="notranslate">GameMaker Studio 2</span> für alle Objekte angelegt wird, aber Sie können auch eigene Variablen anlegen.</p>
+    <p class="dropspot">Um eine Variable zu erstellen, muss sie <strong>deklariert </strong>werden, bevor sie verwendet werden kann. Durch das Deklarieren einer Variablen wird <span class="notranslate">GameMaker Studio 2</span> mitgeteilt, dass diese neue Variable existiert und einen Anfangswert hat. Um eine Variable zu deklarieren, würden Sie einfach etwas tun wie
+      dies:</p>
+    <p class="dropspot"><img alt="Declare DnD Variables" class="center" src="../assets/Images/QS_Guide/QS_DnD_Declare.png" /></p>
+    <p class="dropspot">oder:</p>
+    <p class="code">Punkte = 0;</p>
+    <p class="dropspot">Sobald eine Variable deklariert wurde, kann sie in weiterem programmierten Code oder Aktionen verwendet werden. Das Tolle an Variablen ist, dass Sie einen Wert an mehreren Stellen &quot;wiederverwenden&quot; können, ohne sich Gedanken darüber machen zu müssen, was der Wert
+      ist. Nehmen wir an, Sie haben eine Variable &quot;<span class="inline">damage</span>&quot; und verwenden sie an verschiedenen Stellen, um GameMaker <span class="notranslate">Studio 2</span> anzuweisen, anderen Objekten im Spiel <span class="notranslate">eine</span> bestimmte Menge an Schaden zuzufügen. Wir deklarieren vielleicht &quot;<span class="inline">damage</span>&quot;
+      als 20 deklarieren, aber später entscheiden, dass dies ein zu großer Wert ist und ihn auf 10 ändern wollen. Hätten wir den Wert 20 anstelle einer Variablen verwendet, müssten wir unseren gesamten Code oder unsere Aktionen durchgehen und 20 in 10 ändern, was zeitaufwändig und fehleranfällig ist.
+      anfällig. Die Verwendung einer Variablen bedeutet jedoch, dass wir den Wert nur <em>einmal </em>bei der Deklaration in 10 ändern müssen und der Rest des Codes oder der Aktionen diesen neuen Wert verwenden wird.</p>
+    <p class="dropspot">Es ist erwähnenswert, dass es viele verschiedene Arten von Variablen gibt, und jede hat etwas andere Möglichkeiten, wie sie verwendet werden kann. Wir werden hier nicht darauf eingehen, aber Sie können weitere Informationen im Abschnitt " <a href="../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm"><span class="notranslate">Überblick über die GameMaker-Sprache</span></a> " des Handbuchs finden.</p>
+    <p class="dropspot">Variablen sind jedoch nur der erste Teil der Geschichte. Der nächste Teil ist die Verwendung von Funktionen...</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="What_Is_Programming_.htm#">Funktionen</a></p>
+  <div class="droptext" data-targetname="drop_down1">
+    <p class="dropspot">Der nächste wichtige Teil des Programmierens ist die Verwendung von <strong>Funktionen </strong>zusammen mit Variablen. Eine Funktion ist einfach eine Anweisung an den Computer, etwas zu tun, und sie kann sowohl Eingabewerte als auch Ausgabewerte haben (d. h.: Sie können ihr einen Wert geben, und sie führt eine Operation aus und gibt dann einen anderen Wert zurück).
+      (d. h. Sie können ihr einen Wert geben, und sie führt eine Operation aus und gibt dann einen anderen Wert zurück), obwohl nicht alle Funktionen eine Eingabe benötigen und auch keine Ausgabe haben. Um dies besser zu verstehen, sehen wir uns eine eingebaute Funktion in GameMaker <span class="notranslate">Studio 2 an.</span></p>
+    <p class="dropspot">Die Funktion, die wir uns ansehen werden, ist <a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_number.htm"><span class="inline">instance_number()</span></a>, die in <span class="notranslate">DnD™</span>die Aktion " <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Get_Instance_Count.htm">Get Instance Count"</a> ist.
+      Mit dieser Funktion/Aktion wird die Anzahl der Instanzen eines bestimmten Objekts im Spielraum abgerufen, und Sie würden sie wie folgt verwenden:</p>
+    <p class="dropspot"><img alt="Get Instance Count DnD Action" class="center" src="../assets/Images/QS_Guide/QS_DnD_GetInstanceCount.png" /></p>
+    <p class="dropspot">oder:</p>
+    <p class="code">number = instance_number(obj_Enemy);</p>
+    <p class="dropspot">In beiden obigen Beispielen nimmt die Funktion eine Objekt-ID als Eingabewert (den <strong> <a class="glossterm" data-glossterm="Argument" href="#">Argument</a></strong> oder <strong>Parameter</strong>) und gibt einen Ausgabewert (den <strong>Rückgabewert </strong>),
+      der die Anzahl der Instanzen des gegebenen Objekts ist, die im Raum vorhanden waren, als die Funktion/Aktion aufgerufen wurde. Beachten Sie, dass wir eine Variable zum Speichern des Rückgabewerts verwenden, die Variable &quot;<span class="inline">number</span>&quot;. Diese Variable kann
+      deklariert werden, bevor dieser Code ausgeführt wird, oder sie wird als deklariert betrachtet, wenn der Code ausgeführt wird und der Rückgabewert der Funktion/Aktion ihr zugewiesen wird.</p>
+    <p class="dropspot">Es ist erwähnenswert, dass Sie nicht nur auf die Verwendung der eingebauten <span class="notranslate">GameMaker Language-</span> oder <span class="notranslate">DnD™-Aktionen</span>beschränkt sind, sondern auch eigene Funktionen konstruieren können, um die Möglichkeiten der Programmierung zu erweitern (mehr dazu erfahren Sie <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">hier</a> für <span class="notranslate">GML</span> und <a href="../Drag_And_Drop/Drag_And_Drop_Overview/Action_Block_Functions.htm">hier</a> für <span class="notranslate">DnD™</span>).</p>
+    <p class="dropspot">Mit Funktionen und Variablen kann man eine Menge anstellen, allerdings wären sie ohne das letzte wichtige Stück der Programmiergeschichte, die <strong>Konditionale</strong>, ziemlich nutzlos...</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="What_Is_Programming_.htm#">Konditionale</a></p>
+  <div class="droptext" data-targetname="drop_down2">
+    <p class="dropspot">Ein großer Teil der Programmierung besteht darin, Fragen zu stellen. Diese Fragen sind in der Regel einfache Fragen, die entweder als wahr oder falsch ausgewertet werden können, und werden als <strong>Konditionale </strong> bezeichnet (und die Werte von <span class="inline">true </span>und
+      <span class="inline">false </span> werden <strong>boolesche </strong>Werte genannt). Die häufigste und am weitesten verbreitete Bedingung ist die Frage &quot;<span class="inline">if</span>&quot;, mit der geprüft wird, ob etwas <span class="inline">true </span>oder <span class="inline">false </span>ist und
+        dann entsprechend zu handeln. Ein einfaches Beispiel wäre das Entfernen eines Charakters aus dem Spiel, wenn seine Gesundheit unter Null sinkt, was im Klartext wie folgt ausgedrückt werden würde:</p>
+    <p class="code">wenn die Zeichenvariable &quot;hp&quot; kleiner oder gleich Null ist, dann zerstören Sie sie.</p>
+    <p class="dropspot">Um das obige in Code umzuwandeln, müssten wir dies tun:</p>
+    <p class="dropspot"><img alt="DnD Conditional" class="center" src="../assets/Images/QS_Guide/QS_DnD_Conditional.png" /></p>
+    <p class="dropspot">oder:</p>
+    <p class="code">if (hp &lt;= 0)<br>
+      <br> {<br>
+      <br> instance_destroy();<br>
+      <br> }</p>
+    <p class="dropspot">Oben stellen wir also die Frage, ob die Variable hp kleiner oder gleich 0 ist, und wenn das Ergebnis wahr ist, rufen wir die Funktion <a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_destroy.htm"><span class="inline">instance_destroy()</span></a> oder
+      die Aktion <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">Objektinstanz zerstören</a> auf. Beachten Sie, dass das &quot;<span class="inline">then</span>&quot; (wenn etwas... dann etwas...) implizit ist <em>und </em>
+      Sie brauchen es nicht hinzuzufügen, und beachten Sie auch, dass wir im GML-Code die geschweiften Klammern <span class="inline">{} </span>verwenden, um den Code &quot;abzublocken&quot;, der ausgeführt werden soll, wenn &quot; <span class="inline">if</span>&quot; zu <span class="inline">true </span> ausgewertet wird (in
+     <span class="notranslate">DnD™</span>wird dies durch das Fallenlassen der Aktionen <em>rechts </em>von der &quot;<span class="inline">If</span>&quot; Aktion symbolisiert). Alles, was zwischen den geschweiften Klammern hinzugefügt wird, wird nur ausgeführt, wenn &quot; <span class="inline">if</span>&quot; zu
+      <span class="inline">true</span> auswertet, so dass Sie mehr als eine Anweisung in einem einzigen &quot;Block&quot; ausführen lassen können.</p>
+    <p class="dropspot">Eine weitere Sache, die bei der Verwendung der &quot;<span class="inline">if</span>&quot; Bedingung zu beachten ist, ist, dass wir auch eine &quot;<span class="inline">else</span>&quot; Anweisung hinzufügen können, so dass die Bedingung dann zu &quot;wenn etwas den Wert
+      zu <span class="inline">true </span>auswertet, dann tun Sie etwas, <em>sonst </em>tun Sie etwas anderes&quot;. Auf diese Weise können wir mit einem bedingten Ausdruck umgehen, der <span class="inline">true </span> <em>oder </em> <span class="inline">false</span> zurückgibt.
+      Lassen Sie uns auch dafür ein Beispiel geben:</p>
+    <p class="dropspot"><img alt="DnD If... Else.. Example" class="center" src="../assets/Images/QS_Guide/QS_DnD_IfElse.png" /></p>
+    <p class="dropspot">oder:</p>
+    <p class="code">if (countdown &lt;= 0)<br>
+      <br> {<br>
+      <br> instance_create_layer(x, y, &quot;Instances&quot;, obj_Bullet);<br>
+      <br> countdown = 30;<br>
+      <br> } <br>
+      <br> sonst
+      <br>
+      <br> {<br>
+      <br> countdown = countdown - 1;<br>
+      <br> }</p>
+    <p class="dropspot">Der obige Code lässt sich im Klartext wie folgt übersetzen:</p>
+    <p class="code">wenn die Countdown-Variable kleiner oder gleich Null ist, dann:<br>
+      <br> erzeugen Sie eine Instanz des Objekts &quot;obj_Bullet&quot; an der aktuellen x/y-Position auf der Ebene &quot;instances&quot;,<br>
+      <br> setzen Sie die Countdown-Variable auf 30 zurück.<br>
+      <br> sonst:
+      <br>
+      <br> subtrahiere eins von der Countdown-Variablen.</p>
+    <p class="dropspot">Machen Sie sich nicht zu viele Gedanken über den eigentlichen Teil der Instanzerstellung des obigen Codes, da wir diesen in den folgenden Abschnitten ausführlicher behandeln werden. Wichtig ist hier, dass Sie bedingte Ausdrücke erstellen können, die prüfen
+      prüfen, ob etwas <span class="inline">true </span>oder <span class="inline">false </span>ist, und Ihr Programm auf unterschiedliche Weise reagieren lassen. Dies mag sehr einfach erscheinen, ist aber in Wirklichkeit unglaublich mächtig und bildet die Grundlage für fast alles, was Sie beim Programmieren in GameMaker tun.
+      alles, was Sie beim Programmieren in <span class="notranslate">GameMaker Studio 2</span> tun.</p>
+  </div>
+  <p> </p>
+  <p>Um also unsere Frage &quot;Was ist Programmieren?&quot; zu beantworten, können wir sagen, dass <strong>Programmieren </strong>eine Kombination von Anweisungen <strong>ist </strong> <strong>- die </strong> mit <strong> <a class="glossterm" data-glossterm="variabel" href="#">Variable</a></strong>
+   <span class="glossextra">s</span><strong> </strong>zu bilden <strong> <a class="glossterm" data-glossterm="Ausdruck" href="#">Ausdruck</a></strong><span class="glossextra">s</span>, <strong>Funktionen </strong>, um Aufgaben zu erfüllen, und <strong><a class="glossterm" data-glossterm="Bedingt" href="#">bedingter</a></strong>
+     <span class="glossextra">s</span>, um Fragen zu stellen - und dann diese Anweisungen gleichzeitig auszuführen, um ein Ziel zu erreichen. Unten sehen Sie ein etwas komplexeres Programm in <span class="notranslate">DnD™</span>und <span class="notranslate">GML</span>. Können Sie erraten, was es tut?</p>
+  <p><img alt="DnD Final Code Example" class="center" src="../assets/Images/QS_Guide/QS_DnD_FinalCode.png" /></p>
+  <p>oder:</p>
+  <p class="code">if mouse_check_button_pressed(mb_left) == true<br>
+    <br> {<br>
+    <br> x = mouse_x<br>
+    <br> y = mouse_y<br>
+    <br> image_blend = c_red;<br>
+    <br> } <br>
+    <br> sonst
+    <br>
+    <br> {<br>
+    <br> if mouse_check_button_released(mb_left) == true<br>
+    <br> {<br>
+    <br> image_blend = c_white;<br>
+    <br> } <br>
+    <br> }</p>
+  <p><a class="expandspot" data-rhwidget="ExpandSpot" data-target="expanding" href="What_Is_Programming_.htm#">Spoiler</a><span class="expandtext" data-targetname="expanding">Der obige Code prüft zunächst, ob eine Maustaste gedrückt wird (die <strong>linke </strong>Maustaste, die über die Konstante &quot; <span class="inline">mb_left</span>&quot; definiert ist),
+    und wenn sie gedrückt wurde, wird die Instanz, die den Code ausführt, an die aktuelle Mausposition verschoben (definiert durch die eingebauten Variablen &quot; <span class="inline">mouse_x</span>&quot; und &quot; <span class="inline">mouse_y</span>&quot;) und
+    setzt außerdem die Überblendfarbe der Instanz auf <strong>Rot</strong>. Wenn die Maustaste nicht gedrückt wurde, prüft er, ob die Maustaste <strong>losgelassen</strong> wurde, und wenn ja, setzt er die Farbe der Instanzüberblendung auf Weiß zurück (beachten Sie, dass
+    wir wieder einige eingebaute <strong>Konstanten </strong>- &quot; <span class="inline">c_red</span>&quot; und &quot; <span class="inline">c_white</span>&quot; - verwenden, um die Farben einfach zu definieren).</span>
+  </p>
+  <p> </p>
+  <p>Hoffentlich haben Sie jetzt eine etwas bessere Vorstellung davon, worum es beim Programmieren geht. Machen wir also weiter, um die GameMaker <span class="notranslate">Studio 2 IDE</span> zu erkunden <span class="notranslate">und</span> <a class="glossterm" data-glossterm="IDE" href="#">zu sehen</a>, wie Sie Assets wie Sprites <em>und </em>
+   <em>Objekte </em>und andere wichtige Ressourcen, die Ihr Spiel benötigen wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Weiter: <a href="Creating_Sprites.htm">Sprites erstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+What is Programming?
+Quick Start: Programming
+-->
+  <!-- TAGS
+qs_programming
+-->
+
+</body></html>

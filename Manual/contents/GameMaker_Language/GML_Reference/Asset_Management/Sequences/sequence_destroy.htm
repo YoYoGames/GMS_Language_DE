@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sequenz_zerstören</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_destroy" />
+  <meta name="rh-index-keywords" content="sequence_destroy" />
+  <meta name="search-keywords" content="sequence_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sequenz_zerstören</h1>
+  <p>Mit dieser Funktion können Sie ein Sequenz-Objekt zerstören, das dynamisch erzeugt wurde. Sie übergeben entweder die Sequenz-Objekt-Struktur (wie sie von der Funktion <a href="sequence_create.htm"><tt>sequenz_erstellen()</tt></a>) oder die Sequenz-ID (zurückgegeben von der Funktion
+    von der Funktion <a href="../Rooms/Sequence_Layers/layer_sequence_get_sequence.htm"><tt>layer_sequence_get_sequence()</tt></a> oder aus der Sequenzinstanz-Struktur-Eigenschaft <tt>sequence</tt>). Diese Funktion sollte immer dann verwendet werden, wenn eine dynamisch erzeugte
+    Sequenz nicht mehr benötigt wird, um den mit ihr verbundenen Speicher freizugeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sequence_destroy(sequence_struct_or_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sequenz_strukt_oder_id</td>
+        <td>Die zu zerstörende Sequenzobjekt-Struktur oder ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if sequence_exists(my_seq)<br> {
+    <br> sequence_destroy(meine_seq);
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob das angegebene Sequenz-Objekt existiert und wenn ja, wird es zerstört.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="sequence_get.htm">sequence_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_destroy
+-->
+  <!-- TAGS
+sequence_destroy
+-->
+</body>
+</html>

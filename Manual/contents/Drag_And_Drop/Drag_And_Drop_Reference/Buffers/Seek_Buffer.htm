@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Suchpuffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Seek Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Seek Buffer" />
+  <meta name="search-keywords" content="Seek Buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Seek Buffer Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Seek_Buffer.png" width="32"> Suchlaufpuffer</h1>
+  <p>Diese Aktion kann verwendet werden, um eine Position innerhalb eines Puffers anzufahren (zu suchen). Sie geben den eindeutigen Puffer-ID-Wert an, der von der Aktion " <a href="Create_Buffer.htm">Puffer erstellen</a> " zurückgegeben wird, und dann den Offset-Wert in Bytes, zu dem verschoben werden soll. Der Offset-Wert wird
+    Der Offset-Wert wird vom <i>Anfang</i> des Puffers aus angewendet, d. h. der Aufruf dieser Funktion verschiebt die Lese-/Schreibposition an den Anfang des Puffers, bewegt sich dann um die angegebene Anzahl von Bytes weiter und positioniert die neue Lese-/Schreibposition dort. Wenn Sie jedoch
+    den Offset als relativ kennzeichnen, wird die Lese-/Schreibposition von der aktuellen Position aus vorwärts (oder rückwärts, wenn der Offset ein negativer Wert ist) verschoben.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Seek Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Seek_Buffer.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Pufferindex (gespeichert in einer Variablen)</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Offset (in Bytes) relativ zur aktuellen Suchposition</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Seek Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Seek_Buffer.png">Der obige Code des Aktionsblocks ermittelt die Größe des Puffers und verwendet dann diesen Wert, um die Lese-/Schreib
+    Position auf das Ende der aktuell gespeicherten Daten zu setzen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffer_Actions.htm">Puffer-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Get_Buffer_Size.htm">Puffergröße abrufen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Seek Buffer
+-->
+  <!-- TAGS
+action_buffer_seek
+-->
+</body>
+</html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_agegroup_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_agegroup_for_user" />
+  <meta name="rh-index-keywords" content="xboxlive_agegroup_for_user,xboxlive_agegroup_unknown,xboxlive_agegroup_child,xboxlive_agegroup_teen,xboxlive_agegroup_adult" />
+  <meta name="search-keywords" content="xboxlive_agegroup_for_user,xboxlive_agegroup_unknown,xboxlive_agegroup_child,xboxlive_agegroup_teen,xboxlive_agegroup_adult" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_agegroup_for_user</h1>
+  <p>Diese Funktion gibt eine von vier Konstanten (siehe unten) zurück, um den Altersbereich anzugeben, der dem angegebenen Benutzer-ID-Zeiger zugeordnet ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_agegroup_for_user(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Die zu prüfende Benutzer-ID (ein Zeiger)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Konstant</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>xboxlive_agegroup_unbekannt</td>
+        <td>Die Altersgruppe des Benutzers ist unbekannt</td>
+      </tr>
+      <tr>
+        <td>xboxlive_agegroup_child</td>
+        <td>Die Altersgruppe der Benutzer liegt zwischen 8 und 12 Jahren (einschließlich)</td>
+      </tr>
+      <tr>
+        <td>xboxlive_agegroup_teen</td>
+        <td>Die Altersgruppe der Benutzer liegt zwischen 13 und 17 Jahren (einschließlich, und zwischen 13 und 19 Jahren in Südkorea)</td>
+      </tr>
+      <tr>
+        <td>xboxlive_agegroup_adult</td>
+        <td>Die Altersgruppe der Benutzer ist 18 oder älter (bzw. 20 und älter in Südkorea</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _age = xboxlive_agegroup_for_user(xboxlive_get_activating_user());<br> if _age != xboxlive_agegroup_adult<br> {
+    <br> global.ContentControl = true;<br> }
+    <br> else global.ContentControl = false;</p>
+  <p>Der obige Code prüft die Altersgruppe des aktivierenden Benutzers und setzt eine globale Variable abhängig von der zurückgegebenen Konstante auf <tt>true</tt> oder <tt>false</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Users_And_Accounts.htm">Benutzer und Konten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_gamerscore_for_user.htm">xboxlive_gamerscore_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_agegroup_for_user
+xboxlive_agegroup_unknown
+xboxlive_agegroup_child
+xboxlive_agegroup_teen
+xboxlive_agegroup_adult
+-->
+  <!-- TAGS
+xboxlive_agegroup_for_user
+-->
+</body>
+</html>

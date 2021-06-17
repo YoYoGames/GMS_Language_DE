@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_button_check</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_button_check" />
+  <meta name="rh-index-keywords" content="gamepad_button_check" />
+  <meta name="search-keywords" content="gamepad_button_check" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_button_check</h1>
+  <p>Diese Funktion gibt <tt>true</tt> oder <tt>false</tt> zurück, je nachdem, ob die angegebene Gamepad-Taste als gedrückt gehalten erkannt wird oder nicht. Wenn Sie eine analoge Taste prüfen, berücksichtigt die Prüfung die <a href="gamepad_set_button_threshold.htm">Schwellenwerteinstellung</a> und gibt nur <span class="inline">true</span> zurück, wenn der rohe Eingangswert über dem angegebenen Schwellenwert liegt (Sie können diesen rohen Wert mit der Funktion <span class="inline"><a href="gamepad_button_value.htm">gamepad_button_value()</a></span> erhalten).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gamepad_button_check(device, button);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Welcher Gamepad-Geräte-&quot;Steckplatz&quot; zu prüfen ist.</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Auf welche <a href="Gamepad_Input.htm">Gamepad-Tastenkonstante</a> ist zu achten.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if gamepad_button_check(0, gp_face1)<br> {
+    <br> if canshoot = true<br> {
+    <br> audio_play_sound(snd_Shoot, 0, false);<br> instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet)<br> canshoot = false;<br> alarm[0] = room_speed / 2;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code erkennt, ob die untere Taste der oberen Fläche (das &quot;X&quot; auf einem ps3-Controller) gedrückt gehalten wird, und wenn ja, schießt er eine &quot;Bullet&quot;-Instanz und setzt einen Alarm.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Input.htm">Gamepad-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="gamepad_button_check_pressed.htm"> gamepad_button_check_pressed </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_check
+-->
+  <!-- TAGS
+gamepad_button_check
+-->
+</body>
+</html>

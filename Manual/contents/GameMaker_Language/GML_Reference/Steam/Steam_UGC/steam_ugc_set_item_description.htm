@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_ugc_set_item_description</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_set_item_description" />
+  <meta name="rh-index-keywords" content="steam_ugc_set_item_description" />
+  <meta name="search-keywords" content="steam_ugc_set_item_description" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_ugc_set_item_description</span></h1>
+  <p>Diese Funktion setzt die Beschreibung, die für das angegebene Element verwendet werden soll. Die Beschreibung sollte ein String sein und das Update-Handle ist der Wert, der beim Aufruf der Funktion <a href="steam_ugc_start_item_update.htm"><tt><span class="notranslate">steam_ugc_start_item_update</span>()</tt></a>.
+    Die Funktion gibt <tt>true</tt> zurück, wenn erfolgreich auf die API zugegriffen wurde, und <tt>false</tt>, wenn es ein Problem gab.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_set_item_description</span>(ugc_update_handle, description);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ugc_update_handle</td>
+        <td>Das eindeutige Handle für die zu aktualisierende UGC.</td>
+      </tr>
+      <tr>
+        <td>Beschreibung</td>
+        <td>Die Beschreibung (eine Zeichenfolge - max. 8000 Zeichen), die für das Element verwendet werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var app_id = <span class="notranslate">steam_get_app_id</span>();<br> var updateHandle = <span class="notranslate">steam_ugc_start_item_update</span>(app_id, global.Publish_ID);<br> <span class="notranslate">steam_ugc_set_item_title</span>(updateHandle, &quot;Mein Werkstattartikel(3)!&quot;);<br> steam_ugc_set_item_description( updateHandle, &quot;Testen
+    workshop...&quot;);<br> steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public);<br> var tagArray;<br> tagArray[0] = &quot;Test&quot;;<br> tagArray[1] = &quot;New&quot;;<br> steam_ugc_set_item_tags( <span class="notranslate">updateHandle</span>, tagArray);<br> steam_ugc_set_item_preview <span class="notranslate">(</span>updateHandle,
+    &quot;promo.jpg&quot;);<br> steam_ugc_set_item_content(updateHandle, &quot;WorkshopContent1&quot;);<br> requestId = steam_ugc_submit_item_update(updateHandle, &quot;Version 1.2&quot;);</p>
+  <p>Der obige Code ruft die Spiel-ID ab und verwendet diese dann zusammen mit einer zuvor gespeicherten veröffentlichten Datei-ID, um ein Update-Handle für das Element zu generieren. Dieses Handle wird dann verwendet, um verschiedene Informationen zu aktualisieren, bevor die Aktualisierung an die Workshop
+    Server übertragen wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Weiter: <a href="steam_ugc_set_item_visibility.htm"><span class="notranslate">steam_ugc_set_item_visibility</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_set_item_description
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_set_item_description
+-->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ebene_erstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_create" />
+  <meta name="rh-index-keywords" content="layer_create" />
+  <meta name="search-keywords" content="layer_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ebene_erstellen</h1>
+  <p>Diese Funktion wird verwendet, um eine neue Schicht innerhalb des aktuellen Raums zu erstellen. Sie geben die Tiefe an, die die neue Schicht einnehmen soll, und die Funktion gibt den eindeutigen Wert der Schicht-ID zurück, der dann für den Zugriff auf die Schicht in weiteren Funktionen verwendet werden kann. Sie können auch
+    ein optionales &quot;Name&quot;-Argument angeben, mit dem Sie der Ebene einen bestimmten Namen (als Zeichenkette) geben können, und anstelle der Ebenen-ID können Sie diese Namenszeichenkette für den Zugriff auf die Ebene verwenden, wobei zu beachten ist, dass die Verwendung von
+    Namensstrings eine größere Auswirkung auf die Leistung hat als die Verwendung nur des ID-Werts. Wenn Sie den Namen der Ebene nicht angeben, wird der erstellten Ebene ein Name mit dem Format &quot; _layer_XXX<tt>&quot;</tt> zugewiesen<tt>,</tt> wobei &quot;XXX&quot;
+    ein Hexadezimalwert ist, um der Ebene einen eindeutigen Namen zu geben.</p>
+  <p>Wenn Sie einen Tiefenwert angeben, ist dieser umso höher, je weiter die Ebene von der Kamera entfernt ist, und umso niedriger, je näher die Ebene an der Kamera liegt; wenn Sie also drei Ebenen mit den Tiefen -100, 0, 100 haben, werden die Ebenen in der Reihenfolge
+    100, 0, -100, so dass die &quot;oberste&quot; Ebene (d. h. die Ebene, die der Kameraansicht am nächsten ist und daher über alles andere gezeichnet wird) die Ebene mit der Tiefe -100 ist.</p>
+  <p>Das folgende Bild zeigt ein Schema, wie die Tiefe für Ebenen funktioniert:</p>
+  <p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png">Es ist zu beachten, dass Sie zwar mehrere Ebenen einer einzelnen Tiefe zuweisen <i>können</i>, aber <i>nicht garantieren können, dass die Ebenen auf derselben Tiefe in einer bestimmten Reihenfolge gezeichnet werden</i>. Beachten Sie auch, dass die minimale und maximale Ebenentiefe -16000 bis 16000 beträgt und alles außerhalb dieser Tiefen <b>nicht gerendert wird</b>. Wenn Sie eine Tiefe außerhalb dieses Bereichs benötigen
+    dann müssen Sie die Funktion <a href="layer_force_draw_depth.htm"><tt>layer_force_draw_depth()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_create(depth, [name])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Tiefe</td>
+        <td>Die Tiefe, in der die Ebene erstellt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name, den die Ebene erhalten soll (eine Zeichenkette - optional)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Ebenen-ID (Real)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.Bullet_Layer = layer_create(-100);</p>
+  <p>Der obige Code erstellt eine neue Ebene mit einem Tiefenwert von -100 und weist ihren ID-Wert einer globalen Variablen zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_destroy.htm">layer_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_create
+-->
+  <!-- TAGS
+layer_create
+-->
+</body>
+</html>

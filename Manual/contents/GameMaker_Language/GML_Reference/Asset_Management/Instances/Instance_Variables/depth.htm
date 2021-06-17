@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Tiefe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable depth" />
+  <meta name="rh-index-keywords" content="depth" />
+  <meta name="search-keywords" content="depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Tiefe</h1>
+  <p>Wenn Sie ein Objekt erstellen, können Sie ihm eine anfängliche <i>Tiefe</i> zuweisen, die definiert, wie die Instanzen dieses Objekts im Raum gezeichnet werden, wenn das Spiel gespielt wird, und diese Variable kann verwendet werden, um diesen Tiefenwert zu erhalten und zu ändern, während das
+    Spiel läuft. Normalerweise brauchen Sie diese Variable nicht zu verwenden, da Sie die Instanzen so einstellen sollten, dass sie zu diskreten <a href="layer.htm">Ebenen</a> hinzugefügt werden, die wiederum auf eine bestimmte Tiefe eingestellt sind, aber es kann sein, dass Sie die Tiefe
+    einer Instanz mit diesem Wert ändern möchten. In diesem Fall wird eine &quot;temporäre Ebene&quot; speziell für die Instanz mit der angegebenen Tiefe erstellt. In diesem Fall wird eine "temporäre Ebene" speziell für die Instanz in der angegebenen Tiefe erstellt. Beachten Sie, dass diese temporäre Ebene aus dem Speicher entfernt wird, wenn sich keine Instanzen in der gleichen Tiefe befinden
+    aus dem Speicher entfernt wird (im Gegensatz zu regulären Ebenen, die auch dann erhalten bleiben, wenn sich nichts auf ihnen befindet).</p>
+  <p class="note"><b>WICHTIG!</b> Wenn Sie die <tt>Tiefenvariable</tt> ändern und <span class="notranslate">GameMaker Studio 2</span> die Ebenen verwaltet, wird die eingebaute <span style="font-size:1px;"><a href="layer.htm"><tt style="font-size: 14px">Ebene</tt></a></span> Variable -1 zurück und nicht
+    die Ebenen-ID zurück, da verwaltete Ebenen nicht durch Code manipuliert werden können.</p>
+  <p>In <span class="notranslate">GameMaker Studio 2</span> bedeutet ein niedriger Tiefenwert für eine Instanz, dass die Instanz &quot;näher an der Kamera&quot; gezeichnet wird, während ein höherer Tiefenwert bedeutet, dass die Instanz &quot;weiter weg von der Kamera&quot; gezeichnet wird, d. h:
+    -1000 wird über -100 gezeichnet, das über 0 gezeichnet wird, das über 100 gezeichnet wird, das über 1000 gezeichnet wird.</p>
+  <p><img alt="Depth sorting example image" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/depth_image.png">Beachten Sie, dass Instanzen eines Objekts, die <b>dieselbe</b> Tiefe haben, <b> <i>über- oder</i></b> untereinander gezeichnet werden können, auch wenn sie im Raumeditor scheinbar übereinander liegen. Wenn Sie garantieren wollen, dass etwas über oder unter alles andere gezeichnet wird, sollten Sie die Tiefe (oder Ebene) immer explizit festlegen. Beachten Sie auch, dass es ein Minimum
+    (-16000) und einen Maximalwert (+16000) für die Tiefe gibt, außerhalb derer die Instanzen nicht gezeichnet werden, obwohl sie weiterhin existieren und Ereignisse verarbeiten.</p>
+  <p class="note"><b>HINWEIS: </b>Sie <b>können</b> die Tiefe einer Instanz <b>nicht</b> in ihrem Zeichnungsereignis festlegen (alle anderen Ereignisse sind in Ordnung).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">Tiefe;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Gleitkommawert mit einfacher Genauigkeit)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if y != yvorher<br> {
+    <br> depth = -y;<br> }
+  </p>
+  <p>Der obige Code prüft, ob sich die y-Position geändert hat, und wenn ja, wird auch die Tiefe entsprechend eingestellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Variables.htm">Instanz-Variablen</a></div>
+        <div style="float:right">Nächste: <a href="layer.htm">Schicht</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+depth
+-->
+  <!-- TAGS
+depth
+-->
+</body>
+</html>

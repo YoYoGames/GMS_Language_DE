@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mit</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the with function" />
+  <meta name="rh-index-keywords" content="with" />
+  <meta name="search-keywords" content="with" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mit</h1>
+  <p>Wie im Abschnitt <a href="../Addressing_Variables_In_Other_Instances.htm">Adressieren von Variablen in anderen Instanzen</a> beschrieben, ist es möglich, den Wert von Variablen in anderen Instanzen und <a href="../Structs.htm">Strukturen</a> als derjenigen zu lesen und zu ändern, die gerade einen bestimmten Code ausführt.
+    als diejenige, die gerade einen bestimmten Code ausführt. In einer Reihe von Fällen möchten Sie jedoch viel mehr tun, als nur eine einzelne Variable innerhalb dieser anderen Instanzen zu ändern, und Sie möchten möglicherweise komplexere Codeaktionen durchführen, die mehrere Funktionen
+    und Codezeilen erfordern. Stellen Sie sich zum Beispiel vor, dass Sie alle Instanzen eines Ballobjekts in Ihrem Spiel um 8 Pixel nach unten verschieben möchten. Sie denken vielleicht, dass dies einfach durch das folgende Codestück erreicht wird:</p>
+  <p class="code">obj_ball.y = obj_ball.y + 8;</p>
+  <p>Das ist aber nicht korrekt, denn die rechte Seite der Zuweisung erhält den Wert der y-Koordinate der ersten Kugel und addiert 8 dazu. Anschließend wird dieser neue Wert als y-Koordinate <em>aller </em>Kugeln gesetzt, so dass das Ergebnis ist, dass alle Kugeln die gleiche y-Koordinate erhalten,
+    und zwar auch dann, wenn Sie folgendes verwenden:</p>
+  <p class="code">obj_ball.y += 8;</p>
+  <p>wird es genau den gleichen Effekt haben, weil es einfach eine Abkürzung der ersten Anweisung ist. Wie erreichen <i>wir</i> also so etwas? Aus diesem Grund gibt es in <span class="notranslate">GML</span> die <tt>with-Anweisung</tt>. Die Anweisung <span class="inline">with</span> 
+    hat die folgende Syntax:</p>
+  <p class="code">mit (&lt;Ausdruck&gt;)<br> {<br> &lt;Anweisung&gt;;<br> &lt;Anweisung&gt;;<br>...<br> }</p>
+  <p>Für den <a class="glossterm" data-glossterm="Ausdruck" href="#">Ausdruck</a> können Sie eine oder mehrere Instanzen (oder ein struct) angeben, auf denen der Code ausgeführt werden soll, indem Sie eine Instanz-ID, die Objekt-ID (die angibt, dass <i>alle Instanzen</i> im Raum
+    dieses Objekts den Codeblock ausführen sollen), die struct-ID oder eines der speziellen <a href="../Instance_Keywords.htm">Schlüsselwörter</a><tt>(all</tt> oder <tt>other</tt>). Dies ändert dann den <strong>Bereich</strong> des Codes innerhalb der geschweiften Klammern
+    <span class="inline">{}</span> von der Instanz, struct oder Funktion, die den Code tatsächlich enthält, auf die im Ausdruck angegebene Instanz (oder Instanzen oder struct).</p>
+  <p>Nachdem der Ausdruck den Geltungsbereich der <span class="inline">with</span> festgelegt hat, wird die <a class="glossterm" data-glossterm="Anweisung" href="#">Anweisung</a> für jede der angegebenen Instanzen ausgeführt, als ob diese Instanz die aktuelle (
+    <span class="inline">self</span> ) Instanz ist. Um zu unserem ursprünglichen Problem zurückzukehren: Um alle Instanzen des Ball-Objekts um 8 Pixel nach unten zu verschieben, würden Sie also Folgendes eingeben:</p>
+  <p class="code">mit (obj_ball)<br> {
+    <br> y += 8;<br> }
+  </p>
+  <p>Im Wesentlichen ist dies eine Schleife, und bei jeder <a class="glossterm" data-glossterm="Iteration" href="#">Iteration</a> der Schleife wird der Code auf einer Instanz des Objekts <span class="inline">obj_ball</span> ausgeführt.</p>
+  <p>Wenn Sie mehrere Anweisungen ausführen möchten, schließen Sie diese einfach in geschweifte Klammern ein, so wie Sie es bei jedem anderen Codeblock tun würden. Um also zum Beispiel alle Bälle in unserem Beispiel an eine zufällige Position zu bewegen und ihnen eine zufällige Geschwindigkeit und Richtung zu geben,
+    würden Sie verwenden:</p>
+  <p class="code">with (obj_ball)<br> {
+    <br> x = random(Raum_Breite);<br> y = random(Raum_Höhe);<br> speed = 1 + random(2);<br> direction = random(360);<br> }
+  </p>
+  <p>Wie oben erwähnt, ist die angegebene Instanz oder Struktur innerhalb der Anweisung(en) zur Zielinstanz (<span class="inline">self</span>) geworden, die den Codeblock ausführt, was bedeutet, dass die ursprüngliche Instanz (die das <tt>With</tt> und den
+    gesamte Codeblock) zur <a href="../Instance_Keywords.htm"><tt>andere</tt></a> Instanz. Um also - zum Beispiel - alle Bälle an die Position der aktuellen Instanz zu verschieben, die den Code tatsächlich enthält, können Sie Folgendes eingeben:</p>
+  <p class="code">mit (obj_ball)<br> {
+    <br> x = andere.x;<br> y = andere.y;<br> }
+  </p>
+  <p>Die <tt>"With</tt> "-Anweisung ist ein extrem mächtiges Werkzeug und in vielen, vielen Situationen nützlich, daher ist es wichtig, dass Sie vollständig verstehen, wie sie verwendet werden kann. Um Ihnen dabei zu helfen, finden Sie im Folgenden ein paar weitere Anwendungsbeispiele:</p>
+  <p class="code">with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Ball))<br> {
+    <br> speed = other.speed;<br> direction = other.direction;<br> }
+  </p>
+  <p>Der obige Code erzeugt eine Instanz von <tt>obj_Ball</tt> und weist ihr die Geschwindigkeit und Richtung der Instanz zu, die den gesamten Codeblock ausführt.</p>
+  <p class="code">with (instance_nearest(x, y, obj_Ball))<br> {
+    <br> instance_destroy();
+    <br> }
+  </p>
+  <p>Der obige Code zerstört die Instanz von <tt>obj_Ball</tt>, die der Instanz, die den Code ausführt, am nächsten ist.</p>
+  <p class="code">with(clone_struct)<br> {<br> xx = other.x;<br> yy = other.y;<br> spd = other.speed;<br> dir = other.direction;<br> }</p>
+  <p>Der obige Code verwendet <span class="inline">with</span>, um ein struct anzuvisieren und die gegebenen struct-Member-Variablen auf die Werte zu setzen, die in den Instanzvariablen der Instanz gespeichert sind, die den Code aufruft.</p>
+  <p class="code">var _inst = noone;<br> with (obj_ball)<br> {
+    <br> if (str &gt; other.str)<br> {
+    <br> _inst = id;<br> }
+    <br> }
+    <br> if (_inst != noone)<br> {
+    <br> ziel = _inst;<br> }
+  </p>
+  <p>Der obige Code ist etwas komplexer als die vorherigen, da er eine <a href="../Variables_And_Variable_Scope.htm">lokale Variable</a> verwendet. Diese Variable ist entweder für das <em>Ereignis</em> oder die<em>Skriptfunktion</em> <strong>lokal </strong>und
+    nicht zur Instanz oder Struktur und kann daher von allen Instanzen, die innerhalb des Codeblocks referenziert werden, verwendet und angesprochen werden. Im obigen Code haben wir also eine lokale Variable auf das spezielle Schlüsselwort <tt>noone</tt> gesetzt und verwenden dann die Konstruktion <tt>with</tt> 
+    um jede Instanz von <tt>obj_Ball</tt> zu veranlassen, ihre <tt>str-Variable</tt> mit derjenigen der Instanz zu vergleichen, die den Codeblock ausführt. Wenn der Wert der Variable größer ist, dann speichern sie ihre eindeutige ID in der lokalen Variable <tt>inst</tt>, was bedeutet
+    dass am Ende des Codes nur die Instanz mit einem Wert größer als die aufrufende Instanz (oder das Schlüsselwort <tt>noone</tt>, wenn keine größer ist) in der lokalen Variablen <span class="inline">_inst</span> gespeichert wird.</p>
+  <p>Es ist erwähnenswert, dass Sie die speziellen Anweisungen <span class="inline"><a href="break.htm">break</a></span> und <span class="inline"><a href="continue.htm">continue</a></span> innerhalb einer
+    <font face="Lucida Console"><span style="font-size: 16px;"><b>mit</b></span></font> Aufrufs verwenden können. Wenn Sie <span class="inline">break</span> verwenden, wird der Codeblock <span class="inline">with</span> sofort verlassen und mit dem Code fortgefahren, der in dem Ereignis oder der Funktion nach der Anweisung
+    <span class="inline">with</span> beendet sein sollte, z. B:</p>
+  <p class="code">var count = 0;<br> with (obj_Enemy)<br> {
+    <br> if (++count &gt; 10)<br> {
+    <br> break;
+    <br> }
+    <br> hp = 100;<br> }
+  </p>
+  <p>Der obige Code durchläuft die Instanzen im Raum des Objekts <span class="inline">obj_Enemy</span> und setzt die Variable <span class="inline">hp</span> für die ersten 10, die er findet, auf 100. Wenn mehr als 10 Instanzen vorhanden sind, wird der mit-Code
+    <span class="inline">break</span> aufgerufen und beendet.</p>
+  <p>Ein Beispiel für die Verwendung von <span class="inline">continue</span> in einer <span class="inline">with</span> -Schleife wäre:</p>
+  <p class="code">with (obj_Enemy_Parent)<br> {<br> if (invulnerable == true)<br> {<br> continue;<br> } <br> hp -= 25;<br> }</p>
+  <p>Dieser Code durchläuft in einer Schleife alle Instanzen mit der übergeordneten Variable <span class="inline">obj_Enemy_Parent</span> und prüft dann für jede Instanz, ob die Instanzvariable <span class="inline">invulnerable</span> <span class="inline">true</span> ist oder nicht. Wenn
+    ist, beendet das Schlüsselwort <span class="inline">continue</span> die aktuelle Iteration der Schleife und geht zur nächsten verfügbaren Instanz über, andernfalls entfernt es 25 aus der Variablen <span class="inline">hp</span>. Dies wird so lange wiederholt, bis alle Instanzen
+    mit diesem Elternteil geprüft wurden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="return.htm">Rückkehr</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+with
+-->
+  <!-- TAGS
+with
+-->
+
+</body></html>

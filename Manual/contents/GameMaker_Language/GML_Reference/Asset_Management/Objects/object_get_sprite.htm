@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_get_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_get_sprite" />
+  <meta name="rh-index-keywords" content="object_get_sprite" />
+  <meta name="search-keywords" content="object_get_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_get_sprite</h1>
+  <p>Diese Funktion sagt Ihnen, ob das zu prüfende Objekt ein Sprite hat oder nicht, und wenn ja, gibt sie den Index dieses Sprites zurück, oder -1, wenn es kein Sprite hat. Bitte beachten Sie, dass dies keine Instanzfunktion ist! Sie können ein Objekt haben, das kein
+    Sprite haben, während eine Instanz desselben Objekts eines haben kann und umgekehrt, oder sie können sogar unterschiedliche Sprites haben. Sie können das Sprite einer einzelnen Instanz mit der <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a>    Instanz-Variable setzen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">object_get_sprite(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Der Index des zu prüfenden Objekts</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Sprite-Asset-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _spr = object_get_sprite(object_index);<br> if (sprite_index != _spr)<br> {<br> sprite_index = _spr;<br> }</p>
+  <p>Im obigen Beispiel wird das <span class="inline">sprite_index</span> der Instanz mit dem Sprite der <span class="inline">object_index</span> der Instanz verglichen. Wenn sie nicht übereinstimmen, wird der Instanz das gleiche Sprite zugewiesen wie das des
+    Objektindex der Instanz zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Objects.htm">Objekte</a></div>
+        <div style="float:right">Weiter: <a href="object_get_visible.htm">object_get_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_get_sprite
+-->
+  <!-- TAGS
+object_get_sprite
+-->
+</body>
+</html>

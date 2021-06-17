@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>klickbar_hinzufügen_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for clickable_add_ext" />
+  <meta name="rh-index-keywords" content="clickable_add_ext" />
+  <meta name="search-keywords" content="clickable_add_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>klickbar_hinzufügen_ext</h1>
+  <p>Mit dieser Funktion können Sie ein benutzerdefiniertes, anklickbares Symbol erstellen, das als &quot;Schaltfläche&quot; außerhalb des Spiel-Canvas, aber innerhalb des Browserfensters selbst fungiert. Die Funktion gibt einen id-Wert zurück, der in einer Variablen gespeichert werden muss, damit er in allen
+    weiteren Schaltflächenfunktionen verwendet wird, die das neue Symbol referenzieren. Diese Funktion ist sehr nützlich, um zu verhindern, dass der Browser ein Popup-Fenster erstellt, wenn Sie auf die Schaltfläche klicken, da dies alles durch <span class="notranslate">GameMaker Studio 2</span> selbst geschieht.</p>
+  <p>Diese Funktion arbeitet genau wie die <a href="clickable_add.htm"><tt>clickable_add()</tt></a> Funktion, wobei Sie die Position relativ zur (0,0) des Browser-Fensters setzen müssen, den Textur-Seiteneintrag für das Sprite angeben müssen, das die Schaltfläche
+    Icon haben soll (siehe: <a href="../Asset_Management/Sprites/Sprite_Information/sprite_get_tpe.htm"><tt>sprite_get_tpe()</tt></a>), entweder eine zu öffnende URL oder ein zu öffnendes bzw. auszuführendes Script (aus dem Asset Browser von <span class="notranslate">GameMaker Studio 2</span>) angeben und dann
+    legen Sie das zu verwendende Ziel und die Parameter fest. Diese Funktion hat jedoch auch zwei zusätzliche Optionen, die es Ihnen erlauben, das Icon-Alpha von 0 (vollständig transparent) bis 1 (vollständig undurchsichtig) und die Skalierung des Icons einzustellen, die ein Multiplikatorwert ist, der auf das
+    Sprite angewendet wird. Ein Wert von 1 ist also der Standardmaßstab, während (z. B.) 0,5 der halbe Maßstab wäre und 2 das Doppelte.</p>
+  <p>Es ist auch erwähnenswert, dass, wenn das URL-Argument, das Sie übergeben, der Name einer <a href="../../GML_Overview/Script_Functions.htm">Skriptfunktion</a> ist (d. h.: es beginnt nicht mit &quot;http://&quot;) UND das Skript aufgerufen wird <tt><b>gmcallback_*</b></tt>    dann können Sie direkte Einspeisungen in ein html5-Ereignis erhalten. <span class="notranslate">GameMaker Studio 2</span> Scriptfunktionsnamen werden <i>nicht</i> verschleiert, wenn sie mit <tt>gmcallback_</tt> beginnen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">clickable_add_ext(x, y, tpe, url, target, params, alpha, scale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position innerhalb des <i>Fensters</i>.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position innerhalb des <i>Fensters</i>.</td>
+      </tr>
+      <tr>
+        <td>tpe</td>
+        <td>Der Texturseiteneintrag für das zu verwendende Sprite.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>Die URL (Website-Adresse), auf die verlinkt werden soll, oder das Skript, das ausgeführt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Dies ist der Zielbereich, in dem die URL geöffnet werden soll (siehe Beschreibung).</td>
+      </tr>
+      <tr>
+        <td>Parameter</td>
+        <td>Die verschiedenen Parameter für das Symbol (siehe Beschreibung).</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td>Das Bild-Alpha des Symbols (Standardwert 1).</td>
+      </tr>
+      <tr>
+        <td>Skala</td>
+        <td>Der Maßstab des Symbols (Standardwert 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">home_but = clickable_add_ext(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;, 1, 2);</p>
+  <p>Der obige Code erstellt ein anklickbares DOM-Symbol an der Position (32, 32) der Seite, auf der das Game Canvas läuft. Das Symbol verwendet das Sprite, das von der Texturseite als &quot;spr_MS_Home&quot; referenziert wird, und wenn es angeklickt wird, öffnet das Symbol ein neues Fenster
+    für die angegebene URL und mit den definierten Eigenschaften für dieses Fenster. Die Schaltfläche wird außerdem auf die doppelte Größe des Original-Sprites und ein halbes Bild-Alpha von 1 skaliert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Web_And_HTML5.htm">Web und HTML5</a></div>
+        <div style="float:right">Weiter: <a href="clickable_change.htm">clickable_change</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+clickable_add_ext
+-->
+  <!-- TAGS
+clickable_add_ext
+-->
+</body>
+</html>

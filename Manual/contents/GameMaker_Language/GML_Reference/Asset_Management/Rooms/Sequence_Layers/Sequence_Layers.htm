@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sequenzschichten</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequence Layers" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sequence Layers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Sequenzschichten</h1>
+  <p>In diesem Abschnitt finden Sie die Funktionen zum Hinzufügen, Entfernen und Bearbeiten des Verhaltens von <a href="../../../../../The_Asset_Editors/Sequences.htm">Sequenzen</a> in einem Spielraum in Abhängigkeit von der <i>Ebene</i>, auf der sie sich befinden. Es sollte beachtet werden, dass
+    Sequenzen den Objekten insofern ähneln, als dass sie, wenn sie auf einer Ebene in einem Raum erstellt werden, als <i>Instanz</i> des <i>Hauptobjekts</i> der Sequenz aus dem <a href="../../../../../Introduction/The_Asset_Browser.htm">Asset-Browser</a> betrachtet werden. Wenn Sie also
+    Wenn Sie also eine Sequenz zu einer Ebene in einem Raum hinzufügen, erstellen Sie eine <i>Instanz</i> des Basis-Sequenzobjekts, und diese Sequenzinstanz wird als <i>Element</i> innerhalb einer Raumebene hinzugefügt. Die Sequenzinstanz steuert Dinge wie Abspiel
+    Die Sequenzinstanz steuert Dinge wie Abspielgeschwindigkeit und -richtung und enthält selbst eine weitere <i>Sequenzdatenstruktur</i>, die die eigentlichen Sequenzspurdaten enthält. Dies ist wichtig, da die unten aufgeführten Funktionen auf die <strong>Sequence-Element-ID</strong> (die ID
+    der Sequenz <i>auf der Ebene</i>) sowie die <strong>Sequenzinstanz-ID</strong> (die tatsächliche ID der Sequenz, auf die das Element verweist) und die <a href="../../../../GML_Overview/Structs.htm">Sequenzdatenstruktur</a> (die alle Sequenzdaten enthält).
+    alle Daten der Sequenz enthält).</p>
+  <p>Im Folgenden finden Sie eine Liste aller Funktionen, die für die Bearbeitung von Sequenzen verwendet werden können, die zu einer <b>Asset-Ebene</b> hinzugefügt wurden:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_sequence_exists.htm">layer_sequence_exists</a></li>
+    <li><a href="layer_sequence_create.htm">layer_sequence_create</a></li>
+    <li><a href="layer_sequence_destroy.htm">layer_sequence_destroy</a></li>
+    <li><a href="layer_sequence_x.htm">Schicht_Reihenfolge_x</a></li>
+    <li><a href="layer_sequence_y.htm">Schicht_Reihenfolge_y</a></li>
+    <li><a href="layer_sequence_angle.htm">layer_sequence_angle</a></li>
+    <li><a href="layer_sequence_xscale.htm">layer_sequence_xscale</a></li>
+    <li><a href="layer_sequence_yscale.htm">layer_sequence_yscale</a></li>
+    <li><a href="layer_sequence_headpos.htm">layer_sequence_headpos</a></li>
+    <li><a href="layer_sequence_headdir.htm">layer_sequence_headdir</a></li>
+    <li><a href="layer_sequence_pause.htm">layer_sequence_pause</a></li>
+    <li><a href="layer_sequence_play.htm">layer_sequence_play</a></li>
+    <li><a href="layer_sequence_speedscale.htm">layer_sequence_speedscale</a></li>
+    <li><a href="layer_sequence_get_x.htm">layer_sequence_get_x</a></li>
+    <li><a href="layer_sequence_get_y.htm">layer_sequence_get_y</a></li>
+    <li><a href="layer_sequence_get_angle.htm">layer_sequence_get_angle</a></li>
+    <li><a href="layer_sequence_get_xscale.htm">layer_sequence_get_xscale</a></li>
+    <li><a href="layer_sequence_get_yscale.htm">layer_sequence_get_yscale</a></li>
+    <li><a href="layer_sequence_get_headpos.htm">layer_sequence_get_headpos</a></li>
+    <li><a href="layer_sequence_get_headdir.htm">layer_sequence_get_headdir</a></li>
+    <li><a href="layer_sequence_get_speedscale.htm">layer_sequence_get_speedscale</a></li>
+    <li><a href="layer_sequence_get_length.htm">layer_sequence_get_length</a></li>
+    <li><a href="layer_sequence_get_instance.htm">layer_sequence_get_instance</a></li>
+    <li><a href="layer_sequence_get_sequence.htm">layer_sequence_get_sequence</a></li>
+    <li><a href="layer_sequence_is_paused.htm">layer_sequence_is_paused</a></li>
+    <li><a href="layer_sequence_is_finished.htm">layer_sequence_is_finished</a></li>
+  </ul>
+  <p> </p>
+  <p>Darüber hinaus stehen weitere Funktionen zur Verfügung, um mit dem Inhalt von Sequenzen umzugehen und um eigene zu definieren. Eine vollständige Liste dieser Funktionen finden Sie im folgenden Abschnitt:</p>
+  <ul class="colour">
+    <li><a href="../../Sequences/Sequences.htm">Sequenzen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Rooms.htm">Räume</a></div>
+        <div style="float:right">Nächste: <a href="../General_Layer_Functions/General_Layer_Functions.htm">Allgemeine Ebenenfunktionen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequence Layers
+-->
+  <!-- TAGS
+sequence_layer_functions
+-->
+</body>
+</html>

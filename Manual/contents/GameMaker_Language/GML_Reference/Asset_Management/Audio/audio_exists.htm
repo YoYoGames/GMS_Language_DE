@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_exists" />
+  <meta name="rh-index-keywords" content="audio_exists" />
+  <meta name="search-keywords" content="audio_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_exists</h1>
+  <p>Diese Funktion gibt zurück, ob ein Sound existiert<tt>(true</tt>) oder nicht<tt>(false</tt>). Beachten Sie, dass diese Funktion einen Fehler verursacht, wenn der gesuchte Index zuvor nicht initialisiert wurde, da sie nach nicht existierenden Asset-Indizes sucht. Der
+    Sound, der überprüft werden soll, kann entweder eine einzelne Instanz eines Sounds sein (der Index für einzelne Sounds, die abgespielt werden, kann in einer Variablen gespeichert werden, wenn Sie die <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> oder <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> Funktionen)
+    oder ein Sound-Asset sein.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Tons, dessen Vorhandensein geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if audio_exists(global.Music)<br> {
+    <br> audio_play_sound(global.Music, 0, true);<br> }
+  </p>
+  <p>Der obige Code prüft, ob ein Ton vorhanden ist. Wenn dies der Fall ist, wird er in einer Schleife abgespielt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_get_name.htm">audio_get_name</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_exists
+-->
+  <!-- TAGS
+audio_exists
+-->
+</body>
+</html>

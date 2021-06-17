@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_format</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_format" />
+  <meta name="rh-index-keywords" content="string_format" />
+  <meta name="search-keywords" content="string_format" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_format</h1>
+  <p>Wandelt eine reelle Zahl in eine Zeichenkette mit eigener Formatierung um, wobei Sie wählen können, wie viele &quot;Stellen&quot; in der Zeichenkette gespeichert werden und wie viele Nachkommastellen ebenfalls gespeichert werden. Beides kann sehr praktisch sein, manche Spiele bevorzugen es, einen Spielstand als eine bestimmte Anzahl
+    von Ziffern, während die Kontrolle über die Nachkommastellen gut für eine hohe Genauigkeit sein kann, die die zwei Nachkommastellen von <a href="string.htm"><tt>string()</tt></a> nicht bieten können. Wenn die angegebene Anzahl der Stellen größer ist als der anzuzeigende Wert und/oder die Zahl
+    plus der angegebenen Nachkommastellen kleiner ist als die Gesamtzahl der Stellen, dann werden Leerzeichen vor dem Wert hinzugefügt, um die Differenz auszugleichen (siehe das Beispiel unten). Nullen werden rechts vom Dezimalkomma hinzugefügt, wenn der angegebene Wert
+    kleiner ist als die Summe und die Anzahl der einzuschließenden Dezimalstellen. Das Standardformat ist keine zusätzlichen Leerzeichen auf der linken Seite und nur zwei Dezimalstellen auf der rechten Seite, z. B. &quot;265,73&quot;.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">string_format(val, tot, dec);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Die reelle Zahl, die in eine Zeichenkette umgewandelt werden soll.</td>
+      </tr>
+      <tr>
+        <td>tot</td>
+        <td>Die Gesamtzahl der zu zeigenden Stellen der Hauptzahl. Nullen oder Leerzeichen werden passend dazu eingefügt.</td>
+      </tr>
+      <tr>
+        <td>dez</td>
+        <td>Die Anzahl der Dezimalstellen, die einbezogen werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">str1 = string_format(1234, 8, 0);<br> str2 = string_format(pi, 1, 10);<br> str3 = string_format(pi, 5, 5);</p>
+  <p>Dadurch wird <tt>str1</tt> auf &quot; 1234&quot;, str2 auf &quot;3 <tt>.1415926535</tt> &quot; und str3 auf &quot; 3.14159 <tt>&quot;</tt> gesetzt <tt>.</tt> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Strings.htm">Streicher</a></div>
+        <div style="float:right">Weiter: <a href="string_insert.htm">string_insert</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_format
+-->
+  <!-- TAGS
+string_format
+-->
+
+</body></html>

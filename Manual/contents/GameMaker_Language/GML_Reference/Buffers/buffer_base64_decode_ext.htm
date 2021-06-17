@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>puffer_base64_decode_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_base64_decode_ext" />
+  <meta name="rh-index-keywords" content="buffer_base64_decode_ext" />
+  <meta name="search-keywords" content="buffer_base64_decode_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>puffer_base64_decode_ext</h1>
+  <p>Mit dieser Funktion können Sie einen base64-kodierten String (erstellt mit der Funktion <a href="buffer_base64_encode.htm"><tt>buffer_base64_encode()</tt></a> Funktion) in einen Puffer. Anders als die Funktion <a href="buffer_base64_decode.htm"><tt>buffer_base64_decode()</tt></a>,
+    wird hier <i>kein</i> Puffer für Sie erstellt, sondern Sie sollten den Puffer bereits erstellt haben (siehe <a href="buffer_create.htm"><tt>buffer_create()</tt></a>), dessen Id Sie dann mit dieser Funktion verwenden würden. Der &quot;Offset&quot; ist die
+    Position innerhalb des Puffers zur Dekodierung der angegebenen Zeichenkette (in Bytes).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_base64_decode_ext(buffer, string, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des Puffers, in den der String dekodiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Die base64-kodierte Zeichenfolge, die dekodiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Datenoffsetwert.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">buff = buffer_create(16384, buffer_grow, 2);<br> ini_open(&quot;Save.ini&quot;);
+    <br> var str = ini_read_string(&quot;Save&quot;, &quot;Slot1&quot;, &quot;&quot;);<br> buffer_base64_decode_ext(buff, str, 0);<br> ini_close();
+  </p>
+  <p>Der obige Code erstellt einen Puffer und speichert die eindeutige ID dafür in der Variablen &quot;buff&quot;, öffnet dann eine Ini-Datei und liest einen String daraus in die lokale Variable &quot;str&quot;. Diese Zeichenkette wird dann in den neu angelegten Puffer dekodiert, bevor
+    die Ini-Datei wieder geschlossen wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_set_used_size.htm">buffer_set_used_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_base64_decode_ext
+-->
+  <!-- TAGS
+buffer_base64_decode_ext
+-->
+</body>
+</html>

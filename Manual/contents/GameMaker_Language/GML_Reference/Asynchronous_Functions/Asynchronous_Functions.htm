@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Asynchrone Funktionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for all the different Asynchronous Functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Asynchronous Functions,Async Functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Asynchrone Funktionen</h1>
+  <p>Im Kontext von <span class="notranslate">GameMaker Studio 2</span> ist eine asynchrone Funktion eine Funktion, die an einen Web-Server sendet oder eine Benutzereingabe abfragt oder sogar Daten streamt, während <span class="notranslate">GameMaker Studio 2</span> weiterläuft, ohne das laufende Spiel zu blockieren. Wenn
+    wird ein spezielles <b>Async-Ereignis</b> ausgelöst, das wiederum jeder Instanz, der ein Async-Ereignis zugewiesen ist, erlaubt, weitere Funktionen auszuführen (obwohl dies
+    nicht zwangsläufig der Fall sein muss). Im Grunde ist es also eine Möglichkeit, mit einer externen Ressource (Server, Benutzer oder Gerät) zu kommunizieren, ohne dass das Spiel oder Projekt angehalten wird, während es auf eine Antwort wartet.</p>
+  <p>Warum ist das wichtig? Nun, weil es <span class="notranslate">GameMaker Studio 2</span> erlaubt, weiter zu funktionieren, während es Daten sendet oder empfängt, und das bedeutet, dass Sie viele Dinge tun können, ohne die Spielschleife zu blockieren, wie:</p>
+  <ul class="colour">
+    <li>Daten vom Gerät in Ihr Spiel streamen, ohne dass der Spieler warten muss, bis alles geladen ist</li>
+    <li>Callback-Ereignisse haben, um Dinge nur dann zu tun, wenn die richtigen Informationen empfangen werden</li>
+    <li>mit einem Webserver kommunizieren und Daten austauschen</li>
+  </ul>
+  <p>Dadurch funktioniert alles viel flüssiger und unauffälliger. Es ist zu beachten, dass die Async-Ereignisse für <em>alle </em>Instanzen ausgelöst werden, die sie haben, so dass Sie eine asynchrone Funktion in einer Instanz verwenden können und das asynchrone
+    Event, das sich mit der Antwort befasst, in einer anderen, oder sogar in verschiedenen anderen. Weitere Informationen über die Funktionsweise des asynchronen Ereignisses finden Sie hier - Asynchrone <a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">Ereignisse</a>.</p>
+  <p>Die verschiedenen Arten von asynchronen Funktionen sind in den folgenden Abschnitten aufgeführt:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a name="async_http"></a><a href="HTTP/HTTP.htm"><label for="one">HTTP</label></a></li>
+    <li><a href="Dialog/Dialog.htm"><label for="two">Dialog</label></a></li>
+    <li><a href="Cloud_Saving/Cloud_Saving.htm"><label for="three">Wolkenspeicherung</label></a></li>
+    <li><a href="Push_Notifications/Push_Notifications.htm"><label for="four">Push-Benachrichtigungen</label></a></li>
+    <li><a href="Facebook/Facebook.htm"><label for="five">Facebook</label></a></li>
+    <li><a href="Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm"><label for="five">Errungenschaften und Bestenlisten</label></a></li>
+  </ul>
+  <p> </p>
+  <p>Es gibt auch eine Reihe von <a href="../Buffers/Buffers.htm">Buffer-Funktionen</a>, die zum asynchronen Laden und Speichern von Puffern verwendet werden können, die beim Arbeiten auf den verschiedenen Konsolen, die <span class="notranslate">GameMaker</span> STudio 2 unterstützt, benötigt werden, obwohl
+    sie auch auf den anderen Zielplattformen verwendet werden können:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Buffers/buffer_save_async.htm">buffer_save_async</a></li>
+    <li><a href="../Buffers/buffer_load_async.htm">puffer_laden_async</a></li>
+    <li><a href="../Buffers/buffer_async_group_begin.htm">buffer_async_group_begin</a></li>
+    <li><a href="../Buffers/buffer_async_group_option.htm">puffer_async_gruppe_option</a></li>
+    <li><a href="../Buffers/buffer_async_group_end.htm">buffer_async_group_end</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../GML_Reference.htm"><span class="notranslate">GML-Referenz</span></a></div>
+        <div style="float:right">Nächste: <a href="../Networking/Networking.htm">Vernetzung</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">GML</span> Reference
+-->
+  <!-- TAGS
+gml_reference
+-->
+
+</body></html>

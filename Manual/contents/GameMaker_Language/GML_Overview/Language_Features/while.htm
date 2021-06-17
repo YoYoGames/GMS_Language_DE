@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>während</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the while function" />
+  <meta name="rh-index-keywords" content="while" />
+  <meta name="search-keywords" content="while" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>während</h1>
+  <p>Die <span class="notranslate">GameMaker-Sprache</span> hat eine Reihe von Möglichkeiten, wie Sie <i>Schleifen</i> ausführen können, eine der wichtigsten ist die <tt>while-Schleife</tt>. Diese Schleifenfunktion hat die Form:</p>
+  <p class="code">while (&lt;Ausdruck&gt;)<br> {<br> &lt;Anweisung&gt;;<br> &lt;Anweisung&gt;;<br>...<br> }</p>
+  <p>Hier haben Sie eine <a class="glossterm" data-glossterm="Anweisung" href="#">Anweisung</a>, die basierend auf den Ergebnissen der Auswertung eines <a class="glossterm" data-glossterm="Ausdruck" href="#">Ausdrucks</a> immer wieder durchlaufen wird, d. h.: bei
+    einer <span class="inline">while</span> -Schleife wird die Anweisung (die auch ein Codeblock aus mehreren Anweisungen mit geschweiften Klammern <tt>{}</tt> sein kann) so lange ausgeführt, wie der Ausdruck <span class="inline">true</span> ergibt. Nachfolgend finden Sie
+    ein Beispiel für eine typische Art der Verwendung von &quot;while&quot;:</p>
+  <p class="code">while (place_meeting(x, y, obj_Wall))<br> {
+    <br> x -= 1;<br> }
+  </p>
+  <p>Der obige Code prüft auf eine Kollision zwischen der aufrufenden Instanz und einer &quot;Wand&quot;-Instanz, und er führt mehrere Iterationen durch <a class="glossterm" data-glossterm="Iteration" href="#">, während</a><span class="glossextra">eine</span> 
+    Er führt mehrere Iterationen durch, bis die Instanz nicht mehr kollidiert, indem er die Instanz um ein Pixel nach links verschiebt.</p>
+  <p><strong>Wann sollten Sie eine <span class="inline">while</span> Schleife verwenden?</strong> Sie sollte immer dann verwendet werden, wenn Sie eine oder mehrere Anweisungen wiederholen wollen, aber eigentlich nicht wissen - oder sich nicht darum kümmern - wie oft sie wiederholt werden müssen, wobei zu beachten ist, dass, wenn die
+    Wenn die erste Auswertung <span class="inline">false</span> ist, werden die Anweisungen möglicherweise gar nicht ausgeführt.</p>
+  <p>Bitte beachten Sie, dass Sie <strong>mit Ihren <tt>while-Schleifen</tt></strong> sehr vorsichtig sein sollten! Sie können leicht <i>Endlosschleifen</i> machen, in diesem Fall wird Ihr Spiel hängen und nicht mehr auf Benutzereingaben reagieren und muss zwangsweise beendet werden. Zum Beispiel:</p>
+  <p class="code">while (!place_free(x, y))<br> {
+    <br> x = random(Raum_Breite);<br> y = random(Raum_Höhe);<br> }
+  </p>
+  <p>Der obige Code kann gut funktionieren, aber er kann auch eine Endlosschleife verursachen, wenn die Instanz keine leere Position findet, zu der sie sich bewegen kann, und dies führt dazu, dass das Spiel hängt. Wenn Sie sich in einer Position befinden, in der so etwas möglich ist,
+    dann sollten Sie entweder eine andere, nicht-blockierende Schleifenart verwenden oder eine zusätzliche Variablenprüfung im Ausdruck verwenden (Sie können mehrere Ausdrücke zusammen mit dem <a href="../Expressions_And_Operators.htm"><span class="inline">and</span> (&amp;<span class="inline">&amp;</span>)</a> verwenden <a href="../Expressions_And_Operators.htm">,</a>
+    <a href="../Expressions_And_Operators.htm"><span class="inline">or</span> (<span class="inline">||</span>)</a> und <a href="../Expressions_And_Operators.htm"><span class="inline">xor</span> (<span class="inline">^^</span>)</a><span class="glossextra">Operatoren</span> für die Prüfung verwenden):</p>
+  <p class="code">var _check = 0;<br> while ((!place_free(x, y)) &amp;&amp; (_check &lt; 100))<br> {
+    <br> x = random(raum_breite);<br> y = random(raum_hohe);<br> _check += 1;<br> }
+    <br> if _check &gt;= 100<br> {<br> // code failed, so deal with it<br> }</p>
+  <p>Alternativ können Sie die Anweisung <span class="inline"><a href="break.htm">break</a></span> verwenden, um aus der Schleife auszubrechen, z. B. wird der folgende Code 100 Zufallszahlen generieren und dann fortfahren, obwohl die Auswertung <span class="inline">while</span> <em>immer</em> <span class="inline">true</span> sein wird:</p>
+  <p class="code">var i = 0;<br> while (true)<br> {
+    <br> x[i] = random(raum_breite);<br> y[i] = random(raum_hohe);<br> if ((i++) &gt;= 100)<br> {<br> break;<br> } <br> }
+  </p>
+  <p>Sie können die <a href="continue.htm">continue-Anweisung</a> auch in einer <span class="inline">while</span> -Schleife verwenden. Damit wird z. B. die aktuelle Schleifeniteration beendet und die Schleife bei einer neuen Iteration neu gestartet:</p>
+  <p class="code">var file = file_text_open_read(&quot;Game_Data.txt&quot;);<br> var _num = 0;<br> while (!file_text_eof(file))<br> {<br> var _s = file_text_readln(file);<br> if (_s == &quot;&quot;)<br> {<br> continue;<br> } <br> str[num++] = _s;<br> } <br> file_text_close(file);
+  </p>
+  <p>Der obige Code öffnet eine Datei und liest bei jeder Schleifeniteration eine Zeile daraus, bis das Ende des Dateiinhalts erreicht ist. Wenn die gelesene Zeile eine leere Zeichenkette ist, wird die aktuelle Schleifeniteration mit der Anweisung <span class="inline">continue</span> beendet und eine neue Iteration gestartet, andernfalls wird die Zeichenkette in ein <a href="../Arrays.htm">Array</a> hinzugefügt und die Array-Position inkrementiert.</p>
+  <p>Weitere Beispiele für Schleifenfunktionen finden Sie in den Abschnitten über <a href="repeat.htm"><tt>wiederholen</tt></a>, <a href="do___until.htm"><tt>do... until</tt></a>, und <a href="for.htm"><tt>für</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="do___until.htm">do / until</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+while
+-->
+  <!-- TAGS
+while
+-->
+
+</body></html>

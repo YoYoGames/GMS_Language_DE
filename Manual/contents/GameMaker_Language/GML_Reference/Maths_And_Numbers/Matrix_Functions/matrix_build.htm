@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_build</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_build" />
+  <meta name="rh-index-keywords" content="matrix_build" />
+  <meta name="search-keywords" content="matrix_build" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_build</h1>
+  <p>Diese Funktion kann verwendet werden, um Ihre eigene benutzerdefinierte Matrix zu erstellen und gibt einen Indexwert für diese neue Matrix zurück, der in einer Variablen für zukünftige Referenz und Verwendung gespeichert werden sollte. Die Matrix selbst wird als <a href="../../../GML_Overview/Arrays.htm">Array</a> mit 16 Werten erstellt, wobei die ersten 4 Elemente die Zeile 1, die zweiten 4 Elemente die Zeile 2 usw... einer 4x4-Matrix sind.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie eine neue Matrix auf diese Weise aufbauen, ist die Reihenfolge der Bedienung YXZ.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">matrix_build(x, y, z, xRotation, yRotation, zRotation, xSkala, ySkala, zSkala);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Komponente des Translationsvektors.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Komponente des Translationsvektors.</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Die z-Komponente des Translationsvektors.</td>
+      </tr>
+      <tr>
+        <td>xRotation</td>
+        <td>Der Winkel, der um die x-Achse gedreht werden soll (in Grad °).</td>
+      </tr>
+      <tr>
+        <td>yrotation</td>
+        <td>Der Winkel, der um die y-Achse gedreht werden soll (in Grad °).</td>
+      </tr>
+      <tr>
+        <td>xzotation</td>
+        <td>Der Winkel, der um die z-Achse gedreht werden soll (in Grad °).</td>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td>Der Betrag der x-Skala.</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Der y-Skalenbetrag.</td>
+      </tr>
+      <tr>
+        <td>zskala</td>
+        <td>Der Betrag der z-Skala.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Matrix-Index (4x4 Matrix)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">t_matrix = matrix_build(x, y, 0, 0, 90, 0, 1, 2, 1);</p>
+  <p>Der obige Code erstellt eine neue Matrixtransformation und speichert den resultierenden Matrixindex in der Variablen &quot;t_matrix&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Matrix_Functions.htm">Matrix-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="matrix_multiply.htm">matrix_multiply</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_build
+-->
+  <!-- TAGS
+matrix_build
+-->
+
+</body></html>

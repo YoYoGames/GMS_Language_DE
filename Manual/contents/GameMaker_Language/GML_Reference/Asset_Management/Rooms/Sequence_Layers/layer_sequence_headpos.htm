@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_headpos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_headpos" />
+  <meta name="rh-index-keywords" content="layer_sequence_headpos" />
+  <meta name="search-keywords" content="layer_sequence_headpos" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_headpos</h1>
+  <p>Mit dieser Funktion können Sie die <a class="glossterm" data-glossterm="Abspielkopf" href="#">Abspielposition</a> eines Sequenzelements auf einen bestimmten Frame setzen. Sie übergeben die ID des Sequenzelements, wie sie von <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>    oder von einer der <a href="../General_Layer_Functions/General_Layer_Functions.htm">Ebenenelement-Funktionen</a> zurückgegeben wird, zusammen mit der neu zu setzenden Position. Beachten Sie, dass die Position in <i>Frames</i> angegeben wird. Wenn Sie einen Wert eingeben, der größer als die Gesamtzahl der Frames
+    (oder weniger als 0), dann hängt die tatsächliche endgültige Abspielkopfposition von der Art der Sequenzwiedergabe ab, die ausgewählt wurde, und folgt diesen Regeln:</p>
+  <ul class="colour">
+    <li><strong>Keine Schleifenbildung</strong>: Der Abspielkopf wird an das Ende der Schleife geklemmt (oder an den Anfang, wenn der angegebene Wert negativ ist)</li>
+    <li><strong>Schleifen</strong>: Der Abspielkopf springt zurück zum Anfang der Sequenz plus die zusätzlichen Bilder, z. B.: Wenn Sie den Abspielkopf bei einer Sequenz mit 30 Bildern auf eine Position von Bild 45 setzen, ist die tatsächliche Position des Abspielkopfs am Ende 15. Wenn Sie
+      einen negativen Wert angeben, wird der Abspielkopf der Sequenz in umgekehrter Richtung umlaufen.</li>
+    <li><strong>Ping-Pong-Schleife</strong>: Der Abspielkopf bewegt sich bis zum Ende und geht dann um die zusätzliche Anzahl von Bildern zurück, die über der Gesamtbildlänge liegen, wobei die Wiedergaberichtung umgekehrt wird, z. B.: Wenn die Sequenz 30 Bilder umfasst und Sie den Abspielkopf
+      auf 40 gesetzt haben, ist die endgültige Abspielkopfposition 20 und die Richtung wird umgekehrt (nach unten auf 0). Beachten Sie, dass Sie <i>niemals</i> einen negativen Wert für die Ping-Pong-Wiedergabe einer Sequenz angeben sollten, da dies zu undefinierten Ergebnissen führen kann.</li>
+  </ul>
+  <p>Wenn Sie die Kopfposition auf diese Weise einstellen, wird die Wiedergabe nicht gestoppt, sondern die Sequenz wird einfach an der neuen Abspielkopfposition fortgesetzt, sofern sie nicht angehalten wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_sequence_headpos(sequence_element_id, position)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sequenz_element_id</td>
+        <td>Der eindeutige ID-Wert des Sequenzelements, auf das abgezielt werden soll</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>Die Position innerhalb der Sequenz (in Frames), auf die die Abspielkopfposition gesetzt werden soll (kann ein dezimaler Wert sein)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> for (var i = 0; i &lt; array_length(a); i++;) <br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sequence<br> {
+    <br> layer_sequence_headpos(a[i], 0)<br> }
+    <br> }
+  </p>
+  <p>Der obige Code ruft die IDs für alle Elemente ab, die der Ebene der Instanz zugewiesen sind, die den Code ausführt. Der Code prüft dann, ob es sich bei den zurückgegebenen Elementen um Sequenz-Assets handelt, und wenn ja, wird ihre Abspielkopfposition auf 0 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequence_Layers.htm">Sequenzschichten</a></div>
+        <div style="float:right">Weiter: <a href="layer_sequence_headdir.htm">layer_sequence_headdir</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_headpos
+-->
+  <!-- TAGS
+layer_sequence_headpos
+-->
+
+</body></html>

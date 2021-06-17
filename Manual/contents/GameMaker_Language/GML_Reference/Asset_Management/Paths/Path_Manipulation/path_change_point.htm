@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pfad_wechsel_punkt</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_change_point" />
+  <meta name="rh-index-keywords" content="path_change_point" />
+  <meta name="search-keywords" content="path_change_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>pfad_wechsel_punkt</h1>
+  <p>Mit dieser Funktion können Sie die Position und/oder den Geschwindigkeitsfaktor eines beliebigen Punktes ändern, der zuvor für einen Pfad definiert wurde (der Pfad kann im Pfadeditor oder durch Code mit <a href="path_add.htm"><tt>path_add()</tt></a>). Wenn Sie die Funktion auf einen
+    Pfad aus dem Asset-Browser verwendet wird, beachten Sie, dass <strong>die Funktion das eigentliche Asset ändert</strong> und sich somit dauerhaft darauf auswirkt, wie der Pfad von allen Instanzen im Spiel ab dem Zeitpunkt der Verwendung der Funktion bis zum Ende des Spiels verwendet wird. Wenn
+    dies nicht gewünscht ist, sollten Sie eine Funktion wie <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> verwenden, um zunächst eine Kopie des Pfads zu erstellen und dann diese Funktion für das duplizierte Asset aufzurufen (vergessen Sie nicht, für das Asset aufzurufen, wenn es
+    Vergessen Sie nicht, <span class="inline"><a href="path_delete.htm">path_delete()</a></span> für das Asset aufzurufen, wenn es nicht mehr benötigt wird).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_change_point(index, n, x, y, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Pfades, von dem ein Punkt geändert werden soll.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Der definierende Punkt zum Ändern der Attribute von.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die neue x-Koordinate (relativ zum Pfad) des Punktes.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die neue y-Koordinate (relativ zum Pfad) des Punktes.</td>
+      </tr>
+      <tr>
+        <td>Geschwindigkeit</td>
+        <td>Der neue Geschwindigkeitsfaktor des Punktes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">for (var i = 0; i &lt; pfad_get_number(pfad0); ++i;) <br> {
+    <br> var px = path_get_point_x(pth_Patrol, i) + 64 - random(128);<br> var py = path_get_point_y(pth_Patrol, i) + 64 - random(128);<br> path_change_point(pth_Patrol, i, px, py, 100);<br> }
+  </p>
+  <p>Der obige Code durchläuft alle Punkte in dem als &quot;path0&quot; indizierten Pfad und positioniert alle Punkte an eine zufällige Position innerhalb eines Bereichs von 128x128 Pixeln.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Manipulation.htm">Pfadmanipulation</a></div>
+        <div style="float:right">Weiter: <a href="path_insert_point.htm">path_insert_point</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_change_point
+-->
+  <!-- TAGS
+path_change_point
+-->
+</body>
+</html>

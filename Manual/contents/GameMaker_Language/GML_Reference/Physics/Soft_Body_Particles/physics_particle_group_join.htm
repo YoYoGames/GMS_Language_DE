@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_group_join</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_join" />
+  <meta name="rh-index-keywords" content="physics_particle_group_join" />
+  <meta name="search-keywords" content="physics_particle_group_join" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_group_join</h1>
+  <p>Mit dieser Funktion können Sie zwei Partikelgruppen zusammenfügen. Die zusammengefügten Gruppen verhalten sich dann so, als ob sie beide Teil einer einzigen Einheit wären. Die Gruppen sollten mit überlappenden Kanten erstellt worden sein, denn wenn sie sich nicht bereits berühren, werden sie nicht verbunden.
+    nicht verbunden werden. Die Funktion nimmt die eindeutigen Gruppen-IDs der zu verbindenden Gruppen, wie sie von der Funktion <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>zurückgegeben werden, und Sie können die Funktion beliebig oft für
+    eine einzelne Gruppe verwenden, um verschiedene Weichkörper miteinander zu verbinden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_particle_group_join(to, from)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>an</td>
+        <td>Die erste Teilchengruppe, der Sie beitreten.</td>
+      </tr>
+      <tr>
+        <td>von</td>
+        <td>Die zweite Partikelgruppe, der Sie beitreten können.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var groupflags = phy_particle_group_flag_solid;<br> physics_particle_group_begin(flags, groupflags, mouse_x- 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_circle(50);
+    <br> var g1 = physics_particle_group_end();<br> physics_particle_group_begin(flags, groupflags, mouse_x + 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_circle(50);
+    <br> var g2 = physics_particle_group_end();<br> physics_particle_group_join(g1, g2);</p>
+  <p>Der obige Code erzeugt zwei kreisförmige Partikelgruppen und fügt sie zusammen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Soft_Body_Particles.htm">Weichkörperpartikel</a></div>
+        <div style="float:right">Weiter: <a href="physics_particle_group_delete.htm">physics_particle_group_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_group_join
+-->
+  <!-- TAGS
+physics_particle_group_join
+-->
+</body>
+</html>

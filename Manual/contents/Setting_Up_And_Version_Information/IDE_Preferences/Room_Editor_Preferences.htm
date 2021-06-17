@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Raumeditor-Voreinstellungen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="The Room Editor Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Rooms" />
+  <meta name="search-keywords" content="Room Prefs,Room Editor Preferences" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Raumeditor-Voreinstellungen</h1>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Prefs.png" /></p>
+  <p>Mit den <strong>Raumeditor-Voreinstellungen</strong> legen Sie fest, wie der <a href="../../The_Asset_Editors/Rooms.htm">Raumeditor</a> aussehen und sich verhalten soll. Die allgemeinen Einstellungen sind wie folgt:</p>
+  <ul class="colour">
+    <li><strong>Startabstand der Kettenausblendung (px)</strong>: Legt den Abstand vom übergeordneten Fenster fest, ab dem das Kettenglied ausgeblendet werden soll. Standard ist 10px.</li>
+    <li><strong>Kettenausblendungsstoppabstand (px)</strong>: Legt den Abstand vom übergeordneten Fenster fest, bei dem die Ausblendung des Kettenglieds enden soll. Der Standardwert ist 100px.</li>
+    <li><strong>Chain Minimum Alpha</strong>: Legt den endgültigen Alphawert nach dem Ausblendungsabfallpunkt für das Kettenalpha fest. Der Standardwert ist 0,3.</li>
+    <li><strong>Standardabstand der Ebenentiefe</strong>: Wenn Sie mehrere Ebenen im Raum-Editor erstellen, wird ihnen automatisch eine Tiefe zugewiesen, die auf ihrer Position innerhalb der Ebenenliste basiert. Diese Tiefe wird um den hier angegebenen Wert erhöht. Der Standard
+      Wert ist 100, d. h. jede Ebene hat die Tiefe der vorherigen Ebene + 100.</li>
+    <li><strong>Standard-Raumbreite</strong>: Legt die anfängliche Breite fest, die als Standard für einen neuen Raum ausgewählt wird. Standard ist 1024px.</li>
+    <li><strong>Standard-Raumhöhe</strong>: Legt die Anfangshöhe fest, die als Standard für einen neuen Raum ausgewählt wird. Standard ist 768px.</li>
+    <li><strong>Hinzufügen von Standard-Raumebenen</strong>: Wenn Sie eine neue Raumressource erstellen, generiert <span class="notranslate">GameMaker Studio 2</span> ein paar &quot;Basis&quot;-Ebenen für Sie - eine Hintergrundebene und eine Instanzebene. Sie können dieses Verhalten hier ausschalten, so dass
+      neue Räume keine vorgefertigten Ebenen haben. Dies ist standardmäßig eingeschaltet.</li>
+    <li><strong>Raumansichten anzeigen</strong>: Wenn in einem Raum Ansichten aktiv sind, wird dies durch einen Umriss an der Stelle angezeigt, an der die Ansichtsgrenzen im Raum liegen würden, und die Sichtbarkeit dieses Bereichs kann über die entsprechende Schaltfläche im Editor selbst umgeschaltet werden.
+      Sie können jedoch festlegen, dass die Ansichtsgrenzen nicht sichtbar sind, wenn Sie einen Raum öffnen, indem Sie diese Option deaktivieren (die Schaltfläche kann immer noch verwendet werden, um sie wieder anzuzeigen). Der Standardwert ist eingeschaltet, so dass die Ansichtsgrenzen beim Öffnen eines Raums sichtbar sind.</li>
+    <li><strong>Allgemeine Farboptionen</strong>: Diese beziehen sich auf die verschiedenen Farben, die in der gesamten Raumeditor-Oberfläche verwendet werden, und wenn Sie auf eines der Farbfelder doppelklicken, können Sie die Farbe für diese Einstellung bearbeiten.</li>
+    <li><strong>Master-Lautstärke-Einstellung</strong>: Die Master-Lautstärke-Einstellung für die Vorschauwiedergabe im Raum-Editor, ein Wert zwischen 0 und 1. Standard ist 1.</li>
+  </ul>
+  <p>In den unten aufgeführten Unterkategorien stehen weitere Optionen zur Bearbeitung zur Verfügung:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Dialoge bestätigen</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p><img class="center" height="623" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Confirm_Prefs.png" width="860" /></p>
+    <p class="dropspot"><strong></strong>Mit den Voreinstellungen für <strong>Bestätigungsdialoge </strong>können Sie die Meldungen ändern, die im Raumeditor angezeigt werden, wenn Sie bestimmte Aktionen durchführen. Die Meldungen, die Sie ändern können, sind:</p>
+    <ul class="dropspotlist">
+      <li><strong>Automatische Reaktion auf das Aktualisieren von Ebenentiefen</strong>: Wenn Sie Ebenentiefen ändern, wird eine Meldung angezeigt, um Sie zu warnen, dass dadurch auch alle anderen Ebenentiefen automatisch aktualisiert werden. Mit dieser Option können Sie festlegen, dass die Meldung
+        einblenden, die Ebenen aktualisieren lassen, als ob Sie auf &quot;Ok&quot; geklickt hätten, oder nichts aktualisieren lassen, als ob Sie auf &quot;Nein&quot; geklickt hätten.</li>
+      <li><strong>Automatische Reaktion auf Warnung bei gesperrter Ebene</strong>: Wenn Sie versuchen, eine Ebene im Raum zu löschen und diese zufällig gesperrt ist, wird Ihnen standardmäßig eine Meldung angezeigt. Wenn Sie diese Option jedoch auf &quot;Ok&quot; setzen, wird die Meldung nicht angezeigt und
+        Sie können die Ebene einfach nicht löschen.</li>
+      <li><strong>Automatische Reaktion auf Warnung bei gesperrtem Element</strong>: <strong> </strong>Wenn Sie versuchen, ein Element zu löschen, das zufällig gesperrt ist, wird standardmäßig eine Meldung angezeigt. Wenn Sie diese Option jedoch auf &quot;Ok&quot; setzen, wird die Meldung nicht angezeigt und
+        Sie können das Objekt einfach nicht löschen.</li>
+      <li><strong>Automatische Reaktion auf Warnung bei gesperrter Ebene des Elementbesitzers</strong>: Wenn Sie versuchen, ein Element auf einer Ebene zu löschen und die Ebene zufällig gesperrt ist (auch wenn das Element nicht gesperrt ist), wird standardmäßig eine Meldung angezeigt, die Sie darüber informiert, dass dies nicht möglich ist.
+        nicht durchgeführt werden kann. Wenn Sie diese Option jedoch auf &quot;Ok&quot; setzen, wird die Meldung nicht angezeigt und Sie können das Element einfach nicht löschen.</li>
+      <li><strong>Neue Asset-Ebene erstellen, wenn Sequenzen/Sprites auf ungeeignete Ebenen gezogen werden</strong>: Wenn Sie versuchen, ein Sprite (oder eine Sequenz) zu einer Ebene hinzuzufügen, die keine Vermögensebene ist, wird standardmäßig eine Meldung angezeigt, die Sie darüber informiert, dass dies nicht
+        nicht möglich ist, und Sie werden gefragt, ob Sie eine neue Elementebene für das zu ziehende Element erstellen möchten. Wenn Sie diese Option jedoch auf &quot;Ok&quot; setzen, wird die Meldung nicht angezeigt und es wird automatisch eine neue Ebene für Sprites (und Sequenzen) erstellt.</li>
+      <li><strong>Automatische Reaktion auf das Löschen von Elementen in übergeordneten Räumen</strong>: Hier können Sie wählen, was passiert, wenn Sie ein Element löschen, das Teil eines übergeordneten Raums (und somit in allen untergeordneten Räumen vorhanden) ist. Standardmäßig wird eine Warnmeldung angezeigt und Sie können
+        Sie können aber auch &quot;Delete All&quot; wählen, um die Meldung zu unterdrücken und das Element aus dem übergeordneten Raum und allen untergeordneten Räumen zu löschen, oder Sie können &quot;Keep All&quot; wählen, um die Meldung zu unterdrücken und das Löschen abzubrechen.</li>
+      <li><strong>Automatische Reaktion auf das Löschen von Ebenen im übergeordneten Raum</strong>: Hier können Sie wählen, was passiert, wenn Sie eine Ebene löschen, die Teil eines übergeordneten Raums ist (und somit in allen untergeordneten Räumen vorhanden ist). Standardmäßig wird eine Warnmeldung angezeigt und Sie können entscheiden, was zu tun ist.
+        Sie können aber auch &quot;Delete All&quot; wählen, um die Meldung zu unterdrücken und die Ebene aus dem übergeordneten Raum und allen untergeordneten Räumen zu löschen, oder Sie können &quot;Keep All&quot; wählen, um die Meldung zu unterdrücken und das Löschen abzubrechen.</li>
+      <li><strong>Automatische Reaktion auf Fehler beim Ziehen eines ungültigen Assets</strong>: Wenn Sie versuchen, ein Asset zu einer Ebene hinzuzufügen, die nicht für diesen Asset-Typ vorgesehen ist (z. B. Hinzufügen eines Pfads zu einer Instanz-Ebene), wird standardmäßig eine Meldung angezeigt, die Sie darüber informiert, dass dies nicht möglich ist.
+        die Sie darüber informiert, dass dies nicht möglich ist. Wenn Sie diese Option jedoch auf &quot;Ok&quot; setzen, wird die Meldung nicht angezeigt und Sie können das Kühlgut einfach nicht hinzufügen. Beachten Sie, dass diese Option nicht für Instanzen, Sprites oder Sequenzen gilt.</li>
+      <li><strong>Neue Instanzebene erstellen, wenn Objekte auf ungeeignete Ebenen gezogen werden</strong>: Wenn Sie versuchen, eine Objektinstanz zu einem Layer hinzuzufügen, der kein Instanzlayer ist, wird standardmäßig eine Meldung angezeigt, die Sie darüber informiert, dass dies nicht möglich ist
+        und Sie werden gefragt, ob Sie eine neue Instanzebene für das gezogene Objekt erstellen möchten. Wenn Sie diese Option jedoch auf &quot;Ok&quot; setzen, wird die Meldung nicht angezeigt und es wird automatisch ein neuer Layer für die Instanz erstellt.</li>
+      <li><strong>Automatische Reaktion auf Fehler beim Ziehen einer ungültigen Ebenenauswahl</strong>: Hier können Sie wählen, was passiert, wenn Sie eine Ressource in den Raum-Editor ziehen, wenn Sie mehrere Ebenen im Ebenen-Editor ausgewählt haben (oder gar keine Ebene ausgewählt haben
+        überhaupt nicht ausgewählt haben). Standardmäßig wird eine Warnmeldung angezeigt, aber Sie können diese Option auf &quot;OK&quot; setzen, um die Meldung zu unterdrücken und fortzufahren, ohne eine Ressource hinzuzufügen.</li>
+      <li><strong>Automatische Reaktion auf Fehler beim Ziehen einer gesperrten oder unsichtbaren Ebene</strong>: Hier können Sie wählen, was passiert, wenn Sie eine Ressource auf eine Ebene ziehen, die gesperrt oder als unsichtbar gekennzeichnet ist. Standardmäßig wird eine Warnmeldung angezeigt, aber Sie
+        Sie können diese Option jedoch auf &quot;OK&quot; setzen, um die Meldung zu unterdrücken und fortzufahren, ohne eine Ressource hinzuzufügen.</li>
+    </ul>
+    <p> </p>
+    <p><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Rastereinstellungen</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p>
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Grid_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Grid_Prefs.png" class="center" alt="Room Editor Grid Settings Preferences" /></p>
+    <p class="dropspot">Die
+     <strong>Gittereinstellungen</strong> werden verwendet, um die Funktionsweise der Gitterüberlagerung zu ändern, wobei die folgenden Optionen zur Verfügung stehen:</p>
+    <ul class="colour">
+      <li>
+        Horizontaler <strong>Abstand des Gitters (px)</strong>: Hier wird der horizontale Abstand für Gürtelzellen des Raumgitters in Pixeln festgelegt. Der Standardwert ist 32px.</li>
+      <li>
+       <strong>Vertikaler Abstand des Gitters (px)</strong>: Hier wird der vertikale Abstand für Gitternetzzellen des Raumgitters in Pixeln festgelegt. Der Standardwert ist 32px.</li>
+      <li>
+       <strong>Raster anzeigen</strong>: Mit dieser Option schalten Sie das Raumraster ein oder aus, wenn Sie einen Raum zum ersten Mal öffnen. Es ist standardmäßig eingeschaltet, aber auch wenn es ausgeschaltet ist, können Sie es über die entsprechende Schaltfläche im Raumeditor selbst wieder aktivieren.</li>
+      <li>
+       <strong>Am Raster ein</strong>rasten: Mit dieser Option können Sie einstellen, ob ein Raum standardmäßig Assets am Raumraster einrasten lässt oder nicht, wenn ein Raum erstmalig geöffnet wird. Sie ist standardmäßig eingeschaltet, aber auch wenn sie ausgeschaltet ist, können Sie sie wieder aktivieren, indem Sie
+        die entsprechende Schaltfläche im Raumeditor selbst wieder aktivieren.</li>
+      <li>
+       <strong>Rasterlinienfarbe</strong>: Mit dieser Option können Sie die Farbe (einschließlich der Alphakomponente) der Raumrasterlinien einstellen. Der Standardwert ist (
+       <a data-glossterm="ARGB" class="glossterm" href="#">ARGB</a>) #30FFFFFF.</li>
+    </ul>
+    <p>
+      <br /><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Intelligente Führungen</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p>
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_SmartGuides_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_SmartGuides_Prefs.png" class="center" alt="Room Editor Smart Guides Preferences" /></p>
+    <p class="dropspot">Dieser Abschnitt beschreibt die
+     <strong>Smart Guides-Voreinstellungen</strong> für den Raum-Editor. Die verfügbaren Optionen sind:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>Smart-Guides aktivieren</strong>: Hiermit aktivieren/deaktivieren Sie die Verwendung von Smart Guides im Raum-Editor. Die Voreinstellung ist aktiviert.
+       <br><br></li>
+      <li class="dropspot">
+       <strong>Lineale einschalten</strong>: Mit dieser Option werden die Seitenlineale im Raum-Editor aktiviert/deaktiviert. Die Voreinstellung ist aktiviert.
+       <br><br></li>
+      <li class="dropspot">
+       <strong>Lineale an Kanten einrasten</strong>: Wenn diese Option aktiviert ist, werden Hilfslinien, die von den Linealen in den Raum-Editor gezogen werden, an allen im Raum platzierten Elementen gefangen. Standardmäßig ist diese Option aktiviert.
+       <br><br></li>
+      <li class="dropspot">
+       <strong>Fangabstand</strong>: Diese Einstellung teilt dem Raum-Editor mit, in welchem Abstand sich ein Guide von einem Asset befinden muss, bevor er an der Seite des Assets &quot;einrastet&quot;. Der Standardwert ist 6px.
+       <br><br></li>
+    </ul>
+    <p class="dropspot">
+      <br /><br /></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../IDE_Preferences.htm">IDE-Voreinstellungen</a></div>
+        <div style="float:right">Weiter: <a href="Spline_Editor.htm">Spline-Editor-Voreinstellungen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Room Editor
+-->
+  <!-- TAGS
+prefs_room_editor
+-->
+
+</body></html>

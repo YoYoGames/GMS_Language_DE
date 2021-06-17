@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_get_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_get_id" />
+  <meta name="rh-index-keywords" content="layer_sprite_get_id" />
+  <meta name="search-keywords" content="layer_sprite_get_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_get_id</h1>
+  <p>Diese Funktion kann verwendet werden, um den eindeutigen ID-Wert eines Sprite-Elements auf einer Ebene abzurufen. Sie übergeben die ID der Ebene (die Sie erhalten, wenn Sie die Ebene mit <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> oder wenn
+    Sie den Ebenennamen zusammen mit <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>) und den Namen des Sprite-Elements, wie er im Raum-Editor definiert ist. Die Funktion gibt den ID-Wert zurück, der mit diesem Sprite
+    Element auf der Ebene zugeordnet ist.</p>
+  <p>Beachten Sie, dass diese Funktion speziell für die Verwendung mit Sprites gedacht ist, die in der IDE auf einer Asset-Ebene hinzugefügt wurden. Wenn Sie ein Sprite einer Ebene durch Code mit der Funktion <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>,
+    ein Sprite zu einer Ebene hinzugefügt haben, dann sollte die von dieser Funktion zurückgegebene ID für alle zukünftigen Referenzen verwendet werden (da dieses Sprite-Element keinen Namen hat, der an diese Funktion übergeben werden kann).</p>
+  <p>Wenn die angegebene Ebene nicht existiert oder das angegebene Sprite-Element nicht gefunden werden kann, gibt die Funktion -1 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_sprite_get_id(layer_id, sprite_element_name)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Ebene</td>
+      </tr>
+      <tr>
+        <td>sprite_element_name</td>
+        <td>Der eindeutige Name des Sprite-Elements auf der Ebene, wie im Raum-Editor definiert</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Sprite-Element-ID-Wert (Real)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Assets_trees&quot;);<br> var back_id = layer_sprite_get_id(lay_id, &quot;graphic_254367CB&quot;);<br> layer_sprite_change(back_id, spr_Trees_Winter);</p>
+  <p>Der obige Code ruft die Ebenen-ID für die Ebene &quot;Assets_trees&quot; ab und verwendet diese dann, um die ID des Sprite-Elements &quot;graphic_254367CB&quot; auf dieser Ebene abzurufen. Die abgefragte Sprite-Element-ID wird dann verwendet, um das Sprite des Elements
+    Sprite.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Layers.htm">Sprite-Ebenen</a></div>
+        <div style="float:right">Weiter: <a href="layer_sprite_exists.htm">layer_sprite_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_get_id
+-->
+  <!-- TAGS
+layer_sprite_get_id
+-->
+</body>
+</html>

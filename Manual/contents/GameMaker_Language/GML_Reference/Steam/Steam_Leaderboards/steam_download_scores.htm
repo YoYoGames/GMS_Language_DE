@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_download_scores</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_download_scores" />
+  <meta name="rh-index-keywords" content="steam_download_scores" />
+  <meta name="search-keywords" content="steam_download_scores" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_download_scores</span></h1>
+  <p>Diese Funktion wird verwendet, um einen sequenziellen Bereich von Leaderboard-Einträgen nach Leaderboard-Ranking abzurufen. Die Parameter <tt>start_idx</tt> und <tt>end_idx</tt> steuern den angeforderten Bereich von Rängen, z. B. können Sie die Top 10 in einem Leaderboard für
+    Ihr Spiel anzeigen, indem Sie den Startwert auf 1 und den Endwert auf 10 setzen. Der Name der Bestenliste ist eine Zeichenfolge, die beim Erstellen der Bestenliste mit der Funktion <a href="steam_create_leaderboard.htm"><tt><span class="notranslate">steam_create_leaderboard</span>()</tt></a>,
+    und die Funktion gibt einen Wert zurück, der dann zur Identifizierung des Rückrufs im <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam-Async-Ereignis</span></a> verwendet werden kann, oder sie gibt -1 zurück, wenn sie fehlgeschlagen ist. Beachten Sie, dass beim
+    Herunterladen einer Rangliste der &quot;entries&quot;-Schlüssel der <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>asynchron_laden</tt></a> Karte einen zusätzlichen &quot;data&quot;-Schlüssel haben kann, wenn zusätzliche Pufferdaten
+    zusammen mit dem Spielstand hochgeladen wurden (siehe <a href="steam_upload_score_buffer.htm"><tt><span class="notranslate">steam_upload_score_buffer</span>()</tt></a>). Dieser Datenpuffer wird <b>Base 64-kodiert</b> sein und Sie müssen daher die Funktion <a href="../../Buffers/buffer_base64_decode.htm"><tt>buffer_base64_decode()</tt></a>    auf den Puffer anwenden, bevor Sie die Daten lesen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="notranslate">steam_download_scores</span>(lb_name, start_idx, end_idx);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>lb_name</td>
+        <td>Der Name der Bestenliste, von der Sie die Spielstände herunterladen (eine Zeichenkette).</td>
+      </tr>
+      <tr>
+        <td>start_idx</td>
+        <td>Die Startposition innerhalb der Rangliste.</td>
+      </tr>
+      <tr>
+        <td>end_idx</td>
+        <td>Die Endposition innerhalb der Rangliste.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>In diesem erweiterten Beispiel werden wir die Top-Ten-Rangliste für das gegebene Leaderboard abfragen und die Ergebnisse im <b><span class="notranslate">Steam-Async-Ereignis</span></b> parsen. Zu Beginn müssen wir die Spielstände mit dem folgenden Code abfragen:</p>
+  <p class="code">score_get = <span class="notranslate">steam_download_scores</span>(&quot;Game Scores&quot;, 1, 10);</p>
+  <p>Dies sendet eine Anfrage an den <span class="notranslate">Steam</span> Server für die Spielstände aus dem Leaderboard &quot;Game Scores&quot; und speichert die Async-ID <b>der</b> Anfrage in der Variablen &quot;score_get&quot;. dies wird dann im Steam Async Event <b><span class="notranslate">wie</span></b> <b>folgt</b> behandelt:</p>
+  <p class="code">var async_id = ds_map_find_value(async_load, &quot;id&quot;);<br> if async_id == score_get<br> {
+    <br> var entries = ds_map_find_value(async_load, &quot;entries&quot;);<br> var map = json_decode(entries);<br> if ds_map_exists(map, &quot;default&quot;)<br> {
+    <br> ds_map_destroy(map);
+    <br> exit;
+    <br> }
+    <br> sonst
+    <br> {
+    <br> var list = ds_map_find_value(map, &quot;entries&quot;);<br> var len = ds_list_size(list);<br> var entry;<br> for(var i = 0; i &lt; len; i++;)<br> {
+    <br> entry = ds_list_find_value(list, i );<br> <span class="notranslate">steam_name</span>[i] = ds_map_find_value(entry, &quot;name&quot;);<br> steam_score <span class="notranslate">[i]</span>= ds_map_find_value(entry, &quot;score&quot;);<br> steam_rank[i] = ds_map_find_value(entry,
+    &quot;rank&quot;);<br> }
+    <br> }
+    <br> ds_map_destroy(map)
+    <br> }
+  </p>
+  <p>Was wir hier tun, ist, zuerst den &quot;id&quot;-Schlüssel der speziellen async_load <tt>DS-Map</tt> zu überprüfen <tt>.</tt> Wenn dieser Wert mit dem Wert der ursprünglichen Callback-Funktion übereinstimmt (gespeichert in der Variable &quot;score_get&quot;), fahren wir mit der Verarbeitung der
+    Daten. Als erstes wird die <tt>async_load</tt> ds_map nach dem Schlüssel &quot;entries&quot; geparst, der ein JSON-Objekt mit den Daten der Bestenliste enthält. Dieses JSON-Objekt wird dann dekodiert (siehe <a href="../../File_Handling/Encoding_And_Hashing/json_decode.htm"><tt>json_decode()</tt></a>)
+    als eine weitere DS-Map dekodiert, und diese neue Map-ID wird in der Variablen &quot;map&quot; gespeichert.</p>
+  <p>Diese Karte wird auf den Schlüssel &quot;default&quot; geprüft und wenn dieser gefunden wird, wird die Karte zerstört und das Ereignis verlassen. Wenn kein &quot;default&quot;-Schlüssel gefunden wird, analysiert der Code die Map, um die notwendigen Informationen über das Leaderboard zu extrahieren,
+    indem er zunächst eine DS-Liste aus dem &quot;entries&quot;-Schlüssel der DS-Map extrahiert und dann in einer Schleife jeden Eintrag der Liste durchläuft, um eine weitere <i>DS-Map</i> mit dem Namen, der Punktzahl und dem Rang jedes Eintrags zu erhalten. Diese Werte werden dann in Arrays gespeichert.</p>
+  <p>Wenn die Schleife beendet ist, wird die JSON-DS-Map zerstört (wodurch wiederum alle internen Maps und Listen zerstört werden). Die <tt>async_load-DS-Map</tt> muss nicht zerstört werden, da dies vom <span class="notranslate">GameMaker Studio 2</span> für Sie erledigt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Steam_Leaderboards.htm">Bestenlisten</a></div>
+        <div style="float:right">Weiter: <a href="steam_download_scores_around_user.htm"><span class="notranslate">steam_download_scores_around_user</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_download_scores
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_download_scores
+-->
+</body>
+</html>

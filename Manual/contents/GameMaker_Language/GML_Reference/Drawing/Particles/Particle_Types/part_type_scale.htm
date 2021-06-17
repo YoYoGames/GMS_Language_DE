@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teil_art_skala</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_scale" />
+  <meta name="rh-index-keywords" content="part_type_scale" />
+  <meta name="search-keywords" content="part_type_scale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teil_art_skala</h1>
+  <p>Mit dieser Funktion wird die horizontale und vertikale Skalierung des Partikels festgelegt, bevor andere Größenänderungen vorgenommen werden. Diese Funktion arbeitet mit dem Verhältnis der Sprite-Größe, also ist ein Wert von 1 (der Standardwert) ein 1:1-Verhältnis, was bedeutet, dass 0,5 die Hälfte wäre
+    und 2 das Doppelte.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_type_scale(ind, xscale, yscale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu ändernden Partikeltyps.</td>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td>Die horizontale Skalierung des Basispartikels.</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Die vertikale Skalierung des Basispartikels.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">part_type_shape(particle1, pt_shape_flare);<br> part_type_size(particle1, 2, 2, 0.10, 1);<br> part_type_scale(particle1, 8, 0.50);<br> part_type_colour3(particle1, 8388608, 4227327, 8454143);<br> part_type_alpha3(particle1, 0.10, 0.10, 0);<br> part_type_speed(particle1, 0, 1, 0.18, 20);<br> part_type_direction(particle1, 0, 359, 0, 0);<br> part_type_orientation(particle1, 0, 0, 0, 0, 1);<br> part_type_blend(particle1, 1);<br> part_type_life(particle1, 10, 40);</p>
+  <p>Der obige Code stellt verschiedene Partikelwerte ein, einschließlich der Skalierung, die die x-Skala auf die achtfache Größe und die y-Skala auf die Hälfte der Größe setzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Types.htm">Partikel-Typen</a></div>
+        <div style="float:right">Weiter: <a href="part_type_speed.htm">part_type_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_scale
+-->
+  <!-- TAGS
+part_type_scale
+-->
+</body>
+</html>

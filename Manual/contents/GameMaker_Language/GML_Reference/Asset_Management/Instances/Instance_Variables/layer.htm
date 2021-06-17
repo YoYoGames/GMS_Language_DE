@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ebene</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable layer" />
+  <meta name="rh-index-keywords" content="layer" />
+  <meta name="search-keywords" content="layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ebene</h1>
+  <p>Diese <b>eingebaute Variable</b> wird für jede Instanz in einem Raum angelegt und enthält den Layer-ID-Wert des Layers, dem die Instanz zugeordnet ist. Dieser Wert kann dann in anderen Funktionen verwendet werden, wie <a href="../../Rooms/General_Layer_Functions/layer_get_depth.htm"><tt>layer_get_depth()</tt></a> oder  verwendet werden.
+    geändert werden, um die Instanz in eine andere Ebene zu verschieben. Beachten Sie jedoch, dass Sie eine Fehlermeldung erhalten, wenn die zugewiesene Ebene im aktuellen Raum nicht vorhanden ist, so dass Ihr Spiel geschlossen werden muss. Wenn Sie eine Ebene zuweisen, müssen Sie die eindeutige
+   <b>Ebenen-ID</b> angeben, die von der Funktion <a href="../../Rooms/General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a> zurückgegeben wird (wenn Sie benannte Raumebenen verwenden), oder wie sie von der Funktion <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> (wenn
+    Sie Ihre eigenen Ebenen zur Laufzeit erstellen).</p>
+  <p class="note"><b>WICHTIG!</b> Wenn Sie die Instanz mit der <span style="font-size:1px;"><a href="../instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span> Funktion erstellt oder die Variable <span style="font-size:1px;"><a href="depth.htm"><tt style="font-size: 14px">Tiefe</tt></a></span>    Variable manuell geändert haben, wird die der Instanz zugewiesene Ebene zu einer &quot;verwalteten&quot; Ebene, d. h. einer Ebene, die von GameMaker <span class="notranslate">Studio 2</span> automatisch <span class="notranslate">gesteuert</span> und verwaltet wird. In diesen Fällen gibt die <tt>Ebenenvariable</tt> -1 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">Schicht;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Ganzzahl - Ressourcenindexwert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">Ebene = Ebene_erstellen(-1000);</p>
+  <p>Der obige Code erstellt eine neue Ebene mit einer Tiefe von -1000 und setzt dann die <tt>Instanz-Ebenenvariable</tt> auf die zurückgegebene Ebenen-ID, wodurch die Instanz von der Ebene, auf der sie sich gerade befindet, auf die neu erstellte Ebene verschoben wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Variables.htm">Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="alarm.htm">Alarm</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer
+-->
+  <!-- TAGS
+layer
+-->
+</body>
+</html>

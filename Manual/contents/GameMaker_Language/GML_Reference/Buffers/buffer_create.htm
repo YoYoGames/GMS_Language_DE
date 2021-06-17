@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>puffer_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_create" />
+  <meta name="rh-index-keywords" content="buffer_create,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+  <meta name="search-keywords" content="buffer_create,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>puffer_erzeugen</h1>
+  <p>Sie verwenden diese Funktion, um einen Teil des Speichers als Puffer in Ihrem Spiel zuzuweisen, wobei die Funktion die eindeutige <i>Puffer-ID</i> zurückgibt, die in einer Variablen gespeichert und für alle weiteren Funktionsaufrufe auf den Puffer verwendet werden sollte. Der Puffer kann dann
+    verwendet werden, um verschiedene Datentypen zu speichern (die beim Schreiben in den Puffer mit der Funktion <a href="buffer_write.htm"><tt>buffer_write()</tt></a> Funktion, wobei die folgenden Konstanten verwendet werden, um den Puffertyp zu definieren:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>puffer_fest</td>
+        <td>Ein Puffer mit fester Größe.</td>
+      </tr>
+      <tr>
+        <td>puffer_wachsen</td>
+        <td>Ein Puffer, der dynamisch &quot;wächst&quot;, wenn Daten hinzugefügt werden</td>
+      </tr>
+      <tr>
+        <td>Puffer_Umschlag</td>
+        <td>Ein Puffer, in dem die Daten &quot;umgeschlagen&quot; werden. Wenn die hinzugefügten Daten die Grenze der Puffergröße erreichen, wird das Überschreiben an den Anfang des Puffers zurückgesetzt, und das weitere Schreiben wird von diesem Punkt an fortgesetzt.</td>
+      </tr>
+      <tr>
+        <td>puffer_schnell</td>
+        <td>Spezieller &quot;gestrippter&quot; Puffer, der extrem schnell zu lesen/schreiben ist. Kann nur mit <a href="buffer_read.htm">buffer_u8-Datentypen</a> verwendet werden und <i>muss</i> 1 Byte ausgerichtet sein.</td>
+      </tr>
+      <tr>
+        <td>Puffer_vPuffer</td>
+        <td>Dieser Puffertyp ist nur als Vertex-Puffer zu verwenden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Neben dem Puffertyp müssen Sie auch das <i>Byte-Alignment</i> für den Puffer einstellen. Dieser Wert variiert je nach den Daten, die Sie im Puffer speichern möchten, und in den meisten Fällen ist ein Wert von 1 vollkommen in Ordnung. Beachten Sie jedoch, dass
+    für einige Operationen eine bestimmte Ausrichtung <i>erforderlich</i> ist und eine falsche Ausrichtung zu Fehlern führen kann (weitere Einzelheiten zur Ausrichtung siehe <a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">Puffer</a>). Im Folgenden finden Sie eine allgemeine
+    Leitfaden, der zeigt, welche Werte für die einzelnen Datentypen am besten geeignet sind (im Zweifelsfall sollten Sie eine Ausrichtung von 1 verwenden):</p>
+  <ul class="colour">
+    <li>Strings sollten auf 1 Byte ausgerichtet sein.</li>
+    <li>8-Bit-Ganzzahlen mit oder ohne Vorzeichen können auf einen beliebigen Wert ausgerichtet werden, aber beachten Sie, dass für einen schnellen Puffer (siehe <a href="buffer_write.htm"><tt>buffer_write()</tt></a>) auf 1 ausgerichtet sein <i>muss</i>.</li>
+    <li>Vorzeichenbehaftete oder vorzeichenlose 16-Bit-Ganzzahlen sollten auf 2 Byte ausgerichtet werden.</li>
+    <li>Vorzeichenbehaftete oder vorzeichenlose 32-Bit-Ganzzahlen sollten auf 4 Byte ausgerichtet werden</li>
+    <li>Floats mit bis zu 16 Bit sollten auf 2 Byte ausgerichtet werden. <i>(Wird derzeit nicht unterstützt!)</i></li>
+    <li>Floats mit bis zu 32 Bit sollten auf 4 Byte ausgerichtet werden.</li>
+    <li>Floats mit bis zu 64 Bit sollten auf 8 Byte ausgerichtet werden.</li>
+  </ul>
+  <p class="note"><b>HINWEIS</b>: Die Byte-Ausrichtung kann sehr wichtig sein, da eine falsche Wahl die Leistung beeinträchtigen kann.</p>
+  <p class="note"><b>HINWEIS</b>: Es ist wichtig, dass Sie alle dynamisch erstellten Ressourcen wie diese aus dem Speicher entfernen, wenn Sie sie nicht mehr benötigen, um Speicherlecks zu vermeiden; wenn Sie also mit dem erstellten Puffer fertig sind, sollten Sie ihn wieder freigeben
+    mit <span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_create(Größe, Typ, Ausrichtung)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Größe</td>
+        <td>Die Größe (in Bytes) des Puffers.</td>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ des zu erstellenden Puffers (siehe die Konstantenliste oben).</td>
+      </tr>
+      <tr>
+        <td>Ausrichtung</td>
+        <td>Das Byte-Alignment für den Puffer</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Int (Vertex-Puffer-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">player_buffer = buffer_create(16384, buffer_fixed, 2);</p>
+  <p>Der obige Code weist einem Puffer 16384 Byte Speicher zu und gibt den Index dieses Puffers, der in der Variablen &quot;player_buffer&quot; gespeichert ist, zur späteren Verwendung zurück. Der Puffer ist an einer Zwei-Byte-Grenze ausgerichtet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_create_from_vertex_buffer.htm">buffer_create_from_vertex_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_create
+buffer_fixed
+buffer_grow
+buffer_wrap
+buffer_fast
+buffer_vbuffer
+-->
+  <!-- TAGS
+buffer_create
+-->
+</body>
+</html>

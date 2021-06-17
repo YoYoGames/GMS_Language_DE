@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bild-Editor</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the image editor works" />
+  <meta name="rh-index-keywords" content="Image Editor" />
+  <meta name="search-keywords" content="image editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Bild-Editor</h1>
+  <p><img alt="The Image Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Images.png">Im<strong>Bildeditor </strong>können Sie eigene <a class="glossterm" data-glossterm="Sprites" href="#">Sprites</a> erstellen oder solche bearbeiten, die Sie
+    die Sie zuvor importiert oder erstellt haben. Wenn Sie bereits andere Bildbearbeitungsprogramme verwendet haben, sollte Ihnen dies vertraut sein, aber es gibt ein paar Dinge zu beachten, wenn Sie den <span class="notranslate">GameMaker Studio 2</span> Bildeditor verwenden, die vielleicht nicht sofort ersichtlich sind:</p>
+  <ul class="colour">
+    <li>Wenn Sie mehrere Rahmen erstellen, können Sie zu ihnen zeichnen, während sie animiert werden! Wenn Sie also in der <strong>Rahmensteuerungsleiste</strong> auf die Wiedergabetaste<img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImagePlay.png" width="46"> drücken und dann einen Pinsel auswählen und im Editorfenster zu zeichnen beginnen, werden Sie sehen, dass die Rahmen im Editor animiert werden und das, was Sie zeichnen, in diesem Moment dem entsprechenden Rahmen hinzugefügt wird. Sie können mit verschiedenen Bildraten experimentieren
+      Sie können mit verschiedenen Frameraten experimentieren, bis Sie etwas erhalten, das Ihnen gefällt, aber wenn Sie einmal den Dreh raus haben, wie das funktioniert, werden Sie im Handumdrehen dynamische Sprites und Effekte erstellen.</li>
+    <li>Sie können die Registerkarte "Bildeditor" aus dem Hauptfenster des Arbeitsbereichs in ein eigenes Fenster ziehen. Dies kann z. B. bei der Verwendung mehrerer Monitore praktisch sein.</li>
+    <li>Wenn Sie die <em>Kopierfunktionen </em>verwenden, um z. B. eine Auswahl eines Bildes zu kopieren, wird die kopierte Auswahl zu Ihrer <strong>Pinselliste</strong> hinzugefügt. Das bedeutet, dass Sie einen Teil eines Bildes auswählen und dann mit den übrigen
+      Malwerkzeugen zum Zeichnen von Linien, Polygonen oder einfach zum freien Malen verwenden. Der Pinsel kann auch skaliert und mit einer Farbe überblendet werden. Beachten Sie, dass die Funktion " <em>Einfügen" </em>nicht für die interne Verwendung im Editor gedacht ist, da alles, was Sie kopieren, in die
+      Pinselliste hinzugefügt und kann auf diese Weise zum &quot;Einfügen&quot; ausgewählt werden. Stattdessen ist Einfügen einfach dafür gedacht, dass Sie etwas aus einem externen Programm aufnehmen und in den Bildeditor einfügen.</li>
+    <li>Dank des praktischen <strong>Ebenen-Editors</strong> können Sie mehrere Ebenen für jedes Sprite haben. Diese Ebenen können geordnet und sogar in Ordnern platziert werden, um das Erstellen komplexerer Bilder zu erleichtern.</li>
+    <li>Sie können im Editor schnell zwischen Teilbildern (Frames) wechseln, indem Sie die Tasten &quot;<span class="inline">1</span>&quot; und &quot;<span class="inline">2</span>&quot; auf der Tastatur verwenden.</li>
+  </ul>
+  <p>Dies sind nur einige der erweiterten Funktionen, die der Bildeditor bietet. Um den vollen Funktionsumfang kennenzulernen, lesen Sie bitte die unten stehenden Punkte, die die Funktionen jedes Teils des Editors detailliert beschreiben:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Frame-Ansicht</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Dieser Teil des Fensters zeigt die Rahmen in der Reihenfolge an, in der sie animiert werden sollen. Sie können auf die Schaltfläche <img alt="Add Frame Icon" class="icon" src="../assets/Images/Icons/Icon_AddArgument.png"> auf der linken Seite klicken, um weitere Bilder hinzuzufügen - oder Sie verwenden das
+     <strong>Bildmenü</strong> - und Sie können auch auf die Rahmen klicken und sie ziehen, um ihre Position auf der Zeitachse zu ändern. Oben links in der Rahmenansicht können Sie das <strong>Onion Skinning</strong> <img alt="Onion Skin Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_OnionSkin.png" width="46"> einschalten, d. h., Sie können in einem Einzelbild einer Sprite-Animation jedes der vorangehenden oder nachfolgenden Bilder als halbtransparente Ebene unter dem Bildrahmen sehen
+      den Sie gerade bearbeiten. Das Tolle daran ist, dass jedes Bild etwas heller gezeichnet wird als das letzte, so dass Sie sehen können, wie sich die Animation von Bild zu Bild entwickelt hat, während Sie das nächste Bild zeichnen.</p>
+    <p class="dropspot">Wenn Sie dies aktivieren, werden einige zusätzliche Steuerelemente über den Frames angezeigt, die Sie anklicken <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> und ziehen können, um die Anzahl der anzuzeigenden vorangehenden Frames sowie die
+      die Anzahl der folgenden Frames einzustellen.</p>
+    <p class="dropspot"><img alt="Image Editor Onion Skin" class="center" src="../assets/Images/Asset_Editors/Editor_OnionSkin.png">Sie können bestimmte Eigenschaften für das Zwiebelhäuten über das Kontextmenü <strong>Ansicht</strong> einstellen, das weiter unten auf dieser Seite erläutert wird.</p>
+    <p class="dropspot">Unter der Schaltfläche "Onion Skin" befindet sich die Schaltfläche " <strong>Loop Control"</strong> <img alt="Loop Control Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImageLoop.png" width="46">, mit der Sie einstellen können, ob das Sprite einen Looping (geht zurück zu
+      Bild 1 zurückgeht, wenn das letzte Bild erreicht ist) oder Ping-Pong (geht rückwärts durch die Bilder, wenn das letzte Bild erreicht ist). Die Play-Taste <img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImagePlay.png" width="46"> am
+      am unteren Rand dient zum Starten/Stoppen der Vorschau der Animation.</p>
+    <p class="dropspot">Sie können auf einen beliebigen Rahmen klicken, um ihn für die Bearbeitung auszuwählen, und ein ausgewählter Rahmen hat in der oberen Ecke eine Schaltfläche "Löschen" <img alt="Delete Frame Icon" class="icon" src="../assets/Images/Icons/Icon_RemoveFrame.png">, auf die Sie klicken können, um den
+      Rahmen aus dem Sprite zu entfernen. Sie können auch auf <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf mehrere Frames klicken, um sie gemeinsam auszuwählen; in diesem Fall werden durch Klicken auf die Schaltfläche "Delete" alle ausgewählten Frames gelöscht. Schließlich können Sie
+      Schließlich können Sie die Standard-Tastaturkürzel für <em>Ausschneiden</em>, <em>Kopieren </em>und <em>Einfügen </em>verwenden, um ausgewählte Rahmen zu bearbeiten: <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;, <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot;, und <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Rahmen-Informationen</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Diese Leiste enthält die <strong>Bildinformationen</strong>. Hier können Sie über das Eingabefeld auf der linken Seite die Geschwindigkeit einstellen, mit der die Animationsbilder wiedergegeben werden sollen. Die Frame-Geschwindigkeit kann entweder auf &quot; Frames<em>pro Sekunde&quot;</em> basieren<em>,</em>
+      oder &quot; Frames<em>pro Spielframe&quot; eingestellt werden.</em> Die Gesamtzahl der verfügbaren Frames wird rechts zusammen mit dem aktuell ausgewählten Frame angezeigt, und Sie können diese Leiste einklappen (ausblenden), indem Sie links auf das Symbol <img alt="Collapse Icon" class="icon" src="../assets/Images/Icons/Icon_Collapse.png"> klicken. Sie können in den <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Image_Editor_Preferences.htm">Voreinstellungen des Bildbearbeitungsprogramms</a> einstellen, dass die Leiste immer offen oder immer geschlossen beginnt.</p>
+    <p class="dropspot">Beachten Sie, dass der hier verwendete Wert für die Animationsgeschwindigkeit auch die Art und Weise festlegt, wie das Sprite animiert wird, wenn es in einem Spiel verwendet wird, entweder als Sprite-Asset auf einer Ebene oder als Sprite, das einer Instanz zugewiesen ist, obwohl Sie dies zur <span class="notranslate">Laufzeit</span> mithilfe der entsprechenden
+     <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprites.htm">Funktionen</a> und <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">Variablen</a> ändern.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Leinwand-Steuerelemente</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Die Canvas-Steuerungen befassen sich mit verschiedenen Aspekten der Darstellung der Haupt-Zeichenfläche und ihres Inhalts. Die Optionen sind:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">Canvas-Raster umschalten <img alt="Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png">: Hiermit schalten Sie das Canvas-Raster ein/aus. Dies ist ein Raster, das <span class="notranslate">GameMaker Studio 2</span> über die Hauptleinwand zeichnet, um sie in Abschnitte zu unterteilen,
+        und ist standardmäßig auf eine Größe von 1px eingestellt. Wenn Sie jedoch auf das Symbol "Rastermenü" <img alt="Grid Options Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> klicken, öffnen Sie die Rasteroptionen:<br>
+        <img alt="Image Editor Grid Options" class="center" src="../assets/Images/Asset_Editors/Editor_Images_GridOptions.png">Mit diesen Optionen können Sie die Rasterfarbe und das Alpha sowie die Zellenwerte für das Raster entlang der X- und Y-Achse einstellen.
+        Sie haben hier auch die Möglichkeit, das Einrasten des Rasters zu aktivieren oder zu deaktivieren (standardmäßig deaktiviert).</li>
+      <li class="dropspot">Canvas-Zoom-Steuerungen <img alt="Canvas Zoom Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120">: Diese Schaltflächen steuern die aktuelle Zoomstufe der Leinwand. Sie können ein- oder auszoomen, und wenn Sie auf die Schaltfläche <img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png"> klicken, wird die Leinwand auf 1:1 mit dem zu bearbeitenden Bild zurückgesetzt. Sie können auch auf die Schaltfläche "Fenster einpassen" <img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"> klicken, um die gesamte Bildleinwand in den aktuellen Arbeitsbereich des Editors einzupassen (dadurch wird sie entsprechend vergrößert/verkleinert, damit sie passt). Beachten Sie, dass Sie auch mit <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> und dem Mausrad <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> zoomen können, und durch Drücken von <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> wird die Raumleinwand 1:1 mit dem Bild eingestellt.</li>
+      <li class="dropspot">Geteilte Leinwand <img alt="Split Canvas Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasSplit.png" width="88">: Wenn Sie darauf klicken, wird die Leinwand abwechselnd horizontal und vertikal geteilt, so dass sie eine einzige Leinwand bleibt.
+        In der Ansicht "Geteilte Leinwand" hat jede Leinwand ihre eigenen Steuerelemente, so dass Sie z. B. eine Leinwand vergrößern und die andere verkleinern können, und Sie können eine der beiden Leinwände bearbeiten, wobei die Änderungen in der anderen Leinwand übernommen werden. Um die Leinwandansicht zu ändern
+        umzuschalten, können Sie auf die Schaltfläche "Split Options" <img alt="Grid Options Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> klicken und die gewünschte Ansicht auswählen oder einfach auf die Schaltfläche "Split Canvas" klicken, bis die gewünschte Ansicht angezeigt wird.
+        bis die gewünschte Ansicht angezeigt wird.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Leinwand zeichnen</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Dies ist das Hauptbearbeitungsfenster für Ihre Bilder. Hier können Sie jedes der Werkzeuge auf der rechten Seite anwenden, um auf der aktuell ausgewählten Ebene zu malen. Sie können entweder mit der linken <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> oder der rechten <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> Maustaste malen (und beiden eine Farbe aus dem Farbwähler zuweisen) und einen der Pinsel verwenden, die oben rechts
+      des Editors. Sie können auch mit <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> und
+      das Mausrad <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> zum Vergrößern oder Verkleinern verwenden, und durch Drücken von <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> können Sie die Leinwand 1:1 mit dem Bild einstellen (oder Sie können
+      Sie können auch die Leinwand-Steuerelemente verwenden, wie oben erklärt). Beachten Sie auch, dass Sie mit der mittleren Maustaste <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> oder <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf der Leinwand herumschwenken können.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Canvas-Werte</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Dieser kleine Balken am unteren Rand zeigt die verschiedenen Werte für die Mausposition und die Breite und Höhe der Auswahlwerkzeuge im Editor an.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Bürsten</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Hier können Sie den <strong>Pinsel </strong>auswählen, mit dem Sie malen möchten. Sie können aber auch ganz einfach einen eigenen Pinsel erstellen, indem Sie auf die Bildebene malen und dann den Teil auswählen, den Sie für den neuen Pinsel verwenden möchten.
+      den Sie für den neuen Pinsel verwenden möchten, und dann <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; verwenden, um ihn zu kopieren. Der kopierte Abschnitt wird dann zu Ihren Pinseln hinzugefügt und Sie können damit wie mit jedem anderen Pinsel malen, auch mit den verschiedenen verfügbaren Malwerkzeugen wie dem Zeichnen einer Linie.</p>
+    <p class="dropspot">Beachten Sie, dass die Standardüberblendfarbe für den neuen Pinsel weiß ist. Wenn Sie jedoch die Farbe mit dem Farbwähler ändern und mit dem Pinsel malen, wird er mit dieser neuen Farbe <em>überblendet </em>. Wenn Sie einen Pinsel aus der Liste entfernen möchten, klicken Sie einfach
+      klicken Sie einfach auf ihn und drücken Sie die Taste <img alt="Delete Key Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Delete.png" width="55">, um ihn zu entfernen.</p>
+    <p class="note"><b>HINWEIS</b>: Pinsel werden zwischen den Sitzungen nicht beibehalten. Wenn Sie Ihr Projekt schließen, werden alle Pinsel, die Sie erstellt haben, entfernt.</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Farbwähler</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Oben in diesem Bereich gibt es eine Reihe von vordefinierten <a class="glossterm" data-glossterm="Musterstücke" href="#">Farbfeldern</a>, aus denen Sie wählen können, und die Sie der linken <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> und der rechten <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> Maustaste zuweisen können, indem Sie mit einer der beiden Tasten darauf klicken (Sie können auch die Farben zwischen den einzelnen Tasten vertauschen, indem Sie auf das Pfeilsymbol
+      (Sie können auch die Farben zwischen den einzelnen Tasten austauschen, indem Sie auf das Pfeilsymbol neben den Farbfeldern klicken). Die ausgewählten Farben werden unten als Farbfelder neben dem Bild der Maus angezeigt, und Sie können auf diese klicken, um das Fenster " <strong>Farbauswahl"</strong> zu öffnen:</p>
+    <p class="dropspot"><img alt="Image Editor Colour Picker" class="center" src="../assets/Images/Asset_Editors/Editor_ColourPicker.png">In diesem Fenster können Sie die Farbe mit einem der verfügbaren Schieberegler und Gadgets definieren, oder Sie können direkt Werte für die
+     <a class="glossterm" data-glossterm="ARGB" href="#">ARGB-Werte</a> oder <a class="glossterm" data-glossterm="HSV" href="#">HSV-Werte</a> eingeben. Beachten Sie, dass Sie durch einen Doppelklick auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf eines der Standard-Farbfelder auch das Farbauswahlwerkzeug aufrufen und die Standardpalette für das Sprite bearbeiten können. Wenn Sie in diesem Fall im Farbwähler auf &quot;Okay&quot; klicken, wird die Palette auf die neue Farbe eingestellt und
+      und speichert sie zusammen mit dem bearbeiteten Sprite-Asset. Diese Farbpaletten können dann über das Menü " <strong>Optionen" </strong>der Farbpalette ausgetauscht und auf verschiedene Sprites angewendet werden:</p>
+    <p class="dropspot"><img alt="Image Editor Colour Picker Options" class="center" src="../assets/Images/Asset_Editors/Editor_ColourPicker_Options.png">Sie können also eine benutzerdefinierte Farbpalette in einem Sprite-Bild erstellen und diese dann verwenden, um die Palette für jedes andere Sprite
+      im Asset-Browser einstellen, oder Sie können ein Sprite-Bild öffnen und die Farbpalette von einem beliebigen anderen Sprite im Asset-Browser importieren. Dieses Sprite-Paletten-Feature wird im folgenden <span class="notranslate">YoYo Games</span> Tech-Blog ausführlicher behandelt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="https://www.yoyogames.com/blog/538/gms2-features-you-might-not-know-about">GMS2-Funktionen, die Sie vielleicht noch nicht kennen </a></li>
+    </ul>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Werkzeuge</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Im Folgenden werden die Werkzeuge aufgelistet, die standardmäßig in <span class="notranslate">GameMaker Studio 2</span> verfügbar sind - beachten Sie, dass alle Werkzeuge mit der linken <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> und der rechten <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> Maustaste verwendet werden können, und dass die meisten von ihnen mit Tastaturkürzeln verknüpft sind (die wichtigsten sind hier zusammen mit dem Werkzeug aufgeführt, aber für eine vollständige Liste sehen Sie bitte
+      die Seite über <a href="../IDE_Navigation/Keyboard_Shortcuts.htm">Tastaturkürzel</a>). Die meisten Werkzeuge haben auch zusätzliche Optionen, die oben im Bildeditor sichtbar sind, wie unten gezeigt:</p>
+    <p class="dropspot"><img alt="Image Editor Top Bar" class="center" height="31" src="../assets/Images/Asset_Editors/Editor_Image_TopBar.gif" width="690" /></p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Pencil Icon" src="../assets/Images/Icons/Icon_Image_Pencil.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Bleistift</strong></td>
+          <td class="text">Dies ist das Bleistift-Werkzeug. Es verwendet den ausgewählten Pinsel, um die gewählte Farbe für die Maustaste einzumalen. Sie können die Größe in der oberen Leiste des Bildeditors einstellen sowie die Glättung (Interpolation) aktivieren/deaktivieren. Beachten Sie, dass Sie auch
+            die Größe und Skalierung jedes Pinsels ändern können, indem Sie <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;<span class="inline">Z</span>&quot; gedrückt halten und dann auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> klicken und die Maus ziehen, um die Proportionen des Pinsels zu ändern, oder alternativ einen der vordefinierten Pinsel oben rechts auswählen.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Eraser Icon" src="../assets/Images/Icons/Icon_Image_Eraser.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Radiergummi</strong></td>
+          <td class="text">Dies ist das Radiergummi-Werkzeug. Es verwendet den ausgewählten Pinsel, um einen Bereich bei einem Klick mit einer der beiden Maustasten zu löschen. Wenn Sie dies auswählen, werden in der oberen Leiste des Editors zusätzliche Werkzeuge hinzugefügt, mit denen Sie den Pinsel skalieren oder die Glättung<a class="glossterm" data-glossterm="lineare Interpolation" href="#">(lineare Interpolation</a>) aktivieren/deaktivieren können.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Paint Fill Icon" src="../assets/Images/Icons/Icon_Image_Paint.png" style="margin-left: 16px" /></td>
+          <td class="icons"><strong>Lackieren / Füllen</strong></td>
+          <td class="text">Dies ist das Fülleimer- (oder Füll-) Werkzeug. Es füllt einen Bereich des Bildes basierend auf der gewählten Alpha-Toleranz-Einstellung, die Sie mit dem Schieberegler in der oberen Leiste des Editors ändern können.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Colour Remove Icon" src="../assets/Images/Icons/Icon_Image_ColourRemove.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Farbe entfernen</strong></td>
+          <td class="text">Dies ist das Werkzeug zum Entfernen von Farben. Wenn Sie es auswählen, können Sie dann auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> oder <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> auf ein beliebiges Pixel im Bild klicken und alle Pixel, die dieselbe Farbe haben, werden entfernt (sie werden technisch durch die Farbe Schwarz bei einem Alpha von 0 ersetzt). In der oberen Leiste befindet sich ein Toleranz-Schieberegler, mit dem Sie die Pixelfarbe einstellen können
+            Toleranz einstellen können - je niedriger dieser Wert ist, desto genauer muss eine Farbe mit der angeklickten Farbe übereinstimmen, während ein höherer Wert dies auf alle Farben ausdehnt, die der angeklickten Farbe ähnlich sind. Wenn Sie zuvor eine Auswahl getroffen haben, indem Sie
+            eine Auswahl getroffen haben, wirkt sich nur das Klicken auf Pixel innerhalb der Auswahl aus, und nur die Pixel innerhalb der Auswahl werden entfernt.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Colour Replace Icon" height="48" src="../assets/Images/Icons/Icon_Image_ColourReplace.png" style="margin-left: 16px;" width="48" /></td>
+          <td class="icons"><strong>Farbe Ersetzen</strong></td>
+          <td class="text">Dies ist das Werkzeug zum Ersetzen von Farben. Wenn Sie es auswählen, können Sie dann auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> oder <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> auf ein beliebiges Pixel im Bild klicken und alle Pixel, die die gleiche Farbe haben, werden durch die Farbe ersetzt, die der verwendeten Maustaste zugeordnet ist. In der oberen Leiste befindet sich ein Toleranz-Schieberegler, mit dem Sie die Pixelfarbtoleranz einstellen können - je niedriger
+            je niedriger dieser Wert ist, desto genauer muss eine Farbe mit der angeklickten übereinstimmen, während ein höherer Wert dies auf alle Farben ausdehnt, die der angeklickten ähnlich sind. Wenn Sie zuvor mit einem der Auswahlwerkzeuge eine Auswahl getroffen haben
+            Werkzeugen eine Auswahl getroffen haben, wirkt sich nur das Anklicken von Pixeln innerhalb der Auswahl aus, und nur die Pixel innerhalb der Auswahl sind von der Farbänderung betroffen.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Line Icon" src="../assets/Images/Icons/Icon_Image_Line.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Zeile</strong></td>
+          <td class="text">Mit diesem Werkzeug wird eine Linie zwischen zwei Punkten gezeichnet. Klicken Sie einmal mit einer der beiden Schaltflächen, um den ersten Punkt zu erstellen, und klicken Sie dann erneut an einer anderen Stelle, um einen weiteren Punkt zu erstellen und sie zu verbinden. Die Linie wird mit dem ausgewählten Pinsel gezeichnet, um die Kontur zu erstellen,
+            und Sie können einige der Pinsel-Eigenschaften über die obere Leiste des Editors bearbeiten (Größe, <a class="glossterm" data-glossterm="lineare Interpolation" href="#">lineare Interpolation</a>, etc...).</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Rectangle Icon" src="../assets/Images/Icons/Icon_Image_Rectangle.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Rechteck</strong></td>
+          <td class="text">Mit diesem Werkzeug können Sie entweder ein gefülltes oder ein umrandetes Rechteck zeichnen. Wenn Sie oben links auf das Symbol klicken, wird es umrandet, wenn Sie unten rechts klicken, wird es gefüllt, und wenn Sie beides benötigen, können Sie diese Option in der oberen
+            Leiste des Bildbearbeitungsprogramms auswählen (oder mit <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 
+            (oder verwenden Sie  + _COPY9, um das eine und dann das andere auf dem Werkzeugkasten-Symbol auszuwählen) sowie die Größe und Glättung des verwendeten Pinsels einzustellen. Das Rechteck wird dann mit dem ausgewählten Pinsel gezeichnet. Beachten Sie, dass Sie während des Zeichnens <img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> gedrückt halten und klicken können, um von der Mitte der Mausposition aus zu zeichnen.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Ellipse Icon" src="../assets/Images/Icons/Icon_Image_Ellipse.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Ellipse</strong></td>
+          <td class="text">Mit diesem Werkzeug können Sie entweder eine gefüllte oder eine umrissene Ellipse zeichnen. Wenn Sie oben links auf das Symbol klicken, wird es umrandet, wenn Sie unten rechts klicken, wird es gefüllt, und wenn Sie beides benötigen, können Sie diese Option in der oberen Leiste
+            des Bildbearbeitungsprogramms auswählen (oder verwenden Sie <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">, um
+            (oder verwenden Sie  + _COPY9, um das eine und dann das andere auf dem Werkzeugkasten-Symbol auszuwählen), sowie die Größe und Glättung des verwendeten Pinsels einstellen. Die Ellipse wird mit dem ausgewählten Pinsel gezeichnet, um die Kontur zu erstellen. Beachten Sie, dass Sie während des Zeichnens <img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> gedrückt halten und klicken können, um von der Mitte der Mausposition aus zu zeichnen.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Polygon Icon" src="../assets/Images/Icons/Icon_Image_Polygon.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Polygon</strong></td>
+          <td class="text">Mit diesem Werkzeug können Sie entweder ein gefülltes oder ein umrandetes Polygon zeichnen. Wenn Sie in die obere linke Ecke des Symbols klicken, wird es umrandet, während ein Klick in die untere rechte Ecke ein ausgefülltes Polygon ergibt. Wenn Sie beides wünschen, können Sie diese Option in der oberen Leiste
+            des Bildbearbeitungsprogramms auswählen (oder mit <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> 
+            Sie können auch die Größe und Glättung des verwendeten Pinsels einstellen. Klicken Sie auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> oder <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">, um mit dem ausgewählten Pinsel Punkte zum Polygon hinzuzufügen, und wenn Sie mit dem Ergebnis zufrieden sind, sollten Sie ein anderes Werkzeug auswählen, um die Änderungen zu übernehmen und das Bild zu erzeugen.
+            das Bild zu erzeugen. Das Polygon wird mit dem ausgewählten Pinsel gezeichnet. Sie können jederzeit <img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55"> drücken, um die Polygondefinition abzubrechen.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Spline Icon" src="../assets/Images/Icons/Icon_Image_Spline.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Spline</strong></td>
+          <td class="text">Dies ist das Spline-Werkzeug. Es verwendet den ausgewählten Pinsel, um einen <a class="glossterm" data-glossterm="Verzahnung" href="#">Spline</a> zu erzeugen. Sie klicken und halten eine der beiden Maustasten gedrückt, um einen Punkt zu setzen, und ziehen dann die Maus, um den Spline zu erzeugen.
+            Lassen Sie die Maus los und wiederholen Sie den Vorgang, um weitere Punkte und Kurven hinzuzufügen. Der Spline wird mit dem ausgewählten Pinsel gezeichnet, der in der oberen Leiste des Editors bearbeitet werden kann, um Größe und Glättung einzustellen. In der oberen Leiste gibt es auch eine Einstellung für <strong>Iterationen </strong>, die
+            Die obere Leiste enthält auch eine Einstellung für Iterationen, die festlegt, wie glatt der resultierende Spline ist (niedrigere Werte sind gröber, höhere glatter, der Standardwert ist 10).</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Text Icon" src="../assets/Images/Icons/Icon_Image_Text.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Text</strong></td>
+          <td class="text"><br> Dies ist das Texteingabewerkzeug. Es erstellt eine neue Textebene, in die Sie alles eingeben können, was Sie brauchen. Sie können die zu verwendende Schriftart sowie die Formatierung in der oberen Leiste des Bildeditors einstellen.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Dropper Icon" src="../assets/Images/Icons/Icon_Image_Dropper.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Augentropfer</strong></td>
+          <td class="text">Mit dem Eye-Dropper-Werkzeug können Sie eine Farbprobe aus dem aktuell bearbeiteten Bild entnehmen.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Select Rectangle Icon" src="../assets/Images/Icons/Icon_Image_SelectRectangle.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Rechteckige Auswahl</strong></td>
+          <td class="text">Mit diesem Werkzeug können Sie eine rechteckige Auswahl erzeugen. Sie können eine Auswahl über das Menü Bild oder durch Drücken von <img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55"> aufheben.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Paint Selection Icon" src="../assets/Images/Icons/Icon_Image_PaintSelection.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Farbauswahl</strong></td>
+          <td class="text">Mit diesem Werkzeug können Sie einen ausgewählten Bereich mit einem beliebigen Pinsel &quot;bemalen&quot;, auch mit benutzerdefinierten Pinseln. Es gelten die gleichen Tastenkombinationen wie für das Werkzeug "Stift". Sie können eine Auswahl über das Menü "Bild" aufheben oder mit <img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55"></td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Magic Wand Icon" src="../assets/Images/Icons/Icon_Image_MagicWand.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Zauberstab</strong></td>
+          <td class="text">Das Auswahlwerkzeug des Zauberstabs wählt Bereiche gleicher Farbe anhand des in der oberen Leiste des Editors eingestellten Toleranzwerts aus. Wenn Sie &quot;Nur Farbe&quot; ankreuzen, wird der Alphawert nicht in Betracht gezogen. Sie können eine Auswahl aufheben
+            über das Menü "Bild" oder durch Drücken von <img alt="Escape Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Escape.png" width="55">.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Rotate Icon" src="../assets/Images/Icons/Icon_Image_Rotate.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Drehen</strong></td>
+          <td class="text">Dies ist das Werkzeug zum Drehen. Wenn Sie einen Bereich mit einem der Auswahl-Werkzeuge ausgewählt haben, können Sie den ausgewählten Bereich um einen beliebigen Betrag von 0° bis 360° drehen. Wenn Sie keinen Bereich des Bildes ausgewählt haben, können Sie
+            können Sie damit den aktuellen Pinsel drehen. Zum Drehen halten Sie einfach die linke Maustaste <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> gedrückt und ziehen nach links oder rechts oder stellen den Wert
+            direkt in der oberen Leiste ein. Um die Änderungen zu übernehmen, können Sie entweder <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> drücken oder ein anderes Werkzeug auswählen. Beachten Sie, dass durch das Übernehmen der Änderung nicht das
+            das Ausgangsmaterial nicht ändert, sondern eine neue Pinselressource erstellt, die Sie mit dem ausgewählten Bild oder einem um den eingestellten Wert gedrehten Pinsel verwenden können. Beachten Sie auch, dass das Tastaturkürzel &quot;<span class="inline">Z</span>&quot; verwendet werden kann, um eine
+            mit dem Tastaturkürzel "  " eine beliebige Auswahl oder einen Pinsel um 90° drehen kann und dass diese Option keinen neuen Pinsel erzeugt, sondern nur die Art und Weise beeinflusst, wie der aktuelle Pinsel gezeichnet wird.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Mirror Icon" src="../assets/Images/Icons/Icon_Image_Mirror.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Spiegel</strong></td>
+          <td class="text">Dies ist das Spiegelungswerkzeug. Wenn Sie dies auswählen, wird der aktuelle Pinsel entlang der vertikalen Achse gespiegelt. Diese Option erstellt keinen neuen Pinsel und wirkt sich nur darauf aus, wie der aktuelle Pinsel gezeichnet wird.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Flip Icon" src="../assets/Images/Icons/Icon_Image_Flip.png" style="margin-left: 16px;" /></td>
+          <td class="icons"><strong>Flip</strong></td>
+          <td class="text">Dies ist das Spiegelungswerkzeug. Wenn Sie dies auswählen, wird der aktuelle Pinsel entlang der horizontalen Achse gespiegelt. Diese Option erstellt keinen neuen Pinsel und wirkt sich nur darauf aus, wie der aktuelle Pinsel gezeichnet wird.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Pan Icon" src="../assets/Images/Icons/Icon_Image_Pan.png" style="margin-left: 16px" /></td>
+          <td class="icons"><strong>Pan</strong></td>
+          <td class="text">Dies ist das Verschiebewerkzeug. Wenn Sie dieses auswählen, können Sie auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> klicken und die Maus ziehen, um den Ebeneninhalt innerhalb der Ebene zu verschieben. Beachten Sie, dass
+            Beachten Sie, dass alle Pixel außerhalb der Zeichenfläche nicht sichtbar sind und das Bild auf die Größe der Zeichenfläche beschnitten wird, wenn Sie das Werkzeug wieder wechseln. Beachten Sie auch, dass, wenn Sie eine Auswahl getroffen haben, die ausgewählten Pixel verschoben werden und nicht der Inhalt der Ebene.
+            der Ebene.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Ebenen-Editor</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Sie können im Bildeditor <strong>Ebenen </strong>für verschiedene Teile Ihres Bildes erstellen, und diese Ebenen können mit den verschiedenen Pinseln und Werkzeugen manipuliert und gezeichnet werden. Um eine neue Ebene zu erstellen, klicken Sie einfach auf das Symbol <img alt="Add Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Image_Add.png" width="24">, um sie wieder zu entfernen, auf das Symbol <img alt="Remove Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Image_Remove.png" width="24">. Ebenen können auch
+      Ebenen können auch geordnet werden, indem Sie auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf eine Ebene klicken und dann die Ebene nach oben oder unten an die gewünschte Position ziehen, und Sie können die Ebenen weiter organisieren, indem Sie
+      Sie können die Ebenen weiter organisieren, indem Sie mit der Schaltfläche <img alt="Add Layer Folder Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Image_Folder.png" width="24"> Ordner erstellen und dann die Ebenen in diese Ordner ziehen. Wenn Sie auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf eine Ebene doppelklicken (oder <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> verwenden und " <strong>Ebeneneigenschaften bearbeiten</strong>" wählen), erhalten Sie
+      erhalten Sie Zugriff auf das Fenster Ebeneneigenschaften:</p>
+    <p class="dropspot"><img alt="Image Editor Layer Properties" class="center" src="../assets/Images/Asset_Editors/Editor_LayerProperties.png">Hier können Sie die Ebene benennen sowie den Mischmodus (die Art und Weise, wie sie mit den darunter liegenden Ebenen &quot;gemischt&quot; werden soll) einstellen,
+      Wählen Sie zwischen <em>normaler</em>, <em>additiver</em>, <em>subtraktiver </em>oder <em>multipler </em>Überblendung. Schließlich können Sie mit einem Schieberegler die Deckkraft (Transparenz) der Ebene einstellen, wobei zu beachten ist, dass sich diese mit dem tatsächlichen Alpha-Wert der einzelnen Pixel kumuliert
+      Wenn Sie z. B. Pixel mit einer Deckkraft von 50 % haben und die Deckkraft der Ebene auf 50 % einstellen, werden die endgültigen Pixel mit einer Deckkraft von 25 % gezeichnet.</p>
+  </div>
+  <p> </p>
+  <p>Abgesehen von den Werkzeugen im Bildeditor selbst, stehen Ihnen auch eine Reihe von zusätzlichen Werkzeugen in der Menüleiste oben in der IDE zur Verfügung:</p>
+  <p><img alt="Image Editor Menus" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Menus.png" style="margin-top: -20px; margin-bottom: 1px;">Diese Menüs werden in den folgenden Abschnitten erläutert:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Bild</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><img alt="Image Editor Image Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuImages.png">Das Menü "Bild" enthält die folgenden Optionen (von denen einige je nach aktuellem Editor-Fokus verfügbar sind oder nicht):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Rahmen</strong> / <strong>Auswahl </strong><strong>ausschneiden</strong> - Schneidet den Rahmen oder die Auswahl aus dem Bild aus, je nach Editor-Fokus. Wenn Sie eine Auswahl ausschneiden, wird diese zu den Pinseln hinzugefügt.</li>
+      <li class="dropspot"><strong>Rahmen</strong> / <strong>Auswahl </strong><strong>kopieren</strong> - Kopiert den Rahmen oder die Auswahl aus dem Bild, je nach Editor-Fokus. Wenn Sie eine Auswahl kopieren, wird diese zu den Pinseln hinzugefügt.</li>
+      <li class="dropspot"><strong>Rahmen</strong> / <strong>Auswahl </strong><strong>einfügen</strong> - Fügt den Rahmen aus der Zwischenablage ein, oder fügt die Auswahl aus der Zwischenablage in das Bild ein, abhängig vom aktuellen Fokus der IDE. Wenn Sie in ein Bild einfügen, sollten Sie beachten, dass diese
+        Option nur für die Verwendung mit Daten aus der Zwischenablage von externen Programmen gedacht ist. Wenn Sie im Bild-Editor aus einem Bild ausschneiden oder in die Zwischenablage kopieren, wird dies zu den Pinseln oben rechts im Editor hinzugefügt, und Sie sollten einen Pinsel auswählen, um
+        Sie sollten einen Pinsel auswählen, um mit der ausgeschnittenen/kopierten Auswahl zu zeichnen, anstatt zu versuchen, sie in das Bild einzufügen. Beachten Sie auch, dass eine Reihe von Programmen aufgrund des von der Zwischenablage verwendeten Formats Probleme beim Einfügen von Transparenzen aus der Zwischenablage in den <span class="notranslate">GameMaker Studio 2</span> Bildeditor haben.</li>
+      <li class="dropspot"><strong>Alles auswählen </strong>- Wählt das gesamte Bild aus.</li>
+      <li class="dropspot"><strong>Auswahl aufheben</strong> - Löscht eine beliebige Auswahl aus dem Bild.</li>
+      <li class="dropspot"><strong>Auswahl umkehren</strong> - Kehrt die aktuelle Auswahl um.</li>
+      <li class="dropspot"><strong>Rahmen hinzufügen</strong> - Fügt dem Sprite einen neuen Rahmen hinzu.</li>
+      <li class="dropspot"><strong>Rahmen einfügen</strong> - Fügt einen neuen Rahmen nach dem aktuell angezeigten ein.</li>
+      <li class="dropspot"><strong>Ausgewählte Frames löschen</strong> - Entfernen Sie den ausgewählten Frame aus dem Sprite (Sie können <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> und/oder <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> verwenden, um mehrere Frames auszuwählen).</li>
+      <li class="dropspot"><strong>Bild(er) importieren</strong> - Laden Sie ein Bild, das als Rahmen verwendet werden soll, von der Festplatte. Beachten Sie, dass Sie mehrere Rahmen auf einmal laden können, indem Sie im Explorer-Fenster mehrere einzelne Dateien zum Importieren auswählen. Nachdem Sie die Datei oder Dateien ausgewählt haben, wird
+        Nachdem Sie die Datei(en) ausgewählt haben, wird das folgende Import-Fenster angezeigt:<br>
+        <img alt="Image Editor Import Window" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Import.png">Hier können Sie wählen, wie das importierte Bild zum aktuellen Sprite hinzugefügt werden soll, so dass Sie die Größe der gesamten Zeichenfläche ändern können,
+        Sie können die Größe der gesamten Zeichenfläche ändern, sie zuschneiden oder auffüllen und auch die &quot;Ankerposition&quot; für die Platzierung des neuen Bildes/der neuen Bilder festlegen.</li>
+      <li class="dropspot"><strong>In Frames konvertieren</strong> - Mit dieser Option wird ein einzelnes Bild in eine Reihe von separaten Frames konvertiert. Sie müssen zuerst ein Einzelbild mit allen Teilen der Animation darin erstellt haben (oder ein einzelnes Streifenbild importiert haben), wie in der folgenden Abbildung gezeigt
+        unten:
+        <br>
+        <img alt="Image Editor Animation Strip" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Strip.png"> Da es sich um ein Einzelbild handelt und wir es in Einzelbilder umwandeln wollen, können wir diese Option verwenden, die dann das folgende Fenster öffnet
+        folgendes Fenster öffnet:<br>
+        <img alt="Image Editor Convert to Animation Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_ConvertStrip.png">Hier können Sie einstellen, wie das Einzelbild aufgeteilt werden soll, um die Rahmen zu erzeugen, wobei Sie die Anzahl der Rahmen, die
+        Breite und Höhe der Rahmen sowie eventuelle Offset-Werte einfügen.</li>
+      <li class="dropspot"><strong>Streifenbild importieren</strong> - Diese Option öffnet einen Datei-Explorer und fordert Sie auf, nach einer einzelnen Streifenbilddatei zu suchen, aus der Sie Rahmen erstellen möchten. Wenn Sie ein Bild ausgewählt haben, öffnet sich das Fenster "Import strip" (Streifen importieren), genau wie bei der Option
+        der oben gezeigten Option <strong>In Rahmen konvertieren</strong>.</li>
+      <li class="dropspot"><strong>Export to PNG</strong> - Wenn Sie diese Option wählen, wird das Sprite als einzelnes <span class="inline">PNG</span> Bild exportiert. Wenn das Sprite mehr als ein einzelnes Bild enthält, wird ein &quot;Streifen&quot;-Sprite mit allen Bildern erstellt, eines nach dem anderen.
+        und der Name der Speicherdatei wird automatisch mit dem Zusatz &quot;<span class="inline">_stripX</span>&quot; versehen, wobei &quot;<span class="inline">X</span>&quot; die Anzahl der exportierten Bilder ist. Zum Beispiel wird ein Sprite mit fünf Bildern
+        als &quot;<span class="inline">sprite_name_strip5.png</span>&quot; exportiert.</li>
+      <li class="dropspot"><strong>Resize All Frames (Größe aller Frames ändern</strong> ) - Wenn Sie diese Option wählen, wird das folgende Fenster geöffnet, in dem Sie einstellen können, wie Sie die Größe aller Animationsframes, aus denen das Sprite besteht, ändern möchten:<br>
+        <img alt="Image Editor Resize Frames" class="center" height="409" src="../assets/Images/Asset_Editors/Editor_Image_ResizeFrames.png" width="590">Sie können entweder das Bild <strong>skalieren </strong>oder die <strong>Größe der</strong> Leinwand <strong>ändern</strong>.
+        Wenn Sie sich für die Skalierung des Bildes entscheiden, wählen Sie einfach die neue Breite und/oder Höhe für jedes Einzelbild, ob die Skalierung mit demselben Seitenverhältnis erfolgen soll und ob die Skalierung in Pixeln oder Prozent erfolgen soll. Beachten Sie, dass Sie bei der Skalierung die <a class="glossterm" data-glossterm="lineare Interpolation" href="#">lineare Interpolation</a> ein- oder ausschalten können, wobei das Einschalten dazu führt, dass die Pixel beim Skalieren des Bildes verschwimmen oder &quot;verschmieren&quot;.
+        <br>
+        <br> Die Option zur Größenänderung der Leinwand verändert nicht die Pixel im Bild, sondern vergrößert oder verkleinert die Leinwand, auf der die Bilder gezeichnet werden. Sie können mit den Pfeilsymbolen festlegen, wo der &quot;Anker&quot; für die Größenänderung liegen soll.
+        Sie können festlegen, wo der "Anker" für die Größenänderung liegen soll, indem Sie die Pfeilsymbole verwenden und dann die neue Größe (in Pixeln oder als Prozentsatz) sowie die Beibehaltung des Seitenverhältnisses der ursprünglichen Rahmen festlegen. Beachten Sie, dass die Pixel beschnitten werden, wenn Sie den Rahmen kleiner als die ursprünglichen Sprite-Bilder machen.</li>
+      <li class="dropspot"><strong>Alle Frames auf Auswahl beschneiden</strong> - Diese Option ist nur verfügbar, wenn Sie einen Bereich des Bildes in der Hauptzeichenfläche ausgewählt haben. Wenn Sie dann diese Option wählen, wird das bearbeitete Bild (und alle anderen Bilder in der Animation)
+        werden auf die Grenzen der Auswahl beschnitten.</li>
+      <li class="dropspot"><strong>Auto Trim All Frames</strong> - Mit dieser Option können Sie alle Null-Alpha-Pixel an den Rändern eines Sprites abschneiden. Dabei werden alle Bildrahmen innerhalb des Sprites berücksichtigt, so dass jede Seite bis zum Rand des Rahmens beschnitten wird, der das am weitesten entfernte Nicht-Null-Alpha-Pixel hat.
+        Rahmens mit dem am weitesten entfernten Nicht-Null-Alpha-Pixel.<br>
+        <img alt="Image Editor Trim Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Trim.png"></li>
+      <li class="dropspot"><strong>Frames umkehren</strong> - Wenn Sie diese Option auswählen, wird die Frame-Reihenfolge für das Sprite einfach umgekehrt.</li>
+      <li class="dropspot"><strong>Spiegeln </strong>- Mit dieser Option können Sie entweder das aktuelle Bild oder alle Bilder, aus denen das Sprite besteht, an der vertikalen Achse spiegeln.</li>
+      <li class="dropspot"><strong>Spiegeln </strong>- Mit dieser Option können Sie entweder das aktuelle Bild oder alle Bilder, aus denen das Sprite besteht, entlang der horizontalen Achse spiegeln.</li>
+      <li class="dropspot"><strong>Alle Frames drehen (im Uhrzeigersinn 90°)</strong> - Mit dieser Option werden alle Frames der Animation um 90° im Uhrzeigersinn gedreht.</li>
+      <li class="dropspot"><strong>Alle Frames drehen (gegen den Uhrzeigersinn 90°)</strong> - Mit dieser Option werden alle Frames der Animation um 90° gegen den Uhrzeigersinn gedreht.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Ansicht</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><img alt="Image Editor Views Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuView.png">Das Menü "Ansicht" verfügt über die folgenden Optionen:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>1:1</strong> - Skalieren Sie das Bild auf 1:1 mit der Auflösung (d.h.: tatsächliche Größe) und zentrieren Sie es im Bildbearbeitungsfenster.</li>
+      <li class="dropspot"><strong>Fit Screen</strong> - Skaliert das Bild so, dass es das Bildbearbeitungsfenster ausfüllt.</li>
+      <li class="dropspot"><strong>Raster anzeigen</strong> - Schaltet das Pixelraster ein. Dies ist dasselbe wie die Schaltfläche "Raster" in den Canvas-Steuerungen (weiter oben auf dieser Seite erklärt).</li>
+      <li class="dropspot"><strong>Zwiebelhaut-Einstellungen</strong> - Ändern Sie die Einstellungen der Zwiebelhaut. Dadurch wird das folgende Fenster geöffnet, in dem Sie die von der Zwiebelhaut-Schaltfläche angezeigten Rahmen sowie die Deckkraft und Farbe der gehäuteten Rahmen einstellen können.<br>
+        <img alt="Image Editor Onion Skin Properties" class="center" src="../assets/Images/Asset_Editors/Editor_Image_OnionSkinProperties.png"></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Effekte</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot"><img alt="Image Editor Effects Menu" class="center" src="../assets/Images/Asset_Editors/Editor_MenuEffects.png">Im Menü "Effekte" können Sie Ihre eigenen benutzerdefinierten Effekt-Plugins hinzufügen, und es verfügt standardmäßig über die folgenden Effekte:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Weichzeichnen </strong>- Wendet einen Weichzeichnungseffekt auf das Bild an. Sie können die Intensität sowie die Art des Weichzeichners (Rechteck oder Gauß) einstellen und festlegen, ob nur entlang der horizontalen oder vertikalen Achse oder entlang beider Achsen weichgezeichnet werden soll. Sie können dann wählen, ob Sie
+        nur auf die aktuelle Ebene, auf sichtbare Ebenen oder auf alle Ebenen anwenden.<br>
+        <img alt="Image Editor Blur Effect" class="center" src="../assets/Images/Asset_Editors/Editor_EffectBlur.png"></li>
+      <li class="dropspot"><strong>Graustufen </strong>- Entsättigt das Bild um einen bestimmten Betrag. Sie können wählen, ob dies nur auf die aktuelle Ebene, sichtbare Ebenen oder alle Ebenen angewendet werden soll.<br>
+        <img alt="Image Editor Greyscale Effect" class="center" src="../assets/Images/Asset_Editors/Editor_EffectGrayscale.png"></li>
+    </ul>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Animation_Curves.htm">Animation Kurven</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Image Editor
+Image Editor
+-->
+  <!-- TAGS
+image_editor
+-->
+
+</body></html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>spiel_get_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function game_get_speed" />
+  <meta name="rh-index-keywords" content="game_get_speed,gamespeed_fps,gamespeed_microseconds" />
+  <meta name="search-keywords" content="game_get_speed,gamespeed_fps,gamespeed_microseconds" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>spiel_get_speed</h1>
+  <p>Diese Funktion kann verwendet werden, um die Spielgeschwindigkeit entweder als Anzahl der Spielframes, die pro Sekunde ausgeführt werden, oder als Anzahl der Mikrosekunden pro Spielframe zu erhalten. Beachten Sie, dass dies <b>nicht</b> der tatsächliche FPS-Wert für die Spielgeschwindigkeit ist (verwenden Sie dafür die <a href="../Debugging/fps_real.htm"><tt>fps_real</tt></a> Variable)
+    sondern vielmehr die Anzahl der Spielframes (FPS), die das Spiel pro Sekunde zu halten versucht, oder die Länge jedes Spielframes in Mikrosekunden, die das Spiel zu halten versucht (MPF). Wenn Sie diese Funktion verwenden, müssen Sie eine der folgenden
+    Konstanten angeben, die den Typ des Rückgabewerts bestimmen:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>gamespeed_fps</td>
+        <td>Ruft die Spielgeschwindigkeit in Bildern pro Sekunde ab.</td>
+      </tr>
+      <tr>
+        <td>gamespeed_microseconds</td>
+        <td>Ruft die Spielgeschwindigkeit in Mikrosekunden pro Frame ab.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Wenn zum Beispiel die Spielgeschwindigkeit in den Spieloptionen auf 30 eingestellt ist und Sie den FPS-Typ verwenden, dann gibt die Funktion 30 zurück, aber wenn Sie den MPF-Typ verwenden, dann gibt die Funktion 33333 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">game_get_speed(type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der Methode, die verwendet wird, um die Spielgeschwindigkeit zu erhalten (siehe die Konstanten oben).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if game_get_speed(gamespeed_fps) != 60<br> {
+    <br> game_set_speed(60, gamespeed_fps);<br> }
+  </p>
+  <p>Der obige Code prüft, ob das Spiel mit einer Spielgeschwindigkeit von 60 FPS läuft und wenn nicht, wird es auf 60 FPS gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Game_Control.htm">Allgemeine Spielsteuerung</a></div>
+        <div style="float:right">Weiter: <a href="game_set_speed.htm">game_set_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_get_speed
+gamespeed_fps
+gamespeed_microseconds
+-->
+  <!-- TAGS
+game_get_speed
+-->
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Partikel emittieren</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Emit Particles action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Emit Particles" />
+  <meta name="search-keywords" content="Emit Particles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Emit Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Emit_Particles.png"> Partikel emittieren</h1>
+  <p>Diese Aktion wird verwendet, um Partikel aus einem Emitter zu erzeugen. Sie geben die Partikelsystem-ID an, zu der der Emitter gehört (wie von der Aktion <a href="Create_Particle_System.htm">Create Particle System</a> zurückgegeben), dann die eigentliche Emitter-ID (wie von der Aktion
+    (zurückgegeben von der Aktion " <a href="Create_Particle_Emitter.htm">Partikel-Emitter erstellen</a>") und schließlich den zu erstellenden Partikeltyp (zurückgegeben von der Aktion " <a href="Create_Particle_Type.htm">Partikeltyp erstellen</a>"). Sie können dann &quot;Burst&quot;
+    oder &quot;Streamen&quot; der Partikel aus dem Emitter wählen sowie die Anzahl der zu erzeugenden Partikel angeben.</p>
+  <p>Wenn Sie sich für das Streamen von Partikeln entscheiden, müssen Sie diese Aktion nicht in einem Game-Frame-Ereignis wie dem Step-Ereignis oder dem Draw-Ereignis platzieren, sondern rufen sie einfach einmal im Create-Ereignis auf (z. B.) und der Emitter wird in jedem Game
+    Frame, bis Sie diese Aktion erneut aufrufen, um sie zu stoppen (indem Sie den Zählwert auf 0 setzen). Wenn Sie sich dafür entscheiden, die Partikel platzen zu lassen, können Sie diese Aktion in jedem beliebigen Ereignis aufrufen und die Partikel werden einmal erstellt.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Emit Particles Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Emit_Particles.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>System</td>
+        <td>Die ID des Systems, in dem sich der Emitter befindet</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td>Die ID des zu verwendenden Emitters</td>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Die ID des zu erstellenden Partikeltyps</td>
+      </tr>
+      <tr>
+        <td>Veranstaltung</td>
+        <td>Der Ereignistyp für die Partikel, entweder &quot;Burst&quot; oder &quot;Stream&quot;.</td>
+      </tr>
+      <tr>
+        <td>Zählen Sie</td>
+        <td>Die Anzahl der Partikel zum Bersten oder Strömen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Emit Particles Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png">Der obige Code des Aktionsblocks erstellt einen Partikelemitter, legt seine Region fest,
+    und setzt ihn dann so, dass er einen Strom von Partikeln aussendet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Actions.htm">Partikel-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Emitter_Region.htm">Emitter-Region einstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Emit Particles
+-->
+  <!-- TAGS
+action_part_emit_emit
+-->
+</body>
+</html>

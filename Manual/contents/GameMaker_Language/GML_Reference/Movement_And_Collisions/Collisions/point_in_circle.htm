@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Punkt_im_Kreis</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion point_in_circle" />
+  <meta name="rh-index-keywords" content="point_in_circle" />
+  <meta name="search-keywords" content="point_in_circle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Punkt_im_Kreis</h1>
+  <p>Wenn Sie diese Funktion verwenden, definieren Sie einen kreisförmigen Bereich und <span class="notranslate">GameMaker Studio 2</span> ermittelt, ob der angegebene Punkt innerhalb seiner Grenzen liegt oder nicht. Wenn der Punkt innerhalb des definierten Kreises liegt, gibt die Funktion <tt>true</tt> zurück, andernfalls gibt die
+    Funktion <tt>false</tt> zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">point_in_circle(px, py, x1, y1, rad);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>px</td>
+        <td>Die x-Koordinate des zu prüfenden Punktes.</td>
+      </tr>
+      <tr>
+        <td>py</td>
+        <td>Die y-Koordinate des zu prüfenden Punktes.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate des Kreismittelpunkts.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate des Kreismittelpunkts.</td>
+      </tr>
+      <tr>
+        <td>rad</td>
+        <td>Der Radius des Kreises.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if point_in_circle(mouse_x, mouse_y, x, y, 16)<br> {
+    <br> over = true;<br> }
+    <br> sonst
+    <br> {
+    <br> over = false;<br> }
+  </p>
+  <p>Der obige Code verwendet die Funktion <tt>point_in_circle</tt>, um zu prüfen, ob die Mausposition in den definierten kreisförmigen Bereich fällt, und setzt die Variable &quot;over&quot; auf true, wenn dies der Fall ist, oder <tt>andernfalls</tt> auf false.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="rectangle_in_rectangle.htm">Rechteck_im_Rechteck</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+point_in_circle
+-->
+  <!-- TAGS
+point_in_circle
+-->
+</body>
+</html>

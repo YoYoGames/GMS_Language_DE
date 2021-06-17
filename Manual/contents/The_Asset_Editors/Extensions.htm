@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Erweiterungen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the extension editor works" />
+  <meta name="rh-index-keywords" content="Extension Editor" />
+  <meta name="search-keywords" content="extensions,extension editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Erweiterungseditor</h1>
+  <p>Ein <strong>Erweiterungspaket</strong> kann verwendet werden, um der <span class="notranslate">GameMaker Language</span><span class="notranslate">(GML</span>) eine Reihe zusätzlicher Funktionen und <a class="glossterm" data-glossterm="Konstante" href="#">Konstanten</a>hinzuzufügen, oder als eine Möglichkeit, um
+    Spiel-Assets oder sogar ganze Projekte einfach zwischen Personen zu übertragen. Wenn die Erweiterung zusätzliche Funktionalität hinzufügen soll, dann können die verwendeten Funktionen Ihr Spiel mit externen <a class="glossterm" data-glossterm="SDK" href="#">SDKs</a>oder <a class="glossterm" data-glossterm="Quellcode" href="#">Quellcode</a>, der in anderen Sprachen (wie z. B. Java für <span class="notranslate">Android</span>) geschrieben wurde, sowie mit nativem <span class="notranslate">GML</span> verbinden.</p>
+  <p><img alt="Extensions Properties" class="center" src="../assets/Images/Asset_Editors/Editor_Extensions.png">Normalerweise werden 3rd-Party-Erweiterungen aus dem <a href="https://marketplace.yoyogames.com/"><span class="notranslate">GameMaker</span> <span class="notranslate">Marktplatz</span></a> und diejenigen, die Sie abonniert haben
+    werden dann im <a href="../Introduction/The_Marketplace.htm">Bibliotheksfenster</a> des <a href="../Introduction/The_Marketplace.htm"><span class="notranslate">Marketplace</span></a> aufgelistet und können von dort aus installiert werden. Wenn Sie Ihr Erweiterungspaket nicht aus dem <span class="notranslate">Marketplace</span> bezogen haben, können Sie es trotzdem zu einem Projekt hinzufügen, indem Sie erneut
+    Sie können es trotzdem zu einem Projekt hinzufügen, indem Sie erneut mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> irgendwo im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> klicken und dann <em>Vorhandenes hinzufügen</em> auswählen und dann zum Speicherort der Erweiterung navigieren, um sie auszuwählen.
+    der Erweiterung navigieren, um sie auszuwählen.</p>
+  <p>Wenn Sie eine <span class="inline">*.GMEZ</span> mit einer früheren Version von <span class="notranslate">GameMaker Studio</span> erstellt haben, können Sie diese über die rechte Maustaste <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> Menüoption <em>Erweiterung importieren</em> hinzufügen.</p>
+  <p class="note"><strong>HINWEIS</strong>: Erweiterungen im Legacy-Format <span class="inline">*.GEX</span> werden nicht mehr unterstützt und können nicht in <span class="notranslate">GameMaker Studio 2-Projekte</span> importiert werden.</p>
+  <p>Nachdem Sie eine Erweiterung zum Asset-Browser hinzugefügt haben, sollten Sie ihr einen Namen und eine Versionsnummer geben und außerdem festlegen, auf welche Plattformen sie exportiert werden soll. Indem Sie das Häkchen bei ausgewählten Plattformen entfernen, können Sie <span class="notranslate">GameMaker Studio 2</span> anweisen, die Erweiterung nicht
+    als Teil der ausführbaren Datei für diese Plattformen zu exportieren. Sie sollten auch sicherstellen, dass die Eigenschaften der Erweiterung mit der/den Zielplattform(n) übereinstimmen, und die Exportziele für die Erweiterungsdateien auf der Grundlage der folgenden Angaben bearbeiten:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Alle Ziele</strong>: <span class="notranslate">GML-Erweiterungen</span>. Dies sind Erweiterungen, die mit der <span class="notranslate">GameMaker Language</span><span class="notranslate">(GML</span>) erstellt wurden und mit allen Zielplattformen kompatibel sind.</li>
+    <li class="dropspot"><strong><span class="notranslate">Windows</span></strong>(Standard, UWP, XBoxOne): Sie können Windows <span class="inline">DLL</span> Dateien (Dynamic Link Libraries) verwenden. Bitte beachten Sie, dass, wenn Sie <span class="notranslate">in</span> den <a href="../Settings/Game_Options/Windows.htm"><span class="notranslate">Windows-Spieleoptionen</span></a> das Häkchen bei &quot;x64 <span class="notranslate">Windows</span> <span class="notranslate">Runtime</span> verwenden <span class="notranslate">&quot;</span> gesetzt haben <a href="../Settings/Game_Options/Windows.htm">,</a>
+      dann <strong>müssen</strong> alle DLLs für das Projekt <strong>64bit-kompatibel sein</strong>. 32bit-DLLs werden nicht mit dem 64bit-Executable funktionieren.</li>
+    <li class="dropspot"><strong><span class="notranslate">macOS</span></strong>: Das <span class="notranslate">macOS-Ziel</span> kann die Standarddateien <span class="inline">DyLib</span> für Erweiterungen verwenden.</li>
+    <li class="dropspot"><strong><span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span></strong>): Für das <span class="notranslate">Ubuntu-Ziel</span> müssen Sie sicherstellen, dass Ihre Erweiterung <span class="inline">SO</span> Dateien verwendet.</li>
+    <li class="dropspot"><strong>HTML5</strong>: Diese Plattformen können <span class="inline">JavaScript</span> Erweiterungen verwenden.</li>
+    <li class="dropspot"><strong><span class="notranslate">Android</span></strong>: Diese Plattform erfordert eine Erweiterung, die in <span class="inline">Java</span> oder einem <span class="inline"><span class="notranslate">Android</span> Framework SDK geschrieben werden muss.</li>
+    <li class="dropspot"><strong><span class="notranslate">iOS</span></strong> / <strong> <span class="notranslate">tvOS</span></strong>: Erweiterungen für diese Plattform sind in Objective C geschrieben und erfordern eine <span class="inline">*.mm</span> und eine <span class="inline">*.h</span> Datei, oder wenn Sie irgendwelche Frameworks verwenden, eine vorkompilierte <span class="inline">*.a</span> native Datei.</li>
+    <li class="dropspot"><strong>PlayStation</strong>: Für PlayStation 3 oder 4 sollten Ihre Erweiterungen <span class="inline">PRX</span> Dateien sein, wobei jedes Ziel eine andere <span class="inline">PRX</span> benötigt, um der Spezifikation des Ziels (entweder PS3 oder PS4) zu entsprechen.
+      Wenn Sie auf einer PSVita arbeiten, sollte die Erweiterung stattdessen <span class="inline">SUPRX</span> lauten.</li>
+  </ul>
+  <p class="note"><strong>HINWEIS</strong>: Einige Erweiterungen müssen bestimmten Namenskonventionen folgen, damit <span class="notranslate">GameMaker</span> die Plattform und CPU-Architektur, für die sie ausgelegt sind, korrekt identifizieren kann. Weitere Informationen finden Sie im Abschnitt über das <a href="Extension_Creation/Creating_An_Extension.htm">Erstellen von Erweiterungen</a>.</p>
+  <p>Da eine einzelne Erweiterung verschiedene zugehörige Dateien haben kann, ist es möglich, eine einzelne Erweiterung für mehrere Plattformen zu erstellen. In diesem Fall müssen Sie alle kompatiblen Plattformen im Haupteditor der Erweiterung angeben (d. h.: das Kontrollkästchen
+    neben ihnen) und dann in den individuellen Dateieigenschaften für jeden Teil der Erweiterung die Plattform festlegen, auf die diese Dateien exportiert werden sollen.</p>
+  <p>Um die Zielplattform für eine bestimmte Erweiterungsdatei oder einen Platzhalter zu ändern, müssen Sie zunächst die Eigenschaften der Erweiterung öffnen (doppelklicken Sie auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> die Erweiterung im Asset-Browser oder
+    verwenden Sie <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> und wählen Sie <em>Eigenschaften öffnen</em>), und wählen Sie dann in den Erweiterungseigenschaften rechts die Ressourcendatei aus, die Sie bearbeiten möchten:</p>
+  <p class="dropspot"><img alt="Extension Target Platforms" class="center" src="../assets/Images/Asset_Editors/Editor_Extensions_Targets.png" /></p>
+  <p class="note"><strong>HINWEIS</strong>: Wenn Sie auf das Ziel <span class="notranslate">macOS</span> oder <span class="notranslate">Ubuntu</span> exportieren, können Sie die Option &quot;Als Zip-Datei entpacken&quot; einstellen, um die Dateiberechtigungen für die Erweiterung zu erhalten.</p>
+  <p>Sobald Sie Ihre Erweiterung installiert haben, können Sie die Funktionen und Konstanten dafür genauso verwenden wie die eingebauten Funktionen und Konstanten in der <span class="notranslate">GameMaker-Sprache</span>. Wenn Ihr Spiel plattformübergreifend ist (z. B. wenn es sowohl auf
+   <span class="notranslate">Windows</span> und <span class="notranslate">Android</span> laufen soll), dann sollten Sie die <a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/OS_And_Compiler.htm">Betriebssystemkonstanten und -funktionen</a> verwenden, um die Plattform zu prüfen, bevor Sie erweiterungsspezifische Funktionen aufrufen, um Probleme zu vermeiden,
+    zum Beispiel:</p>
+  <p class="code">switch(os_type)<br> {
+    <br> case os_android:<br> call_android_extension_function(x, y, z);<br> break;
+    <br> case os_windows:<br> call_windows_extension_function(x, y, z);<br> break;
+    <br> }
+  </p>
+  <p>Beachten Sie, dass Ihre Erweiterungen für verschiedene Plattformen Funktionsnamen gemeinsam nutzen können. Wenn Sie also eine Erweiterung mit unterschiedlichen Dateien haben, um (z. B.) eine Meldung für <span class="notranslate">Windows</span> und für <span class="notranslate">Android</span> einzublenden, können beide Erweiterungsdateien denselben Funktionsnamen nutzen, solange
+    solange sie beide so eingestellt sind, dass sie nur für die jeweilige Plattform exportiert werden.</p>
+  <p>Wenn Sie Ihre eigenen Erweiterungen erstellen wollen, dann finden Sie auf den folgenden Seiten die grundlegenden erforderlichen Informationen:</p>
+  <ul class="colour">
+    <li><a href="Extension_Creation/Creating_An_Extension.htm">Erstellen einer Erweiterung</a></li>
+    <li><a href="Extension_Creation/Android_Extensions.htm"><span class="notranslate">Android-Erweiterungen</span> </a></li>
+    <li><a href="Extension_Creation/iOS_Extensions.htm"><span class="notranslate">iOS</span> / <span class="notranslate">tvOS</span> Erweiterungen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h1><span class="notranslate">YoYo Games</span> 3rd Party Erweiterungen</h1>
+  <p>Ältere Versionen von <span class="notranslate">GameMaker</span> hatten viele Funktionen von Drittanbietern eingebaut, aber das war ineffizient und schwierig zu warten, da, wenn eine bestimmte Funktionalität von einem Drittanbieter geändert wurde, die gesamte <span class="notranslate">GameMaker</span> <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> und <a class="glossterm" data-glossterm="Laufzeit" href="#"><span class="notranslate">Laufzeit</span></a> aktualisiert werden musste. Daher haben aktuelle Versionen die Verwendung von Erweiterungspaketen übernommen, um die Unterstützung von Drittanbietern zu Ihren Spielen hinzuzufügen. Das heißt, Sie können
+    Das bedeutet, dass Sie nur die zusätzlichen Funktionen hinzufügen können, die Sie benötigen, und dass Sie diese sogar an Ihre speziellen Bedürfnisse anpassen und bearbeiten können.</p>
+  <p>Die meisten dieser Erweiterungen werden für Sie heruntergeladen und installiert, wenn Sie eine bestimmte <a href="../Settings/Game_Options.htm">Spieloption</a> auswählen (wie z.B. Facebook oder Google Mobile Ads), aber Sie können weitere Informationen über sie finden unter
+    dem entsprechenden Abschnitt für jede Plattform in der <span class="notranslate">YoYo Games</span> Knowledge Base:</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/categories/204246668-GameMaker-Studio-2"><span class="notranslate">GameMaker Studio 2</span> Plattformen und Einrichtung</a></li>
+  </ul>
+  <p>Die Erweiterungen selbst finden Sie auf der folgenden <span class="notranslate">Marketplace-Seite</span>:</p>
+  <ul class="colour">
+    <li><a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">YoYo Games</span> <span class="notranslate">Marktplatz</span> Assets</a></li>
+  </ul>
+  <p>Beachten Sie, dass diese Erweiterungen mit einer Demo und einer Hilfedatei (im Format <span class="inline">*.pdf</span> ) geliefert werden, in der ihre Verwendung erklärt wird, so dass ihre Funktionen nicht im Handbuch behandelt werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Fonts.htm">Schriftarten</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Extensions
+Extension Editor
+<span class="notranslate">Android</span> Extensions
+<span class="notranslate">iOS</span> Extensions
+-->
+  <!-- TAGS
+extension_editor
+-->
+
+</body></html>

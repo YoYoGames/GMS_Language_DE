@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_texture_page_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_texture_page_size" />
+  <meta name="rh-index-keywords" content="font_texture_page_size" />
+  <meta name="search-keywords" content="font_texture_page_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_texture_page_size</h1>
+  <p>Diese <b>eingebaute Variable</b> kann verwendet werden, um die Textur-Seitengröße entweder zu erhalten oder zu setzen, wenn die Funktion <a href="font_add.htm"><tt>font_add()</tt></a>. Wenn eine Schriftart mit dieser Funktion hinzugefügt wird, legt <span class="notranslate">GameMaker Studio 2</span> 
+    beim Hinzufügen einer Schrift mit dieser Funktion einen Texturseiten-Cache mit den benötigten Glyphen bis zu der durch diese Variable definierten Größe anlegen. Der Vorgang ist wie folgt:</p>
+  <ul class="colour">
+    <li>Jedes Zeichen, das Sie verwenden, wird von der Schriftart in einer Texturseite zwischengespeichert</li>
+    <li>Wenn die Texturseite voll ist (weil Sie große Zeichen oder viele verschiedene Zeichen verwenden), entfernt <span class="notranslate">GameMaker Studio 2</span> Zeichen aus dem Cache und ersetzt sie durch neue, die Sie benötigen</li>
+    <li><span class="notranslate">GameMaker Studio 2</span> versucht, die Textur nicht zu groß zu machen, weil nicht alle Geräte mit großen Texturen zurechtkommen, und es versucht, die Textur nicht zu klein zu machen, weil das Entfernen und Wiedereinfügen von Zeichen in die Textur CPU-Zeit kostet
+      und dazu führt, dass Ihr Spiel langsam läuft</li>
+  </ul>
+  <p>Wenn Sie der Meinung sind, dass Sie eine größere oder kleinere Textur-Seitengröße als die standardmäßige 1024px benötigen, die <span class="notranslate">GameMaker Studio 2</span> verwendet, können Sie den Wert mit dieser eingebauten Variablen einstellen. Wenn Sie nicht die Funktion <tt>font_add()</tt> verwenden,
+    verwenden, hat diese Einstellung keine Auswirkung auf die Leistung Ihres Spiels, da in der IDE hinzugefügte Schriftarten auf den regulären Textur-Seiten zwischengespeichert werden (was Sie über den <a href="../../../../The_Asset_Editors/Fonts.htm">Schriftarten-Editor</a> und die
+    die <a href="../../../../Settings/Game_Options.htm">Spieloptionen</a> für die Zielplattform).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">font_texture_page_size;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (maximale Breite/Höhe in Pixel)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">font_texture_page_size = 512;<br> newfont = font_add(&quot;Arial&quot;, 24, true, true, 32, 128);</p>
+  <p>Der obige Code setzt die Schrift-Cache-Textur-Seite auf eine maximale Größe von 512px und fügt dann eine neue Schrift zum Spiel hinzu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fonts.htm">Schriftarten</a></div>
+        <div style="float:right">Weiter: <a href="font_get_name.htm">font_get_name</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_texture_page_size
+-->
+  <!-- TAGS
+font_texture_page_size
+-->
+</body>
+</html>

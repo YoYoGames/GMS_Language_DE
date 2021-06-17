@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_set_grid_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_set_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_set_grid_region" />
+  <meta name="search-keywords" content="ds_grid_set_grid_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_set_grid_region</h1>
+  <p>Diese Funktion kann verwendet werden, um den Inhalt eines rechteckigen Bereichs von Gitterzellen von einem (zuvor definierten) DS-Gitter in ein anderes zu kopieren, <i>oder</i> sie kann verwendet werden, um einen Bereich innerhalb desselben Gitters zu kopieren. Die folgenden Bilder veranschaulichen beide Möglichkeiten, wie
+    diese Funktion verwendet werden kann:</p>
+  <p><img alt="DS grid set grid region" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_set_grid_region.png" style="cursor: nesw-resize;" /></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_grid_set_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Zielgitters.</td>
+      </tr>
+      <tr>
+        <td>Quelle</td>
+        <td>Der Index des Quellgitters.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die linke Position des zu kopierenden Bereichs von Zellen aus dem Quellgitter.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die obere Position des Bereichs der Zellen, die aus dem Quellgitter kopiert werden sollen.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die rechte Position des zu kopierenden Bereichs von Zellen aus dem Quellgitter.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die untere Position des Bereichs der Zellen, die aus dem Quellgitter kopiert werden sollen.</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>Die x-Position auf dem Zielraster, in die die Quellregion kopiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>Die y-Position auf dem Zielraster, in die die Quellregion kopiert werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">ds_grid_set_grid_region(grid, t_grid, 0, 0, 5, 5, 10, 10)</p>
+  <p>Dies würde den Bereich der Zellen von (0,0) bis (5,5) des in der Variablen &quot;t_grid&quot; indizierten Gitters kopieren und an die Position (10,10) in dem in der Variablen &quot;grid&quot; indizierten Gitter kopieren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Grids.htm">DS-Gitter</a></div>
+        <div style="float:right">Weiter: <a href="ds_grid_set_region.htm">ds_grid_set_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_set_grid_region
+-->
+  <!-- TAGS
+ds_grid_set_grid_region
+-->
+
+</body></html>

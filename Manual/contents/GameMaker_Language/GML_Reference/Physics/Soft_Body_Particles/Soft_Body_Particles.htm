@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Weiche Körperpartikel</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Physics Soft Body Particle functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Soft Body Particles" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Weiche Körperpartikel</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> verwendet die Starrkörper-Physikbibliothek Box2D und erlaubt daher keine Weichkörperphysik. Allerdings fügt die <a href="https://google.github.io/liquidfun/"><b>Flüssiger Spaß</b></a> Erweiterung fügt jedoch <i>Partikel</i> zum
+    dem Physiksystem Partikel hinzu, die die Erzeugung von simulierten Weichkörpern unter Verwendung der Starrkörperphysik erlauben. Grundsätzlich können Sie eine <i>Form</i> aus Partikeln erzeugen, die den Zusammenhalt beibehalten und so einen vollen Körper simulieren, der aufgrund der
+    Interaktion der Partikel den Eindruck eines Weichkörpers vermittelt. Sie können die Physikpartikel auch zur Simulation von Flüssigkeiten und anderen partikelbasierten Physiksystemen verwenden.</p>
+  <p>Bevor Sie mit der Erstellung Ihrer Physikpartikel beginnen, müssen Sie die grundlegenden Physikeigenschaften für diese Partikel einstellen, so wie Sie es mit einem <i>Einbauteil</i> in der regulären Physik tun würden. Beachten Sie jedoch, dass sich das Einstellen dieser Eigenschaften auf <i>alle zuvor erstellten Partikel</i> sowie auf alle neu erstellten Partikel auswirkt.
+    Beachten Sie jedoch, dass sich das Einstellen dieser Eigenschaften auf alle zuvor erstellten Partikel sowie auf alle neu erstellten Partikel auswirkt, so dass Sie diese Funktionen normalerweise nur zu Beginn des Spiels oder Levels verwenden. Es gibt jedoch spezielle Funktionen zum Setzen der <i>Partikel-Flags</i> für einzelne Partikel
+    (und Gruppen von Partikeln) zu setzen, die ihre Eigenschaften wie &quot;Abprallverhalten&quot; oder &quot;Viskosität&quot; ändern, so dass Sie verschiedene Arten von Partikeln innerhalb der Bereiche dieser globalen Einstellungen erstellen können.</p>
+  <p>Die folgenden Funktionen stehen zum Einstellen und Abrufen von globalen Partikelsystemdaten zur Verfügung:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_count.htm">physik_teilchen_zahl</a></li>
+    <li><a href="physics_particle_group_count.htm">physik_teilchen_gruppen_zahl</a></li>
+    <li><a href="physics_particle_set_max_count.htm">physics_particle_set_max_count</a></li>
+    <li><a href="physics_particle_set_radius.htm">physik_teilchen_setzen_radius</a></li>
+    <li><a href="physics_particle_set_density.htm">physics_particle_set_density</a></li>
+    <li><a href="physics_particle_set_damping.htm">physics_particle_set_damping</a></li>
+    <li><a href="physics_particle_set_gravity_scale.htm">physics_particle_set_gravity_scale</a></li>
+    <li><a href="physics_particle_get_max_count.htm">physics_particle_get_max_count</a></li>
+    <li><a href="physics_particle_get_radius.htm">physik_teilchen_holen_radius</a></li>
+    <li><a href="physics_particle_get_density.htm">physics_particle_get_density</a></li>
+    <li><a href="physics_particle_get_damping.htm">physics_particle_get_damping</a></li>
+    <li><a href="physics_particle_get_gravity_scale.htm">physics_particle_get_gravity_scale</a></li>
+  </ul>
+  <p> </p>
+  <p>Außerdem stehen Ihnen die folgenden Funktionen zur Verfügung, um <i>Flags</i> für einzelne Partikel (oder Gruppen von Partikeln) zu setzen, sowie um Informationen, wie Position oder Farbe, von einem einzelnen Partikel oder einer einzelnen Gruppe zu erhalten:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_set_flags.htm">physik_teilchen_setzen_flags</a></li>
+    <li><a href="physics_particle_set_category_flags.htm">physics_particle_set_category_flags</a></li>
+    <li><a href="physics_particle_set_group_flags.htm">physics_particle_set_group_flags</a></li>
+    <li><a href="physics_particle_get_group_flags.htm">physics_particle_get_group_flags</a></li>
+    <li><a href="physics_particle_group_get_inertia.htm">physics_particle_group_get_inertia</a></li>
+    <li><a href="physics_particle_group_get_centre_x.htm">physics_particle_group_get_centre_x</a></li>
+    <li><a href="physics_particle_group_get_centre_y.htm">physics_particle_group_get_centre_y</a></li>
+    <li><a href="physics_particle_group_get_vel_x.htm">physics_particle_group_get_vel_x</a></li>
+    <li><a href="physics_particle_group_get_vel_y.htm">physics_particle_group_get_vel_y</a></li>
+    <li><a href="physics_particle_group_get_ang_vel.htm">physics_particle_group_get_ang_vel</a></li>
+    <li><a href="physics_particle_group_get_x.htm">physics_particle_group_get_x</a></li>
+    <li><a href="physics_particle_group_get_y.htm">physics_particle_group_get_y</a></li>
+    <li><a href="physics_particle_group_get_angle.htm">physics_particle_group_get_angle</a></li>
+    <li><a href="physics_particle_get_data.htm">physics_particle_get_data</a></li>
+    <li><a href="physics_particle_get_data_particle.htm">physics_particle_get_data_particle</a></li>
+    <li><a href="physics_particle_group_get_data.htm">physics_particle_group_get_data</a></li>
+  </ul>
+  <p> </p>
+  <p>Sie können Partikel auf zwei Arten erstellen - einzeln oder in Gruppen. Einzelne Partikel verhalten sich genau so, wie es durch die globalen Einstellungen und die bei ihrer Erstellung gesetzten Flags definiert ist, aber Gruppen von Partikeln können ein unterschiedliches Verhalten zeigen
+    abhängig von ihren <i>Gruppen-Flags</i>. Diese <i>Gruppen-Flags</i> können auf unterschiedliche Werte gesetzt werden, um der Gruppe unterschiedliche Eigenschaften zu verleihen, wie z. B. Penetration und Steifigkeit.</p>
+  <p>Zum Erstellen von Partikeln stehen die folgenden Funktionen zur Verfügung:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_create.htm">physik_teilchen_erzeugen</a></li>
+    <li><a href="physics_particle_group_begin.htm">physics_particle_group_begin</a></li>
+    <li><a href="physics_particle_group_circle.htm">physics_particle_group_circle</a></li>
+    <li><a href="physics_particle_group_box.htm">physik_teilchen_gruppe_box</a></li>
+    <li><a href="physics_particle_group_polygon.htm">physics_particle_group_polygon</a></li>
+    <li><a href="physics_particle_group_add_point.htm">physics_particle_group_add_point</a></li>
+    <li><a href="physics_particle_group_end.htm">physics_particle_group_end</a></li>
+    <li><a href="physics_particle_group_join.htm">physics_particle_group_join</a></li>
+    <li><a href="physics_particle_group_delete.htm">physics_particle_group_delete</a></li>
+  </ul>
+  <p> </p>
+  <p>Sie können nicht nur Partikel erstellen, sondern auch löschen, entweder einzeln oder in einer Region. Zum Löschen von Partikeln aus dem System stehen die folgenden Funktionen zur Verfügung:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_delete.htm">physik_teilchen_loeschen</a></li>
+    <li><a href="physics_particle_delete_region_circle.htm">physics_particle_delete_region_circle</a></li>
+    <li><a href="physics_particle_delete_region_box.htm">physics_particle_delete_region_box</a></li>
+    <li><a href="physics_particle_delete_region_poly.htm">physics_particle_delete_region_poly</a></li>
+  </ul>
+  <p> </p>
+  <p>Sofern Sie nicht das Debug-Zeichnen mit <a href="../The_Physics_World/physics_draw_debug.htm"><tt>physics_draw_debug()</tt></a>aktiviert haben, werden Sie keine Partikel auf dem Bildschirm sehen, wenn Sie sie erzeugen. Um die Partikel also tatsächlich zu sehen
+    Partikel zu sehen, müssen Sie sie daher im <b>Draw-Event</b> einer Instanz mit den folgenden Funktionen auf den Bildschirm zeichnen (beachten Sie, dass Sie sie auch mit den regulären <tt>draw_sprite-Funktionen</tt> zeichnen können
+    zeichnen können, wenn Sie die Daten für jeden Partikel mit der Funktion <a href="physics_particle_get_data.htm"><tt>physics_particle_get_data()</tt></a>):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_draw.htm">physics_particle_draw</a></li>
+    <li><a href="physics_particle_draw_ext.htm">physics_particle_draw_ext</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Physics.htm">Physik</a></div>
+        <div style="float:right">Nächste: <a href="../Physics_Variables/Physics_Variables.htm">Physik-Variablen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Soft Body Particles
+-->
+  <!-- TAGS
+physics_soft_body_functions
+-->
+
+</body></html>

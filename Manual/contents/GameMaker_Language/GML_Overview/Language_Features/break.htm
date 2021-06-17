@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pause</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the break function" />
+  <meta name="rh-index-keywords" content="break" />
+  <meta name="search-keywords" content="break" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pause</h1>
+  <p>Die Anweisung <span class="inline"><tt>break</tt></span> wird verwendet, um ein vorzeitiges Ende eines <a href="for.htm"><tt>für</tt></a>, <a href="repeat.htm"><tt>wiederholen</tt></a>, <a href="while.htm"><tt>while</tt></a> oder <a href="do___until.htm"><tt>do / until</tt></a>    Schleife vorzeitig zu beenden, oder um eine <a href="switch.htm"><tt>switch</tt></a> Anweisung zu sagen, dass sie an dieser Stelle enden soll, oder um einen <a href="with.htm"><tt>mit</tt></a> Aufruf zu beenden. Bitte lesen Sie die einzelnen Seiten für diese verschiedenen Funktionen, um eine
+    eine genauere Erklärung, wie sie unter den jeweiligen Umständen verwendet werden kann. Beachten Sie, dass die Verwendung von <tt>break</tt> außerhalb eines dieser Kontexte zu einem Fehler führt.</p>
+  <p>Nachfolgend sehen Sie einige grundlegende Beispiele, wie <span class="inline">break</span> verwendet werden kann, und seine Syntax ist einfach:</p>
+  <p class="code">Pause;</p>
+  <p><tt>Pause</tt> in einer <tt>for-Schleife</tt>:</p>
+  <p class="code">for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> if (array[i] == 234)<br> {
+    <br> break;
+    <br> }
+    <br> }
+    <br> num = i;</p>
+  <p><tt>Pause</tt> in einer <tt>Wiederholungsschleife</tt>:</p>
+  <p class="code">var i = 0;<br> var temp = 0;<br> repeat (10)<br> {
+    <br> temp += array[i];<br> if (temp &gt; max_total)<br> {
+    <br> break;
+    <br> }
+    <br> sonst
+    <br> {
+    <br> i += 1;<br> }
+    <br> }
+  </p>
+  <p><tt>Pause</tt> in einer <tt>while-Schleife</tt>:</p>
+  <p class="code">var i = 0;<br> while (!place_free(x, y))<br> {
+    <br> x = random(Raum_Breite);<br> y = random(Raum_Höhe);<br> if (i &gt; 50)<br> {
+    <br> break;
+    <br> }
+    <br> sonst
+    <br> {
+    <br> i+=1;
+    <br> }
+    <br> }
+  </p>
+  <p><span class="inline">break</span> in einer <span class="inline">do / until</span> Schleife:</p>
+  <p class="code">var _id = noone;<br> do
+    <br> {<br> _id = list[| 0];<br> if instance_exists(_id)<br> {<br> _break;<br> } <br> ds_list_delete(list, 0);<br> } <br> until (ds_list_empty(list));<br> target = _id;</p>
+  <p><tt>Pause</tt> bei Verwendung <tt>mit</tt>:</p>
+  <p class="code">var count = 0;<br> with (obj_Enemy)<br> {
+    <br> count++;
+    <br> if (count &gt; 10)<br> {
+    <br> break;
+    <br> }
+    <br> hp = 100;<br> }
+  </p>
+  <p><span class="inline">break</span> in einer <span class="inline">switch</span>:</p>
+  <p class="code">switch (tastatur_taste)<br> {
+    <br> case vk_left:<br> case ord(&quot;A&quot;):<br> x -= 4;<br> break;
+    <br> case vk_right:<br> case ord(&quot;D&quot;):<br> x += 4;<br> break;
+    <br> case vk_up:<br> case ord(&quot;W&quot;):<br> y -= 4;<br> break;
+    <br> case vk_down:<br> case ord(&quot;S&quot;):<br> y += 4;<br> break;
+    <br> }
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="continue.htm">weiter</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+break
+-->
+  <!-- TAGS
+break
+-->
+</body>
+</html>

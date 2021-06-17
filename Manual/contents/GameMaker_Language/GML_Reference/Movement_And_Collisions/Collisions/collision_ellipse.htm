@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>kollision_ellipse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_ellipse" />
+  <meta name="rh-index-keywords" content="collision_ellipse" />
+  <meta name="search-keywords" content="collision_ellipse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>kollision_ellipse</h1>
+  <p><span class="inline">Collision_ellipse</span> verwendet die ersten vier Argumente (x1,y1,x2,y2), um die Breite und Höhe einer Ellipse innerhalb des aktuellen Raums zu definieren, und prüft dann, ob <b>irgendein</b> Objekt, das durch das Argument &quot;obj&quot; definiert ist
+    definiert ist, in Kollision mit diesem Bereich ist. Diese Kollision kann als genau oder nicht geprüft werden, und Sie können auch wählen, ob die Instanz, die den Code ausführt, selbst geprüft werden soll oder nicht. Betrachten Sie dieses Bild:</p>
+  <p><img alt="Collision ellipse example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_ellipse_illustration.png">Hier verwendet die Instanz in der Mitte eine Kollisionsellipse zur Prüfung auf
+    Ball-Objekten. Die blauen Objekte haben <i>keine</i> präzise Bounding Box und wie Sie sehen können, kann die Kollision auch dann stattfinden, wenn das Sprite die Ellipse nicht berührt (selbst wenn Sie die Option precise in der Funktion auf true setzen), da
+    das Begrenzungsrechteck dieses Sprites den durch collision_circle definierten elliptischen Bereich überlappt. Andererseits werden die grünen Kugeln nur dann als Kollisionen betrachtet, wenn das aktuelle Sprite die definierte Ellipse überlappt. Denken Sie daran, dass für präzise Kollisionen
+    berücksichtigt werden sollen, müssen <i>sowohl</i> das Objekt-Sprite als auch die Kollisionsfunktion als präzise markiert sein. Es sollte auch beachtet werden, dass der Rückgabewert der Funktion die ID einer <i>der</i> Instanzen sein kann, die als kollidierend betrachtet werden.</p>
+  <p>Beachten Sie, dass Sie anstelle eines Objektindexes auch eine Instanz <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> angeben können, um nach einer bestimmten Instanz zu suchen, oder die <a href="../../../GML_Overview/Instance_Keywords.htm">Instanzschlüsselwörter</a> <span class="inline">all</span> oder <span class="inline">other</span> (je nach Ereignis und aktuellem Codeumfang).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p> </p>
+  <p>collision_ellipse(x1, y1, x2, y2, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate der linken Seite der zu prüfenden Ellipse.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate der oberen Seite der zu prüfenden Ellipse.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate der rechten Seite der zu prüfenden Ellipse.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate der unteren Seite der zu prüfenden Ellipse.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das Objekt, das auf Instanzkollisionen geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Ob die Prüfung auf präzisen Kollisionen<tt>(true</tt>, was langsamer ist) oder allgemein auf der Bounding Box basiert<tt>(false</tt>, schneller).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Ob die aufrufende Instanz, falls relevant, ausgeschlossen werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p> </p>
+  <p>Instanz-ID oder keine</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p> </p>
+  <p>if collision_ellipse(50, 50, 200, 100, obj_Player, false, true)<br> {
+    <br> instance_create_layer(obj_Player.x, obj_Player.y, &quot;Effekte&quot;, obj_Splash);<br> }
+  </p>
+  <p>Es wird eine elliptische Zone innerhalb der Grenzen von 50x, 50y und 200x, 100y für das Objekt &quot;obj_Player&quot; geprüft. Wenn es eine Kollision mit diesem Objekt gibt, dann wird eine Instanz von &quot;obj_Splash&quot; an den x/y-Koordinaten von obj_Player erzeugt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="collision_ellipse_list.htm">kollision_ellipse_liste</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_ellipse
+-->
+  <!-- TAGS
+collision_ellipse
+-->
+</body>
+</html>

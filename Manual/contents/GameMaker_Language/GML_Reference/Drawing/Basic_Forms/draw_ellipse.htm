@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>zeichnen_ellipse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_ellipse" />
+  <meta name="rh-index-keywords" content="draw_ellipse" />
+  <meta name="search-keywords" content="draw_ellipse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>zeichnen_ellipse</h1>
+  <p>Mit dieser Funktion können Sie entweder einen Umriss einer Ellipse oder eine gefüllte Ellipse zeichnen, indem Sie einen rechteckigen Bereich definieren, in den dann die Ellipse passend gezeichnet wird. Wie genau die Zeichnung ist, können Sie mit der Funktion <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie eine Form mit einem <span class="notranslate">Shader</span> zeichnen wollen, sollten Sie wissen, dass die meisten <span class="notranslate">Shader</span> die folgenden Eingaben erwarten: Scheitelpunkt, Textur, Farbe. Wenn Sie diese Funktion verwenden, werden jedoch nur Scheitelpunkt- und Farbdaten übergeben, so dass der
+   <span class="notranslate">Shader</span> möglicherweise nichts zeichnen (oder etwas zeichnen, aber nicht korrekt). Wenn Sie Formen auf diese Weise zeichnen müssen, sollte der <span class="notranslate">Shader</span> entsprechend angepasst werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_ellipse(x1, y1, x2, y2, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate der linken Seite der Ellipse.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate des oberen Randes der Ellipse.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate der rechten Seite der Ellipse.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate der Unterseite der Ellipse.</td>
+      </tr>
+      <tr>
+        <td>Umriss</td>
+        <td>Ob die Ellipse gefüllt (false) oder als ein Pixel breiter Umriss (true) gezeichnet wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_set_colour(c_white);<br> draw_ellipse(100, 100, 300, 200, false);</p>
+  <p>Dadurch wird eine gefüllte Ellipse innerhalb des definierten rechteckigen Bereichs gezeichnet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Basic_Forms.htm">Grundformulare</a></div>
+        <div style="float:right">Weiter: <a href="draw_ellipse_colour.htm">draw_ellipse_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_ellipse
+-->
+  <!-- TAGS
+draw_ellipse
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_set_target_room</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_set_target_room" />
+  <meta name="rh-index-keywords" content="layer_set_target_room" />
+  <meta name="search-keywords" content="layer_set_target_room" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_set_target_room</h1>
+  <p>Wenn Sie diese Funktion aufrufen, teilen Sie dem <span class="notranslate">GameMaker Studio 2</span> mit, dass <i>alle weiteren Ebenenfunktionen auf den angegebenen Raum angewendet werden sollen</i>. Auf diese Weise können Sie prozedural Ebenen und Ebeneninhalte in einem Raum ändern oder erzeugen, der nicht der
+    aktuellen Raum ist. Wenn Sie mit dem Hinzufügen von Ebenen oder Ebenenelementen zu einem Raum fertig sind, rufen Sie die Funktion <a href="layer_reset_target_room.htm"><tt>layer_reset_target_room()</tt></a> auf, um das Raumziel zurückzusetzen (oder rufen Sie diese Funktion erneut mit einem Raumargument
+    von -1). Beachten Sie, dass diese Funktion nur für <i>Räume</i> verwendet werden kann <i>, die nicht der aktuelle Raum</i> sind, und dass sie so konzipiert ist, dass Sie Schichten und Schichtelemente zu anderen Räumen als dem aktuellen Raum hinzufügen/entfernen können.</p>
+  <p class="note"><b>WARNUNG!</b> Während Sie einen anderen Raum anvisieren, können Sie alle regulären Ebenenfunktionen verwenden <b>, außer dass</b> Sie keine Instanzen mit <span style="font-size:1px;"><a href="../../Instances/instance_create_layer.htm"><tt style="font-size: 14px">instance_create_layer()</tt></a></span>    oder <span style="font-size:1px;"><a href="../../Instances/instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span>erstellen, noch ist die Ebenenfunktion <a href="layer_add_instance.htm"><span style="font-size:1px;"><tt style="font-size: 14px">layer_add_instance()</tt></span></a>    verfügbar sein.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_set_target_room(room)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Zimmer</td>
+        <td>Der Zielraum für alle weiteren Schichtfunktionen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">layer_set_target_room(rm_Game);<br> var l = layer_get_id(&quot;SpriteAssets&quot;);<br> repeat(50)
+    <br> {<br> var _x = random(room_get_width(rm_Game));<br> var _y = random(room_get_height(rm_Game));<br> layer_sprite_create(l, _x, _y, spr_Trees);<br> } <br> layer_reset_target_room();
+  </p>
+  <p>Der obige Code setzt den Zielraum auf den Raum &quot;rm_Game&quot; und ruft dann die Ebenen-ID für die Ebene namens &quot;SpriteAssets&quot; in diesem Raum ab. Diese Ebenen-ID wird dann verwendet, um der Ebene 50 zufällige Sprite-Assets hinzuzufügen, bevor das Ziel der Ebene
+    auf den aktuellen Raum zurückgesetzt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_get_target_room.htm">layer_get_target_room</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_set_target_room
+-->
+  <!-- TAGS
+layer_set_target_room
+-->
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Objekte und Instanzen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of what objects and instances are and the role they play in making a game." />
+  <meta name="rh-index-keywords" content="Quick Start - Objects And Instances" />
+  <meta name="search-keywords" content="objects,instances" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Objekte und Instanzen</h1>
+  <p>Mit den Assets, die Sie bisher gesehen haben, können Sie zwar ein paar nette Bilder und Sounds in den Asset-Browser des Spiels einfügen, aber im Spiel selbst bewirken sie noch nichts! Dafür brauchen wir das wichtigste Asset von allen in <span class="notranslate">GameMaker Studio 2</span>, das <strong>Objekt-Asset </strong>.
+    Objekte sind ein spezielles Asset, das wir verwenden, um Aspekte eines Spiels zu steuern und bestimmte Dinge zu tun. Meistens ist ihnen ein Sprite zugeordnet, so dass man sie in den Spielräumen sehen kann, aber manchmal werden sie auch als &quot;hinter den
+    hinter den Kulissen&quot; verwendet <strong>, </strong>um z. B. Statistiken zu verfolgen oder Zeiteinstellungen für Zwischensequenzen vorzunehmen. Objekten können Verhaltensweisen zugewiesen werden, und sie können auf bestimmte Ereignisse sowie aufeinander reagieren, und die meisten Dinge, die Sie in einem Spiel sehen, basieren auf Objekten und deren
+    Die meisten Dinge, die Sie in einem Spiel sehen, basieren auf Objekten und ihren Interaktionen mit dem Benutzer und untereinander.</p>
+  <p>Nun, wir können nicht über Objekte sprechen, ohne über Instanzen zu reden <strong>.</strong> In einem mit <span class="notranslate">GameMaker Studio 2</span> erstellten Spiel werden die Charaktere, Monster, Bälle, Wände usw., die Sie im Spiel sehen, eigentlich alle als <strong>Instanzen</strong> betrachtet.
+    Eine Instanz ist im Wesentlichen eine &quot;Kopie&quot; eines Objekts, das im Asset-Browser gefunden und dann in einem Raum platziert wird (denken Sie an Objekte als Vorlagen <strong>für Instanzen </strong>). Wenn wir also davon sprechen, dass sich etwas auf eine Instanz auswirkt oder sie verändert,
+    Wenn wir also davon sprechen, dass sich etwas auf eine Instanz auswirkt oder diese verändert, meinen wir, dass eine bestimmte Kopie eines Objekts in einem Raum betroffen ist, während alle anderen nicht betroffen sind, aber wenn wir davon sprechen, dass sich etwas auf ein Objekt auswirkt oder dieses verändert, meinen wir, dass alles, was wir an diesem Objekt tun, sich auch auf alle Instanzen auswirkt, die von diesem Zeitpunkt an
+    Punkt erzeugt werden. <strong>Das Objekt ist</strong> also <strong>die Vorlage für die Instanz, und die Instanz ist das, was wir in einem Raum platzieren, um unser Spiel zu machen</strong>.</p>
+  <p>Um ein neues Objekt-Asset zu erstellen, klicken Sie einfach mit der rechten Maustaste <img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> auf den Asset-Ordner "Objekte" und wählen " <em>Erstellen" (oder</em> klicken Sie mit der rechten Maustaste
+    irgendwo im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> und wählen Sie <em>Objekt erstellen</em>).</p>
+  <p><img alt="The Object Editor" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor.png" /></p>
+  <p>Dies ist das <a href="../The_Asset_Editors/Objects.htm">Objekteditor-Fenster</a> und zeigt die aktuellen Objekteigenschaften an. Das erste, was Sie tun sollten, ist, das Objekt zu benennen, wiederum unter Verwendung eines Präfixes wie &quot; <span class="inline">obj_</span>&quot; oder
+    einen anderen Bezeichner. Damit ein Objekt etwas zeichnen und Kollisionen mit Instanzen anderer Objekte registrieren kann, muss ihm im Allgemeinen ein Sprite zugewiesen werden, das über die Schaltfläche <img alt="Add Sprite Icon " class="icon" height="24" src="../assets/Images/Icons/Icon_AddSound.png" width="31"> hinzugefügt wird. Dadurch wird der <strong>Asset-Explorer</strong> geöffnet, in dem Sie das zu verwendende Sprite auswählen können (Sie können Sprites auch aus dem Asset-Browser auf den Objekteditor ziehen und dort ablegen, um sie zuzuweisen):</p>
+  <p><img alt="The Asset Explorer" class="center" src="../assets/Images/QS_Guide/QS_AssetExplorer.png" /></p>
+  <p>Wenn Sie noch kein passendes Sprite haben, können Sie auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf die Schaltfläche " <em>New Sprite</em> " <img alt="New Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_NewSprite.png"> klicken, um ein neues Sprite-Asset zu erstellen und es nach Belieben zu bearbeiten, genauso wie wenn Sie das Asset über die Standardoptionen zum Erstellen von Sprites erstellt hätten, nur dass es jetzt automatisch dem Objekt zugewiesen wird, das Sie geöffnet hatten, als Sie mit dem Erstellen begannen. Sobald
+    Sobald Sie ein Sprite ausgewählt haben, können Sie auch auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf die Schaltflächen " <em>Sprite bearbeiten</em> " <img alt="Edit Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_EditSprite.png"> oder " <em>Bild bearbeiten</em> " <img alt="Edit Image Icon" class="icon" src="../assets/Images/Icons/Icon_EditImage.png"> klicken, um entweder die Bilder des Sprites selbst oder das Sprite-Asset zu bearbeiten. Dies kann schneller sein, als das Sprite erst im Asset-Browser zu suchen und dann anzugeben
+    dass Sie es bearbeiten möchten.</p>
+  <p>Nachdem Sie das Sprite hinzugefügt oder erstellt haben, können Sie noch einige andere Objekteigenschaften ändern, wie z. B. ob es <strong>sichtbar </strong>sein soll oder nicht - oder welche Art von <strong>Kollisionsmaske</strong> es haben soll. Für einfache Spiele müssen Sie wahrscheinlich
+    brauchen Sie hier nichts zu ändern und können nun dazu übergehen, dem Objekt <strong>Ereignisse </strong>hinzuzufügen.</p>
+  <p>Ereignisse sind diskrete Momente in der Spielschleife, in denen Dinge basierend auf dem, was Sie für sie programmiert haben, geschehen. <span class="notranslate">GameMaker Studio 2</span> arbeitet mit Zyklen dieser Ereignisse - von dem Moment, in dem ein Raum gestartet wird, bis zu dem Moment, in dem er beendet ist, läuft eine
+    Spielschleife, in der bei jedem Schritt eine Reihe von Ereignissen abläuft, und Sie können <span class="notranslate">GML-Code</span> oder <span class="notranslate">DnD™-Aktionen</span>in Ihren Instanzen platzieren, die auf diese Ereignisse reagieren (ein <strong>Schritt </strong>ist ein Moment in der Spielzeit, der von der Einstellung der Spielgeschwindigkeit bestimmt wird
+    - auch &quot;Frame&quot; genannt).</p>
+  <p>Um ein Ereignis hinzuzufügen, klicken Sie auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf die Schaltfläche Ereignis hinzufügen:</p>
+  <p><img alt="The Object Editor Events" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor_Events.png" /></p>
+  <p>Oben sehen Sie alle verschiedenen <strong>Ereigniskategorien</strong>, von denen einige weitere Unterkategorien enthalten. Wir werden hier nicht alle Ereignisse durchgehen, aber wir werden die fünf wichtigsten kurz behandeln:</p>
+  <table class="icons">
+    <tbody>
+      <tr>
+        <td class="icons"><img alt="Icon Create Event" src="../assets/Images/Icons/Icon_Event_Create.png" /></td>
+        <td class="icons"><strong>Ereignis erstellen</strong></td>
+        <td class="text">Dieses Ereignis tritt ein, wenn eine Instanz des Objekts zum ersten Mal erzeugt wird, und ist das allererste, was innerhalb einer Instanz passiert, die über den Raumeditor in den Raum gesetzt wurde, wenn ein Raum betreten wird. Das heißt, dieses Ereignis ist der
+          ideale Ort, um Variablen zu initialisieren, Timelines zu starten, Pfade zu setzen usw... und alles andere zu tun, was im Allgemeinen nur einmal getan werden muss oder nur, wenn eine Instanz zum ersten Mal im Raum erscheint.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Step Event" src="../assets/Images/Icons/Icon_Event_Step.png" /></td>
+        <td class="icons"><strong>Schritt Ereignis</strong></td>
+        <td class="text"><span class="notranslate">GameMaker Studio 2</span> unterteilt die Spielzeit in Schritte, wobei die Spielgeschwindigkeit definiert, wie viele dieser Schritte es pro Sekunde geben soll. Ein Schritt ist im Grunde die Schleife, die ständig läuft, wobei alle Ereignisse geprüft und bei Bedarf ausgelöst werden
+          Sie können sich also vorstellen, dass das Schritt-Ereignis ein Ereignis ist, das bei jedem einzelnen Schritt des Spiels geprüft wird, solange die Instanz existiert. Beachten Sie, dass die Kategorie &quot;Step Event&quot; drei Unterkategorien zur &quot;Feinabstimmung&quot; des Timings innerhalb der Instanz hat.
+          der Instanz, aber im Allgemeinen werden Sie das Hauptereignis "Step Event" am häufigsten verwenden.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Collision Event" src="../assets/Images/Icons/Icon_Event_Collision.png" /></td>
+        <td class="icons"><strong>Kollisionsereignis</strong></td>
+        <td class="text">Wenn Sie ein Spiel entwickeln, ist es natürlich sehr wichtig, dass Sie wissen, wann zwei (oder mehr) Instanzen eines Objekts kollidiert sind, und dafür gibt es das Kollisionsereignis. Dies ist ein Ereignis, das Sie in einem Objekt platzieren und dann angeben, gegen welches andere
+          Objekt Sie auf Kollisionen prüfen sollen. Sobald Sie das Ereignis hinzugefügt und das zu prüfende Objekt ausgewählt haben, können Sie <span class="notranslate">GML-Code</span> oder <span class="notranslate">DnD™</span>hinzufügen, um die Kollision aufzulösen.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Draw Event" src="../assets/Images/Icons/Icon_Event_Draw.png" /></td>
+        <td class="icons"><strong>Auslosung Ereignis</strong></td>
+        <td class="text">Es gibt mehrere verschiedene Auslosungsereignisse innerhalb der Auslosungsereigniskategorie, aber dasjenige, das Sie am häufigsten verwenden, ist das oberste, das einfach &quot;Auslosung&quot; heißt. Dieses allgemeine Draw-Ereignis wird, wie das Step-Ereignis, bei jedem Spielframe aufgerufen, aber es funktioniert
+          auf zwei verschiedene Arten. Die erste ist, wenn Sie dem Objekt dieses Ereignis nicht hinzufügen... Wenn kein Draw-Ereignis <em>angegeben </em>ist, zeichnet <span class="notranslate">GameMaker Studio 2</span> standardmäßig das dem Objekt zugewiesene Sprite, wobei alle Transformationen verwendet werden, die
+          die an anderer Stelle auf das Objekt angewendet wurden (z. B. um seine Größe oder das Alpha-Blending zu ändern). Selbst wenn also kein Draw-Ereignis in der Ereignisliste aufgeführt ist, wird es trotzdem ausgeführt und auf den Bildschirm gezeichnet, wenn eine Instanz in einem Raum platziert wird. Die
+          zweite Weg, auf dem es funktioniert, ist, wenn Sie das Ereignis selbst hinzufügen und darin <span class="notranslate">GML</span> oder <span class="notranslate">DnD™</span>einschließen. Wenn Sie dem Ereignis etwas hinzufügen, sagt <span class="notranslate">GameMaker Studio 2</span>: &quot;Ich <em>möchte steuern, was für Instanzen dieses Objekts gezeichnet wird&quot;, und</em> es überschreibt vollständig die Standardzeichnung.
+          überschreibt die Standardzeichnung. Das bedeutet, dass Sie ein Objekt mit einem Sprite zugewiesen haben können, dann das Draw-Ereignis auf Text zeichnen setzen und das Sprite wird nicht gezeichnet, da Sie <span class="notranslate">GameMaker Studio 2</span> nicht gesagt haben, es zu zeichnen, obwohl der Text gezeichnet wird.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Destroy Event" src="../assets/Images/Icons/Icon_Event_Destroy.png" /></td>
+        <td class="icons"><strong>Ereignis zerstören</strong></td>
+        <td class="text">Dieses Ereignis ist das allerletzte Ereignis, das ausgeführt wird, wenn eine Instanz zerstört wird. Es wird beim Hinzufügen von Verhaltensweisen zu Objekten oft übersehen, kann aber sehr nützlich sein - z. B. zum Erzeugen von Explosions- oder Partikeleffekten, wenn ein Gegner getötet wird,
+          oder um eine neue Instanz des Objekts in einem anderen Teil des Raums neu zu erzeugen oder sogar um Punkte zu einem Spielstand hinzuzufügen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <!--</div>-->
+  </p>
+  <p>Weitere Informationen zu den verschiedenen Veranstaltungen finden Sie <a href="../The_Asset_Editors/Object_Properties/Object_Events.htm">hier</a>.</p>
+  <p>Beim Hinzufügen eines Ereignisses wird entweder der Code-Editor oder der <span class="notranslate">Drag and Drop™-Editor</span>geöffnet, je nachdem, welche Art von Projekt Sie erstellen. In diesem Fenster können Sie nun die <span class="notranslate">GML-</span> oder <span class="notranslate">DnD™-Aktionen</span>hinzufügen, die jedes Mal ausgeführt werden sollen, wenn das Ereignis in der Spielschleife ausgelöst wird.
+    der Spielschleife. Ein typisches Objekt mit Ereignissen und Code sieht wie folgt aus:</p>
+  <p><img alt="Object Editor Chained Windows" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor_Chain.png" /></p>
+  <p>Weitere Informationen zur Verwendung von <span class="notranslate">GML</span> und <span class="notranslate">DnD™</span>in Ihren Objektveranstaltungen finden Sie auf den beiden unten angegebenen Seiten:</p>
+  <ul class="colour">
+    <li><a href="../Drag_And_Drop/Drag_And_Drop_Overview/DnD_Overview.htm"><span class="notranslate">Drag and Drop™</span>Übersicht</a></li>
+    <li><a href="../GameMaker_Language/GML_Overview/GML_Overview.htm"><span class="notranslate">GameMaker-Sprachübersicht</span> </a></li>
+  </ul>
+  <p>Und hier finden Sie eine ausführliche Erklärung der verschiedenen Teile des Objekteditors:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Objects.htm">Editoren: Der Objekt-Editor</a></li>
+  </ul>
+  <p>Der nächste Teil dieser Anleitung wird sich mit einem weiteren Ressourcentyp beschäftigen, den <strong>Sequenzen</strong>...</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Nächste: <a href="Sequences.htm">Sequenzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Objects And Instances
+Quick Start: Objects and Instances
+-->
+  <!-- TAGS
+qs_objects_instances
+-->
+</body>
+</html>

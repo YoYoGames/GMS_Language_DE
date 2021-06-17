@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_get_description</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_description" />
+  <meta name="rh-index-keywords" content="gamepad_get_description" />
+  <meta name="search-keywords" content="gamepad_get_description" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_description</h1>
+  <p>Diese Funktion gibt eine Zeichenkette mit der Beschreibung des angegebenen Gamepads zurück, z. B. könnte ein PS3-Controller eine Zeichenkette ähnlich wie &quot;PLAYSTATION(R)3 Controller&quot; zurückgeben, oder ein XBox360-Controller könnte &quot;Xbox 360 Controller (XInput
+    STANDARD-GAMEPAD)&quot;. Diese Zeichenfolge ist hardwareabhängig und der zurückgegebene Wert hängt von dem Gamepad ab, das in den zu prüfenden Geräte-&quot;Steckplatz&quot; eingesteckt ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gamepad_get_description(device);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Welcher Gamepad-&quot;Slot&quot; den Namen bekommen soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var gp_num = gamepad_get_device_count();<br> for (var i = 0; i &lt; gp_num; i++;)<br> {
+    <br> if gamepad_is_connected(i)<br> {
+    <br> draw_text(32, 32 + (i * 32), gamepad_get_description(i));<br> }
+    <br> sonst
+    <br> {
+    <br> draw_text(32, 32 + (i * 32), &quot;No Gamepad Connected&quot;);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code durchläuft alle Gamepad-Steckplätze in einer Schleife, um nach angeschlossenen Geräten zu suchen, und zeichnet dann einen Text auf den Bildschirm, je nachdem, ob ein Gamepad an den Steckplatz angeschlossen ist oder nicht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Input.htm">Gamepad-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="gamepad_get_button_threshold.htm"> gamepad_get_button_threshold </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_description
+-->
+  <!-- TAGS
+gamepad_get_description
+-->
+
+</body></html>

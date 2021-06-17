@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_welt_erschaffen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference pagefor physics_world_create" />
+  <meta name="rh-index-keywords" content="physics_world_create" />
+  <meta name="search-keywords" content="physics_world_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_welt_erschaffen</h1>
+  <p>Selbst wenn Sie die Physik für Ihre Objekte definiert haben, werden sie ohne eine Welt, in der sie platziert werden, standardmäßig das traditionelle <span class="notranslate">GameMaker Studio 2-Kollisionssystem</span> verwenden, sodass Sie diese Funktion benötigen, um das Physiksystem für den angegebenen Raum entweder
+    in einem Objektereignis oder im Erstellungscode des Raums selbst (es kann auch ohne Code im Raumeditor definiert werden). Diese Funktion verknüpft eine Physik-&quot;Welt&quot; mit dem Raum und alle Instanzen, die in dem Raum erzeugt werden, verhalten sich mit
+    der Physik, die für sie und die Welt selbst definiert wurde.</p>
+  <p><img alt="Physics world illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_world_create_image.png">Sie werden feststellen, dass wir ein Argument haben, das ein Verhältnis zwischen Pixelgröße und Metern definiert.
+    Das liegt daran, dass die Physikfunktionen mit realen Maßen arbeiten und wir daher Pixelkoordinaten und Pixelgrößen mit Hilfe eines &quot;Pixel-Meter-Maßstabs&quot; in diese realen Maße übersetzen müssen. Sie sollten die Einstellung "Pixel-Meter-Skala" so lange anpassen, bis die durchschnittliche Pixelgröße der von Ihnen verwendeten Objekte grob in simulierte Physikobjekte einer angemessenen Größe übersetzt wird. Es sollte beachtet werden
+    dass das Physiksystem sowohl mit größeren als auch mit kleineren Verhältnissen funktioniert, dass aber die beste Leistung erzielt wird, wenn die realen Abmessungen Ihrer Objekte nicht kleiner als 0,1 Meter und nicht größer als 50 Meter sind.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_world_create(pixeltometrescale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>pixeltometrische Skala</td>
+        <td>definiert das Verhältnis von Pixeln auf dem Bildschirm zu Metern in der realen Welt. Ein Verhältnis von 32:1 wird als 1/32 (oder 0,03125) angegeben.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">physics_world_create(1/32);</p>
+  <p>Der obige Code erzeugt eine Physikwelt im aktuellen Raum mit einem Maßstabsverhältnis von 32 Pixeln, was 1 Meter entspricht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Physics_World.htm">Die Welt der Physik</a></div>
+        <div style="float:right">Weiter: <a href="physics_world_gravity.htm">physik_welt_gravitation</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_create
+-->
+  <!-- TAGS
+physics_world_create
+-->
+</body>
+</html>

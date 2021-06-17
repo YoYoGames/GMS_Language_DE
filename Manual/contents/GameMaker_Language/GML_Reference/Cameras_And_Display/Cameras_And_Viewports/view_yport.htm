@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>view_yport</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_yport" />
+  <meta name="rh-index-keywords" content="view_yport" />
+  <meta name="search-keywords" content="view_yport" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>view_yport</h1>
+  <p>Mit diesem eingebauten Array können Sie die y-Position des angegebenen Ansichtsfensters abrufen oder einstellen. Das Ansichtsfenster ist der Bereich auf dem Bildschirm, in dem die Ansicht gezeichnet wird, und es können bis zu 8 gleichzeitig aktiv sein (das Array enthält Werte von 0 bis einschließlich 7, so dass 8
+    Ports). Die Vorgabe für <span class="notranslate">GameMaker Studio 2</span> ist, dass das Spielfenster (oder die Hintergrundleinwand) die gleiche Größe wie der Raum hat. Wenn Sie jedoch View-Ports und Kameras aktivieren, ändert sich dieses Verhalten und es wird die <i>Gesamtgröße der Bounding Box für alle View-Ports</i> verwendet. Wenn Sie also zwei verschiedene Ansichtsfenster an zwei verschiedenen Positionen haben, definiert die Gesamtfläche, die sie abdecken, die Größe des Spielfensters. Das folgende Bild veranschaulicht dies:</p>
+  <p><img alt="Canvas with multiple view ports example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/viewport_canvas.png">Wenn Sie nur <i>einen</i> Ansichtsanschluss haben, kann das Einstellen des x- oder y-Wertes des Anschlusses
+    einige interessante Effekte haben, ist aber normalerweise nicht praktikabel (siehe das Bild unten) und daher ist es besser, die x- und y-Position als (0,0) beizubehalten.</p>
+  <p><img alt="view_yport example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/view_xyport.png" /></p>
+  <h4>Syntax:</h4>
+  <p class="code">view_yport[0 .. 7];</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">view_xport[0] = 0;<br> view_yport[0] = 0;</p>
+  <p>Der obige Code setzt die Position von view port[0] auf die Position (0,0) (linke obere Ecke) des Displays zurück.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="view_set_wport.htm">view_wport</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_yport
+-->
+  <!-- TAGS
+view_yport
+-->
+</body>
+</html>

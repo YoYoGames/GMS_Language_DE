@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>url_open_full</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for url_open_full" />
+  <meta name="rh-index-keywords" content="url_open_full" />
+  <meta name="search-keywords" content="url_open_full" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>url_open_full</h1>
+  <p>Dadurch wird die angegebene URL im Browser des gewählten Zielgeräts geöffnet, oder, wenn Sie das HTML5-Modul verwenden, im aktuell geöffneten Browser. Der Parameter &quot;target&quot;, den Sie angeben, ist derselbe wie der Standard-JavaScript-&quot;name&quot;
+    Wert, wenn Sie die <tt>open()</tt> -Methode verwenden (beachten Sie, dass alle außer &quot; _self<strong>&quot;</strong> dazu führen<strong> können</strong>, dass der Browser blockiert oder den Benutzer fragt, ob er es zulassen möchte) und der &quot;options&quot;-Parameter ist derselbe wie der JavaScript &quot;specs&quot;
+    Parameter zur Steuerung der Eigenschaften, die das neue Fenster/der neue Reiter anzeigen soll (nicht alle Browser unterstützen möglicherweise alle Funktionen).</p>
+  <p>Gültige Ziele sind:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Ziel</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>_blank</td>
+        <td>Öffnet das verknüpfte Dokument in einem neuen Fenster oder einer neuen Registerkarte (dies funktioniert nicht, wenn Pop-ups vom Benutzer blockiert werden; in diesem Fall können Sie stattdessen die <a href="Web_And_HTML5.htm"><tt>anklickbar_*</tt></a> Funktionen stattdessen verwenden).</td>
+      </tr>
+      <tr>
+        <td>_self</td>
+        <td>Öffnet das verknüpfte Dokument in demselben Rahmen, in dem es angeklickt wurde (dies ist die Voreinstellung).</td>
+      </tr>
+      <tr>
+        <td>_Elternteil</td>
+        <td>Öffnet das verknüpfte Dokument im übergeordneten Rahmen.</td>
+      </tr>
+      <tr>
+        <td>_top</td>
+        <td>Öffnet das verknüpfte Dokument im Volltext des Fensters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Gültige Optionen sind:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Parameter</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><b>height=[px]'</b></td>
+        <td>Die Höhe des Fensters, wobei der Mindestwert 100 ist.</td>
+      </tr>
+      <tr>
+        <td><b>width=[px]'</b></td>
+        <td>Die Breite des Fensters, wobei der Mindestwert 100 ist.</td>
+      </tr>
+      <tr>
+        <td><b>links=[px]'</b></td>
+        <td>Die linke Position des Fensters.</td>
+      </tr>
+      <tr>
+        <td><b>'top=[px]'</b></td>
+        <td>Die obere Position des Fensters (nur IE).</td>
+      </tr>
+      <tr>
+        <td><b>location=[boolean</b>]'</td>
+        <td>Ob das Adressfeld angezeigt werden soll oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>menubar=[boolean</b>]'</td>
+        <td>Ob die Menüleiste angezeigt werden soll oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>resizable=[boolean</b>]'</td>
+        <td>Ob das Fenster in der Größe veränderbar ist oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>'scrollbars=[boolean</b>]'</td>
+        <td>Ob Bildlaufleisten angezeigt werden sollen oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>status=[boolean</b>]'</td>
+        <td>Ob eine Statusleiste hinzugefügt werden soll oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>'titlebar=[boolean</b>]'</td>
+        <td>Ob die Titelleiste angezeigt werden soll oder nicht. Dies wird ignoriert, es sei denn, die aufrufende Anwendung ist eine HTML-Anwendung oder ein vertrauenswürdiges Dialogfeld (Standard ist 1);</td>
+      </tr>
+      <tr>
+        <td><b>toolbar=[boolean</b>]'</td>
+        <td>Ob die Browser-Symbolleiste angezeigt werden soll oder nicht (Standard ist ja).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">url_open_full(url, target, options);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>Die URL (Website-Adresse), auf die verlinkt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Dies ist der Zielbereich, in dem die URL geöffnet werden soll (siehe Beschreibung).</td>
+      </tr>
+      <tr>
+        <td>Optionen</td>
+        <td>Standard-Browser-Optionen (siehe Beschreibung).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">url_open_full(&quot;http://yoyogames.com&quot;, &quot;_blank&quot;, &quot;resizable=0, height=200, scrollbars=0&quot;);</p>
+  <p>Dies würde die <span class="notranslate">YoYo Games-Homepage</span> in einem neuen Fenster öffnen, das nicht in der Größe verändert werden kann, eine Höhe von 200 Pixeln hat und keine Scrollbalken aufweist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Web_And_HTML5.htm">Web und HTML5</a></div>
+        <div style="float:right">Weiter: <a href="url_get_domain.htm">url_get_domain</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+url_open_full
+-->
+  <!-- TAGS
+url_open_full
+-->
+</body>
+</html>

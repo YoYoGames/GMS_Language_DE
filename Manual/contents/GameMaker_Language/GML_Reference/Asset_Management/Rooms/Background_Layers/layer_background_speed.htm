@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Schicht_Hintergrund_Geschwindigkeit</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_speed" />
+  <meta name="rh-index-keywords" content="layer_background_speed" />
+  <meta name="search-keywords" content="layer_background_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Schicht_Hintergrund_Geschwindigkeit</h1>
+  <p>Mit dieser Funktion können Sie die Geschwindigkeit eines animierenden Sprites einstellen, das einem Hintergrundelement zugewiesen wurde. Sie geben die ID des Hintergrundelements an (die Sie erhalten, wenn Sie ein Hintergrundelement mit <a href="layer_background_create.htm"><tt>layer_hintergrund_erzeugen()</tt></a>    oder wenn Sie die Funktion <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), und setzen dann die Animationsgeschwindigkeit. Wenn die IDE die Animationsgeschwindigkeit für das verwendete Sprite so eingestellt hat, dass sie als Frames per Game Frame berechnet wird, dann
+    der angegebene Geschwindigkeitswert ein <i>Multiplikator</i>, wobei 1 der Standardwert ist und die Einstellung auf 0,5 die Animationsgeschwindigkeit halbiert, während die Einstellung auf 2 sie verdoppelt. Wenn die IDE jedoch die Animationsgeschwindigkeit für das verwendete Sprite so eingestellt hat, dass sie
+    als Frames Per Second (Bilder pro Sekunde) festgelegt hat, dann ist der angegebene Geschwindigkeitswert ein buchstäblicher Wert für Bilder pro Sekunde, so dass das Setzen dieses Wertes auf z. B. 5 dazu führt, dass die Animation in jeder Sekunde, in der das Spiel läuft, 5 Bilder wiederholt. Wenn dem Hintergrundelement kein Sprite zugeordnet ist oder
+    das verwendete Sprite keine Sub-Images hat, hat diese Funktion keine Wirkung.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_background_speed(background_element_id, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>hintergrund_element_id</td>
+        <td>Der eindeutige ID-Wert des zu ändernden Hintergrundelements</td>
+      </tr>
+      <tr>
+        <td>Geschwindigkeit</td>
+        <td>Der Geschwindigkeitsmultiplikator/-wert, der für das Element verwendet werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Hintergrund_Wasser&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> layer_background_speed(back_id, 0.5);</p>
+  <p>Der obige Code ermittelt die Ebenen-ID für die Ebene mit dem Namen &quot;Background_water&quot; und verwendet diese, um die ID des Hintergrundelements auf dieser Ebene zu ermitteln. Diese ID wird dann verwendet, um die Bildgeschwindigkeit des Elements zu ändern.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Background_Layers.htm">Hintergrund-Ebenen</a></div>
+        <div style="float:right">Weiter: <a href="layer_background_get_xscale.htm">layer_background_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_speed
+-->
+  <!-- TAGS
+layer_background_speed
+-->
+</body>
+</html>

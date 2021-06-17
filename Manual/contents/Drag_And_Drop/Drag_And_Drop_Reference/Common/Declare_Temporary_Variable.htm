@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Temporäre Variable deklarieren</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Declare Temporary Variable" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Declare Temporary Variable" />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Declare Temporary Variable Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Temp_Var.png" width="32"> Temporäre Variable deklarieren</h1>
+  <p>Diese Aktion wird verwendet, um eine <b>temporäre Variable </b>(auch <b>lokale Variable</b> genannt) zu deklarieren und ihr einen Anfangswert zu geben. Dabei handelt es sich um eine Variable, die <i>nur für die Dauer des Ereignisses oder Scripts existiert, in dem sie deklariert wurde</i>. Temporäre Variablen
+    sind sehr nützlich, um Werte zu speichern, die nur für einen einzigen Vorgang benötigt werden, und verhindern, dass Ihre Objekte mit Variablen &quot;vollgestopft&quot; werden, die vielleicht nur einmal verwendet werden. Sie sind auch sehr nützlich, um komplexe Operationen aufzulösen, oder um
+    Werte in anderen Instanzen zu setzen, wenn Sie den Aktionsbereich ändern. Das liegt daran, dass als temporär deklarierte Variablen<i>nicht</i>auf eine bestimmte Instanz, sondern auf das Ereignis oder Skript selbst<i>skaliert sind</i>.
+    Wenn Sie also eine temporäre Variable erstellen und dann den Aktionsbereich mit der Aktion " <a href="Apply_To...htm">Anwenden auf.</a>.." ändern, können Sie die temporäre Variable weiterhin problemlos überprüfen, ohne ihren Aktionsbereich zu ändern.</p>
+  <p>Es ist erwähnenswert, dass wir, wenn wir von &quot;Werten&quot; sprechen, nicht nur numerische Werte meinen, da eine Variable eine Zeichenkette, ein Zeiger, eine Ressourcen-ID oder alles andere sein kann, das eine Funktion zurückgeben oder verwenden kann, sogar ein Ausdruck. Weitere Informationen finden Sie im Abschnitt über <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">Datentypen</a>.</p>
+  <p>Beachten Sie, dass viele Aktionen ein Kontrollkästchen &quot;Temp&quot; haben, mit dem Sie eine neue temporäre lokale Variable erstellen können, die den Rückgabewert der Aktion enthält.
+    danach. Beachten Sie auch, dass temporäre lokale Variablen auf das Skript oder Ereignis skaliert werden, in dem sie erstellt werden, und daher von anderen Instanzen im selben Block verwendet werden können, wenn Sie " <a href="Apply_To...htm">Anwenden auf"</a> verwenden.</p>
+  <p>Sie können auch weitere Variablen in derselben Aktion hinzufügen, indem Sie auf das Plus-Symbol <img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> neben der Aktion klicken und eine weitere temporäre lokale Variable
+    Namen und Wert geben. Weitere fortgeschrittene Informationen zu Variablen finden Sie im Abschnitt über <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">Variablen und Variablenumfang</a>.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Declare Temporary Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Declare_Temp_Var.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name der neuen Variable, die zugewiesen werden soll, oder der Name einer vorhandenen Variable, die geändert werden soll.</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der Wert, den die Variable enthalten soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Declare Temporary Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Temp.png">Der obige Aktionsblockcode erstellt zwei temporäre Variablen, &quot; <span class="inline">_dir</span>&quot;
+    und &quot;<span class="inline">_spd</span>&quot; und setzt sie auf zufällige Werte. Er verwendet dann diese Werte, um die Instanz in eine zufällige Richtung mit einer zufälligen Geschwindigkeit zu bewegen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Common_Actions_Library.htm">Gemeinsame Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Global_Variable.htm">Globale Variable setzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Assign Variable
+-->
+  <!-- TAGS
+action_variable
+-->
+
+</body></html>

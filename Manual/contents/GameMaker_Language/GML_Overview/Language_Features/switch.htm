@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>schalten.</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the switch function" />
+  <meta name="rh-index-keywords" content="switch,case" />
+  <meta name="search-keywords" content="switch,default" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>schalten.</h1>
+  <p>In einer Reihe von Situationen möchten Sie Ihre Instanzen in Abhängigkeit von einem bestimmten Wert unterschiedliche Aktionen ausführen lassen. Sie können dies mit einer Reihe von aufeinanderfolgenden <a href="If_Else_and_Conditional_Operators.htm"><tt>if / else</tt></a> Anweisungen, aber
+    wenn die Anzahl der möglichen Auswahlmöglichkeiten zwei oder drei übersteigt, ist es normalerweise einfacher, die <tt>switch-Anweisung</tt> zu verwenden. Eine <tt>switch-Anweisung</tt> hat die folgende Form:</p>
+  <p class="code">switch (&lt;Ausdruck&gt;)<br> {
+    <br> case &lt;Konstante1&gt;: &lt;Anweisung1&gt;; ... ; break;<br> case &lt;Konstante2&gt;: &lt;Anweisung2&gt;; ... ; break;<br>...
+    <br> default: &lt;Anweisung&gt;;<br> }
+  </p>
+  <p>Dies funktioniert wie folgt:</p>
+  <ul class="colour">
+    <li>Zuerst wird der <a class="glossterm" data-glossterm="Ausdruck" href="#">Ausdruck</a> ausgeführt.</li>
+    <li>Als nächstes wird er mit den Ergebnissen der verschiedenen <a href="../Variables/Constants.htm">Konstanten</a> nach jeder der <span class="inline">case</span> <span class="glossextra">Anweisungen</span> verglichen.
+      Mit &quot;Konstante&quot; ist gemeint, dass der Wert in dem Fall kein variabler Ausdruck sein kann und ein fester Wert eines beliebigen Datentyps sein muss, <a href="../Data_Types.htm">wie &quot;</a>fight&quot; oder 3 oder das Schlüsselwort <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span>. </li>
+    <li>Die Ausführung wird nach der ersten <span class="inline">case</span> -Anweisung mit dem richtigen Wert fortgesetzt, <i>bis eine <a href="break.htm">break-Anweisung</a></i> auftritt.</li>
+    <li>Wenn keine case-Anweisung den richtigen Wert hat, wird die Anweisung <span class="inline">default</span> ausgeführt (eine <span class="inline">default</span> -Anweisung ist nicht erforderlich, und wenn keine angegeben wird, wird keine Aktion ausgeführt).</li>
+  </ul>
+  <p>Ein einfaches Beispiel für die Verwendung einer switch-Anweisung wäre etwas wie dieses:</p>
+  <p class="code">switch (global.state)<br> {<br> case &quot;alert&quot;:<br> if (instance_exists(obj_Player))<br> {<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &lt; 100)<br> {<br> 
+    global.state = &quot;chase&quot;;<br> } <br> } <br> break;<br> case &quot;chase&quot;:<br> var _lost = false;<br> if (instance_exists(obj_Player))<br> {<br> move_towards_point(obj_Player.x,
+    obj_Player.y, 2);<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &gt; 100)<br> {<br> _lost = true;<br> } <br> } <br> else _lost = true;<br> if (_lost)<br> {<br> speed = 0;<br> global.state = &quot;alert&quot;;<br> } <br> break;<br> }</p>
+  <p>Hier haben wir eine globale Variable, die einen String-Wert enthält, der verwendet wird, um das Verhalten (den Zustand) der Instanz einzustellen. In diesem Beispiel schaltet die Instanz einfach zwischen zwei Zuständen um, aber es ist extrem einfach, dies auf weitere Zustände zu erweitern, indem Sie
+    weitere <span class="inline">case</span> Anweisungen für zusätzliche Zustandsstrings, wie z. B. &quot;kämpfen&quot; oder &quot;sterben&quot;, usw...</p>
+  <p>Beachten Sie, dass mehrere <tt>Case-Anweisungen</tt> verwendet werden können, um dieselbe Anweisung auszuführen, da der <tt>Break</tt> nicht immer für jede einzelne <span class="inline">case</span> erforderlich ist. Wenn es keine <span class="inline">break</span> Anweisung für einen
+    bestimmte <span class="inline">case</span> gibt, wird die Ausführung einfach mit dem Code für den nächsten Fall fortgesetzt, z. B:</p>
+  <p class="code">switch (tastatur_taste)<br> {
+    <br> case vk_left:<br> case ord(&quot;A&quot;):<br> x -= 4;<br> break;
+    <br> case vk_right:<br> case ord(&quot;D&quot;):<br> x += 4;<br> break;
+    <br> case vk_up:<br> case ord(&quot;W&quot;):<br> y -= 4;<br> break;
+    <br> case vk_down:<br> case ord(&quot;S&quot;):<br> y += 4;<br> break;
+    <br> }
+  </p>
+  <p>Der obige Code verwendet <tt>switch</tt>, um auf ein Tastaturereignis zu prüfen, und vergleicht dieses dann mit den einzelnen aufgeführten <span class="inline">case</span>. Wenn es einen der erforderlichen Werte erfüllt, wird der entsprechende Code ausgeführt. Beachten Sie, dass wir im Code
+    die Art und Weise, wie <tt>switch</tt> mehrere <span class="inline">cases</span> prüfen und fortfahren kann, wenn kein <span class="inline">break</span> angetroffen wird, damit verschiedene Tasten verwendet werden können, um das gleiche Ergebnis zu erhalten. Beachten Sie, dass jedes <span class="inline">case</span> seinen eigenen Code haben kann und Sie so eine Art &quot;Vererbungssystem&quot; einrichten können, bei dem mehr als ein <span class="inline">case</span> und sein Code nacheinander ausgeführt werden, bis eine Unterbrechung erreicht wird, die vom Wert des anfänglichen -Ausdrucks abhängt.
+    des anfänglichen <span class="inline">switch</span> Ausdrucks.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="break.htm">Pause</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+switch
+-->
+  <!-- TAGS
+switch
+-->
+
+</body></html>

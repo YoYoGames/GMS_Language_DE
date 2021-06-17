@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Läufer-Fehler</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the various runner errors" />
+  <meta name="rh-index-keywords" content="Runtime Errors,Runner Errors" />
+  <meta name="search-keywords" content="runner errors" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Läufer-Fehler</h1>
+  <p>Selbst nach der Syntaxprüfung im Code-Editor und der anschließenden Überprüfung Ihres Codes durch den Compiler auf <a href="Compiler_Errors.htm">Compiler-Fehler</a> kann es immer noch vorkommen, dass etwas schief geht. In den meisten Fällen wird dann ein <a class="glossterm" data-glossterm="Virtuelle Maschine (VM)" href="#">Virtual Machine (VM)-</a> Runner-Fehler (auch <strong><span class="notranslate">Laufzeitausnahme</span></strong> genannt) ausgelöst, der wie folgt aussieht:</p>
+  <p><img alt="Runner Error Window" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Report.png">Runner-Fehler sind im Allgemeinen schwerwiegender als Kompilierfehler, da sie bedeuten, dass mit Ihrem Code etwas ernsthaft falsch ist, das weder der Code-Editor noch der Compiler erkennen konnten.
+    Ihrem Code etwas nicht stimmt, was weder der Code-Editor noch der Compiler erkennen konnten, und deshalb sollten Sie auf solche Fehler achten. Wenn ein Fehler auftritt, können Sie mit der Schaltfläche <strong>Kopieren</strong> im Popup den Fehler in die Zwischenablage kopieren
+    in die Zwischenablage kopieren, die Sie dann in eine Textdatei (oder wo auch immer) zur späteren Verwendung einfügen können.</p>
+  <p>Der Aufbau dieses Fehlers ist wie folgt:</p>
+  <ul class="colour">
+    <li><img alt="Error Object And Event" class="icon" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_ObjectEvent.png"><br> Hier wird das Ereignis angezeigt, in dem der Fehler aufgetreten ist, sowie das Objekt (falls zutreffend).</li>
+    <li><img alt="Error Text Information" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_Information.png" width="436"><br> Hier wird der tatsächliche Fehler angezeigt.  Es zeigt also den <em>Umfang </em>des Fehlers
+      und den Fehlertyp, um den es sich handelt. Der erste Wert in den Klammern ist die Instanz-ID der Instanz, die den Code ausgeführt hat - oder es könnte einer der speziellen Werte sein, die in der Tabelle unten aufgeführt sind - und der zweite ist ein interner Wert, den <span class="notranslate">YoYo Games</span>
+      zur Identifizierung von Bugs verwendet und ignoriert werden kann. Im Fall des obigen Bildes heißt es, dass die Variable <span class="inline">_image</span> nicht auf das Objekt <span class="inline">obj_EA_DEMO_Control</span> gesetzt wurde (d.h.: existiert nicht, bevor darauf zugegriffen wird).</li>
+    <li><img alt="Error Line Number Position" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_LineNumber.png" width="354"><br> Hier wird die Zeilennummer angezeigt, in der der Fehler auftritt, sowie ein Codeschnipsel, der die
+      Code, der die Position anzeigt. Beachten Sie, dass dies aufgrund der Art und Weise, wie das Spiel kompiliert wird, nicht immer zu 100 % genau ist, aber es sollte ausreichen, um genau herauszufinden, wo das Problem liegt.</li>
+  </ul>
+  <p>Wie oben erwähnt, werden bestimmte Fehlermeldungen nicht durch einen Instanz-ID-Wert, sondern durch einen <em>negativen </em>Wert identifiziert. Diese Werte können verwendet werden, um die genaue Art des Fehlers und worauf er sich bezieht, mit den folgenden Werten festzulegen
+    möglich:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Präfix</th>
+        <th>Umfang</th>
+      </tr>
+      <tr>
+        <td style="text-align: center">-1</td>
+        <td>Selbst</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-2</td>
+        <td>Andere</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-3</td>
+        <td>Alle</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-4</td>
+        <td>Keiner</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-5</td>
+        <td>Global</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-6</td>
+        <td>Nicht spezifiziert</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">-7</td>
+        <td>Lokal</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Die möglichen Fehler vom VM-Runner sind wie folgt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Fehler</th>
+        <th>Nachricht</th>
+        <th>Betrieb</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSet</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ungültiger Vergleichstyp</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Daten-Typen</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Dies zeigt an, dass der Läufer versucht hat, zwei inkompatible Datentypen zu vergleichen, z. B. eine reelle Zahl mit einer Zeichenkette.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoConv</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Daten-Typen</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Dies bezeichnet einen Fehler bei der Umwandlung eines Datentyps in einen anderen.</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAdd</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bei der Verwendung des Additionsausdrucks (<span class="inline">+</span>) ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMul</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bei der Verwendung des Multiplikationsausdrucks (<span class="inline">*</span>) ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSub</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bei der Verwendung des Subtraktionsausdrucks (<span class="inline">-</span>) ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoSub</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Execution Engine - Kann nicht auf String-Typ operieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, den falschen Typ von Variablen zu subtrahieren (z. B. eine Zeichenkette von einer reellen Zahl zu subtrahieren).</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bei der Verwendung des Divisionsausdrucks (<span class="inline">/</span> oder <span class="inline">div</span>) ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Execution Engine - Kann nicht auf String-Typ operieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, den falschen Typ von Variablen zu dividieren (z. B. eine Zeichenkette durch eine reelle Zahl zu dividieren).</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Dividieren durch Null</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, durch 0 zu dividieren (beachten Sie, dass dies nur bei der Verwendung von Ganzzahldivisionen passiert, die Division eines reellen Wertes (ungleich Null) durch 0 ergibt Unendlich als Antwort, die Division von Null durch Null ergibt NaN als Antwort). Sie können diese Werte überprüfen mit
+          (<span class="inline">is_infinity</span>) und (<span class="inline">is_nan</span>)</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMod</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bei der Verwendung des Modulo-Ausdrucks (<span class="inline">mod</span>) ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMod</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Execution Engine - Kann nicht auf String-Typ operieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mathe</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, modulo (<span class="inline">mod</span>) auf den falschen Typ von Variablen anzuwenden (z. B. <span class="inline">mod</span> eine Zeichenkette durch einen Real).</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAnd</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bei der Verwendung des bitweisen &quot;und&quot;-Ausdrucks (<span class="inline">&amp;</span>) ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoAnd</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Execution Engine - Kann nicht auf String-Typ operieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, das bitweise &quot;und&quot; (<span class="inline">&amp;</span>) auf den falschen Typ von Variablen anzuwenden (z. B. versuchen Sie, eine Zeichenkette mit einem Real zu &quot;und&quot;).</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoOr</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bei der Verwendung des bitweisen &quot;oder&quot;-Ausdrucks (<span class="inline">|</span>) ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoOr</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Execution Engine - Kann nicht auf String-Typ operieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, &quot;oder&quot; (<span class="inline">|</span>) auf den falschen Variablentyp anzuwenden (z. B. versuchen Sie, eine Zeichenkette mit einem Real zu &quot;oder&quot;).</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoXor</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bei der Verwendung des bitweisen &quot;xor&quot;-Ausdrucks (<span class="inline">^</span>) ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoXor</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Execution Engine - Kann nicht auf String-Typ operieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, &quot;xor&quot; (<span class="inline">^</span>) auf den falschen Typ von Variablen anzuwenden (z. B. versuchen Sie, eine Zeichenkette mit einem Real zu &quot;xorieren&quot;).</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShl</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Beim Bitshifting nach links (<span class="inline">&lt;&lt;</span>) eines Wertes ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShl</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Execution Engine - Kann nicht auf String-Typ operieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, den falschen Typ von Variablen nach links zu schieben (<span class="inline">&lt;&lt;</span>) (z. B. versuchen Sie, eine Zeichenkette nach links zu schieben).</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShr</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Beim Bitshifting nach rechts (<span class="inline">&gt;&gt;</span>) eines Wertes ist etwas schief gelaufen.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShr</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Execution Engine - Kann nicht auf String-Typ operieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitweise</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, den falschen Variablentyp nach rechts zu schieben (<span class="inline">&gt;&gt;</span>) (z. B. versuchen Sie, einen String nach rechts zu schieben).</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoNeg</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Negieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, einen Variablentyp in ein Negativ zu verwandeln, obwohl dieser Typ eine solche Operation nicht zulässt.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoNot</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Negieren</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie versuchen, einen Variablentyp zu &quot;nicht&quot;, wenn dieser Typ eine solche Operation nicht zulässt.</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Push</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsfehler - Variablenindex außerhalb des Bereichs (var)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Stapel</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Die Variable, auf die zugegriffen wird, liegt außerhalb des festgelegten Bereichs für den Läufer.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Push</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Variable holen (var)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Stapel</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Die angegebene Variable wurde nicht definiert oder ist unbekannt.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Pop</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Variable Index außerhalb des Bereichs (var)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Stapel</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Die Variable, auf die zugegriffen wird, liegt außerhalb des festgelegten Bereichs für den Läufer.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Pop</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Variable holen (var)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Stapel</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Die angegebene Variable wurde nicht definiert oder ist unbekannt.</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">With</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Kann nicht global in mit-Anweisung verwenden</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mit</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie haben versucht, &quot;<span class="inline">global</span>&quot; als Variable innerhalb einer &quot;<span class="inline">with</span>&quot; Anweisung zu verwenden, d.h.:<br>
+          <span class="inline">with (global)<br/>
+			   {<br/>
+			   //do something;<br/>
+			   }</span></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">With</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Kann nicht lokal in mit-Anweisung verwenden</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Mit</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Sie haben versucht, &quot;<span class="inline">local</span>&quot; als Variable innerhalb einer &quot;<span class="inline">with</span>&quot; Anweisung zu verwenden, d.h.:<br>
+          <span class="inline">with (local)<br/>
+			   {<br/>
+			   //do something;<br/>
+			   }</span></td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoCall</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ausführungsengine Typfehler</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Motor</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Dies ist ein undefinierter Fehler innerhalb der Virtuellen Maschine. Sie sollten einen Fehlerbericht einreichen, wenn dies passiert (siehe: Das Hilfemenü für Details, wie Sie dies tun können.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Stack Overflow</span></td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">-</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Motor</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ein Stapelüberlauf tritt auf, wenn zu viel Speicher auf dem Aufrufstapel verwendet wird und wenn Ihr Spiel versucht, mehr Platz zu verwenden, als auf dem Aufrufstapel verfügbar ist (d. h. wenn es versucht, auf Speicher außerhalb der Grenzen des Aufrufstapels zuzugreifen, was im Wesentlichen
+          ein Pufferüberlauf), läuft der Stack über, was zu einem Programmabsturz führt. Starten Sie Ihren Computer und <span class="notranslate">GameMaker</span> neu: Studio und wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support und/oder melden Sie einen Fehler (wie oben beschrieben).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Error_Reporting.htm">Fehlerberichterstattung</a></div>
+        <div style="float:right">Nächste: <a href="Syntax_Errors.htm">Syntax-Fehler</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Runner Errors
+-->
+  <!-- TAGS
+runner_errors
+-->
+
+</body></html>

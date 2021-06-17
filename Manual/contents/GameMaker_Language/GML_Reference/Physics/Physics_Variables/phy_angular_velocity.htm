@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_angular_velocity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_angular_velocity" />
+  <meta name="rh-index-keywords" content="phy_angular_velocity" />
+  <meta name="search-keywords" content="phy_angular_velocity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_angular_velocity</h1>
+  <p>Diese Variable kann verwendet werden, um die Winkelgeschwindigkeit der Instanz einzustellen, oder sie kann verwendet werden, um die aktuelle Winkelgeschwindigkeit in Grad pro Sekunde abzurufen, wobei der verwendete Wert entweder positiv (für eine Drehung im Uhrzeigersinn) oder negativ (für eine Drehung gegen den Uhrzeigersinn) sein kann.
+    Wenn Sie dies bei einer Instanz einstellen, die zuvor statisch war (d. h., sie hat eine Dichte von 0), wird sie zu einem kinematischen Objekt und beginnt sich zu drehen</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">phy_angular_velocity;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Fließkommawert mit einfacher Genauigkeit, oder <tt>undefiniert</tt>, wenn die Instanz nicht physikaktiviert ist)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if abs(phy_angular_velocity) &gt; 0<br> {
+    <br> phy_angular_velocity -= sign(phy_angular_velocity) * 0.01;<br> }
+    <br> sonst
+    <br> {
+    <br> phy_angular_velocity = 0;<br> }
+  </p>
+  <p>Der obige Code prüft die Winkelgeschwindigkeit der Instanz und wenn sie nicht 0 ist, wird bei jedem Schritt ein kleiner Betrag addiert (oder subtrahiert), bis der Wert 0 ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Physics_Variables.htm">Physik-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="phy_angular_damping.htm">phy_angular_damping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_angular_velocity
+-->
+  <!-- TAGS
+phy_angular_velocity
+-->
+</body>
+</html>

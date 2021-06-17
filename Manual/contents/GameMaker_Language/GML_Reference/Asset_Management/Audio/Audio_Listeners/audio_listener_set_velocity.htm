@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_velocity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_set_velocity" />
+  <meta name="rh-index-keywords" content="audio_listener_set_velocity" />
+  <meta name="search-keywords" content="audio_listener_set_velocity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_set_velocity</h1>
+  <p>Diese Funktion kann verwendet werden, um dem angegebenen Hörer <em>Doppler-Effekte </em>zu geben und die Audio-Bewegung basierend auf dem Vektor zu simulieren, der aus den angegebenen relativen x-, y- und z-Positionen aufgelöst wird. Der Standard-Hörerindex ist 0, aber Sie können die Funktion
+    <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> verwenden, um die verschiedenen für die Zielplattform verfügbaren Indizes zu erhalten.</p>
+  <p>Wenn der angegebene Listener sich nie bewegt oder die Bewegung keine konstante Bewegung ist, müssen Sie diese Werte normalerweise nicht einstellen, aber wenn Sie z. B. ein scrollendes Spiel machen, bei dem der Spieler eine konstante Bewegung von unten nach oben und die Feinde eine konstante Bewegung von oben nach unten haben, würden Sie die Geschwindigkeiten für Listener und Emitter einstellen.
+    die Feinde eine konstante Bewegung von oben nach unten haben, würden Sie die <i>Hörer- und</i> Emitter-Geschwindigkeiten (für Emitter würden Sie <a href="../Audio_Emitters/audio_emitter_velocity.htm"><tt>audio_emitter_velocity()</tt></a>) auf die entsprechenden Vektoren
+    setzen, um den richtigen Dopplereffekt zu simulieren, wenn sie sich an der Player-Instanz vorbeibewegen.</p>
+  <p>Das folgende Bild zeigt, wie dies für das oben angegebene Beispielspiel eingerichtet werden könnte:</p>
+  <p><img alt="Audio Listener Set Velocity Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener_Velocity.png" /></p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_listener_set_velocity(index, x, y, z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Listener, für den die Daten abgerufen werden sollen (Standardwert 0).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Geschwindigkeit des Hörers (Voreinstellung 0).</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Geschwindigkeit des Hörers (Voreinstellung 0).</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Die z-Geschwindigkeit des Hörers (Voreinstellung 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var num = audio_get_listener_count();<br> for(var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var data = audio_listener_get_data(info[? &quot;index&quot;]);<br> if data[? &quot;vx&quot;] != 0<br> {
+    <br> audio_listener_set_velocity(info[? &quot;index&quot;], 0, 0, 0);<br> }
+    <br> ds_map_destroy(info);
+    <br> ds_map_destroy(data);
+    <br> }
+  </p>
+  <p>Der obige Code prüft die Anzahl der verfügbaren Zuhörer und durchläuft sie in einer Schleife. Wenn ihre x-Geschwindigkeit nicht 0 ist, setzt er ihre Geschwindigkeitswerte auf 0, 0, 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Listeners.htm">Audio-Hörer</a></div>
+        <div style="float:right">Weiter: <a href="audio_listener_set_orientation.htm">audio_listener_set_orientation</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_velocity
+-->
+  <!-- TAGS
+audio_listener_set_velocity
+-->
+</body>
+</html>

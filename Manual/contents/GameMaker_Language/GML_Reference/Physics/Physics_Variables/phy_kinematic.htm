@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_kinematisch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_kinematic" />
+  <meta name="rh-index-keywords" content="phy_kinematic" />
+  <meta name="search-keywords" content="phy_kinematic" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_kinematisch</h1>
+  <p>Diese <b>schreibgeschützte</b> Variable gibt <tt>true</tt> zurück, wenn die Instanz als kinematisches Objekt klassifiziert ist, oder <tt>false</tt>, wenn sie es nicht ist. Eine kinematische Instanz ist eine Instanz mit unendlicher Masse (einer Dichte von 0), die sich jedoch bewegen kann. Um also eine Instanz
+    kinematisch zu machen, erstellen Sie zunächst eine statische Instanz und setzen dann eine oder mehrere der Instanzvariablen, die sich auf die Bewegung beziehen (z. B: <a href="phy_speed_x.htm"><tt>phy_Geschwindigkeit_x</tt></a>, <a href="phy_speed_y.htm"><tt>phy_Geschwindigkeit_y</tt></a>, oder <a href="phy_angular_velocity.htm"><tt>phy_angular_velocity</tt></a>)</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">phy_kinematic;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolean (oder <tt>undefiniert</tt>, wenn die Instanz nicht physikaktiviert ist)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !phy_kinematic<br> {
+    <br> phy_speed_x = 5;<br> }
+  </p>
+  <p>Der obige Code prüft, ob die Instanz kinematisch ist, und wenn nicht, setzt er die horizontale Geschwindigkeit auf 5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Physics_Variables.htm">Physik-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="phy_inertia.htm">phy_inertia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_kinematic
+-->
+  <!-- TAGS
+phy_kinematic
+-->
+</body>
+</html>

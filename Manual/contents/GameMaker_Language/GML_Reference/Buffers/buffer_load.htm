@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Puffer_laden</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load" />
+  <meta name="rh-index-keywords" content="buffer_load" />
+  <meta name="search-keywords" content="buffer_load" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Puffer_laden</h1>
+  <p>Diese Funktion dient zum Laden eines Puffers, der zuvor mit den <a href="buffer_save.htm"><tt>buffer_save()</tt></a> Funktionen gespeichert wurde, sowie alle <a href="../../../Settings/Included_Files.htm" title="Included Files">eingeschlossenen Dateien</a> oder Dateien
+    die extern geladen wurden. Sie gibt die ID eines neuen Puffers zurück, der von der Funktion als &quot;wachsender&quot; Puffer (siehe hier) mit einem <a href="buffer_create.htm">Byte-Alignment</a> von 1 angelegt wird. Diese ID sollte in einer Variablen gespeichert und in allen weiteren
+    Funktionsaufrufen zu diesem Puffer verwendet werden. Wenn das Laden aus irgendeinem Grund fehlschlägt, gibt die Funktion -1 zurück und es wird eine Meldung im Compiler-Ausgabefenster angezeigt, dass das Laden fehlgeschlagen ist.</p>
+  <p>Beachten Sie, dass bei HTML5 alle Puffer, die aus dem lokalen Speicher geladen werden, mit base64 dekodiert werden (da sie als base64-Strings gespeichert werden), dass jedoch bei Verwendung dieser Funktion für eingeschlossene Dateien oder externe Dateien keine base64-Dekodierung verwendet wird, was für die meisten Fälle in Ordnung sein sollte
+    für die meisten Fälle.</p>
+  <p class="note"><b>HINWEIS</b>: Es ist wichtig, dass Sie alle dynamisch erzeugten Ressourcen wie diese aus dem Speicher entfernen, wenn Sie sie nicht mehr benötigen, um Speicherlecks zu vermeiden. Wenn Sie also mit dem erzeugten Puffer fertig sind, sollten Sie ihn wieder freigeben
+    mit <a href="buffer_delete.htm"><tt>buffer_delete()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_load(Dateiname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Dateiname</td>
+        <td>Der Name der Datei, aus der geladen werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">player_buffer = buffer_load(&quot;Player_Save.sav&quot;);</p>
+  <p>Mit dem obigen Code wird ein zuvor gespeicherter Puffer in den Speicher geladen und ein neuer Puffer erstellt. Der Index dieses neuen Puffers wird in der Variablen &quot;player_buffer&quot; gespeichert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_load_ext.htm"><span>puffer_laden_ext</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load
+-->
+  <!-- TAGS
+buffer_load
+-->
+</body>
+</html>

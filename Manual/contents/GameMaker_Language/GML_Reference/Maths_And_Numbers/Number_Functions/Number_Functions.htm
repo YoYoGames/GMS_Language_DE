@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Zahlenfunktionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Number functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Number Functions,numbers" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Zahlenfunktionen</h1>
+  <p>Reelle Zahlen gelten in <span class="notranslate">GameMaker Studio 2</span> als <i>doppelgenaue Fließkommazahlen</i> - das heißt, sie haben einen Dezimalpunkt und keine feste Anzahl von Ziffern
+    vor oder nach dem Punkt - oder <i>Ganzzahlen</i> - das heißt, sie sind ganze Zahlen ohne Dezimalpunktwert. 2 ist z. B. eine ganze Zahl, aber 2,01 ist eine Fließkommazahl.</p>
+  <p class="note"><b>HINWEIS</b>: Auf dem <b>HTML5-Ziel</b> sind alle reellen Zahlen Doppelwerte.</p>
+  <p>Diese Unterscheidung zwischen Ganzzahlen und Fließkommazahlen ist sehr wichtig, wenn es um plattformübergreifende Entwicklung geht, da die Genauigkeit von Berechnungen, die auf einem <span class="notranslate">Windows-PC</span> durchgeführt werden, <i>nicht</i> dieselbe ist wie die Genauigkeit der gleichen Berechnungen
+    wenn sie auf einem mobilen Gerät durchgeführt werden. Das bedeutet, dass Sie z. B. bei Vergleichen besondere Aufmerksamkeit walten lassen sollten:</p>
+  <p class="code">if (image_index == 1)<br> {<br> tun Sie etwas...<br> }</p>
+  <p>Wenn wir im obigen Beispiel die <tt>image_speed</tt> beispielsweise auf 0,25 gesetzt haben, können Sie nach vier Schritten davon ausgehen, dass der <tt>image_index-Wert</tt> 1 sein würde, aber es <i>könnte</i> 
+    aufgrund der Funktionsweise der Fließkommamathematik ein Wert wie 1.0000002 sein und somit wird die Auswertung nicht <tt>stimmen</tt>. Diese Art von Fehlern kann ziemlich schwer zu beheben sein, daher ist es immer gut, sich dessen bewusst zu sein und im Voraus zu planen und
+    Es ist daher immer gut, sich ihrer bewusst zu sein, vorausschauend zu planen und andere Mittel zur Überprüfung von Werten zu verwenden oder die entsprechenden Boden- oder Rundungsfunktionen (siehe unten) zu verwenden, um die zu prüfende Zahl in eine Ganzzahl umzuwandeln (weitere Informationen zur Fließkommamathematik und warum dies ein Problem ist, <a href="https://floating-point-gui.de/" target="_blank">finden Sie hier</a>). Zum Beispiel könnte der obige Code geschrieben werden als:</p>
+  <p class="code">if (floor(image_index) == 1)<br> {<br> tun Sie etwas...<br> }</p>
+  <p>Es ist auch erwähnenswert, dass bei den <b><span class="notranslate">YoYo-Compiler-Zielen</span></b> alle Ausdrücke und Funktionen <i>von links nach rechts ausgewertet</i> werden, während sie auf allen anderen Zielplattformen <i>von rechts nach links</i> ausgewertet werden,
+    was bedeutet, dass dies - zum Beispiel - je nach Plattform unterschiedliche Ergebnisse liefert:</p>
+  <p class="code">val = max(num, ++num, num++);</p>
+  <p class="note"><strong>HINWEIS</strong>: Weitere Informationen finden Sie im Abschnitt " <a href="../../../GML_Overview/Evaluation_Order.htm">Auswerteauftrag</a>".</p>
+  <p>Sie können auch eine spezielle Funktion in <span class="notranslate">GameMaker Studio 2</span> verwenden, um den <b>Epsilon-Wert</b> für die Fließkomma-Mathematik einzustellen. Wenn eine reelle Zahl auf die nächstliegende Fließkommazahl gerundet wird,
+    Wenn eine reelle Zahl auf die nächste Fließkommazahl gerundet wird, bildet das Epsilon (auch &quot;Maschinen-Epsilon&quot; genannt) eine Obergrenze für den relativen Fehler, und Sie können den Epsilon-Wert mit den folgenden Funktionen abrufen und einstellen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="math_set_epsilon.htm">math_set_epsilon</a></li>
+    <li><a href="math_get_epsilon.htm">math_get_epsilon</a></li>
+  </ul>
+  <p> </p>
+  <p>Diese Funktionen befassen sich alle mit der Verwendung von Zufallszahlen und -werten:</p>
+  <p class="note"><b>HINWEIS: </b>Wenn Sie die Zufallsfunktionen verwenden, behält <span class="notranslate">GameMaker Studio 2</span> bei jedem Start des Spiels denselben Zufallswert bei. Dies erleichtert die Fehlersuche erheblich, da Sie sicher sein können, dass die Zufallsfunktionen anfangs immer den gleichen Wert zurückgeben.
+    Sollten Sie dies jedoch nicht wünschen, müssen Sie zu Beginn des Spiels einen neuen Zufallswert setzen, entweder mit <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">randomise()</tt></a></span> oder 
+    <span style="font-size:1px;"><a href="random_set_seed.htm"><tt style="font-size: 14px">random_set_seed()</tt></a></span>.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="choose.htm">Wählen Sie</a></li>
+    <li><a href="random.htm">zufällig</a></li>
+    <li><a href="random_range.htm">Zufallsbereich</a></li>
+    <li><a href="irandom.htm">irregulär</a></li>
+    <li><a href="irandom_range.htm">irandom_range</a></li>
+    <li><a href="random_set_seed.htm">random_set_seed</a></li>
+    <li><a href="random_get_seed.htm">random_get_seed</a></li>
+    <li><a href="randomise.htm">randomisieren</a><b></b></li>
+  </ul>
+  <p> </p>
+  <p>Dies sind alles Funktionen, die Werte auf irgendeine Weise runden oder einen einzelnen Wert aus verschiedenen vorgegebenen Werten auswählen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="round.htm">rund</a></li>
+    <li><a href="floor.htm">Boden</a></li>
+    <li><a href="frac.htm">frac</a></li>
+    <li><a href="abs.htm">abs</a></li>
+    <li><a href="sign.htm">Zeichen</a></li>
+    <li><a href="ceil.htm">Decke</a></li>
+    <li><a href="max.htm">max</a></li>
+    <li><a href="mean.htm">mittlere</a></li>
+    <li><a href="median.htm">Median</a></li>
+    <li><a href="min.htm">min</a></li>
+    <li><a href="lerp.htm">lerp</a></li>
+    <li><a href="clamp.htm">Klemme</a></li>
+  </ul>
+  <p> </p>
+  <p>Abschließend finden Sie eine vielseitige Sammlung von wichtigen mathematischen Funktionen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="exp.htm">exp</a></li>
+    <li><a href="ln.htm">ln</a></li>
+    <li><a href="power.htm">Leistung</a></li>
+    <li><a href="sqr.htm">sqr</a></li>
+    <li><a href="sqrt.htm">sqrt</a></li>
+    <li><a href="log2.htm">Log2</a></li>
+    <li><a href="log10.htm">log10</a></li>
+    <li><a href="logn.htm">logn</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Maths_And_Numbers.htm">Mathe und Zahlen</a></div>
+        <div style="float:right">Nächste: <a href="../Angles_And_Distance/Angles_And_Distance.htm">Vektoren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Number Functions
+-->
+  <!-- TAGS
+number_functions
+-->
+
+</body></html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>JSDoc-Skript Kommentare</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how JSDoc Script Comments work" />
+  <meta name="rh-index-keywords" content="Code Editor - JSDoc Comments,JSDoc" />
+  <meta name="search-keywords" content="JSDoc,JSDoc Comments" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>JSDoc-Skript Kommentare</h1>
+  <p>Wenn Sie möchten, dass Ihre benutzerdefinierten Funktionen über eine Codevervollständigung verfügen und die erforderlichen Argumente auf eine bestimmte Art und Weise im Code-Editor angezeigt werden, dann müssen Sie einige Kommentare <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html">im JSDoc-Stil</a> hinzufügen. Diese Kommentare werden verwendet, um der Autovervollständigungsfunktion mitzuteilen, wie die Funktion im <a href="../Scripts.htm">Skript-Editor</a> verwendet und ausgefüllt werden soll.</p>
+  <p>Das Format für einen typischen Funktionsheader wäre der Funktionsname, die Beschreibung der Funktion und dann die Liste der verschiedenen Argumente (Parameter), die die Funktion annimmt, wobei darauf zu achten ist, dass jede Zeile mit einem dreifachen Backslash &quot;
+    <span class="inline">///</span> &quot; beginnen, da dies GameMaker <span class="notranslate">Studio 2</span> anweist <span class="notranslate">,</span> den Kommentar im JSDoc-Stil zu parsen. Den Kommentaren selbst müssen ein Bezeichner (mit vorangestelltem &quot;<span class="inline">@</span>&quot;) und ein Inhalt zugewiesen werden, und die verfügbaren
+    Bezeichner sind wie folgt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Bezeichner</th>
+        <th>Inhalt</th>
+      </tr>
+      <tr>
+        <td><span class="inline">@function</span> / <span class="inline">@func</span></td>
+        <td>Der vollständige Funktionsname und die Argumente für die Funktion, z. B.:<br>
+          <span class="inline"><tt>my_func(x, y, colour)</tt></span>.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">@description</span> / <span class="inline">@desc</span></td>
+        <td>Eine allgemeine Beschreibung dessen, was die Funktion tut.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">@param</span> / <span class="inline">@arg</span> / <span class="inline">@argument</span></td>
+        <td>Der Argumenttyp (optional), eingeschlossen in <span class="inline">{}</span>, der Argumentname und eine kurze Beschreibung (mit Leerzeichen dazwischen)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Um eine Vorstellung davon zu bekommen, wie dies beim Schreiben Ihrer eigenen Funktionen funktionieren würde, nehmen wir dieses einfache Beispiel:</p>
+  <p class="code">function is_same_object(_id, _obj)<br> {
+    <br> if (_id.object_index == _obj)<br> {<br> return true;<br> } <br> else return false;<br> }
+  </p>
+  <p>Alles, was dieses Skript tut, ist zu prüfen, ob eine Instanz die gleiche <span class="inline">object_index</span> wie ein gegebenes Objekt hat und würde einfach als aufgerufen werden:</p>
+  <p class="code">if is_same_object(id, obj_Player)<br> {
+    <br> instance_destroy()<br> }
+  </p>
+  <p>Wenn Sie das jedoch in den Code-Editor schreiben, werden Ihnen die Namen der Argumentvariablen direkt angezeigt<tt>(_id</tt> und <tt>_obj</tt>), was in den meisten Fällen nicht sehr aussagekräftig ist. Sie können JSDoc verwenden, um eigene Argumentnamen und -beschreibungen zu definieren, zusammen mit
+    Informationen für die Funktion zu definieren:</p>
+  <p class="code">/// @function is_same_object(id, object)<br> /// @description Vergleich eines Instanzindex mit einem Objektindex.<br> /// @param {real} inst_id Der eindeutige Instanz-ID-Wert der zu prüfenden Instanz.<br> /// @param {real}
+    object_id Der Objektindex, gegen den geprüft werden soll.<br>
+    <br> function is_same_object(_id, _obj)<br> {
+    <br> if (_id.object_index == _obj)<br> {<br> return true;<br> } <br> else return false;<br> }
+  </p>
+  <p>Wenn Sie nun diese Funktion irgendwo in Ihrem Projekt aufrufen, sehen Sie die neuen Argumentnamen, die in den JSDoc-Kommentaren eingegeben wurden:</p>
+  <p><img alt="JSDoc Example" class="center" height="652" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png" width="672" /></p>
+  <p>Im Bild oben zeigt der obere Teil die Funktion in der Autovervollständigung und der untere Teil zeigt, wie die Argumenthilfe unten funktioniert. Beachten Sie, dass sowohl der optionale &quot;Typ&quot; als auch der obligatorische &quot;Beschreibung&quot;-Teil von <span class="inline">@param</span> standardmäßig nicht in der IDE-Codevervollständigung angezeigt werden. Um sie zu sehen, müssen Sie die Optionen in den GML-Voreinstellungen aktivieren.</p>
+  <p>Sie können einen Argumentnamen in <tt>[]</tt> Klammern einschließen, um anzugeben, dass er optional ist. Der Code-Editor erwartet dann eine beliebige Anzahl von Argumenten zwischen den minimal erforderlichen Argumenten und der Gesamtzahl der Argumente. Sehen Sie zum Beispiel die folgende
+    Funktion:</p>
+  <p class="code">/// @function animate_position(end_x, end_y, start_x, start_y)<br> /// @desc Animiert die Instanz zum Endpunkt, vom optionalen Startpunkt aus<br> /// @arg end_x<br> /// @arg end_y<br> /// @arg [start_x]<br> /// @arg [start_y]<br>
+    <br> function animate_position (x1, y1, x2, y2)<br> {
+    <br> // Funktionscode<br> }
+  </p>
+  <p>Die Argumente <tt>start_x</tt> und <tt>start_y</tt> sind als optional gekennzeichnet, was bedeutet, dass der Code-Editor jetzt 2 bis 4 Argumente erwartet, wie in der Warnmeldung zu sehen ist:</p>
+  <p><img class="center" height="150" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Optional.png" width="537" /></p>
+  <p class="note"><strong>HINWEIS</strong>: Sie erhalten das gleiche Verhalten, wenn Sie optionale Argumente in der Funktionsdeklaration verwenden. Siehe <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">Skriptfunktionen</a> für weitere Informationen.</p>
+  <p>Da Skripte mehrere Funktionen enthalten können, können Sie JSDoc-Kommentare für jede dieser Funktionen vor ihrer Deklaration hinzufügen:</p>
+  <p><img alt="Multiple Functions With JSDoc Comments Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_MultipleFunctions.png" /></p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Scripts.htm">Der Skript-Editor</a></div>
+        <div style="float:right">Nächste: <a href="Code_Snippets.htm">Code-Schnipsel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+JSDoc Script Comments
+-->
+  <!-- TAGS
+jsdoc_comments
+-->
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanzfarbe einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Instance Colour action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Instance Colour" />
+  <meta name="search-keywords" content="Set Instance Colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Instance Colour Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Colour.png"> Instanzfarbe einstellen</h1>
+  <p>Dieser Aktionsblock setzt die Farbe <tt>image_blend</tt> für das &quot;Überblenden&quot; mit dem Instanz-Sprite. Der Standardwert ist der Hexadezimalcode $FFFFFFFF (der die Farbe Weiß im <a class="glossterm" data-glossterm="ARGB" href="#">ARGB-Format</a> darstellt), und damit wird das Sprite ohne Überblendung und mit vollem Alpha gezeichnet. Jeder andere Wert (einschließlich interner Farbkonstanten wie <tt>c_red</tt> oder <tt>c_aqua</tt>) <i>mischt</i> die angegebene Farbe mit dem Original-Sprite und setzt die
+    <span class="inline">image_alpha</span> Komponente für die Instanz, aber nur, wenn das Kontrollkästchen " <strong>Alpha verwenden</strong> " aktiviert ist. Dadurch wird ein zuvor mit der Aktion " <a href="Set_Instance_Alpha.htm">Instanz-Alpha setzen</a>" eingestellter Alpha-Wert überschrieben.</p>
+  <p>Bitte beachten Sie, dass die Instanz, damit Änderungen in dieser Aktion sichtbar werden, entweder <i>kein</i> Draw-Ereignis haben sollte (und damit <span class="notranslate">GameMaker Studio 2</span> das Sprite standardmäßig zeichnet) oder mit der Aktion <a href="../Drawing/Draw_Self.htm">Draw Self</a> gezeichnet werden sollte. Es ist
+    Es ist auch wichtig zu beachten, dass Sie versuchen sollten, Blending auf der <b>HTML5-Plattform</b> zu begrenzen (es sei denn, Sie verwenden WebGL), da jedes geblendete Sprite separat zwischengespeichert werden muss und daher viele geblendete Sprites die Leistung beeinträchtigen können.</p>
+  <p><img alt="Example of sprites being coloured" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/sprite_colour.png" /></p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Instance Colour Action" class="center" height="131" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Colour.png" width="297" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Farbe</td>
+        <td>Die neue Überblendfarbe, die verwendet werden soll (durch Klicken auf das Farbfeld wird das Fenster zur Farbauswahl geöffnet).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><span><img alt="Set Instance Colour Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Sprite.png"></span>Der obige Code des Aktionsblocks setzt ein neues Sprite sowie eine Reihe von anderen
+    Eigenschaften, wie dieses Sprite angezeigt werden soll, einschließlich der Einstellung der Überblendfarbe auf rosa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Actions_Library.htm">Instanz-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="If_Instance_Exists.htm">Wenn die Instanz vorhanden ist</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Instance Colour
+-->
+  <!-- TAGS
+action_colour_sprite
+-->
+
+</body></html>

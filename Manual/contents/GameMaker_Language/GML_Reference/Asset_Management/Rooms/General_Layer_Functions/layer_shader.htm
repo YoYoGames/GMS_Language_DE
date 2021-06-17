@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>schicht_shader</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_shader" />
+  <meta name="rh-index-keywords" content="layer_shader" />
+  <meta name="search-keywords" content="layer_shader" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>schicht_shader</h1>
+  <p>Mit dieser Funktion können Sie einer beliebigen Ebene eine <span class="notranslate">Shader-Ressource</span> zuweisen und die Ebene wird dann mit diesem <span class="notranslate">Shader</span> gerendert. Sie geben entweder den eindeutigen ID-Wert der Ebene oder den Namen der Ebene (als String - dies hat Auswirkungen auf die Leistung)
+    zusammen mit der ID des zu verwendenden <span class="notranslate">Shaders</span>. Der <span class="notranslate">Shader</span> muss zuvor im Asset-Browser erstellt worden sein und der <span class="notranslate">Shader-Index</span> (der Name der <span class="notranslate">Shader-Ressource</span> ) wird dann an diese Funktion übergeben. Wenn der zugewiesenen Ebene Instanzen hinzugefügt wurden, dann
+    wird der <span class="notranslate">Shader</span> auf <i>alle</i> Zeichenereignisse angewendet, die die Instanz verwendet - wenn die Instanz z. B. ein "Draw GUI Begin"-Ereignis hat, wird der <span class="notranslate">Shader</span> automatisch auf dieses Ereignis angewendet. Der <span class="notranslate">Shader</span> wirkt sich auch auf alle anderen grafischen Elemente aus, die
+    auf dieser Ebene gezeichnet werden, wie z. B. Sprite-Assets oder Tile-Maps.</p>
+  <p>Beachten Sie, dass die Funktion <i>nicht</i> in irgendwelchen Draw-Events oder Step-Events aufgerufen werden soll, sondern nur beim Start des Raums im <b>Room Creation Code</b> oder im <b>Create Event </b>/ <b>Room Start Event</b> einer Instanz aufgerufen werden muss.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_shader(layer_id, <span class="notranslate">shader</span>)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Ebene (oder der Ebenenname als String)</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Shader</span></td>
+        <td>Der <span class="notranslate">Shader-Index</span>, der der Ebene zugewiesen werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br> layer_shader(lay_id<span class="notranslate">,</span> shd_Sepia);</p>
+  <p>Der obige Code weist der angegebenen Ebene für alle Zeichnungen die <span class="notranslate">Shader-Ressource</span> &quot;shd_Sepia&quot; zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_get_script_begin.htm">layer_get_script_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_<span class="notranslate">shader</span>
+-->
+  <!-- TAGS
+layer_<span class="notranslate">shader</span>
+-->
+</body>
+</html>

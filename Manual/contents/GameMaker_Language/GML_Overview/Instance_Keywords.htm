@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz-Schlüsselwörter</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different instance &quot;keywords&quot;" />
+  <meta name="rh-index-keywords" content="Instance Keywords,noone,self,other,all" />
+  <meta name="search-keywords" content="self,all,noone,other,instance keywords" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Instanz-Schlüsselwörter</h1>
+  <p>Um bestimmte Dinge in <span class="notranslate">GameMaker Studio 2</span> zu vereinfachen, können Sie eines von mehreren <b>Instanz-Schlüsselwörtern</b> in Ihrem Code (ob <span class="notranslate">GML</span> oder <span class="notranslate">Drag and Drop™</span>) verwenden. Diese Schlüsselwörter werden in erster Linie verwendet, um Instanzen - und in einigen Fällen Strukturen - unter verschiedenen
+    Situationen und jedes wird im folgenden Text erklärt. Beachten Sie, dass alle Schlüsselwörter intern durch einen <strong>negativen Integer-Wert</strong> dargestellt werden, so dass bei der Zuweisung oder Überprüfung von Variablenwerten gegen oder mit diesen Schlüsselwörtern Vorsicht geboten ist,
+    da Sie später möglicherweise unerwartete Ergebnisse erhalten, da <span class="notranslate">GameMaker Studio 2</span> den verwendeten Wert als etwas anderes interpretiert. Beachten Sie auch, dass die Verwendung der Werte anstelle der Schlüsselwörter in Ihrem Code <b>überhaupt nicht empfehlenswert</b> ist und später zu Problemen führen kann
+    später Probleme verursachen kann.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="inline">self</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <table>
+      <tbody>
+        <tr>
+          <th>Schlüsselwort</th>
+          <th>Beschreibung</th>
+          <th>Wert</th>
+        </tr>
+        <tr>
+          <td><span class="inline">self</span></td>
+          <td>Die Instanz/Konstruktion, die den aktuellen Codeblock ausführt.</td>
+          <td>   -1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot"> </p>
+    <p class="dropspot"><span class="inline">self</span> kann verwendet werden, um die aktuelle Struktur oder Instanz zu identifizieren, die im aktuellen Codeblock im Gültigkeitsbereich ist. Zum Beispiel:</p>
+    <p class="code">var val = 100;<br> with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Fire))<br> {
+      <br> self.val = val;<br> }
+    </p>
+    <p class="dropspot">In diesem Beispiel sehen Sie, dass wir eine <i>lokale</i> Variable mit dem Namen <span class="inline">val</span> haben und wir möchten, dass sie die <i>Instanzvariable</i> mit dem gleichen Namen in der neu erstellten Objektinstanz setzt. Um die Instanzvariable korrekt zu identifizieren
+      zu identifizieren und <span class="notranslate">GameMaker Studio 2</span> anzuweisen, sie in der Instanz zu setzen, die den Codeblock aufruft, verwenden wir das Schlüsselwort <span class="inline">self</span>. In den meisten Fällen können Sie auch die eingebaute Instanzvariable <span class="inline">id</span> anstelle von <span class="inline">self</span> verwenden,
+      aber <span class="inline">self</span> bietet gewisse Vorteile. Zunächst einmal ist es für den Compiler schneller, die Instanz (oder Struktur) mit <span class="inline">self</span> statt <span class="inline">id</span> zu identifizieren, da der <tt>id-Wert</tt> die Instanz-Lookup-Tabelle durchläuft, während <span class="inline">self</span> dies nicht tut. Zweitens ist es für diejenigen, die Erweiterungen erstellen, sehr nützlich, das richtige Scoping von Variablen sicherzustellen, da es möglich ist, dass ein Projekt, das
+      eine Erweiterung verwendet, eine Variable mit globalem Gültigkeitsbereich oder etwas mit demselben Namen wie eine Variable in der Erweiterung haben kann.</p>
+    <p class="note"><strong>HINWEIS</strong>: Das Schlüsselwort <span class="inline">self</span> ist <strong>keine </strong>Abkürzung für den tatsächlichen ID-Wert einer Instanz oder Struktur und sollte nur in dem oben erläuterten Zusammenhang verwendet werden. Wenn Sie den <strong>ID-Wert </strong>für
+      eine Instanz benötigen, müssen Sie <span class="inline">self.id</span> verwenden, z. B:</p>
+    <p class="code">var myID = id;<br> with (all)<br> {
+      <br> if self.id == myID<br> {<br> // etwas tun<br> } <br> }
+    </p>
+    <p class="dropspot">Es ist auch erwähnenswert, dass <span class="inline">self</span> auch innerhalb von <a href="Structs.htm">Structs</a> - unter ganz bestimmten Umständen - verwendet werden kann, um Mitgliedsvariablen für das Struct zu referenzieren.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span class="inline">other</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <table>
+      <tbody>
+        <tr>
+          <th>Schlüsselwort</th>
+          <th>Beschreibung</th>
+          <th>Wert</th>
+        </tr>
+        <tr>
+          <td><span class="inline">other</span></td>
+          <td>Die andere Instanz, die an einem Kollisionsereignis beteiligt ist, oder die andere Instanz oder Struktur aus einer <tt>With-Funktion</tt>.</td>
+          <td>   -2</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">Das spezielle <i>Schlüsselwort</i> <span class="inline">other</span> kann auf zwei verschiedene Arten verwendet werden, um eine bestimmte Instanz (und in einigen Fällen eine Struktur) zu referenzieren: bei Verwendung in einer <span class="inline">with</span> Funktion ( <a href="Language_Features/with.htm">hier</a> erklärt)
+      oder wenn es in einem <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">Kollisionsereignis</a> verwendet wird, was in diesem Abschnitt erklärt wird.</p>
+    <p class="dropspot">Ein Kollisionsereignis kann nur zwischen zwei Instanzen auftreten. Sie <i>können</i> mehrere Kollisionen zwischen mehreren Instanzen haben, aber sie werden alle von <span class="notranslate">GameMaker Studio 2</span> auf einer 1:1-Basis aufgelöst, mit der Instanz, die das Kollisionsereignis hat, und der
+      &quot;anderen&quot; Instanz, die beteiligt ist. Stellen Sie sich vor, Sie haben ein Spielerobjekt, mehrere Feindobjekte und mehrere Geschossobjekte, die der Feind auf Sie abfeuern kann. Sie können jedem Feind eine einzelne Geschossinstanz zuweisen, aber mit einer anderen Schadensvariablen
+      die ihm z. B. beim Erstellen zufällig zugewiesen wird:</p>
+    <p class="code">var nnn;<br> nnn = instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br> nnn.damage = 5 + irandom(5);<br> nnn.speed = 8;<br> nnn.direction = point_direction(x, y, obj_Player.x, obj_Player.y);</p>
+    <p class="dropspot">Sie können sehen, wie wir seine Variablen mit der &quot;Punktmethode&quot; setzen, die im Abschnitt über das Adressieren von <a href="Addressing_Variables_In_Other_Instances.htm">Variablen in anderen Instanzen</a> beschrieben wurde <a href="Addressing_Variables_In_Other_Instances.htm">.</a> Dadurch erhalten die Bullet-Objekte einen anderen Schadens
+      Wert. Aber was ist mit dem Player-Objekt? Wie wird es den Schaden erkennen, den es einstecken muss? Durch die Verwendung von <span class="inline">other</span> im Kollisionsereignis:</p>
+    <p class="code">hp -= other.damage;<br> if hp &lt;= 0 instance_destroy();</p>
+    <p class="dropspot">Der obige Code zieht den Betrag, der in der <i>anderen</i> Instanz in der Kollisionsvariablen &quot;damage&quot; gespeichert ist, von der &quot;hp&quot;-Variablen des Spielers ab und prüft dann, ob die &quot;hp&quot; kleiner oder gleich 0 ist. Wenn ja
+      dann wird das Player-Objekt zerstört. Bitte beachten Sie, dass <b>"other"</b> auf diese Weise <i>nur im Kollisionsereignis funktioniert</i> und dass die andere Instanz die zu prüfende Variable haben muss, da sonst ein Fehler ausgelöst wird. Sie können jedoch
+      Werte zuweisen oder sogar neue Variablen erstellen, indem Sie <span class="inline">other</span> auch im Kollisionsereignis verwenden, etwa so:</p>
+    <p class="code">//Zehn zu der anderen Instanzvariable &quot;mana&quot; hinzufügen<br> other.mana += 10;<br> //den Wert der anderen Instanzvariable &quot;hit&quot; auf true setzen, indem sie erstellt wird, wenn die Variable nicht bereits existiert<br> other.hit = true;</p>
+    <p class="dropspot">Es ist auch erwähnenswert, dass <span class="inline">other</span> auch innerhalb von <a href="Structs.htm">Structs</a> - unter ganz bestimmten Umständen - verwendet werden kann, um Mitgliedsvariablen für das Struct zu referenzieren. </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="inline">all</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <table>
+      <tbody>
+        <tr>
+          <th>Schlüsselwort</th>
+          <th>Beschreibung</th>
+          <th>Wert</th>
+        </tr>
+        <tr>
+          <td><span class="inline">all</span></td>
+          <td>Alle Instanzen, die derzeit im Raum aktiv sind.</td>
+          <td>   -3</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">Dieses Schlüsselwort wird verwendet, um <span class="notranslate">GameMaker Studio 2</span> mitzuteilen, dass eine Funktion auf alle aktiven Instanzen innerhalb eines Raums angewendet bzw. geprüft werden soll (deaktivierte Instanzen werden nicht geprüft oder angesprochen). Sie <b>können</b> <span class="inline">all</span> <b>nicht</b> verwenden, um auf
+      oder Variablen in anderen Instanzen mit der Punktmethode zu setzen (siehe <a href="Addressing_Variables_In_Other_Instances.htm">hier</a>), aber Sie <strong>können </strong>sie beim Aufruf von <a href="Language_Features/with.htm"><tt>mit()</tt></a>verwenden, zum Beispiel:</p>
+    <p class="code">mit (alle)<br> {
+      <br> speed = 0;<br> }
+    </p>
+    <p class="dropspot">Der obige Code setzt die Geschwindigkeit aller Instanzen im Raum auf 0. Sie können auch <span class="inline">all</span> innerhalb von Funktionen verwenden, um z. B. alle Instanzen im Raum anzuvisieren oder zu überprüfen:</p>
+    <p class="code">//Prüfen eines Punktes für jede aktive Instanz im Raum<br> inst = instance_position(mouse_x, mouse_y, all); <br>
+      <br> //Prüfen aller Instanzen auf eine Kollision entlang einer Linie<br> if collision_line(x, y, mouse_x, mouse_y, all, false, true) {}<br>
+      <br> //Hinzufügen aller Instanzen im Raum in ein Bewegungsplanungsgitter<br> mp_grid_add_instances(grid, all, false);</p>
+    <p class="dropspot"><span class="inline">all</span> ist ein sehr nützliches Schlüsselwort und kann in zahlreichen Situationen innerhalb Ihres Codes und Ihrer Aktionen verwendet werden, was oft die Menge an Code reduziert, die Sie schreiben müssen, um einen gewünschten Effekt zu erzielen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="inline">noone</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <table>
+      <tbody>
+        <tr>
+          <th>Schlüsselwort</th>
+          <th>Beschreibung</th>
+          <th>Wert</th>
+        </tr>
+        <tr>
+          <td><span class="inline">noone</span></td>
+          <td>Überhaupt keine Instanz.</td>
+          <td>   -4</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">Es mag seltsam erscheinen, aber oft werden Sie beim Programmieren Ihrer Spiele die Notwendigkeit finden, zu prüfen, ob an einem Ort oder in einer Kollision etc. keine Instanzen gefunden wurden. In diesen Fällen würden Sie dieses Schlüsselwort verwenden, um zu prüfen, ob nichts gefunden wurde, etwa so:</p>
+    <p class="code">if instance_nearest(x, y, obj_enemy) != noone<br> {
+      <br> //do something as there is an enemy instance near<br> }
+    </p>
+    <p class="dropspot">In diesem Beispiel gibt die Funktion <span class="inline">instance_nearest()</span> entweder <span class="inline">noone</span> oder die eindeutige ID der nächstgelegenen gefundenen Instanz zurück. Im Grunde können Sie jedes Mal, wenn Sie nach einer Instanz suchen müssen, erwarten
+      entweder <span class="inline">noone</span> oder eine eindeutige Instanz-ID zurückerhalten.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Weiter: <a href="Addressing_Variables_In_Other_Instances.htm">Variablen in anderen Instanzen adressieren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Instance Keywords
+self
+all
+noone
+other
+-->
+  <!-- TAGS
+instance_keywords
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>raum_vorhanden</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_exists" />
+  <meta name="rh-index-keywords" content="room_exists" />
+  <meta name="search-keywords" content="room_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>raum_vorhanden</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob der von Ihnen angegebene Raum existiert oder nicht. Diese Funktion nimmt den <i>Raumindex</i> (eine reelle Zahl) und <b>nicht</b> den Raumnamen (eine Zeichenkette). Diese Funktion ist am nützlichsten, wenn Sie Räume dynamisch erstellen
+    mit der Funktion <a href="room_add.htm"><tt>room_add()</tt></a>verwenden, aber Sie können auch die <b>schreibgeschützten</b> Variablen <a href="room_first.htm"><tt>raum_erste</tt></a> und <a href="room_last.htm"><tt>raum_last</tt></a> oder die Funktionen <a href="room_next.htm"><tt>room_next()</tt></a>    und <a href="room_previous.htm"><tt>room_previous()</tt></a> verwenden, um einen bestimmten Raumindex zu erhalten, oder eine Variable bereitstellen, die den Index eines beliebigen anderen Raums in Ihrem Spiel gespeichert hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">room_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu prüfenden Raums.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if room_exists(global.rm[0])<br> {
+    <br> room_goto(global.rm[0]);
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob der Raum, der im Array &quot;global.rm[]&quot; indiziert ist, existiert, und wenn dies der Fall ist, geht er zu diesem Raum.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Rooms.htm">Räume</a></div>
+        <div style="float:right">Weiter: <a href="room_add.htm">room_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_exists
+-->
+  <!-- TAGS
+room_exists
+-->
+</body>
+</html>

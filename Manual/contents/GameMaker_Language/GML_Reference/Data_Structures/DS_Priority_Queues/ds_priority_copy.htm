@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_priorität_kopie</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_priority_copy" />
+  <meta name="rh-index-keywords" content="ds_priority_copy" />
+  <meta name="search-keywords" content="ds_priority_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_priorität_kopie</h1>
+  <p>Mit dieser Funktion können Sie den Inhalt einer Prioritäts-Warteschlange in eine andere kopieren. Beachten Sie, dass dadurch der Inhalt der ursprünglichen Prioritäts-Warteschlange <i>NICHT</i> entfernt wird und die ursprüngliche Prioritäts-Warteschlange auch nicht zerstört wird. Wenn Sie diese Funktion verwenden, muss die Prioritäts
+    Wenn diese Funktion verwendet wird, muss die Prioritäts-Warteschlange, in die kopiert wird, zuvor erstellt worden sein, und wenn sie vor dem Kopieren Elemente enthielt, werden diese zuerst gelöscht (d. h. diese Informationen gehen verloren).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_priority_copy(id, Quelle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der Prioritätswarteschlange, <i>in die</i> kopiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>Quelle</td>
+        <td>Die ID der Prioritätswarteschlange, <i>aus der</i> kopiert werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">with (instance_create_layer(x, y, &quot;Enemies&quot;, obj_Enemy))<br> {
+    <br> p_queue = ds_priority_create();<br> ds_priority_copy(p_queue, other.p_queue);<br> }
+  </p>
+  <p>Die obige Funktion erstellt eine neue Instanz und erstellt dann in dieser Instanz eine neue DS-Prioritätswarteschlange und kopiert den Inhalt der Prioritätswarteschlange in der Instanz, die den Codeblock ausführt, in die neu erstellte Instanz-Prioritätswarteschlange.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Priority_Queues.htm">DS Prioritäts-Warteschlangen</a></div>
+        <div style="float:right">Weiter: <a href="ds_priority_read.htm">ds_priority_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_priority_copy
+-->
+  <!-- TAGS
+ds_priority_copy
+-->
+
+</body></html>

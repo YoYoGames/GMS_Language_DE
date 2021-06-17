@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Physik</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for physics functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Physics" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Physik</h1>
+  <p>Die Integration einer eigenen Physik-Bibliothek in <span class="notranslate">GameMaker Studio 2</span> bedeutet, dass Sie jetzt die Kontrolle über alle Aspekte des physikalischen Verhaltens von Objekten innerhalb Ihrer Spielwelt übernehmen können, insbesondere über Kollisionen und Objektinteraktion. Das &quot;traditionelle&quot;
+    Kollisionssystem (mit dem <span class="notranslate">GameMaker Studio 2</span> standardmäßig arbeitet) ist ein &quot;reaktives&quot; System, bei dem Sie auf eine Kollision prüfen und dann <i>auf</i> diese Kollision mit Code reagieren, den Sie in einzelnen Objekten platzieren. Das ist gut für einfache Spiele,
+    Aber wenn Sie eine große Anzahl von Objekten haben und programmieren müssen, wie sie alle auf verschiedene Situationen in der Spielwelt reagieren, wird schnell klar, dass dieses System einfach nicht ausreicht. Dann müssen Sie auf das Physiksystem von GameMaker <span class="notranslate">Studio 2</span> zurückgreifen.</p>
+  <p>Das Physiksystem funktioniert auf eine ganz andere Weise als normale Kollisionen. Es handelt sich eher um ein &quot;passives&quot; System, bei dem Sie eine Reihe von Eigenschaften für Ihre Objekte in der Spielwelt sowie die Eigenschaften der Spielwelt selbst definieren, bevor
+    Kollisionen oder Interaktionen auftreten. Diese kodierten &quot;Regeln&quot; bestimmen dann die Art und Weise, wie alles in Ihrer Spielwelt interagiert. Auf diese Weise können Sie mit ein paar einfachen Codes und dem richtigen Raum-Setup sehr komplexe Interaktionen zwischen
+    Objekten und der Welt erstellen, die auftreten und sich auflösen werden <i>, ohne dass</i> Sie für jedes einzelne mögliche Ergebnis programmieren müssen.</p>
+  <p>Es gibt ein paar Dinge, die Sie beim Arbeiten mit der <span class="notranslate">GameMaker Studio 2</span> Physikwelt beachten sollten:</p>
+  <ul class="colour">
+    <li>Das Physiksystem existiert &quot;losgelöst&quot; von der grundlegenden Raum- und Instanzstruktur von GameMaker <span class="notranslate">Studio 2, d. h.</span> seine Zeitabläufe und Funktionen sind nicht zwingend an die Raumgeschwindigkeit und Schrittfolge gebunden wie alles andere.</li>
+    <li>Das Physiksystem ersetzt viele der normalen Instanzfunktionen... zum Beispiel, anstatt eine Geschwindigkeit und eine Richtung für eine Instanz zu setzen, wenn sie als vollständig simulierter physischer Körper deklariert wurde, würden Sie eine <i>Kraft</i> oder einen <i>Impuls</i> verwenden, um sie dazu zu bringen, sich in der Spielwelt zu bewegen, oder wenn sie nicht physikfähig ist, müssen Sie die x- und y-Positionen selbst setzen. Das ist etwas gewöhnungsbedürftig, also experimentieren Sie mit den Physikfunktionen und lernen Sie, wie alles funktioniert, bevor Sie versuchen, sie in Ihr Projekt zu integrieren.
+      bevor Sie versuchen, sie in Ihr Projekt zu integrieren.</li>
+    <li>Sie sollten die Anzahl der Instanzen begrenzen, die erstellt werden, sowie die Anzahl der Kollisionen und Kollisionsgruppen, mit denen die Physikwelt umgehen muss. Sie <i>können nicht</i> Tausende von Instanzen haben, alle mit physikalischen Eigenschaften und Kollisionen
+      und erwarten, dass alles gut funktioniert, da die Physik einige ziemlich intensive Berechnungen erfordert.</li>
+    <li>Verwenden Sie beim Einrichten von Kollisionen so oft wie möglich Elternobjekte, da das Kollisionssystem nur eine begrenzte Anzahl von <i>Kollisionsbits</i> zur Verfügung hat, die den Instanzen zugewiesen werden können, damit Box2D Kollisionen erkennen kann. Wenn Sie zum Beispiel fünf verschiedene Wandobjekte haben,
+      prüfen Sie nicht auf fünf Kollisionen, sondern erstellen Sie ein übergeordnetes Objekt und weisen Sie es den fünf Wänden zu und lassen Sie dann EINE Kollisionsprüfung mit dem übergeordneten Objekt durchführen. Die physikalischen Eigenschaften der Objekte werden <i>nicht vererbt</i>, nur die Kollisionen. Auf diese Weise können Sie
+      können Sie Ihr Spiel optimieren und fehlerfrei halten.</li>
+    <li>Versuchen Sie nicht, Instanzen von einem Punkt des Raums zu einem anderen zu bewegen, außer mit den Physikfunktionen (d. h.: stellen Sie die x/y-Koordinaten nicht manuell ein). Obwohl dies möglich ist und unter bestimmten Umständen notwendig sein kann, ist dies im Allgemeinen
+      zu vermeiden, da es unvorhersehbare Auswirkungen auf die Physik-Engine haben kann, insbesondere bei der Auflösung von Kollisionen.</li>
+    <li>Beim Binden von Fixtures ist Vorsicht geboten, da sie unabhängig an Objekte und Instanzen gebunden werden können. Das heißt, wenn Sie ein Fixture an (z. B.) &quot;o_Wall&quot; binden, erhalten alle Instanzen dieses Objekts das Fixture. Wenn Sie nur
+      Wenn Sie ein Fixture nur an eine Instanz binden wollen, verwenden Sie die ID dieser Instanz in der entsprechenden Funktion.</li>
+    <li>Bitte beachten Sie, dass aufgrund von Unterschieden in der Fließkomma-Präzision Versionen Ihres Spiels für verschiedene Zielplattformen ein leicht abweichendes Verhalten gegenüber der <span class="notranslate">Standard-Windows-Version</span> aufweisen können, obwohl jede Version selbstkonsistent ist
+      über nachfolgende Ausführungen hinweg.</li>
+    <li>Um Instabilitäten in der physikalischen Simulation zu vermeiden, beschränkt Box2D den Betrag, um den sich ein Körper innerhalb eines einzigen Updates drehen und verschieben darf, auf Obergrenzen. Die offensichtlichen Beschränkungen variieren je nach Genauigkeit der physikalischen Simulation in Übereinstimmung
+      der Anzahl der Aktualisierungen und der Aktualisierungsgeschwindigkeit der physikalischen Welt und auch in Abhängigkeit von der Skalierung der physikalischen Welt. Das bedeutet, dass (zum Beispiel) bei einer Weltaktualisierungsgeschwindigkeit von 60 die maximale Bewegungsgeschwindigkeit 20 betragen würde.</li>
+  </ul>
+  <p>Informationen zu den Physikfunktionen finden Sie auf den folgenden Seiten:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="The_Physics_World/The_Physics_World.htm">Die Welt der Physik</a></li>
+    <li><a href="Forces/Forces.htm">Kräfte</a></li>
+    <li><a href="Fixtures/Fixtures.htm">Vorrichtungen</a></li>
+    <li><a href="Joints/Joints.htm">Gelenke</a></li>
+    <li><a href="Soft_Body_Particles/Soft_Body_Particles.htm">Weiche Körperpartikel</a></li>
+    <li><a href="Physics_Variables/Physics_Variables.htm">Physik-Variablen</a></li>
+  </ul>
+  <p> </p>
+  <p>Schließlich gibt es noch ein paar spezielle Physikfunktionen, die für fortgeschrittenere Physiksimulationen nützlich sein können. Die erste dient zum Testen auf mögliche Kollisionen an einem bestimmten Punkt im Raum, und die zweite zum Erzeugen von benutzerdefinierten Masse- und Trägheitseigenschaften
+    Eigenschaften innerhalb einer Instanz:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_test_overlap.htm">physik_test_überlappung</a></li>
+    <li><a href="physics_mass_properties.htm">physik_masse_eigenschaften</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../GML_Reference.htm"><span class="notranslate">GML-Referenz</span></a></div>
+        <div style="float:right">Nächste: <a href="../In_App_Purchases/In_App_Purchases.htm">In-App-Käufe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Physics
+Physics Functions
+-->
+  <!-- TAGS
+physics_functions
+-->
+</body>
+</html>

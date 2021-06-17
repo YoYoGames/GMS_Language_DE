@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_get_address</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_get_address" />
+  <meta name="rh-index-keywords" content="buffer_get_address" />
+  <meta name="search-keywords" content="buffer_get_address" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_get_address</h1>
+  <p>Mit dieser Funktion können Sie einen <i>Zeiger</i> auf die rohe, <i>ausgerichtete</i> Pufferadresse erhalten. Dies ist in erster Linie für die Verwendung mit Erweiterungen gedacht, da Sie diesen Wert an sie weitergeben können, um ihnen den Zugriff auf die Pufferdaten zu ermöglichen. Beachten Sie, dass es ein paar Dinge gibt
+    die Sie mit dem Puffer nicht machen können, wenn Sie von einer Erweiterung aus zugreifen:</p>
+  <ul class="colour">
+    <li>Sie können den Speicher nicht freigeben.</li>
+    <li>Sie können die Größe des Speichers nicht ändern.</li>
+    <li>Sie können nicht über die Pufferadresse plus die Puffergröße hinaus schreiben (Sie können die <a href="buffer_get_size.htm"><tt>buffer_get_size()</tt></a> Funktion verwenden) oder Sie erhalten einen Out-of-Bounds-Fehler.</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_get_address(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu verwendenden Puffers.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeiger</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var b_address = buffer_get_address(buff_model);<br> var b_end_address = b_address + buffer_get_size(buff_model);</p>
+  <p>Der obige Code ermittelt die Speicheradresse des Puffers, der in der Variablen &quot;buff_model&quot; indiziert ist, und ermittelt dann die Speicheradresse für das Ende des Puffers mit der <tt>Funktion</tt> buffer_get_size <tt>() und</tt> speichert beide Werte in lokalen Variablen für
+    weitere Verwendung.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_get_size.htm">buffer_get_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_get_address
+-->
+  <!-- TAGS
+buffer_get_address
+-->
+</body>
+</html>

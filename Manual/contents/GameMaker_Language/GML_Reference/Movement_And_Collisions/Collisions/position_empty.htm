@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>position_leer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_empty" />
+  <meta name="rh-index-keywords" content="position_empty" />
+  <meta name="search-keywords" content="position_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>position_leer</h1>
+  <p>Diese Funktion prüft, ob eine gegebene Position mit einer <i>beliebigen Instanz</i> mit gültiger Kollisionsmaske an der gegebenen Position in Kollision gerät.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">position_empty(x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die zu prüfende x-Position.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die zu prüfende y-Position.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var xx, yy;<br> xx = random(Raum_Breite);<br> yy = random(Raum_Höhe);<br> if position_empty(xx, yy)<br> {
+    <br> instance_create_layer(xx, yy, &quot;Bullets&quot;, obj_Bomb);<br> }
+  </p>
+  <p>Dies prüft eine zufällige Position irgendwo im Raum auf eine Kollision und wenn es keine gibt, wird eine Instanz von obj_Bomb erzeugt.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="position_meeting.htm">position_meeting</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_empty
+-->
+  <!-- TAGS
+position_empty
+-->
+</body>
+</html>

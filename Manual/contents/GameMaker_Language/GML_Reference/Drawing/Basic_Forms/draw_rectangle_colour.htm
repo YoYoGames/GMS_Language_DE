@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Rechteck_Farbe_zeichnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_rectangle_colour" />
+  <meta name="rh-index-keywords" content="draw_rectangle_colour,draw_rectangle_color" />
+  <meta name="search-keywords" content="draw_rectangle_colour,draw_rectangle_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Rechteck_Farbe_zeichnen</h1>
+  <p>Mit dieser Funktion können Sie entweder einen Umriss eines Rechtecks oder ein gefülltes Rechteck zeichnen, indem Sie einen Bereich definieren, bei dem die Position (x1,y1) die obere linke Ecke und die Position (x2,y2) die untere rechte Ecke ist. Wenn es gefüllt ist, können Sie die einzelnen
+    Farben für jeden Eckpunkt definieren, und wenn diese Farben nicht gleich sind, erhalten Sie einen Verlaufseffekt von einem zum anderen (die Farbeinstellungen überschreiben die mit der Funktion <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>).
+    Bitte beachten Sie, dass das zu zeichnende Rechteck aufgrund von Unterschieden zwischen den verschiedenen unterstützten Plattformen möglicherweise andere Werte (+/-1 auf x, y oder Breite bzw. Höhe) benötigt, um mit den gewünschten Abmessungen gezeichnet zu werden.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie eine Form mit einem <span class="notranslate">Shader</span> zeichnen wollen, sollten Sie wissen, dass die meisten <span class="notranslate">Shader</span> die folgenden Eingaben erwarten: Scheitelpunkt, Textur, Farbe. Wenn Sie diese Funktion verwenden, werden jedoch nur Scheitelpunkt- und Farbdaten übergeben, so dass der
+   <span class="notranslate">Shader</span> möglicherweise nichts zeichnen (oder etwas zeichnen, aber nicht korrekt). Wenn Sie Formen auf diese Weise zeichnen müssen, sollte der <span class="notranslate">Shader</span> entsprechend angepasst werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_rectangle_colour(x1, y1, x2, y2, col1, col2, col3, col4, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate des linken Randes des Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate der Oberkante des Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate des rechten Randes des Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate des unteren Randes des Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>col1</td>
+        <td>Die Farbe der linken oberen Ecke.</td>
+      </tr>
+      <tr>
+        <td>col2</td>
+        <td>Die Farbe der rechten oberen Ecke.</td>
+      </tr>
+      <tr>
+        <td>col3</td>
+        <td>Die Farbe der unteren rechten Ecke.</td>
+      </tr>
+      <tr>
+        <td>col4</td>
+        <td>Die Farbe der unteren linken Ecke.</td>
+      </tr>
+      <tr>
+        <td>Umriss</td>
+        <td>Ob das Rechteck ein Umriss (true) oder ausgefüllt (false) ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_rectangle_colour(50, 50, 200, 200, c_black, c_white, c_black, c_white, false);</p>
+  <p>Dies würde ein ausgefülltes Quadrat mit einem weichen Schwarz/Weiß-Verlauf zwischen den Ecken zeichnen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Basic_Forms.htm">Grundformulare</a></div>
+        <div style="float:right">Weiter: <a href="draw_roundrect.htm">draw_roundrect</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_rectangle_colour
+draw_rectangle_color
+-->
+  <!-- TAGS
+draw_rectangle_colour
+-->
+</body>
+</html>

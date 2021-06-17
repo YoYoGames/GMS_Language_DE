@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Spiel laden</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Load Game action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Load Game" />
+  <meta name="search-keywords" content="Load Game" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Load Game Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Load_Game.png" style="cursor: nwse-resize;"> Spiel laden</h1>
+  <p>Mit dieser Aktion wird ein Spiel geladen, das zuvor mit der Aktion " <a href="Save_Game.htm">Spiel speichern"</a> gespeichert wurde. Sie geben den Dateinamen der zu ladenden Datei an (als String und einschließlich der Erweiterung) und das Spiel wird geladen und läuft weiter
+    von dem gespeicherten Punkt aus. Beachten Sie, dass dies nicht als universelles Speicher-/Ladesystem konzipiert ist und der Versuch, ein Spiel zu laden, das in einem früheren Durchlauf des Projekts gespeichert wurde, zu Fehlern führen kann (vor allem, wenn Sie Dinge wie <a href="../Data_Structures/Data_Structure_Actions.htm">Datenstrukturen</a> oder <a href="../Particles/Particle_Actions.htm">Partikel</a> verwendet haben), und daher sollten Sie nur versuchen, Spiele zu laden, die im Verlauf eines einzelnen Durchlaufs gespeichert wurden (für Dinge wie Checkpoints). Beachten Sie auch, dass <i>die</i> Datei erst am Ende des aktuellen Ereignisses oder Skripts geladen wird, so dass alle Aktionen nach dem Aufruf der Ladeaktion noch ausgeführt werden. Einen umfassenderen Ansatz zum Laden gespeicherter Spieldaten finden Sie im Abschnitt " <a href="../Files/File_Actions.htm">Datei-Aktionen</a>".</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Load Game Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/a_Game_Load_Game.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Zeitleiste</td>
+        <td>Die Timeline-Ressource, die einer Instanz zugewiesen werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><span><img alt="Load Game Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/e_Game_Load_Game.png"></span>Der obige Code des Aktionsblocks prüft eine globale Variable, und wenn sie kleiner oder gleich ist als
+    0 ist, wird ein zuvor gespeichertes Spiel geladen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Game_Actions.htm">Spiel-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Restart_Game.htm">Spiel neu starten</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Load Game
+-->
+  <!-- TAGS
+action_load_game
+-->
+</body>
+</html>

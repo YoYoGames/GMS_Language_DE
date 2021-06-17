@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>neu</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the new function" />
+  <meta name="rh-index-keywords" content="new" />
+  <meta name="search-keywords" content="new" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>neu</h1>
+  <p>Der <tt>new-Operator</tt> kann verwendet werden, um ein struct mit einer Funktion zu erstellen, die mit den angegebenen Argumenten aufgerufen wird. Die Funktion kann dann die Struktur mit Variablen aus den Argumenten füllen - ähnlich wie das Ereignis "create" einer Instanz die anfänglichen
+    Variablen für die Instanz setzen - und dann gibt der <tt>new-Operator</tt> das struct zurück. Bevor Sie diesen Operator verwenden, ist es wichtig zu beachten, dass die angegebene Funktion <i>als <tt>Konstruktorfunktion</tt></i> gekennzeichnet sein muss, da der <tt>new-Operator</tt> sonst das struct nicht erzeugt (das Codebeispiel unten zeigt dies, und für weitere Informationen lesen Sie bitte die Seite über <a href="../Structs.htm">Structs</a>).</p>
+  <p class="note"><strong>HINWEIS</strong>: Sie können ein struct überprüfen, um herauszufinden, mit welcher Funktion es erstellt wurde, indem Sie die <span class="notranslate">Laufzeitfunktion</span> <a href="../../GML_Reference/Variable_Functions/instanceof.htm"><tt>instanceof()</tt></a>.</p>
+  <p>Dieser Operator hat die folgende Syntax:</p>
+  <p class="code"><span>&lt;Variable&gt; = new &lt;Funktion&gt; </span>(&lt;Argument&gt;, &lt;Argument&gt;, ...);</p>
+  <p>Wenn Sie den new-Operator zusammen mit einer Funktion verwenden, wird eine struct-Referenz zurückgegeben, die in der angegebenen Variablen gespeichert wird, so dass Sie auf das struct und alle Variablen, die darin von der Funktion erstellt wurden, zugreifen können.</p>
+  <p>Das folgende Beispiel zeigt eine Funktion, die zur Verwendung als Konstruktor definiert wurde:</p>
+  <p class="code">function init_struct(_a, _b, _c) constructor<br> {
+    <br> a = _a;<br> b = _b;<br> c = _c;<br> }
+  </p>
+  <p>Diese Funktion kann dann zusammen mit dem <tt>new-Operator</tt> verwendet werden, um eine Struktur zu erstellen und sie mit den Variablen zu füllen, die auf die Werte der in der Funktion verwendeten Argumente gesetzt sind, etwa so:</p>
+  <p class="code">mystruct = new init_struct(10, 100, &quot;Hello World&quot;);</p>
+  <p>Es ist wichtig zu beachten, dass der Aufruf von new bei einer Funktion, die <em>nicht</em> als Konstruktor gekennzeichnet ist, eine <a href="../../../Additional_Information/Errors/Runner_Errors.htm"><span class="notranslate">Laufzeitexception</span></a> verursacht.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="delete.htm">löschen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+new
+-->
+  <!-- TAGS
+new
+-->
+
+</body></html>

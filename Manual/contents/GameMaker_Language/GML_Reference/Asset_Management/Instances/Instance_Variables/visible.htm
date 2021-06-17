@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sichtbar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable visible" />
+  <meta name="rh-index-keywords" content="visible" />
+  <meta name="search-keywords" content="visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sichtbar</h1>
+  <p>Eine Instanz kann als <tt>sichtbar</tt> oder nicht sichtbar gekennzeichnet werden, indem diese Variable auf <tt>true</tt> (sichtbar) oder <tt>false</tt> (unsichtbar) gesetzt wird. Dies funktioniert, indem <span class="notranslate">GameMaker Studio 2</span> angewiesen wird, das Zeichenereignis für diese Instanz zu überspringen.
+    wenn Sie dies verwenden, da es bedeutet, dass kein Code, der im Draw-Ereignis platziert wird, ausgeführt wird, während die Instanz nicht sichtbar ist. Beachten Sie auch, dass, wenn die <a href="layer.htm">Ebene</a>, der die Instanz zugewiesen ist, als unsichtbar gekennzeichnet ist, das Setzen dieser Variablen auf
+   <tt>true</tt> so lange keine Auswirkung hat, bis die Ebene selbst auch als sichtbar gekennzeichnet ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sichtbar;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if other.visible = true<br> {
+    <br> x = xprevious;<br> y = yprevious;<br> }
+  </p>
+  <p>Der obige Code prüft bei einem <i>Kollisionsereignis</i> das Sichtbarkeitsflag der &quot;anderen&quot; Instanz <i>und</i> verschiebt <i>, wenn es</i> auf true gesetzt ist <tt>, diese</tt> Instanz zurück an ihre vorherige Position.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Variables.htm">Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="solid.htm">solide</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+visible
+-->
+  <!-- TAGS
+visible
+-->
+</body>
+</html>

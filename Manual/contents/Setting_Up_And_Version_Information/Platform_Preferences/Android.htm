@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Android</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details theAndroid Platform Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Android" />
+  <meta name="search-keywords" content="Android Platform Preferences" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Android-Voreinstellungen</span> </h1>
+  <p>Die <strong><span class="notranslate">Android</span></strong> Einstellungen sind in verschiedene Abschnitte unterteilt, die im Folgenden aufgeführt sind:</p>
+  <p><img alt="Android Preferences Packaging" class="center" src="../../assets/Images/Setup_And_Version/Platform_Preferences/Android_Prefs_1.png">Oben in den Voreinstellungen können Sie die maximale Größe des <strong>JDK-Speicher-Heaps</strong> festlegen (Standard
+    ist 2GB). Als Nächstes müssen Sie die verschiedenen <strong>Pfade </strong>einrichten, damit <span class="notranslate">GameMaker Studio 2</span> weiß, wo es nach den verschiedenen Tools suchen muss, um das endgültige ausführbare Paket zu erstellen und Ihr Spiel zu testen. Dies ist in drei Abschnitte unterteilt
+    für das <strong><span class="notranslate">Android</span></strong> SDK, <strong><span class="notranslate">Android</span> </strong>NDK und <strong>Java JDK</strong>. Diese Pfade sollten automatisch für Sie ausgefüllt worden sein, aber wenn Sie Probleme haben, können Sie auf die Schaltfläche rechts klicken, um den Datei-Explorer zu öffnen
+    öffnen und die Speicherorte für die einzelnen Elemente manuell auswählen. Details zu den erforderlichen Versionen für die einzelnen SDK-Elemente finden Sie <a href="https://help.yoyogames.com/hc/en-us/articles/227860547">hier</a>. Pfade sollten validiert werden, wenn Sie sie anwenden
+    und eine Meldung zeigt &quot;Gefunden&quot; an<em>oder</em> informiert Sie über eventuelle Fehler (in diesem Fall sollten Sie alle Informationen überarbeiten, um sicherzustellen, dass sie korrekt sind).</p>
+  <p>Darunter haben Sie die verschiedenen Verpackungsoptionen, die da wären:</p>
+  <ul class="colour">
+    <li><strong>APK immer vollständig installieren</strong>: Wenn Sie dies markieren, entfernt <span class="notranslate">GameMaker Studio 2</span> alle früheren Versionen Ihres Spiels von Ihrem Gerät sowie alle zugehörigen Dateien (z. B. <span class="inline">*.ini</span> ) von Ihrem
+      Testgerät entfernt, bevor eine neue Version des Spiels installiert wird.</li>
+    <li><strong>Auf Paket installieren</strong>: Wenn diese Option markiert ist, wird beim Kompilieren eines endgültigen ausführbaren <span class="inline">*.apk</span> Pakets dieses auch automatisch auf dem aktuell ausgewählten Zielgerät installiert.</li>
+  </ul>
+  <p>Schließlich kommen wir zum <strong>KeyStore</strong>. Dies ist eine Datei, die verwendet wird, um alle Ihre <span class="notranslate">Android-Apps</span> zu &quot;signieren <span class="notranslate">&quot;.</span> Füllen Sie <span class="notranslate">also</span> bitte alle Details korrekt aus und denken Sie daran, dass diese Datei benötigt wird, um alle Ihre <span class="notranslate">Android-Apps</span> zu erstellen und zu aktualisieren
+    in der Zukunft benötigt wird, d. h. nach der Einrichtung von <em></em><em><strong> es wird empfohlen, einen Screenshot der verwendeten Einstellungen zu machen und eine Sicherung der endgültigen Datei zu erstellen</strong></em>. Wenn Sie diese Datei verlieren, werden Sie <strong>nicht </strong>in der Lage sein, alle
+    bestehende Spiele, die in den Store hochgeladen wurden, zu aktualisieren.</p>
+  <p>Um eine neue Keystore-Datei zu erstellen, sind die folgenden Angaben erforderlich:</p>
+  <p><img alt="Android Preferences Keystore" class="center" src="../../assets/Images/Setup_And_Version/Platform_Preferences/Android_Prefs_2.png" /></p>
+  <ul class="colour">
+    <li><strong>Dateiname</strong>: Dies ist der Name der Keystore-Datei.</li>
+  </ul>
+  <p class="note"><strong>HINWEIS</strong>: <em>Dies ist nicht Ihr Name oder der Firmenname, sondern der Name der zu erzeugenden Datei! Wenn Sie bereits eine Keystore-Datei aus früheren Projekten haben, können Sie hier auf die Schaltfläche "Dateibrowser" klicken und <span class="notranslate">GameMaker Studio 2</span> auf die zuvor erstellte Keystore-Datei verweisen (oder auf die Schaltfläche " <strong>Importieren" </strong>klicken). In diesem Fall müssen Sie immer noch den Rest der erforderlichen Informationen ausfüllen (<strong>genau wie beim ersten Erzeugen der Datei</strong>), aber Sie <strong>dürfen nicht </strong>auf die Schaltfläche <strong>Keystore generieren </strong></em>! klicken. Dadurch wird eine neue Keystore-Datei erzeugt und die vorherige überschrieben.</p>
+  <ul class="colour">
+    <li><strong>Allgemeiner Name</strong>: Dies wäre normalerweise Ihr Name.</li>
+    <li><strong>Passwort</strong>: Ihr Sicherheitspasswort für die Keystore-Datei, das mindestens sechs Zeichen lang sein muss.</li>
+    <li><strong>Alias</strong>: Dies ist ein weiterer Name, der für die Keystore-Datei verwendet werden kann und der sich von dem oben eingegebenen Namen unterscheiden sollte.</li>
+    <li><strong>Alias-Passwort</strong>: Ihr Alias-Sicherheitspasswort für die Keystore-Datei, das mindestens sechs Zeichen lang sein muss.</li>
+    <li><strong>Organisatorische Einheit</strong>: Die Abteilung innerhalb des Unternehmens, zu der Sie gehören.</li>
+    <li><strong>Organisation</strong>: Der Name Ihrer Firma.</li>
+    <li><strong>Ort</strong>: Der Name der Stadt, in der Sie sich befinden.</li>
+    <li><strong>Land</strong>: Der <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">zweistellige Standardcode</a> für das Land, in dem Sie ansässig sind.</li>
+  </ul>
+  <p>Wenn diese Informationen ausgefüllt sind und Sie damit zufrieden sind, drücken Sie die Schaltfläche " <strong>Keystore</strong> für <span class="notranslate">GameMaker Studio 2</span> <strong>generieren</strong> ", um die erforderliche Keystore-Datei zu erstellen. Dies kann einen Moment dauern, aber wenn es fertig ist, muss es normalerweise nicht mehr geändert werden.
+    nicht mehr geändert werden müssen. Beachten Sie, dass Sie auf die Schaltfläche " <strong>Importieren" </strong>klicken können, um eine zuvor erstellte Keystore-Datei zu importieren (siehe Abschnitt " <strong>Dateiname" </strong>oben), und Sie können auch den SHA1-Hash des Keystore abrufen, indem Sie auf die Schaltfläche " <strong>Schlüsselhash generieren </strong>" klicken.
+    Wenn Sie darauf klicken, werden zwei spezielle Sicherheits-Hash-Schlüssel generiert, die direkt mit Ihrer Keystore-Datei verknüpft sind und die einige Websites für die korrekte Funktionalität benötigen (z. B. Facebook oder Google Play für den Sha1-Hash). Sollten Sie diese benötigen, drücken Sie einfach die
+    und kopieren Sie dann die generierten Hash-Schlüssel und fügen Sie sie ein.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Platform_Preferences.htm">Plattform-Voreinstellungen</a></div>
+        <div style="float:right">Nächste: <a href="HTML5.htm">HTML5</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Android</span> Preferences
+-->
+  <!-- TAGS
+prefs_android
+-->
+</body>
+</html>

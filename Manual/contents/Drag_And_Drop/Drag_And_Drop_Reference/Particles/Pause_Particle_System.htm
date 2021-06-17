@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pause Partikelsystem</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Pause Particle System action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Pause Particle System" />
+  <meta name="search-keywords" content="Pause Particle System" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Pause Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Pause_Particle_System.png"> Pause Partikelsystem</h1>
+  <p>Mit dieser Aktion wird das angegebene Partikelsystem angehalten. Sie geben den eindeutigen ID-Wert für das anzuhaltende System an, der zurückgegeben wurde, als Sie das System mit der Aktion " <a href="Create_Particle_System.htm">Create Particle System"</a> erstellt haben. Ein pausiertes Partikelsystem
+    zeichnet weiterhin die Partikel, die gespawnt wurden, aber sie aktualisieren nicht mehr ihre Farbe, Position oder Alpha, noch beenden sie ihre Lebenszeit und verschwinden, bis Sie das System wieder aufnehmen. Sie können wählen, ob Sie das System anhalten oder fortsetzen möchten, indem Sie die Option
+    Option &quot;Zustand&quot;.</p>
+  <p>Beachten Sie, dass dadurch <i>weder</i> Emitter angehalten werden, die Partikel strömen, noch wird ein Emitter gestoppt, der Partikel ausstößt - Emitter erzeugen weiterhin Partikel, wenn sie aufgerufen werden, aber wenn das System angehalten ist, tun die Partikel nichts und werden genau dort gezeichnet, wo sie erzeugt wurden, bis Sie den Pausenzustand zurücksetzen
+    Wenn das System jedoch angehalten ist, tun die Partikel nichts und werden genau dort gezeichnet, wo sie erstellt wurden, bis Sie den angehaltenen Zustand zurücksetzen oder " <a href="Update_Particle_System.htm">Update Particle System"</a> aufrufen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Pause Particle System Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Pause_Particle_System.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>System</td>
+        <td>Der eindeutige ID-Wert für das System, das pausiert werden soll</td>
+      </tr>
+      <tr>
+        <td>Zustand</td>
+        <td>Ob das Partikelsystem angehalten oder fortgesetzt werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Pause Particle System Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Pause_Particle_System.png">Der obige Code des Aktionsblocks prüft eine globale Variable, und wenn sie den Wert
+   <tt>true</tt> zurückgibt, wird das angegebene Partikelsystem pausiert, andernfalls wird es fortgesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Actions.htm">Partikel-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Update_Particle_System.htm">Partikelsystem aktualisieren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Pause Particle System
+-->
+  <!-- TAGS
+action_pause_particles
+-->
+</body>
+</html>

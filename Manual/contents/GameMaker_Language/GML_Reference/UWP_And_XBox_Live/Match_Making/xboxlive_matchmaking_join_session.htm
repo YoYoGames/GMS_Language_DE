@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_join_session</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_join_session" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_join_session,MATCHMAKING_SESSION" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_join_session,MATCHMAKING_SESSION" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_join_session</h1>
+  <p>Diese Funktion ermöglicht es Ihnen, einer bestimmten Sitzung über ein Sitzungshandle beizutreten. Dies ähnelt dem Beitritt zu einer Sitzungseinladung, ist aber nützlich, wenn Sie Ihren eigenen Server haben, der das Matchmaking durchführt, anstatt sich auf das Xbox Live-Matchmaking zu verlassen.</p>
+  <p>Die Funktion erfordert die Angabe der Benutzer-ID - die Sie für ein bestimmtes Gamepad durch Aufruf der Funktion <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a> Funktion abrufen können - sowie die Secure Device
+    Association-Vorlage, die Sie zuvor im XDP-Dashboard erstellt haben sollten.</p>
+  <p>Für das Sitzungshandle müssen Sie zuerst die &quot;Korrelations-ID&quot; von der Sitzung, der Sie beitreten möchten, abrufen. Wenn die ursprüngliche Sitzung erstellt wird, wird das asynchrone soziale Ereignis &quot;<tt>session_created&quot;</tt> sein<tt>und</tt> es wird
+    einen &quot;correlationid<b>&quot;-</b>Eintrag in der zurückgegebenen Map enthalten (siehe <a href="xboxlive_matchmaking_create.htm"><tt>xboxlive_matchmaking_create()</tt></a>). Diese ID muss an den Server zurückgegeben werden, damit sie dann bei
+    eine Matchmaking-Anfrage erhält. Sobald das beitretende Spiel die &quot;correlation id&quot; vom Server zurückerhalten hat, kann es diese Funktion aufrufen und die &quot;correlation ID&quot; als Argument für das Sitzungshandle übergeben.</p>
+  <p>Die Funktion gibt -1 zurück, wenn ein Fehler aufgetreten ist (in diesem Fall sollte es eine Konsolenausgabe geben, die das Problem detailliert beschreibt), oder andernfalls einen Request-ID-Wert. Der Wert der Request ID kann dann verwendet werden, um das richtige <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">soziale asynchrone Ereignis</a> für diese Funktion zu identifizieren. Dieses Ereignis wird ausgelöst, wenn die Sitzung erstellt wurde, und enthält eine DS-Map in der Variablen <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> mit den folgenden
+    Schlüssel/Wert-Paaren:</p>
+  <ul class="colour">
+    <li>&quot;<b>requestid&quot; -</b> enthält die Anfrage-ID, wie sie von der aufrufenden Funktion zurückgegeben wird</li>
+    <li>&quot;<b>status&quot; -</b> enthält die Zeichenfolge &quot;session_player_joined&quot;, um Sie darüber zu informieren, welche Art von Ereignis ausgelöst wurde.</li>
+    <li>&quot;<b>sessionid&quot; -</b> enthält die Sitzungs-ID, oder -1 im Falle eines Fehlers.</li>
+    <li>&quot;<b>sessionOwner&lt; index&gt; &quot;<i>-</i></b> enthält die ID des Sitzungsleiters, wenn eine Sitzung gefunden wurde (&lt; index&gt; ist ein Wert<i>von 0</i> bis &quot;num_results&quot; - 1)</li>
+    <li>&quot; id&quot; - enthält die Konstante MATCHMAKING_SESSION</li>
+    <li>&quot; error<b>&quot; -</b> ist 0, wenn alles in Ordnung ist, oder -1, wenn etwas fehlgeschlagen ist</li>
+  </ul>
+  <p>Wenn ein neuer Spieler der Sitzung beitritt, enthält die DS-Map diese Schlüssel/Wertpaare:</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - enthält die Konstante MATCHMAKING_SESSION</li>
+    <li>&quot;<b>sessionid&quot; -</b> enthält die Sitzungs-ID</li>
+    <li>&quot;<b>status&quot; -</b> enthält die Zeichenfolge &quot;session_player_joined&quot;</li>
+    <li>&quot;<b>requestid&quot; -</b> Der ID-Wert, der von der Funktion zurückgegeben wurde, die die Anfrage erstellt hat</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_matchmaking_join_session(user_id, session_handle, sdatemplate);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Der zu verwendende Zeiger für die Benutzer-ID</td>
+      </tr>
+      <tr>
+        <td>session_handle</td>
+        <td>Die &quot;Korrelations-ID&quot;, die für die Sitzungs-ID verwendet werden soll (siehe Beschreibung, oben)</td>
+      </tr>
+      <tr>
+        <td>sdatemplate</td>
+        <td>Der Name der zu verwendenden Vorlage für die sichere Gerätezuordnung</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Anforderungs-ID (Ganzzahl)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">Request_ID = xboxlive_matchmaking_join_session(global.UserID, global.SessionID, &quot;PeerServerTraffic&quot;);</p>
+  <p>Der obige Befehl sendet eine Anfrage, um der angegebenen Multiplayer-Sitzung beizutreten, und speichert den Wert der Anfrage-ID in einer Variablen, damit er im asynchronen Ereignis überprüft werden kann.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Match_Making.htm">Match Making</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_matchmaking_session_leave.htm">xboxlive_matchmaking_session_leave</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_join_session
+MATCHMAKING_SESSION
+-->
+  <!-- TAGS
+xboxlive_matchmaking_join_session
+-->
+</body>
+</html>

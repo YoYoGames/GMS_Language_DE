@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_create" />
+  <meta name="rh-index-keywords" content="audio_emitter_create" />
+  <meta name="search-keywords" content="audio_emitter_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emitter_erzeugen</h1>
+  <p>Diese Funktion erzeugt einen neuen Audioemitter und gibt den Index für diesen zurück. Dieser Index sollte für alle weiteren Funktionen, die sich auf diesen Emitter beziehen, in einer Variablen gespeichert werden und dann, wenn er nicht mehr benötigt wird, mit der
+    Funktion <a href="audio_emitter_free.htm"><tt>audio_emitter_free()</tt></a> aus dem Speicher entfernt werden, um Speicherlecks zu vermeiden, die eventuell zum Absturz des Spiels führen können.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_emitter_create();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Emitter-ID) </p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">s_emit = audio_emitter_create();</p>
+  <p>Der obige Code erzeugt einen neuen Audio-Emitter und weist dessen Index der Variablen &quot;s_emit&quot; zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Emitters.htm">Audio-Emitter</a></div>
+        <div style="float:right">Weiter: <a href="audio_emitter_exists.htm">audio_emitter_exists</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_create
+-->
+  <!-- TAGS
+audio_emitter_create
+-->
+</body>
+</html>

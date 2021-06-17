@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skelett_animation_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_set" />
+  <meta name="rh-index-keywords" content="skeleton_animation_set" />
+  <meta name="search-keywords" content="skeleton_animation_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skelett_animation_set</h1>
+  <p>Sobald Sie Ihrer Instanz ein Skelett-Animationssprite zugewiesen haben, können Sie mit dieser Funktion festlegen, welches <i>Animationsset</i> es zu einem bestimmten Zeitpunkt verwenden soll. Als Sie Ihr Sprite (in Spine) erstellt haben, haben Sie mehrere Animations
+    Sets für verschiedene Zustände definiert und diese entsprechend benannt. Diese Namen werden Sie verwenden, um <span class="notranslate">GameMaker Studio 2</span> mitzuteilen, welches Animationsset zu einem bestimmten Zeitpunkt in Ihrem Spiel verwendet werden soll. Wenn Ihr Sprite z. B. für ein Plattformspiel gedacht ist, können Sie
+    ein &quot;Sprung&quot;-Set, ein &quot;Lauf&quot;-Set und ein &quot;Leerlauf&quot;-Set, die alle in einem Sprite enthalten sind, und Sie können mit dieser Funktion in Ihrem Spiel zwischen ihnen umschalten.</p>
+  <p>Beachten Sie, dass das Setzen einer neuen Animation auf diese Weise den <a href="../../Sprite_Instance_Variables/image_index.htm"><tt>bild_index</tt></a> auf 0 zurückgesetzt wird und das neue Animationsset am Anfang seiner Animationsschleife beginnt. Wenn dies <i>nicht</i> das
+    gewünschte Verhalten ist, dann können Sie einen &quot;Mix&quot;-Wert mit <a href="skeleton_animation_mix.htm"><tt>skelett_animation_mix()</tt></a> einen "Mix"-Wert setzen, und wenn Sie eine neue Animation setzen, wird diese nahtlos mit dem vorherigen Satz interpoliert. Sie sollten auch darauf achten
+    Sie sollten auch darauf achten, dass am Anfang jeder Animation ein <span class="notranslate">Keyframe</span> steht, um zu verhindern, dass Daten aus vorherigen Animationen übernommen werden, es sei denn, Sie planen, separate Animationsspuren zu verwenden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">skeleton_animation_set(animname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>Der Name (eine Zeichenkette) des zu verwendenden Animationssets.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> if skeleton_animation_get() != &quot;jump&quot;<br> {
+    <br> skeleton_animation_set(&quot;springen&quot;);
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code ändert das verwendete Animations-Set in das &quot;Sprung&quot;-Set, wenn die Leertaste gedrückt wird, aber nur, wenn das aktuell verwendete Set nicht bereits &quot;Sprung&quot; ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Animation.htm">Animation</a></div>
+        <div style="float:right">Weiter: <a href="skeleton_animation_get_ext.htm">skeleton_animation_get_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_set
+-->
+  <!-- TAGS
+skeleton_animation_set
+-->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Externe Merge/Diff-Werkzeuge</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control merge and diff tools" />
+  <meta name="rh-index-keywords" content="Source Control - Esternal Merge/Dif Tools" />
+  <meta name="search-keywords" content="merge,diff,external tools" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Externe Merge/Diff-Werkzeuge</h1>
+  <p>Wenn Sie mit anderen Leuten an einem Projekt arbeiten, gibt es immer die Möglichkeit, dass es einen Konflikt gibt, da mehrere Leute die gleiche Datei bearbeiten und die meisten Versionsverwaltungssysteme können einen guten Versuch machen, alle konfliktbehafteten Dateien zusammenzuführen, aber wenn es Änderungen
+    aber wenn es Änderungen an der gleichen Stelle gibt, braucht es ein bisschen Hilfe, um zu wissen, was zu tun ist - hier kommt ein <strong>Zusammenführungswerkzeug </strong>ins Spiel, das Ihnen die Änderungen zeigt und Sie entscheiden lässt.</p>
+  <p>Da jedes Zusammenführungswerkzeug unterschiedlich ist, gibt es vier Makros, die zur Angabe von Dateien verwendet werden können. Diese können im Fenster " <strong>Konflikte" </strong>durch Anklicken der Schaltfläche " <strong>Zusammenführungswerkzeug wählen</strong>"<strong></strong> eingerichtet werden:</p>
+  <p><img alt="Source Control Conflict Window" class="center" src="../../assets/Images/IDE Tools/SCM_ConflictsWindow.png" /></p>
+  <p>Wenn Sie auf diese Schaltfläche klicken, wird das Fenster " <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">Voreinstellungen"</a> des <span class="notranslate">Git-Plugins</span> geöffnet:</p>
+  <p><img alt="Source Control Choose Merge Tool" class="center" src="../../assets/Images/IDE Tools/SCM_ChooseMergeTool.png">Hier geben Sie einen Pfad zum gewählten Zusammenführungswerkzeug an und dann ein Makro (oder Makros) für die <strong>Zusammenführungswerkzeug-Optionen</strong>, das bei der Entscheidung verwendet wird
+    was zu tun ist, wobei die folgenden Optionen zur Verfügung stehen:</p>
+  <ul class="colour">
+    <li><span class="inline">${scm_mine}</span>: Pfad zu Ihrer Version</li>
+    <li><span class="inline">${scm_thers}</span>: Pfad zu ihrer Version</li>
+    <li><span class="inline">${scm_base}</span>: Pfad zu der Version vor den konfliktbehafteten Änderungen</li>
+    <li><span class="inline">${scm_merged}</span>: Pfad, in dem das Zusammenführungswerkzeug speichern soll</li>
+  </ul>
+  <p>Als Einrichtungshilfe gibt <span class="notranslate">GameMaker Studio 2</span> bei der Angabe eines Pfades zu bestimmten Zusammenführungswerkzeugen je nach gewähltem Werkzeug einige Voreinstellungen für den Einstieg vor:</p>
+  <ul class="colour">
+    <li><strong>KDiff3</strong>: <span class="inline">${scm_theirs} ${scm_mine} -o ${scm_merged}</span></li>
+    <li><strong>Verschmelzen</strong>: <span class="inline">${scm_mine} ${scm_merged} ${scm_theirs}</span></li>
+    <li><strong>Notepadd++</strong>: <span class="inline">${scm_merged}</span></li>
+    <li><strong>TortoiseMerge</strong>: <span class="inline">/base:${scm_base} /theirs:${scm_theirs} /mine:${scm_mine} /merged:${scm_merged}</span></li>
+  </ul>
+  <p>Beachten Sie, dass Sie das Skript in der IDE öffnen und versuchen können, es von dort aus zu reparieren, wenn Sie kein Zusammenführungswerkzeug haben (oder es nicht verwenden möchten).</p>
+  <p>Also, zurück zu unserem Beispielkonflikt, wie im Abschnitt über <a href="Conflicts.htm">Konflikte</a> beschrieben... Wir haben einen Pull von Master durchgeführt und eine der Dateien ist in einem Konflikt. Es öffnet sich das Fenster Source Control <strong>Conflicts </strong>, in dem Sie
+    auf das konfliktbehaftete Skript klicken und nun auf <strong>Merge</strong> klicken, da Sie Ihr Merge-Tool konfiguriert haben. Wenn Sie auf "Merge" klicken, wird das Werkzeug geöffnet, in dem Sie den Konflikt bearbeiten und dann das/die mitgelieferte(n) Makro(s) verwenden können, um die erforderlichen Änderungen vorzunehmen.
+    Änderungen vornehmen. Wenn Sie damit fertig sind und das Zusammenführen-Werkzeug geschlossen haben, zeigt die <span class="notranslate">GameMaker Studio 2</span> IDE das folgende Bestätigungsfenster an:</p>
+  <p><img alt="Source Control Merge Confirm" class="center" src="../../assets/Images/IDE Tools/SCM_MergeConfirm.png">Beantworten Sie diese Abfrage einfach mit &quot;Ja&quot;, da Sie es gerade selbst mit dem Zusammenführungswerkzeug gemacht haben, und dann müssen Sie diese
+    Änderung übertragen, um das Ende des Zusammenführungsvorgangs zu signalisieren<strong>(Versionsverwaltung </strong>&gt; <strong>Änderungen übertragen).</strong> Das Commit-Fenster zeigt nun an, dass eine Zusammenführung im Gange ist, und zeigt auch einige nicht zusammengefasste Dateien an:</p>
+  <p><img alt="Source Control Merge In Progress" class="center" src="../../assets/Images/IDE Tools/SCM_MergeInProgress.png">Diese unbearbeiteten Dateien sind unsere Skriptdatei mit dem Zusatz von <span class="inline">.base</span>, <span class="inline">.ours</span> und <span class="inline">.theirs</span>. Wir können alle diese Dateien sicher löschen, also klicken Sie auf <img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" style="cursor: nwse-resize;" width="20"> in der oberen Datei und dann auf <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" style="cursor: nwse-resize;" width="20"> in der unteren Datei, um alle auszuwählen.
+    sie alle auszuwählen. Als nächstes klicken wir mit der rechten Maustaste auf die ausgewählten Dateien und wählen <strong>Pfad löschen</strong>, um sie zu entfernen. Es gibt auch eine vorgefertigte Commit-Meldung für uns, die besagt, dass dies eine Zusammenführung war und dass es einen Konflikt gab (wir können dies ergänzen
+    oder sie nach Belieben bearbeiten).</p>
+  <p>Wir können jetzt auf <strong>"Commit" </strong>klicken.</p>
+  <p>Aufgrund der Tatsache, dass es zu Problemen mit anderen Dateien kommen kann, bedeutet dies, dass Ihr Arbeitsablauf bei der Verwendung von entfernten oder freigegebenen Repositories folgendermaßen aussehen sollte:</p>
+  <p class="code">Änderungen vornehmen &gt; Speichern &gt; Commit &gt; Pull &gt; Merge &gt; Push</p>
+  <p>Sie sollten auch ein <strong>Diff-Werkzeug</strong> einrichten, das Sie bei Commits in einem Repository verwenden können. Dieses wird in den <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">Voreinstellungen</a> eingerichtet, genau wie das Zusammenführungswerkzeug:</p>
+  <p><img alt="Source Control Choose Diff Tool" class="center" src="../../assets/Images/IDE Tools/SCM_ChooseDiffTool.png">Das Werkzeug "Diff" ist ähnlich konfiguriert wie das Werkzeug "Zusammenführen", verwendet aber nur die Optionen <span class="inline">${scm_base}</span> und
+    <span class="inline">${scm_theirs}</span> - in diesem Fall steht <span class="inline">${scm_base}</span> für die unveränderte Datei und <span class="inline">${scm_theirs}</span> für den aktuellen Zustand der Datei. Die Werkzeugoptionen sollten
+    mit den Standardoptionen für <strong>Meld</strong>, <strong>KDiff3 </strong>und <strong>TortoiseMerge</strong> vorbelegt sein, genau wie für das Werkzeug "Zusammenführen". Beachten Sie, dass <span class="notranslate">GameMaker Studio 2</span> die Ausgabe von Einzeldatei-Diff-Patches <em>nicht </em>unterstützt.
+    Datei-Diff-Patches unterstützt, daher gibt es keine Vorgabe für <strong>Notepad++</strong>.</p>
+  <p>Um die Änderungen zwischen der aktuellen und der vorherigen Revision mit dem Diff-Tool anzuzeigen, öffnen Sie einfach das Fenster "Commit" und doppelklicken Sie dann auf eine Datei. Wenn das Tool korrekt eingerichtet wurde, wird es gestartet und Sie können die Änderungen zwischen den Dateien sehen.
+    zwischen den Dateien sehen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Source_Control.htm">Source Control</a></div>
+        <div style="float:right">Weiter: <a href="Setting_Up_Git_Plugin.htm">Das <span class="notranslate">GIT-Plugin</span></a>einrichten</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control External Tools
+Source Control Diff
+Source Control Merge
+Merge
+Diff
+-->
+  <!-- TAGS
+source_control_tools
+-->
+</body>
+</html>

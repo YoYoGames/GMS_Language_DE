@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>device_mouse_check_button_pressed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for device_mouse_check_button_pressed" />
+  <meta name="rh-index-keywords" content="device_mouse_check_button_pressed" />
+  <meta name="search-keywords" content="device_mouse_check_button_pressed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>device_mouse_check_button_pressed</h1>
+  <p>Diese Funktion gibt <tt>true</tt> oder <tt>false</tt> zurück, je nachdem, ob das von Ihnen angegebene Gerät &quot;berührt&quot; (angeklickt) wurde oder nicht. Das Argument "Gerät" bezieht sich auf die Berührungsnummer, die zwischen 0 und n liegen kann, und die maximale Anzahl von
+    Berührungen, die erkannt werden können, hängt sehr stark von dem verwendeten Gerät und dem darauf laufenden Betriebssystem ab (die meisten Geräte unterstützen mindestens 4 gleichzeitige Berührungen). Diese Funktion wird nur <em>einmal </em>durch den eigentlichen Druckvorgang ausgelöst, und die auf dieser Seite aufgeführten Konstanten
+    die <a href="../Mouse_Input/Mouse_Input.htm">auf dieser Seite</a> aufgeführt sind, können zur Überprüfung der Maustasten verwendet werden. Beachten Sie, dass <tt>mb_right</tt> nur erkannt wird, wenn eine doppelte Berührung erkannt und beim zweiten Tippen gehalten wird (dieses Verhalten kann deaktiviert werden
+    mit der Funktion <span class="inline"><a href="device_mouse_dbclick_enable.htm">device_mouse_dbclick_enable()</a></span>).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">device_mouse_check_button_pressed(device, button);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Das Gerät (von 0 - <i>n</i>), das geprüft wird.</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Die Taste des Geräts, das geprüft wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if device_mouse_check_button_pressed(0, mb_left)<br> {
+    <br> press=true;<br> }
+  </p>
+  <p>Der obige Code prüft, ob das Gerät gedrückt wurde und setzt eine Variable auf true, wenn dies der Fall ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Device_Input.htm">Geräteeingang</a></div>
+        <div style="float:right">Weiter: <a href="device_mouse_check_button_released.htm">device_mouse_check_button_released</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_mouse_check_button_pressed
+-->
+  <!-- TAGS
+device_mouse_check_button_pressed
+-->
+</body>
+</html>

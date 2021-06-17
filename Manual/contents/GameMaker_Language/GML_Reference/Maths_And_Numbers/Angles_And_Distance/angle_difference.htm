@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>winkel_differenz</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for angle_difference" />
+  <meta name="rh-index-keywords" content="angle_difference" />
+  <meta name="search-keywords" content="angle_difference" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>winkel_differenz</h1>
+  <p>Diese Funktion gibt die kleinste Winkeldifferenz zwischen zwei Winkeln als einen Wert zwischen -180 und 180 Grad zurück (wobei ein positiver Winkel gegen den Uhrzeigersinn und ein negativer Winkel im Uhrzeigersinn ist).</p>
+  <p> </p>
+  <h4><b>Syntax:</b></h4>
+  <p class="code">winkel_differenz(ang1, ang2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ang1</td>
+        <td>Der erste zu verwendende Winkel.</td>
+      </tr>
+      <tr>
+        <td>ang2</td>
+        <td>Der zweite zu verwendende Winkel.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var pd = point_direction(x, y, mouse_x, mouse_y);<br> var dd = angle_difference(image_angle, pd);<br> image_angle -= min(abs(dd), 10) * sign(dd);</p>
+  <p>Der obige Code ermittelt den Richtungswinkel von der Instanz zum Mauszeiger und ermittelt dann die Differenz zwischen diesem Winkel und dem aktuellen <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_angle.htm"><tt>image_angle</tt></a>,
+    und verwendet diesen Wert, um langsam in Richtung der Maus zu rotieren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Angles_And_Distance.htm">Winkel und Abstand</a></div>
+        <div style="float:right">Weiter: <a href="lengthdir_x.htm">lengthdir_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+angle_difference
+-->
+  <!-- TAGS
+angle_difference
+-->
+
+</body></html>

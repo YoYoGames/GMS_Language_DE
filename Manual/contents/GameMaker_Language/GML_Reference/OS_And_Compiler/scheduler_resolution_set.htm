@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>scheduler_resolution_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for scheduler_resolution_set" />
+  <meta name="rh-index-keywords" content="scheduler_resolution_set" />
+  <meta name="search-keywords" content="scheduler_resolution_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>scheduler_resolution_set</h1>
+  <p>Diese Funktion wird verwendet, um die Auflösung des <span class="notranslate">Windows-Thread-Schedulers</span> zu ändern. Der im Argument übergebene Auflösungswert muss in <strong>Millisekunden</strong> angegeben werden.</p>
+  <p>Standardmäßig, <span data-keyref="GameMaker Name"><span class="notranslate">GameMaker Studio 2</span></span> eine Auflösung von 1 Millisekunde, was die kleinste zulässige Auflösung ist und die beste Leistung ergibt. Das Ändern der Auflösung auf einen höheren Wert kann sich negativ auf die Leistung auswirken,
+    aber es kann auch den Stromverbrauch reduzieren.</p>
+  <p>Sie können -1 als Argument angeben, um die Auflösung auf den Standardwert (wie von <span class="notranslate">Windows</span> eingestellt) zurückzusetzen. Beachten Sie, dass sich das Ändern der Auflösung des Schedulers auf alle Prozesse auswirkt, die zur gleichen Zeit wie Ihr Spiel laufen.</p>
+  <p class="note"><strong>HINWEIS</strong>: Diese Funktion ist nur für <strong><span class="notranslate">Windows</span> </strong>nur.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">scheduler_resolution_set(milliseconds);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Millisekunden</td>
+        <td>Der neue Auflösungswert (in Millisekunden) oder -1 für Standard</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">scheduler_resolution_set(2);</p>
+  <p>Dieses Beispiel setzt die Auflösung des <span class="notranslate">Windows-Thread-Schedulers</span> auf 2 Millisekunden.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="OS_And_Compiler.htm">OS und Compiler</a>
+        <div style="float:left">Zurück: </div>
+        <div style="float:right">Weiter: <a href="os_browser.htm">os_browser</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+scheduler_resolution_set
+-->
+  <!-- TAGS
+scheduler_resolution_set
+-->
+</body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_create_depth</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_create_depth" />
+  <meta name="rh-index-keywords" content="instance_create_depth" />
+  <meta name="search-keywords" content="instance_create_depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_create_depth</h1>
+  <p>Mit dieser Funktion können Sie eine neue Instanz des angegebenen Objekts an einem beliebigen Punkt innerhalb des Raums und in der angegebenen Tiefe erzeugen. Die Tiefe kann ein beliebiger Wert sein, wobei je niedriger die Tiefe, desto &quot;näher&quot; an der Kamera gezeichnet wird und
+    je höher die Tiefe, desto weiter weg, d. h. eine Instanz mit Tiefe -200 wird über eine Instanz mit Tiefe +300 gezeichnet (zum Beispiel).</p>
+  <p>Beachten Sie, dass diese Funktion tatsächlich eine Raumebene für die Instanz erzeugt, da alle Instanzen auf einer Ebene im Raum liegen <i>müssen</i>, aber da dies eine <i>verwaltete</i> Ebene ist (d. h. keine, die Sie durch Code oder im Raum erzeugt haben, sondern eine, die
+   <span class="notranslate">GameMaker Studio 2</span> automatisch angelegt hat), können Sie nicht auf sie zugreifen, und die <a href="Instance_Variables/layer.htm"><tt>Schicht</tt></a> Instanzvariable wird -1 zurückgeben.</p>
+  <p class="note"><b>WICHTIG!</b> Es gibt eine minimale und maximale Ebenentiefe von -16000 bis 16000. Alles, was auf einer Tiefe außerhalb dieses Bereichs platziert wird <b>, wird nicht gezeichnet</b>, obwohl alle Ereignisse weiterhin normal ablaufen.</p>
+  <p>Diese Funktion liefert die <a href="Instance_Variables/id.htm"><tt>id</tt></a> der neuen Instanz zurück, die dann in einer Variablen gespeichert oder für den Zugriff auf diese Instanz verwendet werden kann. Beachten Sie, dass diese Funktion auch das <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Ereignis "Create"</a> der zu erstellenden Instanz aufruft <i>, bevor</i> Sie mit dem Code oder den Aktionen für das Ereignis fortfahren, das die Funktion aufgerufen hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">instance_create_depth(x, y, depth, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der das Objekt erstellt werden soll</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der das Objekt erstellt werden soll</td>
+      </tr>
+      <tr>
+        <td>Tiefe</td>
+        <td>Die Tiefe, der die erstellte Instanz zugewiesen werden soll</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Der Objektindex des Objekts, von dem eine Instanz erzeugt werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Wert der Instanz-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var inst = instance_create_depth(x, y, -10000, obj_Bullet);<br> with (inst)<br> {
+    <br> speed = other.shoot_speed;<br> direction = other.image_angle;<br> }
+  </p>
+  <p>Der obige Code erzeugt eine neue Instanz des Objekts &quot;obj_Bullet&quot; und speichert die Instanz-ID in einer Variablen. Diese Variable wird dann verwendet, um der neuen Instanz <tt>Geschwindigkeit</tt> und <tt>Richtung</tt> zuzuweisen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="instance_destroy.htm">instance_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_create_depth
+-->
+  <!-- TAGS
+instance_create_depth
+-->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fps_real</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for fps_real" />
+  <meta name="rh-index-keywords" content="fps_real" />
+  <meta name="search-keywords" content="fps_real" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fps_real</h1>
+  <p>In <span class="notranslate">GameMaker Studio 2</span> gibt es im Wesentlichen zwei Möglichkeiten, die Geschwindigkeit, mit der Ihr Spiel läuft, zu bestimmen. Die <a href="../General_Game_Control/game_get_speed.htm"><tt>Spielgeschwindigkeit</tt></a> (wie in den Spieloptionen angegeben) und die <tt>fps</tt> (frames per second). Diese Werte werden oft verwechselt, aber im Grunde ist der eine die Anzahl der Spielschritte, die <span class="notranslate">GameMaker Studio 2</span> in einer Sekunde ausführen soll (Spielgeschwindigkeit), während der andere die Anzahl der CPU-Schritte ist, die <span class="notranslate">GameMaker Studio 2</span> tatsächlich in einer Sekunde ausführt (die tatsächlichen fps), und dieser Wert ist im Allgemeinen viel höher als die Spielgeschwindigkeit, sinkt aber, wenn Ihr Spiel komplexer wird und mehr Rechenleistung benötigt, um die eingestellte Raumgeschwindigkeit beizubehalten.</p>
+  <p>Diese <b>schreibgeschützte</b> Variable gibt die aktuelle fps als Integer-Wert zurück. Bitte beachten Sie, dass die Funktion nur einmal pro Spielschritt aktualisiert wird und daher von einem Wert zum anderen zu &quot;springen&quot; scheint, aber das ist ganz normal.</p>
+  <p class="note"><b>HINWEIS</b>: Auf dem HTML5-Ziel gibt diese Variable stattdessen ein Vielfaches der Bildwiederholfrequenz des Monitors zurück, da sich <span class="notranslate">GameMaker Studio 2</span> beim Timing und der Versendung auf den Browser verlassen muss.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">fps_real</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if debug_mode<br> {
+    <br> draw_text(32, 32, &quot;FPS = &quot; + string(fps_real));<br> }
+  </p>
+  <p>Der obige Code prüft, ob sich das Spiel im Debug-Modus befindet, und wenn dies der Fall ist, zeigt er die aktuellen realen fps auf dem Bildschirm an.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Debugging.htm">Fehlersuche</a></div>
+        <div style="float:right">Weiter: <a href="debug_mode.htm">debug_mode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+fps_real
+-->
+  <!-- TAGS
+fps_real
+-->
+</body>
+</html>

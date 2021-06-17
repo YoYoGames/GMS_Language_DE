@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn Ergebnis</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Score action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Score" />
+  <meta name="search-keywords" content="If Score" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Score Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_If_Score.png"> Wenn Ergebnis</h1>
+  <p>Diese Aktion wird verwendet, um den Wert der Instanzvariablen <tt>score</tt> anhand eines bestimmten Ausdrucks zu prüfen. Sie geben den Typ des Ausdrucks an, mit dem geprüft werden soll, und den Wert, gegen den der aktuelle <tt>Punktestand</tt> geprüft werden soll, und die &quot;if&quot;-Anweisung wird
+    Die "if"-Anweisung gibt immer entweder <tt>wahr</tt> oder <tt>falsch</tt> zurück, je nach den verwendeten Ausdrücken und Werten. Die verfügbaren Ausdrücke sind:</p>
+  <ul class="colour">
+    <li><b>Ist gleich</b> - Die Variable und der Wert sind beide genau gleich</li>
+    <li><b>Kleiner als</b> - Die Variable ist kleiner als der Wert</li>
+    <li><b>Größer als</b> - Die Variable ist größer als der Wert</li>
+    <li><b>Kleiner als oder gleich</b> - Die Variable ist kleiner als <i>oder</i> gleich dem Wert</li>
+    <li><b>Größer als oder gleich</b> - Die Variable ist größer als <i>oder</i> gleich dem Wert</li>
+  </ul>
+  <p>Wenn Sie das <b>Not-Argument</b> markieren, werden die obigen <i>Ausdrücke negiert</i>, z. B. wird &quot;gleich&quot; zu &quot;nicht gleich&quot;, d<i>. h.</i> Sie würden prüfen, ob der Punktwert nicht <tt>gleich</tt> dem angegebenen Wert ist.</p>
+  <p class="note"><b>WICHTIGER HINWEIS</b>: Aufgrund von <a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">Problemen mit der Fließkommagenauigkeit</a> kann die Prüfung, ob zwei Werte genau gleich sind, <tt>falsch sein</tt>, da einer genau 1 sein kann, während der andere
+    der andere 1,00000000000001 sein kann. Dies kann vermieden werden, indem Sie vor der Prüfung die Aktion &quot; <a href="../Data_Types/Decimal_To_Integer.htm">Decimal to Integer</a> &quot; verwenden oder die Ausdrücke &quot;größer als&quot; oder &quot;kleiner als&quot; verwenden.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in den &quot;if&quot;-Block diese an der Seite der Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="If Score drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_Drop_If_Score.png">Diese Aktionen werden nun ausgeführt, wenn der &quot;if&quot;-Block als wahr ausgewertet wird, <tt>während</tt> alle
+    Aktionen, die an anderer Stelle ausgelassen werden, werden nach dem &quot;if&quot;-Block ausgeführt.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="If Score Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_If_Score.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Nicht</td>
+        <td>Wird gesetzt, um zu prüfen, ob der Ausdruck <i>nicht</i> zu true ausgewertet werden kann.</td>
+      </tr>
+      <tr>
+        <td>Ausdruck</td>
+        <td>Der Typ des Ausdrucks, der für die Prüfung verwendet werden soll.</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der Wert, gegen den die <tt>Bewertung</tt> geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="If Score Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/e_IV_If_Score.png">Der obige Code des Aktionsblocks addiert 1 auf den Punktestand und prüft dann, ob er gleich ist
+    1000 ist. Wenn dies der Fall ist, wird 1 auf die globale Bereichsvariable &quot;Level&quot; addiert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Variable_Actions.htm">Instanzvariablen-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="If_Lives.htm">Wenn das Leben</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Score
+-->
+  <!-- TAGS
+action_if_score
+-->
+</body>
+</html>

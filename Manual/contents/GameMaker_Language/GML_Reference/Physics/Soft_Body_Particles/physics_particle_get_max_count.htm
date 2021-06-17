@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_get_max_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_get_max_count" />
+  <meta name="rh-index-keywords" content="physics_particle_get_max_count" />
+  <meta name="search-keywords" content="physics_particle_get_max_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_get_max_count</h1>
+  <p>Mit dieser Funktion können Sie herausfinden, wie hoch die aktuelle Obergrenze für die in der Physiksimulation erlaubten Partikel ist (Sie können diesen Wert mit <a href="physics_particle_set_max_count.htm"><tt>physics_particle_set_max_count()</tt></a>).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_particle_get_max_count()</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (physics_particle_count() &lt; physics_particle_get_max_count())<br> {
+    <br> physics_particle_create(0, x, y, 0, 0, c_white, 1, 1)<br> }
+  </p>
+  <p>Der obige Code prüft, ob weniger als die maximal zulässige Anzahl von Partikeln im Raum vorhanden ist, und erzeugt in diesem Fall ein weiteres.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Soft_Body_Particles.htm">Weichkörperpartikel</a></div>
+        <div style="float:right">Weiter: <a href="physics_particle_get_radius.htm">physics_particle_get_radius</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_get_max_count
+-->
+  <!-- TAGS
+physics_particle_get_max_count
+-->
+</body>
+</html>

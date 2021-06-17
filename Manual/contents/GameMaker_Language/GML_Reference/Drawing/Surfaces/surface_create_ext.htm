@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>oberfläche_erstellen_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_create_ext" />
+  <meta name="rh-index-keywords" content="surface_create_ext" />
+  <meta name="search-keywords" content="surface_create_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>oberfläche_erstellen_ext</h1>
+  <p>Mit dieser Funktion können Sie eine Fläche an ein Canvas-Element anhängen, das bereits in Ihrer Webseite vorhanden ist, was bedeutet, dass Sie Teile Ihres Spiels effektiv aufteilen können, um sie an verschiedenen Stellen innerhalb der Seite zu zeichnen. Zu diesem Zweck <i>müssen</i> Sie das Canvas-Element in der <tt>*.html-Seite</tt> Ihres Spiels korrekt definiert haben, indem Sie die richtigen Größen und Namen verwenden, die den Flächen entsprechen, die Sie erstellen möchten. Sie haben also Ihre &quot;Haupt&quot;-Leinwand und dann Ihre sekundären Oberflächen
+    Canvas-Elemente, die mit dieser Funktion den richtigen Oberflächen zugewiesen werden. Das folgende Bild ist ein Beispiel dafür, wie eine Seite mit drei Canvas-Elementen eingerichtet werden würde:</p>
+  <p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_1.png">Das Seitenlayout kann knifflig sein, vor allem, wenn Sie möchten, dass alle Elemente richtig ausgerichtet sind, aber sobald
+    Sobald die schwierige Aufgabe der Erstellung des Layouts abgeschlossen ist, können Sie diese <tt>HTML-Datei</tt> als Standardseitendatei für das Spiel hinzufügen, indem Sie die <a href="../../../../Settings/Game_Options/HTML5.htm">Registerkarte HTML5</a> der <a href="../../../../Settings/Game_Options.htm">Spieloptionen</a> verwenden.
+    Als Nächstes sollten Sie den Raum und die Ansichten einrichten, da jede Oberfläche mit einer bestimmten Ansicht verknüpft werden muss, um die Spielbilder zu &quot;erfassen&quot; (siehe die Ansichtsvariable <a href="../../Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm"><tt>view_surface_id[0...7]</tt></a>).
+    Das folgende Bild zeigt, wie der Spielraum für das obige Canvas-Beispiel eingerichtet werden würde:</p>
+  <p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_2.png">Schließlich würden Sie dann diese Funktion verwenden, um die Flächen zu erstellen, wobei der Name derselbe ist wie bei den
+    der für die Canvas-Elemente verwendet wird, und die Größe entspricht der Größe desselben Canvas. Die Funktion gibt den Index der Fläche zurück, der in einer Variablen für zukünftige Funktionsaufrufe gespeichert werden sollte. Wenn die Oberfläche zum ersten Mal erstellt wird, kann sie folgendes enthalten
+    &quot;Rauschen&quot; enthalten, da es sich im Grunde nur um einen Speicherbereich handelt, der für diesen Zweck beiseite gelegt wird (und dieser Speicher kann noch Informationen enthalten), daher sollten Sie die Oberfläche vor der Verwendung mit einer Funktion wie <a href="../Colour_And_Alpha/draw_clear_alpha.htm"><tt>draw_clear_alpha()</tt></a>.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion ist nur für die Verwendung mit dem HTML5-Modul verfügbar.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">surface_create_ext(name, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name des Canvas-Elements, mit dem die Fläche verknüpft werden soll.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die Breite der zu erstellenden Fläche.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe der zu erstellenden Fläche.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">s1 = surface_create_ext(&quot;surface1&quot;, 192, 550);<br> s2 = surface_create_ext(&quot;surface2&quot;, 608, 186);<br> view_surface_id[1] = s1;<br> view_surface_id[2] = s2;</p>
+  <p>Der obige Code erzeugt zwei unterschiedlich große Flächen, die jeweils einem anderen Canvas-Element zugewiesen werden, und dann werden diese Flächen zwei Ansichten zugewiesen, damit der richtige Teil des Raums erfasst wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="surface_resize.htm">surface_resize</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_create_ext
+-->
+  <!-- TAGS
+surface_create_ext
+-->
+</body>
+</html>

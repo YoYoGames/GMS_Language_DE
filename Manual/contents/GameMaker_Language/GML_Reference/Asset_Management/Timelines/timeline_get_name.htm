@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>timeline_get_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_get_name" />
+  <meta name="rh-index-keywords" content="timeline_get_name" />
+  <meta name="search-keywords" content="timeline_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>timeline_get_name</h1>
+  <p>Diese Funktion kann verwendet werden, um den Namen einer Zeitleiste als String zu erhalten. Wenn die Zeitleiste dynamisch mit der <a href="timeline_add.htm"><tt>timeline_add()</tt></a> Funktion erstellt wurde, hat der zurückgegebene Name das
+    Format &quot;__newtimelineN&quot;, wobei &quot; N&quot; die<i>Nummer</i> der Zeitleiste ist (beginnend bei 0). Bitte beachten Sie, dass dies <i>nur</i> eine Zeichenkette ist und nicht verwendet werden kann, um die Zeitleiste direkt zu referenzieren - dafür
+    Dazu bräuchten Sie den <i>Zeitleistenindex</i>. Sie können diese Zeichenkette jedoch verwenden, um den <i>Zeitleistenindex</i> zu erhalten, indem Sie die zurückgegebene Zeichenkette zusammen mit der Funktion <a href="../Assets_And_Tags/asset_get_index.htm"><tt>asset_get_index()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">timeline_get_name(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index der Zeitleiste, deren Name geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _str = timeline_get_name(timeline_index);<br> show_debug_message(&quot;Aktuelle Zeitleiste = &quot; + _str);</p>
+  <p>Der obige Code ermittelt den Namen der aktuell zugewiesenen Zeitleiste und gibt ihn auf der Konsole aus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Timelines.htm">Timelines</a></div>
+        <div style="float:right">Weiter: <a href="timeline_add.htm">timeline_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_get_name
+-->
+  <!-- TAGS
+timeline_get_name
+-->
+</body>
+</html>

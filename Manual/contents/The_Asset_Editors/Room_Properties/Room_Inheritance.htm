@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Raumvererbung</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the inheritance functionality of rooms" />
+  <meta name="rh-index-keywords" content="Rooms - Inheritance" />
+  <meta name="search-keywords" content="room inheritance,inherit,inheritance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Raumvererbung</h1>
+  <p>Eine wichtige Funktion des Raumeditors ist die <strong>Vererbung</strong>. Vererbung bedeutet, dass Sie einen &quot;übergeordneten&quot; Raum erstellen können, aus dem Sie dann einen &quot;untergeordneten&quot; Raum erstellen, der alle Eigenschaften des übergeordneten Raums erbt. Dieser untergeordnete
+    Raum ist im Wesentlichen ein <em>Klon </em>des Elternraums, und alles in ihm <strong>ist mit dem Elternraum verknüpft</strong>. Das heißt, wenn Sie die Ansicht im übergeordneten Raum ändern, eine Kachel verschieben oder Instanzen hinzufügen, wird dies auch im untergeordneten Raum berücksichtigt.
+    Nicht nur das, im untergeordneten Raum können Sie die Vererbung für bestimmte Ebenen, Instanzen, Assets oder alles andere, was erforderlich ist, selektiv ausschalten.</p>
+  <p>Bei einem Raum, der über vererbte Eigenschaften verfügt, leuchten die Vererbungsschaltflächen auf - wie im Bild unten zu sehen - und Sie können sie dann verwenden, um die Vererbung für die jeweilige Ebene oder Ressource ein- oder auszuschalten usw..</p>
+  <p><img alt="Room Inherit Buttons" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Inheritance.png">Dies kann anfangs etwas schwierig zu visualisieren sein, also lassen Sie uns ein Beispiel betrachten: Sagen wir, Sie haben einen Raum mit einer Stadt und einem Schloss in der
+    der Mitte. Die Stadt und die Burg werden mit verschiedenen Kachel-Ebenen gezeichnet und Sie haben auch Instanzen und einige Pfade für NPCs, die sie zum Herumlaufen benutzen. Sie wollen, dass im Spiel die Burg zerstört wird, aber alles andere in der Stadt gleich aussieht
+    und verhält sich gleich. Sie würden den ursprünglichen Raum erstellen, in dem alles normal ist, dann würden Sie einen Kindraum erstellen, der die Ebenen des Elternraums erbt. Im Kind-Raum schalten Sie die Vererbung für die Kachelebene (oder sogar einzelne
+    Kacheln) für den Burgbereich aus und verschieben/hinzufügen/löschen Kacheln, um das Aussehen der zerstörten Burg zu erzeugen. Wenn ein Spieler diesen Raum betritt, bleiben alle Instanzen aus dem Elternraum und alle Kacheln usw. genau gleich, mit Ausnahme derjenigen der zerstörten
+    Burg.</p>
+  <p class="note"><strong>WICHTIG!</strong> Wenn Sie eine vererbte Eigenschaft bearbeiten, wird die Vererbung in dem Abschnitt, zu dem sie gehört, automatisch ausgeschaltet, ohne dass Sie zuerst die Schaltfläche "Vererben" umschalten müssen.</p>
+  <p>Um eine Raumvererbung zu erstellen, wählen Sie einfach im <a href="../../Introduction/The_Asset_Browser.htm">Asset-Browser</a> den Raum aus, von dem Sie ein Kind erstellen möchten, und klicken dann mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">. Dadurch wird das Raummenü geöffnet, und dort können Sie <strong>Kind erstellen </strong>wählen, um einen neuen untergeordneten Raum zu erstellen. Dieser wird erstellt und im Asset-Browser visuell an den übergeordneten Raum &quot;angehängt&quot;:</p>
+  <p><img alt="Room Inheritance" class="center" src="../../assets/Images/Asset_Editors/Editor_RoomInheritance.png">Um die Raumreihenfolge und/oder Vererbung zu ändern, müssen Sie den <a href="../../Settings/The_Room_Manager.htm">Raum-Manager</a> verwenden, den Sie
+    den Sie über das Menü oben rechts im Asset-Browser öffnen können. Hier können Sie zur Registerkarte " <em>Vererbung </em>" gehen und dann auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> klicken und einen beliebigen Raum auf einen anderen Raum ziehen, damit er ein Kind dieses Raums wird (oder einen Kindraum von einem anderen Raum wegziehen).
+    ziehen, damit er ein untergeordneter Raum dieses Raums wird (oder einen untergeordneten Raum von einem übergeordneten Raum wegziehen und die Vererbung aufheben).</p>
+  <p>Beachten Sie, dass die Vererbung innerhalb eines Raums mehrschichtig ist und Sie einzelne Elemente, Gruppen von Elementen auf einer Ebene, Elementeigenschaften oder ganze Räume als vererbend prüfen können, und Sie können auch von aufeinanderfolgenden Räumen erben (so erbt Raum C von Raum
+    B, der seinerseits von Raum A geerbt hat). Wenn Sie z. B. einen Basisraum erstellen, der außer der Ansichtseinstellung nichts enthält, können Sie anschließend alle weiteren Räume als seine Kinder erstellen, und diese erben dann alle die Ansichtseigenschaften des übergeordneten
+    Raumes. Sie können aber noch einen Schritt weiter gehen und einen weiteren Basisraum mit dem &quot;View&quot;-Raum als übergeordneten Raum anlegen, der die allgemeine <a class="glossterm" data-glossterm="GUI" href="#">GUI-Instanz</a> und die in jedem Spielraum benötigten Controller enthält.
+    Jetzt können Sie daraus untergeordnete Räume erstellen und diese erben sowohl die Controller und GUIs vom übergeordneten Raum als auch die Ansichtseinstellungen vom übergeordneten Raum!</p>
+  <p>Wie Sie hoffentlich sehen können, ist die Vererbung sehr leistungsfähig und Sie können damit eine viel sauberere Raumstruktur beibehalten, den Arbeitsablauf beschleunigen und allgemein die Zeit optimieren, die Sie für die Erstellung und Gestaltung von Räumen aufwenden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Rooms.htm">Der Raum-Editor</a></div>
+        <div style="float:right">Nächste: <a href="Layer_Properties.htm">Ebenentypen und Eigenschaften</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Inheritance
+-->
+  <!-- TAGS
+rooms_inheritance
+-->
+
+</body></html>

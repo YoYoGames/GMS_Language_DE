@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>iOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details the iOS Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - iOS" />
+  <meta name="search-keywords" content="iOS Game Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">iOS-Spieloptionen</span> </h1>
+  <p>In diesem Abschnitt werden die verschiedenen Optionen beschrieben, die Ihnen zur Verfügung stehen und die steuern, wie Ihre <span class="notranslate">iOS-Spielprojekte</span> kompiliert werden. Die verschiedenen Abschnitte sind:</p>
+  <p> </p>
+  <h2>Allgemein</h2>
+  <p><img alt="iOS General Options" class="center" src="../../assets/Images/Settings/iOS_General_Options.png">Der erste Teil des Abschnitts "Allgemein" umfasst die <strong>Build-Einstellungen</strong> für Ihr Spiel. Zu Beginn stellen Sie die <strong>Ausrichtungen </strong>ein, in denen
+    Ihr Spiel ausgeführt werden kann, um eine optimale Benutzererfahrung zu gewährleisten. Die verfügbaren Optionen sind:</p>
+  <ul class="Disc">
+    <li>Porträt</li>
+    <li>Umgekehrtes Porträt</li>
+    <li>Landschaft</li>
+    <li>Umgekehrte Landschaft</li>
+  </ul>
+  <p>Sie können dann zum Abschnitt " <strong>Device Support" (Geräteunterstützung</strong> ) gehen, in dem die folgenden Optionen zum Einstellen des Gerätetyps zur Verfügung stehen:</p>
+  <ul class="Disc">
+    <li><strong>iPhone oder iPod Touch</strong>: iPhone 6 und höher oder iPod Touch-Geräte</li>
+    <li><strong>iPad</strong>: iPad-Geräte</li>
+    <li><strong>Beide</strong>: Sowohl iPhone/iPod als auch iPad</li>
+  </ul>
+  <p>Als Zweites müssen Sie die <strong>Produktinformationen</strong> zu Ihrem Spiel ausfüllen, einschließlich des <strong>Anzeigenamens</strong>, der <strong>Bundle-ID</strong> und der <strong>Versionsinformationen</strong>. Beachten Sie, dass die Bundle-ID im korrekten
+    umgekehrten URL-Format sein muss, damit der endgültige Build des Spiels korrekt funktioniert, z. B.: <span class="inline">com.[Company].[GameName]</span>. Hier können Sie auch den <strong>Team Identifier</strong> angeben, den Sie zum Signieren der endgültigen Anwendung verwenden möchten, die
+   <span class="notranslate">GameMaker Studio 2</span> für Sie erstellt. Wenn Sie ihn hier einstellen, wird die Team-ID überschrieben, die Sie in den <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm"><span class="notranslate">iOS-Voreinstellungen</span></a> angegeben haben.</p>
+  <p>Als Nächstes können Sie die Option " <strong>Defer Home Indicator Output</strong>" aktivieren oder deaktivieren. Wenn diese Option aktiviert ist, wird die Home-Leiste immer bei niedrigem a alpha angezeigt, und der erste Wisch weckt die Leiste auf und der zweite Wisch bringt Sie nach Hause. Wenn die Option
+    nicht aktiviert ist, wird die Leiste im Spiel nicht angezeigt, aber der erste Wisch über die Kante bringt Sie nach Hause. Standardmäßig ist sie nicht aktiviert.</p>
+  <p>Schließlich haben Sie die Möglichkeit, eine <strong>Poddatei</strong> und eine <strong>Podfile.lock</strong> zu erzeugen. Diese Dateien sind erforderlich, wenn Sie <span class="notranslate">CocoaPods</span> mit dem <a href="../../The_Asset_Editors/Extensions.htm">Erweiterungseditor</a> zu einer <a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm"><span class="notranslate">iOS-Erweiterung</span></a> hinzufügen. Die Dateien enthalten spezifische Makros, die von <span class="notranslate">GameMaker Studio 2</span> benötigt werden, um alle aufgelisteten <span class="notranslate">CocoaPods</span>beim Erstellen Ihres Spiels einzurichten. Wenn Sie auf die Schaltflächen klicken, werden die Dateien mit
+    die Makros vorgeneriert und öffnet außerdem einen Datei-Explorer am Speicherort der Dateien, falls Sie sie manuell bearbeiten möchten. Es gibt auch eine Schaltfläche, die Sie zur folgenden Anleitung führt:</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span> und <span class="notranslate">tvOS</span>: Verwendung von Cocoa Pods</a></li>
+  </ul>
+  <p> </p>
+  <h2>Grafiken</h2>
+  <p><img alt="iOS Graphics Options" class="center" src="../../assets/Images/Settings/iOS_Graphics_Options.png">Hier können Sie die folgenden Details in Bezug auf die Anzeige Ihres Spiels ändern, wobei die folgenden Optionen zur Verfügung stehen:</p>
+  <ul class="colour">
+    <li><strong>Interpoliert Farben zwischen Pixeln</strong>: Schaltet die <a class="glossterm" data-glossterm="lineare Interpolation" href="Ubuntu.htm#">lineare Interpolation</a> ein, die im Grunde genommen Pixel &quot;glättet&quot;. Für scharfe Pixelgrafiken sollte diese Option
+      ausgeschaltet sein, aber wenn Sie schöne Alpha-Mischungen und geglättete Kanten haben, sollten Sie es eingeschaltet lassen. Standardmäßig ist dies ausgeschaltet.<strong></strong></li>
+    <li><strong>Halbe iPad 1-Texturen:</strong> Das iPad 1 hat viel weniger Texturspeicher als neuere Geräte, daher können Sie diese Option aktivieren, um die Größe der Texturen um die Hälfte zu reduzieren, wenn Sie auf dieses Gerät abzielen oder maximale Kompatibilität erhalten möchten.</li>
+    <li><strong>Skalieren</strong>: Hier können Sie wählen, ob Sie die Zeichenfläche unter Beibehaltung des Seitenverhältnisses innerhalb des Gerätebildschirms skalieren möchten - indem Sie &quot;Polster&quot; an den Rändern hinzufügen, um sie an den Bildschirm anzupassen - oder ob Sie die Zeichenfläche strecken möchten, um sie an den Bildschirm anzupassen.
+      den Gerätebildschirm anzupassen.</li>
+  </ul>
+  <p>Schließlich gibt es noch die Möglichkeit, die Größe der <a class="glossterm" data-glossterm="Textur-Seite" href="macOS.htm#">Texturseite</a> einzustellen. Die Standardgröße (und die kompatibelste) ist 2048x2048, aber Sie können eine Größe zwischen 256x256 und 8192x8192 wählen. Es
+    Es gibt auch eine Schaltfläche mit der Bezeichnung <strong>Vorschau </strong>, die die Texturseiten für diese Plattform generiert und dann ein Fenster öffnet, in dem Sie sehen können, wie sie aussehen. Dies kann sehr nützlich sein, wenn Sie sehen möchten, wie die Texturseiten aufgebaut sind und
+    um zu verhindern, dass die Texturseiten größer (oder kleiner) als nötig sind. Weitere Informationen zu Texturseiten finden Sie <a href="../Texture_Information/Texture_Pages.htm">hier</a>.</p>
+  <p class="note"><strong>HINWEIS</strong>: Beachten Sie, dass Ihr Spiel mit verschiedenen Browsern und Geräten weniger kompatibel ist, je größer die Texturseite ist.</p>
+  <p> </p>
+  <h2>Icons</h2>
+  <p><img alt="iOS Images Icons Options" class="center" src="../../assets/Images/Settings/iOS_Icons_Options.png">In diesem Abschnitt können Sie die verschiedenen Symbole hinzufügen, die für die verschiedenen iPhone- und iPad-Geräte und die verschiedenen Teile des
+   <span class="notranslate">iOS</span> App Store. Diese Icons sollten als 24-Bit-Bilder <span class="inline">*.png</span> in der jeweils angegebenen Größe erstellt werden.</p>
+  <p>Es ist erwähnenswert, dass <span class="notranslate">GameMaker Studio 2</span> über ein <a href="../../IDE_Tools/Project_Image_Generator.htm">Projektbild-Generator-Tool</a> verfügt, das verwendet werden kann, um automatisch alle Bilder zu erstellen, die für die verschiedenen Zielplattformen benötigt werden, für die Ihr Spiel
+    kompiliert wird. Wenn Sie dieses Tool verwenden, sollten Sie die erstellten Bilder überarbeiten, um sicherzustellen, dass sie Ihren Anforderungen entsprechen. Das Tool wird sowohl Icons als auch Bilder generieren (siehe den Abschnitt unten).</p>
+  <p class="note">HINWEIS: Beim Importieren eines älteren Projekts kann die folgende Warnung angezeigt werden:<img alt="iOS Icon Warning" class="center" height="194" src="../../assets/Images/Settings/iOS_Icon_Warning.png" width="430">Dies wird angezeigt, weil die aktuelle <span class="notranslate">iOS-Ziel</span> 
+    Version das Format der erforderlichen Symbole geändert hat, seit das Projekt zuvor geladen wurde. Sie müssen alle Symbole neu erstellen, da sie durch die generischen <span class="notranslate">GameMaker Studio 2-Symbole</span> ersetzt wurden (Sie können das oben erwähnte
+    Projektbild-Generator verwenden, um dies schnell zu erledigen).</p>
+  <p> </p>
+  <h2>Bilder</h2>
+  <p><img alt="iOS Images Splash Screens Options" class="center" src="../../assets/Images/Settings/iOS_Images_Options.png">In diesem Abschnitt können Sie für jede Geräteausrichtung eine eigene Grafik als <strong>Startbildschirm</strong> (das Bild, das kurz angezeigt wird, während
+    (das Bild, das kurz angezeigt wird, während Ihre App geladen wird) für jede der Geräteausrichtungen sowie die <strong>Randfarbe</strong>, die als Hintergrund für Startbildschirme verwendet wird, die nicht den gesamten Bildschirm ausfüllen sollen. Diese Bilder müssen als einzelne 24-Bit-Bilder erstellt werden
+    <span class="inline">*.png</span> Bilder ohne Transparenzen und in einer geeigneten Größe erstellt werden. Beachten Sie, dass es sich hierbei <em>nicht</em> um einen Splash-Screen handelt und Apple ziemlich strenge Richtlinien hat, wie dieser eingerichtet und verwendet werden sollte. Weitere Informationen finden Sie auf der Entwicklerseite zu <a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/">Human Interface Guidelines</a>.</p>
+  <p>Sie können auch einstellen, wie der Startbildschirm angezeigt werden soll, und zwar mit den folgenden Optionen:</p>
+  <ul class="colour">
+    <li><strong>Seitenverhältnis beibehalten</strong>: Damit wird das Seitenverhältnis des Bildes im Vergleich zum Gerätebildschirm beibehalten, wobei an den Rändern bei Bedarf &quot;Auffüllungen&quot; hinzugefügt werden.</li>
+    <li><strong>Beschneiden auf Anpassen</strong>: Damit wird das Bild 1:1 mit dem Gerätebildschirm beibehalten und die Ränder werden nach Bedarf zugeschnitten (oder aufgefüllt).</li>
+    <li><strong>Strecken</strong>: Damit wird das Bild gestreckt, um den Gerätebildschirm auszufüllen (und kann das angezeigte Bild verzerren).</li>
+  </ul>
+  <p> </p>
+  <h2>Sozial</h2>
+  <p><img alt="iOS Social Options" class="center" src="../../assets/Images/Settings/iOS_Social_Options.png">In diesem Abschnitt können Sie verschiedene <strong>soziale </strong>Funktionen in Ihrem <span class="notranslate">iOS-Spiel</span> aktivieren. Die folgenden Optionen können gewählt werden:</p>
+  <ul class="colour">
+    <li><strong>Facebook</strong>: Wenn Sie die Facebook-Funktionen benötigen, müssen Sie dieses Kontrollkästchen aktivieren und dann die <strong>Facebook-App-ID</strong> und den <strong>Facebook-App-Namen</strong> angeben. Beachten Sie, dass der Zugriff auf alle Facebook-Funktionen über eine
+      Wenn Sie zum ersten Mal das Kontrollkästchen "Facebook verwenden" aktivieren, werden Sie aufgefordert, die Facebook-Erweiterung von der Website "Facebook" herunterzuladen und zu installieren. <a href="../../Introduction/The_Marketplace.htm"><span class="notranslate">Marktplatz</span></a>.</li>
+    <li><strong>Aktivieren Sie Push-Benachrichtigungen</strong>: Damit Ihr Spiel Push-Benachrichtigungen verwenden kann, müssen sie hier zuerst aktiviert werden, sonst funktionieren sie nicht.</li>
+    <li><strong>Aktivieren Sie Anmelden mit Apple</strong>: Diese Option ist für die Verwendung der <strong>Apple Sign In Extension</strong> auf <span class="notranslate">iOS</span>. Sie können diese Erweiterung über die <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">YoYo Spiele</span> <span class="notranslate">Marktplatz</span></a>,
+      und die Erweiterung selbst enthält eine vollständige Anleitung zur Verwendung. Wenn Sie diese Erweiterung nicht verwenden, sollten Sie diese Option nicht ankreuzen.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Game_Options.htm">Spiel-Optionen</a></div>
+        <div style="float:right">Nächste: <a href="tvOS.htm"><span class="notranslate">tvOS</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">iOS</span> Game Options
+-->
+  <!-- TAGS
+ios_options
+-->
+
+</body></html>

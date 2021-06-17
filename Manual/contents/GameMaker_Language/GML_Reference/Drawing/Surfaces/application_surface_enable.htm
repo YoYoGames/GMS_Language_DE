@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>application_surface_enable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for application_surface_enable" />
+  <meta name="rh-index-keywords" content="application_surface_enable" />
+  <meta name="search-keywords" content="application_surface_enable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>application_surface_enable</h1>
+  <p>Mit dieser Funktion können Sie die Anwendungsoberfläche aktivieren oder deaktivieren. Standardmäßig ist die Anwendungsoberfläche aktiviert und alle Zeichnungen für die Draw-Ereignisse werden auf diese und die auf den Bildschirm gezeichnete Oberfläche ausgeführt. Auf einigen älteren Geräten und bestimmten
+    Chipsätzen kann dies jedoch zu einer schlechteren Leistung führen. In diesen Fällen können Sie das Zeichnen in die Anwendungsoberfläche deaktivieren und alle Zeichenereignisse werden dann direkt in den Bildschirmpuffer gezeichnet.</p>
+  <p>Sie können diese Funktion verwenden, um die Anwendungsoberfläche jederzeit in Ihrem Spiel zu aktivieren oder zu deaktivieren, aber Sie sollten beachten, dass es mindestens einen Frame (Schritt) braucht, damit die Änderungen wirksam werden. <span class="notranslate">Ausschalten</span><i><b>schaltet die gesamte Seitenverhältniskorrektur aus.</b></i>,
+    wie in den <i>Spieloptionen</i> für die Zielplattform eingestellt. Das bedeutet, dass Sie eine Methode haben sollten, die das Spiel auf die gewünschten Geräte-, Fenster- oder Bildschirmabmessungen skaliert. Wenn Sie es wieder einschalten, werden die <i>Spieloptionen</i> im nächsten Schritt wieder wirksam.</p>
+  <p>Es wird empfohlen, diese Funktion sorgfältig zu verwenden, da sie sich darauf auswirkt, wie alles auf dem Bildschirm gezeichnet wird. Im Allgemeinen sollten Sie sie als Option in einem Menü Ihres Spiels haben oder sie nur einmal zu Beginn Ihres Spiels aufrufen und Ihren
+    Code so schreiben, dass er anzeigt, ob die Funktion aktiviert oder deaktiviert ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">application_surface_enable(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>aktivieren.</td>
+        <td>Legt fest, ob die Anwendungsoberfläche aktiviert<tt>(true</tt>) oder deaktiviert<tt>(false</tt>) werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> if application_surface_is_enabled()<br> {
+    <br> application_surface_enable(false);
+    <br> }
+    <br> sonst
+    <br> {
+    <br> application_surface_enable(true);
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft auf einen Tastendruck und schaltet die Anwendungsoberfläche je nach Zustand ein oder aus (wie in einem Optionsmenü).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="application_surface_is_enabled.htm">application_surface_is_enabled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+application_surface_enable
+-->
+  <!-- TAGS
+application_surface_enable
+-->
+</body>
+</html>

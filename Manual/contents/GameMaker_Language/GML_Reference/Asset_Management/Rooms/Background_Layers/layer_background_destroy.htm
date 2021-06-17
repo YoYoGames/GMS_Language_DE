@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_destroy" />
+  <meta name="rh-index-keywords" content="layer_background_destroy" />
+  <meta name="search-keywords" content="layer_background_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_destroy</h1>
+  <p>Diese Funktion zerstört das angegebene Hintergrundelement. Sie übergeben die Hintergrund-ID (die Sie erhalten, wenn Sie den Hintergrund mit <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> oder wenn Sie die Ebenen-ID zusammen mit
+    mit <a href="layer_background_get_id.htm"><tt>layer_get_background_id()</tt></a>) und diese Funktion entfernt ihn. Beachten Sie, dass dadurch <i>nicht</i> die Ebene, sondern nur der Hintergrund entfernt wird, und wenn der Hintergrund einer ist, der im Raum
+    Editor hinzugefügt wurde, dann wird der Hintergrund beim nächsten Verlassen des Raums und bei der Rückkehr wieder neu erstellt. Wenn der Raum jedoch persistent ist, wird der Hintergrund entfernt, es sei denn, die Raumpersistenz wird wieder ausgeschaltet.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_background_destroy(background_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>hintergrund_element_id</td>
+        <td>Der eindeutige ID-Wert des zu zerstörenden Hintergrunds</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Hintergrund_Bäume&quot;);<br> var bck_id = layer_background_get_id(&quot;Wald&quot;);<br> if layer_background_exists(lay_id, bck_id)<br> {
+    <br> layer_hintergrund_destroy(bck_id);
+    <br> }
+  </p>
+  <p>Der obige Code prüft die Ebene &quot;Background_trees&quot;, um zu sehen, ob das angegebene Hintergrundelement existiert, und wenn ja, dann wird es zerstört (aber nicht die Ebene).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Background_Layers.htm">Hintergrund-Ebenen</a></div>
+        <div style="float:right">Weiter: <a href="layer_background_visible.htm">layer_background_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_destroy
+-->
+  <!-- TAGS
+layer_background_destroy
+-->
+</body>
+</html>

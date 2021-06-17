@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_fog</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_fog" />
+  <meta name="rh-index-keywords" content="gpu_set_fog" />
+  <meta name="search-keywords" content="gpu_set_fog" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_fog</h1>
+  <p>Mit dieser Funktion können Sie das Zeichnen von Nebel aktivieren oder deaktivieren. Nebel kann in 3D-Spielen verwendet werden, um Instanzen in der Ferne unscharf aussehen zu lassen oder sogar verschwinden zu lassen, was dabei hilft, Atmosphäre zu schaffen sowie die Tatsache zu maskieren, dass Sie Instanzen nicht zeichnen
+    die weit entfernt sind. Sie stellen ein, ob er aktiviert<tt>(true</tt>) oder deaktiviert<tt>(false</tt>) ist, die Farbe, die der Nebel zum Überblenden verwenden soll, sowie die Start- und End-Zeichendistanz. Beachten Sie, dass der Start des Nebels den Radius relativ zur
+    Ansichtskamera angibt, wo der Nebel beginnt, und das Nebelende gibt an, bei welchem Radius (ebenfalls relativ) die Instanzen vollständig unsichtbar werden.</p>
+  <p>Die Funktion kann vier einzelne Argumente (wie oben angegeben) oder ein Array mit der folgenden Struktur annehmen (der Beispielcode unten zeigt diese Methode):</p>
+  <ul class="colour">
+    <li>0] = aktivierter Toggle (ein Boolean, entweder <tt>true</tt> oder <tt>false</tt>), Voreinstellung <tt>false</tt></li>
+    <li>[1] = Farbe (real), Voreinstellung <tt>c_black</tt></li>
+    <li>[2] = Startabstand (real), Voreinstellung 0</li>
+    <li>[3] = Endabstand (real), Voreinstellung 1</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_set_fog(enable, color, start, end);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>aktivieren.</td>
+        <td>Aktivieren oder Deaktivieren des Nebels</td>
+      </tr>
+      <tr>
+        <td>Farbe</td>
+        <td>Die Farbe des Nebels</td>
+      </tr>
+      <tr>
+        <td>Start</td>
+        <td>Der Abstand zum Beginn der Nebelaufbringung von</td>
+      </tr>
+      <tr>
+        <td>Ende</td>
+        <td>Der Abstand zum Ende des Nebels</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var fog_a = gpu_get_fog();<br> fog_a[1] = c_red;<br> gpu_set_fog(fog_a);
+  </p>
+  <p>Der obige Code ruft die aktuellen Nebeleinstellungen ab und setzt dann das Farbelement des Arrays auf <tt>c_red</tt>, bevor der Nebel mit dem geänderten Array erneut eingestellt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GPU_Control.htm">GPU-Steuerung</a></div>
+        <div style="float:right">Weiter: <a href="gpu_set_cullmode.htm">gpu_set_cullmode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_fog
+-->
+  <!-- TAGS
+gpu_set_fog
+-->
+</body>
+</html>

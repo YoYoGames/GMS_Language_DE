@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>bildschirm_speichern_teil</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for screen_save_part" />
+  <meta name="rh-index-keywords" content="screen_save_part" />
+  <meta name="search-keywords" content="screen_save_part" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>bildschirm_speichern_teil</h1>
+  <p>Mit dieser Funktion können Sie einen Screenshot eines Teils des Spiels speichern, wie er gerade in der Spielanzeige erscheint. Die Auswahlkoordinaten basieren auf der <i>absoluten</i> Größe des Bildschirms (oder des Fensters, wenn es sich nicht um einen Vollbildschirm handelt), so dass (0,0) immer die obere
+    linke Ecke des Bildschirms (oder des Fensters). Nachfolgend finden Sie ein Bild, das zeigt, wie diese Funktion funktioniert:</p>
+  <p><img alt="Saving part of the screen example" class="center" src="../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/screen_save.png">Die Datei wird im <a href="../File_Handling/File_Directories/working_directory.htm">Arbeitsverzeichnis</a> des
+    des Spiels gespeichert. Es ist wichtig zu beachten, dass die Funktion für den Aufruf im <b>Draw-GUI-End-Ereignis</b> konzipiert ist, das auf allen Plattformen konsistente Ergebnisse liefern sollte. Wenn Sie die Funktion in einem anderen Ereignis verwenden, funktioniert sie möglicherweise nicht wie erwartet.
+    Ergebnisse auf verschiedenen Zielen und sogar Geräten liefern.</p>
+  <p class="note"><b>HINWEIS: </b>Diese Funktion funktioniert nicht mit dem HTML5-Ziel.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">screen_save_part(fname,x,y,w,h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Der Dateiname für das zu speichernde Bildschirmfoto</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate der linken oberen Ecke des zu erfassenden Bildschirmbereichs</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate der linken oberen Ecke des zu erfassenden Bildschirmbereichs</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die Breite des Bereichs des Bildschirms, der erfasst werden soll</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe des zu erfassenden Bereichs des Bildschirms</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br> {
+    <br> screen_save_part(&quot;Screens\Screen_&quot; + string(num++) + &quot;.png&quot;, 0, 0, 100, 100)<br> }
+  </p>
+  <p>Der obige Code macht einen Screenshot von einem Teil des Spielbildschirms, der 100 Pixel im Quadrat ist, wenn der Benutzer die Taste &quot;S&quot; drückt. Dieser Screenshot wird in einem bestimmten Ordner gespeichert und mit einer Variablen nummeriert, die dann inkrementiert wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Kameras und Display</a>
+        <div style="float:left">Zurück: </div>
+        <div style="float:right">Weiter: <a href="gif_open.htm">gif_open</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+screen_save_part
+-->
+  <!-- TAGS
+screen_save_part
+-->
+</body>
+</html>

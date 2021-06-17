@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_welt_aktualisieren_wiederholungen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_update_iterations" />
+  <meta name="rh-index-keywords" content="physics_world_update_iterations" />
+  <meta name="search-keywords" content="physics_world_update_iterations" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_welt_aktualisieren_wiederholungen</h1>
+  <p>Alles in <span class="notranslate">GameMaker Studio 2</span> basiert auf Schritten, und normalerweise tritt jedes Ereignis nur einmal pro Schritt auf. Um jedoch die nötige Präzision mit den Physikfunktionen zu erreichen, werden sie dazu gebracht, mehrere Berechnungen pro Schritt durchzuführen, die als
+    &quot;Iterationen&quot; genannt, deren Anzahl durch diese Funktion gesteuert wird. Die Standardzahl für das Physiksystem ist 10, aber diese Zahl kann höher oder niedriger eingestellt werden, je nachdem, wie oft die Physik jeden Schritt berechnen soll, aber es wird
+    Es wird jedoch empfohlen, diesen Wert nicht niedriger als 5 und nicht höher als 30 zu setzen. Sie sollten sich auch bewusst sein, dass diese Funktion von der <a href="physics_world_update_speed.htm"><tt>physics_world_update_speed()</tt></a> Funktion.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_world_update_iterations(Wiederholungen)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>die Iterationen (pro Schritt), die das Physiksystem durchführen wird</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">physics_world_update_iterations(20);</p>
+  <p>Der obige Code setzt die Physikwelt im aktuellen Raum so, dass sie 20 Mal pro Schritt Berechnungen durchführt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Physics_World.htm">Die Welt der Physik</a></div>
+        <div style="float:right">Weiter: <a href="physics_world_update_speed.htm">physics_world_update_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_update_iterations
+-->
+  <!-- TAGS
+physics_world_update_iterations
+-->
+</body>
+</html>

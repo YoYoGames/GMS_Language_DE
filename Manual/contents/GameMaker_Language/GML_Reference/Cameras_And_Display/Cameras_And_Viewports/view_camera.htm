@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ansicht_Kamera</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_camera" />
+  <meta name="rh-index-keywords" content="view_camera" />
+  <meta name="search-keywords" content="view_camera" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ansicht_Kamera</h1>
+  <p>Dieses Array enthält die eindeutige Kamera-ID, die dem angegebenen Ansichtsanschluss zugewiesen ist, und kann auf eine neue Kamera gesetzt oder gelesen werden, um die aktuelle Kamera zu erhalten, wobei -1 zurückgegeben wird, wenn keine Kamera zugewiesen ist. Sie können bis zu 8 Ansichtsfenster in einem Raum aktiv haben (Array-Werte 0 bis
+    7), und Sie können jedem von ihnen eine Kamera zuweisen, indem Sie diese Variable einfach auf den Wert der Kamera-ID setzen (wie von den Funktionen <a href="camera_create.htm"><tt>kamera_erzeugen()</tt></a> oder <a href="camera_create_view.htm"><tt>camera_create_view()</tt></a>).
+    Wenn Sie die Kamera über den Raumeditor einem Ansichtsanschluss zugewiesen haben, enthält diese Variable die Kamera-ID für diesen Anschluss.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">view_camera[0 ... 7];</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Kamera-Index oder -1, wenn keine Kamera zugeordnet ist</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if view_camera[0] == -1<br> {
+    <br> view_camera[0] = camera_create_view(0, 0, room_width, room_height);<br> }
+  </p>
+  <p>Der obige Code prüft, ob an den Ansichtsanschluss [0] eine Kamera angeschlossen ist, und wenn nicht, wird eine erstellt und auf diesen eingestellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="view_current.htm">view_current</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_camera
+-->
+  <!-- TAGS
+view_camera
+-->
+</body>
+</html>

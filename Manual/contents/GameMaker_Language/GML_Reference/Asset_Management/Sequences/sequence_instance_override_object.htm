@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sequence_instance_override_object</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_instance_override_object" />
+  <meta name="rh-index-keywords" content="sequence_instance_override_object" />
+  <meta name="search-keywords" content="sequence_instance_override_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sequence_instance_override_object</h1>
+  <p>Mit dieser Funktion können Sie alle Instanzen eines in einer Sequenz verwendeten Objekts durch ein anderes überschreiben (ersetzen). Sie geben die Struktur-ID der Sequenzinstanz an (wie sie beim Anlegen der Sequenzinstanz im Raum oder durch Verwendung einer der Raumschicht
+    Funktionen - siehe <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">hier</a>), sowie den Objektindex (wie im Asset-Browser definiert) für das Objekt, das Sie überschreiben wollen. Schließlich geben Sie einen Objektindex oder eine Instanz-ID an, die als
+    das Objekt, das die Sequenz überschreiben soll (bei Angabe einer Instanz-ID wird einfach das Objekt, von dem die Instanz erzeugt wurde, als Überschreibung verwendet). Beachten Sie, dass dies nur bei Sequenzinstanzen (nicht bei Sequenzobjekten) möglich ist und durchgeführt werden muss
+    bevor die Sequenz abgespielt wird, sonst funktioniert es nicht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sequence_instance_override_object(sequence_instance_struct, object_id, instance_or_object_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sequenz_instanz_strukt</td>
+        <td>Die zu ändernde Sequenzinstanzstruktur.</td>
+      </tr>
+      <tr>
+        <td>objekt_id</td>
+        <td>Der Objektindex des zu überschreibenden Objekts innerhalb der Sequenz.</td>
+      </tr>
+      <tr>
+        <td>instanz_oder_objekt_id</td>
+        <td>Der Objektindex oder die Instanz-ID, die zum Überschreiben der Sequenzobjekte verwendet werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> var _seq_inst = layer_sequence_get_instance(_seq); sequence_instance_override_object(_seq_inst, obj_Trees_Winter, obj_Trees_Summer);</p>
+  <p>Der obige Code erzeugt eine neue Sequenzinstanz auf der angegebenen Ebene und modifiziert sie dann so, dass alle Instanzen des Objekts &quot;obj_Bäume_Winter&quot; durch Instanzen des Objekts &quot;obj_Bäume_Sommer&quot; ersetzt werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="in_sequence.htm">in_sequence</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_instance_override_object
+-->
+  <!-- TAGS
+sequence_instance_override_object
+-->
+</body>
+</html>

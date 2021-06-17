@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_struct_names_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_struct_names_count" />
+  <meta name="rh-index-keywords" content="variable_struct_names_count" />
+  <meta name="search-keywords" content="variable_struct_names_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_struct_names_count</h1>
+  <p>Mit dieser Funktion können Sie die Gesamtanzahl der für eine struct definierten Variablen ermitteln. Sie geben die zu prüfende struct-ID an, und die Funktion gibt einen ganzzahligen Wert für die Anzahl der gefundenen Variablen zurück, oder (falls kein struct mit der angegebenen ID existiert)
+    -1.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">variable_struct_names_count(struct_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>struct_id</td>
+        <td>Der eindeutige ID-Wert der zu prüfenden Struktur.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _num = variable_struct_names_count(mystruct);<br> show_debug_message(&quot;Struct Variables = &quot; + string(_num));</p>
+  <p>Der obige Code ruft die Anzahl der Variablen in der angegebenen Struktur ab und zeigt in der Konsolenausgabe eine Debug-Meldung mit diesem Wert an.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="instanceof.htm">instanceof</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_struct_names_count
+-->
+  <!-- TAGS
+variable_struct_names_count
+-->
+
+</body></html>

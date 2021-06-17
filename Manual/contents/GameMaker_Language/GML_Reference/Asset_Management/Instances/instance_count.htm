@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz_Zahl</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_count" />
+  <meta name="rh-index-keywords" content="instance_count" />
+  <meta name="search-keywords" content="instance_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Instanz_Zahl</h1>
+  <p>Mit dieser <b>schreibgeschützten</b> Variablen können Sie eine Zählung aller aktiven Instanzen erhalten, die sich im Raum befinden. Dies umfasst die Instanz, die den Code ausführt, aber <i>nicht</i> die Instanzen, die mit den Funktionen <a href="Deactivating_Instances/Deactivating_Instances.htm">zum Deaktivieren von Instanzen</a> deaktiviert wurden. Beachten Sie, dass diese Variable nur die Anzahl der Instanzen zu <i>Beginn</i> des Schritts angibt, sodass Änderungen an den Instanzen im Raum, die nach Beginn des Schritts vorgenommen wurden, nicht berücksichtigt werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">Instanz_Zahl;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (instance_count &lt; 100)<br> {
+    <br> var dif = 100 - instance_count;<br> while (--dif &gt; 0)<br> {
+    <br> instance_create_layer(random(room_width), random(room_height), &quot;Effects&quot;, obj_Star);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code erzeugt mehrere Instanzen des Objekts &quot;obj_Star&quot;, bis die Gesamtanzahl der Instanzen 100 erreicht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="alarm_get.htm">alarm_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_id_get
+-->
+  <!-- TAGS
+instance_id_get
+-->
+</body>
+</html>

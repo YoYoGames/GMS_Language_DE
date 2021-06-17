@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>math_set_epsilon</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for math_set_epsilon" />
+  <meta name="rh-index-keywords" content="math_set_epsilon" />
+  <meta name="search-keywords" content="math_set_epsilon" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>math_set_epsilon</h1>
+  <p>Epsilon ist ein Wert, der verwendet wird, um zu bestimmen, ob zwei Zahlen, die Rundungsfehlern unterliegen, nahe genug sind, um als &quot;gleich&quot; zu gelten. Es ist nützlich, wenn Sie mit Fließkomma-Mathematik arbeiten, da es die &quot;Rundungsfehler&quot; reduzieren kann, die dazu führen, dass bestimmte
+    Operationen Werte zurückgeben, die falsch oder anders als erwartet erscheinen. Wir haben z. B. einen Wert zum Bildindex eines Sprites addiert und erwarten, dass das Ergebnis eine einzelne Ganzzahl ist, aber aufgrund der Natur der Fließkommamathematik ist der tatsächliche
+    Wert am Ende etwa 5,0000002, so dass die folgende Prüfung durchgeführt werden muss:</p>
+  <p class="code">if image_index == 5<br> {
+    <br> //do something<br> }
+  </p>
+  <p>Der Code verhält sich nicht wie erwartet und gibt <tt>false</tt> zurück. Wenn wir jedoch den Epsilon-Wert auf 0,000001 setzen, wird der Wert von <span class="inline">image_index</span> auf die nächste reelle Zahl gerundet, die +/- 0,000001 des ursprünglichen Wertes ist,
+    wodurch der obige Vergleich "true" zurückgibt.</p>
+  <p>Der Epsilon-Wert wird für alle folgenden <a href="../../../GML_Overview/Expressions_And_Operators.htm">Ganzzahloperatoren</a> verwendet:</p>
+  <ul class="colour">
+    <li><span class="inline">&lt; </span>: Weniger als</li>
+    <li><span class="inline">&gt; </span>: Größer als</li>
+    <li><span class="inline">== </span>: Gleichbedeutend mit</li>
+    <li><span class="inline">&lt;= </span>: Kleiner als oder gleich</li>
+    <li><span class="inline">&gt;= </span>: Größer als oder gleich</li>
+    <li><span class="inline">!= </span>: Nicht gleich</li>
+  </ul>
+  <p>Beachten Sie, dass bei einem Epsilon-Wert von 0 alle Rundungen deaktiviert werden und bei einem Wert von 1 ein Fehler auftritt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">math_set_epsilon(epsilon);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>epsilon</td>
+        <td>Der neue Epsilon-Wert (von 0 bis 0,999999999).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">math_set_epsilon(0,0001);</p>
+  <p>Damit wird der Epsilon-Wert für alle weiteren Fließkommaoperationen festgelegt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Number_Functions.htm">Zahlenfunktionen</a></div>
+        <div style="float:right">Weiter: <a href="math_get_epsilon.htm">math_get_epsilon</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+math_set_epsilon
+-->
+  <!-- TAGS
+math_set_epsilon
+-->
+
+</body></html>

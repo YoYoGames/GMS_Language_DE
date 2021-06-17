@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_destroy" />
+  <meta name="rh-index-keywords" content="animcurve_destroy" />
+  <meta name="search-keywords" content="animcurve_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_destroy</h1>
+  <p>Mit dieser Funktion können alle Animationskurven zerstört werden, die zuvor mit der Funktion <a href="animcurve_create.htm"><tt>animcurve_create()</tt></a>. Durch den Aufruf dieser Funktion wird die Animationskurve aus dem Speicher entfernt
+    und bereinigt auch alle Kanäle oder Punkte, die sie enthält (diese müssen nie manuell bereinigt werden). Beachten Sie, dass Sie <b>keine Animationskurven zerstören können, die im Asset-Browser erstellt</b> wurden, sondern nur solche, die zur <span class="notranslate">Laufzeit</span> erstellt wurden.</p>
+  <p> </p>
+  <h4>Syntax: </h4>
+  <p class="code">animcurve_destroy(curve_struct);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kurven_Konstrukt</td>
+        <td>Der Zeiger auf die zu zerstörende Kurvenstruktur.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe: </h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel: </h4>
+  <p class="code">animcurve_destroy(my_curve);</p>
+  <p>Der obige Code zerstört die (zuvor erstellte) Animationskurvenstruktur, die in der Variablen &quot;<span class="inline">my_curve</span>&quot; indiziert ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Animation_Curves.htm">Animation Kurven</a></div>
+        <div style="float:right">Weiter: <a href="animcurve_get.htm">animcurve_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_destroy
+-->
+  <!-- TAGS
+animcurve_destroy
+-->
+</body>
+</html>

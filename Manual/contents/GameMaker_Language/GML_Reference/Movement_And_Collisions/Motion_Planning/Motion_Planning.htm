@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bewegung Planung</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Motion Planning functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Motion Planning,mp,mp funtions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Bewegung Planung</h1>
+  <p>In vielen Spielen möchte man, dass Gegner, NPC's, Feinde etc... mit dem Spieler interagieren und eine gewisse Intelligenz zeigen, wenn sie sich bewegen, d.h. man möchte, dass sie Hindernissen ausweichen, Routen planen und generell nicht gegen alles stoßen, was ihnen im Weg steht! Zur Unterstützung von
+    hat <span class="notranslate">GameMaker Studio 2</span> eine Reihe von Funktionen, die sich mit der Bewegungsplanung beschäftigen. Beachten Sie, dass diese Funktionen zwar für Dinge wie Spielgegner gedacht sind, aber auch für alle möglichen anderen Dinge verwendet werden können, z. B. um einen fließenden Weg
+    um Text einzuführen, oder um Übergänge zu erstellen usw.. Unabhängig davon, was Sie in Ihrem Spiel verwenden möchten, sollten Sie beachten, dass ein einzelner Funktionssatz in vielen Situationen keine perfekte Lösung bietet und Sie die Funktionen "mischen" müssen.
+    Sie müssen die Funktionen &quot;mischen&quot; und je nach Situation in Ihrem Spiel die eine oder die andere verwenden.</p>
+  <p>Die Bewegungsplanung in <span class="notranslate">GameMaker Studio 2</span> wird von den <b>mp_-Funktionen</b> übernommen, die sich wiederum in die folgenden drei Gruppen aufteilen:</p>
+  <p> </p>
+  <h2><label for="one">Lineare Funktionen</label></h2>
+  <p>Diese Art von Funktion versucht, einen kollisionsfreien Pfad für die Instanz zu berechnen. Sobald dieser Pfad berechnet wurde, können Sie ihn der Instanz zuweisen, um sich in Richtung des Ziels zu bewegen. Die Berechnung des Pfades wird einige Zeit in Anspruch nehmen, aber danach wird die Ausführung
+    des Pfades schnell sein. Dies gilt natürlich nur, wenn sich die Situation in der Zwischenzeit nicht geändert hat. Wenn sich z. B. Hindernisse ändern, müssen Sie möglicherweise den Pfad neu berechnen. Auch hier ist zu beachten, dass diese Funktionen fehlschlagen können und dass möglicherweise kein Pfad
+    für die Instanz gefunden wird.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="mp_linear_step.htm">mp_linear_step</a></li>
+    <li><a href="mp_linear_step_object.htm">mp_linear_step_object</a></li>
+    <li><a href="mp_linear_path.htm">mp_linear_pfad</a></li>
+    <li><a href="mp_linear_path_object.htm">mp_linearer_Weg_Objekt</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="three">Mögliche Funktionen</label></h2>
+  <p> </p>
+  <p>Dies sind die grundlegenden Ausweichfunktionen und gut für einfache KI. Sie funktionieren, indem sie eine Instanz dazu bringen, einen Schritt in Richtung einer bestimmten Zielposition zu machen, während sie versucht, wenn möglich geradeaus zu gehen, aber wenn nötig eine andere Richtung einzuschlagen. Diese Funktionen sollten
+    im <b>Step-Event</b> einer Instanz verwendet werden.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="mp_potential_settings.htm">mp_potential_settings</a></li>
+    <li><a href="mp_potential_step.htm">mp_potential_step</a></li>
+    <li><a href="mp_potential_step_object.htm">mp_potential_step_object</a></li>
+    <li><a href="mp_potential_path.htm">mp_potential_pfad</a></li>
+    <li><a href="mp_potential_path_object.htm">mp_potential_pfad_Objekt</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="two">Rasterfunktionen</label></h2>
+  <p> </p>
+  <p>Die letzte Art von Funktion verwendet einen viel komplexeren Mechanismus, der auf einem gitterbasierten Ansatz basiert (manchmal auch A*-Algorithmus genannt). Er ist viel erfolgreicher beim Finden von Pfaden (obwohl er immer noch scheitern kann) und findet die kürzesten möglichen Pfade
+    aber es erfordert mehr Arbeit auf Ihrer Seite, ihn einzurichten.</p>
+  <p>Die globale Idee ist wie folgt - Zuerst erstellen wir ein Raster, das den Raum (oder den relevanten Teil davon) abdeckt. Sie können entweder ein feines Gitter verwenden, das langsamer ist, oder ein grobes Gitter, aber beide sollten auf der Auflösung des Raums basieren
+    basieren, damit die Pfadfindung so genau wie möglich ist. Wenn Sie z. B. einen Raum mit einer Größe von 400x200 Pixeln haben, können Sie eine Rasterauflösung von 40, 20 oder 10 verwenden... es hängt alles davon ab, wie genau der Pfad sein soll und wie viel Rechenarbeit Sie für die Erstellung des Pfades benötigen.
+   <span class="notranslate">GameMaker</span> machen soll, um ihn zu erzeugen.</p>
+  <p>Als Nächstes müssen wir für alle relevanten Objekte, die wir vermeiden wollen, die Gitterzellen bestimmen, die sie überlappen (entweder basierend auf ihren Bounding Boxen oder ihrem genauen Sprite) und diese Zellen als verboten markieren. Eine Zelle wird also als völlig verboten markiert,
+    auch wenn sich ein Hindernis nur teilweise überlappt.</p>
+  <p>Schließlich geben wir eine Startposition und eine Zielposition an, die beide in freien Zellen liegen <i>müssen</i>, und die Funktion berechnet dann den kürzest möglichen Weg zwischen diesen beiden Positionen. Der Pfad wird zwischen den Zentren aller freien Zellen verlaufen, also
+    wenn die Zellen groß genug sind, so dass die in ihrem Zentrum platzierte Instanz vollständig darin liegt, ist dies erfolgreich. Dieser Pfad wird dann der Instanz zugewiesen, damit sie ihm mit Hilfe der <a href="../../Asset_Management/Paths/Paths.htm"><tt>Pfad_*</tt></a> Funktionen.
+    Sie sollten erkennen, wie wichtig die Zellengröße hierfür ist, da die Zellen groß genug sein müssen, damit das bewegte Objekt, das mit seinem Ursprung auf dem Zentrum einer Zelle platziert wird, <i>vollständig</i> innerhalb der Zelle liegt. (Achten Sie auf die Position des Ursprungs
+    des Objekts. Machen Sie sich auch klar, dass Sie den Pfad verschieben können, wenn der Ursprung des Objekts nicht in dessen Mitte liegt!) Andererseits gilt: Je kleiner die Zellen sind, desto mehr mögliche Pfade gibt es. Wenn Sie die Zellen zu groß machen, können Öffnungen zwischen Hindernissen geschlossen werden
+    weil alle Zellen ein Hindernis schneiden.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="mp_grid_create.htm">mp_grid_create</a></li>
+    <li><a href="mp_grid_destroy.htm">mp_grid_destroy</a></li>
+    <li><a href="mp_grid_path.htm">mp_grid_path</a></li>
+    <li><a href="mp_grid_add_cell.htm">mp_grid_add_cell</a></li>
+    <li><a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></li>
+    <li><a href="mp_grid_add_rectangle.htm">mp_grid_add_rectangle</a></li>
+    <li><a href="mp_grid_get_cell.htm">mp_grid_get_cell</a></li>
+    <li><a href="mp_grid_clear_all.htm">mp_grid_clear_all</a></li>
+    <li><a href="mp_grid_clear_cell.htm">mp_grid_clear_cell</a></li>
+    <li><a href="mp_grid_clear_rectangle.htm">mp_grid_clear_rectangle</a></li>
+    <li><a href="mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></li>
+    <li><a href="mp_grid_draw.htm">mp_grid_draw</a></li>
+  </ul>
+  <p> </p>
+  <p>Der gitterbasierte Ansatz ist sehr leistungsfähig (und wird in vielen professionellen Spielen verwendet), aber er erfordert eine sorgfältige Überlegung, da Sie bestimmen müssen, welche Fläche und welche Zellengröße gut genug für die Lösung des Spiels sind. Außerdem müssen Sie bestimmen, welche Objekte
+    vermieden werden müssen und ob eine genaue Prüfung wichtig ist. All diese Parameter beeinflussen stark die Effizienz des Ansatzes. Sie müssen auch entscheiden, ob es wirklich notwendig ist, da vielleicht eine der weniger kostspieligen Funktionen <span class="inline">mp_*</span> 
+    die Aufgabe genauso gut erledigen kann.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Movement_And_Collisions.htm">Bewegung und Kollisionen</a></div>
+        <div style="float:right">Nächste: <a href="../Collisions/Collisions.htm">Kollisionen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Motion Planning
+MP Functions
+Motion Planning Functions
+-->
+  <!-- TAGS
+mp_functions
+-->
+</body>
+</html>

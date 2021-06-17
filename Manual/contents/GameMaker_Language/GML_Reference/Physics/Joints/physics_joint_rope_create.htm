@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_gelenk_seil_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_rope_create" />
+  <meta name="rh-index-keywords" content="physics_joint_rope_create" />
+  <meta name="search-keywords" content="physics_joint_rope_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_gelenk_seil_erzeugen</h1>
+  <p>Ein Seilgelenk wird verwendet, um zwei Instanzen zu verbinden, die Sie in einem konstanten Abstand zueinander halten möchten, unabhängig davon, welche anderen Kräfte auf sie wirken. Bei einem Abstandsgelenk kann es zu einer &quot;Gelenkdehnung&quot; kommen, bei der sich die beiden Einbauten trennen
+    und sich seltsam verhalten, wenn die Verbindung zu stark belastet wird. Bei der Seilverbindung ist dies nicht der Fall, sie dehnt sich nicht über die maximal definierte Länge hinaus. Wenn Sie eine Seilverbindung erstellen, sollten die beiden Instanzen bereits erstellt und
+    ein Fixture zugewiesen haben, dann definieren Sie die beiden Ankerpunkte in Raumkoordinaten. Der erste Ankerpunkt wird mit der Instanz 1 verbunden, der zweite Ankerpunkt mit der Instanz 2 und der Abstand und das Argument maxlength legt die maximale
+    Längenbeschränkung für die Verbindung. Das Bild unten zeigt, wie dies funktioniert:</p>
+  <p><img alt="Rope joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/direction_joint_image.png">Wie Sie sehen können, werden die Ankerpunkte als Raumkoordinaten angegeben, so dass bei ihrer Definition Vorsicht geboten ist
+    Besonders dann, wenn die Instanzen gleichzeitig mit den Joints erstellt werden und nicht über den Raumeditor im Raum platziert werden. Sie sollten auch wissen, dass die Joints unabhängig von der Größe des Sprites der Instanzen
+    oder den Fixtures, die sie angehängt haben, erstellt werden. Wenn Sie also ein Seilgelenk an einem anderen Ort als dem Ursprung der Instanz erstellen, ist es trotzdem gültig und wird die beiden Instanzen relativ zu der Position, an der es erstellt wurde, einschränken. Wenn Sie den &quot;col&quot;-Wert
+    Wert auf <tt>true</tt> setzen, können die beiden Instanzen miteinander interagieren und kollidieren, aber <i>nur</i>, wenn sie Kollisionsereignisse haben; wenn er jedoch auf <tt>false</tt> gesetzt ist, kollidieren sie nicht, egal was passiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_rope_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, maxlength, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>Die erste Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>Die zweite Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>w_Anker1_x</td>
+        <td>Die erste x-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker1_y</td>
+        <td>Die erste y-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker2_x</td>
+        <td>Die zweite x-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker2_y</td>
+        <td>die zweite y-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>maxLänge</td>
+        <td>Die maximale Länge, die das Gelenk &quot;dehnen&quot; kann</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Ob die beiden Instanzen kollidieren können (true) oder nicht (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Index des Gelenks)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id=instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Rudder);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_rope_create(id, o_id, x + 50, y, o_id.x - 50, o_id.y, 300, 0);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>Der obige Code erstellt und definiert ein neues Fixture und erstellt dann eine Instanz von &quot;obj_Rudder&quot;. Das Fixture wird dann sowohl der Instanz, die den Code ausführt, als auch der neu erstellten Instanz zugewiesen und eine Seilverbindung zwischen ihnen wird erstellt.
+    Schließlich wird das Fixture gelöscht, da es nicht mehr benötigt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_wheel_create.htm">physics_joint_wheel_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_rope_create
+-->
+  <!-- TAGS
+physics_joint_rope_create
+-->
+</body>
+</html>

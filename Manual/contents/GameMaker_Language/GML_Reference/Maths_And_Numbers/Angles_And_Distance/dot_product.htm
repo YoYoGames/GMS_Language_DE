@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Punkt_Produkt</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for dot_product" />
+  <meta name="rh-index-keywords" content="dot_product" />
+  <meta name="search-keywords" content="dot_product" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Punkt_Produkt</h1>
+  <p>Das Punktprodukt ist ein Wert, der die Winkelbeziehung zwischen zwei Vektoren ausdrückt und wird ermittelt, indem zwei Vektoren genommen, miteinander multipliziert und dann die Ergebnisse addiert werden. Der Name &quot;Punktprodukt&quot; leitet sich von dem zentrierten Punkt &quot;-&quot; ab
+    der häufig zur Bezeichnung dieser Operation verwendet wird (der alternative Name &quot;Skalarprodukt&quot; betont die skalare und nicht die vektorielle Natur des Ergebnisses).</p>
+  <p>Die eigentliche mathematische Formel kann wie folgt geschrieben werden:</p>
+  <p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png" /></p>
+  <p>In 2D ist das Punktprodukt der Vektoren <span class="inline">a[x1,y1]</span> und <span class="inline">b[x2,2]</span> also <span class="inline">x1x2 + y1y2</span>, was bedeutet, dass das Punktprodukt in <span class="notranslate">GameMaker Studio 2</span> wie folgt berechnet wird:</p>
+  <p class="code">a - b = (x1*x2)+(y1*y2);</p>
+  <p>Das Kuriose am Punktprodukt ist die Beziehung, die es zum Winkel hat, der durch die Eingangsvektoren gebildet wird und der wie folgt ausgedrückt werden kann:</p>
+  <p class="code">a - b = (Länge von a) * (Länge von b) * cos(Winkel)</p>
+  <p>Das heißt, das Punktprodukt zweier Vektoren ist gleich dem Kosinus des Winkels zwischen diesen Vektoren, multipliziert mit den Längen der beiden Vektoren. Hier ist ein Bild zur Veranschaulichung:</p>
+  <p><img alt="Dot Product ilustration" class="center" height="143" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_2.png" width="406" /></p>
+  <p class="note"><strong>HINWEIS</strong>: Weitere Informationen zu Vektoren finden Sie <a href="../../../../Additional_Information/Vectors.htm">hier</a>.</p>
+  <p>Es gibt ein paar Dinge, die wir nun von zwei beliebigen Vektoren in Bezug auf das Ergebnis ihres Punktprodukts feststellen können:</p>
+  <ul class="colour">
+    <li>Wenn a und b senkrecht (im 90-Grad-Winkel zueinander) stehen, ist das Ergebnis des Punktprodukts gleich Null, da <span class="inline">cos(ang)</span> gleich Null ist.</li>
+    <li>Wenn der Winkel zwischen a und b kleiner als 90 Grad ist, wird das Punktprodukt positiv sein (größer als Null), da <span class="inline">cos(ang)</span> positiv ist.</li>
+    <li>Wenn der Winkel zwischen a und b größer als 90 Grad ist, ist das Punktprodukt negativ (kleiner als Null), da <span class="inline">cos(ang)</span> negativ ist.</li>
+  </ul>
+  <p>Was bedeutet das also für diejenigen von uns, die Spiele entwickeln? Nun, diese mathematische Beziehung kann unter ziemlich vielen Umständen verwendet werden, aber der beste Weg, es zu sehen, ist, ein tatsächliches Szenario zu bauen und selbst zu sehen, was vor sich geht. Eine der einfachsten
+    Eine der einfachsten Möglichkeiten, dies zu tun, besteht darin, einen einfachen &quot;Sichtlinien&quot;-Check für einen Feind zu generieren, z. B. in einem Plattformspiel, so dass der Feind den Spieler &quot;sieht&quot;, wenn er sich innerhalb von 90° auf beiden Seiten seiner Vektornormalen befindet.</p>
+  <p><img alt="Dot product example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_1.png">Grundsätzlich müssen wir den Vektor normal vom Feind erhalten (d.h.: bestehend aus einer Richtung und Sichtweite)
+    und dann müssen wir den Vektor des Spielers zum Feind ermitteln. Dann erhalten wir das Punkt_Produkt dieser Vektoren, und wenn das Ergebnis positiv ist, wurde der Spieler gesehen, und wenn es negativ ist, wurde er nicht gesehen. Der eigentliche Code, um dies zu erreichen, wird
+    im folgenden Beispiel.</p>
+  <p> </p>
+  <h4><b>Syntax:</b></h4>
+  <p class="code">punkt_produkt(x1, y1, x2, y2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate des ersten Vektors.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate des ersten Vektors.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate des zweiten Vektors.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate des zweiten Vektors.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var x1, y1, x2, y2;<br> x1 = lengthdir_x(1, image_angle);<br> y1 = lengthdir_y(1, image_angle);<br> x2 = o_Player.x - x;<br> y2 = o_Player.y - y;<br> if dot_product(x1, y1, x2, y2) &gt; 0 seen=true else seen=false;</p>
+  <p>Der obige Code erstellt einen Vektor unter Verwendung des Bildwinkels der Instanz und holt sich dann den Vektor des Player-Objekts &quot;o_Player&quot; zu sich. Schließlich berechnet er das Punktprodukt dieser beiden Vektoren und wenn es größer als 0 ist, setzt er die Variable
+    &quot;seen&quot; auf true, und wenn es gleich oder kleiner als 0 ist, setzt es sie auf &quot;false&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Angles_And_Distance.htm">Winkel und Abstand</a></div>
+        <div style="float:right">Weiter: <a href="dot_product_3d.htm">dot_product_3d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+dot_product
+-->
+  <!-- TAGS
+dot_product
+-->
+
+</body></html>

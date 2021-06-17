@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asynchron_laden</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the async_load variable" />
+  <meta name="rh-index-keywords" content="async_load" />
+  <meta name="search-keywords" content="async_load" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asynchron_laden</h1>
+  <p>Diese Variable <b>hat einen globalen</b> Umfang und wird verwendet, um eine <a href="../../../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> zu halten, wenn sie in den <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">Asynchronous Events</a> verwendet wird,
+    und -1 zu allen anderen Zeiten. Der tatsächliche Inhalt der DS-Map hängt vom Typ des asynchronen <a class="glossterm" data-glossterm="Rückruf" href="#">Ereignis-Callbacks</a> sowie von der Funktion ab, die zum Auslösen des Ereignisses verwendet wurde, daher finden Sie auf den
+    Daher finden Sie auf den einzelnen Seiten für diese Ereignisse ausführliche Informationen zu allen möglichen DS-Map-Inhalten.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">async_load;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (ganzzahliger Wert)</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p class="code">sprite = sprite_add(&quot;site.com/pfad/image.png&quot;, 16, true, true, 0, 0);</p>
+  <p>Der obige Code würde in einem Ereignis aufgerufen werden, um ein Sprite von einer externen URL zu laden. Dies würde dann das asynchrone Ereignis <strong>"Image Loaded</strong> " auslösen, in dem Sie die Karte <span class="inline">async_load</span> parsen würden:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == sprite<br> {
+    <br> if (ds_map_find_value(async_load, &quot;status&quot;) &gt;= 0)<br> {
+    <br> sprite_index = sprite;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft zunächst die ID der <tt>async_load-Map</tt> und dann den Status des Callbacks. Wenn der Wert größer oder gleich 0 ist (was Erfolg signalisiert), wird das Ergebnis des Callbacks verwendet, um den Sprite-Index der
+    Instanz auf das neu geladene Bild.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Global_Variables.htm">Globale Variablen</a></div>
+        <div style="float:right">Weiter: <a href="score.htm">Partitur</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+async_load
+-->
+  <!-- TAGS
+async_load
+-->
+
+</body></html>

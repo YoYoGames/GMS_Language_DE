@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_set" />
+  <meta name="rh-index-keywords" content="ds_list_set" />
+  <meta name="search-keywords" content="ds_list_set" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_set</h1>
+  <p>Mit dieser Funktion können Sie einen zuvor hinzugefügten Listeneintrag setzen. Sie geben die Listen-ID (wie beim Erstellen der Liste zurückgegeben) und die Position innerhalb der Liste an, die gesetzt werden soll, sowie den Wert, auf den er gesetzt werden soll. Beachten Sie, dass, wenn der zu setzende Eintrag außerhalb der Grenzen der Liste liegt
+    der Liste liegt (d. h., Sie setzen den Listeneintrag 20, aber die aktuelle Liste enthält nur 10 Einträge), dann wird die Liste bis zur angegebenen Position gefüllt und jeder Eintrag auf 0 gesetzt. Diese Funktion entspricht der Verwendung des <a href="../../../GML_Overview/Accessors.htm">Listenzugriffs DS</a>.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_list_set(id, pos, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der Liste, zu der hinzugefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>Die zu setzende Position innerhalb der Liste.</td>
+      </tr>
+      <tr>
+        <td>[val2, ... max_val]</td>
+        <td>Der Wert, der in der Liste eingestellt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">for (var i = 0; i &lt; ds_list_size(list); i++;) <br> {
+    <br> ds_list_set(list, i, -1);<br> }
+  </p>
+  <p>Der obige Code fügt den in der Variablen &quot;score&quot; gespeicherten Wert in die in der Variablen &quot;sc_list&quot; indizierte Liste ein.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Lists.htm">DS-Listen</a></div>
+        <div style="float:right">Weiter: <a href="ds_list_delete.htm">ds_list_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_set
+-->
+  <!-- TAGS
+ds_list_set
+-->
+
+</body></html>

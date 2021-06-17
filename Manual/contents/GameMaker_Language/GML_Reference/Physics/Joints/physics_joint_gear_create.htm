@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_gelenk_getriebe_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_gear_create" />
+  <meta name="rh-index-keywords" content="physics_joint_gear_create" />
+  <meta name="search-keywords" content="physics_joint_gear_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_gelenk_getriebe_erzeugen</h1>
+  <p>Wenn Sie ein ausgeklügeltes mechanisches Gerät erstellen möchten, möchten Sie vielleicht Zahnräder verwenden. Im Prinzip können Sie Zahnräder in <span class="notranslate">GameMaker Studio 2</span> erstellen, indem Sie Compounding-Instanzen verwenden, um Zahnräder zu modellieren, aber das ist nicht sehr effizient und kann
+    mühsam für den Autor! Zum Glück gibt es eine einfachere Methode, und zwar die Verwendung eines <i>Zahnradgelenks</i>. Um ein Zahnrad zu erstellen, müssen Sie zuvor Ihre Einspannungen definiert und die beiden grundlegenden Gelenke erstellt haben, aus denen Ihr Zahnrad bestehen wird - diese <b>müssen</b> aus einem <a href="physics_joint_revolute_create.htm">Drehgelenk</a> und entweder einem <a href="physics_joint_prismatic_create.htm">prismatischen Gelenk</a> oder einem weiteren <i>Drehgelenk</i> bestehen. Das folgende Bild zeigt, wie ein Zahnrad typischerweise erstellt wird
+    in einem Spiel:</p>
+  <p><img alt="Gear joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/gear_joint_image.png">Was passiert also? Nun, sobald die beiden Gelenke in das Getriebe eingefügt sind, hat die Interaktion mit einem
+    Wenn Sie also im obigen Beispielbild inst2 drehen, wird sich inst3 nach oben und unten bewegen, oder wenn Sie inst3 nach oben und unten bewegen, wird sich inst2 drehen. Sie können auch das Übersetzungsverhältnis ändern, was bedeutet, dass Sie eine Instanz mehr (oder weniger) bewegen müssen, um den gewünschten Effekt zu erzielen.
+    weniger) bewegen müssen, um den gewünschten Effekt zu erzielen. Der Code im Beispiel unten zeigt, wie etwas wie das obige Bild erstellt werden kann.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie eine der beiden Instanzen löschen wollen, die an dem Zahnradgelenk beteiligt sind (oder nur deren Gelenke löschen), <b>müssen</b> Sie zuerst das Zahnradgelenk mit <span style="font-size:1px;"><a href="physics_joint_delete.htm"><tt style="font-size: 14px">physics_joint_delete()</tt></a></span>    löschen, sonst erhalten Sie einen Fehler!</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_gear_create(inst1, inst2, joint_1, joint_2, ratio)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>Die erste Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>Die zweite Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>Gelenk_1</td>
+        <td>Ein zuvor definiertes <b>Rotationsgelenk</b> </td>
+      </tr>
+      <tr>
+        <td>Gelenk_2</td>
+        <td>Ein zuvor definiertes revolvierendes <i>oder</i> prismatisches Gelenk</td>
+      </tr>
+      <tr>
+        <td>Verhältnis</td>
+        <td>Stellen Sie das Geschwindigkeitsverhältnis zwischen den beiden Gelenken ein</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Index des Gelenks)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var t_fix, g_fix, inst1, inst2, inst3, r_joint, p_joint;<br> g_fix = physics_fixture_create();<br> physics_fixture_set_box_shape(g_fix, 40, 10);<br> t_fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(t_fix, 10);<br> physics_fixture_set_density(t_fix,
+    0.5);<br> inst1 = instance_create_layer(60, room_height - 30, &quot;Background&quot;, obj_Ground);<br> inst2 = instance_create_layer(40, room_height - 300, &quot;Instances&quot;, obj_Cog);<br> inst3 = instance_create_layer(150, room_height - 300,
+    &quot;Instances&quot;, obj_Barrel);<br> physics_fixture_bind(g_fix, inst1);<br> physics_fixture_bind(t_fix, inst2);<br> physics_fixture_bind(t_fix, inst3);<br> r_joint = physics_create_revolute_joint(inst1, inst2, 40, room_height - 300, -80, 80,
+    1, 10, 0.5, 1, 0);<br> p_joint = physics_create_prismatic_joint(inst1, inst3, 150, room_height - 300, 0, 1, -10, 10, true, 0, 0, 0, 0);<br> physics_create_gear_joint(inst2, inst3, r_joint, p_joint, 0.5);</p>
+  <p>Der obige Code erstellt und definiert zwei Fixtures und erstellt dann drei Instanzen, eine &quot;obj_Ground&quot; und zwei weitere, &quot;obj_Cog&quot; und &quot;obj_Barrel&quot;. Die Fixtures werden dann an diese Instanzen gebunden und es werden zwei Gelenke erzeugt. A
+    Drehgelenk zwischen dem Boden und dem Zahnrad und ein prismatisches Gelenk zwischen dem Boden und dem Fass. Schließlich wird ein Zahnradgelenk zwischen den Instanzen "cog" und "barrel" unter Verwendung der zuvor definierten revolutiven und prismatischen Gelenke erstellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_rope_create.htm">physics_joint_rope_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_gear_create
+-->
+  <!-- TAGS
+physics_joint_gear_create
+-->
+</body>
+</html>

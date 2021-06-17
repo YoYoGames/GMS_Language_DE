@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Web und HTML5</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the different Web functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Web" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Web und HTML5</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> bietet verschiedene Funktionen für die Interaktion mit dem Internet oder mit einem Server, die auf allen verfügbaren Zielplattformen verwendet werden können. Diese Funktionen sind:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="url_open.htm">url_open</a></li>
+    <li><a href="url_open_ext.htm">url_open_ext</a></li>
+    <li><a href="url_open_full.htm">url_open_full</a></li>
+    <li><a href="url_get_domain.htm">url_get_domain</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_request.htm">http_Anfrage</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_get.htm">http_get</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_get_file.htm">http_get_file</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_post_string.htm">http_post_string</a></li>
+  </ul>
+  <p> </p>
+  <p>Abgesehen von den oben aufgeführten allgemeinen Funktionen verfügt das <b>HTML5-Target</b> über einige zusätzliche Webfunktionen, die speziell für die Verwendung durch die Spiele, die darauf abzielen, vorgesehen sind:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="browser_height.htm">browser_height</a></li>
+    <li><a href="browser_width.htm">browser_width</a></li>
+    <li><a href="browser_input_capture.htm">browser_input_capture</a></li>
+    <li><a href="webgl_enabled.htm">webgl_enabled</a></li>
+    <li><a href="clickable_exists.htm">klickbar_vorhanden</a></li>
+    <li><a href="clickable_add.htm">anklickbar_hinzufügen</a></li>
+    <li><a href="clickable_add_ext.htm">klickbar_hinzufügen_ext</a></li>
+    <li><a href="clickable_change.htm">klickbare_Änderung</a></li>
+    <li><a href="clickable_change_ext.htm">klickbar_ändern_ext</a></li>
+    <li><a href="clickable_set_style.htm">klickbar_set_style</a></li>
+    <li><a href="clickable_delete.htm">anklickbar_löschen</a></li>
+    <li><a href="analytics_event.htm">analyse_ereignis</a></li>
+    <li><a href="analytics_event_ext.htm">analyse_ereignis_ext</a></li>
+    <li><a href="../OS_And_Compiler/os_browser.htm">os_browser</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_get_request_crossorigin.htm">http_get_request_crossorigin</a></li>
+    <li><a href="../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm">http_set_request_crossorigin</a></li>
+  </ul>
+  <p> </p>
+  <p>Neben diesen Funktionen für das HTML5-Zielmodul gibt es auch eine spezielle <strong>JavaScript-Variable</strong>, die in den seltenen Fällen verwendet werden kann, wenn der Inhalt des html5game-Ordners an einem ganz anderen Ort (URL) gespeichert ist.
+    Normalerweise ist dieser Pfad in der JavaScript-Datei fest kodiert und relativ zu dem Ort, von dem aus das JavaScript aufgerufen wird, aber Sie können die Variable <tt><b>g_GameMakerHTML5Dir</b></tt> vor dem Aufruf des Spielscripts setzen und das Spiel wird
+    von der neu definierten Stelle aus. Zum Beispiel:</p>
+  <p class="code">&lt;script&gt;var g_GameMakerHTML5Dir = &quot;http://mygamealternatedirectory.com/&quot;;&lt;/script&gt;</p>
+  <p>Es ist auch erwähnenswert, dass Sie Skriptfunktionen mit dem Präfix gmcallback_ kennzeichnen können, was bedeutet, dass sie nicht verschleiert werden, wenn Sie das Projekt für HTML5 kompilieren. Dies ist sehr sinnvoll, wenn Sie die oben aufgeführten <span class="inline">clickable_*</span> Funktionen verwenden (weitere Informationen finden Sie <a href="../../GML_Overview/Script_Functions.htm">hier</a>).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../GML_Reference.htm"><span class="notranslate">GML-Referenz</span></a></div>
+        <div style="float:right">Nächste: <a href="../Steam/Steam.htm"><span class="notranslate">Dampf</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Web And HTML5
+-->
+  <!-- TAGS
+web_functions
+-->
+</body>
+</html>

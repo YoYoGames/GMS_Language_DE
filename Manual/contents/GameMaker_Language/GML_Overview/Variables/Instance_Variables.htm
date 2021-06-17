@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz-Variablen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining instance variables" />
+  <meta name="rh-index-keywords" content="Instance Variables" />
+  <meta name="search-keywords" content="instance variables" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Instanz-Variablen</h1>
+  <p>Eine <strong>Instanzvariable </strong>wird innerhalb einer Instanz eines Objekts erstellt und gilt als eindeutig für diese Instanz - d. h.: viele Instanzen desselben Objekts können dieselbe Variable haben, aber jede Variable kann einen anderen Wert enthalten, da sie für jede Instanz <em>eindeutig </em>ist
+    jede Instanz. Aber <i>wie</i> wird eine Instanzvariable erstellt? Nun, Sie erstellen neue Variablen, indem Sie ihnen einfach einen Wert zuweisen, wie in diesem kleinen Beispiel gezeigt (dies wird als <em>Deklarieren</em> der Variable bezeichnet):</p>
+  <p class="code">Tränke = 12;<br> Leben = 100;<br> Name = &quot;Jock MacSweeney&quot;;<br> Stärke = 5.5;<br> Rüstung = -2;</p>
+  <p>Wie Sie sehen, müssen Sie nur den Namen und dann einen Wert angeben (der Wert kann ein beliebiger <a href="../Data_Types.htm">Datentyp</a> sein), um diese Variable zu setzen und sie für die Verwendung innerhalb einer Instanz des Objekts, für das Sie programmieren, bereit zu haben (beachten Sie, dass der Wert
+    aus dem Rückgabewert einer Funktion oder dem Ergebnis einer Operation zwischen anderen Variablen usw. stammen kann...). Diese Variablen können dann auf verschiedene Weise innerhalb der Instanz verwendet und verändert werden, zum Beispiel könnte dieser Code in einem Kollisionsereignis
+    und verwendet werden, um einen Betrag von der Variablen &quot;<span class="inline">life</span>&quot; zu nehmen:</p>
+  <p class="code">Leben -= 5 + Panzerung;</p>
+  <p>Wenn &quot;<span class="inline">life</span>&quot; auf 100 steht, hat es jetzt einen Wert von 97 (100 - (5 + -2) = 97). Nun, das ist ein einfaches Beispiel, und Sie <i>könnten</i> &quot;<span class="inline">armour</span>&quot; durch den tatsächlichen Wert von -2 ersetzen,
+    aber was passiert, wenn dieser Wert an mehreren Stellen <a class="glossterm" data-glossterm="fest codiert" href="#">hart kodiert</a> ist und Sie sich dann entscheiden, ihn zu ändern? Sie müssten dann durch Ihren gesamten Code gehen und jede -2 in den neuen Wert ändern.
+    ändern, was zeitaufwendig und sehr fehleranfällig ist! Wenn Sie aber eine Variable verwenden, müssen Sie ihr nur einen neuen Wert zuweisen, und der Code wird von da an automatisch diesen neuen Wert verwenden, was die Dinge viel flexibler und viel einfacher zu beheben macht
+    sollte es ein Problem geben. Es sollte auch beachtet werden, dass selbst wenn sich ein Wert nicht ändert, es viel einfacher ist, sich zu merken, was eine Variable mit dem Namen &quot;<span class="inline">life</span>&quot; bedeutet, als nur auf eine Zahl zu schauen.</p>
+  <p><span class="notranslate">GameMaker Studio 2</span> hat auch eine Sammlung von &quot;eingebauten&quot; Instanzvariablen, die Sie kennen sollten, da Sie vielleicht eine Ihrer eigenen Instanzvariablen gleich benennen oder eine eigene globale Variable mit demselben Namen haben wollen und sich wundern, warum
+    Sie Fehler erhalten. Sie sind jedoch leicht zu erkennen, da sie im Code-Editor in einer anderen Farbe angezeigt werden und auch in der Autovervollständigung auftauchen und in der Leiste am unteren Rand des <a href="../../../The_Asset_Editors/Scripts.htm">Code-Editors</a> angezeigt werden.</p>
+  <p>Es gibt eine ganze Reihe von <a href="../Runtime_Functions.htm"><span class="notranslate">Laufzeitfunktionen</span></a>, die Ihnen beim Umgang mit Instanzvariablen helfen sollen und die alle im folgenden Abschnitt aufgeführt sind:</p>
+  <ul class="colour">
+    <li><a href="../../GML_Reference/Variable_Functions/Variable_Functions.htm">Variable Funktionen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Variables_And_Variable_Scope.htm">Variablen und Variablenumfang</a></div>
+        <div style="float:right">Nächste: <a href="Global_Variables.htm">Globale Variablen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance variables
+-->
+  <!-- TAGS
+instance_variables
+-->
+
+</body></html>

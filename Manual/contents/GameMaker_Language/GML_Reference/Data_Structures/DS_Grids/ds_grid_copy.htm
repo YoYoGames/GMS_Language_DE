@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_copy" />
+  <meta name="rh-index-keywords" content="ds_grid_copy" />
+  <meta name="search-keywords" content="ds_grid_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_copy</h1>
+  <p>Mit dieser Funktion können Sie den Inhalt eines Gitters in ein anderes kopieren. Beide Grids müssen zuvor mit der <a href="ds_grid_create.htm"><tt>ds_grid_create()</tt></a> Funktion.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_grid_copy(Ziel, Quelle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Der Index des Rasters, in das kopiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>Quelle</td>
+        <td>Dieser Index des Rasters, aus dem kopiert werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">n_grid = ds_grid_create(ds_grid_width(a_grid), ds_grid_height(a_grid));<br> ds_grid_copy(n_grid, a_grid);<br> ds_grid_clear(a_grid, -1)</p>
+  <p>Der obige Code erstellt ein neues DS-Gitter, basierend auf der Breite und Höhe eines zuvor erstellten Gitters, und kopiert dann die Informationen aus dem vorherigen Gitter in das neue. Schließlich wird das alte Gitter gelöscht, so dass alle Zellen den Wert -1 haben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Grids.htm">DS-Gitter</a></div>
+        <div style="float:right">Weiter: <a href="ds_grid_read.htm">ds_grid_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_copy
+-->
+  <!-- TAGS
+ds_grid_copy
+-->
+
+</body></html>

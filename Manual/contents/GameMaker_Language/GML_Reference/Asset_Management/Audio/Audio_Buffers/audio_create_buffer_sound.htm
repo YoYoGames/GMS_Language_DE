@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_erzeugen_puffer_klang</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_create_buffer_sound" />
+  <meta name="rh-index-keywords" content="audio_create_buffer_sound" />
+  <meta name="search-keywords" content="audio_create_buffer_sound,audio_mono,audio_stereo,audio_3D" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_erzeugen_puffer_klang</h1>
+  <p>Mit dieser Funktion können Sie einen neuen Sound aus dem Inhalt eines Puffers erzeugen. Der Puffer wurde zuvor erstellt (siehe die <a href="../../../Buffers/Buffers.htm">Pufferfunktionen</a> für Details dazu) und es wurden Daten hinzugefügt oder
+    geladen. Sie übergeben ihn dann an diese Funktion mit dem Datenformat (derzeit werden nur <tt>buffer_u8</tt> oder <tt>buffer_s16</tt> unterstützt), der Samplerate (die zwischen 1000hz und 48000hz liegen kann) und einem Offset im Puffer, um die Daten
+    zu holen. Sie müssen auch die Anzahl der Samples im Puffer und die Kanäle, die der Sound benötigt, angeben. Diese Kanäle werden durch eine der folgenden Konstanten definiert:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_mono</span></td>
+        <td>Mono (einkanalig) Audio.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_stereo</span></td>
+        <td>Stereo (Zweikanal) Audio.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_3D</span></td>
+        <td>3D (5.1) Audio.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Beachten Sie, dass Sie nach dem Anlegen eines Klangs den zugehörigen Zeigerindex freigeben sollten, wenn er nicht mehr benötigt wird, indem Sie die Funktion <a href="audio_free_buffer_sound.htm"><tt>audio_free_buffer_sound()</tt></a>. Wenn Sie dies nicht tun und
+    Sie dies nicht tun und dann die Variable neu zuweisen oder den Raum wechseln usw... geht die Sound-ID verloren und Sie haben ein Speicherleck. Beachten Sie auch, dass Sie den Puffer nicht löschen können, wenn ein Sound aus ihm erzeugt wurde und der Sound nicht vorher freigegeben wurde. Sie müssten also
+    zuerst den Sound (oder die Sounds) freigeben und <i>dann</i> den Puffer löschen. Beachten Sie auch, dass das Hinzufügen von Daten zum Puffer oder das Ändern der Puffergröße, nachdem ein Sound daraus erzeugt wurde, zu unerwarteten Ergebnissen führt und nicht empfohlen wird
+    - Wenn Sie einmal begonnen haben, Klänge aus einem Puffer zu erzeugen, sollten Sie ihn danach nicht mehr manipulieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_create_buffer_sound(bufferId, bufferFormat, bufferRate, bufferOffset, bufferLength, bufferChannels);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>bufferId</td>
+        <td>Die ID des zu verwendenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>bufferFormat</td>
+        <td>Das Format der Daten im Puffer<tt>(buffer_u8</tt> oder <tt>buffer_s16</tt>).</td>
+      </tr>
+      <tr>
+        <td>bufferRate</td>
+        <td>Die Abtastrate der Daten im Puffer.</td>
+      </tr>
+      <tr>
+        <td>BufferOffset</td>
+        <td>Der Offset im Puffer, aus dem die Sample-Daten gelesen werden sollen (in Bytes).</td>
+      </tr>
+      <tr>
+        <td>PufferLänge</td>
+        <td>Die Länge des Puffers (die Anzahl der Bytes der Audiodaten, ausschließlich des Headers).</td>
+      </tr>
+      <tr>
+        <td>PufferKanäle</td>
+        <td>Die zu verwendenden Kanäle aus einer der unten aufgeführten Konstanten.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Klang-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var rate = 44100;<br> var hertz = irandom_range(220, 880);<br> var samples = 44100;<br> var bufferId = buffer_create(rate, buffer_fast, 1);<br> var buffer_seek(bufferId, buffer_seek_start, 0);<br> var num_to_write = rate / hertz;<br> var length
+    = buffer_get_size(bufferId) ;<br> var val_to_write = 1;<br> for (var i = 0; i &lt; (samples / num_to_write) + 1; i++;) <br> {
+    <br> for (var j = 0; j &lt; num_to_write; j++;)<br> {
+    <br> buffer_write(bufferId, buffer_u8, val_to_write * 255);<br> }
+    <br> val_to_write = (1 - val_to_write);<br> }
+    <br> soundId = audio_create_buffer_sound(bufferId, buffer_u8, rate, 0, length, audio_stereo);</p>
+  <p>Das obige erzeugt einen Puffer und füllt ihn dann prozedural mit Daten. Diese Daten werden dann verwendet, um einen neuen Sound zu erstellen, der in der Variablen &quot;soundId&quot; gespeichert wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Audio.htm">Audio-Puffer</a></div>
+        <div style="float:right">Weiter: <a href="audio_free_buffer_sound.htm">audio_free_buffer_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_create_buffer_sound
+audio_mono
+audio_stereo
+audio_3D
+-->
+  <!-- TAGS
+audio_create_buffer_sound
+-->
+</body>
+</html>

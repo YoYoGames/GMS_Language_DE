@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Neun-Scheiben-Struktur</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page explaining the contents of a Nine Slice struct" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Nine Slice,9slice,9-slice,9 slice" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die Neun-Scheiben-Struktur</h1>
+  <p>Eine <a href="../../../GML_Overview/Structs.htm">Nine-Slice-Struktur</a> kann mit <a href="Sprite_Manipulation/sprite_nineslice_create.htm" title="sprite_nineslice_create"><span class="inline">sprite_nineslice_create()</span></a>erzeugt oder abgerufen werden
+    aus einem Sprite mit <a href="Sprite_Information/sprite_get_nineslice.htm" title="sprite_get_nineslice"><span class="inline">sprite_get_nineslice()</span></a>. Diese Struktur enthält Eigenschaften, die geändert und auf ein Sprite angewendet werden können mit
+    <a href="Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_nineslice"><span class="inline">sprite_set_nineslice()</span></a>.</p>
+  <p>Wenn es von einem Sprite abgerufen wird, wirkt sich eine Änderung der Werte in dieser Struktur auf das ursprüngliche Sprite <strong>aus </strong>.</p>
+  <p>Die folgenden Eigenschaften werden in dieser Struktur verfügbar sein:</p>
+  <ul class="colour">
+    <li><strong>aktiviert</strong>: Dieser <a class="glossterm" data-glossterm="boolean" href="#">boolesche</a> Wert ist <strong>true </strong>, wenn <span data-keyref="Nine Slicing">Nine Slicing</span> für das Sprite aktiviert ist, und <strong>false </strong>, wenn es
+      deaktiviert. Sie können dies ändern, um <span data-keyref="Nine Slicing">Nine Slicing</span> für das Sprite zu aktivieren oder zu deaktivieren.</li>
+    <li><strong>links</strong>: Dies ist der Offset für die linke Führung auf der X-Achse, relativ zum linken Rand des Sprites.</li>
+    <li><strong>rechts</strong>: Dies ist der Offset für die rechte Führung auf der X-Achse, relativ zum rechten Rand des Sprites.</li>
+    <li><strong>oben</strong>: Dies ist der Offset für die obere Führung auf der y-Achse, relativ zur oberen Kante des Sprites.</li>
+    <li><strong>unten</strong>: Dies ist der Offset für die untere Führung auf der y-Achse, relativ zur unteren Kante des Sprites.</li>
+    <li><strong>tilemode</strong>: Dies gibt ein <a href="../../../GML_Overview/Arrays.htm">Array</a> zurück, das die <strong>Kachelmodi</strong> für die Rand- und Mittelscheiben enthält.</li>
+  </ul>
+  <p>Der <strong>Kachelmodus</strong> jedes Slice kann mit diesen Konstanten als Array-Index gelesen oder geändert werden:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><tt>Neunerscheibe_links</tt></td>
+        <td>Die linke Randscheibe</td>
+      </tr>
+      <tr>
+        <td><tt>neunschneidig_oben</tt></td>
+        <td>Die obere Randscheibe</td>
+      </tr>
+      <tr>
+        <td><tt>neunschneidig_rechts</tt></td>
+        <td>Die rechte Randscheibe</td>
+      </tr>
+      <tr>
+        <td><tt>neuner_Unterteil</tt></td>
+        <td>Die untere Randscheibe</td>
+      </tr>
+      <tr>
+        <td><tt>Neunmalklug_Zentrum</tt></td>
+        <td>Die mittlere Scheibe</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Der <strong>Kachelmodus</strong> für eine Scheibe ist eine der folgenden Konstanten (oder kann auf eine solche eingestellt werden):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><tt>neuner_stretch</tt></td>
+        <td>Die Scheibe wird gestreckt</td>
+      </tr>
+      <tr>
+        <td><tt>neunfache_Wiederholung</tt></td>
+        <td>Der Slice wird wiederholt</td>
+      </tr>
+      <tr>
+        <td><tt>neunschneidiger_Spiegel</tt></td>
+        <td>Der Slice wird durch Spiegelung wiederholt</td>
+      </tr>
+      <tr>
+        <td><tt>neuner_blank</tt></td>
+        <td>Der Slice wird nicht gedehnt oder wiederholt, so dass nach ihm ein leerer Bereich entsteht</td>
+      </tr>
+      <tr>
+        <td><tt>neunschneidig_ausblenden</tt></td>
+        <td>Der Slice wird überhaupt nicht angezeigt</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Da <strong>tilemode </strong>ein Array ist, müssen Sie die Array-Syntax verwenden, um den Kachelmodus eines Slice zu ändern. Das folgende Codebeispiel setzt den Kachelmodus des oberen Slice auf " <strong>Repeat"</strong>:</p>
+  <h4>Beispiel:</h4>
+  <p class="code"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><span style="font-family:Consolas">var _nineslice = sprite_get_nineslice(spr_box);<br>
+<br>
+_nineslice.tilemode<strong>[nineslice_top</strong>] = <strong>nineslice_repeat</strong>;</span></span>
+    </span>
+    </span>
+  </p>
+  <p>Auf <a href="../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm" title="Nine Slice">dieser Seite</a> finden Sie weitere Informationen über die Nine Slice-Technik.</p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Asset_Management.htm">Vermögensverwaltung</a></div>
+        <div style="float:right">Nächste: <a href="../Tilsets/Tile_Sets.htm">Kachel-Sets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sprites
+-->
+  <!-- TAGS
+sprite_functions
+-->
+
+</body></html>

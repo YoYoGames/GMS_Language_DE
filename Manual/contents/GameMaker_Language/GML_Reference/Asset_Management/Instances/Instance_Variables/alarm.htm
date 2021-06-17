@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Alarm</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable alarm" />
+  <meta name="rh-index-keywords" content="alarm" />
+  <meta name="search-keywords" content="alarm" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Alarm</h1>
+  <p>Dieses eindimensionale <a href="../../../../GML_Overview/Arrays.htm">Array</a> wird verwendet, um den aktuellen Wert für alle Alarme zu erhalten, die die Instanz möglicherweise hat, oder es kann verwendet werden, um diese Alarme zu setzen. Es gibt zwölf Alarme, die in jede Instanz eines Objekts eingebaut sind,
+    und jeder hat sein eigenes <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Ereignis</a>, das ausgelöst wird, wenn diese Variable 0 erreicht.</p>
+  <p>Alarme werden zu Beginn eines jeden Schritts heruntergezählt, <i>nach dem</i> Ereignis "Begin Step", aber <i>vor dem</i> Hauptereignis "Step" und bevor irgendetwas für den Schritt gerendert wird. Es ist zu beachten, dass der Alarm nicht beendet ist, wenn er 0 erreicht (obwohl das
+    Ereignis ausgelöst wurde), da er im nächsten Schritt auf -1 zurückgeht. Wenn Sie also einen Alarm aus irgendeinem Grund anhalten müssen, sollten Sie seinen Array-Wert auf -1 <i>und nicht</i> auf 0 setzen. Die Alarmzeiten werden in <i>Spielschritten</i> berechnet, wobei ein Wert von 30 für 30 Schritte steht,
+    60 steht für 60 Schritte usw..</p>
+  <p class="note"><b>HINWEIS:</b> Ein Alarm, der keine Aktionen oder keinen Code enthält, wird nicht ausgeführt. Aber auch mit nur einem Kommentar und ohne Code wird der Alarm heruntergezählt.</p>
+  <p>Sie können das Alarm-Array direkt setzen (und den aktuellen Alarmwert auch direkt über das Array abrufen), aber unter bestimmten Umständen ist dies nicht die geeignetste Methode, daher können Sie auch die Funktion <tt><a href="../alarm_set.htm">alarm_set()</a></tt> verwenden, um
+    einen Alarm zu setzen, und die Funktion <a href="../alarm_get.htm"><tt>alarm_get()</tt></a> um den Wert eines Alarms abzurufen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">alarm[val];</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (-1, wenn der Alarm nicht läuft)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if canshoot<br> {
+    <br> if keyboard_check_pressed(vk_space)<br> {
+    <br> canshoot = false;<br> alarm[0] = room_speed;<br> instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft eine Variable und dann, wenn sie wahr ist, prüft er auf einen Tastendruck und wenn dieser wahr ist, setzt er schließlich die Variable auf false, setzt einen Alarm (bei dem sie wieder auf true gesetzt wird) und erzeugt eine Instanz.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Variables.htm">Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="direction.htm">Richtung</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+alarm
+-->
+  <!-- TAGS
+alarm
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_achievements_set_progress</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_achievements_set_progress" />
+  <meta name="rh-index-keywords" content="xboxlive_achievements_set_progress" />
+  <meta name="search-keywords" content="xboxlive_achievements_set_progress" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_achievements_set_progress</h1>
+  <p>Diese Funktion kann verwendet werden, um den Fortschritt eines Achievements zu aktualisieren. Sie liefern die Benutzer-ID, wie sie z. B. von der Funktion <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>zurückgegeben wird, und dann den Achievement-String
+    (das ist die Achievement-ID, wie sie im XDP/Windows Dev Center bei der Erstellung vergeben wurde). Schließlich setzen Sie den Fortschrittswert auf einen Wert von 0 bis 100. Beachten Sie, dass das Achievement-System Aktualisierungen ablehnt, die niedriger sind als der aktuelle Fortschrittswert
+    Wert liegen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_achievements_set_progress(user_id, achievement, progress);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Die Benutzer-ID des Benutzers, für den die Leistung festgelegt werden soll</td>
+      </tr>
+      <tr>
+        <td>Leistung</td>
+        <td>Die zu setzende Leistung (eine Zeichenkette)</td>
+      </tr>
+      <tr>
+        <td>Fortschritt</td>
+        <td>Der einzustellende Fortschrittswert (von 0 bis 100)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>Im Folgenden finden Sie ein erweitertes Beispiel, wie diese Funktion verwendet werden kann. Zunächst würden Sie sie in einem Ereignis wie Room <b>Start oder</b> <b>Create</b> aufrufen <b>:</b></p>
+  <p class="code">xboxlive_stats_get_social_leaderboard(user_id, &quot;GlobalTime&quot;, 20, 1, false, false);</p>
+  <p>Der obige Code würde aufgerufen werden, um eine Liste aller globalen Leaderboard-Positionen für das Spiel zu erhalten, und erzeugt einen asynchronen Ereignisrückruf, den wir wie folgt behandeln würden:</p>
+  <p class="code">var _progress = (global.Level / global.LevelMax) * 100;<br> xboxlive_achievements_set_progress(user_id, &quot;Game_Completed&quot;, _progress);</p>
+  <p>Der obige Code erstellt einen Prozentwert, der auf einigen globalen Variablen basiert, und verwendet ihn dann, um den Leistungsfortschritt für die Leistung &quot;Game_Completed&quot; festzulegen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Stats_And_Leaderboards.htm">Statistiken und Ranglisten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_get_stats_for_user.htm">xboxlive_get_stats_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_achievements_set_progress
+-->
+  <!-- TAGS
+xboxlive_achievements_set_progress
+-->
+</body>
+</html>

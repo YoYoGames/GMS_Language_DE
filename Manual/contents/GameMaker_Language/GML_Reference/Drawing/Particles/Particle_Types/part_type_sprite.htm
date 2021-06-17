@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_sprite" />
+  <meta name="rh-index-keywords" content="part_type_sprite" />
+  <meta name="search-keywords" content="part_type_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_sprite</h1>
+  <p>Mit dieser Funktion können Sie einen Partikeltyp so einstellen, dass er ein eigenes Sprite aus den Spiel-Assets verwendet. Sie können das Sprite auswählen und dann <span class="notranslate">GameMaker Studio 2</span> mitteilen, ob es das Sprite verwenden und animieren soll oder nicht, und wenn Sie animiert wählen, können Sie auch
+    Wenn Sie animiert wählen, können Sie auch festlegen, dass die Teilbilder in einem solchen Intervall geändert werden, dass die Animation am Anfang und am Ende der Lebensdauer jedes erstellten Partikels beginnt und endet (wenn Sie also eine Lebensdauer mit einem Minimum von 15 Schritten und einem Maximum von 30 Schritten eingestellt haben, wird die Animation unabhängig vom Wert der Lebensdauer
+    (wenn Sie also eine Lebensdauer von mindestens 15 und höchstens 30 Schritten eingestellt haben, wird die Animation unabhängig vom Wert der Lebensdauer angepasst, wobei sie bei kürzeren Lebenszeiten schneller und bei längeren langsamer abläuft). Sie können auch ein zufälliges Subbild auswählen, so dass, wenn das Sprite nicht animiert ist, ein anderes Bild zufällig ausgewählt wird, um das Sprite zu erstellen.
+    wenn das Sprite nicht animiert ist, ein anderes Bild zufällig ausgewählt wird, um das Sprite zu erstellen, oder wenn das Partikel animiert ist, die Animation an einem zufälligen Punkt beginnt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_type_sprite(ind, sprite, animate, stretch, random);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu ändernden Partikeltyps.</td>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>Der Index des Sprites, auf den der Partikeltyp gesetzt werden soll.</td>
+      </tr>
+      <tr>
+        <td>beleben</td>
+        <td>Ob der Animation des Sprites normal (true) oder nicht (false) gefolgt werden soll.</td>
+      </tr>
+      <tr>
+        <td>dehnen</td>
+        <td>Ob die Animation des Sprites an die Lebensdauer der Partikel angepasst werden soll (true) oder nicht (false).</td>
+      </tr>
+      <tr>
+        <td>zufällig</td>
+        <td>Ob ein zufälliges Teilbild gewählt werden soll (true) oder nicht (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.p1 = part_type_create();<br> part_type_sprite(global.p1 , spr_Coins, 1, 0, 0);<br> part_type_size(global.p1, 1, 3, 0, 0);<br> part_type_scale(global.p1, 1, 1);<br> part_type_colour1(global.p1, c_white);<br> part_type_alpha2(global.p1, 1,
+    0);<br> part_type_speed(global.p1, 2, 4, 0, 0);<br> part_type_direction(global.p1, 0, 180, 0, 0);<br> part_type_gravity(global.p1, 0.20, 270);<br> part_type_orientation(global.p1, 0, 0, 0, 0, 1);<br> part_type_blend(global.p1, 1);<br> part_type_life(global.p1,
+    15, 60);</p>
+  <p>Der obige Code setzt den in der globalen Variablen &quot;p1&quot; indizierten Partikeltyp auf die Form des in &quot;spr_Coins&quot; indizierten Sprites und setzt dann verschiedene andere Partikeleigenschaften.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Types.htm">Partikel-Typen</a></div>
+        <div style="float:right">Weiter: <a href="part_type_size.htm">part_type_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_sprite
+-->
+  <!-- TAGS
+part_type_sprite
+-->
+</body>
+</html>

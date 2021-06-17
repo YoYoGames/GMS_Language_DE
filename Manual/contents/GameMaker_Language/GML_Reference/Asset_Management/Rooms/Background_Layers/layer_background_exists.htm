@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_exists" />
+  <meta name="rh-index-keywords" content="layer_background_exists" />
+  <meta name="search-keywords" content="layer_background_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_exists</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob ein Hintergrundelement auf einer bestimmten Ebene existiert. Sie übergeben die ID der Ebene (die Sie beim Erstellen der Ebene mit <a href="../General_Layer_Functions/layer_create.htm"><tt>ebene_erzeugen()</tt></a>) oder
+    den Ebenennamen (als String - dies hat Auswirkungen auf die Performance) und die ID des Hintergrundelements (die Sie erhalten, wenn Sie ein Hintergrundelement mit <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> oder wenn Sie die Funktion
+    die Funktion <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>) und die Funktion gibt entweder <tt>true</tt> zurück, wenn das Element existiert, oder <tt>false</tt>, wenn es nicht existiert.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion arbeitet im Rahmen des aktuellen Zielraums - standardmäßig der Raum, in dem die Funktion aufgerufen wird - der mit der Funktion <span style="font-size:1px;"><a href="../General_Layer_Functions/layer_set_target_room.htm"><tt style="font-size: 14px">layer_set_target_room()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_background_exists(layer_id, background_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Ebene (oder der Ebenenname als String)</td>
+      </tr>
+      <tr>
+        <td>hintergrund_element_id</td>
+        <td>Der eindeutige ID-Wert des zu prüfenden Hintergrundelements</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_trees&quot;);<br> if layer_background_exists(lay_id, global.TreesBackground)<br> {
+    <br> layer_background_destroy(lay_id, global.TreesBackground);<br> }
+  </p>
+  <p>Der obige Code prüft die Ebene &quot;Background_trees&quot;, um zu sehen, ob das angegebene Hintergrundelement existiert, und wenn ja, dann wird es zerstört (aber nicht die Ebene).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Background_Layers.htm">Hintergrund-Ebenen</a></div>
+        <div style="float:right">Weiter: <a href="layer_background_create.htm">layer_background_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_exists
+-->
+  <!-- TAGS
+layer_background_exists
+-->
+</body>
+</html>

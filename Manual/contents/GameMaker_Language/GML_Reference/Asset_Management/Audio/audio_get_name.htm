@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_name" />
+  <meta name="rh-index-keywords" content="audio_get_name" />
+  <meta name="search-keywords" content="audio_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_name</h1>
+  <p>Diese Funktion gibt den Namen einer gegebenen Audio-Ressource als String zurück. Der &quot;Index&quot;-Wert kann der der Ressource selbst sein (wie im Asset-Browser zu sehen) oder der eindeutige ID-Wert, der angegeben wird, wenn Sie den Ton z. B. mit abspielen,
+    <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a>. Beachten Sie, dass die zurückgegebene Zeichenkette <i>nicht</i> mit der ID der Ressource übereinstimmt und nicht zum Zugriff auf die Ressource selbst verwendet werden kann; sie sollte also nur zur Anzeige oder zur Fehlerprüfung verwendet werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_get_name(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu prüfenden Tons.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var snd = audio_play_sound(choose(snd_One, snd_Two, snd_Three), 0, false);<br> var name = audio_get_name(snd);<br> show_debug_message(&quot;Sound = &quot; + name);</p>
+  <p>Der obige Code spielt einen zufälligen Sound ab, der aus drei verschiedenen Sound-Ressourcen ausgewählt wird, und zeigt dann eine Debug-Meldung mit seinem Namen an.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_get_type.htm">audio_get_type</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_name
+-->
+  <!-- TAGS
+audio_get_name
+-->
+</body>
+</html>

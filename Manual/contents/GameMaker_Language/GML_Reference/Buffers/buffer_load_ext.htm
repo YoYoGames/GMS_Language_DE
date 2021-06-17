@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>puffer_laden_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load_ext" />
+  <meta name="rh-index-keywords" content="buffer_load_ext" />
+  <meta name="search-keywords" content="buffer_load_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>puffer_laden_ext</h1>
+  <p>Diese Funktion lädt die Pufferdaten, die zuvor mit den <a href="buffer_save.htm"><tt>buffer_save()</tt></a> Funktionen in einen bereits erstellten Puffer. Sie geben die ID des bereits erstellten Puffers an, in den geladen werden soll, dann die gespeicherte
+    Pufferdatei, die geladen werden soll, und schließlich den Offset vom Anfang des Puffers (in Bytes), in den Sie die Daten laden möchten.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_load_ext(buffer, Dateiname, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des Puffers, in den geladen werden soll.</td>
+      </tr>
+      <tr>
+        <td>Dateiname</td>
+        <td>Der Name der Datei, aus der geladen werden soll.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Offset innerhalb des Puffers, in den geladen werden soll (in Bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var pos = buffer_seek(player_buffer, buffer_seek_end, 0);<br> buffer_load(player_buffer, &quot;Data_Save.sav&quot;, pos);</p>
+  <p>Der obige Code ermittelt zunächst die Position des Endes des in der Variablen &quot;player_buffer&quot; indizierten Puffers und lädt dann die Daten aus dem angegebenen in diese Position (beachten Sie, dass dieses Beispiel nur mit den Puffertypen &quot;grow&quot; oder &quot;wrap&quot; funktioniert
+    Puffertypen funktioniert).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_load_async.htm">buffer_load_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load_ext
+-->
+  <!-- TAGS
+buffer_load_ext
+-->
+</body>
+</html>

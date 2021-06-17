@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fläche_zeichnen_allgemein</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_general" />
+  <meta name="rh-index-keywords" content="draw_surface_general" />
+  <meta name="search-keywords" content="draw_surface_general" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fläche_zeichnen_allgemein</h1>
+  <p>Diese Funktion kombiniert die Funktion <a href="draw_surface_ext.htm"><tt>draw_Oberfläche_ext()</tt></a> mit der Funktion <a href="draw_surface_part.htm"><tt>draw_surface_part()</tt></a>und fügt einige zusätzliche Überblendoptionen hinzu, so dass jede Ecke des
+    des endgültigen Oberflächenteils mit einer individuellen Farbe überblendet werden kann.</p>
+  <p class="note"><b>HINWEIS: </b>Das Überblenden von Farbverläufen ist für das HTML5-Ziel nicht verfügbar, sofern WebGL nicht aktiviert ist.</p>
+  <p class="note"><b></b><b>HINWEIS</b>: Bei der Arbeit mit Oberflächen besteht die Möglichkeit, dass diese jederzeit aufhören können zu existieren, da sie im Texturspeicher abgelegt sind. Sie sollten <b>IMMER</b> prüfen, ob eine Oberfläche existiert, indem Sie <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    überprüfen, bevor Sie sie direkt referenzieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_surface_general(id, left, top, w, h, x, y, xscale, yscale, rot, c1, c2, c3, c4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Der eindeutige ID-Wert der zu zeichnenden Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>links</td>
+        <td>Die linke Position in der Oberfläche des zu zeichnenden Teils.</td>
+      </tr>
+      <tr>
+        <td>oben</td>
+        <td>Die obere Position in der Oberfläche des zu zeichnenden Teils.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die Breite des zu zeichnenden Teils, von links.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe des zu zeichnenden Teils, von oben.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td>Die horizontale Skalierung, mit der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Die vertikale Skalierung, mit der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>rot</td>
+        <td>Die Drehung oder der Winkel, mit dem die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>Die Farbe der linken oberen Ecke der Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>Die Farbe der oberen rechten Ecke der Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>Die Farbe der unteren rechten Ecke der Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>Die Farbe der unteren linken Ecke der Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td>Die Alpha-Transparenz zum Zeichnen der Oberfläche mit.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_surface_general(surf, 8, 8, 32, 32, x, y, 2, 0.5, 180, c_white, c_white, c_black, c_black, 1);</p>
+  <p>Dadurch wird ein 32x32 Pixel großer Bereich von 8x8 Pixeln in die Oberfläche gezeichnet. Er wird auf die doppelte Breite, aber die halbe Höhe gestreckt. Sie wird undurchsichtig und auf dem Kopf stehend sein. Der obere Bereich der Fläche wird weiß und damit normal überblendet, aber
+    der untere Bereich wird schwarz sein, d. h. die Oberfläche wird in einem sanften Verlauf von normal zu Silhouette nach unten verlaufen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="application_surface.htm">application_surface</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_general
+-->
+  <!-- TAGS
+draw_surface_general
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_exists" />
+  <meta name="rh-index-keywords" content="layer_exists" />
+  <meta name="search-keywords" content="layer_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_exists</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob die angegebene <b>Ebene</b> existiert. Sie übergeben die Ebenen-ID (die Sie erhalten, wenn Sie die Ebene mit <a href="layer_create.htm"><tt>layer_create()</tt></a>) oder den Ebenennamen (als String - dies hat Auswirkungen auf die Performance
+    Dies hat Auswirkungen auf die Leistung) und die Funktion gibt den <i>booleschen</i> Wert <tt>true</tt> zurück, wenn die Ebene existiert, oder <tt>false</tt>, wenn sie nicht existiert.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion arbeitet im Rahmen des aktuellen Zielraums - standardmäßig der Raum, in dem die Funktion aufgerufen wird - der mit der Funktion <a href="layer_set_target_room.htm"><tt>layer_set_target_room()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_exists(layer_name)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_name</td>
+        <td>Der Name der Ebene (eine Zeichenkette oder ein ID-Wert)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !layer_exists(global.tileLayer)<br> {
+    <br> global.tileLayer = layer_create(1000);<br> }
+  </p>
+  <p>Der obige Code prüft, ob die in der globalen Variable gespeicherte Ebene tatsächlich existiert, und wenn nicht, wird sie erstellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_get_id.htm">layer_get_id</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_exists
+-->
+  <!-- TAGS
+layer_exists
+-->
+</body>
+</html>

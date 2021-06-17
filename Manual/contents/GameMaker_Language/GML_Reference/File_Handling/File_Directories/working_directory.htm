@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Arbeits_Verzeichnis</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for working_directory" />
+  <meta name="rh-index-keywords" content="working_directory" />
+  <meta name="search-keywords" content="working_directory" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Arbeits_Verzeichnis</h1>
+  <p><tt>Working_directory</tt> kann tatsächlich zwei verschiedene Werte zurückgeben, je nachdem, wofür Sie es verwenden. Wenn Sie eine Datei auf die Festplatte schreiben, zeigt <tt>working_directory</tt> auf den Bereich des lokalen Speichers, der für Ihr Spiel auf dem Zielgerät
+    Gerät reserviert ist (unter Windows ist dies &quot;<span class="inline">%LOCALAPPDATA%/gamedir/</span>&quot;, wobei &quot;gamedir&quot; das Verzeichnis mit dem Namen Ihres Spiels ist). Wenn Sie jedoch von der Festplatte lesen, kann <tt>working_directory</tt> <i>entweder</i> der lokale Speicher <i>oder</i> der Bereich sein, in dem die eingeschlossenen Dateien gespeichert sind.</p>
+  <p class="note"><b>HINWEIS</b>: Die Variable <tt>working_directory</tt> gibt den Pfad <b>einschließlich des</b> letzten Backslashs zurück.</p>
+  <p>Wenn Sie z. B. eine standardmäßige <tt>*.txt-Datei</tt> in Ihr Spiel eingebunden haben und diese mit <tt>working_directory</tt> in den Speicher einlesen, dann wird diese Datei aus dem Bereich genommen, in dem die eingebundenen Dateien gespeichert sind. Wenn Sie dann wählen, dass Sie diese
+    Informationen mit <tt>working_directory</tt> in eine Textdatei schreiben, wird die Datei in den lokalen Speicher der Zielplattform geschrieben, von wo sie beim nächsten Mal gelesen wird, es sei denn, Sie weisen <span class="notranslate">GameMaker Studio 2</span> an, die Datei zu löschen, in diesem Fall verweist <tt>working_directory</tt> wieder auf den Bereich, in dem die enthaltenen Dateien gespeichert sind.</p>
+  <p>Es ist erwähnenswert, dass Sie dies <em>im Allgemeinen</em> nicht verwenden müssen und der einfache Aufruf des Dateinamens (plus eventuelle zusätzliche Pfadinformationen) ausreicht, z. B. dies:</p>
+  <p class="code">file_text_open_read(arbeits_verzeichnis + &quot;meine_datei.txt&quot;);</p>
+  <p>wäre besser als dies:</p>
+  <p class="code">file_text_open_read(&quot;meine_datei.txt&quot;);</p>
+  <p class="note"><b>WARNUNG!</b> Diese Funktion funktioniert möglicherweise nicht so, wie Sie es erwarten, da <span class="notranslate">GameMaker Studio 2</span> sandboxed ist! Bitte lesen Sie den Abschnitt über das <a href="../../../../Additional_Information/The_File_System.htm">Dateisystem</a> für weitere Informationen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">Arbeits_Verzeichnis</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">ini_open(arbeits_verzeichnis + &quot;temp_ini.ini&quot;);</p>
+  <p>Dadurch wird eine Ini-Datei aus dem Arbeitsverzeichnis des Spiels geöffnet (und erstellt, falls sie noch nicht vorhanden ist). Dies kann der lokale Speicher oder der Bereich sein, in dem sich die eingebundenen Dateien befinden, je nachdem, ob die gesuchte Datei an einem der beiden Orte existiert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="File_Directories.htm">Dateiverzeichnisse</a></div>
+        <div style="float:right">Weiter: <a href="program_directory.htm">program_directory</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+working_directory
+-->
+  <!-- TAGS
+working_directory
+-->
+</body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz zeichnen lebt</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Instance Lives action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Instance Lives" />
+  <meta name="search-keywords" content="Draw Instance Lives" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Instance Lives Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Instance_Lives.png"> Zeichnen von Instanz-Leben</h1>
+  <p>Mit dieser Aktion wird ein Sprite gezeichnet, das jedes der Leben darstellt, die die Instanz derzeit hat. Die Anzahl der zu zeichnenden Leben wird aus dem aktuellen Wert der lokalen Instanzvariable <tt>lives</tt> entnommen, die eine spezielle Variable ist, die automatisch in
+    der Instanz erstellt wird, wenn Sie eine der Aktionen verwenden, für die sie erforderlich ist. Sie geben das zu zeichnende Sprite für die Leben und die Stapelreihenfolge an, die entweder <b>Zeile</b> (horizontal, von links nach rechts) oder <b>Spalte</b> (vertikal, von oben nach unten) sein kann, sowie die Position.
+    Die Position kann eine absolute Position innerhalb des Raums sein oder eine relative zur Position der zeichnenden Instanz, und der Abstand zwischen den Bildern basiert auf der Breite oder Höhe des Sprites. Beachten Sie, dass dies einfach ein statisches Bild zeichnet
+    - das erste Einzelbild (Frame 0) des angegebenen Sprites - und alle weiteren Frames werden ignoriert, ebenso wie alle Transformationen, die der Instanz durch Ändern der Instanzvariablen (wie <tt>image_xscale</tt> oder <tt>image_blend</tt>) hinzugefügt wurden.
+    Der Beschriftungstext wird vor dem Lebenswert gezeichnet, und wenn es sich um Text handelt, sollte er mit &quot;&quot; umbrochen werden, und beide werden mit der aktuellen Zeichenschriftart, Farbe und Ausrichtung formatiert.</p>
+  <p><b></b></p>
+  <p class="note"><b>HINWEIS</b>: Diese Aktion ist nur für die Verwendung in den verschiedenen <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">Draw-Events</a> vorgesehen und wird nichts zeichnen, wenn sie anderweitig verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Draw Instance Lives" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Instance_Lives.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Beschriftung</td>
+        <td>Die Zeichenkette, die zusammen mit dem Score-Wert gezeichnet werden soll (vorangestellt und kann leer gelassen werden)</td>
+      </tr>
+      <tr>
+        <td>Stapelreihenfolge</td>
+        <td>Die Reihenfolge, in der gezeichnet werden soll (entweder Zeile oder Spalte)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der das Leben gezeichnet werden soll</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der das Leben gezeichnet werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Draw Instance Lives Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Instance_Lives.png">Der obige Code des Aktionsblocks zeichnet Sprites relativ zur Instanz, um den
+    den aktuellen <tt>Lebenswert</tt> darzustellen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Drawing_Actions.htm">Zeichnungs-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Draw_Colour.htm">Farbe zum Zeichnen einstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Instance Lives
+-->
+  <!-- TAGS
+action_draw_instance_lives
+-->
+</body>
+</html>

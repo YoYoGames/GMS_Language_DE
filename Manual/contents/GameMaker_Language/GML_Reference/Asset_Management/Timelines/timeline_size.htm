@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>timeline_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_size" />
+  <meta name="rh-index-keywords" content="timeline_size" />
+  <meta name="search-keywords" content="timeline_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>timeline_size</h1>
+  <p>Mit dieser Funktion können Sie die Gesamtzahl der aktiven Momente für eine Zeitleiste ermitteln (ein &quot;aktiver&quot; Moment ist ein Moment, zu dem Code oder DnD™ <span class="notranslate">hinzugefügt</span>wurde). Dies kann praktisch sein, wenn Sie dynamische Zeitleisten mit den Funktionen <a href="timeline_moment_add_script.htm"><tt>timeline_moment_add_script()</tt></a> und   <a href="timeline_moment_clear.htm"><tt>timeline_moment_clear()</tt></a> Funktionen, da Sie prüfen können, ob eine bestimmte Zeitleiste die richtige Anzahl aktiver Momente oder gar keine hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">timeline_size(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index der Zeitleiste, aus der die Informationen stammen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if timeline_size(global.tl) == 0<br> {
+    <br> timeline_moment_add_script(global.tl, room_speed + irandom(room_speed), spawn_enemy);<br> }
+  </p>
+  <p>Der obige Code prüft die angegebene Größe der Zeitleiste, und wenn er 0 zurückgibt (d. h.: die Zeitleiste hat keine aktiven Momente), fügt er eine Skriptfunktion hinzu, die zu einem zufälligen Moment innerhalb der Zeitleiste verwendet wird, der in der globalen Variablen &quot;tl&quot; indiziert ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Timelines.htm">Timelines</a></div>
+        <div style="float:right">Weiter: <a href="timeline_max_moment.htm">timeline_max_moment</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_size
+-->
+  <!-- TAGS
+timeline_size
+-->
+</body>
+</html>

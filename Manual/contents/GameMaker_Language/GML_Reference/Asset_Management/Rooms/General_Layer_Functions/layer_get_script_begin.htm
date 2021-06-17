@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_script_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_script_begin" />
+  <meta name="rh-index-keywords" content="layer_get_script_begin" />
+  <meta name="search-keywords" content="layer_get_script_begin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_script_begin</h1>
+  <p>Sie geben die Ebenen-ID (die Sie erhalten, wenn Sie die Ebene mit <a href="layer_create.htm"><tt>layer_create()</tt></a>) oder den Ebenennamen (als String - dies wirkt sich auf die Leistung aus) und diese Funktion gibt den <a href="../../../../GML_Overview/Script_Functions.htm">Skriptfunktionsindex</a> der Funktion zurück, die zu Beginn des Renderns für diese Ebene ausgeführt werden soll, oder sie gibt -1 zurück, wenn keine Funktion zugewiesen ist. Sie können einer Ebene mit <span class="inline"><a href="layer_script_begin.htm">layer_script_begin()</a></span> Skriptfunktionen zuweisen und
+    <span class="inline"><a href="layer_script_end.htm">layer_script_end()</a></span>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_get_script_begin(layer_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Ebene (oder der Ebenenname als String)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Skriptfunktionsindex (Real) oder -1, wenn kein Skript zugewiesen ist</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if layer_get_script_begin(layer) == -1<br> {
+    <br> layer_script_begin(layer, scr_SetShaderValues);<br> }
+  </p>
+  <p>Der obige Code prüft, ob der Ebene, auf der die Instanz den Code ausführt, eine Skriptfunktion zugewiesen ist, und wenn nicht, wird eine zugewiesen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_get_script_end.htm">layer_get_script_end</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_script_begin
+-->
+  <!-- TAGS
+layer_get_script_begin
+-->
+</body>
+</html>

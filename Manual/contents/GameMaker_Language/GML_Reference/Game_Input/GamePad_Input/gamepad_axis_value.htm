@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_axis_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_axis_value" />
+  <meta name="rh-index-keywords" content="gamepad_axis_value" />
+  <meta name="search-keywords" content="gamepad_axis_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_axis_value</h1>
+  <p>Mit dieser Funktion können Sie den Wert der verschiedenen Achsen eines bestimmten Gamepad-Slots ermitteln. Sie geben den zu prüfenden Gamepad-Slot-Index an, zusammen mit einer Achsen-Index-Konstante (wie <a href="Gamepad_Input.htm">hier</a> aufgelistet) oder einem Integer-Wert zwischen
+   <tt>0</tt> und <tt><a href="gamepad_axis_count.htm">gamepad_axis_count()</a></tt><tt>-1</tt>. Der zurückgegebene Wert liegt zwischen <tt>-1</tt> und <tt>1</tt> für jede der verfügbaren horizontalen und vertikalen Achsen.</p>
+  <p>Beachten Sie, dass der zurückgegebene Wert normalisiert wird, um den für die Achsen-Totzone eingestellten Wert zu berücksichtigen (mit der Funktion <span class="inline"><a href="gamepad_set_axis_deadzone.htm">gamepad_set_axis_deadzone()</a></span>), und daher immer
+    zwischen -1 und 0 bzw. 0 und 1. Wenn Sie z. B. die Totzone auf 0,2 setzen, bedeutet dies, dass das Drücken des Knüppels nach rechts erst dann einen Wert von 0 - 1 zurückgibt, wenn der <em>Rohwert</em> der Achse über 0,2 liegt - wenn also z. B. der Rohwert 0,2 beträgt, ist der
+    Wenn der Rohwert 0,2 ist, ist der Rückgabewert 0, wenn der Rohwert 0,5 ist, ist der Rückgabewert 0,375, oder wenn der Rohwert 0,9 ist, wäre der Rückgabewert 0,875.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gamepad_axis_value(Gerät, axisIndex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Welcher Gamepad-Geräte-&quot;Steckplatz&quot; zu prüfen ist.</td>
+      </tr>
+      <tr>
+        <td>axisIndex</td>
+        <td>Der zu prüfende Achsenindex (siehe <a href="Gamepad_Input.htm">Konstantenliste</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var haxis = gamepad_axis_value(0, gp_axislh);<br> var vaxis = gamepad_axis_value(0, gp_axislv);<br> direction = point_direction(0, 0, haxis, vaxis);<br> speed = point_distance(0 ,0, haxis, vaxis) * 5;</p>
+  <p>Der obige Code setzt die Geschwindigkeit und Richtung der Instanz basierend auf den zurückgegebenen Werten des linken analogen Controllers des Gamepads, das in Gerät &quot;Slot&quot; 0 eingesteckt ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Input.htm">Gamepad-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="gamepad_button_check.htm"> gamepad_button_check </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_axis_value
+-->
+  <!-- TAGS
+gamepad_axis_value
+-->
+</body>
+</html>

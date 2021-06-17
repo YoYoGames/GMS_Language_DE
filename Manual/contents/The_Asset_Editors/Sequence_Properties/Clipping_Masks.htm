@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Clipping-Masken</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to use clipping masks in the track editor" />
+  <meta name="rh-index-keywords" content="Sequences - Clipping Masks" />
+  <meta name="search-keywords" content="masks,clip masks,clipping,clipping masks" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Clipping-Masken</h1>
+  <p>Wie auf der Seite " <a href="The_Track_Panel.htm">Spur-Panel"</a> erwähnt, gibt es eine Aktion zum Erstellen einer so genannten <strong>Schnittmaskengruppe </strong>im Track Editor. Dazu klicken Sie auf die Schaltfläche <img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png"> am unteren Rand des Spurpanels:</p>
+  <p><img alt="Clip Mask Button in the Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel_ClipMask_Button.png">Wenn Sie hierauf klicken, wird eine Schnittmaskengruppe erstellt, die aus zwei Untergruppen von Assets besteht, die entweder als
+    das <strong>Subjekt </strong>oder die <strong>Maske </strong>der Gruppe. Im Grunde ist das Motiv das Asset, das maskiert werden soll, und die Maske ist das Asset, das die Maskierung vornimmt:</p>
+  <p><img alt="Basic Clipping Mask" class="center" src="../../assets/Images/Asset_Editors/Track_Clipping_Mask.png">Die Idee hinter der Verwendung einer Clipping-Maske ist, dass Sie ein Motiv-Sprite und dann ein Masken-Sprite hinzufügen, und das Masken-Sprite &quot;versteckt&quot; (maskiert)
+    (Maske) das Motiv. Sie können dann die Animation des Masken-Sprites verwenden oder das Masken-Sprite verschieben oder skalieren, um die Sichtbarkeit des Motivs (oder von Teilen des Motivs) zu ändern. Jede Gruppe (Maske und Motiv) kann mehrere Elemente enthalten, und jedes Element kann
+    mehrere Parameterspuren haben.</p>
+  <p>Um ein Motiv und eine Maske hinzuzufügen, ziehen Sie einfach das Sprite, Objekt oder die Sequenz aus dem Asset-Browser über den Ordner, dem Sie es hinzufügen möchten:</p>
+  <p><img alt="Add A Clipping Mask" src="../../assets/Images/Asset_Editors/Track_Add_Clipping_Mask.gif" /></p>
+  <p>Das Masken-Sprite <em>Alpha </em>wird verwendet, um das darunter liegende Objekt zu &quot;verstecken&quot;, wobei ein Wert von 100 % Alpha (undurchsichtig) es vollständig maskiert und ein Wert von 0 % Alpha (transparent) es sichtbar macht. Zum Beispiel haben wir dieses Sprite für die Maskierung:</p>
+  <p><img alt="Clipping Mask Example Sprite" class="center" src="../../assets/Images/Asset_Editors/Clipping_Mask_Sprite.png">Wir können dies dann als Schnittmaske auf Symbole anwenden, um einen &quot;Cooldown&quot;-Effekt zu erzeugen, etwa so:</p>
+  <p><img alt="Animated Clipping Mask Example" class="center" src="../../assets/Images/Asset_Editors/Clipping_Mask_Example.gif">Im obigen Beispiel ist &quot;<span class="inline">Sprite_2</span>&quot; einfach ein statisches Sprite-Asset, das das Basissymbol darstellt,
+    und darüber haben wir eine Schnittmaskengruppe mit einer Graustufenversion des Sprites sowie einer Maske (unter Verwendung des oben gezeigten Beispiel-Sprites) erstellt. Wenn sie kombiniert und die Sequenz abgespielt wird, enthüllt die Clipping-Masken-Gruppe das darunter liegende Basis-Sprite
+    darunter, wodurch der Abkling-Effekt entsteht.</p>
+  <p>Beachten Sie, dass Schnittmaskengruppen als ein einzelnes Element in der Spurliste und im <span class="notranslate">Dope Sheet</span> behandelt werden können, und Sie können der Gruppe <em>als Ganzes</em> Rotations- und Positionsparameterspuren hinzufügen. Sie können Beschneidungsmaskengruppen auch auf Gruppenordner von Assets
+    oder sogar auf <em>andere</em> Schnittmaskengruppen anwenden, was sie zu einem sehr leistungsfähigen Werkzeug macht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Nächste: <a href="Using_The_Dope_Sheet.htm">Verwenden des <span class="notranslate">Dope Sheets</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Clipping Masks
+Clipping
+Masks
+Clip Masks
+-->
+  <!-- TAGS
+track_panel_clip_mask
+-->
+</body>
+</html>

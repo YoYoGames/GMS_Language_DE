@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_blend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_blend" />
+  <meta name="rh-index-keywords" content="part_type_blend" />
+  <meta name="search-keywords" content="part_type_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_blend</h1>
+  <p>Mit dieser Funktion können Sie bewirken, dass Ihre Partikel mit einem additiven Überblendmodus gezeichnet werden<tt>(true</tt>) oder nicht<tt>(false</tt>). Additive Überblendung ist ein spezieller Überblendungsmodus, der die Helligkeitswerte der einzelnen Partikel addiert, wenn sie sich überlappen, so dass helle Farben
+    allmählich heller werden (bis sie weiß erscheinen), wenn sie sich überlappen, und dunkle Farben immer transparenter werden, bis Schwarz fast unsichtbar wird. Diese Funktion kann einige schöne Partikeleffekte erzeugen, ist aber nicht immer notwendig. Für
+    Bei einer Rauchfahne wäre die additive Überblendung beispielsweise ausgeschaltet, um den Effekt grau zu halten, aber bei einem Flammeneffekt wäre sie wahrscheinlich eingeschaltet, um die Partikel durchsichtiger und heller zu machen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_type_blend(ind, additiv);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu ändernden Partikeltyps.</td>
+      </tr>
+      <tr>
+        <td>Zusatzstoff</td>
+        <td>Ob die Partikel additiv (true) oder normal (false) gemischt werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">part_type_blend(part_Fire, true);</p>
+  <p>Der obige Code setzt alle erzeugten Partikel des in der Variablen &quot;part_Fire&quot; indizierten Partikeltyps auf einen additiven Überblendmodus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Types.htm">Partikel-Typen</a></div>
+        <div style="float:right">Weiter: <a href="part_type_life.htm">part_type_life</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_blend
+-->
+  <!-- TAGS
+part_type_blend
+-->
+</body>
+</html>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pfade</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="The Paths Preferences from the General Preferences section" />
+  <meta name="rh-index-keywords" content="Prefs - General - Paths" />
+  <meta name="search-keywords" content="Path Preferences" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pfadvorgaben</h1>
+  <p><img alt="Path Prefs" class="center" src="../../../assets/Images/Setup_And_Version/Preferences/General_Paths_Prefs.png" style="cursor: nwse-resize;" /></p>
+  <p>Die <strong>Pfadvorgaben </strong>steuern die verschiedenen Dateipfade, die von Elementen in der <span class="notranslate">GameMaker Studio 2-IDE</span> sowie für externe Editoren benötigt werden, die Sie benötigen. Die folgenden Optionen sind für die IDE vorhanden:</p>
+  <ul class="colour">
+    <li><strong>Temp-Verzeichnis</strong>: Der Ort, an dem alle temporären Verzeichnisse gespeichert werden. Unter <span class="notranslate">Windows</span> ist dies standardmäßig
+     <p class="code">\Benutzer\&lt;Benutzername&gt;\AppData\Local\Temp\GameMakerStudio2</p>
+      Und unter <span class="notranslate">macOS</span> ist es:
+     <p class="code">/var/ordner/&lt;Pfad_Hash&gt;/GameMakerStudio2</p>
+     <p> </p>
+    </li>
+    <li><strong>IDE-Cache-Verzeichnis</strong>: Der Speicherort für den IDE-Cache. Standardmäßig ist dies unter <span class="notranslate">Windows</span> 
+     <p class="code">\Benutzer\&lt;Benutzername&gt;\AppData\Roaming\GameMakerStudio2\Cache</p>
+      Und unter <span class="notranslate">macOS</span> ist es:
+     <p class="code">/Benutzer/&lt;Benutzername&gt;/.config/GameMakerStudio2/Cache</p>
+     <p> </p>
+    </li>
+    <li><strong>Asset-Cache-Verzeichnis</strong>: Der Speicherort für den Asset-Cache für jedes Projekt. Unter <span class="notranslate">Windows</span> ist dies standardmäßig
+     <p class="code">\Benutzer\&lt;Benutzername&gt;\AppData\Roaming\GameMakerStudio2\Cache</p>
+      Und unter <span class="notranslate">macOS</span> ist es:
+     <p class="code">/Benutzer/&lt;Benutzername&gt;/.config/GameMakerStudio2/Cache</p>
+     <p> </p>
+    </li>
+    <li><strong>Speicherort &quot;Meine Projekte&quot;:</strong> Der Ort, an dem <span class="notranslate">GameMaker Studio 2</span> anfänglich neue Projekte erstellt. Unter <span class="notranslate">Windows</span> ist dies standardmäßig
+     <p class="code">\Benutzer\&lt;Benutzername&gt;\Dokumente\GameMakerStudio2</p>
+      Und unter <span class="notranslate">macOS</span> ist es
+     <p class="code">/Benutzer/&lt;Benutzername&gt;/GameMakerStudio2</p>
+     <p> </p>
+    </li>
+    <li><strong>Temp-Verzeichnis beim Schließen automatisch löschen</strong>: Wenn Sie diese Option aktivieren, wird <span class="notranslate">GameMaker Studio 2</span> gezwungen, den Temp-Ordner, den es pro Projekt zum Kompilieren usw. anlegt, automatisch zu löschen. Diese Einstellung ist standardmäßig aktiviert, und wenn Sie das Häkchen entfernen, wird
+      schaltet sie aus (was bedeutet, dass Sie später alle Temp-Dateien manuell entfernen müssen).</li>
+    <li><strong>Asset-Cache beim Beenden automatisch löschen</strong>: Wenn diese Option aktiviert ist, wird der Asset-Compiler-Cache-Ordner entfernt, wenn Sie <span class="notranslate">GameMaker Studio 2</span> beenden. Diese Option ist standardmäßig deaktiviert, und wenn Sie sie aktivieren, bedeutet dies, dass der Cache jedes Mal neu aufgebaut werden muss, wenn Sie ein Projekt laden und ausführen.
+      Wenn Sie diese Option aktivieren, bedeutet dies, dass der Cache bei jedem Laden und Ausführen eines Projekts neu erstellt werden muss (was je nach Größe des Spiels einige Zeit dauern kann).</li>
+    <li><strong>IDE-Cache beim Beenden automatisch löschen</strong>: Wenn dies aktiviert ist, wird der IDE-Compiler-Cache-Ordner entfernt, wenn Sie <span class="notranslate">GameMaker Studio 2</span> beenden. Diese Option ist standardmäßig deaktiviert, und wenn Sie sie aktivieren, bedeutet dies, dass bei jedem Start von <span class="notranslate">GameMaker</span>
+      Studio 2 starten, muss der Cache neu erstellt werden.</li>
+    <li><strong>Temp-Ordner löschen</strong>: Wenn Sie auf diese Schaltfläche klicken, wird der Temp-Ordner für das Projekt gelöscht.</li>
+    <li><strong>Asset-Cache löschen</strong>: Wenn Sie auf diese Schaltfläche klicken, wird der Compiler-Asset-Cache für das Projekt gelöscht.</li>
+    <li><strong>IDE-Cache löschen</strong>: Durch Klicken auf diese Schaltfläche wird der IDE-Cache gelöscht</li>
+  </ul>
+  <p>Es gibt folgende Möglichkeiten, Pfade zu externen Editoren einzustellen:</p>
+  <ul class="colour">
+    <li><strong>Pfad zum externen Editor/Viewer für SWF-Dateien</strong>: Wenn Sie mit Sprites im SWF-Format arbeiten, können Sie hier den Pfad zu Ihrem bevorzugten Viewer/Editor angeben, und wenn Sie im Sprite-Editor auf die Schaltfläche <em>Bild bearbeiten</em> klicken, wird
+      wird das angegebene Programm geöffnet. Der Standardwert ist hier, dass kein Pfad angegeben wird.</li>
+    <li><strong>Pfad zum externen Editor/Betrachter für Spine-Dateien</strong>: Wenn Sie mit Sprites im Spine-Format arbeiten, können Sie hier den Pfad zu Ihrem bevorzugten Viewer/Editor angeben, und wenn Sie im Sprite-Editor auf die Schaltfläche <em>Edit Image</em> klicken, wird
+      wird das angegebene Programm geöffnet. Der Standardwert hier ist, dass kein Pfad angegeben wird.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../General_Preferences.htm">Allgemeine Voreinstellungen</a></div>
+        <div style="float:right">Nächste: <a href="Power_Saving.htm">Stromsparende Voreinstellungen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asset Explorer
+Preferences - General
+Preferences - General, Asset Explorer
+Preferences - General, Background
+Preferences - General, Compiling
+Preferences - General, Confirm Dialogues
+Preferences - General, Go To
+Preferences - General, Help
+Preferences - General, Input
+Preferences - General, Output <span class="notranslate">Windows</span>
+Preferences - General, Paths
+Preferences - General, Power Saver
+Preferences - General, Recent <span class="notranslate">Windows</span>
+Preferences - General, Resources
+Preferences - General, Workspace
+-->
+  <!-- TAGS
+asset_explorer
+prefs_general
+prefs_assetexplorer
+prefs_background
+prefs_compiling
+prefs_goto
+prefs_help
+prefs_input
+prefs_paths
+prefs_workspace
+prefs_power
+prefs_confirm
+prefs_recent_windows
+prefs_output_windows
+-->
+</body>
+</html>

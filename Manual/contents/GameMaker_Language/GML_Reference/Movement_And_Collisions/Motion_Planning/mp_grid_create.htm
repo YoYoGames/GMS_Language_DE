@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_create" />
+  <meta name="rh-index-keywords" content="mp_grid_create" />
+  <meta name="search-keywords" content="mp_grid_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_create</h1>
+  <p>Mit dieser Funktion können Sie ein mp_grid für die Bewegungsplanungsfunktionen erstellen. Sie gibt einen Index zurück, der in einer Variablen für die Verwendung in allen anderen MP-Grid-Funktionsaufrufen gespeichert werden sollte. Die x- und y-Koordinaten geben die Position der linken, oberen Ecke
+    Die x- und y-Koordinaten geben die Position der linken oberen Ecke des Gitters an, hcells und vcells geben die Anzahl der horizontalen und vertikalen Zellen an, die innerhalb des Gitters erstellt werden sollen, und cell width und cell height geben die Größe der Zellen in Pixeln an. Sie können mehrere Gitterstrukturen gleichzeitig erstellen und pflegen
+    Sie können mehrere Gitterstrukturen gleichzeitig erstellen und pflegen, wenn Sie sie für verschiedene Zwecke benötigen. Beachten Sie jedoch, dass jedes Gitter Speicherplatz benötigt, und je mehr Zellen es hat, desto mehr Speicherplatz wird benötigt. Beachten Sie auch, dass die MP-Funktionen recht prozessorlastig sind, je öfter
+    je häufiger Sie sie aufrufen und je höher die Zellenauflösung ist, desto wahrscheinlicher ist ein Leistungsabfall.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_grid_create(left, top, hcells, vcells, cellwidth, cellheight):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>links</td>
+        <td>Start-X-Koordinate des mp_grid im Raum</td>
+      </tr>
+      <tr>
+        <td>oben</td>
+        <td>Start-Y-Koordinate des mp_grid im Raum</td>
+      </tr>
+      <tr>
+        <td>hZellen</td>
+        <td>Anzahl der horizontalen Zellen, die das mp_grid enthalten wird</td>
+      </tr>
+      <tr>
+        <td>vcells</td>
+        <td>Anzahl der vertikalen Zellen, die das mp_grid enthalten wird</td>
+      </tr>
+      <tr>
+        <td>Zellbreite</td>
+        <td>Die Breite (in Pixel) jeder einzelnen Zelle des mp_grid</td>
+      </tr>
+      <tr>
+        <td>Zellenhöhe</td>
+        <td>Die Höhe (in Pixel) jeder einzelnen Zelle des mp_grid</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.grid = mp_grid_create(0, 0, room_width / 32, room_height /32, 32, 32);</p>
+  <p>Der obige Code erzeugt eine globale Variable &quot;grid&quot;, generiert dann ein mp_grid und weist dessen Index (id) dieser Variablen zur Verwendung in allen weiteren mp_grid-Funktionsaufrufen zu. Das Raster deckt den Raum ab, mit einer Zellenauflösung von 32x32 Pixeln. Das bedeutet
+    Das bedeutet, dass das Raster z. B. in einem 640x480 großen Raum 300 Zellen enthalten würde: 20 horizontale Zellen (640 / 32) multipliziert mit 15 vertikalen Zellen (480 /32) ergibt 300 Zellen</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_grid_destroy.htm">mp_grid_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_create
+-->
+  <!-- TAGS
+mp_grid_create
+-->
+</body>
+</html>

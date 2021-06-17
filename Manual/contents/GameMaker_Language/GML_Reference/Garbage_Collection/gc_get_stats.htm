@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gc_get_stats</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gc_get_stats" />
+  <meta name="rh-index-keywords" content="gc_get_stats" />
+  <meta name="search-keywords" content="gc_get_stats" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gc_get_stats</h1>
+  <p>Mit dieser Funktion können Sie Informationen über den aktuellen Zustand des Garbage Collectors abrufen. Die Funktion gibt eine <a href="../../GML_Overview/Structs.htm">Struktur</a> zurück, die die folgenden Mitgliedsvariablen enthält (beachten Sie, dass &quot;Objekte&quot;
+    sich hier auf alles bezieht, was garbage collected werden kann, und <i>nicht</i> auf allgemeine Objektinstanzen, wie sie im Asset Browser definiert sind):</p>
+  <ul class="colour">
+    <li><tt>objects_touched</tt> - dies ist die Anzahl der aktiven Objekte, die der Garbage Collector im vorherigen Frame gefunden hat. Dies variiert je nachdem, welche Generation gesammelt wurde.</li>
+    <li><tt>objects_collected</tt> - die Anzahl der Objekte, die der Garbage Collector festgestellt hat, dass sie im vorherigen Frame nicht aktiv waren und daher gelöscht werden konnten.</li>
+    <li><tt>traversal_time</tt> - das ist die Zeit in Mikrosekunden (auf dem Haupt-Thread), die der Garbage Collector brauchte, um herauszufinden, welche Objekte aktiv waren.</li>
+    <li><tt>collection_time</tt> - dies ist die Zeit in Mikrosekunden (auf einem separaten Thread), die der Garbage Collector benötigt hat, um die als inaktiv eingestuften Objekte aufzuräumen.</li>
+    <li><tt>gc_frame</tt> - Dies ist ein Zähler, der jedes Mal erhöht wird, wenn ein Garbage Collection-Durchgang stattfindet. Wenn die Garbage Collection deaktiviert ist, wird er nicht erhöht.</li>
+    <li><tt>generation_collected</tt> - dies ist der Index der Generation, die zuletzt gesammelt wurde. 0 ist die jüngste Generation und 3 ist die aktuell älteste.</li>
+    <li><tt>num_generations</tt> - dies ist die Gesamtzahl der Garbage-Collection-Generationen.</li>
+    <li><tt>num_objects_in_generation</tt> - dies ist ein Array (der Größe <tt>num_generations</tt>), das die Anzahl der Objekte in jeder Generation enthält.</li>
+  </ul>
+  <p class="note"><b>HINWEIS</b>: Auf der HTML5-Zielplattform wird die Garbage Collection von der JavaScript-Engine gehandhabt und daher geben die Mitgliedsvariablen in der obigen Struktur alle 0 zurück, wenn diese Funktion auf dieser Plattform verwendet wird.</p>
+  <p>Wenn Sie diese Funktion verwenden, beachten Sie bitte, dass die für die Objekte angezeigten Informationen <em>erst dann aktualisiert werden, wenn die Verarbeitung einer vollständigen Generation abgeschlossen ist</em>, was je nach Einstellung der Frame-Time mehrere Frames dauern kann (siehe <a href="gc_target_frame_time.htm">hier</a> für weitere Informationen zur Frame-Time).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gc_get_stats();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (global.debug == true)<br> {
+    <br> var _s = gc_get_stats();<br> var _t = _s.traversal_time;<br> var _c = _s.collection_time;<br> show_debug_message(&quot;Traversal time = &quot; + string(_t))<br> show_debug_message(&quot;Collection time = &quot; + string(_c))<br> }
+  </p>
+  <p>Der obige Code prüft eine globale Variable und wenn sie <tt>wahr</tt> ist, holt er sich Informationen vom Garabge-Kollektor und gibt sie als Debug-Meldungen auf der Konsole aus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Garbage_Collection.htm">Müllabfuhr</a></div>
+        <div style="float:right">Weiter: <a href="gc_enable.htm">gc_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gc_get_stats
+-->
+  <!-- TAGS
+gc_get_stats
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_torque</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_torque" />
+  <meta name="rh-index-keywords" content="physics_apply_torque" />
+  <meta name="search-keywords" content="physics_apply_torque" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_torque</h1>
+  <p>Wenn wir von Drehmoment sprechen, meinen wir in der Regel die Tendenz einer Kraft oder eines Impulses, eine Instanz um ihren Massenschwerpunkt zu drehen, aber in <span class="notranslate">GameMaker Studio 2</span> können Sie auch ein Drehmoment unabhängig von einer Instanz anwenden, wodurch sie sich
+    in eine bestimmte Richtung drehen. Wie viel Drehmoment Sie aufbringen, um die gewünschte Drehung zu erreichen, hängt von der Größe und der Dichte des Fixtures ab, das Sie Ihrer Instanz zuweisen, da diese beiden Eigenschaften zur Definition der Masse beitragen, die wiederum die Trägheit definiert, die sich auf das
+    Drehmoment! Als Faustregel gilt: Wenn eine Instanz eine große Trägheit hat, benötigen Sie ein großes Drehmoment, um sie in Drehung zu versetzen. Es sollte auch beachtet werden, dass andere Faktoren wie Schwerkraft und Kollisionen das Drehmoment einer Instanz ebenfalls beeinflussen können.
+    Hier ist ein Bild zur Erläuterung:</p>
+  <p><img alt="Appply physics torque illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_torque_image.png">Wie Sie sehen können, hängt die Höhe des Drehmoments, das Sie benötigen, um das Objekt zu drehen, von der
+    zugrundeliegenden Masse und der Trägheit ab, die es aufweist. Dies alles wird von <span class="notranslate">GameMaker Studio 2</span> für Sie berechnet, basierend auf der Größe und Dichte des Fixtures, das der Instanz beim Erstellen zugewiesen wird. Beachten Sie auch, dass für eine Drehung gegen den Uhrzeigersinn der
+    Wert negativ sein sollte.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_apply_torque(Drehmoment)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Drehmoment</td>
+        <td>Das aufzubringende Drehmoment (in Newtonmeter)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check(vk_left)<br> {<br> physics_apply_torque(-100);<br> }</p>
+  <p>Der obige Code dreht die Instanz gegen den Uhrzeigersinn (nach links) mit einem Drehmoment von 100Nm, wenn die linke Pfeiltaste gedrückt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Forces.htm">Kräfte</a></div>
+        <div style="float:right">Weiter: physics_apply_angular_impulse</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_torque
+-->
+  <!-- TAGS
+physics_apply_torque
+-->
+</body>
+</html>

@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Typ-Tabellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that shows the type tables for different arithmetic operations" />
+  <meta name="rh-index-keywords" content="Type Tables" />
+  <meta name="search-keywords" content="Type Tables,typecast arithmetic,arithmetic tables" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Typ-Tabellen</h1>
+  <p>Diese Seite zeigt die verschiedenen Ergebnisse, die Sie erhalten können, wenn Sie die Arithmetik auf die verschiedenen verfügbaren <a href="../GameMaker_Language/GML_Overview/Data_Types.htm">Datentypen</a> anwenden. Die Tabellen folgen alle dem gleichen Format, wobei die Spalten die linke Seite einer
+    Die Spalten zeigen die <em>linke</em> Seite einer arithmetischen Operation und die Zeilen zeigen die <em>rechte</em> Seite, z. B:</p>
+  <p class="code">&lt;LHS&gt; + &lt;RHS&gt; = &lt;Ergebnis&gt;</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <td style="color: #FFFFFF"><span class="inline">Add (+)</span></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020;">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td>Zeichenfolge</td>
+        <td>Zeichenfolge</td>
+        <td>Zeichenfolge</td>
+        <td>Zeichenfolge</td>
+        <td>Zeichenfolge</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int32</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int64</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <td style="color: #FFFFFF"><span class="inline">Subtract (-)</span></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int32</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int64</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <td style="color: #FFFFFF"><span class="inline">Multiply (*)</span></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td>Zeichenfolge</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Zeichenfolge</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int32</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int64</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <td style="color: #FFFFFF"><span class="inline">Divide (/)</span></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int32</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int64</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <td style="color: #FFFFFF"><span class="inline">Divide (div)</span></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td style="">Real</td>
+        <td style="">Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td style="">Real</td>
+        <td style="">Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td style=""><span style="color:#202020">Fehler </span></td>
+        <td style=""><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td style="">Real</td>
+        <td style="">Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int32</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td style="">Real</td>
+        <td style="">Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int64</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td style=""><span style="color:#202020">Fehler </span></td>
+        <td style=""><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td style=""><span style="color:#202020">Fehler </span></td>
+        <td style=""><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+        <td style=""><span style="color:#202020">Fehler </span></td>
+        <td style=""><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <td style="color: #FFFFFF"><span class="inline">Mod (%)</span></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td style="background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Real</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Bool</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Zeichenfolge</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int32</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int32</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Int64</strong></td>
+        <td>Real</td>
+        <td>Real</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td>Int64</td>
+        <td>Int64</td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Ptr</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>undefiniert</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+      <tr>
+        <td style="color: #FFFFFF;background-color: rgba(0, 159, 97, 0.50)"><strong>Array</strong></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+        <td><span style="color:#202020">Fehler </span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Additional_Information.htm">Zusätzliche Informationen</a></div>
+        <div style="float:right">Nächste: <a href="Vectors.htm">Vektoren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Type Tables
+Typecast Arithmetic
+-->
+  <!-- TAGS
+type_tables
+-->
+</body>
+</html>

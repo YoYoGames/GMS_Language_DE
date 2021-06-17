@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_direction</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_direction" />
+  <meta name="rh-index-keywords" content="part_type_direction" />
+  <meta name="search-keywords" content="part_type_direction" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_direction</h1>
+  <p>Diese Funktion wird verwendet, um die Richtung des Partikels zu bestimmen, wenn er erstellt wird, und kann auch verwendet werden, um den Partikel dazu zu bringen, seine Richtung während seiner Lebensdauer zu erhöhen oder zu verringern. Die minimalen und maximalen Richtungswerte sind standardmäßig auf 0 eingestellt, was bedeutet, dass
+    Das bedeutet, dass sich der Partikel ohne Variation nach rechts bewegt. Diese Werte können jedoch geändert werden, um die Bewegungsrichtung entsprechend den Standardrichtungen von <span class="notranslate">GameMaker Studio 2</span> zu begrenzen: 0 ist rechts, 90 ist oben, 180 ist links und 270 ist unten.
+    Wenn Sie sie auf denselben Wert setzen, bewegen sich die Partikel nur in eine Richtung.</p>
+  <p>Sie können auch einen Inkrementwert einstellen, der über die Lebensdauer einen Gradbetrag zur Richtung addiert (wenn eine positive Zahl) oder subtrahiert (wenn eine negative Zahl). Dieser Wert kann ein Minimum von (+/-) 0,01 sein.</p>
+  <p>Schließlich können Sie den &quot;Wiggle&quot;-Faktor einstellen. Dies ist ein Wert, der bei jedem Schritt der Partikellebensdauer zufällig zur Richtung addiert oder subtrahiert wird. Offensichtlich sind größere Werte stärker ausgeprägt als kleinere, und dieser Wert kann sogar
+    ein negativer Wert sein, wobei der maximale Bereich zwischen -20 und 20 liegt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_type_direction(ind, dir_min, dir_max, dir_incr, dir_wiggle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu ändernden Partikeltyps.</td>
+      </tr>
+      <tr>
+        <td>dir_min</td>
+        <td>Die minimale Richtung, aus der der Partikel starten kann.</td>
+      </tr>
+      <tr>
+        <td>dir_max</td>
+        <td>Die maximale Richtung, aus der der Partikel starten kann.</td>
+      </tr>
+      <tr>
+        <td>dir_incr</td>
+        <td>Wie stark die Partikelrichtung pro Schritt zu- oder abnehmen soll.</td>
+      </tr>
+      <tr>
+        <td>dir_wiggle</td>
+        <td>Wie viel soll pro Schritt zufällig zur Richtung des Partikels addiert oder subtrahiert werden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">part_type_shape(particle1, pt_shape_pixel);<br> part_type_size(particle1, 0.19, 0.79, 0.01, 0);<br> part_type_scale(particle1, 5, 5);<br> part_type_colour3(particle1, 32768, 8454016, 8454016);<br> part_type_alpha3(particle1, 0, 0.80, 0);<br> part_type_speed(particle1,
+    8, 10, -0.50, 1);<br> part_type_direction(particle1, 0, 359, 1, 20);<br> part_type_gravity(particle1, 0, 270);<br> part_type_orientation(particle1, 0, 359, 0, 0, 1);<br> part_type_blend(particle1, 1);<br> part_type_life(particle1, 10, 50);</p>
+  <p>Der obige Code stellt verschiedene Partikelwerte ein, einschließlich der Richtung, die ein Zufallswert zwischen 0 und 359 Grad ist. Es wird auch um 1 Grad jeden Schritt und hat eine zufällige Menge hinzugefügt, um es von irgendwo zwischen 0 und 20 jeden Schritt zu gehen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Types.htm">Partikel-Typen</a></div>
+        <div style="float:right">Weiter: <a href="part_type_gravity.htm">part_type_gravity</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_direction
+-->
+  <!-- TAGS
+part_type_direction
+-->
+</body>
+</html>

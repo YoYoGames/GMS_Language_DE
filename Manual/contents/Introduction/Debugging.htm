@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Fehlersuche</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Debugging Projects In GMS2" />
+  <meta name="rh-index-keywords" content="Debugging" />
+  <meta name="search-keywords" content="debugging,error reporting,debug mode,performance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Fehlersuche</h1>
+  <p>Bei der Programmierung Ihres Spiels, ob mit der <span class="notranslate">GameMaker Language</span><span class="notranslate">(GML</span>) oder <span class="notranslate">Drag and Drop™</span><span class="notranslate">(DnD™</span>), können sehr leicht Fehler gemacht werden - die Verwendung der falschen Variablen, die Übergabe der falschen Argumente oder die Verwendung der falschen Funktionen sind nur einige der häufigsten
+    Fehler, die wir alle machen - und diese Fehler werden nicht immer von der <a class="glossterm" data-glossterm="Syntax" href="#">Syntaxprüfung</a> erkannt, die im Skript-/Aktionseditor enthalten ist. Das bedeutet, dass diese Fehler erst sichtbar werden
+    Das bedeutet, dass diese Fehler erst sichtbar werden, wenn Sie Ihr Spiel tatsächlich ausführen oder kompilieren, und selbst dann kann es manchmal schwierig sein, genau zu wissen, was falsch läuft. Es kann daher von entscheidender Bedeutung sein, zu wissen, wie sich Ihr Spiel auf dem gewählten Gerät verhält, sowie zu sehen, welche Instanzen
+    im Raum sind, welche globalen Variablen erstellt wurden und eine ganze Reihe anderer Details. Das Überprüfen dieser Dinge wird als &quot;Debugging<strong>Ihres Codes&quot;</strong> bezeichnet, und alle Fehler oder Probleme, die Sie finden, werden &quot;Bugs&quot; genannt.</p>
+  <p>Nun können Sie viele dieser Dinge selbst überprüfen, indem Sie sogenannten &quot;Debug-Code&quot; in Ihre Spiele einbauen, um die gewünschten Informationen auf dem Bildschirm anzuzeigen, oder Sie können es so einrichten, dass es Meldungen anzeigt, wenn ein Fehler auftritt, aber das ist oft eine
+    Aber das ist oft ein großer Aufwand, und wenn Sie nicht sicher sind, wo das Problem überhaupt liegt, kann es eine zeitraubende Angelegenheit von Versuch und Irrtum sein, Ihren Fehler aufzuspüren. Dafür hat <span class="notranslate">GameMaker Studio 2</span> einen speziellen Testmodus namens <strong>Debug-Modus</strong>, der das <strong>Debug-Modul</strong> startet, und es gibt auch ein umfassendes <strong>Fehlerberichtssystem</strong>, das beim <a class="glossterm" data-glossterm="Kompilieren" href="#">Kompilieren</a> Meldungen anzeigt, die Ihnen helfen, Probleme mit Ihrem Spiel aufzuspüren
+    Probleme mit Ihrem Spiel zu finden.</p>
+  <p>Die folgenden Abschnitte behandeln die verschiedenen Möglichkeiten, wie Sie Ihr Spiel debuggen können:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down6" href="#">Fehlerberichterstattung</a></p>
+  <div class="droptext" data-targetname="drop_down6">
+    <p class="dropspot">Wenn während des Kompilierens und der Ausführung eines Projekts ein Fehler auftritt, wird dies mit einer Meldung im <a href="The_Output_Window.htm">Ausgabefenster für Kompilierfehler</a> gemeldet, ähnlich wie in der folgenden Abbildung dargestellt:</p>
+    <p class="dropspot"><img alt="Compile Errors" class="center" src="../assets/Images/Introduction/QS_Debug_CompileError.png">Die meisten Compiler-Fehlermeldungen folgen der gleichen Gliederung, mit einer Meldung, die das Objekt angibt, in dem der Fehler aufgetreten ist, dann das Ereignis zusammen mit der
+      der Zeilennummer, und schließlich eine kurze Beschreibung des Fehlers selbst. Diese Art von Informationen, die die Fehlermeldung liefert, ist sehr wichtig, da sie Syntax- und Sprachfehler erkennt und meldet, die zum Absturz des fertigen Spiels führen.
+      fertigen Spiel zum Absturz bringen, aber sie meldet keine subtileren Fehler und gibt auch kein Feedback zur Leistung. Für diese Art von Dingen sollten Sie den Debug-Modus verwenden (siehe unten).</p>
+    <p class="dropspot">Neben diesen Kompilierfehlern können Sie auch Syntaxfehler erhalten. Diese werden erkannt, wenn Sie Ihre <span class="notranslate">DnD™-Aktionen</span>oder Ihren Code hinzufügen, und werden im <a href="The_Output_Window.htm">Ausgabefenster "Syntaxfehler</a>" angezeigt, ähnlich dem unten gezeigten Bild:</p>
+    <p class="dropspot"><img alt="Syntax Errors" class="center" src="../assets/Images/Introduction/QS_Debug_SyntaxError.png">Wie bei den Compiler-Fehlern werden im Fenster für Syntaxfehler das Objekt, das Ereignis und die spezifischen Zeilen angezeigt, die das Problem verursachen,
+      und wird oft mit einer kurzen Erklärung angezeigt, was der Fehler ist.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">Debug-Modus</a></p>
+  <div class="droptext" data-targetname="drop_down7">
+    <p class="dropspot">Wenn Sie die Dinge genauer überprüfen möchten, können Sie das Spiel im <strong>Debug-Modus</strong> ausführen, indem Sie auf die Schaltfläche "Debug Run" <img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png"> klicken. Wenn Sie dies tun, wird das <strong>Debug-Modul</strong> zusammen mit Ihrem Spiel geöffnet. Mit diesem Modul können Sie überwachen, wie alles in Ihrem Spiel funktioniert, von der globalen Leistung bis hin zu den Werten einzelner Variablen in einzelnen Instanzen. Weitere Informationen finden Sie unter
+      über das Debug-Modul und seine Möglichkeiten und wie Sie es verwenden können, finden Sie auf der folgenden Seite:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../IDE_Tools/The_Debugger.htm">Der Debugger</a></li>
+    </ul>
+    <p class="dropspot">Beachten Sie, dass Sie bei Verwendung des Debug-Moduls auch <strong>Haltepunkte </strong>zu Ihrem Code oder <span class="notranslate">DnD™</span>hinzufügen können. Ein Haltepunkt ist ein Punkt in der Spielschleife, an dem das Debug-Modul anhalten und Sie zeilenweise durch den eigentlichen Spielcode gehen lassen soll.
+      Zeile für Zeile. Sie können Haltepunkte mit der Taste &quot;F9&quot; hinzufügen, und sie werden im <a href="The_Output_Window.htm">Ausgabefenster</a> angezeigt <a href="The_Output_Window.htm">, wo Sie</a> sie nach Bedarf aktivieren/deaktivieren können.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down8" href="#">Zusätzliche Tools</a></p>
+  <div class="droptext" data-targetname="drop_down8">
+    <p class="dropspot">Als zusätzliches Werkzeug zum Debuggen von kompilierten Spielen gibt es bestimmte <strong>Befehlszeilenparameter</strong>, die verwendet werden können, wenn Sie das endgültige Spielpaket unter <span class="notranslate">Windows</span> ausführen. Informationen dazu, wie dies funktioniert, finden Sie <a href="../Settings/Command_Line_Parameters.htm">hier</a>.</p>
+    <p class="dropspot">Sie können auch ein <strong>Debug-Overlay</strong> generieren, wenn Sie Ihr Spiel testen, das zusätzliche Debug-Informationen über die Leistung Ihres Spiels anzeigt, während es ausgeführt wird, und Sie können auch <strong>Debug-Meldungen</strong> an die
+      die Kompilierkonsole ausgeben, wo Sie Ihren eigenen Text eingeben können, um das Verhalten Ihrer Spiele zu debuggen. Weitere Informationen finden Sie auf den folgenden Seiten: <span class="inline"></span></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><span class="inline">show_debug_overlay</span></a></li>
+      <li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message</span></a></li>
+      <li class="dropspot"><span class="inline"><a href="../GameMaker_Language/GML_Reference/Debugging/debug_event.htm">debug_event</a></span></li>
+    </ul>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p>Es gibt auch eine Reihe von Voreinstellungen, die sich auf das Debuggen und die Verwendung der Debug-Tools beziehen. Weitere Informationen finden Sie auf der folgenden Seite:</p>
+  <ul class="colour">
+    <li><a href="Debugging.htm">Debugging-Voreinstellungen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Introduction_To_GameMaker_Studio_2.htm">Einführung in <span class="notranslate">GameMaker Studio 2</span></a></div>
+        <div style="float:right">Weiter: <a href="The_Output_Window.htm">Das Ausgabefenster</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Debugging
+Debug Mode
+Command Line Parameters
+-->
+  <!-- TAGS
+debugging
+-->
+
+</body></html>

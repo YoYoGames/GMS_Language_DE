@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_roundrect_colour_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_roundrect_colour_ext" />
+  <meta name="rh-index-keywords" content="draw_roundrect_colour_ext" />
+  <meta name="search-keywords" content="draw_roundrect_colour_ext,draw_roundrect_color_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_roundrect_colour_ext</h1>
+  <p>Mit dieser Funktion können Sie entweder einen Umriss eines abgerundeten Rechtecks oder ein gefülltes abgerundetes Rechteck zeichnen, wobei die (x1,y1)-Position die obere linke Ecke und die (x2,y2)-Position die untere rechte Ecke ist. Wenn das Rechteck gefüllt ist, dann werden die Farb
+    Argumente verwendet, um einen Farbverlauf von der Mitte zu den Kanten zu erzeugen, wobei Farbe 1 die Farbe der Mitte und Farbe 2 die Farbe der Kanten ist. Sie müssen auch Radiuswerte für die x- und y-Achse (in Pixeln) angeben, und die Ecken werden
+    um diese Beträge abgerundet. Wie genau das Zeichnen der Ecken ist, können Sie mit der Funktion <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>. Bitte beachten Sie, dass das zu zeichnende Rechteck möglicherweise unterschiedliche Werte (+/-1
+    auf der x-, y-Achse oder Breite bzw. Höhe) benötigen kann, um mit den gewünschten Abmessungen gezeichnet zu werden, da es auf den verschiedenen unterstützten Plattformen Unterschiede gibt.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie eine Form mit einem <span class="notranslate">Shader</span> zeichnen wollen, sollten Sie wissen, dass die meisten <span class="notranslate">Shader</span> die folgenden Eingaben erwarten: Scheitelpunkt, Textur, Farbe. Wenn Sie diese Funktion verwenden, werden jedoch nur Scheitelpunkt- und Farbdaten übergeben, so dass der
+   <span class="notranslate">Shader</span> möglicherweise nichts zeichnen (oder etwas zeichnen, aber nicht korrekt). Wenn Sie Formen auf diese Weise zeichnen müssen, sollte der <span class="notranslate">Shader</span> entsprechend angepasst werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_roundrect_colour_ext(x1, y1, x2, y2, xrad, yrad, col1, col2, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate der linken Seite des abgerundeten Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate der Oberkante des abgerundeten Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate der rechten Seite des abgerundeten Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate der Unterseite des abgerundeten Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>xrad</td>
+        <td>Der Radius der Kurve entlang der x-Achse von den Ecken des Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>yrad</td>
+        <td>Der Radius der Kurve entlang der y-Achse von den Ecken des Rechtecks.</td>
+      </tr>
+      <tr>
+        <td>col1</td>
+        <td>Die mittlere Farbe.</td>
+      </tr>
+      <tr>
+        <td>col2</td>
+        <td>Die Farbe der Außenkante.</td>
+      </tr>
+      <tr>
+        <td>Umriss</td>
+        <td>Ob das Rechteck ein Umriss (true) oder ausgefüllt (false) ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var dist = point_distance(x, y, mouse_x, mouse_y) / 10;<br> var col = make_colour_hsv(clamp(dist, 0, 255), 255, 255);<br> draw_roundrect_colour_ext(x - 50, y - 50, x + 50, y + 50, dist, dist, col, c_white, 0);</p>
+  <p>Dies würde ein ausgefülltes Quadrat mit abgerundeten Ecken zeichnen, dessen Radius durch den Abstand der zeichnenden Instanz zur Maus definiert ist. Dieser Wert wird auch für die Berechnung der mittleren Überblendfarbe verwendet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Basic_Forms.htm">Grundformulare</a></div>
+        <div style="float:right">Weiter: <a href="draw_triangle.htm">draw_triangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_roundrect_colour_ext
+draw_roundrect_color_ext
+-->
+  <!-- TAGS
+draw_roundrect_colour_ext
+-->
+</body>
+</html>

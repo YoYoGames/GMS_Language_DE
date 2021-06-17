@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_get_tags</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_get_tags" />
+  <meta name="rh-index-keywords" content="asset_get_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+  <meta name="search-keywords" content="asset_get_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_get_tags</h1>
+  <p>Mit dieser Funktion können Sie alle einem Asset zugeordneten Tags aus dem Asset-Browser abrufen. Sie geben entweder den Asset-Namen (als Zeichenkette) oder seinen Asset-Index an, und die Funktion gibt ein <a href="../../../GML_Overview/Arrays.htm">Array</a> von Tags für dieses Asset zurück. Wenn keine Tags gefunden werden oder ein Fehler auftritt (d. h.: die angegebene Namenszeichenkette existiert nicht), ist das zurückgegebene Array leer. Wenn Sie einen Asset-Indexwert angeben, müssen Sie das optionale Asset-Typ-Argument
+    (eine Konstante) angeben, da Kühlstellen unterschiedlichen Typs denselben Index haben können, auch wenn sie nicht denselben Namen haben können. Die verfügbaren Kühlstellentypen sind in der folgenden Tabelle aufgeführt:</p>
+  <p> </p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>asset_object</td>
+        <td>Der angegebene Name bezieht sich auf ein <a href="../../../../The_Asset_Editors/Objects.htm">Objekt</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sprite</td>
+        <td>Der angegebene Name bezieht sich auf ein <a href="../../../../The_Asset_Editors/Sprites.htm">Sprite</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_klang</td>
+        <td>Der Vorname bezieht sich auf einen <a href="../../../../The_Asset_Editors/Sounds.htm">Klang</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_raum</td>
+        <td>Der angegebene Name bezieht sich auf einen <a href="../../../../The_Asset_Editors/Rooms.htm">Raum</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_tiles</td>
+        <td>Der angegebene Name bezieht sich auf einen <a href="../../../../The_Asset_Editors/Tile_Sets.htm">Kachelsatz</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_pfad</td>
+        <td>Der angegebene Name verweist auf einen <a href="../../../../The_Asset_Editors/Paths.htm">Pfad</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_script</td>
+        <td>Der angegebene Name verweist auf ein <a href="../../../../The_Asset_Editors/Scripts.htm">Skript</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_font</td>
+        <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Fonts.htm">Schriftart</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_Zeitleiste</td>
+        <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Timelines.htm">Zeitlinie</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_shader</td>
+        <td>Der angegebene Name bezieht sich auf einen <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">Shader</span></a>.</td>
+      </tr>
+      <tr>
+        <td>asset_animationcurve</td>
+        <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Animation_Curves.htm">Animationskurve</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sequenz</td>
+        <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Sequences.htm">Sequenz</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">asset_get_tags(name_oder_index, [asset_type]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>name_oder_index</td>
+        <td>Der Name des Assets (eine Zeichenfolge) oder sein Indexwert (eine ganze Zahl).</td>
+      </tr>
+      <tr>
+        <td>[asset_type]</td>
+        <td>OPTIONAL! Der Typ des Assets, für den die Tags abgerufen werden sollen, wird nur verwendet, wenn ein Index für das erste Argument angegeben wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">my_tags = asset_get_tags(object_get_name(object_index));</p>
+  <p>Der obige Code ruft alle Tags ab, die dem Objekt zugewiesen sind, von dem die Instanz, die den Code ausführt, erstellt wurde.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Assets_And_Tags.htm">Assets und Tags</a></div>
+        <div style="float:right">Weiter: <a href="asset_add_tags.htm">asset_add_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_get_tags
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+-->
+  <!-- TAGS
+asset_get_tags
+-->
+</body>
+</html>

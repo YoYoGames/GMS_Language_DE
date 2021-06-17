@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Gesten-Ereignisse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the gesture events." />
+  <meta name="rh-index-keywords" content="Objects - Gesture Events,event_data" />
+  <meta name="search-keywords" content="flick,pan,rotate,gesture,gesture events,tap" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die Gestenereignisse</h1>
+  <p><img alt="The Gesture Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Gesture.png" /></p>
+  <p>Ereignisse in der Kategorie &quot;Gesten-Ereignis&quot; werden immer dann ausgelöst, wenn <span class="notranslate">GameMaker Studio 2</span> eine &quot;Geste&quot; der Maus oder ein Touchscreen-Ereignis erkennt (obwohl diese Gesten-Ereignisse speziell für den mobilen Einsatz konzipiert sind, können sie auch auf anderen
+    Targets zur Erkennung der Maus verwendet werden, obwohl sie in diesem Fall keine Mehrfachberührungen erkennen). Das Ziel des Gestensystems ist es, zu versuchen, Eingaben auf einer höheren Ebene als die direkten Maus\Berührungslesefunktionen zu erkennen, und ist so konzipiert, dass es die
+    Implementierung von häufig verwendeten Eingaben auf berührungsbasierten Geräten zu vereinfachen.</p>
+  <p class="note">HINWEIS: Diese Ereignisse werden auf der HTML5-Plattform nicht ausgelöst, da Multi-Touch mit diesen Ereignissen auf dieser Plattform nicht unterstützt wird. Wenn Sie nach Gesten auf diesem Ziel suchen, sollten Sie die <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/Device_Input.htm">Gerätefunktionen</a> verwenden.</p>
+  <p>Sie können wählen, ob Sie entweder <strong>Instanzgesten </strong>oder <strong>globale </strong>Gesten erkennen möchten, wobei Instanzgestenereignisse nur ausgelöst werden, wenn die erste Berührung/Klick auf eine Instanz innerhalb des Raums erfolgt. Beachten Sie, dass die Instanz
+    eine gültige Kollisionsmaske haben muss (weitere Informationen finden Sie in den Abschnitten <a href="../Sprites.htm">Der Sprite-Editor - Kollisionsmaske</a> und <a href="../Objects.htm">Der Objekt-Editor - Kollisionsmaske</a> ), damit dieses Ereignis ausgelöst wird. Globale Ereignisse hingegen
+    werden jedoch durch Berühren/Klicken an beliebiger Stelle im Spielraum ausgelöst, und zwar für alle Instanzen, die das Ereignis haben.</p>
+  <p>Wenn eine Geste erkannt wird, löst sie eines oder mehrere der verfügbaren Ereignisse aus, und das ausgelöste Ereignis hängt von der Art der erkannten Geste ab. In jedem Fall wird jedoch eine <a href="../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> 
+    generiert und in der eingebauten Variable <span class="inline">event_data</span> gespeichert. Die verfügbaren Tasten hängen von der Art des Ereignisses ab und werden in jedem der folgenden Unterabschnitte gezeigt.</p>
+  <p class="note"><strong>HINWEIS</strong>: Die Variable <span class="inline">event_data</span> ist nur in diesen Ereignissen gültig, da die DS-Map, auf die sie zeigt, zu Beginn des Ereignisses automatisch erstellt und am Ende wieder zerstört wird, wobei diese Variable
+    zu allen anderen Zeiten auf den Wert -1 zurückgesetzt wird.</p>
+  <p>Es ist erwähnenswert, dass, wenn Sie mehrere Instanzen unter der Position haben, die berührt wird, und diese alle ein Gestenereignis haben, dann werden <em>alle </em>von ihnen ausgelöst, nicht nur die &quot;oberste&quot; Instanz. Beachten Sie auch, dass bei der Verwendung mehrerer Kameraansichten
+    und dem Ziehen einer Instanz, die zurückgegebenen Werte auf der Ansicht basieren, in der Sie sich befanden, als die erste Berührung/Klick empfangen wurde - dies gilt für alle nachfolgenden Ereignisse in dieser Geste für diese Instanz. Wenn Sie also eine Instanz in einer Ansicht berühren und ziehen
+    Wenn Sie also eine Instanz in einer Ansicht berühren und ziehen und dann die Berührung in einer anderen Ansicht loslassen, werden Werte relativ zu der ursprünglichen Ansicht zurückgegeben, in der die Geste zuerst erkannt wurde.</p>
+  <p> </p>
+  <p><img height="20" src="../../assets/Images/Icons/Icon_Tap.png" style="margin-left:0px" width="20">  <img src="../../assets/Images/Icons/Icon_Drag.png">  <img src="../../assets/Images/Icons/Icon_Flick.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Tippen, Ziehen und Schieben von Ereignissen</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Die Ereignisse &quot;Tippen&quot;, &quot;Ziehen&quot; und &quot;Flick&quot; basieren alle auf einer einzelnen Berührung oder einem Mausklick auf dem Bildschirm und die <span class="inline">event_data</span> DS Map enthält die folgenden Tasten:</p>
+    <ul class="dropspotlist">
+    </ul>
+    <table>
+      <tbody>
+        <tr>
+          <th>Taste</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">gesture</span>&quot;</td>
+          <td><br> Dies ist ein ID-Wert, der für die Geste, die gerade ausgeführt wird, <i>eindeutig</i> ist. Damit können Sie die verschiedenen Teile von mehrteiligen Gesten (z. B. Ziehen Start, Ziehen und Ziehen Ende) miteinander verknüpfen.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">touch</span>&quot;</td>
+          <td><br> Dies ist der Index des Fingers, der für die Geste verwendet wird. Im Allgemeinen beginnt dieser Wert bei 0 und erhöht sich für jeden Finger, der gedrückt gehalten wird, und wird dann wieder auf 0 zurückgesetzt, wenn alle Finger entfernt werden.
+            Wenn der Benutzer jedoch den Bildschirm an einer anderen Stelle berührt, wenn dieses Ereignis durch eine andere Berührung ausgelöst wird, dann ist der Wert größer als 0.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">posX</span>&quot;</td>
+          <td><br> Dies ist die raumbezogene X-Position des Touches.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">posY</span>&quot;</td>
+          <td><br> Dies ist die raumbezogene Y-Position des Touches.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawposX</span>&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Fensterbereich-X-Position der Berührung (entspricht der Ermittlung der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawposY</span>&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Y-Position der Berührung im Fensterbereich (entspricht der Mausposition, die mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guiposX</span>&quot;</td>
+          <td><br> Dies ist die X-Position des Touches im Gui-Raum (entspricht der Abfrage der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guiposY</span>&quot;</td>
+          <td><br> Dies ist die Y-Position des Touches im Gui-Raum (entspricht der Abfrage der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">diffX</span>&quot;</td>
+          <td><br> Dies ist die raumbezogene X-Differenz zwischen der Position des aktuellen Touches und der Position des letzten Touches in dieser Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">diffY</span>&quot;</td>
+          <td><br> Dies ist die raumbezogene Y-Differenz zwischen der Position des aktuellen Touches und der Position des letzten Touches in dieser Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawdiffX</span>&quot;</td>
+          <td><br> Dies ist die rohe X-Differenz zwischen der Position der aktuellen Berührung und der Position der letzten Berührung in dieser Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawdiffY</span>&quot;</td>
+          <td><br> Dies ist die rohe Y-Differenz zwischen der Position der aktuellen Berührung und der Position der letzten Berührung in dieser Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guidiffX</span>&quot;</td>
+          <td><br> Dies ist die Gui-Space-X-Differenz zwischen der Position der aktuellen Berührung und der Position der letzten Berührung in dieser Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guidiffY</span>&quot;</td>
+          <td><br> Dies ist die Gui-Space-Y-Differenz zwischen der Position der aktuellen Berührung und der Position der letzten Berührung in dieser Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">viewstartposX</span>&quot;</td>
+          <td><br> Dies ist die Raum-X-Startposition der aktuellen Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">viewstartposY</span>&quot;</td>
+          <td><br> Dies ist die Raum-Y-Startposition der aktuellen Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawstartposX</span>&quot;</td>
+          <td><br> Dies ist die rohe X-Startposition der aktuellen Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">rawstartposY</span>&quot;</td>
+          <td><br> Dies ist die rohe Y-Startposition der aktuellen Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guistartposX</span>&quot;</td>
+          <td><br> Dies ist die Gui-Space-X-Startposition der aktuellen Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">guistartposY</span>&quot;</td>
+          <td><br> Dies ist die Gui-Space-Y-Startposition der aktuellen Geste.</td>
+        </tr>
+        <tr>
+          <td>&quot;<span class="inline">isflick</span>&quot;</td>
+          <td><b><br></b>
+			<b>Nur im Ereignis "Ziehen Ende" verfügbar</b>. Dies wird auf 1 gesetzt, wenn das Ende des Ziehens als Flick erkannt wird, was bedeutet, dass Sie kein separates <b>Flick-Ereignis</b> benötigen <b>, wenn</b> Sie das Ziehen ohnehin behandeln.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Tippen Sie auf .</a></p>
+    <div class="droptext" data-targetname="drop-down11">
+      <p class="dropspot">Das Ereignis "Antippen" wird ausgelöst, wenn eine Instanz berührt oder angeklickt wurde oder - wenn es ein globales Ereignis ist - wenn das Spiel eine Berührung oder einen Klick irgendwo im Raum registriert. Ein Antippen wird als schnelles Berühren und Loslassen betrachtet, und wenn die Berührung zu lange dauert
+        Wenn die Berührung zu lange dauert, wird sie als Ziehen betrachtet (und löst das Ereignis "Ziehen" anstelle des Ereignisses "Tippen" aus). Dieses Ereignis erzeugt eine <span class="inline">event_data</span> DS-Map, die Sie dann verwenden können, um Informationen über das Ereignis zu erhalten. Zum Beispiel:</p>
+      <h4>Ereignis erstellen</h4>
+      <p class="code">x_goto = x;<br> y_goto = y;</p>
+      <h4>Tap-Ereignis</h4>
+      <p class="code">x_goto = event_data[? &quot;posX&quot;];<br> y_goto = event_data[? &quot;posY&quot;];</p>
+      <h4>Schritt Ereignis</h4>
+      <p class="code">var _pd = point_distance(x, y, x_goto, y_goto);<br> move_towards_point(x_goto, y_goto, clamp(_pd, 0, 5);</p>
+      <p class="dropspot">Der obige Code erkennt ein Antippen des Bildschirms und ermittelt dann die Position des Antippens, um die Instanz an diese Position zu bewegen. Beachten Sie, dass Sie, wenn Sie eine längere oder kürzere Antipp-Erkennungszeit haben möchten, diese mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_time.htm"><span class="inline">gesture_drag_time()</span></a>.
+        Damit wird die Zeit zwischen der ersten Erkennung und dem Antippen als Ziehen eingestellt. Stellen Sie also einen höheren Wert ein, um die Antipperkennung länger zu machen, oder einen niedrigeren Wert, um sie kürzer zu machen (der Wert ist in Sekunden angegeben und standardmäßig 0,16).</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Doppeltippen</a></p>
+    <div class="droptext" data-targetname="drop-down6">
+      <p class="dropspot">Das Ereignis "Doppeltippen" wird ausgelöst, wenn eine Instanz zweimal kurz hintereinander berührt oder angeklickt wurde (oder - wenn es sich um ein globales Ereignis handelt - wenn das Spiel zwei schnelle Berührungen oder Klicks irgendwo im Raum registriert). Ein Doppeltap wird als zwei
+        Wenn jedoch eine der Berührungen zu lange dauert, wird sie als Ziehen betrachtet (und löst das Ereignis "Ziehen" anstelle des Ereignisses "Doppeltippen" aus). Dieses Ereignis erzeugt eine <span class="inline">event_data</span> DS
+        Karte, die Sie dann verwenden können, um Informationen über das Ereignis zu erhalten. Zum Beispiel:</p>
+      <h4>Ereignis erstellen</h4>
+      <p class="code">x_goto = x;<br> y_goto = y;</p>
+      <h4>Doppeltipp-Ereignis</h4>
+      <p class="code">instance_destroy();</p>
+      <p class="dropspot">Der obige Code erkennt einfach einen Doppeltap und zerstört dann die Instanz. Beachten Sie, dass Sie die Zeit zwischen den Antippen einstellen können, um einen Doppeltap auszulösen, indem Sie die Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_double_tap_time.htm"><span class="inline">gesture_double_tap_time()</span></a> (die
+        hat einen Standardwert - in Sekunden - von 0,16) und Sie können auch den Abstand für die Erkennung zwischen den Antippern mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_double_tap_distance.htm"><span class="inline">gesture_double_tap_distance()</span></a> (wenn
+        ein zweites Antippen außerhalb dieses Abstands erkannt wird, wird es als reguläres Antippereignis betrachtet).</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Start ziehen</a></p>
+    <div class="droptext" data-targetname="drop-down7">
+      <p class="dropspot">Das Ereignis "Start des Ziehens" wird ausgelöst, wenn der Benutzer eine Berührung oder einen Klick beibehält, ohne ihn loszulassen. Es wird einmal ausgelöst, wenn nach der ersten Berührung eine bestimmte Zeit verstrichen ist, die standardmäßig 0,16 Sekunden beträgt (Sie können diesen Wert jedoch mit der Funktion
+        anderen Wert in Sekunden mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_time.htm"><span class="inline">gesture_drag_time()</span></a>). Nachdem dieses Ereignis ausgelöst wurde, und solange
+        der Benutzer eine Berührung/Klick gedrückt hält, wird das Ereignis "Ziehen" bei jedem Schritt ausgelöst, bis die Berührung/Klick losgelassen wird. Dieses Ereignis generiert eine <span class="inline">event_data</span> DS-Map, die Sie dann verwenden können, um Informationen
+        über das Ereignis zu erhalten. Zum Beispiel:</p>
+      <h4>Ereignis erstellen</h4>
+      <p class="code">drag_offsetX = 0;<br> drag_offsetY = 0;</p>
+      <h4>Start-Ereignis ziehen</h4>
+      <p class="code">drag_offsetX = x - event_data[? &quot;posX&quot;];<br> drag_offsetY = y - event_data[? &quot;posY&quot;];</p>
+      <p class="dropspot">Der obige Code verwendet das Ereignis "Drag Start", um die Position der Berührung/des Klicks zu ermitteln und damit einen Offset-Wert für die x- und y-Achse zu setzen. Dieser kann dann beim Ziehen der Instanz verwendet werden, um sicherzustellen, dass sie nicht an die Position &quot;springt&quot;.
+        an der die Berührung/der Klick erkannt wurde (siehe das Ereignis "Ziehen" unten für eine Fortsetzung dieses Beispiels).</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Ziehen</a></p>
+    <div class="droptext" data-targetname="drop-down8">
+      <p class="dropspot">Das Ereignis "Ziehen" wird nach dem Ereignis "Ziehen Start" ausgelöst und wird für jeden Schritt ausgelöst, bei dem der Benutzer die Berührung/Klick auf die Instanz (oder den Bildschirm, wenn es sich um ein globales Ereignis handelt) beibehält und sich mehr als der definierte Schwellenwert für das Ziehen bewegt.
+        Dieser Abstand beträgt standardmäßig 0,1 Zoll, kann aber mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_drag_distance.htm"><span class="inline">gesture_drag_distance()</span></a>. Wenn es keine
+        Bewegung stattfindet oder die Bewegung unter dem definierten Schwellenwert liegt, wird das Ereignis nicht ausgelöst. Dieses Ereignis erzeugt eine <span class="inline">event_data</span> DS-Karte, die Sie dann verwenden können, um Informationen über das Ereignis zu erhalten. Zum Beispiel:</p>
+      <h4>Ereignis erstellen</h4>
+      <p class="code">drag_offsetX = 0;<br> drag_offsetY = 0;</p>
+      <h4>Start-Ereignis ziehen</h4>
+      <p class="code">drag_offsetX = x - event_data[? &quot;posX&quot;];<br> drag_offsetY = y - event_data[? &quot;posY&quot;];</p>
+      <h4>Ereignis "Ziehen</h4>
+      <p class="code">x = event_data[? &quot;posX&quot;] + drag_offsetX;<br> y = event_data[? &quot;posY&quot;] + drag_offsetY;</p>
+      <p class="dropspot">Der obige Beispielcode verwendet die im Ereignis "Ziehen Start" festgelegten Offset-Variablen, um die Instanz zu verschieben, wenn das Ereignis "Ziehen" ausgelöst wird.</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Schleppende</a></p>
+    <div class="droptext" data-targetname="drop-down9">
+      <p class="dropspot">Das Ereignis "Drag End" wird ausgelöst, wenn der Benutzer die Berührung/Klick auf die Instanz (oder den Bildschirm, wenn das Ereignis global ist) loslässt. Dieses Ereignis erzeugt eine <span class="inline">event_data</span> DS-Map, die Sie dann verwenden können, um Informationen über
+        das Ereignis zu erhalten, aber in diesem Ereignis wird die Karte einen zusätzlichen Schlüssel haben: &quot;<span class="inline">isflick</span>&quot;. Flick wird als die Distanz pro Sekunde berechnet, über die das Ziehen stattgefunden hat, und der Wert für den &quot;<span class="inline">isflick</span>&quot;
+        ist wahr, wenn er größer ist als der definierte Wert für den Abstand pro Sekunde, andernfalls ist er falsch. Beachten Sie, dass der Standardwert 2 Zoll pro Sekunde ist, aber Sie können ihn mit der Funktion "Flick" auf einen anderen Wert setzen <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_flick_speed.htm"><span class="inline">gesture_flick_speed()</span></a>.
+        Beachten Sie auch, dass es ein eigenes Flick-Ereignis gibt, das ebenfalls ausgelöst wird, wenn die Variable &quot;isflick&quot; wahr ist. Ein Beispiel für die Verwendung wäre:</p>
+      <h4>Ereignis erstellen</h4>
+      <p class="code">flickVelX = 0.0;<br> flickVelY = 0.0;</p>
+      <h4>Ziehen Ende Ereignis</h4>
+      <p class="code">isFlick = event_data[? &quot;isflick&quot;];<br> if (isFlick)<br> {<br> flickVelX = event_data[? &quot;diffX&quot;];<br> flickVelY = event_data[? &quot;diffY&quot;];<br> } <br> sonst
+        <br> {<br> flickVelX = 0;<br> flickVelY = 0;<br> }</p>
+      <h4>Schritt Ereignis</h4>
+      <p class="code">x += flickVelX;<br> y += flickVelY;<br> flickVelX *= 0.7;<br> flickVelY *= 0.7;</p>
+      <p class="dropspot">Der obige Code ermittelt einfach die Differenz der x- und y-Position zwischen dem letzten Ziehen-Ereignis und dem aktuellen Ziehen-Ende-Ereignis, und wenn die Bewegung größer war als der Flick-Schwellenwert, werden einige Variablen gesetzt, die für die Bewegung der Instanz verwendet werden
+        im Schritt-Ereignis.</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Flick</a></p>
+    <div class="droptext" data-targetname="drop-down10">
+      <p class="dropspot">Das Ereignis "Flick" wird nur ausgelöst, wenn ein Touch/Klick gehalten, gezogen und dann losgelassen wurde und der Abstand zwischen der letzten Ziehposition und der Loslassposition größer als 2 Zoll pro Sekunde ist (dies ist die Standardeinstellung, die jedoch mit der Funktion
+        kann jedoch mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_flick_speed.htm"><span class="inline">gesture_flick_speed()</span></a>). Dieses Ereignis erzeugt eine <span class="inline">event_data</span> DS-Karte, die Sie dann verwenden können, um Informationen über das Ereignis zu erhalten. Zum Beispiel:</p>
+      <h4>Ereignis erstellen</h4>
+      <p class="code">flickVelX = 0.0;<br> flickVelY = 0.0;</p>
+      <h4>Flick-Veranstaltung</h4>
+      <p class="code">flickVelX = event_data[? &quot;diffX&quot;];<br> flickVelY = event_data[? &quot;diffY&quot;];</p>
+      <h4>Schritt Ereignis</h4>
+      <p class="code">x += flickVelX;<br> y += flickVelY;<br> flickVelX *= 0.7;<br> flickVelY *= 0.7;</p>
+      <p class="dropspot">Der obige Code ermittelt einfach die Differenz in der x- und y-Position zwischen dem letzten Dragging-Ereignis und dem aktuellen Flick-Ereignis, und wenn die Bewegung größer als der Flick-Schwellenwert war, setzt er einige Variablen, die zum Bewegen der Instanz im
+        dem Schritt-Ereignis.</p>
+    </div>
+    <p> </p>
+  </div>
+  <p><img src="../../assets/Images/Icons/Icon_Pinch.png" style="margin-left: 60px"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Kneifende Ereignisse</a> </p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Die &quot;Pinch&quot;-Ereignisse basieren darauf, dass zwei Berührungen des Gerätebildschirms gleichzeitig erkannt werden, bei denen sich eine (oder beide) um mehr als eine bestimmte Strecke bewegt haben. Der Bewegungswinkel der Berührungen zusammen mit der Bewegung jeder Berührung ist das, was
+      Der Winkel der Bewegung der Berührungen zusammen mit der Bewegung jeder Berührung bestimmt die Erkennung eines Einklemm- oder Dreh-Ereignisses, wobei (im Fall des Einklemm-Ereignistyps):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">Wenn sich eine der Berührungen nicht bewegt, muss sich die andere innerhalb eines Schwellenwinkels auf sie zu oder von ihr weg bewegen (der mit den Funktionen <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_towards.htm"><span class="inline">gesture_pinch_angle_towards()</span></a> und
+        - <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_away.htm"><span class="inline">gesture_pinch_angle_away()</span></a>).</li>
+      <li class="dropspot">Wenn sich beide Touches bewegen, müssen ihre Geschwindigkeiten in etwa entgegengesetzte Richtungen gehen und es wird auch die gleiche Winkelschwellenprüfung durchgeführt, um sicherzustellen, dass sich die Touches in ungefährer Ausrichtung bewegen.</li>
+    </ul>
+    <p class="dropspot">Wenn zwei Berührungen und eine Bewegung mit den oben genannten Kriterien erkannt werden, wird ein Pinch-Ereignis ausgelöst, und in jedem der Ereignisse wird die <span class="inline">event_data</span> DS Map mit den folgenden Tasten bestückt:</p>
+    <ul class="dropspotlist">
+    </ul>
+    <table>
+      <tbody>
+        <tr>
+          <th>Taste</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>&quot;Geste&quot;</td>
+          <td><br> Dies ist ein ID-Wert, der für die Geste, die gerade ausgeführt wird, <i>eindeutig</i> ist. Damit können Sie die verschiedenen Teile von mehrteiligen Gesten (z. B. Ziehen Start, Ziehen und Ziehen Ende) miteinander verknüpfen.</td>
+        </tr>
+        <tr>
+          <td>&quot;touch1&quot;</td>
+          <td><br> Dies ist der Index der ersten Berührung, die als Teil der Pinch-Geste verwendet wird. Im Allgemeinen ist dies der Wert 0, aber wenn der Benutzer den Bildschirm an einer anderen Stelle berührt, wenn dieses Ereignis durch eine andere Berührung ausgelöst wird, dann ist der Wert
+            größer als 0.</td>
+        </tr>
+        <tr>
+          <td>&quot;touch2&quot;</td>
+          <td><br> Dies ist der Index der zweiten Berührung, die als Teil der Pinch-Geste verwendet wird. Im Allgemeinen ist dies 1 mehr als der Wert für touch1, kann aber auch ein anderer Wert sein, abhängig von der Anzahl der Berührungen, die an anderer Stelle erkannt werden.</td>
+        </tr>
+        <tr>
+          <td>&quot;posX1&quot;</td>
+          <td><br> Dies ist die raumbezogene X-Position der ersten Berührung.</td>
+        </tr>
+        <tr>
+          <td>&quot;posY1&quot;</td>
+          <td><br> Dies ist die raumbezogene Y-Position der ersten Berührung.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposX1&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Fensterbereich-X-Position der ersten Berührung (entspricht der Ermittlung der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposY1&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Y-Position im Fensterbereich der ersten Berührung (entspricht der Ermittlung der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposX1&quot;</td>
+          <td><br> Dies ist die X-Position des Gui-Raums bei der ersten Berührung (entspricht der Ermittlung der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposY1&quot;</td>
+          <td><br> Dies ist die Y-Position im Gui-Raum für die zweite Berührung (entspricht der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;posX2&quot;</td>
+          <td><br> Dies ist die raumbezogene X-Position des zweiten Touch.</td>
+        </tr>
+        <tr>
+          <td>&quot;posY2&quot;</td>
+          <td><br> Dies ist die raumbezogene Y-Position des zweiten Touches.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposX2&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Fensterbereich-X-Position des ersten Touch.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposY2&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Y-Position des zweiten Touches im Fensterbereich.</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposX2&quot;</td>
+          <td><br> Dies ist die Gui-Space-X-Position des zweiten Touches.</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposY2&quot;</td>
+          <td><br> Dies ist die Y-Position des zweiten Touches im Gui-Raum.</td>
+        </tr>
+        <tr>
+          <td>&quot;mittelpunktX&quot;</td>
+          <td><br> Die X-Position des Mittelpunkts zwischen den beiden Berührungen im Raum.</td>
+        </tr>
+        <tr>
+          <td>&quot;mittelpunktY&quot;</td>
+          <td><br> Die Y-Position des Mittelpunkts zwischen den beiden Berührungen im Raum.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawmidpointX&quot;</td>
+          <td><br> Dies ist die rohe Fensterbereich-X-Position des Mittelpunkts.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawmidpointY&quot;</td>
+          <td><br> Dies ist die rohe Y-Position des Mittelpunkts im Fensterraum.</td>
+        </tr>
+        <tr>
+          <td>&quot;guimidpointX&quot;</td>
+          <td><br> Dies ist die Gui-Space-X-Position des Mittelpunkts.</td>
+        </tr>
+        <tr>
+          <td>&quot;guimidpointY&quot;</td>
+          <td><br> Dies ist die Y-Position des Mittelpunkts im Gui-Raum.</td>
+        </tr>
+        <tr>
+          <td>&quot;Verwandtschaftsskala&quot;</td>
+          <td><br> Dies ist der Unterschied in der Skalierung im Vergleich zum letzten Event in dieser Geste (bei <b>Pinch-In-Events</b> ist dies also immer kleiner als 1,0, während es bei <b>Pinch-Out-Events</b> immer größer als 1,0 ist)</td>
+        </tr>
+        <tr>
+          <td>&quot;absoluter Maßstab&quot;</td>
+          <td><br> Dies ist die Skala im Vergleich zu der Stelle, an der sich die Finger zu Beginn der Geste befanden (wenn sich also der Abstand zwischen den Fingern halbiert hat, ist dies 0,5, wenn sich der Abstand verdoppelt hat, ist es 2,0).</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot"> </p>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Pinch Start</a></p>
+    <div class="droptext" data-targetname="drop-down12">
+      <p class="dropspot">Das Ereignis &quot;Pinch Start&quot; wird ausgelöst, wenn eine Instanz (oder der Bildschirm, wenn das Ereignis global ist) von zwei &quot;Fingern&quot; berührt wurde (und die Berührung beibehalten wird) und dann einer oder beide der &quot;Finger&quot; bewegt werden. Wenn sich die Berührungen
+        voneinander weg oder zueinander hin um mehr als den minimalen Prüfabstand (der standardmäßig 0,1 Zoll beträgt, aber mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_distance.htm"><span class="inline">gesture_pinch_distance()</span></a>),
+        und der Winkel zwischen ihnen innerhalb des definierten Wertes liegt (dieser ist standardmäßig auf 45° eingestellt, kann aber mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_towards.htm"><span class="inline">gesture_pinch_angle_towards()</span></a> und  eingestellt werden.
+        <a href="../../<span class=" notranslate"="">GameMaker_Language/<span class="notranslate">GML</span>_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_away.htm"><span class="inline">gesture_pinch_angle_away()</span></a>), dann wird ein Pinch-Start-Ereignis ausgelöst. In diesem Ereignis können Sie Variablen setzen oder Positionsdaten zur späteren Verwendung speichern. Zum Beispiel:</p>
+      <h4>Pinch-Start-Ereignis</h4>
+      <p class="code">pinch = true;<br> pinch_x = event_data[? &quot;midpointX&quot;]; pinch_y = event_data[? &quot;midpointY&quot;];</p>
+      <p class="dropspot">Der obige Code erkennt eine Einklemmung und speichert die Mittelpunktsposition für diese Einklemmung.</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">Einklemmen / Ausklemmen</a></p>
+    <div class="droptext" data-targetname="drop-down13">
+      <p class="dropspot">Die Ereignisse "Pinch In" und "Pinch Out" werden bei jedem Schritt ausgelöst, bei dem sich der Abstand zwischen den beiden Berührungen, aus denen der Pinch besteht, über den Mindestschwellenwert hinaus ändert (standardmäßig auf +/- 0,1 Zoll eingestellt, aber Sie können ihn mit der Funktion gesture_pinch_distance ändern).
+        Wenn es keine Bewegung der Pinch-Berührungen gibt, werden diese Ereignisse nicht ausgelöst. Diese Ereignisse erzeugen eine <span class="inline">event_data</span> DS-Map, die Sie dann verwenden können, um Informationen über das Ereignis zu erhalten. Zum Beispiel:</p>
+      <h4>Globales Pinch In /Pinch Out Ereignis</h4>
+      <p class="code">var _scale = event_data[? &quot;relativescale&quot;];<br> var _w = camera_get_view_width(view_camera[0]);<br> var _h = camera_get_view_height(view_camera[0]);<br> var _x = camera_get_view_x(view_camera[0]) + (_w / 2);<br> var _y = camera_get_view_y(view_camera[0])
+        + (_h / 2);<br>
+        <br> _w *= _scale;<br> _h = _w * (room_height / room_width);<br> _x -= _w / 2;<br> _y -= _h / 2;<br>
+        <br> camera_set_view_pos(view_camera[0], _x, _y);<br> camera_set_view_size(view_camera[0], _w, _h);</p>
+      <p class="dropspot">Der obige Code skaliert die Ansicht basierend auf dem relativen Maßstab der Pinch-Berührungen.</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Quetschende</a><strong></strong></p>
+    <div class="droptext" data-targetname="drop-down14">
+      <p class="dropspot">Das Ereignis "Pinch End" wird ausgelöst, wenn der Benutzer eine (oder beide) der Berührungen vom Gerät loslässt. Dieses Ereignis erzeugt eine <span class="inline">event_data</span> DS-Map, die Sie dann verwenden können, um Informationen über das Ereignis zu erhalten. Für
+        Beispiel:</p>
+      <h4>Quetschende Ereignis</h4>
+      <p class="code">var _pinchx = event_data[? &quot;midpointX&quot;];<br> var _pinchy = event_data[? &quot;midpointY&quot;];<br> var _w = camera_get_view_width(view_camera[0]);<br> var _h = camera_get_view_height(view_camera[0]);<br> var _x = _pinchx - (_w / 2);<br> var _y = _pinchy - (_h / 2);<br>
+        <br> camera_set_view_pos(view_camera[0], _x, _y);</p>
+      <p class="dropspot">Der obige Code stellt die Ansichtsposition so ein, dass sie auf dem Mittelpunkt der beiden Berührungen zentriert ist, aus denen der Pinch besteht, wenn die Berührungen losgelassen werden.</p>
+      <p><strong></strong></p>
+    </div>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img src="../../assets/Images/Icons/Icon_Rotate.png" style="margin-left: 56px"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down15" href="#">Ereignisse rotieren</a></p>
+  <div class="droptext" data-targetname="drop-down15">
+    <p class="dropspot">Die &quot;Rotate&quot;-Ereignisse basieren darauf, dass zwei Berührungen des Gerätebildschirms auf einmal erkannt werden und innerhalb einer bestimmten Zeit eine konsistente Winkeldrehung zwischen den beiden Berührungen stattgefunden hat. Der Winkel der Bewegung der Berührungen zusammen mit der
+      Der Winkel der Bewegung der Berührungen zusammen mit der Bewegung jeder Berührung ist ausschlaggebend für die Erkennung eines "Pinch"- oder "Rotate"-Ereignisses, wobei (im Falle des Ereignistyps "Rotate"):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">Zwei Berührungen müssen für eine bestimmte Mindestzeit gehalten werden (die Standardzeit ist 0,16 Sekunden, aber Sie können sie mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_time.htm"><span class="inline">gesture_rotate_time()</span></a>).</li>
+      <li class="dropspot">Innerhalb dieser Mindestzeitspanne müssen sie sich in eine gleichbleibende Richtung drehen (wenn sich die Drehrichtung innerhalb dieser Zeit ändert, wird keine Drehung gestartet).</li>
+      <li class="dropspot">Der Drehbetrag muss den minimalen Schwellenwinkel überschreiten (der standardmäßig auf 5° eingestellt ist, aber mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a>).</li>
+    </ul>
+    <p class="dropspot">Wenn zwei Berührungen und eine Bewegung mit den oben genannten Kriterien erkannt werden, wird ein Rotate-Event ausgelöst, und in jedem der Events wird die <span class="inline">event_data</span> DS Map mit den folgenden Tasten bestückt:</p>
+    <ul class="dropspotlist">
+    </ul>
+    <table>
+      <tbody>
+        <tr>
+          <th>Taste</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>&quot;Geste&quot;</td>
+          <td><br> Dies ist ein ID-Wert, der für die Geste, die gerade ausgeführt wird, <i>eindeutig</i> ist. Damit können Sie die verschiedenen Teile von mehrteiligen Gesten (z. B. Ziehen Start, Ziehen und Ziehen Ende) miteinander verknüpfen.</td>
+        </tr>
+        <tr>
+          <td>&quot;touch1&quot;</td>
+          <td><br> Dies ist der Index der ersten Berührung, die als Teil der Pinch-Geste verwendet wird. Im Allgemeinen ist dies der Wert 0, aber wenn der Benutzer den Bildschirm an einer anderen Stelle berührt, wenn dieses Ereignis durch eine andere Berührung ausgelöst wird, dann ist der Wert
+            größer als 0.</td>
+        </tr>
+        <tr>
+          <td>&quot;touch2&quot;</td>
+          <td><br> Dies ist der Index der zweiten Berührung, die als Teil der Pinch-Geste verwendet wird. Im Allgemeinen ist dies 1 mehr als der Wert für touch1, kann aber auch ein anderer Wert sein, abhängig von der Anzahl der Berührungen, die an anderer Stelle erkannt werden.</td>
+        </tr>
+        <tr>
+          <td>&quot;posX1&quot;</td>
+          <td><br> Dies ist die raumbezogene X-Position der ersten Berührung.</td>
+        </tr>
+        <tr>
+          <td>&quot;posY1&quot;</td>
+          <td><br> Dies ist die raumbezogene Y-Position der ersten Berührung.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposX1&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Fensterbereich-X-Position der ersten Berührung (entspricht der Ermittlung der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_x.htm"><span class="inline"><tt>device_mouse_raw_x()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposY1&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Y-Position im Fensterbereich der ersten Berührung (entspricht der Ermittlung der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_raw_y.htm"><span class="inline"><tt>device_mouse_raw_y()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposX1&quot;</td>
+          <td><br> Dies ist die X-Position des Gui-Raums bei der ersten Berührung (entspricht der Ermittlung der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline"><tt>device_mouse_x_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposY1&quot;</td>
+          <td><br> Dies ist die Y-Position im Gui-Raum für die zweite Berührung (entspricht der Mausposition mit <a href="../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline"><tt>device_mouse_y_to_gui()</tt></span></a>).</td>
+        </tr>
+        <tr>
+          <td>&quot;posX2&quot;</td>
+          <td><br> Dies ist die raumbezogene X-Position des zweiten Touch.</td>
+        </tr>
+        <tr>
+          <td>&quot;posY2&quot;</td>
+          <td><br> Dies ist die raumbezogene Y-Position des zweiten Touches.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposX2&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Fensterbereich-X-Position des ersten Touch.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawposY2&quot;</td>
+          <td><br> Dies ist die <i>rohe</i> Y-Position des zweiten Touch im Fensterbereich.</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposX2&quot;</td>
+          <td><br> Dies ist die Gui-Space-X-Position des zweiten Touches.</td>
+        </tr>
+        <tr>
+          <td>&quot;guiposY2&quot;</td>
+          <td><br> Dies ist die Y-Position des zweiten Touches im Gui-Raum.</td>
+        </tr>
+        <tr>
+          <td>&quot;pivotX&quot;</td>
+          <td><br> Die X-Position des Rotationsdrehpunkts im Raum.</td>
+        </tr>
+        <tr>
+          <td>&quot;pivotY&quot;</td>
+          <td><br> Die Y-Position des Rotationsdrehpunkts im Raum.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawpivotX&quot;</td>
+          <td><br> Dies ist die rohe Fenster-Raum-X-Position des Drehpunkts.</td>
+        </tr>
+        <tr>
+          <td>&quot;rawpivotY&quot;</td>
+          <td><br> Dies ist die rohe Y-Position des Drehpunkts im Fensterraum.</td>
+        </tr>
+        <tr>
+          <td>&quot;guipivotX&quot;</td>
+          <td><br> Dies ist die Gui-Space-X-Position des Rotationsdrehpunkts.</td>
+        </tr>
+        <tr>
+          <td>&quot;guipivotY&quot;</td>
+          <td><br> Dies ist die Y-Position des Drehpunkts im Gui-Raum.</td>
+        </tr>
+        <tr>
+          <td>&quot;Relativangle&quot;</td>
+          <td><br> Dies ist die Differenz der Drehung gegenüber dem letzten Ereignis in dieser Geste, gemessen in Grad</td>
+        </tr>
+        <tr>
+          <td>&quot;Absoluter Winkel&quot;</td>
+          <td><br> Dies ist der Winkelunterschied im Vergleich zu der Stelle, an der sich die Finger beim Start der Geste befanden, gemessen in Grad. Wenn sich die Finger zum Beispiel seit dem Start der Geste um einen Viertelkreis gedreht haben, beträgt dieser Wert 90°
+            oder -90°, je nach der Richtung der Drehung.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">Drehen Start</a></p>
+    <div class="droptext" data-targetname="drop-down16">
+      <p class="dropspot">Das Ereignis &quot;Rotate Start&quot; wird ausgelöst, wenn eine Instanz (oder der Bildschirm, wenn das Ereignis global ist) von zwei &quot;Fingern&quot; berührt wurde (und die Berührung beibehalten wird) und dann einer oder beide der &quot;Finger&quot; aus ihrer Startposition gedreht werden
+        Position gedreht. Die Drehung der Berührungen muss innerhalb einer kurzen Zeitspanne begonnen haben (standardmäßig 0,16 Sekunden, aber sie kann mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_time.htm"><span class="inline">gesture_rotate_time()</span></a>)
+        und größer als die minimale Winkelschwelle sein (standardmäßig 5°, dies kann aber mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a>).
+        Wenn diese Überprüfungen wahr sind, wird ein Rotate Start-Ereignis ausgelöst und Sie können es verwenden, um Werte zu speichern oder Variablen für die Verwendung mit den restlichen Rotate-Ereignissen zu setzen. Zum Beispiel:</p>
+      <h4>Ereignis erstellen</h4>
+      <p class="code">rotating = false;<br> view_a = camera_get_view_angle(view_camera[0]);</p>
+      <h4>Drehen Start Ereignis</h4>
+      <p class="code">rotierend = wahr;</p>
+      <p class="dropspot">Der obige Code richtet einfach einige Variablen für das Drehen der Fachkamera ein und setzt dann im Ereignis "Rotate Start" eine davon auf true.</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down17" href="#">Drehen</a></p>
+    <div class="droptext" data-targetname="drop-down17">
+      <p class="dropspot">Das Ereignis "Drehen" wird bei jedem Schritt ausgelöst, bei dem sich die Berührungen auf dem Bildschirm umeinander drehen, solange die Bewegung größer als der minimale Winkelschwellenwert ist (standardmäßig 5°, aber das kann mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_angle.htm"><span class="inline">gesture_rotate_angle()</span></a>).
+        Dieses Ereignis kann z. B. zum Setzen von Variablen und zur Manipulation von Instanzen verwendet werden:</p>
+      <h4>Rotierendes Ereignis</h4>
+      <p class="code">var _relangle = event_data[? &quot;relativeangle&quot;];<br> var _a = camera_get_view_angle(view_camera[0]);<br> _a += _relangle;<br> camera_set_view_angle(view_camera[0], _a);</p>
+      <p class="dropspot">Der obige Code dreht die Kameraansicht in Abhängigkeit von der Drehbewegung der Berührungen im Event.</p>
+      <p class="dropspot"> <strong></strong></p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#">Drehen Ende</a><strong></strong></p>
+    <div class="droptext" data-targetname="drop-down18">
+      <p class="dropspot">Das Ereignis "Rotate End" wird ausgelöst, wenn eine (oder beide) Berührungen, aus denen die Geste besteht, vom Gerätebildschirm losgelassen werden. Dieses Ereignis kann z. B. zum Setzen von Variablen und Manipulieren von Instanzen verwendet werden:</p>
+      <h4>Drehen Ende Ereignis</h4>
+      <p class="code">rotierend = false;</p>
+      <h4>Schritt Ereignis</h4>
+      <p class="code">if !rotating<br> {<br> var _a = camera_get_view_angle(view_camera[0]);<br> var _adif = angle_difference(view_a, _a);<br> _a += median(-5, _adif, 5);<br> camera_set_view_angle(view_camera[0], _a);<br> }</p>
+      <p class="dropspot">Der obige Code verwendet das Ereignis "Rotate End", um zu erkennen, wann der Benutzer die Geste beendet, und setzt dann eine Variable. Diese Variable wird dann im Schritt-Ereignis verwendet, um die Fachkamera wieder in ihre ursprüngliche Position zu drehen.</p>
+      <p class="dropspot"> </p>
+    </div>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Object_Events.htm">Objekt-Ereignisse</a></div>
+        <div style="float:right">Nächste: <a href="Event_Order.htm">Reihenfolge der Ereignisse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Gesture Events
+Flick Events
+Pan Events
+Rotate Events
+Tap Events
+Gestures
+-->
+  <!-- TAGS
+gesture_events
+-->
+</body>
+</html>

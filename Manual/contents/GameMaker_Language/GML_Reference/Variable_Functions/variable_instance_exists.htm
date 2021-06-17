@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instanz_existiert</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_exists" />
+  <meta name="rh-index-keywords" content="variable_instance_exists" />
+  <meta name="search-keywords" content="variable_instance_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_instanz_existiert</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob eine Instanzbereichsvariable existiert oder nicht. Sie liefern den eindeutigen Wert der Instanz-ID (den Sie in den <a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">Instanz-Eigenschaften</a> im Raum-Editor finden oder der zurückgegeben wird, wenn Sie die Funktion <a href="../Asset_Management/Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>) sowie den Variablennamen, auf den geprüft werden soll, <i>als String</i> (siehe Beispielcode unten).
+    Die Funktion gibt <tt>true</tt> zurück, wenn eine Variable mit dem angegebenen Namen für die Instanz existiert, und sonst <tt>false</tt>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">variable_instance_exists(instance_id, name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>Der eindeutige ID-Wert der zu prüfenden Instanz</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name der Variable, auf die geprüft werden soll (als String)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !variable_instance_exists(id, &quot;shields&quot;))<br> {
+    <br> shields = 0;<br> }
+  </p>
+  <p>Der obige Code prüft, ob die Variable &quot;shields&quot; in der Instanz, die den Code ausführt, vorhanden ist, und wenn nicht, wird sie erstellt und auf 0 initialisiert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="variable_instance_get_names.htm">variable_instance_get_names</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_exists
+-->
+  <!-- TAGS
+variable_instance_exists
+-->
+</body>
+</html>

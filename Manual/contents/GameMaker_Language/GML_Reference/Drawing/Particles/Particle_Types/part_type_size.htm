@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teil_art_grösse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_size" />
+  <meta name="rh-index-keywords" content="part_type_size" />
+  <meta name="search-keywords" content="part_type_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teil_art_grösse</h1>
+  <p>Diese Funktion wird verwendet, um die Größe des Partikels zu bestimmen, wenn er erstellt wird, und kann auch verwendet werden, um den Partikel während seiner Lebensdauer größer oder kleiner werden zu lassen. Die Werte für die minimale und die maximale Größe sind standardmäßig auf 1 gesetzt (was bedeutet, dass die Größe das gleiche
+    Verhältnis wie der Basispartikel ist, nachdem die <a href="part_type_scale.htm"><tt>part_type_scale()</tt></a> Skalierung eingestellt wurde) und wenn sie auf denselben Wert eingestellt sind, ist die Anfangsgröße für alle Partikel gleich, aber wenn sie auf unterschiedliche Werte eingestellt sind, wird jeder
+    Partikel mit einer zufälligen Größe aus dem Bereich beginnen, z. B. bei einem Minimum von 0,5 und einem Maximum von 2 werden alle Partikel mit einer Größe zwischen der Hälfte und dem Doppelten der Basisskala erzeugt.</p>
+  <p>Sie können auch einen Inkrementwert festlegen, der das Partikelsprite über die Lebensdauer des Partikels wachsen (wenn es sich um eine positive Zahl handelt) oder schrumpfen (wenn es sich um eine negative Zahl handelt) lässt, wobei der angegebene Betrag bei jedem Schritt zur Partikelgröße hinzugefügt wird. Dieser Wert kann sein
+    ein Minimum von (+/-)0,01 sein.</p>
+  <p>Schließlich können Sie den &quot;Wiggle&quot;-Faktor einstellen. Dies ist ein Wert, der bei jedem Schritt der Partikellebensdauer zufällig zur Größe addiert oder subtrahiert wird. Offensichtlich sind größere Werte stärker ausgeprägt als kleinere, und dieser Wert kann sogar
+    negativ sein, wobei der maximale Bereich zwischen -20 und 20 liegt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_type_size(ind, size_min, size_max, size_incr, size_wiggle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu ändernden Partikeltyps.</td>
+      </tr>
+      <tr>
+        <td>Größe_min</td>
+        <td>Die Mindestgröße, mit der das Partikel beginnen kann.</td>
+      </tr>
+      <tr>
+        <td>größe_max</td>
+        <td>Die maximale Größe, mit der das Partikel starten kann.</td>
+      </tr>
+      <tr>
+        <td>größe_incr</td>
+        <td>Wie stark der Partikel pro Schritt zu- oder abnehmen soll.</td>
+      </tr>
+      <tr>
+        <td>Größe_Wackeln</td>
+        <td>Wie viel soll pro Schritt zufällig von der Partikelgröße addiert oder subtrahiert werden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">part_type_shape(particle1, pt_shape_explosion);<br> part_type_size(particle1, 2, 2, 0.10, 0.01);<br> part_type_scale(particle1, 1, 1);<br> part_type_colour2(particle1, 16777215, 12632256);<br> part_type_alpha3(particle1, 0, 0.20, 0);<br> part_type_speed(particle1,
+    0.20, 0.20, 0, 0);<br> part_type_direction(particle1, 0, 359, 0, 20);<br> part_type_orientation(particle1, 0, 359, 0, 0, 1);<br> part_type_blend(particle1, 0);<br> part_type_life(particle1, 40, 60);</p>
+  <p>Der obige Code stellt verschiedene Partikelwerte ein, einschließlich der Größe, die bei der Erstellung jedes Partikels auf die doppelte Größe gesetzt wird, und erhöht dann die Größe bei jedem Schritt um 0,01 mit einem Wackelschritt von 0,1 zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Types.htm">Partikel-Typen</a></div>
+        <div style="float:right">Weiter: <a href="part_type_scale.htm">part_type_scale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_size
+-->
+  <!-- TAGS
+part_type_size
+-->
+</body>
+</html>

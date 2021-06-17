@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>timeline_running</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_running" />
+  <meta name="rh-index-keywords" content="timeline_running" />
+  <meta name="search-keywords" content="timeline_running" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>timeline_running</h1>
+  <p>Diese Variable enthält den aktuellen Status der zugewiesenen Zeitleiste und gibt <tt>true</tt> zurück, wenn sie läuft, und false, wenn sie nicht läuft. Sie können diese Variable auch entweder auf <tt>true</tt> oder <tt>false</tt> setzen, um
+    Sie können diese Variable auch auf true oder false setzen, um die Zeitleiste jederzeit zu starten und zu stoppen. Es ist zu beachten, dass eine gestoppte Zeitleiste <i>nicht</i> zurückgesetzt wird, so dass sie beim erneuten Starten zu einem späteren Zeitpunkt genau an dem Punkt beginnt, an dem sie gestoppt wurde.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">timeline_running;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !timeline_running<br> {
+    <br> timeline_position = 0;<br> timeline_running = true;<br> }
+  </p>
+  <p>Der obige Code prüft, ob die Instanz eine Zeitleiste ausführt, und wenn dies nicht der Fall ist, setzt er die zugewiesene Zeitleiste auf den ersten Moment zurück und startet sie dann.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Timelines.htm">Timelines</a></div>
+        <div style="float:right">Weiter: <a href="timeline_speed.htm">timeline_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_running
+-->
+  <!-- TAGS
+timeline_running
+-->
+</body>
+</html>

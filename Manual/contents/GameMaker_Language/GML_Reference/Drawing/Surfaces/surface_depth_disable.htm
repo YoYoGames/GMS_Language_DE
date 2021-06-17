@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>oberfläche_tiefe_ausschalten</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_depth_disable" />
+  <meta name="rh-index-keywords" content="surface_depth_disable" />
+  <meta name="search-keywords" content="surface_depth_disable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>oberfläche_tiefe_ausschalten</h1>
+  <p>Diese Funktion deaktiviert die automatische Tiefenpuffererzeugung für <i>alle</i> Flächen, die nach der Deaktivierung erstellt werden. Normalerweise haben alle Oberflächen Tiefenpuffer, so dass sie beim Zeichnen von 3D-Objekten nach Tiefe sortiert werden.
+    Wenn Sie also 3D-Objekte auf Oberflächen zeichnen, werden diese korrekt nach Tiefe sortiert, um die funktionale Parität zwischen dem Rendering auf Oberflächen und dem Rendering in den Backbuffer aufrechtzuerhalten; durch die Zuweisung von Tiefenpuffern verdoppelt sich jedoch im Wesentlichen die für Oberflächen benötigte Speichermenge, was einen übermäßigen und unnötigen Overhead darstellen kann
+    Das könnte ein übermäßiger und unnötiger Overhead sein, besonders wenn Ihr Spiel sehr speicherintensiv ist, und für 2D-Spiele sind sie im Allgemeinen nicht erforderlich.</p>
+  <p>Um diese Funktion zu verwenden, würden Sie sie <i>vor dem</i> Erzeugen einer Oberfläche aufrufen und können sie danach wieder aktivieren (falls erforderlich). Alle Oberflächen, die bei deaktiviertem Tiefenpuffer erstellt werden, verwenden beim Zeichnen keinen Tiefenpuffer mehr.
+    Dies führt dazu, dass die Dinge, die auf die Oberfläche gezeichnet werden, die gleiche Tiefe haben. Die folgenden Bilder veranschaulichen dies in der Praxis:</p>
+  <p><img alt="Surface depth buffer example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Surface_Depth_Buffer.png">Im obigen Bild zeichnen wir ein Rechteck und ein Dreieck unter Verwendung eines Vertex-Puffers in 3D. Die
+    Koordinaten für das rote Dreieck platzieren es hinter dem grünen Rechteck, aber der Code zum Zeichnen des Dreiecks wird <i>nach dem</i> Code für das Rechteck aufgerufen, und wenn der Tiefenpuffer aktiviert ist, wird das Dreieck trotzdem hinter dem Rechteck gezeichnet
+    gezeichnet, da die 3D-Tiefe beachtet wird. Wenn wir jedoch den Tiefenpuffer für die Oberfläche deaktivieren, wird nur die Reihenfolge des Codes beachtet und das Dreieck wird über dem Rechteck gezeichnet.</p>
+  <p class="note"><b>HINWEIS</b>: Um die Tiefe in 3D bei der Verwendung von Oberflächen richtig zu erhalten, sollten Sie nicht nur den Tiefenpuffer aktivieren, sondern auch das Z-Schreiben und die Z-Prüfung aktivieren. Siehe die Funktionen <a href="../GPU_Control/gpu_get_ztestenable.htm"><tt><span style="font-size:14px;">gpu_set_ztestenable()</span></tt></a>    und <a href="../GPU_Control/gpu_get_zwriteenable.htm"><tt><span style="font-size:14px;">gpu_set_zwriteenable()</span></tt></a> für weitere Informationen.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Ihr Spiel 100 % 2D ist oder Sie wissen, dass Sie keinen Oberflächentiefenpuffer benötigen, dann sollte es in Ordnung sein, diese Funktion einfach einmal zu Beginn des Spiels aufzurufen, um den Puffer zu deaktivieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">surface_depth_disable(disable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>deaktivieren.</td>
+        <td>Wenn diese Option auf <tt>true</tt> gesetzt ist, wird der Tiefenpuffer für erstellte Oberflächen deaktiviert.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _tiefe_einstellung = surface_get_depth_disable();<br> surface_depth_disable(false);
+    <br> surface_with_depth = surface_create(room_width, room_height);<br> surface_depth_disable(true);
+    <br> surface_without_depth = surface_create(room_width, room_height);<br> surface_depth_disable(_depth_setting);
+  </p>
+  <p>Der obige Code speichert die aktuelle Einstellung des Tiefenpuffers in einer Variablen und erzeugt dann zwei Oberflächen, eine mit aktivierter Tiefenpufferung und eine ohne, bevor er die ursprüngliche Einstellung wiederherstellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="surface_get_height.htm">surface_get_height</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_depth_disable
+-->
+  <!-- TAGS
+surface_depth_disable
+-->
+</body>
+</html>

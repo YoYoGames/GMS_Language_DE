@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Lesepuffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Read Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Read Buffer" />
+  <meta name="search-keywords" content="Read Buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Read Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Read_Buffer.png"> Lesepuffer</h1>
+  <p>Diese Aktion kann verwendet werden, um Daten aus einem zuvor erstellten Puffer zu lesen. Sie geben den eindeutigen Puffer-ID-Wert (wie von der Aktion " <a href="Create_Buffer.htm">Puffer erstellen</a>" zurückgegeben) und eine Variable zum Speichern des zurückgegebenen Wertes an. Wenn Sie die Variable
+    als temporäre lokale Variable kennzeichnen, wird sie für Sie erstellt und am Ende des Ereignis- oder Aktionsskripts wieder verworfen. Alle Daten werden als <b>String</b> zurückgegeben. Wenn Sie also echte Zahlen gespeichert haben, müssen Sie eine der <a href="../Data_Types/Data_Type_Actions.htm">Datentyp-Aktionen</a> verwenden, um sie vom String in den Wert umzuwandeln. Denken Sie auch daran, dass Puffer <i>sequentiell</i> gelesen und beschrieben werden, so dass beim Lesen aus einem Puffer die &quot;Suchposition&quot; zum nächsten Eintrag verschoben wird, was bedeutet, dass Sie zum Lesen verschiedener Daten
+    um verschiedene Daten zu lesen, rufen Sie diese Aktion einfach so oft wie nötig auf und speichern jedes zurückgegebene Datenstück in einer Variablen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Read Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Read_Buffer.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Pufferindex (gespeichert in einer Variablen)</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable zur Aufnahme der zurückgegebenen Daten</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Read Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Read_Buffer.png">Der obige Aktionsblockcode setzt die Puffer-Lese-/Schreibposition an den Anfang des Puffers und
+    liest dann zwei Daten zurück und speichert sie (als Strings) in temporären lokalen Variablen. Diese Variablen werden dann verwendet, um die Daten auf den Bildschirm zu zeichnen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffer_Actions.htm">Puffer-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Write_Buffer.htm">Schreibpuffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Read Buffer
+-->
+  <!-- TAGS
+action_buffer_read
+-->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Partikelgröße einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Size action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particle Size" />
+  <meta name="search-keywords" content="Set Particle Size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Size Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Size.png"> Eingestellte Partikelgröße</h1>
+  <p>Diese Aktion wird verwendet, um die Partikelgröße einzustellen, die statisch oder so eingestellt werden kann, dass sie im Laufe der Zeit erhöht/verringert wird. Sie geben den eindeutigen ID-Wert für den Typ an, dessen Größe eingestellt werden soll (wie beim Erstellen des Typs mit der Aktion " <a href="Create_Particle_Type.htm">Partikeltyp erstellen</a>" zurückgegeben)
+    und geben dann einen Bereich von anfänglichen Startgrößen, dann den Erhöhungsbetrag und schließlich das &quot;Wackeln&quot; an. Die Größe, mit der ein Partikel erzeugt wird, ist ein skalarer Wert, wobei 1 die gleiche Größe wie das Basispartikelbild ist, 0,5 wäre die halbe Größe des
+    Basisbildes und ein Wert von 2 wäre das Doppelte. Wenn die minimale und die maximale Größe nicht gleich sind, wird die Anfangsgröße für jeden erstellten Partikel ein zufälliger Wert zwischen diesen beiden Werten sein.</p>
+  <p>Mit der Option zum Erhöhen einer Partikelgröße können Sie einen Wert eingeben, der bei jedem Spielbild der Partikellebensdauer zum Basisskalarwert addiert wird. Wenn Sie diesen Wert also z. B. auf 0,1 setzen, wird bei jedem Spiel-Frame 0,1 zum Skalierungswert hinzugefügt.
+    Beachten Sie, dass Sie hier auch negative Werte verwenden können, um das Partikelbild zu verkleinern. Beachten Sie, dass die minimale <i>Skalierungsverringerung</i>, die akzeptiert wird, -0,01 und die minimale <i>Erhöhung</i> 0,01 beträgt.</p>
+  <p>Schließlich können Sie die Option &quot;Wackeln&quot; einstellen. Dies ist ein Wert, der zufällig zwischen 0 und dem von Ihnen angegebenen Wert generiert wird und dann bei jedem Schritt der Partikellebensdauer zur Größe addiert oder subtrahiert wird, wodurch das gezeichnete Bild in seiner Größe schwankt
+    Größe. Offensichtlich sind größere Werte stärker ausgeprägt als kleinere, und dieser Wert kann sogar negativ sein, wobei der maximale Bereich zwischen -20 und 20 liegt.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Particle Size Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Size.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der eindeutige ID-Wert für den Partikeltyp zum Einstellen der Größe von</td>
+      </tr>
+      <tr>
+        <td>Min Größe</td>
+        <td>Die minimale Skala für den Partikeltyp (Standardwert 0,1)</td>
+      </tr>
+      <tr>
+        <td>Max Größe</td>
+        <td>Die maximale Skala für den Partikeltyp (Voreinstellung 1)</td>
+      </tr>
+      <tr>
+        <td>Erhöhen Sie</td>
+        <td>Der Wert, der bei jedem Spielframe zur Größe des Partikeltyps addiert wird (kann negativ sein, Minimum +/-0,01)</td>
+      </tr>
+      <tr>
+        <td>Wackeln</td>
+        <td>Der maximale Wert, der pro Schritt zufällig zur Partikelgröße addiert oder subtrahiert wird (+/-20).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">Der obige Code des Aktionsblocks erstellt einen neuen Partikeltyp und weist seinen eindeutigen
+    ID-Wert einer globalen Variablen zu. Anschließend werden alle Eigenschaften für den Partikeltyp festgelegt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Actions.htm">Partikel-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Particle_Sprite.htm">Partikel-Sprite setzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Size
+-->
+  <!-- TAGS
+action_part_type_size
+-->
+</body>
+</html>

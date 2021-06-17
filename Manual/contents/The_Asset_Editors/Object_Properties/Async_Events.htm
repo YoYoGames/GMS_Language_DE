@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Asynchrone Ereignisse</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the async events." />
+  <meta name="rh-index-keywords" content="Objects - Async Events" />
+  <meta name="search-keywords" content="Async Events,asynchronous,image loaded,audio playback,audio recording,cloud,dialog,http,in-app-purchase,networking,push notification,save/load,social,steam,system" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die asynchronen Ereignisse</h1>
+  <p><img alt="The Async Event" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Async.png" /></p>
+  <p>Ein asynchrones Ereignis wird ausgelöst, wenn <span class="notranslate">GameMaker Studio 2</span> einen <a class="glossterm" data-glossterm="Rückruf" href="#">Rückruf</a> von einer externen Quelle empfängt, z. B. aus dem Web oder von dem Gerät, auf dem Ihr Spiel läuft. Im Grunde genommen,
+    sagen Sie dem GameMaker <span class="notranslate">Studio 2</span>, dass es etwas tun soll - z. B. ein Bild laden - und es wird damit beginnen, dies zu tun, aber in der Zwischenzeit mit allem anderen fortfahren, was es zu tun hat. Dann, wenn die Anforderung abgeschlossen ist, wird ein Callback an <span class="notranslate">GameMaker</span>
+    Studio 2 gesendet und alle asynchronen Ereignisse, die für diese Art von Callback definiert sind, werden ausgelöst.</p>
+  <p>Bitte beachten Sie, dass die asynchronen Ereignisse für <em>alle </em>Instanzen abgefeuert werden, die sie haben, ähnlich wie die Tastaturereignisse, so dass Sie - zum Beispiel - einen <span class="inline">http_get()</span> -Aufruf in einer Instanz durchführen können, aber das <strong>asynchrone HTTP-Ereignis</strong> in einer anderen haben, um den Rückruf zu behandeln.</p>
+  <p class="note"><strong>HINWEIS</strong>: Sie sollten sich bewusst sein, dass aufgrund des XSS-Schutzes in Browsern Anfragen und Versuche, Ressourcen von anderen Domänen zu laden, blockiert werden und möglicherweise leere Ergebnisse zurückgeben, wenn Sie eines der folgenden Ereignisse verwenden.</p>
+  <p>Es gibt verschiedene Arten von Ereignissen, die mit der Ereigniskategorie "Asynchron" verbunden sind, und sie werden alle in den folgenden Abschnitten erläutert:</p>
+  <p class="note"><strong>HINWEIS</strong>: Die Variable <a href="../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span style="font-size:14px;"><span class="inline" style="font-size: 14px">async_load</span></span></a>  die erwähnt wird
+    in den folgenden Abschnitten erwähnt wird, ist <strong>nur in diesen Ereignissen gültig</strong>, da die DS-Map, auf die sie zeigt, zu Beginn des Ereignisses erstellt und am Ende wieder gelöscht wird, wobei diese Variable zu allen anderen Zeiten auf einen Wert von -1 zurückgesetzt wird.</p>
+  <ul class="colour">
+    <li><a href="Async_Events/Audio_Playback.htm">Audio-Wiedergabe</a></li>
+    <li><a href="Async_Events/Audio_Recording.htm">Audio-Aufnahme</a></li>
+    <li><a href="Async_Events/Cloud.htm">Wolke</a></li>
+    <li><a href="Async_Events/Dialog.htm">Dialog</a></li>
+    <li><a href="Async_Events/HTTP.htm">HTTP</a></li>
+    <li><a href="Async_Events/IAP.htm">In-App-Kauf</a></li>
+    <li><a href="Async_Events/Image_Loaded.htm">Bild geladen</a></li>
+    <li><a href="Async_Events/Networking.htm">Vernetzung</a></li>
+    <li><a href="Async_Events/Push_Notifications.htm">Push-Benachrichtigungen</a></li>
+    <li><a href="Async_Events/Save_Load.htm">Speichern / Laden</a></li>
+    <li><a href="Async_Events/Social.htm">Sozial</a></li>
+    <li><a href="Async_Events/Steam.htm"><span class="notranslate">Dampf</span></a></li>
+    <li><a href="Async_Events/System.htm">System</a></li>
+  </ul>
+  <p> </p>
+  <p>Wenn Sie Erweiterungen für verschiedene Plattformen erstellen, möchten Sie vielleicht eines oder mehrere dieser asynchronen Ereignisse für Rückrufe aus Ihren Erweiterungsfunktionen nutzen. Zu diesem Zweck finden Sie unten eine Tabelle, in der jede der internen
+    Ereignisnamenskonstanten und ihren entsprechenden ID-Wert enthält. Beachten Sie, dass diese Ereigniskonstanten <b>nur</b> für die Verwendung mit Erweiterungen bestimmt sind!</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th width="40%">Konstant</th>
+        <th>Wert</th>
+      </tr>
+      <tr>
+        <td><b>EVENT_OTHER_WEB_IMAGE_LOAD </b></td>
+        <td style="text-align: center"><span style="text-align:center;">60</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_WEB_SOUND_LOAD </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">61</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_WEB_ASYNC </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">62</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_DIALOG_ASYNC </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">63</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_WEB_IAP </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">66</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EREIGNIS_ANDERE_WEB_WOLKE </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">67</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>VERANSTALTUNG_ANDERE_WEB_VERNETZUNG </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">68</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EREIGNIS_ANDERE_WEB_DAMPF </b></span></td>
+        <td style="text-align: center">69</td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_SOCIAL </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">70</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_PUSH_NOTIFICATION </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">71</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_ASYNC_SAVE_LOAD </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">72</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_AUDIO_RECORDING </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">73</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_AUDIO_PLAYBACK </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">74</span></td>
+      </tr>
+      <tr>
+        <td><span style="text-align:center;"><b>EVENT_OTHER_SYSTEM_EVENT </b></span></td>
+        <td style="text-align: center"><span style="text-align:center;">75</span></td>
+      </tr>
+      <tr>
+        <td><strong>EVENT_OTHER_MESSAGE_EVENT </strong></td>
+        <td style="text-align: center">76</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Object_Events.htm">Objekt-Ereignisse</a></div>
+        <div style="float:right">Nächste: <a href="Gesture_Events.htm">Gesten-Ereignisse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Events
+Asynchronous Image Loaded Event
+Asynchronous Dialogue Event
+Asynchronous HTTP Event
+Asynchronous IAP Event
+Asynchronous Cloud Event
+Asynchronous Networking Event
+Asynchronous <span class="notranslate">Steam</span> Event
+Asynchronous Social Event
+Asynchronous Push Notification Event
+Asynchronous Audio Recording Event
+Asynchronous Audio Playback Event
+Asynchronous System
+Asynchronous System (Gamepads) 
+Asynchronous System (XBox Live)
+async_load
+ugc_result_success
+achievement_challenge_received
+achievement_challenge_completed_by_remote
+achievement_challenge_completed
+achievement_challenge_launched
+network_type_connect
+network_type_disconnect
+network_type_data
+network_type_non_blocking_connect
+ev_web_image_load
+ev_web_sound_load
+ev_web_async
+ev_dialog_async
+ev_web_iap
+ev_web_cloud
+ev_web_networking
+ev_web_<span class="notranslate">steam</span>
+ev_social
+ev_push_notification
+ev_async_save_load
+ev_audio_recording
+ev_audio_playback
+ev_system_event
+ev_broadcast_message
+-->
+  <!-- TAGS
+aync_events
+-->
+
+</body></html>

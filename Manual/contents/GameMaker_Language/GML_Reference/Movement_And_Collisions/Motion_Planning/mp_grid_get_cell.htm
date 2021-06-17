@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_get_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_get_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_get_cell" />
+  <meta name="search-keywords" content="mp_grid_get_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_get_cell</h1>
+  <p>Mit dieser Funktion können Sie jede beliebige Zelle des mp_grid daraufhin überprüfen, ob sie als belegt markiert wurde oder nicht. Dazu geben Sie den Index des (zuvor erstellten) mp_grid und die x- und y-Koordinaten der zu überprüfenden Zelle an. Wenn sie belegt ist oder die zu prüfende Position
+    außerhalb des Rasters liegt, gibt die Funktion den Wert -1 zurück, andernfalls den Wert 0.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_grid_get_cell(id, x , y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Index des mp_grid, das verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate des zu prüfenden Gitters.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate des zu prüfenden Gitters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if mp_grid_get_cell(grid, mouse_x div 16, mouse_y div 16) == -1<br> {
+    <br> image_blend = c_red;<br> }
+    <br> sonst
+    <br> {
+    <br> image_blend = c_lime;<br> }
+  </p>
+  <p>Der obige Code prüft die mp_grid-Zelle, die der Mausposition entspricht, und setzt, wenn sie belegt ist, die Variable <tt>image_blend</tt> auf rot, und wenn sie nicht belegt ist, auf grün.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_grid_clear_all.htm">mp_grid_clear_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_get_cell
+-->
+  <!-- TAGS
+mp_grid_get_cell
+-->
+</body>
+</html>

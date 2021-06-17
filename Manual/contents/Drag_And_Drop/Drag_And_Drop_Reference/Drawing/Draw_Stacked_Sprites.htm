@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Gestapelte Sprites zeichnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Stacked Sprites action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Stacked Sprites" />
+  <meta name="search-keywords" content="Draw Stacked Sprites" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Stacked Sprites Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Stacked_Sprites.png"> Gestapelte Sprites zeichnen</h1>
+  <p>Mit dieser Aktion wird ein Sprite eine bestimmte Anzahl von Sprites nacheinander an einer bestimmten Position im Raum gezeichnet. Sie geben das zu zeichnende Sprite und die Stapelreihenfolge an, die entweder <b>Zeile</b> (horizontal, von links nach rechts) oder <b>Spalte</b> (vertikal,
+    von oben nach unten), sowie die Anzahl der zu zeichnenden Sprites und die Position. Die Position kann eine absolute Position innerhalb des Raums oder eine relative Position zur Position der Instanz sein, die die Zeichnung ausführt, und der Abstand zwischen den Bildern basiert auf
+    der Breite oder Höhe des Sprites. Beachten Sie, dass dies einfach ein statisches Bild zeichnet - das anfängliche Einzelbild (Frame 0) des angegebenen Sprites - und alle weiteren Frames ignoriert werden, ebenso wie alle Transformationen, die durch Ändern der <a href="../Instance/Set_Instance_Variable.htm">Instanzvariablen</a> (wie <tt>image_xscale</tt> oder <tt>image_blend</tt>) hinzugefügt wurden.</p>
+  <p class="note"><b></b><b>HINWEIS</b>: Diese Aktion ist nur für die Verwendung in den verschiedenen <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">Draw-Events</a> vorgesehen und wird nichts zeichnen, wenn sie anderweitig verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Draw Stacked Sprites Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Stacked_Sprites.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>Das zu zeichnende Sprite</td>
+      </tr>
+      <tr>
+        <td>Stapelreihenfolge</td>
+        <td>Die Reihenfolge, in der gezeichnet werden soll (entweder Zeile oder Spalte)</td>
+      </tr>
+      <tr>
+        <td>Nummer</td>
+        <td>Die Anzahl der zu zeichnenden Sprites</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der gezeichnet werden soll</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der gezeichnet werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Draw Stacked Sprites Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Stacked_Sprites.png">Der obige Aktionsblock-Code ermittelt die Anzahl der Instanzen des Objekts &quot;obj_Player&quot;
+    und verwendet diese dann, um eine Anzahl von Marker-Sprites auf den Bildschirm zu zeichnen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Drawing_Actions.htm">Zeichnungs-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Draw_Rectangle.htm">Rechteck zeichnen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Stacked Sprites
+-->
+  <!-- TAGS
+action_draw_sprites_stacked
+-->
+</body>
+</html>

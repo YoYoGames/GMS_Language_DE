@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>kachelplan_zeichnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_tilemap" />
+  <meta name="rh-index-keywords" content="draw_tilemap" />
+  <meta name="search-keywords" content="draw_tilemap" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>kachelplan_zeichnen</h1>
+  <p>Diese Funktion kann verwendet werden, um eine gegebene Tilemap an einer beliebigen Stelle im Raum zu zeichnen. Sie geben die ID des Tilemap-Elements an (die Sie erhalten, wenn Sie ein Tilemap-Element mit <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_create.htm"><tt>layer_tilemap_erzeugen()</tt></a>    oder wenn Sie die Funktion <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), dann geben Sie die x/y-Position zum Zeichnen an (im Raum). Beachten Sie, dass dies die Tilemap einfach am
+    dem angegebenen Punkt gezeichnet wird, wobei die Ebenentiefe der Instanz verwendet wird, die die Funktion aufruft. Die Tilemap wird <i>nicht</i> verschoben - und auch nicht in irgendeiner Weise verändert - und es spielt keine Rolle, ob die Tilemap als sichtbar markiert ist oder nicht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_tilemap(tilemap_element_id, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>Der eindeutige ID-Wert des Tilemap-Elements, um die y-Position der Zelle zu erhalten</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position innerhalb des Raums, an der gezeichnet werden soll</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position innerhalb des Raums, an der gezeichnet werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_Effects&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> draw_tilemap(map_id, mouse_x, mouse_y);</p>
+  <p>Der obige Code ruft die Layer-ID ab und verwendet diese dann, um eine bestimmte Tilemap-ID zu erhalten, die wiederum verwendet wird, um die Tilemap an der Mausposition zu zeichnen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprites_And_Tiles.htm">Sprites und Kacheln</a></div>
+        <div style="float:right">Weiter: <a href="draw_self.htm">draw_self</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_tilemap
+-->
+  <!-- TAGS
+draw_tilemap
+-->
+</body>
+</html>

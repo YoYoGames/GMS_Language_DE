@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>highscore_wert</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function highscore_value" />
+  <meta name="rh-index-keywords" content="highscore_value" />
+  <meta name="search-keywords" content="highscore_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>highscore_wert</h1>
+  <p>Mit dieser Funktion können Sie den Punktwert abrufen, der in der Highscore-Liste an der angegebenen Position gespeichert wurde. Wenn kein Punktestand eingegeben wurde, gibt die Funktion 0 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">highscore_value(place);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ort</td>
+        <td>Der Platz auf dem Tisch (1-10).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var i = 9;<br> repeat(10)
+    <br> {
+    <br> scr[i] = highscore_value(i + 1);<br> i -= 1;<br> }
+  </p>
+  <p>Der obige Code läuft in einer Schleife durch die Highscore-Liste und speichert alle Punkte in einem Array.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Game_Control.htm">Allgemeine Spielsteuerung</a></div>
+        <div style="float:right">Weiter: <a href="highscore_clear.htm">highscore_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+highscore_value
+-->
+  <!-- TAGS
+highscore_value
+-->
+</body>
+</html>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Skriptfunktionen und -variablen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of scripts to create functions and global variables and macros" />
+  <meta name="rh-index-keywords" content="Script Functions And Variables" />
+  <meta name="search-keywords" content="user defined functions,script functions,gmcallback_,gmcallback" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Skriptfunktionen und -variablen</h1>
+  <p>Skript-Assets sind im Wesentlichen eine Sammlung von einer oder mehreren benutzerdefinierten Funktionen oder Variablen, die Sie selbst als Codeschnipsel im <a href="../../The_Asset_Editors/Scripts.htm">Skript-Editor</a> schreiben. Die Funktionen, die Sie in einem Script definieren, können
+    Ausdrücke auflösen, Werte zurückgeben oder alles andere tun, was die <span class="notranslate">GameMaker-Sprache</span> erlaubt, genau wie die eingebauten <a href="Runtime_Functions.htm"><span class="notranslate">Runtime-Funktionen</span></a>.</p>
+  <p>Skriptfunktionen sollten im Allgemeinen verwendet werden, wenn Sie einen Codeblock haben, den Sie an mehreren Stellen oder in mehreren Objekten verwenden, oder wenn Sie einen Codeblock modular in mehreren Objekten verwenden möchten. Die Verwendung von Skripten zur Definition von Funktionen bedeutet, dass
+    Sie können die Funktion bei Bedarf nur einmal ändern und die Änderung wird von jedem Objekt, das einen Aufruf der Funktion hat, &quot;übernommen&quot;.</p>
+  <p>Skripte können auch aus organisatorischer Sicht sehr praktisch sein, da sie es Ihnen ermöglichen, Gruppen von Funktionen zu erstellen, die zu einer bestimmten Kategorie gehören - zum Beispiel könnten Sie mehrere Funktionen haben, die alle mit Kollisionen zwischen Instanzen in Ihrem
+    Sie könnten z. B. mehrere Funktionen haben, die sich auf Kollisionen zwischen Instanzen in Ihrem Spiel beziehen, und ein Skript &quot;<span class="inline">Collision_Functions</span>&quot; erstellen, in dem Sie alle diese Funktionen zusammen speichern.</p>
+  <h2>Funktionen erstellen</h2>
+  <p>Wenn Sie ein Skript mit Funktionen darin erstellen, müssen die Funktionen in den folgenden Formaten erstellt werden:</p>
+  <p class="code"><span>Funktion &lt;Name&gt;( &lt;Parameter1&gt;, &lt;Parameter2&gt;, usw... )<br>
+{</span><br>
+    <span>    &lt;Anweisung1&gt;;</span><br>
+    <span>    &lt;Anweisung1&gt;;</span><br>
+    <span>    ...</span><br>
+    <span>}</span></p>
+  <p>oder:</p>
+  <p class="code"><span><span>&lt;name&gt; = </span>function( &lt;parameter1&gt;, &lt;parameter2&gt;, etc... )</span><br>
+    <span>{</span><br>
+    <span>    &lt;Anweisung1&gt;;</span><br>
+    <span>    &lt;Anweisung1&gt;;</span><br>
+    <span>    ...</span><br>
+    <span>}</span></p>
+  <p>Im Allgemeinen sollten Sie jedoch die <em>erste </em>Form für Skriptfunktionen verwenden, da sie die Funktion speziell als Skriptfunktion definiert, was bedeutet, dass sie einen <strong>globalen </strong> <a href="Variables_And_Variable_Scope.htm">Geltungsbereich</a> hat,
+    einen <strong>Skript-Index</strong> zugewiesen bekommt und das Präfix <span class="inline">global</span> nicht benötigt, um sie zu identifizieren, da der Compiler sie als Skriptfunktion erkennen wird. Wenn Sie die zweite Form verwenden, wird stattdessen eine globale
+   <a href="Method_Variables.htm">Methodenvariable</a> mit globalem Geltungsbereich, die als solche von der IDE <em>nicht </em>als Skriptfunktion erkannt wird und die Verwendung des Präfixes <span class="inline">global</span> erfordert, wenn in Ihrem Code darauf verwiesen wird.</p>
+  <p class="note"><strong>HINWEIS</strong>: Sie können dies überprüfen, indem Sie beide Formulare in einem Skript verwenden und dann die <span class="notranslate">Laufzeitfunktion</span> <a href="../GML_Reference/Variable_Functions/typeof.htm">typeof()</a> für jedes von ihnen aufrufen. Das eine wird als &quot;Nummer&quot; eingestuft - da
+    sie eine Skript-Index-ID zurückgibt - und die andere wird als &quot;Methode&quot; eingestuft.</p>
+  <h2>Argumente</h2>
+  <p>Sie können eigene Parameter/Argumente für die Funktion definieren, die dann der Funktion als lokale Variablen zur Verfügung stehen und beliebig verwendet werden können:</p>
+  <p class="code">function move<strong>(spd, dir</strong>)<br> {
+    <br> speed = <strong>spd</strong>;<br> direction = <strong>dir</strong>;<br> }
+  </p>
+  <p>Diese Funktion nimmt zwei Argumente entgegen und wendet deren Werte auf die Variablen <tt>Geschwindigkeit und</tt> <tt>Richtung</tt> der Instanz an. Sie kann nun wie jede andere <span class="notranslate">Laufzeitfunktion</span> aufgerufen werden und es können ihr Argumente übergeben werden:</p>
+  <p class="code">var _mouse_dir = point_direction(x, y, mouse_x, mouse_y);<br>
+    <br>
+   <strong>move(4, _mouse_dir);</strong></p>
+  <p>Beachten Sie, dass, wenn ein Argument nicht an eine Funktion übergeben wird, sein Wert <tt>undefiniert</tt> ist. Sie können dies verwenden, um <em>optionale</em> Argumente zu definieren und zu prüfen, ob ein Argument übergeben wird oder nicht, indem Sie prüfen, ob es gleich <tt>undefiniert</tt> ist. Wie auch immer,
+    können Sie jedoch auch einen Standardwert für ein Argument definieren, der anstelle von <tt>undefiniert</tt> verwendet wird, wenn es nicht übergeben wird.</p>
+  <p>Sie können einem Parameter einen solchen Standardwert mit dem Gleichheitszeichen<tt>(=</tt>) zuweisen und ihn damit zu einer optionalen Variablen machen:</p>
+  <p class="code">function move(spd, <strong>dir = 90</strong>)<br> {
+    <br> speed = spd;<br> direction = dir;<br> }
+  </p>
+  <p>Wenn das <tt>dir-Argument</tt> beim Aufruf der obigen Funktion nicht übergeben wird, dann wird sein Wert standardmäßig auf <tt>90</tt> gesetzt, wodurch die Instanz in eine Aufwärtsrichtung bewegt wird.</p>
+  <p>Der Standardwert einer optionalen Variablen kann ein Ausdruck sein, so dass Sie z. B. Variablen verwenden und Funktionen aufrufen können, während Sie eine optionale Variable definieren. Beachten Sie, dass ein solcher Ausdruck nur ausgeführt wird, wenn sein optionales Argument nicht
+    im Funktionsaufruf enthalten ist. Siehe das folgende Beispiel für eine Protokollierungsfunktion:</p>
+  <p class="code">function log(text = &quot;Log&quot;, object = object_index, time = date_datetime_string(date_current_datetime()))<br> {
+    <br> var _string = &quot;[&quot; + string(time) + &quot;] &quot;;<br> _string += object_get_name(object) + &quot;: &quot;;<br> _string += text;<br>     <br> show_debug_message(_string);<br> }
+  </p>
+  <p>Diese Funktion nimmt drei Argumente entgegen, wobei das erste Argument standardmäßig eine String-Konstante, das zweite Argument standardmäßig eine Instanzvariable (im Gültigkeitsbereich der aufrufenden Instanz) und das dritte Argument standardmäßig ein Ausdruck ist, der eine Funktion
+    aufruft, um das aktuelle Datum und die Uhrzeit abzurufen. Diese Funktion kann nun mit bis zu drei Argumenten aufgerufen werden, wie im folgenden Beispiel zu sehen:</p>
+  <p class="code">log();<br> // Druckt: [09-Jun-21 12:34:37 PM] Object1: Log<br>
+    <br> log(&quot;Spieler hat geschossen&quot;, obj_player, 10);<br> // Druckt: [10] obj_player: Spieler hat geschossen</p>
+  <h2>JSDoc</h2>
+  <p>Wir empfehlen auch, dass Sie Kommentare hinzufügen, um die Eigenschaften der Funktion zu definieren (siehe den Abschnitt über <a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">JSDoc-Kommentare</a> für weitere Details), so dass ein einfaches Skript wie folgt aussehen würde
+    wie folgt aussehen würde:</p>
+  <p class="code">/// @function log(message);<br> /// @param {string} message Die Nachricht, die angezeigt werden soll<br> /// @description Eine Nachricht anzeigen, wenn die Funktion aufgerufen wird.<br>
+    <br> function log(message)<br> {
+    <br> show_debug_message(meldung);
+    <br> }
+  </p>
+  <p>Zusätzliche Funktionen für das Skript können nach dem gleichen Format wie oben gezeigt nacheinander innerhalb des Skript-Assets hinzugefügt werden.</p>
+  <p><img alt="Multiple Functions In One Script" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Multiple_Functions_Scripts.png" /></p>
+  <h2>Rückgabewert</h2>
+  <p>Funktionen in Skripten können ebenso wie <span class="notranslate">Laufzeitfunktionen</span> einen Wert zurückgeben und als solche in Ausdrücken verwendet werden. Hierfür würden Sie die <a href="Language_Features/return.htm"><tt>return</tt></a> Anweisung:</p>
+  <p class="code">Rückgabe &lt;Ausdruck&gt;</p>
+  <p>Es ist zu beachten, dass die <strong><i>die Ausführung der Funktion endet mit der Return-Anweisung</i></strong>bedeutet, dass jeglicher Code, der nach der <strong>return-Anweisung </strong>kommt <i>, nicht ausgeführt wird</i>. Hier ist eine kurze Beispielfunktion aus
+    eine Funktion namens &quot;<span class="inline">sqr_calc</span>&quot;, die das Quadrat eines beliebigen Wertes berechnet, der ihr übergeben wird, und für den Fall, dass der angegebene Wert keine reelle Zahl ist, verwendet sie return, um die Funktion frühzeitig <strong>zu beenden</strong>, so dass die eigentliche
+    Berechnung nie ausgeführt wird:</p>
+  <p class="code">/// @function sqr_calc(val);<br> /// @param {real} val Der Wert, von dem das Quadrat berechnet werden soll<br> /// @description Berechne das Quadrat des angegebenen Wertes<br>
+    <br> function sqr_calc(val)<br> {
+    <br> if !is_real(val)<br> {
+    <br> return 0;<br> }
+    <br>
+    <br> return (val * val);<br> }
+  </p>
+  <p>Beachten Sie, dass, wenn Sie eine Skriptfunktion <em>ohne</em> Rückgabewert erstellen und dann in Ihrem Code nach einem solchen suchen, Sie standardmäßig den Wert <span class="inline">undefined</span> erhalten.</p>
+  <p>Um eine Skriptfunktion aus einem Stück Code heraus aufzurufen, verwenden Sie sie einfach wie beim Aufruf einer beliebigen <span class="notranslate">Laufzeitfunktion</span> - das heißt, Sie schreiben den Funktionsnamen mit den Parameterwerten in Klammern. Das obige Skript würde also wie folgt aufgerufen werden:</p>
+  <p class="code">if keyboard_check_pressed(vk_enter)<br> {
+    <br> val = scr_sqr(Betrag);<br> }
+  </p>
+  <p class="note"><strong>HINWEIS</strong>: Wenn Sie Ihre eigenen Funktionen aus Skripten im Code-Editor verwenden, können Sie mit<span> <img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"></span> oder klicken Sie mit der mittleren Maustaste <span><img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> </span>auf
+    den Funktionsnamen drücken oder klicken, um das Skript, das die Funktion enthält, direkt zur Bearbeitung zu öffnen.</p>
+  <h2>Skript-Namen vs. Funktions-Namen</h2>
+  <p>Es ist wichtig zu verstehen, dass <i>Skriptnamen</i> <b>unabhängig von den Funktionen</b> sind <b>, die sie enthalten</b>, so dass Sie Ihre Skripte mit &quot;gesundem Menschenverstand&quot; benennen können, d. h.: alle Ihre KI-Funktionen könnten in einem Skript &quot;<span class="inline">Enemy_AI</span>&quot;
+    (wobei Sie sich an die Standardkonventionen für die Benennung von Assets halten und nur alphanumerische Zeichen und den Unterstrich &quot;_&quot; verwenden). Sie können jedoch auch Skripte in Ihrem Spiel aufrufen - und Sie können Skripte genauso benennen wie eine Funktion, die Sie darin definieren - was
+    aufgrund der Art und Weise, wie <span class="notranslate">GameMaker Studio 2</span> Asset-Referenzen speichert, zu einem Problem führen kann. Betrachten Sie als Beispiel diesen Code, der von einer Instanz aufgerufen wird:</p>
+  <p class="code">function indirectCall(func, arg)<br> {
+    <br> func(arg);
+    <br> }
+    <br>
+    <br> indirectCall(myscript, arg);</p>
+  <p>Der obige Code versucht, ein Skript namens &quot;myscript&quot; innerhalb einer Methode aufzurufen, was in diesem Fall fehlschlagen wird. Das liegt daran, dass die Inline-Funktion den <em>Index</em> für das Skript-Asset verwendet und <strong>nicht </strong>tatsächlich
+    das Skript aufruft - z. B.: wenn der Skriptindex &quot;4&quot; lautet, ruft die Funktion im Wesentlichen 4(arg); auf, <tt>was</tt> keinen Sinn ergibt. Der Code sollte stattdessen auf eine der beiden folgenden Arten strukturiert werden:</p>
+  <p class="code">function indirectCall(func, arg)<br> {
+    <br> func(arg);
+    <br> }
+    <br>
+    <br> indirectCall(method(undefined, myscript), arg);<br>
+    <br> // OR<br>
+    <br> function indirectCall(func, arg)<br> {
+    <br> script_execute(func, arg);<br> }
+    <br>
+    <br> indirectCall(myscript, arg);</p>
+  <p>Dies ist wichtig zu beachten, insbesondere bei der Arbeit mit Legacy-Projekten, in denen Skripte eine einzige Funktion enthalten und die Funktion den gleichen Namen wie das Skript trägt. Sie sollten dies jedoch <em>niemals</em> tun und Ihre Skripte sollten unabhängig von den darin enthaltenen Funktionen benannt werden.
+    unabhängig von den Funktionen, die sie enthalten, benannt werden.</p>
+  <h2>Skriptumfang</h2>
+  <p>Dies führt uns zum letzten und wichtigsten Punkt, den man über Skripte und die darin enthaltenen Funktionen wissen muss: Skripte werden auf <b>globaler</b> Ebene geparst und werden <strong>gleich zu Beginn des Spiels kompiliert</strong>. Das bedeutet, dass <em>technisch gesehen</em> alle Funktionen in einem Skript &quot;ungebundene&quot; <a href="Method_Variables.htm">Methodenvariablen</a> sind <a href="Method_Variables.htm">und alle</a> Variablen, die außerhalb einer Funktion im Skript deklariert werden, als globale <a href="Variables/Global_Variables.htm">Variablen</a> betrachtet werden <a href="Variables/Global_Variables.htm">.</a>
+    Betrachten Sie zum Beispiel dieses Skript:</p>
+  <p class="code">function Foo()<br> {
+    <br> // Mach etwas<br> }
+    <br> blah = 10;<br> function Bar()<br> {
+    <br> // Etwas anderes tun<br> }
+  </p>
+  <p>Im obigen Fall haben wir nicht nur die Funktionen <tt>Foo</tt> und <tt>Bar</tt> definiert, sondern auch die Variable <tt>blah</tt>, und alle diese Funktionen werden als im <b>globalen</b> Bereich erstellt betrachtet. Die Funktionen brauchen das <tt>globale</tt> Schlüsselwort nicht, um erkannt zu werden, da der Compiler versteht, dass diese Funktionen Teil des Skripts sind, aber wenn Sie auf blah zugreifen wollten, müssten Sie das tun:</p>
+  <p class="code">val = global.blah;</p>
+  <p>Wir empfehlen jedoch, <b>globale Variablen</b> beim Anlegen in Skripten <b>immer explizit anzugeben</b>, um spätere Probleme zu vermeiden. Skripte sind auch ein idealer Ort, um <strong>Makros</strong> oder <strong>Enums</strong><a href="Variables/Constants.htm">(Konstanten</a>) zu definieren,
+    da das Hinzufügen zu einem Skript außerhalb einer Funktion auch bedeutet, dass sie zur Verwendung erstellt werden, bevor der Spielcode tatsächlich ausgeführt wird. Im Folgenden finden Sie ein Beispiel für ein Skript, das verschiedene Werte für den globalen Bereich eines Spiels erstellt:</p>
+  <p class="code">/// Alle Werte und Konstanten des globalen Bereichs initialisieren<br> global.player_score = 0;<br> global.player_hp = 100;<br> global.pause = false;<br> global.music = true;<br> global.sound = true;<br>
+    <br> enum rainbowcolors<br> {
+    <br> rot,<br> orange,<br> gelb,<br> grün,<br> blau,<br> indigo,<br> violett<br> }
+    <br>
+    <br> #macro weapon_num 3<br> #macro weapon_gun 0<br> #macro weapon_bomb 1<br> #macro weapon_knife 2</p>
+  <p>Beachten Sie, dass alle diese Konstanten außerhalb eines Funktionsaufrufs eingerichtet werden, was bedeutet, dass sie vor allem anderen und in einem <em>globalen </em>Bereich initialisiert werden. Das bedeutet, dass Sie, wenn Sie ein Skript verwenden möchten, um Variablen auf einem <em>Instanzbereich </em>zu initialisieren
+    initialisieren wollen, müssen Sie sie z. B. in eine Funktion verpacken:</p>
+  <p class="code">/// @function init_enemy();<br> /// @description Feind-Instanzvariablen initialisieren<br>
+    <br> function init_enemy()<br> {
+    <br> hp = 100;<br> dmg = 5;<br> mana = 50;<br> }
+  </p>
+  <p>Skripte können also verwendet werden, um Makros, Enums und globale Variablen vor dem Spielstart zu generieren, damit sie jederzeit einsatzbereit sind, und sie können auch verwendet werden, um &quot;ungebundene&quot; Methoden (benutzerdefinierte Funktionen) zu erstellen, die in Ihrem Spiel verwendet werden können
+    wie <span class="notranslate">GML-Laufzeitfunktionen</span>.</p>
+  <p>Ein letzter Hinweis zu Skriptfunktionen: Wenn Sie für das <strong>Web </strong> entwickeln (d. h. für <strong>HTML5</strong>), gibt es ein zusätzliches Funktionsprotokoll, das Sie verwenden können, wenn Sie Funktionen zu Skripten hinzufügen, nämlich
+    einen Funktionsnamen mit <tt>gmcallback_</tt> voranzustellen, zum Beispiel:</p>
+  <p class="code">gmcallback_create_button</p>
+  <p>Die Verwendung des obigen Funktionsnamens würde bedeuten, dass die Funktion <tt>gmcallback_create_button()</tt> nicht verschleiert wird und somit in JavaScript-Erweiterungen und anderen Bereichen Ihres Spiels verwendet werden kann, z. B. bei Verwendung der <a href="../GML_Reference/Web_And_HTML5/Web_And_HTML5.htm"><tt>klickbar_*</tt></a> Funktionen.</p>
+  <h2>Statische Variablen</h2>
+  <p>Funktionen können auch statische Variablen verwenden, die ihre Werte bei jedem Funktionsaufruf beibehalten. Bitte <a href="Functions/Static_Variables.htm">lesen Sie diese Seite</a> für weitere Informationen.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="Method_Variables.htm">Methoden-Variablen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Functions
+User Defined Functions
+function
+gmcallback
+-->
+  <!-- TAGS
+script_functions
+-->
+</body>
+</html>

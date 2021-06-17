@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Vernetzung</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Networking  functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Networking" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Vernetzung</h1>
+  <p>Die Netzwerkfunktionen von <span class="notranslate">GameMaker Studio 2</span> basieren auf <i>Sockets</i>, was ein Industriestandard auf allen Plattformen ist. Mit Sockets haben Sie die Möglichkeit, sowohl Clients als auch Server mit einfachem <span class="notranslate">GML</span> zu erstellen, wodurch Sie sogar ein Einzelspieler-Spiel im Client/Server-Modell erstellen können.
+    Spieler-Spiel mit dem Client/Server-Modell zu erstellen (was später das einfache Hinzufügen von Multiplayer ermöglicht).</p>
+  <p>Grundsätzlich ist ein Socket ein Objekt, das senden, empfangen, verbinden und auf <i>Ports</i> im Netzwerk hören kann. Diese Funktionen befassen sich nur mit TCP/IP-Verbindungen, auf denen das Internet basiert (IPv4, um genau zu sein). Im Wesentlichen können Sie damit
+    einen Socket mit einer IP-Adresse (z. B. 192.168.1.10) mit einem anderen Socket mit einer anderen IP-Adresse (z. B. 192.168.1.11) verbinden. Sobald die beiden Sockets verbunden sind, können sie Daten hin- und herschicken, indem sie die <tt>network_send_*-Funktionen</tt> (wie <a href="network_send_packet.htm"><tt>network_send_packet()</tt></a>)
+    und dem dedizierten asynchronen Ereignis, das von ihnen ausgelöst wird. Dieses asynchrone Ereignis erzeugt eine <a href="../Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a>, die die empfangenen Daten sowie weitere Details enthält, und Sie finden die vollständigen Details
+    finden Sie im Abschnitt über das <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">asynchrone Netzwerkereignis</a>.</p>
+  <p>Anstatt dass Programme jedes Stückchen Netzwerkverkehr, das auf einen Rechner zukommt, lesen und verarbeiten müssen, befassen sich IP-Adressen auch mit Ports, die von 0 bis 65535 durchnummeriert sind. Dies erlaubt jedem Programm, nur die Datenpakete zu erhalten, an denen es interessiert ist
+    interessiert, und nicht alles, was von jedem Programm gesendet wurde. Dies spart auch erhebliche CPU-Zeit, da die Datenverarbeitung stark reduziert wird, so dass Sie mit <span class="notranslate">GameMaker Studio 2</span> auch auf Ports "hören" können. Ein Server erstellt also einen Socket und bindet ihn dann
+    bindet ihn an einen bestimmten Port zum Abhören. Er wird dann über Verbindungen, Verbindungsabbrüche und Datentransfers von diesem Socket benachrichtigt.</p>
+  <p>Die Daten-&quot;Pakete&quot; selbst bestehen aus Binärdaten, die einem Puffer entnommen werden. Dieser Puffer kann mit den <a href="../Buffers/Buffers.htm">Buffer-Funktionen</a> des <span class="notranslate">GameMaker Studio 2</span> erstellt und manipuliert werden.</p>
+  <p>Es ist erwähnenswert, dass Sie, wenn Sie ein Projekt für das HTML5-Ziel erstellen, die Funktionen zum Erstellen eines Servers aufgrund von Browser-Einschränkungen nicht verwenden können und einen eigenen Server für diese Plattform schreiben müssen, indem Sie etwas wie <strong>Electron </strong>oder
+   <strong>NodeJS</strong>. Beachten Sie auch, dass, wenn Ihr Spiel plattformübergreifend ist und Sie eine Verbindung zu einer HTML5-Instanz des Spiels von einem Server aus planen, der auf einem mobilen oder Desktop-Gerät läuft, Ihr Server nur mit der HTML5-Instanz kommunizieren kann
+    über das Web-Socket-Protokoll kommunizieren (dies geschieht über die Konstante <tt>network_socket_ws</tt> - siehe <a href="network_create_server.htm"><tt>network_create_server()</tt></a> für weitere Informationen). Das bedeutet, dass Ihr Server möglicherweise zwei Sockets erstellen muss
+    auf verschiedenen Ports erstellen muss, einen für die Verbindung mit Nicht-HTML5-Zielen<span class="notranslate">(Android</span>, <span class="notranslate">Windows</span>, etc...) und einen für die Verbindung mit dem HTML5-Ziel.</p>
+  <p>Es gibt folgende Funktionen, die Sie für die Vernetzung nutzen können:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="network_create_server.htm">netzwerk_erstellen_server</a></li>
+    <li><a href="network_create_server_raw.htm">netzwerk_erstellen_server_raw</a></li>
+    <li><a href="network_create_socket.htm">netzwerk_erzeugen_socket</a></li>
+    <li><a href="network_create_socket_ext.htm">netzwerk_erzeugen_socket_ext</a></li>
+    <li><a href="network_connect.htm">Netzwerk_verbinden</a></li>
+    <li><a href="network_connect_async.htm">netzwerk_verbinden_async</a></li>
+    <li><a href="network_connect_raw.htm">netzwerk_verbinden_raw</a></li>
+    <li><a href="network_connect_raw_async.htm">network_connect_async_raw</a></li>
+    <li><a href="network_resolve.htm">netzwerk_aufloesen</a></li>
+    <li><a href="network_set_config.htm">netzwerk_set_config</a></li>
+    <li><a href="network_set_timeout.htm">netzwerk_zeitlimit_setzen</a></li>
+    <li><a href="network_send_broadcast.htm">netzwerk_senden_broadcast</a></li>
+    <li><a href="network_send_packet.htm">netzwerk_senden_paket</a></li>
+    <li><a href="network_send_raw.htm">netzwerk_senden_raw</a></li>
+    <li><a href="network_send_udp.htm">netzwerk_senden_udp</a></li>
+    <li><a href="network_send_udp_raw.htm">network_send_udp_raw</a></li>
+    <li><a href="network_destroy.htm">netzwerk_zerstören</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../GML_Reference.htm"><span class="notranslate">GML-Referenz</span></a></div>
+        <div style="float:right">Nächste: <a href="../Web_And_HTML5/Web_And_HTML5.htm">Web</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Networking
+-->
+  <!-- TAGS
+networking_functions
+-->
+</body>
+</html>

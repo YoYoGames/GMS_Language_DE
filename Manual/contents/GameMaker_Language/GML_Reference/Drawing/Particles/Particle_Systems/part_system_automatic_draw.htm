@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teil_system_automatisch_ziehen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_automatic_draw" />
+  <meta name="rh-index-keywords" content="part_system_automatic_draw" />
+  <meta name="search-keywords" content="part_system_automatic_draw" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teil_system_automatisch_ziehen</h1>
+  <p>Mit dieser Funktion kann das Zeichnen eines Partikelsystems ausgeschaltet werden, so dass alle Aktualisierungen, die am System vorgenommen werden (automatisch oder anderweitig), nicht gesehen werden. Dies ist eine rein visuelle Option, und wenn sie auf <tt>"false"</tt> gesetzt ist, werden Sie nicht in der Lage sein, die
+    Partikel nicht sehen, da sie nicht gezeichnet werden, aber sie sind immer noch vorhanden und ändern ihre Position, Farbe etc... wie sie es normalerweise tun würden. Wenn das automatische Zeichnen ausgeschaltet ist, können Sie <span class="notranslate">GameMaker Studio 2</span> <i>explizit</i> anweisen, den aktuellen Zustand des Partikelsystems zu zeichnen
+    Systems zu zeichnen, indem Sie die Funktion <a href="part_system_drawit.htm"><tt>part_system_drawit()</tt></a>setzen, und wenn Sie diese Funktion wieder auf <tt>true</tt> setzen, können Sie das automatische Zeichnen wieder einschalten.</p>
+  <p>Eine Sache, die Sie beachten sollten, ist, dass Sie, wenn Sie die einfachen Effekte verwenden, die mit den Funktionen <a href="../effect_create_above.htm"><tt>effect_create_above()</tt></a> oder <a href="../effect_create_below.htm"><tt>effect_create_below()</tt></a> erzeugen, dann können Sie mit
+    die Werte 0 (für Effekte unterhalb) oder 1 (für Effekte oberhalb) als Partikelsystem-Index verwenden und so das automatische Zeichnen auch für diese umschalten (dies funktioniert auch, um das Zeichnen für die <span class="notranslate">DnD™-Partikel-Effekte</span>umzuschalten).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_system_automatic_draw(ind, automatic);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu ändernden Partikelsystems.</td>
+      </tr>
+      <tr>
+        <td>automatisch</td>
+        <td>Ob das automatische Zeichnen eingeschaltet ist (true) oder nicht (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">part_system_automatic_draw(global.Sname, false);</p>
+  <p>Der obige Code schaltet das automatische Zeichnen für das in der globalen Variable &quot;Sname&quot; indizierte Partikelsystem aus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Systems.htm">Partikel-Systeme</a></div>
+        <div style="float:right">Weiter: <a href="part_system_update.htm">part_system_update</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_automatic_draw
+-->
+  <!-- TAGS
+part_system_automatic_draw
+-->
+</body>
+</html>

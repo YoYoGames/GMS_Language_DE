@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>show_question_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for show_question_async" />
+  <meta name="rh-index-keywords" content="show_question_async" />
+  <meta name="search-keywords" content="show_question_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_question_async</h1>
+  <p>Diese Funktion öffnet ein Fenster und zeigt dem Benutzer die Frage an, die Sie in der Funktion definieren. Dies ist eine asynchrone Funktion, und als solche blockiert <span class="notranslate">GameMaker Studio 2</span> das Gerät, auf dem sie ausgeführt wird, <i>nicht</i>, während es auf eine Antwort wartet, sondern
+    sondern führt die Ereignisse wie gewohnt weiter aus. Die Funktion hat zwei Schaltflächen, die &quot;Ja&quot; und &quot;Nein&quot; anzeigen, und sobald der Benutzer eine davon gedrückt hat, wird ein asynchrones Dialog-Ereignis <b>ausgelöst</b>, das nur für die Dauer dieses Ereignisses
+    eine DS-Map hat, die in der Variablen <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Diese Map enthält die beiden Schlüssel &quot;id&quot; und &quot;status&quot;. &quot;id&quot;<strong>ist der</strong> Wert, der beim Aufruf der Funktion zurückgegeben wurde, während &quot;status&quot; entweder wahr oder falsch für &quot;Ja&quot; bzw. &quot;Nein&quot; ist <tt>.</tt> </p>
+  <p class="note"><strong><em>HINWEIS:</em></strong><em> Diese Funktion ist <span data-keyref="Dialog for debug only"> <strong>nur</strong> für <strong>Debugging- und Testzwecke</strong></span>gedacht <span data-keyref="Dialog for debug only">und sollte nicht in veröffentlichten Spielen verwendet werden. Zu diesem Zweck sollten Sie eine benutzerdefinierte Benutzeroberfläche erstellen, um Eingaben von Spielern zu erhalten, so dass Sie die vollständige Kontrolle darüber haben, wie die Dialoge aussehen und sich verhalten.</span></em></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">show_question_async(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Zeichenfolge</td>
+        <td>Die Frage, die Sie dem Benutzer stellen müssen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>Das <b>linke Maustasten-Ereignis</b> (z. B.) des Objekts, das die Nachricht anzeigt, würde den folgenden Code haben:</p>
+  <p class="code">msg = show_question_async(&quot;Möchten Sie eine Rüstung für &quot; + string(Rüstung[0, 5]) + &quot;Münzen kaufen?&quot;);</p>
+  <p>Die obige Funktion zeigt eine Frage mit der angegebenen Zeichenfolge an und fordert den Benutzer auf, entweder &quot;Ja&quot; oder &quot;Nein&quot; zu drücken. Die Funktions-ID wird in der Variablen &quot;msg&quot; gespeichert und wird im <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">Ereignis</a> &quot;Asynchroner <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">Dialog&quot; wie</a> unten gezeigt verwendet:</p>
+  <p class="code">var i_d, stat;<br> i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> coins -= panzer[0,5];<br> global.protection += panzer[0,0];<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft den &quot;id&quot;-Schlüssel der zurückgegebenen DS Map <tt>gegen</tt> den in der Variablen &quot;msg&quot; gespeicherten Wert. Wenn sie gleich sind, prüft er dann, ob eine der beiden Tasten gedrückt wurde, und wenn er <tt>"true"</tt> zurückgibt, zieht er dann einen Wert von einer Variablen ab und fügt auch einen Wert zu einer globalen Variablen hinzu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Dialog.htm">Dialog</a></div>
+        <div style="float:right">Weiter: <a href="shop_leave_rating.htm">shop_leave_rating</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+show_question_async
+-->
+  <!-- TAGS
+show_question_async
+-->
+</body>
+</html>

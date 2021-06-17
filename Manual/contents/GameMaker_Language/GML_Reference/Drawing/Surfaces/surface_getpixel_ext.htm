@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>oberfläche_getpixel_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_getpixel_ext" />
+  <meta name="rh-index-keywords" content="surface_getpixel_ext" />
+  <meta name="search-keywords" content="surface_getpixel_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>oberfläche_getpixel_ext</h1>
+  <p>Mit dieser Funktion können Sie den vollen <b>abgr 32bit</b> Wert eines beliebigen Pixels einer (zuvor erstellten) Oberfläche erhalten.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion hat einen enormen Leistungseinbruch zur Folge und sollte daher nur verwendet werden, wenn es unbedingt notwendig ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">surface_getpixel_ext(surface_id, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>oberfläche_id</td>
+        <td>Die ID der zu verwendenden Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate des zu prüfenden Pixels</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate des zu prüfenden Pixels</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">col = surface_getpixel_ext(mouse_x, mouse_y);<br> alpha = (col &gt;&gt; 24) &amp; 255;<br> blue = (col &gt;&gt; 16) &amp; 255;<br> green = (col &gt;&gt; 8) &amp; 255;<br> red = col &amp; 255;</p>
+  <p>Der obige Code holt sich den 32-Bit-Farbwert an der Position der Maus und teilt ihn dann in seine Komponentenwerte auf und speichert sie in Variablen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="surface_free.htm">Oberfläche_frei</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_getpixel_ext
+-->
+  <!-- TAGS
+surface_getpixel_ext
+-->
+</body>
+</html>

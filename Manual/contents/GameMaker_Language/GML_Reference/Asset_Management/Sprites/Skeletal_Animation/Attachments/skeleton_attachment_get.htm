@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skelett_anhaengung_holen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_attachment_get" />
+  <meta name="rh-index-keywords" content="skeleton_attachment_get" />
+  <meta name="search-keywords" content="skeleton_attachment_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skelett_anhaengung_holen</h1>
+  <p>Ein Skelett-Animationssprite kann andere Sprites als Attachments hinzufügen, wobei diese Sprites einem benannten Slot hinzugefügt werden (der Name wird beim Erstellen des Attachment-Slots in Ihrem Animationsprogramm vergeben) und sie werden zusammen mit der Animation
+    des aktuellen Sprites gezeichnet. Mit dieser Funktion können Sie den Namen (als String) des Attachments für den angegebenen Slot des aktuell zugewiesenen Sprites abrufen. Beachten Sie, dass angehängte Sprites über ihren <i>Namensstring</i> referenziert werden, wie er in Spine zugewiesen wurde, oder
+    wenn Sie die Funktion <a href="skeleton_attachment_create.htm"><tt>skeleton_attachment_create()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">skeleton_attachment_get(Steckplatz);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Steckplatz</td>
+        <td>Der Name des Steckplatzes (eine Zeichenkette), von dem der Anhang abgerufen werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if skeleton_attachment_get(&quot;slot_leftHand&quot;) == &quot;&quot;<br> {
+    <br> skeleton_attachment_set(&quot;slot_leftHand&quot;, choose(&quot;sword&quot;, &quot;spear&quot;, &quot;knife&quot;));<br> }
+  </p>
+  <p>Der obige Code würde den aktuell zugewiesenen Anlagennamen für den Steckplatz mit dem Namen &quot;slot_leftHand&quot; prüfen und wenn eine leere Zeichenfolge zurückgegeben wird, wird ein neues Sprite angehängt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Attachments.htm">Anhänge</a></div>
+        <div style="float:right">Weiter: <a href="skeleton_attachment_set.htm">skeleton_attachment_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_attachment_get
+-->
+  <!-- TAGS
+skeleton_attachment_get
+-->
+</body>
+</html>

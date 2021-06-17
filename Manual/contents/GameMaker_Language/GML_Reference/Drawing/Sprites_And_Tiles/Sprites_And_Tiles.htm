@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sprites und Kacheln</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Sprites And Tiles functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sprites And Tiles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Sprites und Kacheln</h1>
+  <p>Auch wenn Sie im Raumeditor Hintergründe einrichten und Instanzen Sprites zuweisen können, ist dies oft nicht flexibel genug für das Spiel, das Sie erstellen. Wenn Sie zum Beispiel eine Instanz haben, die ein Menü zeichnen muss, möchten Sie vielleicht verschiedene
+    Schaltflächen-Sprites gleichzeitig anzeigen, oder wenn Sie ein Spiel mit scrollenden Parallaxen-Hintergründen haben, müssen Sie in der Lage sein, diese durch Code in einer Controller-Instanz irgendeiner Art zu setzen. In diesen Situationen sollten Sie die folgenden Funktionen verwenden, die
+    Sprites und Hintergründe an beliebiger Stelle im Raum zeichnen, wobei einige der Funktionen auch die Möglichkeit bieten, Form, Größe, Farbe und Alpha des Sprites zu manipulieren, um spezielle Effekte zu erzielen.</p>
+  <p>Sie können einer Instanz ein Sprite zuweisen und standardmäßig wird <span class="notranslate">GameMaker Studio 2</span> es mit den Eigenschaften zeichnen, die durch die verschiedenen <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">Sprite-Variablen</a> vorgegeben sind,
+    Wenn Sie jedoch etwas in das Draw-Ereignis einfügen, &quot;übernehmen&quot; Sie die Kontrolle und müssen GameMaker <span class="notranslate">Studio 2 genau</span> sagen, was es zeichnen soll. Das bedeutet, dass Sie, wenn Sie die folgenden Funktionen verwenden, genau definieren müssen, was die Instanz
+    zeichnen soll und wo ungefähr im Raum sie es zeichnen soll:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_self.htm">zeichnen_selbst</a></li>
+    <li><a href="draw_sprite.htm">zeichnen_sprite</a></li>
+    <li><a href="draw_sprite_ext.htm">zeichnen_sprite_ext</a></li>
+    <li><a href="draw_sprite_general.htm">draw_sprite_general</a></li>
+    <li><a href="draw_sprite_part.htm">spalt_teil_zeichnen</a></li>
+    <li><a href="draw_sprite_part_ext.htm">zeichnung_spalte_teil_ext</a></li>
+    <li><a href="draw_sprite_stretched.htm">draw_sprite_stretched</a></li>
+    <li><a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></li>
+    <li><a href="draw_sprite_pos.htm">sprung_pos zeichnen</a></li>
+    <li><a href="draw_sprite_tiled.htm">draw_sprite_tiled</a></li>
+    <li><a href="draw_sprite_tiled_ext.htm">draw_sprite_tiled_ext</a></li>
+  </ul>
+  <p> </p>
+  <p>Wenn Sie Sprites im SWF-Format verwenden, gibt es auch zusätzliche Optionen zur Steuerung des beim Zeichnen verwendeten Anti-Aliasings (siehe <a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Importieren von Nicht-Bitmap-Sprites</a> für
+    weitere Informationen zu diesen Sprite-Typen). Beachten Sie, dass diese Funktionen auf <i>globaler</i> Ebene arbeiten und die AA auf alle Vektor-SWF-Sprites setzen, die nach ihrem Aufruf gezeichnet werden.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></li>
+    <li><a href="draw_set_swf_aa_level.htm">draw_set_swf_aa_level</a></li>
+    <li><a href="draw_get_swf_aa_level.htm">draw_get_swf_aa_level</a></li>
+  </ul>
+  <p> </p>
+  <p>Neben den oben aufgeführten Funktionen gibt es auch zwei spezielle Funktionen, die für die Verwendung mit Skelettanimationen entwickelt wurden (siehe <a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Importieren von Nicht-Bitmap-Sprites</a> für
+    Weitere Informationen zu diesen Sprite-Typen finden Sie unter Importieren von Nicht-Bitmap-Sprites und im Abschnitt <a href="../../Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Skelettanimationen</a> für spezielle Funktionen im Zusammenhang mit diesen Sprite-Typen):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton.htm">zeichnen_skelett</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_instance.htm">zeichnen_skelett_instanz</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_collision.htm">draw_skeleton_collision</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_time.htm">zeichnen_skelett_zeit</a></li>
+  </ul>
+  <p> </p>
+  <p>Kacheln werden automatisch gezeichnet, basierend auf den Daten, die sie enthalten, dem verwendeten Kachelsatz und den Eigenschaften der Kachelkarte. Sie <i>können</i> jedoch einzelne Kacheln oder Kachelkarten mit den folgenden Funktionen zeichnen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_tile.htm">kachel_zeichnen</a></li>
+    <li><a href="draw_tilemap.htm">kachelplan_zeichnen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Drawing.htm">Zeichnung</a></div>
+        <div style="float:right">Weiter: <a href="../Text/Text.htm">Text</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sprites And Tiles
+-->
+  <!-- TAGS
+sprite_tile_functions
+-->
+</body>
+</html>

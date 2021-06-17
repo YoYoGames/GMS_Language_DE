@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_to_ds_grid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_to_ds_grid" />
+  <meta name="rh-index-keywords" content="mp_grid_to_ds_grid" />
+  <meta name="search-keywords" content="mp_grid_to_ds_grid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_to_ds_grid</h1>
+  <p>Mit dieser Funktion können Sie das angegebene MP-Gitter in ein <a href="../../Data_Structures/DS_Grids/DS_Grids.htm">DS-Gitter</a> kopieren. Das DS-Gitter sollte die gleiche Größe haben wie das MP-Gitter, muss es aber nicht (wenn es kleiner ist, gehen Daten verloren, und
+    wenn es größer ist, werden alle zusätzlichen Gitterzellen 0 sein). Die DS-Gitterzellen enthalten den Wert -1, wenn die MP-Gitterzelle als belegt markiert wurde, oder 0, wenn nicht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_grid_to_ds_grid(Quelle, Ziel);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Quelle</td>
+        <td>Index des mp_grid, das verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Index des ds_grid, in das die Grid-Daten kopiert werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">motion_grid = ds_grid_create(room_width / 32, room_height / 32);<br> mp_grid_to_ds_grid(mp_grid, motion_grid);</p>
+  <p>Der obige Code erstellt ein neues DS-Grid und kopiert dann die in der Variablen &quot;mp_grid&quot; enthaltenen MP-Grid-Daten in das neue DS-Grid.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_grid_draw.htm">mp_grid_draw</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_to_ds_grid
+-->
+  <!-- TAGS
+mp_grid_to_ds_grid
+-->
+</body>
+</html>

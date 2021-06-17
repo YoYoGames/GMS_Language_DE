@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>textur_global_skala</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_global_scale" />
+  <meta name="rh-index-keywords" content="texture_global_scale" />
+  <meta name="search-keywords" content="texture_global_scale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>textur_global_skala</h1>
+  <p>Mit dieser Funktion können Sie die Skalierung der Textur-Seiten beim Laden aus der WAD-Datei, die Teil Ihrer endgültigen Spiel-Executable ist, steuern. Der Eingabewert muss eine Zweierpotenz sein und funktioniert so, dass:</p>
+  <ul class="colour">
+    <li>Um die Texturseiten auf 1:1 zu setzen, verwenden Sie <tt>texture_global_scale(1)</tt></li>
+    <li>Um die Texturen ständig zu halbieren, verwenden Sie <tt>texture_global_scale(2)</tt></li>
+    <li>Um sie zu vierteln, verwenden Sie <tt>texture_global_scale(4)</tt>, usw..</li>
+  </ul>
+  <p>Auf diese Weise können Sie die Speichernutzung von Texturseiten auf Plattformen mit wenig Speicher besser kontrollieren. Beachten Sie, dass Textur-Seiten bei Bedarf aus dem WAD erstellt werden, so dass Sie dies entweder zu Beginn des Spiels aufrufen können, um alle Texturen skaliert zu laden, oder Sie
+    Sie können sie zu bestimmten Zeiten aufrufen, um bestimmte Texturen zu laden; in diesem Fall sollten Sie wahrscheinlich <a href="draw_texture_flush.htm"><tt>draw_texture_flush()</tt></a> vor dem Aufruf dieser Funktion aufrufen und dann die Pre-Fetch-Funktionen verwenden, um die richtigen
+    Textur-Seiten in den Speicher zu bekommen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">texture_global_scale(pow2integer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>pow2integer</td>
+        <td>Der zu verwendende Skalierungsfaktor (1, keine Skalierung, 2, halbe Skalierung, 4, viertel Skalierung, usw...)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_texture_flush();<br> texture_global_scale(2);
+    <br> sprite_prefetch(spr_Trees);
+  </p>
+  <p>Der obige Code spült alle Texturen aus dem Speicher, setzt dann die Textur-Skalierung auf 2 (so dass die Textur-Seiten halb so groß sind) und holt schließlich die Textur-Seite vor, in der das Sprite &quot;spr_Trees&quot; enthalten ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Textures.htm">Texturen</a></div>
+        <div style="float:right">Weiter: <a href="draw_texture_flush.htm">draw_texture_flush</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_global_scale
+-->
+  <!-- TAGS
+texture_global_scale
+-->
+</body>
+</html>

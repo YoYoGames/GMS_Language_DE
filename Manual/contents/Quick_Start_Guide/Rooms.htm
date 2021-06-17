@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Räume</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of the room editor." />
+  <meta name="rh-index-keywords" content="Quick Start - Rooms" />
+  <meta name="search-keywords" content="rooms,room editor,room" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Räume</h1>
+  <p>Alle Spiele, die Sie in <span class="notranslate">GameMaker Studio 2</span> erstellen, benötigen mindestens einen Raum (es können aber auch viele, viele mehr sein), und ein Raum ist einfach ein Bereich, in dem Sie Instanzen der Objekte platzieren, aus denen Ihr Spiel besteht, sowie Kacheln und andere grafische Ressourcen.
+    Wenn Sie zum ersten Mal einen Raum im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> erstellen, wird Ihnen ein neuer <a href="../The_Asset_Editors/Rooms.htm"><strong>Raum-Editor</strong></a> Arbeitsbereich, in dem Sie seine Eigenschaften bearbeiten können,
+    etwa so:</p>
+  <p><img alt="The Room Editor" class="center" src="../assets/Images/QS_Guide/QS_RoomEditor.png" /></p>
+  <p>Standardmäßig werden die Raumwerkzeuge auf der linken Seite platziert, mit drei Hauptabschnitten:</p>
+  <ul class="colour">
+    <li><strong>Ebenen-Editor</strong>: Alles in einem Raum wird auf <em>Ebenen</em> platziert, und es gibt verschiedene Ebenentypen, aus denen Sie wählen können (mehr dazu später). Die Ebenen sind nach <em>Tiefe </em>geordnet, und diese Tiefe bestimmt die Reihenfolge, in der
+      die Ebeneninhalte auf dem Bildschirm gerendert werden, wenn das Spiel läuft. Die Reihenfolge der Tiefe ist von der höchsten zur niedrigsten, d. h. je niedriger die Tiefe, desto näher an der &quot;Kamera&quot; und je höher die Tiefe, desto weiter weg. Zum Beispiel wird eine Ebene mit einer
+      Tiefe von -300 über einer Ebene mit einer Tiefe von -100 gerendert, und eine Ebene mit einer Tiefe von 1000 wird unter allem gerendert, was eine geringere Tiefe als diese hat. Beachten Sie, dass <span class="notranslate">GameMaker Studio 2</span> standardmäßig die Ebenentiefen für Sie entsprechend der Position
+      Sie können die Ebenen mit der Maus verschieben, um sie neu anzuordnen, und GameMaker <span class="notranslate">Studio 2</span> ordnet die Tiefen entsprechend neu an.</li>
+    <li><strong>Ebeneneigenschaften</strong>: Jede Schicht, die Sie dem Raum hinzufügen, hat ihre eigenen Eigenschaften, und diese Eigenschaften ändern sich je nach Schichttyp. In diesem Fenster können Sie diese Eigenschaften ändern und festlegen, wie die Ebene gerendert werden soll.
+     <a class="glossterm" data-glossterm="gerendert" href="#">gerendert</a> wird.</li>
+    <li><strong>Raumeigenschaften</strong>: Auch Räume haben eine Reihe von Eigenschaften, die hier eingestellt werden können. Dinge wie die Raumgröße, die aktiven Kameraansichts-Ports und ein paar andere Dinge können hier eingestellt werden.</li>
+  </ul>
+  <p>Wir haben bereits erwähnt, dass es verschiedene Ebenentypen gibt, also lassen Sie uns kurz durchgehen, was sie sind und wie sie beim Aufbau Ihrer Spiele verwendet werden können:</p>
+  <table class="icons">
+    <tbody>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Background.png" /></td>
+        <td class="icons"><strong>Hintergrund-Ebene</strong></td>
+        <td class="text">Die Hintergrundebene ist eine Ebene, die mit einer <em>einzelnen </em>Farbe oder einem <em>einzelnen </em>Bild gefüllt werden kann. Sie kann innerhalb des Raums verschoben und positioniert werden, und Sie können mehrere Hintergrundebenen haben. Im Allgemeinen wird sie, wie der Name schon sagt, verwendet,
+          um einen konstanten Hintergrund für alle anderen Ebenen im Raum zu erzeugen. Standardmäßig enthält ein neuer Raum immer eine Hintergrundebene, aber Sie können sie entfernen, wenn Sie sie nicht benötigen.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Instances.png" /></td>
+        <td class="icons"><strong>Instanzschicht</strong></td>
+        <td class="text">Auf der Instanzebene platzieren Sie alle Instanzen der Objekte, die Sie für das Spiel benötigen. Um eine Instanz zu einer Ebene hinzuzufügen, klicken Sie einfach auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf das Objekt im
+          Asset-Browser und ziehen Sie es dann in den Arbeitsbereich des Raumeditors. Wenn Sie die Maustaste loslassen, wird dem Raum eine Instanz dieses Objekts hinzugefügt. Standardmäßig enthält ein neuer Raum immer eine Instanz-Ebene, aber Sie können sie entfernen
+          wenn Sie sie nicht benötigen.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Tilemap.png" /></td>
+        <td class="icons"><strong>Kachel Kartenebene</strong></td>
+        <td class="text"><span>Nachdem Sie ein <a class="glossterm" data-glossterm="Fliesensätze" href="#">Kachelset</a> erstellt haben, müssen Sie die Kacheln zu Ihrem Raum hinzufügen, was durch Erstellen einer <a class="glossterm" data-glossterm="Kachelplan" href="#">Kachelzuordnungsebene</a> geschieht. Eine Kachelplan-Ebene ist eine Ebene, die es Ihnen ermöglicht, Kacheln aus den von Ihnen erstellten Kachelsatz-Assets hinzuzufügen, und die automatisch so eingerichtet wird, dass sie ein Raster in der Größe der Zellen des Kachelsatzes verwendet. Sie können jeder Rasterzelle nur eine einzige Kachel hinzufügen. Wenn Sie also mehrere Kacheln benötigen, die denselben Platz einnehmen, sollten Sie mehrere Kachelzuordnungsebenen verwenden.</span></td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Path.png" /></td>
+        <td class="icons"><strong>Pfad Schicht</strong></td>
+        <td class="text"><span>Die Pfadebene ist die einzige Ebene, die nicht gerendert wird, wenn Sie Ihr Spiel ausführen. Diese Ebene ist eher eine &quot;Komfort&quot;-Ebene, die Ihnen beim Erstellen oder Bearbeiten von <strong>Pfad-Assets </strong>hilft, da sie es Ihnen ermöglicht, Pfade innerhalb des eigentlichen Raums hinzuzufügen oder zu bearbeiten.</span></td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Asset.png" /></td>
+        <td class="icons"><strong>Asset-Ebene</strong></td>
+        <td class="text">Manchmal wollen Sie einen schönen grafischen Effekt, aber Sie wollen nicht den Overhead einer Instanz oder brauchen sie nicht, um etwas anderes zu tun, als sich selbst zu zeichnen. Sie könnten eine Kachelkarte verwenden, aber da Kachelkarten auf die Verwendung eines Rasters und nur eines Bildes pro
+          ein einzelnes Bild pro Rasterzelle zu verwenden, können sie etwas restriktiv sein. In diesem Fall würden Sie die Asset-Ebene verwenden. Die Asset-Ebene nimmt einfach eine Sprite-Ressource und zeichnet sie mit den Parametern, die Sie beim Hinzufügen zum Raum festlegen. Sprites und
+          Sequenzen können zu dieser Ebene auf die gleiche Weise hinzugefügt werden wie Instanzen von Objekten zur Instanz-Ebene, d. h. Sie klicken auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf das Sprite im Asset-Browser und ziehen es dann
+          ziehen Sie es in den Arbeitsbereich des Raumeditors.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <!--</div>-->
+  </p>
+  <p>Wir werden hier nicht weiter auf den Raum-Editor eingehen (dafür gibt es diesen <a href="../The_Asset_Editors/Rooms.htm">Abschnitt des</a> Handbuchs), aber wir werden kurz erklären, wie Sie Instanzen zu einem Instanz-Layer hinzufügen, da Sie das für den nächsten Abschnitt der Kurzanleitung wissen müssen.
+    da Sie dies für den nächsten Abschnitt der Kurzanleitung wissen müssen.</p>
+  <p>Um dem Raum-Editor eine Instanz hinzuzufügen, müssen Sie zunächst eine Instanz-Ebene aus dem Ebenen-Editor auf der linken Seite auswählen (oder eine erstellen, wenn keine vorhanden ist). Sie können dann zum Asset-Browser gehen und einfach auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> klicken und ein gewünschtes Objekt von dort in den Raum an der gewünschten Position ziehen, wodurch eine einzelne Instanz dieses Objekts zu Ihrem Spiel hinzugefügt wird:</p>
+  <p><img alt="Adding Instances To A room Animation" class="center" src="../assets/Images/QS_Guide/QS_AddingInstances.gif" /></p>
+  <p>Wenn Sie mehrere Instanzen im Raum platzieren möchten, dann können Sie ein Objekt aus dem Ressourcenbaum auswählen und dann <img alt="ALT Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> drücken und halten, um eine Vorschau der Ressource zu erhalten,
+    und wenn Sie zusätzlich mit der linken Maustaste <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> klicken, können Sie es dann in die Raumebene &quot;malen&quot;.</p>
+  <p><img alt="Painting Instances In A Room Animation" class="center" src="../assets/Images/QS_Guide/QS_PaintingInstances.gif" /></p>
+  <p>Beachten Sie, dass den Assets eine Position zugewiesen wird, wenn sie in den Raumeditor eingefügt werden, basierend auf ihrer X- und Y-Achsenposition relativ zum <strong>Raumursprung</strong>. Der Raumursprung ist die Position (0, 0), die in <span class="notranslate">GameMaker Studio 2</span> die obere linke Ecke ist,
+    und nach rechts ist +X und nach unten ist +Y, z. B:</p>
+  <p><img alt="Room Editor Axis Alignment" class="center" src="../assets/Images/QS_Guide/QS_RoomEditorAxis.png">Im obigen Beispiel befindet sich die Instanz in der Mitte des Raums an der Position (X:512, Y:384). Es ist auch möglich, sich außerhalb der
+    Raumgrenzen zu gehen und Positionen zu haben, die größer als die Raumachsenlängen oder sogar kleiner als der Raumursprung sind - in diesem Fall sind die X/Y-Koordinaten negative Werte.</p>
+  <p>Nähere Informationen zum Raumeditor finden Sie im folgenden Abschnitt des Handbuchs:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Rooms.htm">Redakteure: Der Raum-Editor</a></li>
+  </ul>
+  <p>Das war's für den Raum-Editor in dieser Schnellstart-Anleitung, und Sie sollten jetzt genug wissen, um tatsächlich mit dem Erstellen von Sprites und Objekten und dem Entwerfen von Räumen für diese zu beginnen. In den nächsten Abschnitten dieses Handbuchs werden einige Grundlagen der Programmierung behandelt.
+    Die nächsten Abschnitte dieses Handbuchs werden sich mit den Grundlagen der Programmierung befassen, beginnend mit dem eigentlichen <strong>Zeichnen </strong>von Objekten auf dem Bildschirm.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Nächste: <a href="Drawing.htm">Zeichnen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Rooms
+Quick Start: Rooms
+-->
+  <!-- TAGS
+qs_rooms
+-->
+
+</body></html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>raum_holen_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_get_name" />
+  <meta name="rh-index-keywords" content="room_get_name" />
+  <meta name="search-keywords" content="room_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>raum_holen_name</h1>
+  <p>Diese Funktion kann verwendet werden, um den Namen des angegebenen Raums als String zurückzugeben. Bitte beachten Sie, dass dies <i>nur</i> eine Zeichenkette ist und nicht verwendet werden kann, um den Raum direkt zu referenzieren - dafür würden Sie den <i>Raumindex</i> benötigen. Sie können jedoch mit dieser
+    String verwenden, um den <i>Raumindex</i> zu erhalten, indem Sie den zurückgegebenen String zusammen mit der Funktion <a href="../Assets_And_Tags/asset_get_index.htm"><tt>asset_get_index()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">room_get_name(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Raums, dessen Name geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var roomname = room_get_name(room);<br> draw_text(32, 32, roomname);</p>
+  <p>Der obige Code ermittelt den Namen des aktuellen Raums und zeichnet ihn auf den Bildschirm.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Rooms.htm">Räume</a></div>
+        <div style="float:right">Weiter: <a href="room_goto.htm">room_goto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_get_name
+-->
+  <!-- TAGS
+room_get_name
+-->
+</body>
+</html>

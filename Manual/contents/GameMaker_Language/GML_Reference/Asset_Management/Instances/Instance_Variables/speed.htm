@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Geschwindigkeit</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable speed" />
+  <meta name="rh-index-keywords" content="speed" />
+  <meta name="search-keywords" content="speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Geschwindigkeit</h1>
+  <p>Alle Instanzen in <span class="notranslate">GameMaker Studio 2</span> haben bestimmte &quot;eingebaute&quot; Eigenschaften, die Sie verwenden und einstellen können, um zu bestimmen, wie sie aussehen und sich verhalten. speed ist <tt>eine dieser</tt> Eigenschaften und definiert, wie viele Pixel sich die Instanz pro Schritt bewegt.
+    Anders als <a href="hspeed.htm"><tt>hspeed</tt></a> und <a href="vspeed.htm"><tt>vGeschwindigkeit</tt></a>ist der <tt>Geschwindigkeit</tt> keine Richtung zugeordnet, da diese durch den <a href="direction.htm"><tt>Richtung</tt></a> Wert der Instanz bestimmt wird, aber sie
+    kann einen negativen Wert haben. In diesem Fall bewegt sich die Instanz in die entgegengesetzte Richtung zu der mit der Funktion <tt>direction</tt> eingestellten Richtung (d. h.: <tt>direction</tt> - 180°). Beachten Sie, dass das Setzen von <span class="inline">speed</span> und/oder <span class="inline">direction</span>,
+    auch die Werte der Variablen <span class="inline">hspeed</span> und <span class="inline">vspeed</span> ändern, und dass <a href="gravity.htm"><span class="inline">gravity</span></a>, <a href="gravity_direction.htm"><span class="inline">gravity_direction</span></a>    und <a href="friction.htm"><span class="inline">friction</span></a> alle den Wert dieser Variablen ändern können, wenn sie in Ihren Spielen verwendet werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">Geschwindigkeit;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Gleitkommawert mit einfacher Genauigkeit)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check(vk_up) speed = 2;<br> if keyboard_check(vk_left) direction += 5;<br> if keyboard_check(vk_right) direction -= 5;</p>
+  <p>Der obige Code verwendet die Pfeiltasten, um die Geschwindigkeit und Richtung der Instanz einzustellen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Variables.htm">Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="xstart.htm">xstart</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+speed
+-->
+  <!-- TAGS
+speed
+-->
+</body>
+</html>

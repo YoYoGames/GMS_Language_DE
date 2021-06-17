@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Transformierten Wert zeichnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Transformed Value action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Transformed Value" />
+  <meta name="search-keywords" content="Draw Transformed Value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Transformed Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Transformed_Value.png"> Transformierten Wert zeichnen</h1>
+  <p>Mit dieser Aktion können Sie eine String-Beschriftung und/oder eine Variable oder einen Wert auf den Bildschirm zeichnen. Das Argument "Beschriftung" ist eine Zeichenkette, die dem Wert vorangestellt werden soll, und kann bei Bedarf leer gelassen werden, und der Wert kann eine Variable, ein fester Wert oder
+    eine andere Zeichenkette sein - in diesem Fall sollte sie in Anführungszeichen gesetzt werden und kann bei Bedarf auch leer gelassen werden. Anschließend geben Sie die Position an, an der die Zeichenkette gezeichnet werden soll, entweder als absolute Position oder als Position relativ zu der Instanz, die den
+    Text zeichnet. Zusätzlich können Sie die Skalierung des Textes festlegen, d. h. die Streckung entweder entlang der horizontalen oder der vertikalen Achse, sowie die Drehung (die Winkel für die Drehung des Textes sind gegen den Uhrzeigersinn, d. h., wenn Sie den Wert 90° festlegen, wird der Text nach links und -90° nach rechts gedreht).
+    rechts). Die Skalierung erfolgt mit dem angegebenen Faktor, d. h. eine Skalierung von 0,5 <i>halbiert</i> die Breite des Textes und eine Skalierung von 2 verdoppelt die Breite, wobei 1 der Standardwert für keine Skalierung ist. Beachten Sie, dass das Aussehen des gezeichneten Textes von folgenden Faktoren abhängt
+    der verwendeten Schriftart, der verwendeten Farbe und der Ausrichtung abhängt. All diese Dinge können vor dem Zeichnen geändert werden, wie im Beispiel unten gezeigt.<b></b></p>
+  <p class="note"><b></b><b>HINWEIS</b>: Diese Aktion ist nur für die Verwendung in den verschiedenen <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">Draw-Events</a> vorgesehen und wird nichts zeichnen, wenn sie anderweitig verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Draw Transformed Value Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Transformed_Value.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Beschriftung</td>
+        <td>Die zu zeichnende Beschriftung (eine Zeichenkette), kann leer gelassen werden</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der zu zeichnende Wert (Real, Variable oder String)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der gezeichnet werden soll</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der gezeichnet werden soll</td>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td>Der x (horizontale) Skalierungsfaktor, Voreinstellung ist 1</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Der y (vertikale) Skalierungsfaktor, Voreinstellung ist 1</td>
+      </tr>
+      <tr>
+        <td>Drehung</td>
+        <td>Der Drehwinkel für das Zeichnen des Textes</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Draw Transformed Value Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Transformed_Value.png">Der obige Code des Aktionsblocks legt eine Farbe und eine Schriftart fest und richtet dann den Text aus
+    so aus, dass er von der Mitte aus gezeichnet wird, bevor er tatsächlich den Wert &quot;current_time&quot; zusammen mit der Beschriftung &quot;TIME: &quot; zeichnet, die auf die doppelte Größe skaliert ist und aufgrund der zufälligen Winkeländerung leicht &quot;vibriert&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Drawing_Actions.htm">Zeichnungs-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Draw_Sprite.htm">Sprite zeichnen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Transformed Value
+-->
+  <!-- TAGS
+action_draw_value_transformed
+-->
+</body>
+</html>

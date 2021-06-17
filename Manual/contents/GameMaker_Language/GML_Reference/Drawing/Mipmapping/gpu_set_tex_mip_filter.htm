@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_tex_mip_filter</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_tex_mip_filter" />
+  <meta name="rh-index-keywords" content="gpu_set_tex_mip_filter,tf_point,tf_linear,tf_anisotropic" />
+  <meta name="search-keywords" content="gpu_set_tex_mip_filter,tf_point,tf_linear,tf_anisotropic" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_tex_mip_filter</h1>
+  <p>Mit dieser Funktion können Sie den aktuellen mip-Filtermodus auf einen der drei unterstützten Typen einstellen. Sie geben die Konstante an, die sich auf den gewünschten mip-Filtermodus bezieht, wobei Sie zwischen <b>Punktfilterung</b> (Voreinstellung, d. h.
+    keine Filterung), <b>lineare</b> Filterung (dies wird auch als <i>trilineare Filterung</i> bezeichnet) oder <b>aniostrope</b> Filterung (siehe die Konstantentabelle unten).</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>tf_punkt</td>
+        <td>Dadurch wird die Filterung zwischen den Mipmap-Ebenen deaktiviert, was zu sichtbaren Texturübergängen führen kann, aber die beste Leistung bietet.</td>
+      </tr>
+      <tr>
+        <td>tf_linear</td>
+        <td>Dadurch wird die lineare Filterung zwischen den Mipmap-Ebenen aktiviert (dies wird auch als <i>trilineare Filterung</i> bezeichnet), wodurch die Texturübergänge geglättet werden, was jedoch zu einer geringfügigen Leistungseinbuße führt.</td>
+      </tr>
+      <tr>
+        <td>tf_anisotrop</td>
+        <td>Dadurch wird die anisotrope Filterung zwischen den Mipmap-Ebenen aktiviert, was die Qualität der Texturübergänge erheblich verbessert und die bei anderen Filterungsmodi sichtbare Unschärfe reduzieren kann, aber den größten Einfluss auf die Leistung hat.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_get_tex_mip_filter(filter);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Filter</td>
+        <td>Der zu verwendende mip-Filtermodus (eine Konstante, Voreinstellung: <tt>tf_point</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check(ck_enter)<br> {
+    <br> switch(gpu_get_tex_mip_filter())
+    <br> {
+    <br> case tf_point: gpu_set_tex_mip_filter(tf_linear); break;<br> case tf_linear: gpu_set_tex_mip_filter(tf_anisotropic); break;<br> case tf_anisotropic: gpu_set_tex_mip_filter(tf_point); break;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft die Tastatur und wenn die angegebene Taste gedrückt wird, wird der aktuelle mip-Filter abgerufen und der Wert auf den nächsten umgeschaltet, wobei die verschiedenen Modi durchlaufen werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Weiter: <a href="gpu_set_tex_mip_filter_ext.htm">gpu_set_tex_mip_filter_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_tex_mip_filter
+tf_point
+tf_linear
+tf_anisotropic
+-->
+  <!-- TAGS
+gpu_set_tex_mip_filter
+-->
+</body>
+</html>

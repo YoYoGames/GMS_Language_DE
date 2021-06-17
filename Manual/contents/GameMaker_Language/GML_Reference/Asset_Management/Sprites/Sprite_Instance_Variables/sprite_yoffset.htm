@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_yoffset</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable sprite_yoffset" />
+  <meta name="rh-index-keywords" content="sprite_yoffset" />
+  <meta name="search-keywords" content="sprite_yoffset" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_yoffset</h1>
+  <p>Diese <b>schreibgeschützte</b> Variable gibt den lokalen yOffset (die y-Komponente des Ursprungs, wie im Sprite-Editor definiert) des Sprites zurück, das der Instanz zugewiesen wurde. Dieser yOffset wird in Pixel zurückgegeben und ist abhängig von der <a href="image_yscale.htm"><tt>image_yscale</tt></a>,
+    so dass (zum Beispiel), wenn ein quadratisches 32x32-Sprite so definiert ist, dass der y-Ursprung bei 16 liegt, wenn dieses Sprite um 2 skaliert wird, diese Variable 32 zurückgeben wird. Wenn Sie den nicht skalierten y-Offset benötigen, sollten Sie <a href="../Sprite_Information/sprite_get_yoffset.htm"><tt>sprite_get_yoffset()</tt></a>.</p>
+  <p><img alt="Y Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/yoffset_image.png" /></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_yoffset;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Gleitkommawert mit einfacher Genauigkeit)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if y - sprite_yoffset &lt; 0<br> {
+    <br> y = sprite_yoffset;<br> }
+  </p>
+  <p>Der obige Code prüft, ob die obere Kante des Sprites der Instanz außerhalb des Raumes liegt, und wenn dies der Fall ist, bewegt er die Instanz so, dass das gesamte Sprite sichtbar ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Instance_Variables.htm">Sprite-Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="image_alpha.htm">image_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_yoffset
+-->
+  <!-- TAGS
+sprite_yoffset
+-->
+</body>
+</html>

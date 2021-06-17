@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kacheldaten-Transformation einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Tile Data Transform action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile Data Transform" />
+  <meta name="search-keywords" content="Set Tile Data Transform" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Data Transform Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_Transform.png"> Kacheldatentransformation einstellen</h1>
+  <p>Mit dieser Aktion können Sie eine von drei Kacheltransformationen in den Kacheldaten ändern. Sie geben die Variable an, die die Kacheldaten für die Kachel enthält, und wählen dann die zu ändernde Transformation aus. Wenn Sie auf das Kontrollkästchen &quot;Anwenden&quot; klicken, wird diese Transformation angewendet und
+    Wenn Sie das Kontrollkästchen deaktivieren, wird sie entfernt. Die Kacheldaten sind einfach ein Wert, der den Index der Kachel zusammen mit den angewendeten Transformationen sowie den von Ihnen verwendeten benutzerdefinierten Kachelmasken widerspiegelt, und mit dieser Aktion können Sie drei dieser Werte ändern:
+    Umdrehen, Spiegeln und Drehen. Beachten Sie, dass Sie die Kacheldaten normalerweise zuerst mit " <a href="Get_Tile_Data_In_Cell.htm">Kacheldaten in Zelle holen</a> " oder " <a href="Get_Tile_Data_At_Pixel.htm">Kacheldaten an Pixel holen</a>" abrufen, dann die erforderlichen Transformationen anwenden und dann die
+    dann die gewünschte(n) Transformation(en) anwenden und dann die Kachel in der Kachelübersicht mit <a href="Set_Tile_Data_In_Cell.htm">"Kacheldaten in Zelle setzen"</a> oder " <a href="Set_Tile_Data_At_Pixel.htm">Kacheldaten am Pixel setzen</a>" wieder einstellen, da diese Aktion <i>nur einen Wert setzt, ihn aber nicht auf die Kachel anwendet, von der er genommen wurde</i>.
+    Weitere Informationen zu Kacheldaten finden Sie im <span class="notranslate">GML-Abschnitt</span> über <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">Kachelplanfunktionen</a>.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Tile Data Transform Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_Data_Transform.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Fliese</td>
+        <td>Die Kacheldaten für die zu ändernde Kachel</td>
+      </tr>
+      <tr>
+        <td>Transformieren</td>
+        <td>Die zu verwendende/entfernende Transformation</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Set Tile Data Transform Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_Transform.png">Der obige Code des Aktionsblocks ruft die Kacheldaten an der Mausposition ab und prüft dann
+    überprüft, ob auf die Kachel eine Rotationstransformation angewendet wurde. Wenn ja, wird die Transformation zurückgesetzt und die Kacheldaten setzen die Kachel wieder an die Position.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Tile_Actions.htm">Kachel-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Get_Tile_Data_Transform.htm">Kacheldaten-Transformation abrufen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Data Transform
+-->
+  <!-- TAGS
+action_tile_set_transform
+-->
+</body>
+</html>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_hat_beliebigen_tag</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_has_any_tag" />
+  <meta name="rh-index-keywords" content="asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_has_any_tag" />
+  <meta name="search-keywords" content="asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_has_any_tag" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_hats_tags</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob ein oder mehrere Tag-Strings einem beliebigen Asset aus dem Asset-Browser zugeordnet sind. Sie geben entweder den Asset-Namen (als Zeichenkette) oder seinen Asset-Index an, sowie entweder eine einzelne Tag-Zeichenkette oder ein Array, in dem jedes Element
+    eine einzelne Tag-Zeichenkette ist. Wenn Sie einen Asset-Indexwert angeben, müssen Sie das optionale Asset-Typ-Argument (eine Konstante) angeben, da Assets unterschiedlichen Typs denselben Index haben können, auch wenn sie nicht denselben Namen haben. Die verfügbaren
+    Kühlstellentypen sind in der folgenden Tabelle aufgeführt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Asset_Objekt</td>
+        <td>Der angegebene Name bezieht sich auf ein <a href="../../../../The_Asset_Editors/Objects.htm">Objekt</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sprite</td>
+        <td>Der angegebene Name bezieht sich auf ein <a href="../../../../The_Asset_Editors/Sprites.htm">Sprite</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_klang</td>
+        <td>Der Vorname bezieht sich auf einen <a href="../../../../The_Asset_Editors/Sounds.htm">Klang</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_raum</td>
+        <td>Der angegebene Name bezieht sich auf einen <a href="../../../../The_Asset_Editors/Rooms.htm">Raum</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_tiles</td>
+        <td>Der angegebene Name bezieht sich auf einen <a href="../../../../The_Asset_Editors/Tile_Sets.htm">Kachelsatz</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_pfad</td>
+        <td>Der angegebene Name verweist auf einen <a href="../../../../The_Asset_Editors/Paths.htm">Pfad</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_script</td>
+        <td>Der angegebene Name verweist auf ein <a href="../../../../The_Asset_Editors/Scripts.htm">Skript</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_font</td>
+        <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Fonts.htm">Schriftart</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_Zeitleiste</td>
+        <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Timelines.htm">Zeitlinie</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_shader</td>
+        <td>Der Vorname bezieht sich auf einen <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">Shader</span></a>.</td>
+      </tr>
+      <tr>
+        <td>asset_animationcurve</td>
+        <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Animation_Curves.htm">Animationskurve</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sequenz</td>
+        <td>Der angegebene Name bezieht sich auf eine <a href="../../../../The_Asset_Editors/Sequences.htm">Sequenz</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Wenn die Funktion erfolgreich ist und eines oder mehrere der Tags für das Asset vorhanden sind, wird <tt>true</tt> zurückgegeben, andernfalls wird <tt>false</tt> zurückgegeben. Wenn Sie eine genaue Übereinstimmung mit einem bestimmten Tag oder einer Gruppe von Tags prüfen müssen, dann verwenden Sie die Funktion
+    <a href="asset_has_tags.htm"><tt>asset_has_tags()</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">asset_has_any_tag(name_oder_index, tags, [asset_type]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>name_oder_index</td>
+        <td>Der Name des Assets (eine Zeichenfolge) oder sein Indexwert (eine ganze Zahl).</td>
+      </tr>
+      <tr>
+        <td>tags</td>
+        <td>Eine einzelne Asset-Tag-Zeichenkette oder ein Array mit verschiedenen Asset-Tags.</td>
+      </tr>
+      <tr>
+        <td>[asset_type]</td>
+        <td>OPTIONAL! Der Typ des Assets, auf den die Tags geprüft werden sollen, wird nur verwendet, wenn ein Index für das erste Argument angegeben wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _a = array_create(3);<br> _a[0] = &quot;boss&quot;;<br> _a[1] = &quot;main_boss&quot;;<br> _a[2] = &quot;final_boss&quot;;<br> if asset_has_any_tag(object_index, _a, asset_object)<br> {
+    <br> instance_create_layer(0, 0, &quot;Overlay&quot;, obj_Boss_Text);<br> }
+  </p>
+  <p>Der obige Code erstellt ein Array von Tags und prüft dann, ob eines davon auf das angegebene Objekt angewendet wird, und wenn dies der Fall ist, wird eine Instanz eines anderen Objekts erstellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Assets_And_Tags.htm">Assets und Tags</a></div>
+        <div style="float:right">Weiter: <a href="asset_clear_tags.htm">asset_clear_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_has_tags
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+-->
+  <!-- TAGS
+asset_has_tags
+-->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_roundrect</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_roundrect" />
+  <meta name="rh-index-keywords" content="draw_roundrect" />
+  <meta name="search-keywords" content="draw_roundrect" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_roundrect</h1>
+  <p>Mit dieser Funktion können Sie entweder einen Umriss eines abgerundeten Rechtecks oder ein gefülltes abgerundetes Rechteck zeichnen, wobei die (x1,y1)-Position die obere linke Ecke und die (x2,y2)-Position die untere rechte Ecke ist. Sie können festlegen, wie genau das Zeichnen der
+    Ecken ist, können Sie mit der Funktion <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>festlegen, aber diese Funktion verwendet einen festen Radius für sie (sollten Sie den Eckenradius ändern müssen, verwenden Sie die Funktion <a href="draw_roundrect_ext.htm"><tt>draw_roundrect_ext()</tt></a>).
+    Bitte beachten Sie, dass das zu zeichnende Rechteck aufgrund von Unterschieden zwischen den verschiedenen unterstützten Plattformen möglicherweise andere Werte (+/-1 auf x, y oder Breite oder Höhe) benötigt, um mit den gewünschten Abmessungen gezeichnet zu werden.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie eine Form mit einem <span class="notranslate">Shader</span> zeichnen wollen, sollten Sie wissen, dass die meisten <span class="notranslate">Shader</span> die folgenden Eingaben erwarten: Scheitelpunkt, Textur, Farbe. Wenn Sie diese Funktion verwenden, werden jedoch nur Scheitelpunkt- und Farbdaten übergeben, so dass der
+   <span class="notranslate">Shader</span> möglicherweise nichts zeichnen (oder etwas zeichnen, aber nicht korrekt). Wenn Sie Formen auf diese Weise zeichnen müssen, sollte der <span class="notranslate">Shader</span> entsprechend angepasst werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_roundrect(x1, y1, x2, y2, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate der oberen linken Ecke des abgerundeten Rechtecks (als ob es ein normales Rechteck wäre).</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate der oberen linken Ecke des abgerundeten Rechtecks (als ob es ein normales Rechteck wäre).</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate der unteren rechten Ecke des abgerundeten Rechtecks (als ob es ein normales Rechteck wäre).</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate der unteren rechten Ecke des abgerundeten Rechtecks (als ob es ein normales Rechteck wäre).</td>
+      </tr>
+      <tr>
+        <td>Umriss</td>
+        <td>Ob das abgerundete Rechteck ausgefüllt (false) oder als ein Pixel breite Kontur (true) gezeichnet wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_set_colour(c_lime);<br> draw_roundrect(50, 100, 250, 200, 0);</p>
+  <p>Dadurch wird ein gefülltes, abgerundetes Rechteck gezeichnet, dessen theoretische (vor der Krümmung) obere linke Ecke bei (50,100) und dessen theoretische untere rechte Ecke bei (250,200) liegt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Basic_Forms.htm">Grundformulare</a></div>
+        <div style="float:right">Weiter: <a href="draw_roundrect_colour.htm">draw_roundrect_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_roundrect
+-->
+  <!-- TAGS
+draw_roundrect
+-->
+</body>
+</html>

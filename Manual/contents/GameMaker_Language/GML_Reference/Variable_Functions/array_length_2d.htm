@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_length_2d</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_length_2d" />
+  <meta name="rh-index-keywords" content="array_length_2d (Deprecated)" />
+  <meta name="search-keywords" content="array_length_2d" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_length_2d<em>(Veraltet</em>)</h1>
+  <h3><b>WARNUNG!</b> Diese Funktion ist veraltet, da Arrays nicht mehr auf nur 1 oder 2 Dimensionen beschränkt sind, und als solche wird diese Funktion nur zur Unterstützung von Legacy-Projekten bereitgestellt. Alle neuen Projekte sollten die aktuelle Methode zum Erstellen und Zugreifen auf mehrdimensionale
+    Arrays verwenden (siehe <a href="../../GML_Overview/Arrays.htm">hier</a> für weitere Informationen).</h3>
+  <p>Mit dieser Funktion können Sie die Länge (Anzahl der Einträge) der zweiten Dimension eines Arrays ermitteln. Sie geben die Eintragsnummer für die erste Dimension an und die Funktion gibt die Anzahl der Einträge der zweiten Dimension zurück, die das Array hat (um die Länge der ersten Dimension zu ermitteln, verwenden Sie die Funktion
+    die Länge der ersten Dimension zu ermitteln, verwenden Sie die Funktion <a href="array_height_2d.htm"><tt>array_height_2D()</tt></a>). Die Funktion gibt 0 zurück, wenn die angegebene Variable kein Array ist, oder 1, wenn die Variable ein 1D-Array ist (da es noch 1 Zeile gibt).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">array_length_2d(array_index, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>array_index</td>
+        <td>Der Index des zu prüfenden Arrays.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Der Eintrag des Arrays, dessen Länge ermittelt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">for (var i = 0; i &lt; array_height_2d(a); ++i;) <br> {
+    <br> for (var j = 0; j &lt; array_length_2d(a, i); ++j;) <br> {
+    <br> a[i, j] = -1;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code führt eine Schleife durch ein 2D-Array und setzt jeden Eintrag auf -1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="array_height_2d.htm">array_height_2d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_length_2d (deprecated)
+-->
+  <!-- TAGS
+array_length_2d
+-->
+</body>
+</html>

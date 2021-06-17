@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_set_viewport</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_set_viewport" />
+  <meta name="rh-index-keywords" content="room_set_viewport" />
+  <meta name="search-keywords" content="room_set_viewport" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_set_viewport</h1>
+  <p>Mit dieser Funktion können Sie die Eigenschaften des Ansichtsports für jeden Raum in Ihrem Spiel <i>außer dem aktuellen</i> einstellen. Sie geben den Index des Raums an, in dem das Fenster gesetzt werden soll, den Index des Fensters (von 0 bis 7) und ob das Fenster zu Beginn des Raums sichtbar sein soll oder nicht.
+    am Anfang des Raums sichtbar sein soll oder nicht (auf <tt>true</tt> setzen, um den Port sichtbar zu machen, und andernfalls auf <tt>false</tt> ). Danach legen Sie die x- und y-Koordinate (entsprechend der oberen linken Position des Ansichtsports) und dann die Breite und Höhe in Pixeln fest.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">room_set_viewport(rm, vind, vis, xport, yport, wport, hport);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>rm</td>
+        <td>Der Index des zu setzenden Raums</td>
+      </tr>
+      <tr>
+        <td>vind</td>
+        <td>Der Index des zu setzenden Ansichtsports</td>
+      </tr>
+      <tr>
+        <td>vis</td>
+        <td>Die Sichtbarkeit des View Ports<tt>(true</tt> ist sichtbar, <tt>false ist unsichtbar</tt>)</td>
+      </tr>
+      <tr>
+        <td>xport</td>
+        <td>Die x-Position für die Sichtöffnung im Raum</td>
+      </tr>
+      <tr>
+        <td>yport</td>
+        <td>Die y-Position des View Ports im Raum</td>
+      </tr>
+      <tr>
+        <td>wport</td>
+        <td>Die Breite (in Pixel) des Ansichtsfensters</td>
+      </tr>
+      <tr>
+        <td>hport</td>
+        <td>Die Höhe (in Pixel) des Ansichtsports</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.myroom = room_add();<br> room_set_width(global.myroom, 640);<br> room_set_height(global.myroom, 480);<br> room_set_viewport(global.myroom, 0, true, 0, 0, 640, 480);</p>
+  <p>Dadurch werden die Eigenschaften des Ansichtsports [0] in dem Raum eingestellt, der in der Variablen &quot;global.myroom&quot; indiziert ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Rooms.htm">Räume</a></div>
+        <div style="float:right">Weiter: <a href="room_get_viewport.htm">room_get_viewport</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_set_viewport
+-->
+  <!-- TAGS
+room_set_viewport
+-->
+</body>
+</html>

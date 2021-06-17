@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_vertex_texture</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_vertex_texture" />
+  <meta name="rh-index-keywords" content="draw_vertex_texture" />
+  <meta name="search-keywords" content="draw_vertex_texture" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_vertex_texture</h1>
+  <p>Diese Funktion definiert die Position eines texturierten Scheitelpunktes für ein Primitiv. Das endgültige Aussehen des Primitivs hängt von dem zum Zeichnen gewählten Primitivtyp ab (siehe <a href="draw_primitive_begin.htm"><tt>draw_primitive_begin()</tt></a> für weitere Informationen),
+    der Reihenfolge, in der Sie die Scheitelpunkte hinzufügen, und der Position des Startpunkts, den Sie für die Textur festlegen. Um das Primitiv zu beenden und zu zeichnen, müssen Sie den Befehl <a href="draw_primitive_end.htm"><tt>draw_primitive_end()</tt></a>.</p>
+  <p>Sie können sich auch dafür entscheiden, nur <i>einen Teil</i> der Textur über die Oberfläche des Primitivs zu zeichnen, indem Sie die entsprechende xtex/ytex-Position festlegen, an der gesampelt werden soll (diese Koordinaten sind auch als <b>UV-Punkte</b> bekannt). Dieser Punkt wird durch einen Wert zwischen
+    0 und 1 definiert, wobei die obere linke Ecke des zu verwendenden Bildes der (0,0)-Punkt und die untere rechte Ecke der (1,1)-Punkt ist. Auf diese Weise können Sie ein Primitiv mit nur einem Teil des Quellbild-Assets texturieren.</p>
+  <p>Beim Zeichnen eines texturierten Primitivs wird die Textur mit der durch <a html="../colour And Blending/draw_set_colour.html"><tt>draw_set_colour</tt></a>eingestellten Farbe überblendet <a html="../colour And Blending/draw_set_colour.html">. Das bedeutet, dass zum Zeichnen der Textur ohne Überblendung diese auf <tt>c_white</tt></a>gesetzt werden sollte, wie im folgenden Beispiel gezeigt.</p>
+  <p class="note"><a html="../colour And Blending/draw_set_colour.html"><b>HINWEIS:</b> Damit eine Textur wiederholt werden kann, muss sie eine Zweierpotenz in der Größe sein, d. h.: 32x32, 128x128, usw.</a></p>
+  <p> </p>
+  <h4><a html="../colour And Blending/draw_set_colour.html">Syntax:</a></h4>
+  <p class="code"><a html="../colour And Blending/draw_set_colour.html">draw_vertex_texture(x, y, xtex, ytex)</a></p>
+  <table>
+    <tbody>
+      <tr>
+        <th><a html="../colour And Blending/draw_set_colour.html">Argument</a></th>
+        <th><a html="../colour And Blending/draw_set_colour.html">Beschreibung</a></th>
+      </tr>
+      <tr>
+        <td><a html="../colour And Blending/draw_set_colour.html">x</a></td>
+        <td><a html="../colour And Blending/draw_set_colour.html">Die x-Koordinate des Scheitelpunkts.</a></td>
+      </tr>
+      <tr>
+        <td><a html="../colour And Blending/draw_set_colour.html">y</a></td>
+        <td><a html="../colour And Blending/draw_set_colour.html">Die y-Koordinate des Scheitelpunkts.</a></td>
+      </tr>
+      <tr>
+        <td><a html="../colour And Blending/draw_set_colour.html">xtex</a></td>
+        <td><a html="../colour And Blending/draw_set_colour.html">Die Breite des zu verwendenden Texturmusters.</a></td>
+      </tr>
+      <tr>
+        <td><a html="../colour And Blending/draw_set_colour.html">ytex</a></td>
+        <td><a html="../colour And Blending/draw_set_colour.html">Die Höhe des zu verwendenden Texturmusters.</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><a html="../colour And Blending/draw_set_colour.html">Rückgabe:</a></h4>
+  <p class="code"><a html="../colour And Blending/draw_set_colour.html">N/A</a></p>
+  <p> </p>
+  <h4><a html="../colour And Blending/draw_set_colour.html">Beispiel:</a></h4>
+  <p class="code"><a html="../colour And Blending/draw_set_colour.html">draw_set_colour(c_white);<br>
+var tex = sprite_get_texture(spr_Background, 0);<br>
+draw_primitive_begin_texture(pr_trianglestrip, tex);<br>
+draw_vertex_texture(0, 0, 0, 0);<br>
+draw_vertex_texture(640, 0, 1, 0);<br>
+draw_vertex_texture(0, 480, 0, 1);<br>
+draw_vertex_texture(640, 480, 1, 1);<br>
+draw_primitive_end();</a></p>
+  <p><a html="../colour And Blending/draw_set_colour.html">Der obige Code zeichnet einen Dreiecksstreifen mit 4 Eckpunkten (wodurch ein Rechteck entsteht), der mit der in der Variablen &quot;tex&quot; gespeicherten Textur texturiert ist, und die gesamte Textur wird verwendet, um das fertige Primitiv abzudecken.</a></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Primitives_And_Vertex_Formats.htm">Primitive und Vertex-Formate</a></div>
+        <div style="float:right">Weiter: <a href="draw_vertex_texture_colour.htm">draw_vertex_texture_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_vertex_texture
+-->
+  <!-- TAGS
+draw_vertex_texture
+-->
+
+</body></html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_persistent</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_set_persistent" />
+  <meta name="rh-index-keywords" content="object_set_persistent" />
+  <meta name="search-keywords" content="object_set_persistent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_set_persistent</h1>
+  <p>Mit dieser Funktion können Sie die Persistenz eines bestimmten Objekts einstellen. Ein persistentes Objekt wird von Raum zu Raum &quot;mitgenommen&quot; und behält seine Eigenschaften zu jeder Zeit bei (weitere Informationen zur Persistenz finden Sie im Abschnitt über den <a href="../../../../The_Asset_Editors/Objects.htm">Objekteditor).</a>
+    Das Einstellen der Persistenz des Objekts bedeutet, dass alle Instanzen dieses Objekts, die <i>nach dem Ändern der Persistenz</i> angelegt werden, persistent angelegt werden, während Instanzen, die sich bereits im Raum befinden, möglicherweise nicht betroffen sind.</p>
+  <p>Wenn Sie eine Instanz mit aktivierter Persistenz in einem Raum erstellen, wird ihr eine Ebene oder eine Tiefe zugewiesen (je nachdem, welche Funktion Sie zum Erstellen der Instanz des Objekts verwendet haben). Wenn der Raum gewechselt wird und der folgende Raum <i>nicht</i> über
+    eine Ebene mit dem gleichen Namen oder der gleichen Tiefe wie die zugewiesene Ebene hat, wird eine neue Ebene für die Instanz erstellt, die über die Räume hinweg bestehen bleibt. Wenn Sie beim Anlegen der Instanz eine benannte Schicht zugewiesen haben, wird auch die neue Schicht mit dem gleichen Namen wie die ursprüngliche Schicht benannt.
+    Wenn Sie der Instanz eine Tiefe zugewiesen haben, erhält die neue Ebene den Namen &quot;_layer_XXX<tt>&quot;,</tt> wobei &quot;XXX&quot; ein Hexadezimalwert ist, um der Ebene einen eindeutigen Namen zu geben. Diese Ebenen werden aus dem Raum entfernt
+    am Ende des Raums entfernt. Ein weiterer Hinweis zu Ebenen und persistenten Instanzen ist, dass, wenn Sie der Instanz bei der Erstellung eine benannte Ebene zugewiesen haben und es in den folgenden Räumen eine andere Ebene mit demselben Namen gibt, die persistente Instanz
+    der Ebene mit demselben Namen zugewiesen <i>, unabhängig von der Tiefe der Ebene</i>. Wenn schließlich eine persistierte Instanz in einen Raum mit einer Ebene in der gleichen Tiefe wie bei der Erstellung der Instanz wechselt, wird sie <i>nicht</i> dieser Ebene zugewiesen, sondern
+    stattdessen wird eine neue Ebene in der gleichen Tiefe erstellt (gemäß der zuvor erläuterten Namenskonvention).</p>
+  <p>Bitte beachten Sie, dass es sich hierbei nicht um eine Instanzfunktion handelt! Sie können das Persistent-Flag einzelner Instanzen mit der <a href="../Instances/Instance_Variables/persistent.htm"><tt>persistent</tt></a> Variable setzen und so zehn Instanzen alle als persistent kennzeichnen
+    auch wenn das betreffende Objekt das Flag in der IDE auf false gesetzt hat, und selbst wenn Sie das Persistent-Flag des Objekts mit dieser Funktion auf true ändern, bleiben alle Instanzen, die sich derzeit im Raum befinden, so wie sie waren, und nur Instanzen, die nach dem Aufruf der Funktion
+    Instanzen, die nach dem Aufruf der Funktion erstellt werden, beginnen mit dem Flag "persistent" auf "true".</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">object_set_persistent(index, pers);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu ändernden Objekts.</td>
+      </tr>
+      <tr>
+        <td>pers</td>
+        <td>Ob das Objekt als persistent gekennzeichnet werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (room == rm_final)<br> {<br> object_set_persistent(obj_Player, false);<br> } <br> instance_create_layer(32, 32, &quot;Instances&quot;, obj_Player);</p>
+  <p>Der obige Code prüft, in welchem Raum sich die Instanz gerade befindet, und wenn sie sich im angegebenen &quot;rm_final&quot; befindet, setzt er die Persistenz des Objekts &quot;obj_Player&quot; auf false und erzeugt dann die Instanz.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Objects.htm">Objekte</a></div>
+        <div style="float:right">Weiter: <a href="object_set_solid.htm">object_set_solid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_persistent
+-->
+  <!-- TAGS
+object_set_persistent
+-->
+</body>
+</html>

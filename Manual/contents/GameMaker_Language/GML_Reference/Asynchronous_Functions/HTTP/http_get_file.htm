@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>http_get_file</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for http_get_file" />
+  <meta name="rh-index-keywords" content="http_get_file" />
+  <meta name="search-keywords" content="http_get_file" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>http_get_file</h1>
+  <p>Mit dieser Funktion können Sie sich mit dem angegebenen URL verbinden, um Informationen in Form einer Datei abzurufen. Da es sich um eine asynchrone Funktion handelt, blockiert <span class="notranslate">GameMaker Studio 2</span> nicht, während es auf eine Antwort wartet, sondern läuft weiter, bis es eine
+    Rückrufinformationen erhält. Diese Informationen liegen in Form eines Strings vor und lösen ein <b>Async-Ereignis</b> in jeder Instanz aus, die in ihren Objekteigenschaften eines definiert hat.</p>
+  <p class="note"><b>HINWEIS: </b>Sie sollten sich bewusst sein, dass aufgrund des XSS-Schutzes in Browsern Anfragen an und Versuche zum Laden von Ressourcen aus domänenübergreifenden Bereichen blockiert werden und scheinbar leere Ergebnisse liefern können. Weitere Informationen finden Sie im Abschnitt zu <a href="HTTP.htm">domänenübergreifenden Problemen</a>.</p>
+  <p>Dieses Ereignis generiert einen &quot;Rückruf&quot;, der von allen <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">HTTP-Ereignissen abgeholt wird, in diesem</a> Fall wird ein <a href="../../Data_Structures/DS_Maps/DS_Maps.htm"><tt>DS-Karte</tt></a>    (besser bekannt als &quot;Wörterbuch&quot;), das exklusiv für dieses Ereignis ist und in der speziellen Variable <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><b>async_load</b></a>. Diese DS-Map wird enthalten
+    Je nach den zurückgegebenen Daten enthält diese DS-Map unterschiedliche Werte, d. h., das Ereignis wird bei jedem empfangenen Datenpaket mehrfach ausgelöst, so dass Sie z. B. einen Fortschrittsbalken anzeigen können. Die allgemeine Struktur für die DS-Map sieht wie folgt aus:</p>
+  <ul class="colour">
+    <li><b>id: </b>Die ID, die vom Befehl zurückgegeben wurde. Wenn Sie eine Reihe von <tt>http_-Anfragen</tt> abfeuern, müssen Sie wissen, auf welche Sie eine Antwort erhalten, und deshalb würden Sie diesen Wert mit dem Wert vergleichen, den Sie gespeichert haben, als Sie die ursprüngliche
+      Anfrage gespeichert haben, um die richtige Anfrage zu finden.</li>
+    <li><b>Status: </b>Gibt einen Wert kleiner als 0 für einen Fehler, 0 für vollständig und 1 für den Empfang von Paketen zurück (siehe unten für weitere Details).</li>
+    <li><b>Ergebnis: </b>Die empfangenen Daten (nur String).</li>
+    <li><b>url: </b>Die vollständige URL, die Sie angefordert haben.</li>
+    <li><b>http_status: </b>Der rohe http-Statuscode (falls verfügbar). Dies gibt den Standard-Web-Statuscode für die meisten Browser zurück, z. B.: 304 für &quot;Not Modified&quot; oder 204 für &quot;No Content&quot; usw...</li>
+  </ul>
+  <p>Wenn mehrere Pakete an Ihr Spiel zurückgegeben werden, gibt der Callback-Schlüssel &quot;status&quot; eine 1 zurück, in diesem Fall hat die DS-Map die folgenden zusätzlichen Schlüssel:</p>
+  <ul class="colour">
+    <li><b>&quot;contentLength&quot;: </b>Dies ist die Größe der Datei, die Sie nach Angaben des Webservers erwarten sollten (kann -1 sein, wenn der Server diese Daten nicht zurückgibt).</li>
+    <li><b>&quot;sizeDownloaded&quot;: </b>Die Größe der Daten, die bereits heruntergeladen wurden.</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">http_get_file(url, local_target);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>Die Webadresse des Servers, von dem Sie die Datei abrufen möchten</td>
+      </tr>
+      <tr>
+        <td>lokales_Ziel</td>
+        <td>Der lokale Speicherpfad, in dem die Datei gespeichert werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>Die Funktion <tt>http_get_file()</tt> kann von jedem Ereignis aus aufgerufen werden, und da sie asynchron ist, kann der Rückruf fast sofort erfolgen oder mehrere Sekunden dauern. Der Aufruf der Funktion ist einfach und würde etwa so aussehen:</p>
+  <p class="code">file = http_get_file(&quot;http://www.macsweeneygames.com/downloads/upgrade.zip&quot;, &quot;\Downloads\Upgrade.zip&quot;);</p>
+  <p>Der obige Code fordert eine Datei von der angegebenen URL an und legt fest, dass sie in den lokalen Speicherbereich (wie in den HTML5-Spieloptionen angegeben) heruntergeladen wird, und zwar in ein Verzeichnis &quot;Downloads&quot; mit dem angegebenen Dateinamen (dieser muss nicht derselbe sein wie
+    dem Namen der Quelldatei sein, sollte aber die gleiche Dateierweiterung verwenden). Der <tt>async_load-Map-Index</tt> wird in der Variablen &quot;file&quot; gespeichert, damit Sie im Asynchronous Event nach dem richtigen Callback suchen können, und wenn das Speicherverzeichnis nicht
+    existiert, wird es erstellt. Das ausgelöste asynchrone Ereignis wäre das <b>HTTP-Unterereignis</b>, und in diesem Ereignis würden Sie etwas wie das Folgende haben:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == file<br> {
+    <br> var status = ds_map_find_value(async_load, &quot;status&quot;);<br> if status == 0<br> {
+    <br> var path = ds_map_find_value(async_load, &quot;result&quot;);<br> var files = zip_unzip(path, &quot;/NewContent/&quot;);<br> if files &gt; 0<br> {
+    <br> global.ExtraContent = true;<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft zunächst die &quot;id&quot; der erstellten ds_map und dann den Status des Callbacks. Wenn der Wert gleich 0 ist (was Erfolg signalisiert), wird das Ergebnis des Callbacks zusammen mit der <a href="../../File_Handling/Encoding_And_Hashing/zip_unzip.htm"><tt>zip_unzip()</tt></a>    Funktion verwendet, um die heruntergeladene Datei in das angegebene Verzeichnis zu entpacken. Wenn das Entpacken erfolgreich ist, wird eine globale Variable auf true gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="HTTP.htm">HTTP</a></div>
+        <div style="float:right">Weiter: <a href="http_post_string.htm">http_post_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+http_get_file
+-->
+  <!-- TAGS
+http_get_file
+-->
+</body>
+</html>

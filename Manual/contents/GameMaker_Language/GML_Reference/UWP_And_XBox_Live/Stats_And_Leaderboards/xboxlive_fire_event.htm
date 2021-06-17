@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_feuer_ereignis</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_fire_event" />
+  <meta name="rh-index-keywords" content="xboxlive_fire_event" />
+  <meta name="search-keywords" content="xboxlive_fire_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_player_leaderboard_lesen</h1>
+  <p>Diese Funktion kann verwendet werden, um ein Statusereignis auszulösen. Das Argument &quot;event_name&quot; ist der Name des auszulösenden Ereignisses, wie er in der XDP-Konsole für Ihr Spiel definiert ist, und die folgenden zusätzlichen Parameter hängen ebenfalls davon ab, was Sie für die Statistik eingerichtet haben
+    für die Statistik. Die Funktion gibt 0 zurück, wenn das Ereignis gesendet wurde (und vom Server empfangen/verarbeitet werden sollte), oder -1, wenn es einen Fehler gab (d. h.: Ihr Ereignis wurde nicht eingerichtet, da die im Projekt enthaltene Ereignis-Manifestdatei eine andere Zahl angibt).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_fire_event(event_name, [stat_parameters]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ereignis_name</td>
+        <td>Der Name des Ereignisses, das ausgelöst werden soll.</td>
+      </tr>
+      <tr>
+        <td>stat_parameters</td>
+        <td>[OPTIONAL] Zusätzliche Parameter, die dem Ereignis hinzugefügt werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _user = xboxlive_get_user(0);<br> var _uid = xboxlive_user_id_for_user(_user);<br> result = xboxlive_fire_event(&quot;PlayerSessionStart&quot;, _uid, global.guid_str, 0, 42, 42);</p>
+  <p>Der obige Code holt sich einige Informationen über den Benutzer und feuert dann ein Stat-Ereignis zusammen mit diesen (und zusätzlichen) Daten ab.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Stats_And_Leaderboards.htm">Statistiken und Ranglisten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_stats_setup.htm"> xboxlive_stats_setup </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_fire_event
+-->
+  <!-- TAGS
+xboxlive_fire_event
+-->
+</body>
+</html>

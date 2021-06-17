@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>kamera_erstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_create" />
+  <meta name="rh-index-keywords" content="camera_create" />
+  <meta name="search-keywords" content="camera_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>kamera_erstellen</h1>
+  <p>Mit dieser Funktion wird eine &quot;leere&quot; Kamera erstellt, d. h. eine Kamera, für die keine Ansichts- oder Projektionseinstellungen definiert sind. Nachdem Sie die Kamera erstellt haben, können Sie dann die verschiedenen <a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">Matrixfunktionen</a> verwenden, um die Ansichts- und Projektionsmatrizen einzustellen. Sie können diese Funktion auch verwenden, um die Kamera zu erstellen und dann die verschiedenen <tt>camera_set_*-Funktionen</tt> zu verwenden, um die Ansicht einzustellen, beachten Sie jedoch, dass Sie mindestens eine Position und eine Ansichtsgröße angeben <i>müssen</i>,
+    Andernfalls ist die resultierende Kamera nicht gültig und liefert seltsame Ergebnisse, wenn sie auf einen Ansichtsanschluss angewendet wird (wenn Sie die Objektverfolgung, die Ränder oder die Bewegungsgeschwindigkeit nicht einstellen, werden diese auf die Standardwerte für eine Ansichtskamera im Raumeditor gesetzt).</p>
+  <p>Beachten Sie, dass Kameras wie alle dynamischen Ressourcen sind und beim Erstellen Speicher belegen. Das bedeutet, dass Sie darauf achten müssen, Kameras nicht unnötig zu erstellen und solche, die Sie nicht benötigen, durch Aufruf der Funktion <a href="camera_destroy.htm"><tt>camera_destroy()</tt></a>.
+    Das bedeutet auch, dass Kameras von Raum zu Raum bestehen bleiben, wenn sie einer <tt>globalen</tt> Variablen zugewiesen werden (sie bleiben auch bestehen, wenn sie Instanz- oder lokalen Variablen zugewiesen werden, aber Sie können nach einem Raumwechsel nicht mehr auf sie zugreifen, daher das Speicherleck), so dass
+    dass Sie - zum Beispiel - eine neue Kamera erstellen, sie einer globalen Variable zuweisen und dann zu Beginn jedes Raums die erforderlichen Ansichts- und Projektionsmatrizen und den zu verwendenden Ansichtsanschluss setzen können.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_create();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (eindeutiger Kamera-ID-Wert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">view_camera[0] = camera_create();<br> var viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br> var projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br> camera_set_view_mat(view_camera[0], viewmat);<br> camera_set_proj_mat(view_camera[0],
+    projmat);</p>
+  <p>Der obige Code erstellt eine neue Kamera und weist ihre ID view[0] zu. Anschließend werden die Ansichts- und Projektionsmatrizen erstellt und in lokalen Variablen gespeichert, bevor sie zum Einstellen der Kamera verwendet werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_create_view.htm">camera_create_view</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_create
+-->
+  <!-- TAGS
+camera_create
+-->
+</body>
+</html>

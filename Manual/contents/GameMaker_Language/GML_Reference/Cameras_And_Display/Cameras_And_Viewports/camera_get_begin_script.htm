@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_get_begin_script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_get_begin_script" />
+  <meta name="rh-index-keywords" content="camera_get_begin_script" />
+  <meta name="search-keywords" content="camera_get_begin_script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_get_begin_script</h1>
+  <p>Mit dieser Funktion kann die ID der <a href="../../../GML_Overview/Script_Functions.htm">Skriptfunktion</a> abgefragt werden, die als Startskript für die angegebene Kamera zugewiesen ist. Wenn keine Skriptfunktion zugewiesen ist, gibt die Funktion -1 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_get_begin_script(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Skriptfunktions-ID oder -1, wenn kein Skript zugeordnet ist</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var scr = camera_get_begin_script(camera_view[0]);<br> if scr != cutScene<br> {
+    <br> camera_set_update_script(camera_view[0], cutScene);<br> }
+  </p>
+  <p>Der obige Code prüft die Skriptfunktion, die als Anfangsskript für die dem Ansichtsport[0] zugewiesene Kamera zugewiesen ist, und wenn sie nicht &quot;cutScene&quot; ist, wird sie auf diese Funktion gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_get_end_script.htm">camera_get_end_script</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_get_begin_script
+-->
+  <!-- TAGS
+camera_get_begin_script
+-->
+</body>
+</html>

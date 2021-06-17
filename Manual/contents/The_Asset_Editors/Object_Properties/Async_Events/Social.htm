@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sozial</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the Social async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Social Event" />
+  <meta name="search-keywords" content="Social,ev_social" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Sozial</h1>
+  <p><img alt="Social Event" class="center" src="../../../assets/Images/Asset_Editors/Async_Social.png">Dieses Ereignis kann nur durch die <a class="glossterm" data-glossterm="Rückruf" href="#">Callbacks</a>von verschiedenen
+    spezifischen <strong>Social Functions</strong> und <strong>UWP Xbox Live Functions</strong> ausgelöst werden und gibt eine <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS Map</a> zurück, die in der Variablen <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>,
+    gespeichert ist, die je nach Callback der Funktion, die das Ereignis ausgelöst hat, unterschiedliche Schlüssel/Wertpaare enthält.</p>
+  <p>Die DS-Map enthält eine Reihe von Schlüsseln, von denen der wichtigste der Schlüssel &quot;<span class="inline">id</span>&quot; ist. Dieser gibt eine Konstante zurück, die dann im Code überprüft werden kann, um festzustellen, welchen der vielen Rückrufe das Ereignis erhalten hat.
+    Nachdem Sie diesen Schlüssel geparst und den zurückgegebenen Wert mit den verfügbaren Konstanten verglichen haben, können Sie damit fortfahren, den Rest der Informationen aus der Map zu extrahieren.</p>
+  <p>Die Funktionsseiten zu <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm">Errungenschaften und Bestenlisten</a> im Abschnitt "Referenz" beschreiben die Funktionen und Callbacks
+    sowie die Konstanten, die zum Auslösen dieses Ereignisses verwendet werden, aber es gibt auch bestimmte Umstände, unter denen es ohne einen Funktionsaufruf des laufenden Spiels ausgelöst wird:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">wenn Ihr Spiel über das OS-Dashboard gestartet wird</li>
+    <li class="dropspot">wenn Sie eine Herausforderung abgeschlossen haben</li>
+    <li class="dropspot">wenn ein anderer Spieler eine Herausforderung abschließt</li>
+    <li class="dropspot">wenn das Spiel über das OS-Dashboard durch Auswahl einer Herausforderung gestartet wird</li>
+  </ul>
+  <p>Jeder der oben genannten Rückrufe löst das soziale Ereignis aus, und es wird eine <span class="inline">async_load</span> -Map mit den folgenden Details erzeugt (beachten Sie, dass es einen unterschiedlichen &quot;<span class="inline">id</span>&quot; Schlüsselwert gibt, um jeden
+    der verschiedenen Gründe, aus denen das Ereignis aufgerufen wurde, aber alle anderen Inhalte der Karte sind gleich):</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">id</span>&quot; - Der Wert dieses Schlüssels hängt vom Typ des Rückrufs ab, der das Ereignis auslöst. er kann eine dieser Konstanten sein:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_received</span></td>
+        <td>Es ist eine Herausforderung eingegangen</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_completed</span></td>
+        <td>Eine Herausforderung wurde abgeschlossen.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_completed_by_remote</span></td>
+        <td>Eine Herausforderung wurde vom anderen Spieler abgeschlossen.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_launched</span></td>
+        <td>Das Spiel wurde über das OS-Dashboard mit der vorgegebenen Herausforderung gestartet.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dropspot"> </p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">playerid</span>&quot; - Die Spieler-ID für die Herausforderung.</li>
+    <li class="dropspot">&quot;<span class="inline">issuerid</span>&quot; - Die ID der Person, die die Herausforderung ausgestellt hat.</li>
+    <li class="dropspot">&quot;<span class="inline">state</span>&quot; - Der Status der Challenge, der einen Wert von 0 - 3 (als String) für ungültig, ausstehend, abgeschlossen oder abgelehnt hat.</li>
+    <li class="dropspot">&quot;<span class="inline">message</span>&quot; - Die Textnachricht für die Herausforderung.</li>
+    <li class="dropspot">&quot;<span class="inline">issueddate</span>&quot; - Das Ausgabedatum für die Challenge</li>
+    <li class="dropspot">&quot;<span class="inline">completeddate</span>&quot; - Das Abschlussdatum für die Challenge.</li>
+    <li class="dropspot">&quot;<span class="inline">type</span>&quot; - Der Typ der gegebenen Herausforderung. Kann eine von zwei Konstanten sein:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_type_score_challenge</span></td>
+        <td>Eine Herausforderung auf der Grundlage des Punktwerts.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_type_achievement_challenge</span></td>
+        <td>Eine Herausforderung, die auf einer Leistung basiert.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dropspot"> </p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">identifier</span>&quot; - Die identifizierende Zeichenfolge für die Challenge.</li>
+    <li class="dropspot">&quot;<span class="inline">score</span>&quot; - Der Spielstand ist mit der Herausforderung verbunden.</li>
+  </ul>
+  <p>Nachfolgend finden Sie einen kleinen Codeschnipsel als Beispiel für die Verwendung:</p>
+  <p class="code">var ident = ds_map_find_value(async_load, &quot;id&quot; );<br> if ident == achievement_challenge_completed;<br> {<br> player_id = ds_map_find_value(async_load, &quot;playerid&quot;);<br> issuer_id = ds_map_find_value(async_load, &quot;issuerid&quot;); <br> state = ds_map_find_value(async_load, &quot;state&quot;);<br> date_completed = ds_map_find_value(async_load, &quot;completeddate&quot;);<br> date_issued = ds_map_find_value(async_load, &quot;issueddate&quot;);<br> ach_type = ds_map_find_value(async_load,
+    &quot;type&quot;);<br> ach_ident = ds_map_find_value(async_load, &quot;identifier&quot;);<br> ach_score = ds_map_find_value(async_load, &quot;score&quot;);<br> }</p>
+  <p>Informationen zu diesem Ereignis in Verbindung mit dem UWP-Target und den XBox Live-Funktionen finden Sie auf der folgenden Seite:</p>
+  <ul class="colour">
+    <li><a href="../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Match_Making/Match_Making.htm">UWP und XBox Live - Match Making</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Async_Events.htm">Asynchrone Ereignisse</a></div>
+        <div style="float:right">Nächste: <a href="Steam.htm"><span class="notranslate">Dampf</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Social Event
+achievement_challenge_received
+achievement_challenge_completed_by_remote
+achievement_challenge_completed
+achievement_challenge_launched
+achievement_type_score_challenge
+achievement_type_achievement_challenge
+ev_social
+-->
+  <!-- TAGS
+ev_social
+-->
+
+</body></html>

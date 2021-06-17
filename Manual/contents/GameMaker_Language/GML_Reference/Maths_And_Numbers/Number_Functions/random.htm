@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>zufällig</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for random" />
+  <meta name="rh-index-keywords" content="random" />
+  <meta name="search-keywords" content="random" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>zufällig</h1>
+  <p>Diese Funktion ist gut für Wahrscheinlichkeiten geeignet, bei denen die Rückgabe einer ganzen Zahl nicht erforderlich ist. Zum Beispiel gibt <tt>random(100)</tt> einen Wert von 0 bis 99 zurück, aber dieser Wert kann 22,56473 sein! Sie können in dieser Funktion auch reelle Zahlen und keine ganzen Zahlen verwenden
+    Funktion verwenden, z. B. <tt>random(0,5)</tt>, das einen Wert zwischen 0 und 0,4999999 zurückgibt.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion gibt bei jedem neuen Durchlauf des Spiels denselben Wert zurück, da <span class="notranslate">GameMaker Studio 2</span> jedes Mal denselben anfänglichen Zufallswert generiert, um das Debuggen von Code zu erleichtern. Um dieses Verhalten zu vermeiden, verwenden Sie
+    <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">randomise()</tt></a></span> am Anfang Ihres Spiels.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">random(n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Der obere Bereich, aus dem die Zufallszahl ausgewählt wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (random(10) &gt;= 9)<br> {
+    <br> score += 100;<br> }
+  </p>
+  <p>Dadurch ergibt sich eine Wahrscheinlichkeit von etwa eins zu zehn, dass die Punktzahl um 100 erhöht wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Number_Functions.htm">Zahlenfunktionen</a></div>
+        <div style="float:right">Weiter: <a href="random_range.htm">random_range</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+random
+-->
+  <!-- TAGS
+random
+-->
+
+</body></html>

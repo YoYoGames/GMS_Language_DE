@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Auswertung Auftrag</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the Evaluation Order of arguments" />
+  <meta name="rh-index-keywords" content="Evaluation Order" />
+  <meta name="search-keywords" content="Evaluation Order" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Auswertung Auftrag</h1>
+  <p>Wenn Sie Ihr Spiel mit der <span class="notranslate">GameMaker-Sprache</span> programmieren, sollten Sie sich darüber im Klaren sein, dass die Argumente für Funktionsaufrufe <strong>keine garantierte Auswertungsreihenfolge</strong> haben. Das bedeutet, dass sich die Reihenfolge, in der die in Ihrem Code platzierten Funktionen ausgeführt werden, von
+    Das bedeutet, dass sich die Reihenfolge, in der die Funktionen in Ihrem Code ausgeführt werden, von Plattform zu Plattform ändert, so dass Sie sie explizit codieren sollten. Dies ist auf Optimierungsunterschiede zwischen den verschiedenen Zielplattformen zurückzuführen, z. B. können Funktionsargumente auf dem <span class="notranslate">Windows-Ziel</span> von rechts nach links ausgewertet werden, aber
+    auf dem HTML5-Ziel werden sie möglicherweise von links nach rechts ausgewertet. Um Probleme zu vermeiden, sollten Sie also am besten nicht mehrere Funktionen in den Argumenten eines einzelnen Funktionsaufrufs aufrufen, da Sie möglicherweise eine Abhängigkeit von der Reihenfolge der Auswertung einbauen.</p>
+  <p>Um ein Beispiel dafür zu sehen, was das bedeutet, betrachten Sie den folgenden Code, der eine <a href="Script_Functions.htm">Skriptfunktion</a> &quot;<span class="inline">buffer_get_info</span>&quot; hat, die mehrere <a href="Runtime_Functions.htm"><span class="notranslate">Laufzeitfunktionen</span></a> aufruft <a href="Runtime_Functions.htm">und</a> als Argumente verwendet:</p>
+  <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br> buffer_get_info(buffer_read(buff, buffer_s8), buffer_read(buff, buffer_s16),buffer_read(buff, buffer_s16));</p>
+  <p>Das Problem hierbei ist, dass auf einigen Plattformen der <i>letzte</i> <tt>buffer_read()</tt> <i>zuerst</i> aufgerufen wird und somit alle Argumente des Skripts falsch sind, da die Daten in &quot;umgekehrter&quot; Reihenfolge aus dem Puffer gelesen werden, wie Sie es wahrnehmen würden
+    wahrnehmen. Dies wirkt sich hier auf alle weiteren Werte für die Funktion <tt>buffer_read()</tt> aus, so dass alle Argumente, die an diese Skriptfunktion übergeben werden, falsch sind!</p>
+  <p>Um dies zu umgehen, sollten Sie die Funktionen <i>explizit</i> in der gewünschten Reihenfolge aufrufen und die zurückgegebenen Werte in Variablen speichern, etwa so:</p>
+  <p class="code">var val[0] = buffer_read(buff, buffer_s8);<br> var val[1] = buffer_read(buff, buffer_s16);<br> var val[2] = buffer_read(buff, buffer_s16);<br> buffer_get_info(val[0], val[1], val[2]);</p>
+  <p>Diese Methode mag zwar langatmiger erscheinen, aber sie hält alles übersichtlich und vermeidet mögliche Probleme mit der Auswertungsreihenfolge.</p>
+  <p>Sie sollten auch bei der Verwendung von <a class="glossterm" data-glossterm="Ausdruck" href="#">Ausdrücken</a>vorsichtig sein, da sich die Reihenfolge, in der sie ausgewertet werden, ändert, je nachdem, für welches Ziel Sie kompilieren.
+    Wenn Sie also Ausdrücke in Ihrem Code verwenden, stellen Sie sicher, dass Sie die Klammern <span class="inline">()</span> verwenden, um die Reihenfolge der Operationen richtig zu steuern. Dies ist sehr wichtig, um das korrekte Verhalten Ihrer Spiele über alle Zielplattformen hinweg sicherzustellen Spiele
+    und ist für die HTML5-Plattform <i>unerlässlich</i>. Auf der Seite über Ausdrücke wird dies genauer erklärt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="Expressions_And_Operators.htm">Ausdrücke und Operatoren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+evaluation order
+-->
+  <!-- TAGS
+evaluation_order
+-->
+
+</body></html>

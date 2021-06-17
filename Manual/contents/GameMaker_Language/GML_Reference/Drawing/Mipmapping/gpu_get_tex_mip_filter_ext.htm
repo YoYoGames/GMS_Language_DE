@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_tex_mip_filter_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_tex_mip_filter_ext" />
+  <meta name="rh-index-keywords" content="gpu_get_tex_mip_filter_ext,tf_point,tf_linear,tf_anisotropic" />
+  <meta name="search-keywords" content="gpu_get_tex_mip_filter_ext,tf_point,tf_linear,tf_anisotropic" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_tex_mip_filter_ext</h1>
+  <p>Mit dieser Funktion können Sie den aktuellen Mip-Filtermodus für einen bestimmten <span class="notranslate">Shader-Sampler</span> ermitteln. Sie liefern den Indexwert für den <span class="notranslate">Shader-Sampler</span> (wie er von der Funktion <a href="../../Asset_Management/Shaders/shader_get_sampler_index.htm"><tt><span class="notranslate">shader_get_sampler_index</span>()</tt></a>,
+    zurückgegeben wird) und die Funktion gibt eine der unten aufgeführten Moduswert-Konstanten zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_get_tex_mip_filter_ext(sampler_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sampler_index</td>
+        <td>Der Index des zu erhaltenden <span class="notranslate">Shader-Samplers</span> </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Konstante (unten aufgeführt):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>tf_punkt</td>
+        <td>Dies bedeutet, dass das Überblenden zwischen den Mipmap-Ebenen deaktiviert ist, was zu sichtbaren Texturübergängen führen kann, aber die beste Leistung bietet.</td>
+      </tr>
+      <tr>
+        <td>tf_linear</td>
+        <td>Dies bedeutet, dass das Überblenden zwischen den Mipmap-Ebenen aktiviert ist (dies wird auch als <i>trilineare Filterung</i> bezeichnet), wodurch die Texturübergänge geglättet werden, was jedoch zu einer geringfügigen Leistungseinbuße führt.</td>
+      </tr>
+      <tr>
+        <td>tf_anisotrop</td>
+        <td>Dies bedeutet, dass die anisotrope Filterung aktiviert ist, die die Qualität der Texturübergänge stark verbessert und die bei anderen Filterungsmodi sichtbare Unschärfe reduzieren kann, aber den größten Einfluss auf die Leistung hat.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _sampleIndex = <span class="notranslate">shader_get_sampler_index</span>(shd_Glass, &quot;s_Background&quot;);<br> var _spriteTex = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(shd_Glass</span>);
+    <br> if gpu_get_tex_mip_filter_ext(_sampleIndex) != tf_point<br> {
+    <br> gpu_set_tex_mip_filter_ext(_sampleIndex, tf_point);<br> }
+    <br> texture_set_stage(_sampleIndex , _spriteTex);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Der obige Code setzt den Mip-Filtermodus für den angegebenen <span class="notranslate">Shader-Textursampler</span> auf <tt>tf_point</tt> (Deaktivierung von Mipmapping), wenn er nicht bereits eingestellt ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Weiter: <a href="gpu_get_tex_mip_bias.htm">gpu_get_tex_mip_bias</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_tex_mip_filter_ext
+tf_point
+tf_linear
+tf_anisotropic
+-->
+  <!-- TAGS
+gpu_get_tex_mip_filter_ext
+-->
+</body>
+</html>

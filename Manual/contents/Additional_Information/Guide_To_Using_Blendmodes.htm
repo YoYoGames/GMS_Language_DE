@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Anleitung zur Verwendung von Blendmodes</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how blendmodes work." />
+  <meta name="rh-index-keywords" content="blendmodes,Guide To Using Blendmodes" />
+  <meta name="search-keywords" content="blendmodes,blending,blend modes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Anleitung zur Verwendung von Blendmodes</h1>
+  <p>Wenn Sie schon länger mit GameMaker <span class="notranslate">Studio 2</span> arbeiten, werden Sie mit ziemlicher Sicherheit schon auf <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/GPU_Control.htm">Überblendungsmodi</a> gestoßen sein und sie wahrscheinlich sogar in Ihren Spielen verwendet haben.
+    Überblendmodi sind eine großartige Möglichkeit, die Art und Weise, wie etwas gezeichnet wird, zu ändern, um interessante und spezifische grafische Effekte zu erzielen, aber wissen Sie, wie sie funktionieren und wie Sie sie verwenden? Dies ist ein Thema, das viele Leute verwirren kann, und deshalb hoffen wir, in diesem Abschnitt
+    In diesem Abschnitt möchten wir das Geheimnis um die Überblendungsmodi lüften und Sie in die Lage versetzen, sie in Ihren Spielen optimal zu nutzen.</p>
+  <p> </p>
+  <h2>ÜBERSICHT</h2>
+  <p>Mischmodi weisen Ihr Spiel grundsätzlich an, bestimmte Dinge gemischt mit allem anderen zu zeichnen, was bereits vorher gezeichnet wurde. Alles, was Sie auf den Bildschirm zeichnen, besteht aus vier Komponenten - Rot, Grün, Blau und Alpha - und standardmäßig werden sie mit dem
+    Standardmäßig werden sie mit dem Mischmodus <span class="inline">bm_normal</span> auf den Bildschirm gezeichnet. Dieser Mischmodus zeichnet alle Pixel mit ihren Farb- und Alphawerten im Wesentlichen unverändert (obwohl Sie später in diesem Abschnitt sehen werden, dass das nicht ganz <em>stimmt</em>...),
+    aber <span class="notranslate">GameMaker Studio 2</span> hat eine Reihe von eingebauten Mischmodi, die eingestellt werden können, um dieses Verhalten zu ändern.</p>
+  <p>Wenn <span class="notranslate">GameMaker Studio 2</span> ein Pixel zeichnen will, gibt es eine <strong>Quellfarbe (</strong> die Farbe des Pixels, das gezeichnet werden soll) und eine <strong>Zielfarbe (</strong> die Farbe, die bereits in dem Pixel enthalten ist, zu dem wir zeichnen). Wenn
+    die neue Farbe des Pixels zu bestimmen, kombiniert <span class="notranslate">der GameMaker</span> die Quell- und die Zielfarbe entsprechend dem <strong>Mischmodus</strong>, wie oben erwähnt. Jede Komponente der Farben wird als Fließkommawert zwischen 0 und 1 gespeichert,
+    und die neue Farbe wird berechnet, indem jede Komponente der Quellfarbe mit einem Faktor und jede Komponente der Zielfarbe mit einem anderen Faktor multipliziert wird und die Ergebnisse dann Komponente für Komponente addiert werden.</p>
+  <p> </p>
+  <h2>GRUNDLEGENDE MISCHMODI</h2>
+  <p><span class="notranslate">GameMaker Studio 2</span> verwendet die Funktion <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode.htm">gpu_set_blendmode()</a>, um das Blending zu ändern, das Ihr Spiel zum Zeichnen verwendet. Sie würden diese Funktion aufrufen, bevor Sie (zum Beispiel) ein
+    eines Sprites auf und setzen ihn danach wieder zurück, etwa so:</p>
+  <p class="code">gpu_set_blendmode(bm_add);<br> draw_self();
+    <br> gpu_set_blendmode(bm_normal);
+  </p>
+  <p>Dieser Code zeichnet das Instanz-Sprite mit einem <strong>additiven </strong>Überblendmodus. Der additive Überblendungsmodus wird mit einer der verfügbaren <span class="notranslate">GML-Konstanten</span> eingestellt, von denen es vier für grundlegende Modi gibt:</p>
+  <p class="code">bm_normal<br> bm_add
+    <br> bm_subtract
+    <br> bm_max
+  </p>
+  <p>Wir haben bereits gesehen, wie <span class="inline">bm_normal</span> aussieht - denn das ist die Standardeinstellung für alles! - also lassen Sie uns fortfahren und die anderen drei ein wenig genauer betrachten...</p>
+  <p><img alt="bm_normal example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmNormal.png" /></p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">bm_add</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Dieser Mischmodus addiert die Farben der Quell- und Zielpixel zusammen (wirkt sich aber nicht auf die Alphawerte aus). Wenn Ihr Hintergrundbild beispielsweise eine Volltonfarbe mit einem RGB-Wert von (100,15,70) ist und Sie dann ein Rechteck mit einem
+      RGB von (120,25,30), dann wären (mit bm_add) die endgültigen RGB-Werte für jedes Pixel des Rechtecks (220,40,100). Beachten Sie, dass Farbwerte nicht über 255 (oder unter 0) gehen können, so dass alles, was sich zu mehr als das addiert, auf 255 geklemmt wird.</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmAdd.png" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmAdd.png" alt="bm_add example" class="center">Mit diesem Mischmodus
+      Modus ist ein großartiger Weg, um den &quot;Neon-Licht&quot;-Look zu erzielen, und wird am häufigsten für Lichteffekte, Laser oder so ziemlich alles verwendet, was leuchten oder lumineszieren soll.</p>
+    <p class="dropspot"></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">bm_subtrahieren</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Dieser Mischmodus unterscheidet sich ein wenig von dem vorherigen, da er auf einer prozentualen Basis arbeitet und nicht mit einem direkten Wert. Dieser Prozentsatz ist das, was von der Zielfarbe (der Farbe des Pixels, auf das gezeichnet wird) subtrahiert wird. Um dies zu erklären
+      besser zu erklären, sehen wir uns ein Beispiel an.</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmSubtract.png" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmSubtract.png" class="center" alt="bm_subtract example">Stellen Sie sich vor, Sie möchten den Rotwert aller in einem Bereich des Raums gezeichneten Pixel um 25 % reduzieren. Sie müssten zunächst 25 % von 255 ermitteln, diesen Wert dann in einen RGB-Farbwert umwandeln und diesen schließlich zusammen mit bm_subtract verwenden, um über den Bereich zu zeichnen.
+      Etwa so:</p>
+    <p class="code">var red = (25 / 100) * 255;<br>var col = make_colour_rgb(red, 0, 0);<br>gpu_set_blendmode(bm_subtract);<br>draw_rectangle_colour(0, 0, 128, 256, col, col, col, col, false);<br>gpu_set_blendmode(bm_normal);<br></p>
+    <p class="dropspot">Wenn Sie die Helligkeit eines Hintergrunds einfach um 50 % reduzieren möchten, würden Sie eine Farbe verwenden, die zu 50 % aus Rot, 50 % aus Grün und 50 % aus Blau besteht, d. h.: RGB (128, 128, 128). Dieser Mischmodus wird hauptsächlich zum Zeichnen von Schatten oder zum Erzeugen
+      interessante Ausblendeffekte.</p>
+    <p class="dropspot"></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">bm_max</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Dieser Mischmodus ist etwas komplizierter zu erklären, aber im Grunde multipliziert er die Quellfarben mit dem Quell-Alpha und addiert sie dann zu den Zielfarbwerten, die mit den inversen Quellfarbwerten multipliziert werden. Die eigentliche Mathematik hinter bm_max (und den
+      Die eigentliche Mathematik hinter bm_max (und den anderen Mischmodi) werden wir im zweiten Teil unseres Artikels behandeln, aber alles, was Sie wissen müssen, ist, dass das Ergebnis eine &quot;gesättigtere&quot; und hellere Farbe ist, ohne zu der gleichen rein weißen Brillanz zu führen, die die Verwendung von <span class="inline">bm_add</span> verursacht.</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmMax.png" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmMax.png" class="center">Dieser Mischmodus kann nützlich sein, wenn
+      Sie überlappende Bilder zeichnen müssen, ohne dass sie so hell werden, dass man sie nicht mehr sehen kann. Die hellen Teile werden zwar heller, aber sie sollten immer noch ein gewisses Maß an Farbe und Farbton beibehalten. Beachten Sie jedoch, dass der Alpha-Wert des Quellbildes
+      bei der Verwendung dieses Mischmodus ebenfalls Einfluss auf den endgültigen Effekt hat.</p>
+  </div>
+  <p> </p>
+  <p>Jetzt kennen Sie die Grundlagen für die Verwendung eines Mischmodus in <span class="notranslate">GameMaker Studio 2</span>. Er nimmt die RGB- und Alpha-Werte des Quellbilds (was gezeichnet wird) und mischt diese mit den RGB- und Alpha-Werten des Zielbilds (was ebenfalls gezeichnet wird).
+    ebenfalls). Diese Überblendung erfolgt durch Multiplikation der einzelnen Komponenten für jede Pixelfarbe und Alpha mit unterschiedlichen Beträgen, je nachdem, welche Effekte wir erreichen wollen. Mit diesem Wissen können Sie beginnen, Blend-Modi in Ihren Spielen zu verwenden, um
+    glühende Laser, realistische Schatten oder gesättigte Übergangseffekte zu erzielen, aber es gibt hier noch mehr zu lernen! Im Folgenden sehen wir uns die <strong>erweiterten Überblendungsmodi</strong> an und erforschen ein wenig die Mathematik dahinter, so dass Sie Ihre eigenen
+    eigene Überblendungseffekte wie Multiplikation oder Überlagerung erstellen können.</p>
+  <p> </p>
+  <h2>Erweiterte Blend-Modi</h2>
+  <p>Oben haben wir über die Funktion <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode.htm"><span class="inline">gpu_set_blendmode()</span></a>gesprochen, aber jetzt werden wir uns die Funktion <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode_ext.htm"><span class="inline">gpu_set_blendmode_ext()</span></a>.
+    Dies ist (wie der Name schon sagt) eine erweiterte Funktion zum Setzen von <em>benutzerdefinierten </em>Mischmodi, aber wie funktioniert das? Werfen wir zunächst einen Blick auf die trockene technische Antwort, bevor wir weitergehen:</p>
+  <ul class="colour">
+    <li>Die Funktion <span class="inline">gpu_set_blendmode_ext</span><span class="inline">(src, dest)</span> gibt an, welcher Mischmodus für die Quell- und die Zielfarbe verwendet werden soll. Die neue Farbe ist ein Faktor mal die Quelle und ein anderer Faktor mal
+      der Zielfarbe. Diese Faktoren werden mit dieser Funktion eingestellt. Um dies zu verstehen, haben Quelle und Ziel jeweils eine Rot-, Grün-, Blau- und Alpha-Komponente. Die <strong>Quelle </strong>ist also (<span class="inline">Rs, Gs, Bs, As</span>) und das <strong>Ziel </strong>ist
+      (<span class="inline">Rd, Gd, Bd, Ad</span>). Alle Werte werden so betrachtet, dass sie zwischen 0 und 1 liegen.</li>
+  </ul>
+  <p>Nun, dieser Text ist zwar korrekt und erklärt, was Mischmodi tun, aber er ist nicht wirklich intuitiv... also lassen Sie uns ein bisschen mehr ins Detail gehen und erklären, worum es dabei geht.</p>
+  <p>Wenn wir über die <strong>Quelle </strong>sprechen, sprechen wir über die Farb- und Alpha-Werte des Pixels, das gezeichnet wird, und wenn wir über das <strong>Ziel </strong>sprechen, sprechen wir über die Farb- und Alpha-Werte des Pixels, über das
+    über das es gezeichnet wird. Um die Dinge einfacher zu halten, können wir die Quellfarbe als ihre Komponenten ausschreiben, etwa so:</p>
+  <ul class="colour">
+    <li><span class="inline">(Rs, Gs, Bs, As)</span> = das RGB und Alpha der Farbe, die Sie zeichnen wollen.</li>
+  </ul>
+  <p>Und das Ziel würde so aussehen:</p>
+  <ul class="colour">
+    <li><span class="inline">(Rd, Gd, Bd, Ad)</span> = das RGB und Alpha der Farbe, auf die Sie zeichnen wollen.</li>
+  </ul>
+  <p>Wenn wir also etwas auf den Bildschirm zeichnen, macht unser Grafikprozessor eigentlich für jedes einzelne Pixel Folgendes:</p>
+  <p class="code">final_pixel_colour = (Rs,Gs,Bs,As) * source_blend_factor + (Rd,Gd,Bd,Ad) * destination_blend_factor</p>
+  <p>Die oben erwähnten <strong>Überblendfaktoren</strong> werden in <span class="notranslate">GameMaker Studio 2</span> durch eine Reihe von <span class="notranslate">GML-Konstanten</span> definiert, wobei jede einen Faktor darstellt, mit dem die Quell- oder Zielwerte R, G, B und A multipliziert werden sollen. Die verfügbaren Faktoren
+    sind:</p>
+  <ul class="colour">
+    <li><span class="inline">bm_zero</span>: Überblendfaktor ist (0, 0, 0, 0)</li>
+    <li><span class="inline">bm_one</span>: Überblendfaktor ist (1, 1, 1, 1)</li>
+    <li><span class="inline">bm_src_colour</span>: Blendfaktor ist (Rs, Gs, Bs, As)</li>
+    <li><span class="inline">bm_inv_src_colour</span>: Überblendfaktor ist (1-Rs, 1-Gs, 1-Bs, 1-As)</li>
+    <li><span class="inline">bm_src_alpha</span>: Blendfaktor ist (As, As, As, As)</li>
+    <li><span class="inline">bm_inv_src_alpha</span>: Überblendfaktor ist (1-As, 1-As, 1-As, 1-As)</li>
+    <li><span class="inline">bm_dest_alpha</span>: Überblendfaktor ist (Ad, Ad, Ad, Ad)</li>
+    <li><span class="inline">bm_inv_dest_alpha</span>: Überblendfaktor ist (1-Ad, 1-Ad, 1-Ad, 1-Ad)</li>
+    <li><span class="inline">bm_dest_colour</span>: Blendfaktor ist (Rd, Gd, Bd, Ad)</li>
+    <li><span class="inline">bm_inv_dest_colour</span>: Überblendfaktor ist (1-Rd, 1-Gd, 1-Bd, 1-Ad)</li>
+    <li><span class="inline">bm_src_alpha_sat</span>: Blendfaktor ist (f, f, f, 1); f = min(As, 1-Ad)</li>
+  </ul>
+  <p>Die vier &quot;grundlegenden&quot; Überblendmodi, die GameMaker <span class="notranslate">Studio 2 hat, sind</span> eigentlich Zusammensetzungen von zwei dieser Überblendfaktoren.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Beispiel für die Funktionsweise von bm_normal</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Zeit, sich ein praktisches Beispiel anzuschauen, wie dies beim Zeichnen in <span class="notranslate">GameMaker</span> Studio 2 zusammenkommt. Dazu schauen wir uns bm_normal an, was wirklich ist:</p>
+    <p class="code">gpu_set_blendmode_ext(bm_src_alpha, bm_inv_src_alpha);<br></p>
+    <p class="dropspot">Eines der Probleme, die Leute mit Mischmodi haben, ist die Visualisierung der Ergebnisse. Um die Mathematik dahinter zu zeigen, verwenden wir diesen Mischmodus als Testobjekt, da es der Mischmodus ist, den jeder am häufigsten verwendet und wir genau wissen, was wir von ihm erwarten können.
+      was wir von ihm erwarten können. Stellen Sie sich vor, wir zeichnen ein Rechteck mit der Farbe (128, 255, 64, 255) über einen Hintergrund mit der Farbe (64, 128, 255, 255):</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Example1.png" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Example1.png" class="center" alt="Example of bm_normal">So,
+      unser Mischmodus sieht so aus:</p>
+    <p class="code">Quelle: (128, 255, 64, 255) = (0,5, 1, 0,25, 1)<br>Ziel: (64, 128, 255, 255) = (0.25, 0.5, 1, 1)<br>bm_src_alpha (As, As, As, As) = (255, 255, 255, 255) = (1, 1, 1, 1)<br>bm_inv_src_alpha (1-As, 1-As, 1-As, 1-As) = (0, 0, 0, 0)<br>(Rs,Gs,Bs,As)
+      * bm_src_alpha + (Rd,Gd,Bd,Ad) * bm_inv_src_alpha<br>(0.5, 1, 0.25, 1) * (1, 1, 1, 1) + (0.25, 0.5, 1, 1) * (0, 0, 0, 0)<br>(0.5, 1, 0.25, 1) + (0, 0, 0, 0) = (0.5, 1, 0.25, 1) = (128, 255, 64, 255)<br></p>
+    <p class="dropspot">Wie Sie sehen können, multiplizieren wir die Zielwerte mit 0, wodurch sie ebenfalls den Wert 0 erhalten, was bedeutet, dass die Quellfarben unverändert bleiben, so dass unser endgültiger Farbwert <strong>(128, 255, 64, 255)</strong> ist. Sie können sehen, wie sich die Einbeziehung von Alpha
+      auch diesen Wert beeinflusst:</p>
+    <p class="code">Quelle (128, 255, 64, 128) = (0,5, 1, 0,25, 0,5)<br>Ziel: (64, 128, 255, 255) = (0.25, 0.5, 1, 1)<br>bm_src_alpha (As, As, As, As) = (128, 128, 128, 128) = (0.5, 0.5, 0.5, 0.5)<br>bm_inv_src_alpha (1-As, 1-As, 1-As, 1-As) = (0.5, 0.5, 0.5,
+      0.5)<br>(Rs,Gs,Bs,As) * bm_src_alpha + (Rd,Gd,Bd,Ad) * bm_inv_src_alpha<br>(0.5, 1, 0.25, 0.5) * (0.5, 0.5, 0.5, 0,5) + (0,25, 0,5, 1, 1) * (0,5, 0,5, 0,5, 0,5)<br>(0,25, 0,5, 0,125, 0,25) + (0,125, 0,25, 0,5, 0,5) = (0,375, 0,75, 0,625, 0,75)
+      = (96, 192, 159, 192)<br></p>
+    <p class="dropspot">Dies ergibt eine endgültige Pixelfarbe (96, 192, 159, 192) und ergibt ein Bild wie das unten gezeigte:</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Example2.png" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Example2.png" alt="Example Of bm_normal With Alpha" /><br /></p>
+    <p class="dropspot">Hoffentlich können Sie jetzt klar erkennen, was die Mischmodus-Faktoren bewirken und wie ihre Kombination das Gezeichnete verändern kann, um einige interessante Effekte zu erzeugen. Wir werden uns jetzt ein praktisches Beispiel ansehen, wie Sie diese Faktoren kombinieren können, um Ihre eigenen benutzerdefinierten
+      Mischmodi zu erstellen.</p>
+      <p class="dropspot"><br /></p>
+      <p class="dropspot"></p>
+  </div>
+  <p>Jetzt wissen Sie, wie das Einstellen von Mischmodi funktioniert und haben ein Beispiel gesehen, wie es für das alltägliche Zeichnen verwendet wird, lassen Sie uns einen Blick auf etwas Komplexeres werfen...</p>
+  <p> </p>
+  <h2>ERSTELLEN EIGENER MISCHMODI</h2>
+  <p>Mit den verschiedenen verfügbaren Faktoren können Sie eigene Mischmodi erstellen, um Mischoptionen zu erreichen, die Ihnen normalerweise nicht zur Verfügung stehen. In diesem Beispiel werden wir einen <strong>Multiplikationseffekt </strong>erstellen, wie er in Photoshop verwendet wird. Wir
+    können diesen Mischmodus mit zwei unserer oben erwähnten Mischmodus-Faktor-Konstanten wie folgt simulieren:</p>
+  <p class="code">gpu_set_blendmode_ext(bm_dest_colour, bm_zero);</p>
+  <p>Bevor wir tatsächlich etwas mit diesem Mischmodus zeichnen, lassen Sie uns einen Blick darauf werfen, wie es in Photoshop aussehen sollte:</p>
+  <p><img alt="The &quot;Multiply&quot; Blend Mode In Photoshop" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Multiply.png">Mit unserem erweiterten Mischmodus erhalten wir folgendes:</p>
+  <p class="code">(Rs, Gs, Bs, As) * (Rd, Gd, Bd, Ad) + (Rd, Gd, Bd, Ad) * (0,0,0,0) = (Rs, Gs, Bs, As) * (Rd, Gd, Bd, Ad)<br> Quellfarbe * Zielfarbe + Zielfarbe * Null = Quellfarbe * Zielfarbe</p>
+  <p>Der Überblendfaktor <span class="inline">bm_zero</span> entfernt die Zielfarbe effektiv aus der Gleichung (da Null mal irgendetwas Null ist), so dass die Quellfarbe multipliziert mit dem Überblendfaktor der Zielfarbe übrig bleibt, daher
+    daher der Name &quot;multiplizieren&quot; für den Modus. Um dies in <span class="notranslate">GameMaker Studio 2</span> zu verwenden, würden Sie einfach etwas wie dieses in Ihrem <strong>Draw Event</strong> haben:</p>
+  <p class="code">gpu_set_blendmode_ext(bm_dest_colour, bm_zero);<br> draw_self();
+    <br> gpu_set_blendmode(bm_normal);
+  </p>
+  <p>Das nächste Bild stammt aus einem Testprojekt in <span class="notranslate">GameMaker</span>, bei dem genau dieser Code verwendet wurde:</p>
+  <p><img alt="The &quot;Multiply&quot; Blend Mode In GameMaker" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_MultiplyGMS.png">Können Sie den Unterschied erkennen? Wahrscheinlich nicht! Es wird jedoch eine gewisse Abweichung
+    zwischen den beiden aufgrund der Unterschiede zwischen den verwendeten Render-Tools, aber es ist fast genau so, wie Sie es erwarten würden. Beachten Sie jedoch, dass Ihnen nicht alle von Kunstprogrammen verwendeten Mischmodi in <span class="notranslate">GameMaker Studio 2</span> zur Verfügung stehen, da einige
+    Das bedeutet aber nicht, dass Sie damit keine passablen Imitationen dieser Effekte oder sogar ganz neue Effekte erzeugen können.</p>
+  <p>Erwähnenswert ist, dass <span class="notranslate">Sie</span> mit GameMaker <span class="notranslate">Studio 2</span> mit der Funktion <span class="inline"><a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha()</a></span> noch einen Schritt weiter gehen können.
+    Damit können Sie die Alpha-Komponente der verschiedenen Blend-Mode-Faktoren herauslösen und einzeln verwenden, um noch mehr Kombinationsmöglichkeiten zu schaffen. Wir werden hier nicht auf diese Funktion eingehen, da sie bereits im Handbuch ausführlich erklärt ist,
+    aber sie ist es wert, erwähnt zu werden, damit Sie wissen, dass sie zur Verfügung steht.</p>
+  <p> </p>
+  <h2>FLÄCHEN UND ALPHA</h2>
+  <p>Eine letzte Sache ist erwähnenswert in Bezug auf Mischmodi, und zwar, wie sie sich auf die <strong>Alpha-Komponente </strong>einer Farbe auswirken. Beim einfachen Zeichnen auf die <a class="glossterm" data-glossterm="Anwendungsfläche" href="#">Anwendungsoberfläche</a> oder
+    den <a class="glossterm" data-glossterm="Display-Puffer" href="#">Anzeigepuffer</a> zeichnen, müssen Sie den Ziel-Alpha-Wert nicht wirklich berücksichtigen, da er <em>immer </em>eins <em>ist </em>. Bei Oberflächen, die Sie selbst erstellen, ist das jedoch anders,
+    da Sie eine Oberfläche mit einem beliebigen Alphawert zwischen 0 und 1 versehen können. Dies führt zu einigen interessanten Effekten, die im Gegensatz zu dem stehen, was die meisten Leute erwarten würden.</p>
+  <p>Um dies zu veranschaulichen, werden wir uns das Zeichnen mit der Grundeinstellung <span class="inline">bm_normal</span> ansehen. Die meisten Leute denken, dass eine Oberfläche, die auf Alpha 0 gesetzt ist, und dann etwas mit einem Alpha-Wert von 0,5 gezeichnet wird, auch einen resultierenden Alpha
+    Wert von 0,5 ergibt... <strong>aber das ist nicht der Fall</strong> und wird von vielen als &quot;Bug&quot; in der Art und Weise angesehen, wie GameMaker <span class="notranslate">Studio 2</span> Dinge <span class="notranslate">rendert</span>. Wie Sie jedoch sehen werden, ist es überhaupt kein Bug!</p>
+  <p>Angenommen, Sie haben eine Fläche, bei der jedes Pixel Alpha 0 hat, dann zeichnen Sie darauf einen Kreis mit Alpha 0,5 mit dem Mischmodus <span class="inline">bm_normal</span>. Die gesamte Fläche wird immer noch Alpha 0 sein, aber im Kreis wird das Alpha tatsächlich 0,25 sein,
+    da:</p>
+  <p class="code">0.5 * 0.5 + 0 * 0.5 = 0.5 * 0.5 = 0.25</p>
+  <p>Wenn Sie dann einen weiteren Kreis in den bestehenden Kreis zeichnen, ebenfalls mit einem Alpha von 0,5, dann wäre das Alpha außerhalb der Kreise 0, zwischen den Kreisen 0,25 und im kleineren Kreis 0,375:</p>
+  <p class="code">0.5 * 0.5 + 0.25 * 0.5 = 0.25 + 0.125 = 0.375</p>
+  <p>Würden Sie weiterhin eine Anzahl von 0,5-Alpha-Kreisen auf eine Fläche mit 0-Alpha zeichnen und diese Fläche dann in den Raum zeichnen, könnten Sie dies deutlich erkennen:</p>
+  <p><img alt="Surface Alpha Illustration" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Surface.png">Wenn Sie immer noch etwas verwirrt sind, versuchen Sie, sich das Alpha als eine weitere Farbe vorzustellen. Es verhält sich wie
+    eine Farbe und alle Berechnungen mit ihm werden auf ähnliche Weise durchgeführt. Es ist nur nicht wirklich sichtbar, obwohl der Effekt, den es auf andere Farben hat, es ist. Das bringt uns zum letzten Punkt, den Sie bei der Verwendung von Flächen und Mischmodi (auch <span class="inline">bm_normal</span>) beachten sollten...</p>
+  <p>Auch wenn das Alpha der Oberfläche 0, <em><strong>die Farbkomponenten sind immer noch vorhanden und werden bei allen Überblendungsoperationen beeinflusst</strong></em>. Wenn Sie also auf eine Fläche mit Alpha Null zeichnen, die mit der Farbe Rot gelöscht wurde (zum Beispiel
+    (z. B. mit der Farbe Rot) gezeichnet wurde, werden die Quellfarben mit den Zielfarben überblendet und es entstehen andere Effekte, als Sie vielleicht denken. Das obige Bild wurde auf einer schwarzen Oberfläche mit schwarzem Hintergrund erstellt, aber wenn wir die Oberfläche mit Rot löschen, erhalten wir
+    stattdessen dies:</p>
+  <p><img class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_SurfaceRed.png">Hoffentlich können Sie nun selbst herausfinden, warum dies geschieht, indem Sie die Formeln verwenden, die ich oben skizziert habe, und die entsprechenden Zahlen anwenden
+    für <span class="inline">bm_normal</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Additional_Information.htm">Zusätzliche Informationen</a></div>
+        <div style="float:right">Weiter: <a href="Error_Reporting.htm">Fehlerberichterstattung</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Blendmodes
+Blending
+Blend Modes
+-->
+  <!-- TAGS
+using_blendmodes
+-->
+
+</body></html>

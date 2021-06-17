@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gesten_holen_ziehen_zeit</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gesture_get_drag_time" />
+  <meta name="rh-index-keywords" content="gesture_get_drag_time" />
+  <meta name="search-keywords" content="gesture_get_drag_time" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gesten_holen_ziehen_zeit</h1>
+  <p>Mit dieser Funktion wird die Zeit ermittelt, die es dauert, bis ein <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">Drag-Start-Gesten-Ereignis</a> durch eine Berührung oder einen Klick ausgelöst wird. Diese Zeit beeinflusst auch, wie das <b>Tap-Ereignis</b> ausgelöst wird
+    ausgelöst wird, da ein Berühren/Klicken und Loslassen vor Ablauf dieser Zeit als Tippen betrachtet wird. Die Zeit wird in Sekunden gemessen und hat einen Standardwert von 0,16.</p>
+  <p> </p>
+  <h4><b>Syntax:</b></h4>
+  <p class="code">gesture_get_drag_time();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Zeit in Sekunden)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if gesture_get_drag_time() != 0.16<br> {
+    <br> gesture_drag_time(0.16);
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob die Ziehzeit für Gesten auf 0,16 Sekunden eingestellt ist, und wenn nicht, setzt er sie auf diesen Wert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gesture_Input.htm">Gesteneingabe</a></div>
+        <div style="float:right">Weiter: <a href="gesture_get_drag_distance.htm">gesture_get_drag_distance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gesture_get_drag_time
+-->
+  <!-- TAGS
+gesture_get_drag_time
+-->
+
+</body></html>

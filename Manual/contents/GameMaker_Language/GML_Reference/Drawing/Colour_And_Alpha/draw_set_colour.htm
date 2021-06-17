@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Farbe_setzen_zeichnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function draw_set_colour" />
+  <meta name="rh-index-keywords" content="draw_set_colour,draw_set_color" />
+  <meta name="search-keywords" content="draw_set_colour,draw_set_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Farbe_setzen_zeichnen</h1>
+  <p>Mit dieser Funktion können Sie die Basis-Zeichenfarbe für das Spiel festlegen. Dieser Wert wirkt sich gegebenenfalls auf alle weiteren Zeichnungen aus, einschließlich Schriftarten, Formen, Primitive und 3D. Wenn eines dieser Elemente mit einem eigenen, geänderten Farbwert gezeichnet wird, wird dieser Wert
+    ignoriert werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_set_colour(col);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Die Farbe, die für das Zeichnen eingestellt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_set_alpha(0.5);<br> draw_set_colour(c_black);
+    <br> draw_text(x+5, y+5, &quot;LEVEL 1&quot;);<br> draw_set_alpha(1);
+    <br> draw_set_colour(c_white);
+    <br> draw_text(x, y, &quot;STUFE 1&quot;);</p>
+  <p>Der obige Code zeichnet einen Text an der angegebenen Position mit einem Schatteneffekt, der durch eine Änderung von Alpha und Farbe beim Zeichnen erzeugt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Colour_And_Alpha.htm">Farbe und Alpha</a></div>
+        <div style="float:right">Weiter: <a href="colour_get_blue.htm">colour_get_blue</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_colour
+draw_set_color
+-->
+  <!-- TAGS
+draw_set_colour
+-->
+</body>
+</html>

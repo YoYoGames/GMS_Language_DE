@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Audio-Gruppen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to use Audio Groups" />
+  <meta name="rh-index-keywords" content="Audio Groups" />
+  <meta name="search-keywords" content="audio groups" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Audio-Gruppen</h1>
+  <p><img alt="Audio Group Editor" class="center" src="../assets/Images/Settings/Audio_Groups.png">Der <strong>Audiogruppen-Manager</strong> ist über das <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">Menü "Werkzeuge"</a> in der IDE verfügbar. Hier können Sie
+   <strong>Audiogruppen</strong> <em>hinzufügen</em>, <em>löschen </em>und <em>umbenennen </em>sowie ihre Plattform-Exportoptionen einstellen. <span class="notranslate">GameMaker Studio 2</span> erlaubt es Ihnen, die einzelnen Audio-Ressourcen (Soundeffekte und Musik) verschiedenen Audiogruppen zuzuordnen
+    zuzuordnen, um die Anzahl der gleichzeitig abgespielten Sounds zu optimieren, und Ihnen weitere Kontrolle darüber zu geben, auf welche Plattformen sie exportiert werden.</p>
+  <p>Um eine Audiogruppe zu definieren, müssen Sie auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf die Schaltfläche <strong>Neu hinzufügen</strong> klicken, wodurch eine neue Gruppe erstellt wird, die Sie dann benennen können. Um eine Gruppe zu ändern,
+    klicken Sie auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf das Dropdown-Menü und wählen Sie die Gruppe aus, die Sie bearbeiten möchten.</p>
+  <p class="note"><strong>HINWEIS</strong>: Wenn Sie im <a href="../The_Asset_Editors/Sounds.htm">Sound-Editor</a> Streaming-Audio für einen Sound auswählen, können Sie den Sound nicht einer Audiogruppe zuweisen, da Streaming-Sounds nicht auf die gleiche Weise verpackt werden wie andere
+    Sounds verpackt sind und Sie die volle Kontrolle darüber haben, wann sie geladen, abgespielt und mittels Code entladen werden.</p>
+  <p>Um einen Sound zu einer Audiogruppe hinzuzufügen, müssen Sie den <a href="../The_Asset_Editors/Sounds.htm">Sound Editor</a> für diesen Sound öffnen und dann die Gruppe aus der dortigen Option auswählen, oder Sie können alternativ Assets zu einer Audiogruppe hinzufügen über
+    das Menü der rechten Maustaste <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> hinzufügen. Sie können ein oder mehrere Sound-Assets auswählen (oder
+    einen ganzen Asset-Gruppenordner) auswählen und dann über das RMB-Menü die Sounds zu einer beliebigen Gruppe hinzufügen. Sie können auch auf die Schaltfläche " <strong>Ressource hinzufügen</strong> " am unteren Rand des Audiogruppen-Editors klicken, um auf diese Weise Assets hinzuzufügen.</p>
+  <p>Sobald Sie einen Sound zu einer benutzerdefinierten Audiogruppe hinzugefügt haben, können Sie in diesem Fenster selektiv auswählen, auf welche Plattform dieser Sound exportiert werden soll. Es kann sein, dass Sie standardmäßig alle Ihre Sounds in der höchsten Qualität haben, aber für HTML5 (zum Beispiel)
+    (z. B. für HTML5) eine Sounddatei mit geringerer Qualität verwenden möchten, um weniger Speicherplatz zu belegen. In diesem Fall fügen Sie die Dateien mit geringerer Qualität zu <span class="notranslate">GameMaker Studio 2</span> hinzu und weisen sie dann einer neuen Audiogruppe zu. Sie würden dann diese Audiogruppe aus dem Dropdown-Menü auswählen und
+    Sie würden dann diese Audiogruppe aus dem Dropdown-Menü auswählen und sie so einstellen, dass sie <em>nur </em>nach HTML5 exportiert, und den HTML5-Export aus den Exportoptionen für Audiogruppen höherer Qualität entfernen. Es ist wichtig zu beachten, dass Sie die Exportoptionen für die &quot;Standard&quot;-Audiogruppe nicht ändern können und dass sie immer in alle verfügbaren Plattformen exportiert wird, wenn Sie eine neue Gruppe erstellen.
+    immer auf alle verfügbaren Plattformen exportiert wird, wenn Sie ein endgültiges Spielpaket erstellen.</p>
+  <p>Sobald Sie Audiogruppen definiert und ihnen Sounds zugewiesen haben, können Sie diese in der Liste links sehen, wenn Sie die Gruppe auswählen. Es wird immer eine &quot;Standard&quot;-Audiogruppe verfügbar sein, und alle Sounds, die sich in dieser Gruppe befinden, werden immer
+    Alle Sounds dieser Gruppe sind immer im Spielpaket für alle Plattformen enthalten und werden beim Start in den Speicher geladen (es sei denn, sie sind in den Eigenschaften des Sound-Editors als &quot;gestreamt&quot; gekennzeichnet), aber wenn Sie eine benutzerdefinierte Audiogruppe erstellen, werden die zu dieser Gruppe hinzugefügten Dateien erst dann in den Speicher geladen, wenn Sie die Gruppe
+   <em>nicht in den Speicher geladen</em>, bis Sie die Funktion <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_load.htm"><span class="inline">audio_group_load()</span></a>. Auf diese Weise können Sie kontrollieren
+    Sie können auf diese Weise jederzeit kontrollieren, welche Audiodateien im Speicher vorhanden sind. Beachten Sie auch, dass Sie für alle <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/Audio_Groups.htm">Audiogruppenfunktionen</a> den Wert für die Audiogruppen-ID angeben müssen.
+    Dies ist einfach der Name, den Sie der Audiogruppe gegeben haben.</p>
+  <p>Audiogruppen sind auch mit den Einstellungen der <a href="Configurations.htm">Konfigurationen</a> verknüpft. Wenn Sie eine Konfiguration auswählen, können Sie dann das Fenster "Audiogruppen" öffnen und die Exportziele auf der rechten Seite für diese Konfiguration auswählen, und
+    Wenn Sie dann die Konfigurationen ändern, werden diese Ausgabeziele geändert. Beachten Sie, dass Sie Sound-Ressourcen nicht pro Konfiguration auf verschiedene Gruppen setzen können, sondern nur das Exportziel für die jeweilige Gruppe.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Game_Settings.htm">Spiel-Einstellungen</a></div>
+        <div style="float:right">Nächste: <a href="Texture_Groups.htm">Textur-Gruppen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Audio Groups
+-->
+  <!-- TAGS
+audio_groups
+-->
+</body>
+</html>

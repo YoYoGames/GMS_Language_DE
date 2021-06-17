@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>show_debug_overlay</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for show_debug_overlay" />
+  <meta name="rh-index-keywords" content="show_debug_overlay" />
+  <meta name="search-keywords" content="show_debug_overlay" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_debug_overlay</h1>
+  <p>Diese Funktion kann verwendet werden, um das Standard-Debug-Overlay beim Testen Ihres Spiels ein- und auszuschalten, und ist standardmäßig deaktiviert. Das Debug-Overlay zeigt einen grafischen CPU/GPU-Auslastungsbalken im eigentlichen Spielfenster selbst zusammen mit dem aktuellen realen fps-Wert an,
+    Anzahl der Textur-Swaps und die Anzahl der Vertex-Chargen (beachten Sie, dass Textur-Swaps und Vertex-Chargen nie Null sein werden und normalerweise Werte von 2 oder 3 anzeigen, da <span class="notranslate">GameMaker Studio 2</span> auch bei einem leeren Raum und ohne Objekte immer noch zeichnen und Chargen erstellen muss).
+    Dinge).</p>
+  <p><img alt="Debug overlay graphic" class="center" src="../../../assets/Images/QS_Guide/QS_Debug_Bar.png">Dieser Balken ist in Abschnitte unterteilt, wobei jeder Abschnitt 1/60 einer Sekunde entspricht. Wie Sie auf dem Bild oben sehen können, besteht der Balken aus verschiedenen
+    Farben:</p>
+  <ul class="colour">
+    <li><b>Grün</b> - Eingabe-/Ausgabeverarbeitung (d. h.: Tastatur, Maus, Gamepad, Netzwerk usw...)</li>
+    <li><b>Rot</b> - Die Aktualisierungsgeschwindigkeit des Step-Events</li>
+    <li><b>Gelb</b> - Die für das Auslosungsereignis benötigte Zeit</li>
+    <li><b>Orange</b> -Debug-Aktualisierungszeit, die normalerweise nur sichtbar ist, wenn Sie das Debug-Modul verwenden</li>
+    <li><b>Weiß</b> - GPU-Restzeit, d. h. die Zeit, die damit verbracht wird, darauf zu warten, dass die GPU das Rendering des Frames beendet, bevor das nächste beginnen kann</li>
+    <li><b>Cyan</b> - Die Textwiedergabezeit</li>
+    <li><b>Grau</b> - Die Zeit, die benötigt wird, um den Bildschirm für jeden Ziehschritt zu löschen</li>
+    <li><strong>Blau</strong> - Die Zeit, die für die Ausführung des <a href="../Garbage_Collection/Garbage_Collection.htm">Garbage Collectors</a> benötigt wird</li>
+    <li><b>Dunkelrot</b> - Der GPU-Flush, d. h. wie lange der Grafikprozessor benötigt, um Bilder aus dem Speicher zu löschen</li>
+  </ul>
+  <p>Auf diese Weise können Sie sehen, wie effizient Ihr Spiel läuft und erhalten einen visuellen Hinweis darauf, wie es die verfügbaren Ressourcen nutzt, ohne dass der Debugger nebenher läuft.
+    nebenan.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion funktioniert nicht auf dem HTML5-Ziel, da es im Vergleich zu allen anderen Zielen anders funktioniert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">show_debug_overlay(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>aktivieren.</td>
+        <td>schaltet<tt><tt> das Debug-Overlay</tt></tt>ein<tt>(true</tt>) oder aus<tt>(false</tt>)<tt><tt>.</tt></tt>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4><b>Beispiel:</b></h4>
+  <p class="code">if global.debug<br> {
+    <br> show_debug_overlay(true);
+    <br> }
+    <br> sonst
+    <br> {
+    <br> show_debug_overlay(false);
+    <br> }
+  </p>
+  <p>Der obige Code schaltet das Debugging in Abhängigkeit vom Wert einer globalen Variablen ein oder aus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Debugging.htm">Fehlersuche</a></div>
+        <div style="float:right">Weiter: <a href="code_is_compiled.htm">code_is_compiled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+show_debug_overlay
+-->
+  <!-- TAGS
+show_debug_overlay
+-->
+</body>
+</html>

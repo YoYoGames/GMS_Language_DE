@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Karte erstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Create Map action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Map" />
+  <meta name="search-keywords" content="Create Map" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png"> Karte erstellen</h1>
+  <p>Diese Aktion erstellt eine neue <b>Map-Datenstruktur</b> und gibt den Indexwert zurück, sodass Sie später über die anderen Datenstruktur-Aktionen auf die Map zugreifen können. Der Map-Index wird an die von Ihnen angegebene Zielvariable zurückgegeben, die zuvor mit
+    Sie können auch das Kontrollkästchen &quot; <a href="../Common/Declare_Temporary_Variable.htm">Temp</a>&quot; markieren, um eine temporäre lokale Variable zu benennen und zu erstellen, die den Wert bis zum Ende der
+    den Wert bis zum Ende des Scripts oder Ereignisses zu speichern. Eine neu erstellte Map-Datenstruktur wird als &quot;leer&quot; betrachtet, d. h. sie enthält keine Map-Schlüssel/Werteinträge. Beachten Sie, dass Sie weitere DS-Maps erstellen können, indem Sie auf das Plus-Symbol<span> <span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span></span>neben
+    der Aktion klicken und eine weitere Variable auswählen, die die Kennfeld-ID enthält.</p>
+  <p class="note"><b>WICHTIG!</b> Das Erstellen von Datenstrukturen verbraucht Speicher auf der Zielplattform, und daher sollten alle Datenstrukturen mit der Aktion <a href="Free_Data_Structure.htm">"Datenstruktur</a> freigeben" freigegeben werden, wenn sie nicht mehr benötigt werden.
+    Speicherleck, das die Leistung Ihres Spiels beeinträchtigen oder sogar zum Absturz führen kann. Dies ist besonders relevant, wenn Sie temporäre lokale Variablen zum Speichern von Datenstrukturindizes verwenden, da diese Variablen am Ende des Codes oder Ereignisses entfernt werden, aber
+    Das bedeutet aber nicht, dass auch die Datenstruktur entfernt wird! Die Datenstruktur existiert weiterhin, Sie haben nur keine Möglichkeit, sie zu referenzieren, also verwenden Sie entweder eine Instanzvariable und geben Sie die Struktur zu einem späteren Zeitpunkt frei, oder geben Sie die Struktur vor dem Ende von
+    des Ereignisses oder der Funktion, wenn ihr Index in einer temporären Variablen gespeichert ist.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Create Map Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Create_Map.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable, in der der Map-Index gespeichert werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Create Map Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Create_Map.png">Der obige Aktionsblockcode erzeugt eine neue Instanzvariable und eine neue Map-Datenstruktur. Der
+    Indexwert der Map wird in der Variablen gespeichert und dann verwendet, um der Map zwei Elemente hinzuzufügen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Data_Structure_Actions.htm">Datenstruktur-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Create_Grid.htm">Raster erstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Map
+-->
+  <!-- TAGS
+action_create_map
+-->
+</body>
+</html>

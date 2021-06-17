@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the function font_get_info" />
+  <meta name="rh-index-keywords" content="font_get_info" />
+  <meta name="search-keywords" content="font_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_get_info</h1>
+  <p>Diese Funktion wird verwendet, um Informationen für die angegebene Schriftart abzurufen. Sie geben einen Schriftindex an (der ein über den <a href="../../../../Introduction/The_Asset_Browser.htm">Asset-Browser</a> hinzugefügtes Asset oder eine zur <span class="notranslate">Laufzeit</span> <a href="font_add.htm">hinzugefügte</a> Schrift sein kann) und die Funktion gibt eine <a href="../../../GML_Overview/Structs.htm">Struktur</a> mit den folgenden Variablen zurück:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th style="">Daten Typ</th>
+        <th style="">Beschreibung</th>
+      </tr>
+      <tr>
+        <td><strong>ascenderOffset</strong></td>
+        <td style="">real</td>
+        <td style="">Der maximale Versatz von der Grundlinie zum oberen Rand der Schrift (in Pixel)</td>
+      </tr>
+      <tr>
+        <td><strong>Größe</strong></td>
+        <td style="">real</td>
+        <td style="">Die ungefähre Größe der Schrift (in Pixel)</td>
+      </tr>
+      <tr>
+        <td><strong>spriteIndex</strong></td>
+        <td style="">Vermögenswert (real)</td>
+        <td style="">Der Sprite-Index für die Schrift, wenn sie <a href="font_add_sprite.htm">aus einem Sprite erstellt</a> wurde, sonst -1</td>
+      </tr>
+      <tr>
+        <td><strong>Textur</strong></td>
+        <td style="">Vermögenswert (real)</td>
+        <td style="">-1, wenn der Font aus einem Sprite erstellt wurde, sonst die Textur-ID des Fonts</td>
+      </tr>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td style="">String</td>
+        <td style="">Der Name der Schriftart</td>
+      </tr>
+      <tr>
+        <td><strong>fett</strong></td>
+        <td style="">boolean</td>
+        <td style=""><tt>true</tt>, wenn die Schrift fett ist, sonst <tt>false</tt> <em>(siehe <strong>HINWEIS </strong></em>unten)</td>
+      </tr>
+      <tr>
+        <td><strong>kursiv</strong></td>
+        <td style="">boolean</td>
+        <td style=""><tt>true</tt>, wenn die Schrift kursiv ist, sonst <tt>false</tt><em> (siehe <strong>HINWEIS </strong></em>unten)</td>
+      </tr>
+      <tr>
+        <td><strong>Glyphen</strong></td>
+        <td style="">struct</td>
+        <td style="">Eine Struktur, die Informationen für jede Glyphe im Font enthält (weitere Informationen finden Sie <a href="#glyphs">unten</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>HINWEIS</strong>: Die <tt><strong>fett</strong></tt> und<tt>italic-Variablen</tt> spiegeln nur die Einstellungen des Benutzers für die Schriftart wider, so dass sie für Schriftarten, die standardmäßig fett oder kursiv sind, möglicherweise nicht genau sind.</p>
+  <p>Wenn die übergebene Schriftart nicht existiert, gibt die Funktion undefiniert zurück <tt>.</tt></p>
+  <p>Beachten Sie auch, dass das Ändern der Werte einer dieser Variablen oder einer in der <tt>Glyphs-Struktur</tt> enthaltenen Variablen die Darstellung der Schriftart nicht ändert, sodass diese Informationen als <strong>schreibgeschützt</strong> betrachtet werden sollten.</p>
+  <h2 id="glyphs">Glyphen Struktur</h2>
+  <p>Die Variable " <tt>glyphs"</tt> in der zurückgegebenen Struktur ist eine eigenständige Struktur, die Informationen für jede im Font enthaltene Glyphe enthält. Jede Variable in dieser Struktur ist der Zeichenname einer Glyphe, die eine Struktur enthält, die Informationen
+    für diese Glyphe enthält. Sie können sich diese verschachtelten Structs in folgendem Format vorstellen (ausgehend von der Haupt-Struct):</p>
+  <p class="code">{<br> glyphs:<br> {<br> A: {},<br> B: {},<br> C: {},<br> // ...andere Glyphen<br> },<br> // ...andere Fontinformationen<br> }
+  </p>
+  <p>Sie können den Zeichennamen einer Glyphe verwenden, um ihre Informationen aus der Struktur abzurufen, wie z. B. im folgenden Code:</p>
+  <p class="code">var _font_info = font_get_info(Font1);<br>
+    <br> var _info_A = _font_info.glyphs[$ &quot;A&quot;]; // $ ist ein Struktur-Accessor<br>
+    <br> show_debug_message(_info_A);
+  </p>
+  <p>Der obige Code ruft die Glyphenstruktur für das Zeichen &quot;A&quot; ab und druckt sie in das Ausgabeprotokoll. Sie können auch die Zeichenkette (<tt>&quot;A&quot;) durch eine</tt> Variable ersetzen, die eine Zeichenkette enthält, wodurch Sie Informationen für jede Glyphe über
+    diese Variable zur <span class="notranslate">Laufzeit</span> abrufen können.</p>
+  <p>Die Struktur, die für eine Glyphe zurückgegeben wird, enthält die folgenden Variablen:</p>
+  <p class="note"><strong>HINWEIS</strong>: Bei HTML5 ist die Glyphen-Struktur für alle geladenen Dateischriften (z. B. <tt>*.ttf</tt> oder <tt>*.otf</tt>) leer, da die <span class="notranslate">Runtime</span> keine Informationen über diese Glyphen hat.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th style="">Daten Typ</th>
+        <th style="">Beschreibung</th>
+      </tr>
+      <tr>
+        <td><strong>Zeichen</strong></td>
+        <td style="">real</td>
+        <td style="">Wenn der Font aus einem Sprite erstellt wurde, ist dies der Bildindex der Glyphe aus diesem Sprite, andernfalls ist es seine Unicode-Zeichennummer<br>
+          <br>
+         <em><strong>Hinweis</strong></em>: Alle Variablen darunter sind in der Struktur nicht vorhanden, wenn der Font aus einem Sprite erstellt wurde</td>
+      </tr>
+      <tr>
+        <td><strong>x</strong></td>
+        <td style="">real</td>
+        <td style="">Die X-Position der Glyphe auf der Texturseite (in Texel)</td>
+      </tr>
+      <tr>
+        <td><strong>y</strong></td>
+        <td style="">real</td>
+        <td style="">Die Y-Position der Glyphe auf der Texturseite (in Texel)</td>
+      </tr>
+      <tr>
+        <td><strong>w</strong></td>
+        <td style="">real</td>
+        <td style="">Die Breite der Glyphe auf der Texturseite (in Texel)</td>
+      </tr>
+      <tr>
+        <td><strong>h</strong></td>
+        <td style="">real</td>
+        <td style="">Die Höhe der Glyphe auf der Texturseite (in Texel)</td>
+      </tr>
+      <tr>
+        <td><strong>Schicht</strong></td>
+        <td style="">real</td>
+        <td style="">Die Anzahl der Pixel, die beim Weiterschalten zum nächsten Zeichen nach rechts verschoben werden (kann negativ sein, um nach links zu verschieben)</td>
+      </tr>
+      <tr>
+        <td><strong>Offset</strong></td>
+        <td style="">real</td>
+        <td style="">Die Anzahl der Pixel, um die das Rendering dieser Glyphe horizontal versetzt werden soll (kann positiv oder negativ sein)</td>
+      </tr>
+      <tr>
+        <td><strong>Unterschneiden</strong></td>
+        <td style="">Array</td>
+        <td style="">Ein Array von Ganzzahlen, das Kerning-Informationen in Paaren (oder Gruppen von 2) enthält. Die erste Ganzzahl in einem Paar ist der Unicode-Wert für ein Zeichen, und die zweite Ganzzahl ist der Betrag, der zum Verschiebungswert dieses Zeichens addiert wird (kann positiv oder
+          negativ sein kann), wenn das Zeichen dieser Glyphe vorangestellt ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>HINWEIS</strong>: Bei Dateischriften, die zur <span class="notranslate">Laufzeit</span> geladen werden, können die <tt>x-</tt> und <tt>y-Werte</tt> für eine Glyphe -1 sein, wenn sie noch nicht gerendert wurde, da sie keine Position auf der für die Zwischenspeicherung verwendeten Texturseite hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">font_get_info(Schriftart);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Schriftart</td>
+        <td>Die Schriftart, für die Informationen abgerufen werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur (oder undefiniert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _info = font_get_info(my_font);<br>
+    <br> if (_info != undefined &amp;&amp; _info.bold)<br> {
+    <br> image_xscale *= 2;<br> image_yscale *= 2;<br> }
+  </p>
+  <p>Dieser Code ruft Informationen für die Schriftart ab, die in der Variablen <tt>my_font</tt> gespeichert ist. Wenn der zurückgegebene Wert <strong>nicht </strong><tt>undefiniert</tt> ist und die angegebene Schriftart fett ist, wird der Maßstab der Instanz verdoppelt.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fonts.htm">Schriftarten</a></div>
+        <div style="float:right">Weiter: <a href="font_exists.htm">font_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_info
+-->
+  <!-- TAGS
+font_get_info
+-->
+</body>
+</html>

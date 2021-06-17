@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_stack_top</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_stack_top" />
+  <meta name="rh-index-keywords" content="ds_stack_top" />
+  <meta name="search-keywords" content="ds_stack_top" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_stack_top</h1>
+  <p>Diese Funktion liest <i>nur</i> den ersten Wert des Stapels (den, der &quot;oben&quot; liegt). Der Wert wird nicht <i>gepoppt</i>, d. h. er kann auch in Zukunft noch von dieser Funktion oder der Funktion <a href="ds_stack_pop.htm"><tt>ds_stack_pop()</tt></a>.
+    Wenn der Stack leer ist, gibt die Funktion die Konstante <tt>undefiniert</tt> zurück, andernfalls gibt sie den im Stack enthaltenen Real- oder String-Wert zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_stack_top(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der Datenstruktur, aus der gelesen werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Datentypwert im Stack gespeichert oder undefiniert</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">num = ds_stack_top(control_stack);</p>
+  <p>Der obige Code liest den Wert vom Stapel, der in der Variablen &quot;control_stack&quot; indiziert ist, und speichert den Rückgabewert in der Variablen &quot;num&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="ds_stack_create.htm">ds_stack_create</a></div>
+        <div style="float:right">Weiter: <a href="ds_stack_pop.htm">ds_stack_pop</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_top
+-->
+  <!-- TAGS
+ds_stack_top
+-->
+
+</body></html>

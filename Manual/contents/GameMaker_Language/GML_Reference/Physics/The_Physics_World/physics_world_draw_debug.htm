@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_draw_debug</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_draw_debug" />
+  <meta name="rh-index-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+  <meta name="search-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_draw_debug</h1>
+  <p>Diese Funktion zeichnet eine Darstellung des Physik-Weltsystems des Raums, um bei der Fehlersuche zu helfen, wenn Sie Probleme haben, die Physikszene richtig zum Laufen zu bringen. Manchmal kann das Problem im Rendering-Teil Ihres Spiels liegen, zum Beispiel
+    ein Sprite kann an der falschen Position oder mit der falschen Drehung gezeichnet werden, was den Anschein einer falschen Physik erweckt, oder es kann sein, dass Ihre Berechnungen nicht korrekt sind. In jedem Fall hilft Ihnen diese Funktion, das Problem zu finden und zu beheben, indem sie zeigt, was in Ihrem Physiksystem vor sich geht.
+    in Ihrem Physiksystem vor sich geht. Dazu müssen Sie ihr mitteilen, welcher Teil des Systems gezeichnet werden soll, und dies geschieht durch die Übergabe eines Wertes, der aus den in verschiedenen &quot;Flag&quot;-Konstanten gespeicherten Bits erstellt wird:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>phy_debug_render_aabb</td>
+        <td>Dies zeigt die absolute Bounding Box jedes Geräts in Bezug auf die Raumachse</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_collision_pairs</td>
+        <td>Dies zeigt alle Geräte an, die sich gerade in einer Kollision befinden</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_coms</td>
+        <td>Dies markiert den Massenschwerpunkt jedes Geräts im Raum</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_core_shapes</td>
+        <td>Zeigt die Grundformen, aus denen sich die Einbauten im Raum zusammensetzen</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_joints</td>
+        <td>Dadurch werden die Verbindungen aller Einbauten im Raum gezeichnet</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_obb</td>
+        <td>Dies zeigt den relativen Begrenzungsrahmen für die Einbauten im Raum</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_shapes</td>
+        <td>Dies zeigt die tatsächlichen Formen, aus denen die Einbauten im Raum bestehen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Um also zwei dieser Optionen zu zeichnen, müssen wir ein <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitweises &quot;oder&quot; (in GameMaker</a> <span class="notranslate">Studio 2 wird dies</span> durch | dargestellt) mit den beiden Optionen durchführen und die resultierende
+    Variable für die zu verwendende Funktion speichern. Hier ist ein Beispiel dafür, wie Sie eine Variable für die Funktion setzen, die nur die Massenschwerpunkte und die Gelenke aller Einbauten in einem Raum zeichnet:</p>
+  <p class="code">flag = phy_debug_render_coms | phy_debug_render_shapes;</p>
+  <p>Das würde in etwa folgendes ergeben:</p>
+  <p><img alt="Physics debug draw example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_draw_debug_image.png">Wie Sie mit dem obigen Code sehen können, werden nur die Formen und Massenschwerpunkte auf dem Bildschirm gezeichnet
+    (sowie Farben, die ihre Zustände repräsentieren - für weitere Informationen sehen Sie bitte in der Box 2D-Dokumentation nach). Auf dieselbe Weise können Sie mehr oder sogar alle Konstanten anzeigen, die Sie debuggen möchten... Verknüpfen Sie einfach alle mit &quot;oder&quot;!
+    Eine weitere Sache sollte beachtet werden - diese Funktion sollte <i>nur</i> im Draw-Ereignis einer Instanz aufgerufen werden, die eine geringere Tiefe hat als die, die Sie debuggen möchten, sonst werden Sie die Debug-Informationen nicht sehen können.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_world_draw_debug(flag)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Flagge</td>
+        <td>Der Flag-Wert zum Anzeigen verschiedener Debug-Funktionen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">flag = phy_debug_render_aabb | phy_debug_render_collision_pairs | phy_debug_render_obb;<br> physics_world_draw_debug(flag);
+  </p>
+  <p>Der obige Code zeichnet alle absoluten Boundingboxen, die relativen Boundingboxen sowie die Fixtures in Kollision innerhalb des aktuellen Physiksystems.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Physics_World.htm">Die Welt der Physik</a></div>
+        <div style="float:right">Weiter: <a href="physics_draw_debug.htm">physics_draw_debug</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_draw_debug
+phy_debug_render_aabb
+phy_debug_render_collision_pairs
+phy_debug_render_coms
+phy_debug_render_core_shapes
+phy_debug_render_joints
+phy_debug_render_obb
+phy_debug_render_shapes
+-->
+  <!-- TAGS
+physics_world_draw_debug
+-->
+</body>
+</html>

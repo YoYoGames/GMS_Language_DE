@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Standard-Workflow</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control standard workflow
+" />
+  <meta name="rh-index-keywords" content="Source Control - Workflow" />
+  <meta name="search-keywords" content="using source control,source control workflow" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Standard-Workflow</h1>
+  <p>Während Sie an Ihrem Projekt arbeiten, werden Sie natürlich Sprites erstellen, Skripte bearbeiten, Zeitleisten löschen und was sonst noch erforderlich ist, wenn sich Ihr Projekt mit der Zeit entwickelt. Dies sind alles Aktionen, die Sie im Auge behalten und zurückholen möchten, falls etwas
+    schief gehen. Dies ist der Hauptgrund für die Verwendung der Versionskontrolle - damit alle Unfälle rückgängig gemacht werden können - und wir werden Sie schnell durch den grundlegenden Arbeitsablauf von Anfang an führen, damit Sie verstehen, wie das funktioniert.</p>
+  <p>Fangen wir von vorne an, indem wir ein neues <span class="notranslate">GML-Projekt</span> erstellen und dann die Versionskontrolle über die <a href="../../Settings/Game_Options.htm">Hauptoptionen</a> aktivieren. Damit haben wir Zugriff auf das Menü Versionskontrolle oben, also gehen wir gleich hin und
+    wählen Sie <strong>Projekt-Repository erstellen</strong>. Wenn Sie sich die Raumressourcen ansehen, können Sie sehen, dass der Standardraum ein rotes Ausrufezeichen <img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png"> erhalten hat, was bedeutet
+    dass er gegenüber seinem letzten Zustand <strong>verändert </strong>wurde. Wenn wir andere Ressourcen im Projekt hätten, würden Sie sehen, dass sie alle das gleiche Symbol haben, wie im Bild unten gezeigt:</p>
+  <p><img alt="Source Control Modified Assets" class="center" src="../../assets/Images/IDE Tools/SCM_ModifiedState.png">Wir haben nun die Möglichkeit, das leere Projekt entweder so zu übergeben, wie es ist, oder es in einen Basiszustand zu bringen. Für den Moment machen wir unseren ersten
+    Übertragen, also klicken Sie auf <strong>Versionsverwaltung</strong> &gt; <strong>Änderungen übertragen.</strong> Es öffnet sich nun ein neues Fenster, das in drei Bereiche aufgeteilt ist:</p>
+  <p><img alt="Source Control Commit Window" class="center" src="../../assets/Images/IDE Tools/SCM_CommitWindow.png" /></p>
+  <ul class="colour">
+    <li><strong>Gestufte Änderungen</strong>: Dies sind die Änderungen, die in den Quellcode übertragen werden. Dies wird wahrscheinlich leer sein, aber es kann eine Änderung der Hauptoptionen anzeigen, was in Ordnung ist.</li>
+    <li><strong>Unveränderte Änderungen</strong>: Hier werden die Dateien angezeigt, die sich geändert haben, denen wir aber noch nicht mitgeteilt haben, dass wir sie übertragen wollen - es sind &quot;ausstehende&quot; Änderungen.</li>
+    <li><strong>Commit Message</strong>: Dies ist eine Notiz, die wir hinzufügen können, um zu erklären, was die Änderungen sind.</li>
+  </ul>
+  <p>Klicken Sie zunächst auf die Schaltfläche <strong>Stage All</strong>, da wir alle Änderungen festschreiben wollen, und geben Sie etwas wie &quot;First Commit!&quot; in die Commit Message ein und klicken Sie auf Commit. Alle unsere Ressourcen sollten nun ein grünes Häkchen<img alt="SCM Committed Icon" class="icon" src="../../assets/Images/Icons/SCM_Committed.png"> haben, was bedeutet, dass keine Änderungen gefunden wurden.</p>
+  <p>Beachten Sie, dass bei der Arbeit in diesem Fenster den verschiedenen <strong>Staged- </strong>und <strong>Unstaged-Meldungen </strong>ein Symbol vorangestellt ist. Das verwendete Symbol hängt von der Operation und der Datei ab, wobei das folgende verwendet wird
+    verwendet wird:</p>
+  <ul class="colour">
+    <li><span class="inline">[...]</span> - Stufenweiser Wechsel (war vorher [A])</li>
+    <li><span class="inline">[+]</span> - Neu hinzugefügt</li>
+    <li><span class="inline">[-&gt;]</span> - Umbenannt/verschoben</li>
+    <li><span class="inline">[-]</span> - Entfernt</li>
+    <li><span class="inline">[M]</span> - Unveränderte Änderungen</li>
+    <li><span class="inline">[?]</span> - Unverfolgte Datei</li>
+    <li><span class="inline">[!]</span> - Fehlende Datei</li>
+  </ul>
+  <p>Unser Arbeitsprozess kann nun beginnen, und wir können damit beginnen, unser Projekt zu erstellen und Änderungen zu speichern und zu übertragen, so wie wir es in den obigen Abschnitten getan haben.</p>
+  <p>Nachdem Sie eine Weile gearbeitet haben, möchten Sie vielleicht nachsehen, was Sie zu einem bestimmten Zeitpunkt committed haben, und dafür wollen Sie den <strong>Commit-Verlauf</strong> öffnen <strong>.</strong> Um das Verlaufsfenster zu öffnen, gehen Sie einfach auf <strong>Source Control</strong> &gt; <strong>View History</strong>, was ein weiteres Fenster mit drei Bereichen öffnet:</p>
+  <p><img alt="Source Control History Window" class="center" src="../../assets/Images/IDE Tools/SCM_HistoryWindow.png">Der obere Bereich beschreibt die Commits, der mittlere Bereich beschreibt den Kommentar, der dem ausgewählten Commit gegeben wurde, und der untere Bereich beschreibt
+    die Dateien, die in diesem Commit geändert wurden. Beachten Sie, dass, wenn Sie ein <a href="External_Merge_Diff_Tools.htm">Diff-Werkzeug</a> eingerichtet haben, ein Doppelklick auf eine beliebige Datei in diesem Fenster das Diff-Werkzeug öffnet und Sie die Änderungen sehen können
+    zwischen den Dateien.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Source_Control.htm">Source Control</a></div>
+        <div style="float:right">Weiter: <a href="Reverting_Files.htm">Dateien rückgängig machen</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Workflow
+-->
+  <!-- TAGS
+source_control_workflow
+-->
+</body>
+</html>

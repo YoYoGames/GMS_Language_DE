@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_add_point</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_add_point" />
+  <meta name="rh-index-keywords" content="physics_fixture_add_point" />
+  <meta name="search-keywords" content="physics_fixture_add_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_add_point</h1>
+  <p>Diese Funktion definiert die Punkte eines Polygons, das zuvor entweder mit <a href="physics_fixture_set_polygon_shape.htm"><tt>physics_fixture_set_polygon_shape()</tt></a> oder sie kann verwendet werden, um Punkte zu einer Kette von Rand
+    Fixtures mit der Funktion <a href="physics_fixture_set_chain_shape.htm"><tt>physics_fixture_set_chain_shape()</tt></a>. Bei einer Polygonform sind die Punkte relativ zum Ursprung des Fixtures, wobei die Position 0,0 der x/y-Achse das Zentrum ist,
+    und die nachfolgenden Koordinaten werden wie in <span class="notranslate">GameMaker Studio 2</span> üblich berechnet, wobei unten/rechts +x,+y und oben/links -x,-y ist. Zur Veranschaulichung dieses Vorgangs finden Sie hier eine Illustration:</p>
+  <p><img alt="Physics polyfon points example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_add_point_image.png">Wie Sie sehen können, kann jedes einfache <b>konvexe</b> Polygon auf diese Weise modelliert werden, aber
+   <b>konkave</b> Polygone werden im Moment <i>nicht</i> unterstützt. Um das Polygon schließlich zu schließen, müssen Sie das Fixture an eine Instanz binden. Sie sollten auch beachten, dass Sie mindestens <b>drei</b> Punkte für Ihr Polygon definiert haben müssen, bevor Sie es an eine Instanz binden
+    Sie sollten auch beachten, dass Sie mindestens drei Punkte für Ihr Polygon definiert haben müssen, bevor Sie es an eine Instanz binden, sonst erhalten Sie einen Fehler, und dass das Hinzufügen eines Punktes zu einem Fixture, für das zuvor keine Polygonform festgelegt wurde, ebenfalls einen Fehler verursacht. Beachten Sie auch, dass die maximal zulässige Anzahl von Punkten für ein Fixture <b>acht</b> ist.</p>
+  <p>Bei Kettenformen (die einfach eine Reihe verbundener Kantenformen sind) setzt diese Funktion einen Punkt als &quot;Verbindung&quot;, an dem die Kanten miteinander verkettet werden. Daher müssen Sie mindestens zwei Punkte definiert haben, bevor Sie die Halterung an die Instanz
+    sonst erhalten Sie einen Fehler. Anders als bei Polygonen sind Sie jedoch nicht auf ein Maximum von acht Punkten beschränkt und können so viele Punkte hinzufügen, wie Sie für die Kette benötigen.
+    Instanz.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_fixture_add_point(fixture, xpos, ypos)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Halterung</td>
+        <td>der Index der Halterung</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>die x-Position des Punktes<i>(relativ zum Fixture-Ursprung</i> bei Polygonformen)</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>die y-Position des Punktes<i>(relativ zum Fixture-Ursprung</i> bei Polygonformen)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">physics_fixture_set_polygon_shape(fix_schiff);<br> physics_fixture_add_point(fix_schiff, 0,0);<br> physics_fixture_add_point(fix_schiff, -40, 100);<br> physics_fixture_add_point(fix_schiff, 40, 100);</p>
+  <p>Der obige Code wendet eine Polygonform auf das in der Variablen &quot;fix_Ship&quot; indizierte Gerät an und definiert dann drei Punkte, um eine dreieckige Form zu erzeugen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fixtures.htm">Fixtures</a></div>
+        <div style="float:right">Weiter: <a href="physics_fixture_set_density.htm">physics_fixture_set_density</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_add_point
+-->
+  <!-- TAGS
+physics_fixture_add_point
+-->
+</body>
+</html>

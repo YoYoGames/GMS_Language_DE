@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Die Sequenz-Leinwand</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the sequence canvas" />
+  <meta name="rh-index-keywords" content="Sequences - The Canvas" />
+  <meta name="search-keywords" content="sequence canvas" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die Sequenz-Leinwand</h1>
+  <p>Beim Erstellen von Sequenzen für Ihre Projekte wird ein großer Teil der Arbeit im <strong>Canvas</strong> des <a href="../Sequences.htm">Sequenzeditors</a> erledigt. Der Canvas ist einfach der Bereich, der verwendet wird, um die Sequenzelemente zu enthalten, und
+    Er definiert auch, was angezeigt wird, wenn die Sequenz zu einem Raum hinzugefügt wird, der angezeigt werden soll. Wenn Sie zum ersten Mal eine Sequenz erstellen, wird die Leinwand auf die Standardgröße von 1366 x 768 Pixel eingestellt, aber dies kann in der <strong>Toolbox </strong>geändert werden, indem Sie
+    Klicken Sie in der Toolbox auf die Schaltfläche <img alt="Icon Grid Menu" class="icon" src="../../assets/Images/Icons/Icon_CanvasOptions.png"> neben der Schaltfläche <strong>Canvas Frame Toggle</strong> <img alt="Toggle Canvas Frame Icon" class="icon" src="../../assets/Images/Icons/Icon_ToggleCanvas.png">:</p>
+  <p><img alt="Sequence Editor Canvas Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_CanvasControls.png">Die Leinwandgröße definiert einen visuellen Bereich, in dem die Elemente, aus denen die Sequenz besteht, platziert werden, aber der Rahmen ist
+    Der Rahmen ist jedoch nur ein Richtwert für die Größe und hat keinen Einfluss darauf, wie Dinge gerendert werden, d. h.: Wenn Sie ein Sprite-Asset außerhalb des Rahmens platzieren und die Sequenz zu einem Raum hinzufügen, wird das Asset trotzdem gerendert.</p>
+  <p>Der Rahmen wird auch zur Aufnahme von <strong>Referenzbildern</strong> verwendet, die Sie zur Steuerung der Positionierung von Assets innerhalb der Sequenz verwenden möchten. Ein Referenzbild kann über dasselbe Menü " <strong>Leinwandoptionen</strong> " hinzugefügt werden, in dem Sie auch die Größe des Leinwandrahmens festlegen.
+    Ein Referenzbild kann über dasselbe Menü "Canvas Options" hinzugefügt werden, in dem Sie auch die Größe des Leinwandrahmens einstellen, und wird dann als Hintergrundbild für die Sequenzleinwand verwendet. Auf diese Weise können Sie Dinge z. B. nach einem UI-Mock-up eines Projektkünstlers positionieren:</p>
+  <p><img alt="The Canvas With A Reference Image" class="center" src="../../assets/Images/Asset_Editors/Canvas_Reference.png">Beachten Sie, dass Referenzbilder nicht mit dem Projekt gespeichert werden und nicht gerendert werden, wenn die Sequenz zu einem Raum hinzugefügt wird.</p>
+  <p>Sobald Sie die Leinwand wie gewünscht eingerichtet haben, können Sie damit beginnen, ihr Assets hinzuzufügen. Dies geschieht einfach durch Ziehen aus dem <a href="../../Introduction/The_Asset_Browser.htm">Asset-Browser</a> in die Leinwand, wodurch eine <a class="glossterm" data-glossterm="Anlagenspur" href="#">Asset-Spur</a> im <a href="The_Track_Panel.htm">Spurbedienfeld</a> erstellt wird:</p>
+  <p><img alt="Adding An Asset To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Asset.gif">Die Assets, die einer Sequenz hinzugefügt werden können, sind wie folgt:</p>
+  <ul class="colour">
+    <li>Sprites</li>
+    <li>Objekte</li>
+    <li>Klingt</li>
+    <li>Sequenzen</li>
+  </ul>
+  <p>Nachdem Sie die benötigten Assets hinzugefügt haben, können diese an ihren Ausgangspositionen für die Animation platziert werden und auch mit den verschiedenen <strong>Transformationssteuerungs-Gizmos</strong> transformiert werden. Auf diese wird auf zwei verschiedene Arten zugegriffen
+    Möglichkeiten:</p>
+  <ul class="colour">
+    <li>Bewegen Sie die Maus zu den Rändern des Assets im Canvas und klicken Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> und ziehen Sie (beachten Sie, dass sich der Cursor ändert, um die verschiedenen Transformationen anzuzeigen
+      die geändert werden):<br>
+      <img alt="Transforming The Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Transforms.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    <li>Indem Sie das Transformieren-Gizmo am Ursprung des Assets verwenden, das Sie in der Canvas Toolbox ändern können:<br>
+      <img alt="Using The Transform Gizmo And The Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Widgets.gif" style="margin-top: 10px; margin-bottom: 20px;"></li>
+  </ul>
+  <p>Wenn Sie die anfänglichen Transformationen für das Asset festgelegt haben (falls erforderlich), können Sie dann die Leinwand verwenden, um der Asset-Spur im <strong>Spurbedienfeld</strong><span class="glossextra">Parameterschlüssel</span> hinzuzufügen.
+    Ein einfaches Beispiel für die Funktionsweise wäre eine einfache Positionstransformation, bei der Sie das Asset an seiner Startposition platzieren, dann den Abspielkopf <a class="glossterm" data-glossterm="Abspielkopf" href="#">im</a> Bereich <a href="Using_The_Dope_Sheet.htm"><span class="notranslate">Dope Sheet</span></a>    zu dem Frame bewegen, an dem die Bewegung enden soll, und dann das Asset erneut bewegen:</p>
+  <p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif">Wie Sie im Bild oben sehen können, werden die neuen Positionen automatisch auf der Spur aufgezeichnet, da wir die Option
+    &quot;<strong>Automatically Record Changes&quot;</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> im Track-Panel aktiviert haben. Sie können auch sehen, dass der Leinwandansicht eine gepunktete Linie hinzugefügt wurde, um die Bewegung der Kühlstelle durch die Zeit anzuzeigen.
+    Zeit des Assets anzuzeigen. Wenn Sie die automatische Aufzeichnung nicht aktiviert haben, können Sie immer noch Punkte hinzufügen, indem Sie das Asset verschieben, dann den Abspielkopf einstellen und schließlich auf die Schaltfläche &quot;<strong>Record a new key&quot;</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> klicken.</p>
+  <p>Ein letzter erwähnenswerter Punkt ist, dass der Canvas die Verwendung und das Hinzufügen von <strong>intelligenten Hilfslinien</strong> erlaubt, d. h. Hilfslinien, die dem Canvas hinzugefügt werden können, damit Assets an ihnen ausgerichtet werden können. Standardmäßig zeigt der Canvas horizontale
+    und vertikale Hilfslinien um den Mittelpunkt sowie eine rechteckige Hilfslinie um die &quot;Kante&quot; des Sequenz-Canvas, je nach Größe des Canvas. Diese Hilfslinien werden in der endgültigen Sequenz nicht gerendert, wenn sie zu einem Raum hinzugefügt werden.
+    Sie dienen lediglich dazu, Ihnen eine Vorstellung vom Raum zu vermitteln und die Positionierung von Dingen zu erleichtern. Sie können auch Ihre eigenen Hilfslinien hinzufügen, indem Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf ein Lineal klicken und es dann in die Leinwand ziehen
+    die Leinwand ziehen:</p>
+  <p><img alt="Adding Guides To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Adding_Guides.gif">Um eine Hilfslinie zu entfernen, klicken Sie sie einfach an und ziehen sie dann wieder in Richtung der Lineale zurück. Wenn Sie Hilfslinien zu einer Sequenz hinzugefügt haben,
+    Wenn Sie einer Sequenz Hilfslinien hinzugefügt haben, &quot;rastet&quot; das Verschieben eines Assets an der Hilfslinie ein, wenn der Begrenzungsrahmen oder der Ursprung nahe genug ist, und es werden zusätzliche intelligente Hilfslinien angezeigt, um die Abstände zwischen den Assets zu markieren sowie um Assets zu markieren, die sich alle auf derselben Hilfslinie oder an derselben Position befinden (diese sind unterschiedlich gefärbt)
+    die sich alle auf der gleichen Hilfslinie oder an der gleichen Position befinden (diese werden unterschiedlich eingefärbt):</p>
+  <p><img alt="Canvas Smart Guides" class="center" src="../../assets/Images/Asset_Editors/Canvas_Smart_Guides.gif" /></p>
+  <p> </p>
+  <p> </p>
+  <h1>RMB-Menü und Navigation</h1>
+  <p>Um in der Canvas-Ansicht zu navigieren, können Sie die gleichen grundlegenden Steuerelemente wie für einen regulären Arbeitsbereich verwenden, d. h.: Verwenden Sie die mittlere Maustaste <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> und ziehen Sie, um die Leinwand zu verschieben (oder alternativ
+    verwenden Sie <img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">), und Sie können mit dem Mausrad horizontal scrollen
+    Rad <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> horizontal scrollen oder mit der Taste <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> und dem Mausrad <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> ein- und auszoomen.</p>
+  <p>Um eine Kühlstelle auszuwählen, klicken Sie einfach mit der linken Maustaste <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> darauf, oder Sie können mehrere Kühlstellen auswählen, indem Sie <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> und <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> verwenden, um auf jede Kühlstelle zu klicken. Sie können auch
+    mehrere Kühlstellen auswählen, indem Sie <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> verwenden und dann auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> klicken und ziehen. Dies
+    wird ein &quot;Kasten&quot; in der Arbeitsfläche erstellt, und jede Kühlstelle, die den Kastenbereich berührt, wird ausgewählt.</p>
+  <p>Wenn Sie eine oder mehrere Kühlstellen ausgewählt haben, können Sie diese mit den Tastenkombinationen <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +&quot;<span class="inline">X</span>&quot;, <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; und <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot; ausschneiden, kopieren und einfügen.</p>
+  <p>Beachten Sie, dass, wenn mehrere Kühlstellen im Canvas ausgewählt sind, für jede Kühlstelle ein <a class="glossterm" data-glossterm="Begrenzungsrechteck" href="#">Begrenzungsrahmen</a> und für alle zusammen ein größerer Begrenzungsrahmen angezeigt wird. Sie können ändern, wie
+    Sie können das Verhalten dieses Begrenzungsrahmens mit den Symbolen in der oberen linken Ecke ändern:</p>
+  <p><img alt="Combined Selection BBox Controls" class="center" src="../../assets/Images/Asset_Editors/Canvas_BBox_Controls.png">Wenn Sie auf das Kreissymbol klicken, wird das Transformationssteuerungs-Widget auf den Ursprung des gesamten Begrenzungsrahmens für alle ausgewählten Kühlstellen geändert,
+    Klicken Sie auf das Kastensymbol, um ein individuelles Steuerungs-Widget für jede Kühlstelle in der Auswahl anzuzeigen. Sie können gruppierte Kühlstellen verschieben und sie kopieren/einfügen usw., genau wie bei einer einzelnen Kühlstelle.</p>
+  <p>Wenn Sie mehrere Assets haben, die sich überlappen, und ein bestimmtes auswählen möchten, ohne die anderen zu stören, können Sie mit der Maus darüber fahren, um die <strong>Objekt-Toolbox</strong> aufzurufen, die eine Liste von Symbolen für jedes Objekt unter
+    der Maus. Sie können dann auf eines dieser Elemente klicken, um es auszuwählen und zu bearbeiten:</p>
+  <p><img alt="The Item Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Item_Toolbox.gif">Außerdem stehen Ihnen über die rechte Maustaste <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> eine Reihe zusätzlicher Optionen zur Verfügung, wenn Sie mit ihr auf eine beliebige Kühlstelle in der Sequenz klicken:</p>
+  <p><img alt="Canvas Asset RIght Mouse Button Menu" class="center" src="../../assets/Images/Asset_Editors/Canvas_RMB_Menu.png">Die hier verfügbaren Optionen sind:</p>
+  <ul class="colour">
+    <li><strong>Aufzeichnen</strong>: Mit dieser Option können Sie Parameterschlüssel für das/die Asset(s) aufzeichnen, und wenn Sie den Mauszeiger darüber bewegen, sehen Sie Optionen zum Aufzeichnen der <em>Skala,</em> <em>Drehung oder </em> <em>Position.</em></li>
+    <li><strong>Gruppe</strong>: Wenn Sie diese Option wählen, wird ein neuer Gruppenordner im Spurbedienfeld erstellt und das/die ausgewählte(n) Asset(s) in diesen Ordner verschoben.</li>
+    <li><strong>Umbenennen</strong>: Wenn Sie darauf klicken, wird die Spur im Spur-Bedienfeld hervorgehoben und der Name wird editierbar gemacht, so dass Sie ihn ändern können.</li>
+    <li><strong>Im Blatt suchen</strong>: Wenn Sie hierauf klicken, wird der Schlüssel der ausgewählten Kühlstelle in der <span class="notranslate">Tabelle</span> hervorgehoben.</li>
+    <li><strong>Andere suchen</strong>: Wenn Sie hierauf klicken, wird eine Liste aller anderen Kühlstellen desselben Typs angezeigt, aus der Sie eine auswählen können.</li>
+    <li><strong>Auswählen</strong>: Wenn Sie hierauf klicken, wird eine Liste aller Kühlstellen angezeigt, die sich an der angeklickten Position überlappen, und Sie können eine beliebige davon zur Bearbeitung auswählen.</li>
+    <li><strong>Schlüssel entfernen</strong>: Wenn Sie diese Option wählen, wird der Asset-Spurschlüssel an der aktuellen Abspielkopfposition aus dem <span class="notranslate">Abspielplan</span> entfernt. Die Spur selbst bleibt bestehen, ebenso wie alle Parameterspuren, die sie enthält, und Sie können der Spur ein anderes Asset wieder hinzufügen
+      zu der Spur hinzufügen, indem Sie es aus dem Asset-Browser in das <span class="notranslate">Dope-Sheet</span> ziehen.</li>
+    <li><strong>Spur entfernen</strong>: Dies entfernt die Asset-Spur (und ggf. ihr zugewiesene Parameterspuren) aus dem Spurbereich sowie alle mit ihr verbundenen Tasten im <span class="notranslate">Dope Sheet</span>.</li>
+    <li><strong>Editor öffnen</strong>: Damit wird das Asset zur Bearbeitung im Standard-Editor für den Asset-Typ geöffnet.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="The_Track_Panel.htm">Das Gleis-Panel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences Canvas
+-->
+  <!-- TAGS
+sequences_canvas
+-->
+
+</body></html>

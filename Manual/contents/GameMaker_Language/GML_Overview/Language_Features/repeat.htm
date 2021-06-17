@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>wiederholen.</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the repeat function" />
+  <meta name="rh-index-keywords" content="repeat" />
+  <meta name="search-keywords" content="if,else,then,?,ternary,conditional" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>wiederholen.</h1>
+  <p>Die <span class="notranslate">GameMaker-Sprache</span> verfügt über eine Reihe von Möglichkeiten, <i>Schleifen</i> auszuführen, d. h. eine oder mehrere Anweisungen eine bestimmte Anzahl von Malen über sich selbst iterieren zu lassen. Die einfachste davon ist die <tt>repeat-Anweisung</tt>, die die Form hat:</p>
+  <p class="code">repeat (&lt;Ausdruck&gt;)<br> {<br> &lt;Anweisung&gt;;<br> &lt;Anweisung&gt;;<br>...<br> }</p>
+  <p>Mit <tt>repeat</tt> wird die angegebene <a class="glossterm" data-glossterm="Anweisung" href="#">Anweisung</a> so oft wiederholt, wie es der gerundete Wert des <a class="glossterm" data-glossterm="Ausdruck" href="#">Ausdrucks</a> angibt. Für
+    Beispiel: Die folgende Anweisung erzeugt fünf Kugeln an zufälligen Positionen:</p>
+  <p class="code">wiederholen (5)<br> {
+    <br> instance_create_layer(random(400), random(400), &quot;Instances&quot;, obj_ball);<br> }
+  </p>
+  <p>Dies kann sehr nützlich sein, um zu vermeiden, dass derselbe Code mehrfach eingegeben wird, oder um Arrays zu verwenden, oder um eine Reihe von Operationen durchzuzählen usw.. Sie sind auch nicht auf eine einzige Anweisung beschränkt, sondern können mehrere Anweisungen wiederholen, indem Sie sie in geschweifte Klammern {} einschließen.
+    in geschweifte Klammern <tt>{}</tt> einschließen. Zum Beispiel:</p>
+  <p class="code">var _x = 32;<br> repeat (global.p_lives)<br> {<br> draw_sprite(spr_heart, 0, _x, 32);<br> _x += sprite_get_width(spr_heart);<br> }</p>
+  <p>Das obige Beispiel wiederholt die Anweisungen in den geschweiften Klammern für so viele <a class="glossterm" data-glossterm="Iteration" href="#">Iterationen</a>, wie die globale Variable &quot;lives&quot; hat, und jede Iteration zeichnet
+    das Herz-Sprite an der Position <span class="inline">_x</span> und verschiebt dann die Position ein Stück weiter, basierend auf der Breite des Herz-Sprites.</p>
+  <p><strong>Wann sollten Sie eine <span class="inline">repeat</span> Schleife verwenden?</strong> Immer dann, wenn Sie eine oder mehrere Anweisungen eine feste Anzahl von Malen wiederholen möchten, ohne dass Sie eine Zählung der Iterationen vornehmen müssen.</p>
+  <p>Es ist erwähnenswert, dass Sie die speziellen Anweisungen <span class="inline"><a href="break.htm">break</a></span> und <span class="inline"><a href="continue.htm">continue</a></span> innerhalb einer
+    <font face="Lucida Console"><span style="font-size: 16px;"><b>wiederholen</b></span></font> Schleife verwenden können. Wenn Sie <span class="inline">break</span> verwenden, wird die Schleife sofort verlassen und mit dem Code fortgefahren, der sich in dem Ereignis oder der Funktion befindet, nachdem die Schleife beendet sein sollte, z. B:</p>
+  <p class="code">var i = 0;<br> var temp = 0;<br> repeat (10)<br> {<br> temp += array[i];<br> if (temp &gt; max_total)<br> {<br> break;<br> } <br> else<br> {<br> i += 1;<br> } <br> }</p>
+  <p>Der obige Code durchläuft in einer Schleife 10 <a href="../Arrays.htm">Array-Werte</a> und addiert sie zu einer lokalen Variablen. Wenn die Summe der lokalen Variablen größer ist als der angegebene Wert für <span class="inline">max_total</span>, dann wird die Schleife mit
+    break beendet, andernfalls wird die Schleife fortgesetzt. </p>
+  <p>Ein Beispiel für die Verwendung von <span class="inline">continue</span> in einer <span class="inline">repeat</span> -Schleife wäre:</p>
+  <p class="code">repeat(10)<br> { <br> var _x = random(Raum_Breite);<br> var _y = random(Raum_Höhe);<br> if (instance_position(_x, y, obj_Enemy)<br> {
+    <br> weiter;
+    <br> }
+    <br> instance_create_layer(_x, _y, &quot;Instances&quot;, obj_Enemy);<br> }</p>
+  <p>Dieser Code wird 10 Mal wiederholt, wobei eine zufällige Raumposition erzeugt und dann geprüft wird, ob eine Instanz des Objekts <span class="inline">obj_Enemy</span> an dieser Position existiert. Ist dies der Fall, wird die aktuelle Schleifeniteration mit <span class="inline">continue</span> beendet und eine neue Iteration gestartet. Ist dies nicht der Fall, wird eine Instanz des Objekts <span class="inline">obj_Enemy</span> an der zufälligen Position erzeugt.</p>
+  <p>Weitere Beispiele für Schleifenfunktionen finden Sie in den Abschnitten über <a href="while.htm"><tt>while</tt></a>, <a href="do___until.htm"><tt>do... bis</tt></a>, und <a href="for.htm"><tt>for</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="while.htm">während</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+repeat
+-->
+  <!-- TAGS
+repeat
+-->
+
+</body></html>

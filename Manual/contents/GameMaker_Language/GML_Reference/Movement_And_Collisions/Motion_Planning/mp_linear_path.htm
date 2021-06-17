@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_linear_pfad</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_linear_path" />
+  <meta name="rh-index-keywords" content="mp_linear_path" />
+  <meta name="search-keywords" content="mp_linear_path" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_linear_pfad</h1>
+  <p>Diese Funktion berechnet einen geradlinigen Pfad von der aktuellen Instanzposition zu dem durch die Werte &quot;xgoal&quot; und &quot;ygoal&quot; angegebenen Punkt. Sie verwendet die angegebene Schrittweite, die gleiche wie bei der Funktion <a href="mp_linear_step.htm"><tt>mp_linear_step()</tt></a>.
+    Der angegebene Pfad muss bereits existieren und wird durch den neuen Pfad überschrieben und die Funktion gibt zurück, ob ein vollständiger Pfad gefunden wurde (true) oder nicht (false). Wenn false zurückgegeben wird, dann wird trotzdem ein Pfad erzeugt, aber er läuft nur bis zu der Position
+    wo der Pfad blockiert war.</p>
+  <p class="note"><b>HINWEIS</b>: Mit dieser Funktion wird die Instanz nicht bewegt. Sie legt nur einen Pfad fest, und Sie müssen die <a href="../../Asset_Management/Paths/Paths.htm">Pfadfunktionen</a> für die Bewegung verwenden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_linear_path(path, xgoal, ygoal, stepsize, checkall);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Pfad</td>
+        <td>Der Index des zu verwendenden Pfades.</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>Die Ziel-X-Position.</td>
+      </tr>
+      <tr>
+        <td>yZiel</td>
+        <td>Die Ziel-Y-Position.</td>
+      </tr>
+      <tr>
+        <td>Schrittweite</td>
+        <td>Die Geschwindigkeit, mit der sich die Instanz in Pixeln pro Schritt bewegt.</td>
+      </tr>
+      <tr>
+        <td>checkall</td>
+        <td>Ob auf Kollisionen mit allen Instanzen (true) oder nur mit soliden Instanzen (false) geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if mp_linear_path(path, obj_Player.x, obj_Player.y, 2, 0)<br> {<br> path_start(path, 2, 0, 0);<br> }</p>
+  <p>Dies veranlasst das Objekt zu prüfen, ob es einen linearen Pfad von seiner aktuellen Position zur Position von &quot;obj_Player&quot; gibt. Wenn dies der Fall ist, startet es den Pfad.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_linear_path_object.htm">mp_linear_path_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_linear_path
+-->
+  <!-- TAGS
+mp_linear_path
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_button_check_released</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_button_check_released" />
+  <meta name="rh-index-keywords" content="gamepad_button_check_released" />
+  <meta name="search-keywords" content="gamepad_button_check_released" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_button_check_released</h1>
+  <p>Diese Funktion gibt <tt>true</tt> oder <tt>false</tt> zurück, je nachdem, ob die angegebene Gamepad-Taste als losgelassen erkannt wird oder nicht. Beachten Sie, dass diese Funktion nur <i>einmal</i> für die Taste ausgelöst wird, sobald sie losgelassen wurde.
+    Damit sie erneut ausgelöst wird, muss die Taste erst gedrückt und dann wieder losgelassen werden. Wenn Sie eine analoge Taste prüfen, dann berücksichtigt die Prüfung die <a href="gamepad_set_button_threshold.htm">Schwellenwerteinstellung</a> und gibt nur
+    <span class="inline">true</span> zurück, wenn der rohe Eingangswert unter den angegebenen Schwellenwert fällt (Sie können diesen rohen Wert mit der Funktion <span class="inline"><a href="gamepad_button_value.htm">gamepad_button_value()</a></span> ermitteln).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gamepad_button_check_released(device, button);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Welcher Gamepad-Geräte-&quot;Steckplatz&quot; zu prüfen ist.</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Auf welche <a href="Gamepad_Input.htm">Gamepad-Tastenkonstante</a> ist zu achten.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if gamepad_button_check_released(0, gp_select)<br> {
+    <br> audio_play_sound(snd_Button, 0, false);<br> global.Pause = !global.Pause;<br> }
+  </p>
+  <p>Der obige Code erkennt, ob die &quot;Select&quot;-Taste des an Gerät &quot;Slot&quot; 0 angeschlossenen Gamepads gedrückt wurde oder nicht und schaltet die globale Variable &quot;Pause&quot; um.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Input.htm">Gamepad-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="gamepad_button_count.htm">gamepad_button_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_check_released
+-->
+  <!-- TAGS
+gamepad_button_check_released
+-->
+</body>
+</html>

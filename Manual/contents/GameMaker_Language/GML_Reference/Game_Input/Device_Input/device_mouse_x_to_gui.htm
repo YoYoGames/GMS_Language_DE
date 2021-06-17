@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gerät_maus_x_zu_gui</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for device_mouse_x_to_gui" />
+  <meta name="rh-index-keywords" content="device_mouse_x_to_gui" />
+  <meta name="search-keywords" content="device_mouse_x_to_gui" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gerät_maus_x_zu_gui</h1>
+  <p>Diese Funktion gibt die x-Position des Touches auf dem Gerät in Bezug auf die GUI-Ebene zurück. Da die GUI-Ebene unabhängig von der Bildschirmauflösung <i>und der</i> Raumgröße auf eine unterschiedliche Größe eingestellt werden kann, kann es manchmal kompliziert sein
+    den genauen Punkt auf der GUI-Ebene zu ermitteln, an dem ein Benutzer den Bildschirm berührt hat. Mit dieser Funktion können Sie diese Position basierend auf der tatsächlichen GUI-Größe ermitteln, wodurch GUI-Schaltflächen und HUD-Elemente einfacher zu erstellen und zu bedienen sind. Wenn Sie diese Funktion auf einem der
+    HTML5- oder PC- und Mac-Modulen verwenden, wird dieser Wert ständig aktualisiert, solange das Gerät (in der Regel eine Maus) eingesteckt ist; bei mobilen Geräten wird dieser Wert jedoch nur aktualisiert, während der Bildschirm berührt wird, und beachten Sie, dass die maximale Anzahl von
+    Beachten Sie, dass die maximale Anzahl der Berührungen, die erkannt werden können, sehr stark vom verwendeten Gerät und dem darauf laufenden Betriebssystem abhängt. Beachten Sie auch, dass bei HTML5 nur &quot;Gerät 0&quot; korrekt funktioniert und andere Geräte möglicherweise falsche Werte liefern.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">device_mouse_x_to_gui(device);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Das Gerät (von 0 - <i>n</i>), das geprüft wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if device_mouse_check_button(0, mb_left)<br> {
+    <br> if device_mouse_x_to_gui(0) &gt; 0 &amp;&amp; device_mouse_x_to_gui(0) &lt; 32<br> {
+    <br> pressed = true;<br> }
+    <br> sonst
+    <br> {
+    <br> gedrückt = false;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob die Gerätemaus gedrückt wird, und wenn ja, fragt er dann die x-Position des Geräts auf der GUI-Ebene ab, um zu sehen, ob sie innerhalb der Parameter liegt. Ist dies der Fall, wird die Variable &quot;pressed&quot; auf true gesetzt, <tt>andernfalls</tt>
+    setzt sie auf <tt>false</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Device_Input.htm">Geräteeingang</a></div>
+        <div style="float:right">Weiter: <a href="device_mouse_y_to_gui.htm">device_mouse_y_to_gui</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_mouse_x_to_gui
+-->
+  <!-- TAGS
+device_mouse_x_to_gui
+-->
+
+</body></html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Karteneintrag entfernen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Remove Map Entry action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Remove Map Entry" />
+  <meta name="search-keywords" content="Remove Map Entry" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Remove Map Entry Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_Map_Entry.png"> Karteneintrag entfernen</h1>
+  <p>Mit dieser Aktion können Sie einen Schlüssel (und den dazugehörigen Wert) aus einer Map-Datenstruktur entfernen. Sie übergeben die Variable, die den Map-Index enthält (wie von der Aktion &quot; <a href="Create_Map.htm">Map erstellen&quot;</a> zurückgegeben) und geben dann einen &quot;Schlüssel&quot; an (der
+    ist der Bezeichner innerhalb der Map für einen Wert), und die Aktion entfernt diesen Schlüssel aus der Map. Beachten Sie, dass diese Aktion <i>nichts</i> zurückgibt, und wenn Sie den Wert für den angegebenen Schlüssel benötigen, sollten Sie die Aktion " <a href="Get_Map_Value.htm">Get Map Value"</a> verwenden, bevor Sie ihn entfernen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Remove Map Entry Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Remove_Map_Entry.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Karte</td>
+        <td>Der Index (gespeichert in einer Variablen) der Map, aus der der Wert entfernt werden soll</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Der zu verwendende Schlüssel (real oder string)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Remove Map Entry Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Remove_Map_Entry.png">Der obige Aktionsblock-Code ruft den Wert eines bestimmten Schlüssels aus der Map-Datenstruktur ab und prüft dann, ob der Wert kleiner als 0 ist.
+    Struktur ab und prüft dann, ob der Wert kleiner oder gleich 0 ist. Ist dies der Fall, wird der Schlüssel aus der Map entfernt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Data_Structure_Actions.htm">Datenstruktur-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Grid_Value.htm">Rasterwert setzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Remove Map Entry
+-->
+  <!-- TAGS
+action_map_remove
+-->
+</body>
+</html>

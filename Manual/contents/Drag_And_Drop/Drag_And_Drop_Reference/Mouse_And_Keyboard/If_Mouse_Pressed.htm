@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn die Maus gedrückt wird</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Mouse Pressed action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Mouse Pressed" />
+  <meta name="search-keywords" content="If Mouse Pressed Action" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Mouse Pressed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Pressed.png"> Wenn die Maus gedrückt wird</h1>
+  <p>Diese Aktion prüft, ob eine Maustaste zum ersten Mal gedrückt wird. Sie gibt bei dem einen Spielschritt (Frame), bei dem die Taste zum ersten Mal gedrückt wird, <tt>den Wert true</tt> zurück und zu allen anderen Zeitpunkten <tt>false</tt>. Wenn Sie den Modifikator <tt>not</tt> aktivieren, wird diese Aktion
+    umgekehrt und prüft, ob die Taste <i>nicht</i> gedrückt wurde, und gibt <tt>false</tt> bei dem Spielschritt (Frame) zurück, bei dem die Taste gedrückt wurde, und <tt>true</tt> zu allen anderen Zeitpunkten. Wenn Sie prüfen müssen, ob eine Taste gedrückt gehalten wird und nicht nur
+    nicht nur das anfängliche Druckereignis, dann verwenden Sie die Aktion <a href="If_Mouse_Down.htm">If Mouse Down</a>.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in den &quot;if&quot;-Block diese an der Seite der Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="Id Mouse Pressed drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Mouse_PressedDrop.png">Diese Aktionen werden nun ausgeführt, wenn der &quot;if&quot;-Block als wahr ausgewertet wird,
+    während alle Aktionen, die an anderer Stelle ausgelassen werden, nach dem &quot;if&quot;-Block ausgeführt werden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="If Mouse Pressed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_Pressed.png" /></p>
+  <h4>Argumente:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Maustaste</td>
+        <td>Der Name der zu prüfenden Maustaste (links, Mitte, rechts).</td>
+      </tr>
+      <tr>
+        <td>Nicht</td>
+        <td>Negieren der Prüfung (aus true wird false und umgekehrt)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="If Mouse Pressed Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_Down.png">Der obige Code des Aktionsblocks fragt bei jedem Schritt den Zustand der Maustaste ab, und wenn sie
+    gedrückt gehalten wird, prüft er, ob die Maustaste beim ersten Drücken gedrückt wird. Wenn die Prüfung bei der ersten Betätigung der Maustaste <tt>wahr</tt> ist, wird die Instanzgeschwindigkeit gesetzt und die Sprite-Überblendung wird auf rot geändert, während die Taste gedrückt ist. Wenn die Maus nicht gedrückt gehalten wird,
+    wird beim Loslassen der Maus eine Prüfung durchgeführt, um die Überblendungsfarbe auf Weiß zurückzusetzen und die Geschwindigkeit auf 0 zu setzen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Mouse_And_Keyboard_Actions.htm">Maus- und Tastatur-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="If_Mouse_Down.htm">Wenn Maus unten</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Mouse Pressed
+-->
+  <!-- TAGS
+action_if_mouse_pressed
+-->
+</body>
+</html>

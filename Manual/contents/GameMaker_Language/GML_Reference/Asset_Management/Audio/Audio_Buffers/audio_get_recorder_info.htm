@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_recorder_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_recorder_info" />
+  <meta name="rh-index-keywords" content="audio_get_recorder_info" />
+  <meta name="search-keywords" content="audio_get_recorder_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_recorder_info</h1>
+  <p>Diese Funktion gibt eine <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> mit Informationen über den angegebenen Recorder-Quellenindex zurück. Sie können herausfinden, wie viele Recorder-Quellen verfügbar sind, indem Sie die Funktion <a href="audio_get_recorder_count.htm"><tt>audio_get_recorder_count()</tt></a>,
+    und die zurückgegebene Map enthält die folgenden Schlüssel/Wert-Paare:</p>
+  <ul class="colour">
+    <li>&quot;Name&quot;<strong>- ein</strong> Name zur Beschreibung des Geräts</li>
+    <li>&quot;index<strong>&quot; -</strong> der Index, der für die Aufzeichnung verwendet werden soll</li>
+    <li>&quot;data_format<strong>&quot; -</strong> das Format, in dem die Daten zurückgegeben werden (derzeit ist dies immer buffer_s16 <tt>, aber andere</tt> Formate können in Zukunft unterstützt werden)</li>
+    <li>&quot;<strong>sample_rate&quot; -</strong> die Abtastrate (in Hz) der zurückgegebenen Daten (derzeit auf 16000hz geklemmt, aber das kann sich in Zukunft ändern)</li>
+    <li>&quot;<strong>channels&quot; -</strong> die Konstante audio_mono <tt>(weitere</tt> Konstanten für Stereo und 3D werden möglicherweise in Zukunft unterstützt)</li>
+  </ul>
+  <p>Beachten Sie, dass die Funktion zwar eine DS-Map für Sie anlegt, diese aber später <i>nicht</i> wieder entfernt. Daher sollten Sie die Map selbst zerstören, wenn sie nicht mehr benötigt wird, um Speicherlecks zu vermeiden.</p>
+  <p class="note"><b>HINWEIS: </b>Die meisten Plattformen <b>außer HTML5</b> unterstützen die Aufnahme von Audio in irgendeiner Form, aber das bedeutet nicht, dass alle Geräte dies zulassen, selbst wenn die Plattform dies tut. <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count()</tt></a></span>    Funktion einen Wert größer als 0 zurückgibt, um zu prüfen, ob Aufnahmegeräte verfügbar sind, bevor Sie die restlichen Aufnahmefunktionen verwenden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_get_recorder_info(recorder_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>schreiber_index</td>
+        <td>Der Index der Schreiberquelle, von der die Informationen abgerufen werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (DS-Karten-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">len = async_load[? &quot;data_len&quot;];<br> audio_buff = buffer_create(len, buffer_fast, 1);<br> buffer_copy(async_load[? &quot;buffer_id&quot;], 0, len, buff, 0);<br> audio_queue_sound(audio_queue, audio_buff, 0, len);<br> audio_play_sound(audio_queue,
+    10, 0);</p>
+  <p>Der obige Code würde im asynchronen <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">Audio-Aufnahme-Ereignis</a> aufgerufen werden und weist einige aufgenommene Daten einem Puffer zu, der dann zu einer Audio-Warteschlange hinzugefügt wird.
+    Diese wird dann abgespielt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Audio.htm">Audio-Puffer</a></div>
+        <div style="float:right">Weiter: <a href="audio_create_buffer_sound.htm">audio_create_buffer_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_recorder_info
+-->
+  <!-- TAGS
+audio_get_recorder_info
+-->
+</body>
+</html>

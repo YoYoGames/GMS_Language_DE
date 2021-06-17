@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ausdrücke und Operatoren</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different GML expressions" />
+  <meta name="rh-index-keywords" content="Expressions And Operators,=,&amp;&amp;,||,^^,&lt;,&gt;,&lt;=,&gt;=,==,!=,|,&amp;,^,&lt;&lt;,&gt;&gt;,+,-,*,/,++,--,div,%,mod,!,~" />
+  <meta name="search-keywords" content="expressions,order of operation,operators,div,mod,&amp;&amp;,||,xor,^^,|,^,&amp;,++,--,&lt;&lt;,&gt;&gt;,&lt;=,&gt;=,==,=,:=,$" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ausdrücke und Operatoren</h1>
+  <p>Ein Ausdruck ist ein mathematischer Satz, der gewöhnliche Zahlen, Variablen, Zeichenketten oder Funktionen sowie einen oder mehrere <strong>Operatoren </strong>(wie addieren, subtrahieren, multiplizieren usw.) enthalten kann. Die in einem Ausdruck verwendeten Werte können reelle Zahlen sein
+    (z. B. <span class="inline">3.4 * 6</span>), Hexadezimalzahlen, die mit einem <span class="inline">$</span> Zeichen beginnen (z. B. <span class="inline">$00FFAA | $88FFAA</span>), Zeichenketten zwischen doppelten Anführungszeichen (z. B. <span class="inline">&quot;hello&quot;</span> + <span class="inline">&quot;world&quot;</span>) oder kompliziertere Ausdrücke mit mehreren Operatoren und Werten sein.</p>
+  <p>Für Ausdrücke gibt es die folgenden Operatoren (in der Reihenfolge ihrer Priorität):</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Zuordnen (=)</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><b>=</b> - Wird verwendet, um einer Variablen einen Wert zuzuweisen. Beachten Sie, dass dies <i>auch</i> für den Vergleich von Variablen in <span class="notranslate">GameMaker Studio 2</span> verwendet werden kann und Sie dies vielleicht in Beispielen und dem Code anderer Leute sehen. Dies ist jedoch eine Altlast aus alten <i><span class="notranslate">GameMaker</span></i> Versionen
+      und Sie sollten die Operatoren <b>==</b> zum Vergleichen und <b>=</b> zum Zuweisen verwenden, wie in diesen Beispielen gezeigt:</p>
+    <p class="code">a = 12;<br> speed = 5;<br> val = (old_val + 5);</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Kombinieren (&amp;&amp;, ||, ^^)</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"><b>&amp;&amp;, ||, ^^ (und, oder und xor) - Kombiniert</b> boolesche Werte, um entweder wahr oder falsch zu ergeben. Wenn eines der folgenden Beispiele <tt>true</tt> ergibt, wird der Code ausgeführt:</p>
+    <p class="code">if (a == b &amp;&amp; c == d) {etwas tun...}  // und<br> if (a == b || c ==d) {etwas tun...}   // oder<br> if (a == b ^^ c == d) {etwas tun...}  // xor</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Vergleichen (&lt;, &lt;=, ==, !=, &gt;, &gt;=)</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot"><b>&lt;, &lt;=, ==, !=, &gt;, &gt;= - Dies sind</b> Vergleiche und können nur ein wahres oder <tt>falsches</tt> Ergebnis liefern <tt>(</tt> wobei wahr auch als 1 und falsch als 0 interpretiert werden kann). Beispiele für die Verwendung:</p>
+    <p class="code">if (a &lt; b) {etwas tun...}<br> if (a != b) {etwas tun...}</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Bitweise (|, &amp;, ^, &lt;&lt;, &gt;&gt;)</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot"><b>|, &amp;, ^, &lt;&lt;, &gt;&gt; :</b> Mit diesen<b> können</b> Sie bitweise Operationen durchführen, wobei | = bitweise oder, &amp; = bitweise und, ^ = bitweise xor, &lt;&lt; = links verschieben, &gt;&gt; = rechts verschieben. Beispiele für die Verwendung:</p>
+    <p class="code">x = (x &amp; $ffffe0) + 32;<br> if (y ^ $1f) &gt; 0 {etwas tun...};</p>
+    <p class="dropspot">Weitere Informationen zur Verwendung der bitweisen Operatoren und deren Funktion finden Sie im Abschnitt: <a href="../../Additional_Information/Bitwise_Operators.htm">Bitweise Operatoren</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Arithmetisch (+, -, *, /)</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot"><b>+, -, *, /</b> - Addieren, subtrahieren, multiplizieren und dividieren. Beispiele für die Verwendung:</p>
+    <p class="code">c = a * b;<br> str = a + &quot;Welt&quot;;</p>
+    <p class="note"><b>HINWEIS</b>: Fließkommazahlen bleiben bei der Division durch Null nicht stehen, da sie eine Unendlichkeit als Antwort erhalten. Wenn A und B Ganzzahlen sind (entweder int32 oder int64), dann wird die Division als Ganzzahl durchgeführt (und das Teilen durch 0 wird geprüft und als Fehler gewertet.
+      Andernfalls wird die Division als Fließkommadivision durchgeführt (ohne Prüfung auf Teilung durch 0).</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Aufwärts/Abwärts (++, --)</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot"><strong>++</strong>, <strong>--</strong>: Addiert oder subtrahiert eins von einem Wert. Es ist zu beachten, dass die Platzierung vor oder nach dem Wert, zu dem addiert bzw. von dem subtrahiert werden soll, zu leicht unterschiedlichen Ergebnissen führt. Zum Beispiel:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span class="inline">++a</span> inkrementiert die Variable und gibt den inkrementierten Wert zurück.</li>
+      <li class="dropspot"><span class="inline">a++</span> inkrementiert die Variable, gibt aber den Wert zurück, bevor sie inkrementiert wurde.</li>
+    </ul>
+    <p class="dropspot">Wenn Sie also etwas wie dieses haben:</p>
+    <p class="code">var a = 1;<br> show_debug_message(string(a++));
+      <br> show_debug_message(string(++a));
+    </p>
+    <p class="dropspot">Die Debug-Ausgabe würde 1 und 3 lauten. Hier sind einige Beispiele für die Verwendung:</p>
+    <p class="code">for (var i = 0; i &lt; 10; i++;)<br> {<br> etwas tun...<br> };</p>
+    <p class="code">if (hit == true)<br> {<br> --score;<br> }</p>
+    <p class="note"><strong>HINWEIS</strong>: Auf den Zielplattformen <span class="notranslate">des YoYo</span> Compilers (die mit (YYC) gekennzeichnet sind) werden diese Ausdrücke von links nach rechts ausgewertet, während sie auf allen anderen Zielplattformen von rechts nach links ausgewertet werden, was bedeutet, dass dies:</p>
+    <p class="code">val = max(num, ++num, num++);</p>
+    <p class="note">wird je nach Plattform unterschiedliche Ergebnisse liefern.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Division und Modulo (div, %, mod)</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot"><strong>div, mod (%)</strong> - Division und modulo, wobei div den Betrag angibt, in den ein Wert geteilt werden kann und nur einen ganzzahligen Quotienten ergibt, während mod nur den Rest einer Division angibt. Beachten Sie, dass Sie nur div oder mod mit ganzzahligen Werten verwenden können.
+      Beispiele für die Verwendung:</p>
+    <p class="code">secs = time mod 60;<br> time_str = string(time div 60);</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Unär (!, -, ~)</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">Außerdem gibt es die folgenden <strong>unären</strong> Operatoren:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>!</strong>: boolesch &quot;nicht&quot;, also <span class="inline">!true == false</span></li>
+      <li class="dropspot">- : negiert den nächsten Real- oder Integer-Wert (nicht gültig für Strings oder Booleans)</li>
+      <li class="dropspot"><strong>~</strong>: negiert den nächsten Wert bitweise</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p><i></i>Als Werte in allen Ausdrücken können Sie Zahlen, Variablen oder Funktionen verwenden, die einen Wert zurückgeben, und auch Unterausdrücke können zwischen Klammern gesetzt werden. Alle Operatoren funktionieren für reelle Zahlenwerte, aber <em>Vergleiche </em>funktionieren auch für Zeichenketten und
+    der Operator &quot; +&quot; kann zur Verkettung von Zeichenketten verwendet werden.</p>
+  <p>Wenn Sie mehrere Operationen in einem einzigen Ausdruck ausführen, ist es <b>sehr wichtig</b>, dass Sie Klammern <span class="inline">()</span> verwenden, um die Reihenfolge der Operationen zu trennen, da verschiedene Plattformen sie unterschiedlich ausführen können, wenn sie nicht explizit angegeben werden
+    angegeben werden. Betrachten Sie zum Beispiel den folgenden Code:</p>
+  <p class="code">a = b == c || d;</p>
+  <p>Die verschiedenen Zielcompiler führen die Operationen in unterschiedlicher Reihenfolge aus, da sie nicht explizit angezeigt werden, was zu &quot;ungeraden&quot; Ergebnissen führt, die Sie vielleicht nicht erwarten, wenn Sie Ihr Spiel spielen. Um dies zu vermeiden, verwenden Sie die <span class="inline">()</span>, um die Teile zu trennen, etwa so:</p>
+  <p class="code">a = (b == c || d); //besser<br> a = ((b == c) || d); //bester</p>
+  <p>Beachten Sie auch, dass bei der Verwendung verschiedener Operationen und Ausdrücke in einem einzigen Codeblock auch diese getrennt werden sollten. Zum Beispiel <em>sieht</em> das Folgende wie gültiger Code <em>aus</em>:</p>
+  <p>if my_var == your_var ++their_var;</p>
+  <p>Der Compiler könnte dies jedoch auf eine von zwei Arten interpretieren:</p>
+  <p class="code">if my_var == your_var++ then their_var;<br>
+    <br> // oder<br>
+    <br> if my_var == your_var then ++their_var;</p>
+  <p>Jetzt können Sie beim Betrachten des Codes feststellen, dass eines davon ein bisschen dumm ist, aber das liegt daran, dass wir wissen, was wir erreichen wollen und was passieren soll, aber der Compiler weiß es nicht. Alles, was er sieht, sind zwei Variablen mit dem Operator ++ dazwischen
+    und muss sich entscheiden, auf welche er ihn anwenden will. Deshalb sollten Sie <strong>Ausdrücke, Operationen und Anweisungen immer explizit einklammern</strong>. Die korrekte Version des obigen Codes sollte lauten:</p>
+  <p class="code">if (mein_var == ihr_var)<br> {
+    <br> ++ihr_var;
+    <br> }
+  </p>
+  <p>Dies mag zwar ausführlicher erscheinen, aber es besteht keine Unklarheit über die durchgeführten Operationen und es wird auf allen Plattformen kompiliert und verhält sich konsistent. Beachten Sie auch, dass Sie zwar Ausdrücke und Anweisungen ohne die Verwendung von Klammern verketten können
+    verketten können, ist dies eine veraltete Funktion und wird in Zukunft möglicherweise veraltet sein und aus <span class="notranslate">GML</span> entfernt werden, so dass die richtige Verwendung von Klammern Ihren Code &quot;zukunftssicher&quot; macht (und im Allgemeinen ohnehin eine gute Praxis ist).</p>
+  <p>Hier sind einige abschließende Beispiele für die verschiedenen Ausdrücke:</p>
+  <p class="code">{<br> x = 23 div 2;<br> color = $FFAA00 + $00BB12;<br> str = &quot;hello&quot; + &quot;world&quot;;<br> y += 5;<br> x *= y;<br> x = y &lt;&lt; 2;<br> x = 23 * ((2 + 4) / sin(y));<br> b = (x &lt; 5) &amp;&amp; !((x == 2) || (x == 4));<br> }
+  </p>
+  <p>Abschließend ist noch zu erwähnen, dass es <b>für die Verwendung</b> mit bestimmten <a href="../GML_Reference/Data_Structures/Data_Structures.htm">Datenstrukturen und Arrays</a> auch einige &quot;Abkürzungen&quot; für Ausdrücke gibt, die Accessors genannt werden.
+    Diese ermöglichen es Ihnen, Daten innerhalb dieser Formate schnell und einfach und ohne Funktionsaufrufe hinzuzufügen bzw. zu ersetzen. Alle Details dazu finden Sie auf der folgenden Seite</p>
+  <ul class="colour">
+    <li><a href="Accessors.htm">Accessors</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="Accessors.htm">Accessors</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+div
+mod
+bitwise operators
+bitshift
+and
+or
+xor 
+&amp;&amp;
+||
+^^
+%
+|
+&amp;
+^
+&lt;&lt;
+&gt;&gt;
+bitwise or
+bitwise and
+bitwise xor
+bitshift left
+bitshift right
+&lt;
+&lt;=
+==
+!=
+&gt;
+&gt;=
+++
+$
+hexadecimal
+-->
+  <!-- TAGS
+expressions_operators
+-->
+</body>
+</html>

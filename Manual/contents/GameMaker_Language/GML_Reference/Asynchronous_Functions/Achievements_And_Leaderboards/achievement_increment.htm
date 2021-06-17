@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Leistung_Zunahme</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for achievement_increment" />
+  <meta name="rh-index-keywords" content="achievement_increment" />
+  <meta name="search-keywords" content="achievement_increment" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Leistung_Zunahme</h1>
+  <p>Spiele können Achievements haben, die keinen Abschlusswert haben, und so können Sie diese Funktion verwenden, um diese Achievements um einen bestimmten Betrag zu erhöhen. Unter <span class="notranslate">Android</span> senden Sie die ID der Errungenschaft als String (dies ist die eindeutige ID der Errungenschaft, die beim Einrichten der Errungenschaft zugewiesen wurde).
+    auf allen anderen Plattformen geben Sie den Namen der definierten Leistung als String an und geben dann den tatsächlichen Wert der Leistung an, um den erhöht werden soll.</p>
+  <p>Die Funktion löst ein <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">soziales asynchrones Ereignis</a> aus, wobei die zurückgegebene <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    DS-Map die folgenden Schlüssel/Wertpaare enthält:</p>
+  <ul class="colour">
+    <li>&quot; type&quot;<b>-</b> Dies ist der Typ des ausgelösten Ereignisses, der<tt>für diese</tt> Funktion die Zeichenfolge &quot; achievement_increment_result<tt>&quot;</tt> sein wird.</li>
+    <li>&quot; id&quot; - Dies ist die ID des Ereignisses, und für diese Funktion wird eine <span class="notranslate">GML-Konstante</span> GooglePlayServices_EVENT_ID_INCREMENT_ACHIEVEMENT zurückgegeben <tt>.</tt></li>
+    <li>&quot;<b>achievement_id&quot; -</b> Dies ist die eindeutige ID der Leistung, die inkrementiert wurde.</li>
+    <li>&quot;<b>Status&quot; -</b> Dies ist 1, wenn die Leistung erfolgreich erhöht wurde, oder 0, wenn die Anfrage fehlgeschlagen ist</li>
+    <li>&quot;<b>complete&quot; -</b> Dies ist 1, wenn die Leistung bis zu diesem Inkrement abgeschlossen wurde, oder 0, wenn die Anfrage fehlgeschlagen ist</li>
+  </ul>
+  <p> </p>
+  <h4><b>Syntax:</b></h4>
+  <p class="code">leistung_erhöhen(name, wert)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name/die ID der Leistung.</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der Wert, der als Inkrement gesendet werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">achievement_increment(global.Achievement[0], score);</p>
+  <p>Der obige Code fügt den aktuellen Punktestand des Spielers zum Achievement mit der im globalen Array gespeicherten ID hinzu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Achievements_And_Leaderboards.htm">Errungenschaften und Bestenlisten</a></div>
+        <div style="float:right">Weiter: <a href="achievement_show_achievements.htm">Leistung_zeigen_Erfolge</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+achievement_increment
+-->
+  <!-- TAGS
+achievement_increment
+-->
+</body>
+</html>

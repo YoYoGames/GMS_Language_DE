@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_gui_maximise</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_set_gui_maximise" />
+  <meta name="rh-index-keywords" content="display_set_gui_maximise,display_set_gui_maximize" />
+  <meta name="search-keywords" content="display_set_gui_maximise,display_set_gui_maximize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>
+    display_set_gui_maximise
+  </h1>
+  <p>Mit dieser Funktion kann die GUI-Ebene maximiert und so eingestellt werden, dass sie in Bezug auf die Bildschirmabmessungen skaliert und versetzt wird, anstatt die Standardposition und -abmessungen der Anwendungsoberfläche zu verwenden. Standardmäßig ist die GUI-Ebene 1:1 mit der Anwendungsoberfläche
+    Auflösung und wird ebenfalls an der Position (0,0) der Oberfläche gezeichnet. Das ist jedoch nicht immer das, was Sie wollen, und deshalb können Sie mit dieser Funktion einstellen, dass sie relativ zur absoluten (0,0)-Position des Displays oder des Spielfensters gezeichnet wird. Welche Argumente Sie
+    dieser Funktion übergeben, hängt davon ab, welchen Effekt sie auf die GUI-Ebene haben soll. Wenn Sie die Funktion ohne Argumente aufrufen, wird die GUI-Ebene an der Position (0,0) des Bildschirms oder des Spielfensters gezeichnet, wobei die Breite und Höhe
+    werden so skaliert, dass sie in den gesamten Bereich passen:</p>
+  <p class="code">display_set_gui_maximise();</p>
+  <p>Sie können jedoch den <i>Skalierungsfaktor</i> für die GUI-Ebene festlegen, und die Breite und Höhe werden um diesen Betrag skaliert. Denken Sie daran, dass die GUI-Ebene immer an die Größe des Anzeige- oder Spielfensters bzw. der Anwendungsoberfläche angepasst wird, so dass die Einstellung
+    Wenn Sie diesen Wert auf einen anderen Wert als 1 setzen, wird die Anzahl der Pixel entlang der Breite und Höhe skaliert. Wenn Ihr Bildschirm eine Größe von 1024x768 hat und Sie den Skalierungsfaktor auf 0,5 einstellen, dann wird Ihre GUI-Ebene halb so groß wie der Bildschirm, was effektiv eine Verdoppelung der Pixelgröße bedeutet
+    die Pixelgröße:</p>
+  <p class="code">display_set_gui_maximise(0.5, 0.5);</p>
+  <p>Wenn Sie die Werte auf diese Weise einstellen, wird auch die Zeichenposition auf die (0,0) des Anzeige- oder Spielfensters gesetzt, sodass Sie Offset-Werte angeben können, um die (0,0)-Position zu &quot;verschieben&quot;:</p>
+  <p class="code">var pos = application_get_position();<br> display_set_gui_maximise(0.5, 0.5, pos[0], pos[1]);</p>
+  <p>Schließlich können Sie mit dieser Funktion die GUI-Ebene zurücksetzen, indem Sie die Skalierungsfaktoren auf -1 setzen. Dadurch wird die GUI-Ebene wieder auf einen Maßstab von 1:1 gesetzt und die Zeichenposition auf die (0,0)-Position der Anwendungsoberfläche und nicht auf das Display oder
+    Fensters.</p>
+  <p class="code">display_set_gui_maximise(-1, -1);</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">display_set_gui_maximise<i>(xscale, yscale, xoffset, yoffset</i>);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td><i>&lt;Optional&gt; Der</i> horizontale Skalierungsfaktor (verwenden Sie -1, um auf den Standardwert zurückzusetzen).</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td><i>&lt;Optional&gt; Der</i> vertikale Skalierungsfaktor (verwenden Sie -1, um auf den Standardwert zurückzusetzen).</td>
+      </tr>
+      <tr>
+        <td>xOffset</td>
+        <td><i>&lt;Optional&gt; Die x-Offset-Position</i> für das Zeichnen.</td>
+      </tr>
+      <tr>
+        <td>yOffset</td>
+        <td><i>&lt;Optional&gt; Die y-Versatzposition</i> für das Zeichnen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">display_set_gui_size(display_get_width() / 2, display_get_height() / 2);<br> display_set_gui_maximise(2, 2, 0, 0);</p>
+  <p>Der obige Code sperrt das GUI-Ereignis "Draw" auf die angegebene Breite und Höhe und skaliert alle Komponenten so, dass sie in die Anzeige passen, wobei diese Proportionen verwendet werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Kameras und Display</a>
+        <div style="float:left">Zurück: </div>
+        <div style="float:right">Weiter: <a href="display_set_ui_visibility.htm">display_set_ui_visibility</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_gui_maximise
+display_set_gui_maximize
+-->
+  <!-- TAGS
+display_set_gui_maximise
+-->
+</body>
+</html>

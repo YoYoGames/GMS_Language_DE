@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz_Änderung</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_change" />
+  <meta name="rh-index-keywords" content="instance_change" />
+  <meta name="search-keywords" content="instance_change" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Instanz_Änderung</h1>
+  <p>Sie können diese Funktion verwenden, um eine Instanz eines Objekts in eine andere Instanz eines anderen Objekts zu verwandeln und dabei zu entscheiden, ob die Ereignisse "Zerstören" und "Aufräumen" der ursprünglichen Instanz und das Ereignis "Erzeugen" der neuen Instanz ausgeführt werden sollen. Auf diese Weise
+    können Sie z. B. eine Bombe in eine Explosion verwandeln - in diesem Fall wäre das &quot;perf&quot;-Argument wahrscheinlich zutreffend, da Sie möchten, dass die Bombe ihr Destroy-Ereignis und ihr Clean-Up-Ereignis ausführt, und die Explosion ihr Create
+    Ereignis ausführt - oder Sie könnten Ihren Spielercharakter in einen anderen verwandeln lassen - in diesem Fall wäre das Argument &quot;perf&quot; wahrscheinlich falsch, da Sie nicht möchten, dass die Instanzen ihre Ereignisse &quot;Erzeugen&quot; und &quot;Zerstören/Aufräumen&quot; ausführen.</p>
+  <p>Es ist erwähnenswert, dass das Ändern der Instanz bedeutet, dass Sie bis zum nächsten Schritt keine weiteren Aktionen mit dieser Instanz durchführen sollten, insbesondere den Versuch, auf Variablen usw. zuzugreifen, da dies einen Fehler verursacht. Im Grunde ändern Sie die Instanz, aber
+    sie ist bis zum Ende des aktuellen Schritts nicht wirklich verfügbar, so dass ein direkter Zugriff auf eine der darin enthaltenen Variablen (z. B. durch den Aufruf von <tt>obj_Changed.x</tt>) nicht funktioniert.</p>
+  <p class="note"><b>WARNUNG!</b> Wenn Sie eine physikalisch aktivierte Instanz ändern, werden die physikalischen Eigenschaften <b>nicht</b> auf die neue Instanz <b>übertragen</b>, in die sie geändert wird. Daher sollten Sie einen Code haben, der den physikalischen Zustand der aktuellen Instanz auf die neue Instanz &quot;überträgt&quot;.
+    Instanz auf die neue Instanz "übertragen" wird, oder Sie haben die physikalischen Eigenschaften der neuen Instanz in ihrem Erstellungsereignis oder im Objekteditor definiert. Aus diesem Grund wird empfohlen, dass Sie diese Funktion nicht mit physikfähigen Instanzen verwenden, sondern
+    eine Kombination aus <span style="font-size:1px;"><tt style="font-size: 14px">instance_destroy()</tt></span> und <span><span style="font-size:1px;"><tt style="font-size: 14px">instance_create_layer()</tt></span></span>zu verwenden <span>.</span>
+  </p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">instance_change(obj, perf);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das neue Objekt, in das sich das aufrufende Objekt verwandeln soll.</td>
+      </tr>
+      <tr>
+        <td>perf</td>
+        <td>Ob die Ereignisse "Erzeugen" und "Zerstören" dieses neuen Objekts ausgeführt werden sollen (true) oder nicht (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check(vk_enter)<br> {
+    <br> instance_change(obj_Player_Swimming, false);<br> exit;
+    <br> }
+  </p>
+  <p>Der obige Code ändert die aufrufende Instanz in eine Instanz von &quot;obj_Player_Swimming&quot;, ohne das Zerstörungsereignis für die ursprüngliche Instanz oder das Erstellungsereignis für die neue Instanz auszuführen, wenn der Benutzer die &quot;Enter&quot;-Taste drückt, und verlässt den
+    Code-Block, wenn er fertig ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="instance_copy.htm">instance_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_change
+-->
+  <!-- TAGS
+instance_change
+-->
+</body>
+</html>

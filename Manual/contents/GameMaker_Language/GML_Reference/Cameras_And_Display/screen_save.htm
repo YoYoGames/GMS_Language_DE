@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bildschirm_sichern</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for screen_save" />
+  <meta name="rh-index-keywords" content="screen_save" />
+  <meta name="search-keywords" content="screen_save" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Bildschirm_sichern</h1>
+  <p>Mit dieser Funktion können Sie einen Screenshot des Spiels speichern, wie er aktuell im Spielfenster angezeigt wird. Die Datei wird im Arbeitsverzeichnis des Spiels gespeichert, das sich unter Windows unter <tt>&lt;Laufwerk&gt;:/Benutzer/YURUSERNAME/AppData/Local/[Spielname]/</tt> befindet und auf dem Mac wäre es ~/Library/Application <tt> Support/[Spielname]/.</tt> Das erfasste Bild ist das endgültige Rendering der Anwendungsoberfläche des Spiels oder (wenn die Anwendungsoberfläche deaktiviert wurde) ein Bild des gesamten Displays oder Fensters.
+    Es ist wichtig zu beachten, dass die Funktion dafür ausgelegt ist, im <b>Draw GUI End Event</b> aufgerufen zu werden, was auf allen Plattformen konsistente Ergebnisse liefern sollte. Wenn Sie die Funktion in einem anderen Ereignis verwenden, kann es sein, dass sie nicht wie erwartet funktioniert und unterschiedliche Ergebnisse auf
+    verschiedenen Zielen und sogar Geräten unterschiedliche Ergebnisse liefern. Sollten Sie mehr Kontrolle über das, was gespeichert wird, benötigen, sollten Sie die Funktion <a href="screen_save_part.htm"><tt>screen_save_part()</tt></a>.</p>
+  <p class="note"><b>HINWEIS: </b>Diese Funktion funktioniert nicht mit dem HTML5-Ziel.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">screen_save(fname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Der Dateiname für das zu speichernde Bildschirmfoto</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br> {
+    <br> screen_save(arbeits_verzeichnis + &quot;Bildschirme\Bildschirm_&quot; + string(num++) + &quot;.png&quot;)<br> }
+  </p>
+  <p>Der obige Code macht einen Screenshot des Spiels, wenn der Benutzer die Taste &quot;S&quot; drückt. Dieser Screenshot wird in einem bestimmten Verzeichnis gespeichert und über eine Variable nummeriert, die dann inkrementiert wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Kameras und Display</a>
+        <div style="float:left">Zurück: </div>
+        <div style="float:right">Weiter: <a href="screen_save_part.htm">screen_save_part</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+screen_save
+-->
+  <!-- TAGS
+screen_save
+-->
+</body>
+</html>

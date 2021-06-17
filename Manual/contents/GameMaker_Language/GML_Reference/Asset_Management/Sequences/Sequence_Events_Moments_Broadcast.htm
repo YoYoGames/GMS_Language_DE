@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sequenzereignisse, Momente und Broadcast-Nachrichten</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequence Events, Moments and Broadcast Messages" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sequence Events,Sequence Momements,Sequence Messages,broadcast messages,event_create,event_destroy,event_clean_up,event_step,event_step_begin,event_step_end,event_async_system,event_broadcast_message" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ereignisse, Momente und Broadcast-Nachrichten</h1>
+  <p>Neben allen <a href="Sequences.htm">hier</a> aufgeführten Eigenschaften für eine Sequenzstruktur haben Sie auch die Möglichkeit, einer Sequenz spezielle &quot;Aktions&quot;-Eigenschaften hinzuzufügen. Es gibt drei verschiedene Arten von
+    dieser &quot;Action&quot;-Eigenschaften, die zu einem Sequenz-Objekt hinzugefügt werden können - Events. <b>Moments</b> und <b>Broadcast Messages</b> - und jede dieser Eigenschaften wird in den folgenden Abschnitten näher erläutert
+    in den folgenden Abschnitten erläutert.</p>
+  <p> </p>
+  <h2>Reihenfolge der Ereignisse</h2>
+  <p>Sequenzobjekten können <b>Ereignisse</b> zugewiesen werden, und diese Ereignisse sind analog zu den Ereignissen, die von Objekt-Assets verwendet werden. Die Ereignisse, die Sie einem Sequenzobjekt zuweisen, treten in einer bestimmten Reihenfolge auf, entweder einmal zu einem definierten
+    Moment im Lebenszyklus der Sequenz oder in jedem Frame, in dem die Sequenz läuft. In diesem Abschnitt wird besprochen, wie diese Ereignisse mithilfe von Code gehandhabt werden, sie können aber auch mit dem <a href="../../../../The_Asset_Editors/Sequences.htm">Sequenzeditor</a> hinzugefügt werden.
+    Beachten Sie, dass die Reihenfolge der hier aufgelisteten Ereignisse nicht von der <a class="glossterm" data-glossterm="Abspielkopf" href="#">Abspielkopfrichtung</a> beeinflusst wird, und selbst wenn die Sequenz rückwärts abgespielt wird, werden die Ereignisse in der angegebenen Reihenfolge ausgeführt
+    unten.</p>
+  <p>Die verfügbaren Ereignisse sind:<b></b></p>
+  <ul class="colour">
+    <li><b>Erstellen</b>: Dies wird ausgelöst, wenn eine Sequenzinstanz auf einer Ebene erstellt wird.</li>
+    <li><b>Zerstören</b>: Dies wird ausgelöst, wenn eine Sequenzinstanz auf einer Ebene zerstört wird.</li>
+    <li><b>Aufräumen</b>: Dies wird ausgelöst, wenn eine Sequenzinstanz garbage collected wird.</li>
+    <li><b>Schritt</b>: wird kurz vor dem üblichen Objektschritt-Ereignis ausgelöst. <b>Wichtig!</b> Wenn die Sequenz pausiert, wird dieses Ereignis erst beim nächsten Schritt ausgelöst, nachdem die Sequenz wieder zu spielen beginnt.</li>
+    <li><b>Begin Step</b>: wird kurz vor dem Objekt begin-step event ausgelöst. <b>Wichtig!</b> Wenn die Sequenz pausiert, wird dieses Ereignis erst beim nächsten Schritt ausgelöst, nachdem die Sequenz wieder zu spielen beginnt.</li>
+    <li><b>Endschritt</b>: wird kurz vor dem Objekt-Endschritt-Ereignis ausgelöst. <b>Wichtig!</b> Wenn die Sequenz pausiert ist, wird dieses Ereignis erst beim nächsten Schritt ausgelöst, nachdem die Sequenz wieder abgespielt wird.</li>
+    <li><b>Async System</b>: wird genauso ausgelöst wie jedes Objekt <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">Asynchronous System Event</a> Handler. <em><b>Wichtig!</b></em>Wenn die Sequenz pausiert ist, wird dieses Ereignis nicht ausgelöst.</li>
+    <li><b>Broadcast-Nachricht</b>: wird während der Sequenzaktualisierung ausgelöst, wenn ein <span class="notranslate">Keyframe mit</span> einer Broadcast-Nachricht auftritt.</li>
+  </ul>
+  <p>Alle Ereignisse müssen mit Funktionen verknüpft werden, die in einem Skript definiert sind. Um ein Ereignis einzurichten, muss also eine <a href="../../../GML_Overview/Method_Variables.htm">Methodenvariable</a> einer Eigenschaft mit dem richtigen
+    Namen zugewiesen werden, die der Sequenz mitteilt, welches Ereignis die Funktion aufrufen soll. Die Syntax hierfür lautet wie folgt:<br>
+  </p>
+  <p class="code">&lt;sequence_struct&gt;.&lt;event_property&gt; = method(&lt;sequence_struct&gt;, &lt;function_name&gt;);</p>
+  <p>Die Sequenzstruktureigenschaften für die verschiedenen Ereignisse sind wie folgt:<tt></tt></p>
+  <ul class="colour">
+    <li><tt>Ereignis_erzeugen</tt><tt></tt></li>
+    <li><tt>ereignis_zerstören</tt><tt></tt></li>
+    <li><tt>event_cleanan_up</tt><tt></tt></li>
+    <li><tt>ereignis_schritt</tt><tt></tt></li>
+    <li><tt>event_step_begin</tt><tt></tt></li>
+    <li><tt>ereignis_schritt_ende</tt></li>
+    <li><tt>event_async_system</tt><tt></tt></li>
+    <li><tt>event_broadcast_message</tt></li>
+  </ul>
+  <p>Um ein Anwendungsbeispiel zu geben, nehmen wir an, wir wollen, dass die Sequenz die Richtung umkehrt, wenn ein Klick mit der linken Maustaste erkannt wird. Wir müssten zunächst ein Skript mit der Funktion erstellen, die wir aufrufen möchten, etwa so:</p>
+  <p class="code">/// @function seq_reverse();<br>
+    <br> function seq_reverse()<br> {
+    <br> if mouse_check_button_pressed(mb_left)<br> {
+    <br> if self.headDirection == seqdir_right<br> {
+    <br> self.headDirection = seqdir_left;<br> }
+    <br> else self.headDirection = seqdir_right;<br> }
+    <br> }
+  </p>
+  <p>In dieser Funktion hören wir nur auf einen Mausklick und kehren dann die Wiedergaberichtung der Sequenz um, an die die Methode gebunden wurde. Sie werden feststellen, dass Sie derzeit keine Parameter an die Funktionen übergeben können
+    die mit diesen Eigenschaften verknüpft sind, keine Parameter übergeben können, und in allen Fällen wird die <a href="../../../GML_Overview/Instance_Keywords.htm"><tt>selbst</tt></a> Variable im Gültigkeitsbereich der Funktion die Sequenzinstanz zugewiesen wird.</p>
+  <p class="note"><b>HINWEIS</b>: Es ist erwähnenswert, dass im obigen Skript der Bezeichner self weggelassen werden kann und nur verwendet wird, um den Geltungsbereich der Methodenvariable, die für dieses Beispiel verwendet wird, explizit anzuzeigen.</p>
+  <p>Um dies einer Sequenz zuzuordnen, würden Sie dann etwas wie folgt tun:</p>
+  <p class="code">var _seq = sequence_get(Sequence1);<br> _seq.event_step = method(_seq, seq_reverse);</p>
+  <p>Wir haben nun dem <i>Sequenz-Objekt</i> ein Step-Ereignis mit einer Funktion zugewiesen, die erkennt, wenn eine Maus gedrückt wird und dann die Abspielrichtung der <i>Sequenz-Instanz</i> ändert, nachdem sie
+    in einem Raum erzeugt wurde.</p>
+  <p> </p>
+  <h2><label for="2">Momente</label></h2>
+  <p>Ein <b>Sequenzmoment</b> ist eine eindeutige Codeaktion, die bei der Wiedergabe der Sequenz an einem oder mehreren bestimmten Frames abgefeuert wird. Diese Codemomente sind - wie bei Ereignissen (oben erklärt) - einfach vordefinierte <a href="../../../GML_Overview/Method_Variables.htm">Methodenvariablen</a>, die
+    auf dem gegebenen Frame ausgelöst werden. Angenommen, Sie möchten, dass eine Sequenz an einem bestimmten Frame der Animation eine &quot;Bullet&quot;-Instanz erzeugt - dann müssen Sie zunächst die Funktion erstellen, die für diese Aktion verwendet werden soll, etwa so:</p>
+  <p class="code">/// @function seq_shoot();<br>
+    <br> seq_shoot = function()<br> {
+    <br> instance_create_layer(sequence.xorigin, sequence.yorigin, &quot;Instances&quot;, obj_Bullet);<br> }
+  </p>
+  <p>Sie würden dies dann zu einem Frame in der Eigenschaft <tt>momentKeyframes</tt> der Sequenzstruktur hinzufügen. Dies ist im Wesentlichen eine &quot;spezielle&quot; Spur, die nur für diesen Zweck verwendet wird und daher nur <span class="notranslate">Keyframe-Daten</span> aufnehmen kann <span class="notranslate">, die</span> 
+    mit Moment-Aktionen verbunden sind, die die Sequenz haben soll. Diese Spur wird ähnlich wie jede andere Spur erstellt, indem Sie <span class="notranslate">Keyframe-Strukturen</span> erstellen und mit <span class="notranslate">Keyframe-Daten</span> füllen, wobei Kanal 0 der einzige Kanal ist, den Sie verwenden können.
+    den Sie verwenden können, und der Spurtyp ist <tt>seqtracktype_moment</tt>. Nachfolgend sehen Sie ein Beispiel, wie dies erstellt werden würde, wobei die Funktion verwendet wird, die wir oben definiert haben, um auf die angegebenen Momente (Frames) zu feuern:</p>
+  <p class="code">var _seq = sequence_get(my_Seq);<br> var _k = array_create(3);<br> _k[0] = sequence_keyframe_new(seqtracktype_moment);<br> _k[0].frame = 60;<br> _k[1] = sequence_keyframe_new(seqtracktype_moment);<br> _k[1].frame = 120;<br> _k[2] = sequence_keyframe_new(seqtracktype_moment);<br> _k[2].frame = 180;<br> var _d = array_create(1);<br> _d[0] = sequence_keyframedata_new(seqtracktype_moment);<br> _d[0].channel = 0;<br> _d[0].event = method(_d[0], seq_shoot);<br> _k[0].channels = _d;<br> _k[1].channels = _d;<br> _k[2].channels
+    = _d;<br> _seq.momentKeyframes = _k;</p>
+  <p>Der obige Code setzt einfach die Frames 60, 120 und 180 der &quot;Moment&quot;-Spur, um die Methode seq_shoot aufzurufen. Sie werden feststellen, dass Sie derzeit keine Parameter an die Funktionen übergeben können, die für jeden
+    Moment verwendet werden, keine Parameter übergeben können und in allen Fällen die <tt>self-Variable</tt> im Gültigkeitsbereich der Funktion der Sequenzinstanz zugewiesen wird (Sie brauchen self im Allgemeinen nicht zu verwenden <tt>, aber</tt> in einigen speziellen Fällen kann es nützlich sein).
+    Fällen kann es nützlich sein).</p>
+  <p> </p>
+  <h2><label for="3">Broadcast-Meldungen</label></h2>
+  <p>Sequenzen können dazu gebracht werden, <b>Broadcast-Nachrichten</b> zu generieren, d. h. einfache Zeichenketten, die zu bestimmten Frames entlang der Animationszeitleiste hinzugefügt werden, und wenn dieser Punkt in der Zeitleiste erreicht ist, wird die Zeichenkette an alle
+    Objektinstanzen, die darauf warten, gesendet. Sie können diese Nachrichten in der IDE mit dem <a href="../../../../The_Asset_Editors/Sequences.htm">Sequenz-Editor</a> hinzufügen, aber sie können auch mit Code erstellt und bearbeitet werden.</p>
+  <p>Um eine Broadcast-Nachricht auf einer Sequenz mit <span class="notranslate">GML</span> zu erstellen, müssen Sie sie zu einem Frame in der Eigenschaft <tt>messageEventKeyframes</tt> der Sequenzstruktur hinzufügen. Dies ist im Wesentlichen eine &quot;spezielle&quot; Spur, die nur für diesen Zweck verwendet wird
+    für diesen Zweck verwendet wird und daher nur <span class="notranslate">Keyframe-Daten</span> aufnehmen kann, die mit den Broadcast-Nachrichten verbunden sind, die Sie in der Sequenz haben möchten. Diese Spur wird auf die gleiche Weise erstellt wie jede andere Spur, indem Sie <span class="notranslate">Keyframe-Strukturen</span> erstellen und
+    Sie werden mit <span class="notranslate">Keyframe-Daten</span> gefüllt, wobei Kanal 0 der einzige Kanal ist, den Sie verwenden können, und der Spurtyp <tt>seqtracktype_message</tt> ist. Nachfolgend sehen Sie ein Beispiel, wie dies erstellt werden würde:</p>
+  <p class="code">var _seq = sequence_get(my_Seq);<br> var _k = array_create(2);<br> _k[0] = sequence_keyframe_new(seqtracktype_message);<br> _k[0].frame = 60;<br> _k[1] = sequence_keyframe_new(seqtracktype_message);<br> _k[1].frame = 120;<br> var _m1 = array_create(2);<br> _m1[0] = &quot;Hallo&quot;;<br> _m1[1] = &quot;Welt&quot;;<br> var _m2 = array_create(1); <br> _m2[0] = &quot;Dies ist eine Broadcast-Nachricht&quot;;<br> var _d1 = array_create(1);<br> _d1[0] = sequence_keyframedata_new<span class="notranslate">(</span>seqtracktype_message);<br> _d1[0].channel = 0;<br> _d1[0].events = _m1;<br> var _d2 = array_create(1);<br> _d2[0] = sequence_keyframedata_new(seqtracktype_message);<br> _d2[0].channel = 0;<br> _d2[0].events = _m2;<br> _k[0].channels = _d1;<br> _k[1].channels = _d2;<br> _seq.messageEventKeyframes = _k;</p>
+  <p>Sie werden feststellen, dass der Nachrichtentext als Array an den Keyframe-Datenkanal übergeben wird. Der Grund dafür ist, dass Sie mehrere Nachrichten auf demselben Bild senden können und dass verschiedene Objektinstanzen darauf hören und unterschiedlich reagieren können, je nachdem
+    der Nachricht, die sie tatsächlich erwarten.</p>
+  <p>Sobald eine Broadcast-Nachricht von der Sequenz ausgesendet wurde, können Sie sie mit dem Ereignis <i>Andere</i> &gt; <i>Broadcast-Nachricht</i> in Objektinstanzen auswerten, was <a href="../../../../The_Asset_Editors/Sequence_Properties/Broadcast_Messages.htm">hier</a> ausführlich erklärt wird <a href="../../../../The_Asset_Editors/Sequence_Properties/Broadcast_Messages.htm">.</a></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequences.htm">Sequenzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequence Events
+Sequence Moments
+Sequence Broadcast Messages
+broadcast Messages
+event_create
+event_destroy
+event_clean_up
+event_step
+event_step_begin
+event_step_end
+event_async_system
+event_broadcast_message
+-->
+  <!-- TAGS
+sequence_events_moments_broadcasts
+-->
+
+</body></html>

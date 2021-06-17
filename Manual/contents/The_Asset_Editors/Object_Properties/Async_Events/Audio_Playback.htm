@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Audio-Wiedergabe</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the Audio Playback async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Audio Playback Event" />
+  <meta name="search-keywords" content="Audio Playback,ev_audio_playback" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Audio-Wiedergabe</h1>
+  <p><img alt="Audio Playback Event" class="center" src="../../../assets/Images/Asset_Editors/Async_AudioPlayback.png">Dieses Ereignis kann nur von den Abspielfunktionen der <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/Audio_Buffers.htm">Audio-Warteschlange</a> ausgelöst werden und gibt eine <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> zurück, die in der Variablen <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span></a>,
+    gespeichert ist und verschiedene Schlüssel/Wertpaare enthält, die sich auf die Audio-Warteschlange beziehen, die das Ereignis ausgelöst hat. Das Ereignis wird durch einen <a class="glossterm" data-glossterm="Rückruf" href="#">Callback</a> ausgelöst, wenn Sie eine Audio-Warteschlange zum Abspielen ausgewählt haben und ein
+    Puffer in dieser Audio-Warteschlange mit der Wiedergabe fertig ist.</p>
+  <p>Die folgenden Tasten werden in der DS-Karte verfügbar sein:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">queue_id</span>&quot; - der Warteschlangenindex für die Warteschlange, die die Wiedergabe beendet hat, wie von der Funktion zurückgegeben <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_create_play_queue.htm"><span class="inline">audio_create_play_queue()</span></a>.</li>
+    <li class="dropspot">&quot;<span class="inline">buffer_id</span>&quot; - die Puffer-ID für den Puffer <a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">,</a> von dem nicht mehr gespielt wird.</li>
+    <li class="dropspot">&quot;<span class="inline">queue_shutdown</span>&quot; - dies wird während der normalen Wiedergabe auf 0 gesetzt und auf 1, wenn das Ereignis, weil <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_free_play_queue.htm"><span class="inline">audio_free_play_queue()</span></a> hat
+      aufgerufen wurde. Wenn dies auf 1 gesetzt ist, möchten Sie keine weiteren Daten in die Warteschlange stellen.</li>
+  </ul>
+  <p>Da eine Audio-Warteschlange aus mehreren Puffern erstellt werden kann, kann dieses Ereignis für eine Warteschlange mehrfach ausgelöst werden, wenn das Ende jedes Abschnitts des gepufferten Audios erreicht ist, daher der Schlüssel &quot;buffer_id&quot;.</p>
+  <p class="note"><strong>HINWEIS</strong>: Die Variable <span class="inline" style="font-size: 14px">async_load</span> ist nur in den asynchronen Ereignissen gültig, da die DS-Map, auf die sie zeigt, zu Beginn des Ereignisses angelegt und am Ende wieder gelöscht wird, wobei diese Variable auf den Wert -1 zurückgesetzt wird.
+    Alle weiteren aus dem Ereignis erzeugten Datenstrukturen müssen jedoch mit den entsprechenden Funktionen bereinigt werden.</p>
+  <p>Im folgenden Anwendungsbeispiel erstellen wir eine Audio-Warteschlange, der 10 gepufferte Audiosounds hinzugefügt werden, und spielen dann die Warteschlange ab:</p>
+  <p class="code">audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono);<br> for (var i = 0; i &lt; 10; i++;)<br> {<br> audio_queue_sound(audio_queue, audio_buffer[i], 0, buffer_get_size(audio_buffer[i]));<br> } <br> audio_play_sound(audio_queue,
+    0, true);</p>
+  <p>Jeder Spielschritt, bei dem die Aufnahme erkannt wird, löst nun ein asynchrones Audio-Aufnahme-Ereignis aus, bei dem Sie mit der aufgenommenen Eingabe etwa so umgehen können:</p>
+  <p class="code">var queue = async_load[? &quot;queue_id&quot;];<br> var num = 0;<br> if queue = audio_queue<br> {<br> for (var i = 0; i &lt; 10; i++;)<br> {<br> if async_load[? &quot;buffer_id&quot;] == audio_buffer[i]<br> {<br> buffer_seek(audio_buffer[i],
+    buffer_seek_start, 0);<br> num = i;<br> } <br> } <br> if num == 9<br> {<br> audio_stop_sound(audio_queue);<br> audio_free_play_queue(audio_queue);<br> } <br> }
+  </p>
+  <p>Hier prüfen wir die Warteschlangen-ID und wenn es die gewünschte ist, dann prüfen wir die Puffer-ID, um zu sehen, welcher Puffer die Wiedergabe beendet hat. Wir setzen dann auch eine lokale Variable auf diesen Indexwert, um ihn später zu überprüfen, und setzen den Puffer zurück an den Anfang für diesen
+    Ton. Sobald unsere lokale Variable den Wert 9 erreicht, was anzeigt, dass die Warteschlange beendet ist, stoppen wir die Wiedergabe des Tons und geben die Warteschlange frei.</p>
+  <p> </p>
+  <div class="droptext" data-targetname="drop-down"> </div>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Async_Events.htm">Asynchrone Ereignisse</a></div>
+        <div style="float:right">Nächste: <a href="Audio_Recording.htm">Audio-Aufnahme</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Audio Playback Event
+ev_audio_playback
+Audio Playback
+-->
+  <!-- TAGS
+ev_audio_playback
+-->
+
+</body></html>

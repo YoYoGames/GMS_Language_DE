@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Windows</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details the Windows Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - Windows" />
+  <meta name="search-keywords" content="Windows Game Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Windows-Spieloptionen</span> </h1>
+  <p>In diesem Abschnitt werden die verschiedenen Optionen beschrieben, die Ihnen zur Verfügung stehen und die steuern, wie Ihre <span class="notranslate">Windows-Spielprojekte</span> kompiliert werden. Die verschiedenen Abschnitte sind:</p>
+  <p> </p>
+  <h2>Allgemein</h2>
+  <p><img alt="Windows General Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_General_Options.png">Auf der Seite <strong>"Allgemein" </strong>für <span class="notranslate">Windows-Spiele</span> sollten Sie die notwendigen Informationen angeben, die <span class="notranslate">Windows</span> anzeigen soll
+    wenn Ihr Spiel installiert wurde und läuft. Diese Informationen gehören in den Abschnitt " <strong>Product Information"</strong> und sollten vollständig ausgefüllt werden.</p>
+  <p>Im Abschnitt &quot; <strong>Optionen&quot; </strong>dieses Fensters können Sie wählen, wohin das Spielpaket installiert werden soll, entweder in die Ordner &quot;<span class="inline">%localappdata%</span>&quot; oder &quot;<span class="inline">%appdata%</span>&quot;, sowie ob Sie die Option Copy exe to output folder
+    und ob Sie " <strong>Copy exe to output folder"</strong> einstellen möchten. Im Allgemeinen sollten Sie diese Option nie benötigen, aber sie wird für Benutzer bereitgestellt, die verschiedene DLLs haben, die miteinander und mit Ihrem Spiel kommunizieren, und wenn sie aktiviert ist, wird
+    Wenn sie aktiviert ist, wird die Spiel-EXE beim Testen im Ausgabeordner beibehalten, anstatt sie im <em>Temp-Ordner </em>abzulegen.</p>
+  <p>Als Nächstes können Sie den <strong><span class="notranslate">Windows-Ruheabstand</span></strong> einstellen. Diese Option bezieht sich auf die Reduzierung von Stottern, wenn Ihr Spiel auf bestimmten Systemen läuft. Grundsätzlich gilt: Wenn Ihr Spiel schneller läuft als Ihre Raumgeschwindigkeit, wird <span class="notranslate">GameMaker Studio 2</span> für die verbleibende Zeit &quot;schlafen&quot;.
+    für die verbleibende Zeit "schlafen", aber dieser Schlaf kann ziemlich ungenau sein, und es kommt oft vor, dass der Schlaf länger dauert als nötig, wodurch die Frames länger brauchen, was zu Stottern führt. Um dies zu umgehen, können wir für eine kürzere Zeit schlafen und dann in einer engen
+    Schleife für den Rest der Zeit, um die Genauigkeit zu erhöhen - obwohl das Problem beim Sitzen in einer Schleife darin besteht, dass die CPU-Auslastung steigt, was wiederum dazu führen kann, dass die CPU-Temperaturen steigen und der Lüfter schneller läuft. Standardmäßig ist dieser Wert
+    standardmäßig auf 10 gesetzt, und in 99,99% der Fälle werden Sie damit gut zurechtkommen, aber für Low-End-Rechner oder für Rechner, auf denen viele Hintergrundprozesse laufen, ist dies möglicherweise keine ideale Lösung (oder auch für sehr High-End-Rechner) und ein Wert von 1 oder 15
+    oder etwas Ähnliches erforderlich sein kann. Beachten Sie jedoch, dass es sich hierbei um eine sehr systemspezifische Konfiguration handelt, und dass das, was auf Ihrem Rechner funktioniert, für einen anderen Benutzer möglicherweise nicht geeignet ist; lassen Sie daher im Zweifelsfall den Wert 10.</p>
+  <p class="note"><strong>HINWEIS</strong>: Zusätzlich zum Ruhebereich können Sie die Leistung und den Stromverbrauch unter <span class="notranslate">Windows</span> weiter kontrollieren, indem Sie <a href="../../GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm">die Auflösung des Thread-Schedulers</a> zur Laufzeit anpassen <span class="notranslate">.</span></p>
+  <p>Die nächste Option ist, <strong> <span class="notranslate">Steam</span></strong> für Ihr Spiel <strong>zu aktivieren</strong>. Wenn Sie diese Option aktivieren, stellen Sie sicher, dass Sie das <span class="notranslate">Steamworks-SDK</span>installiert haben (siehe <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">hier</a>) und dass
+    Sie die <strong><span class="notranslate">Steam</span></strong> App ID in den <a href="../Game_Options.htm">allgemeinen Optionen</a> für das Spiel hinzugefügt haben. Beachten Sie, dass Sie, wenn Sie <span class="notranslate">GameMaker Studio 2</span> unter <span class="notranslate">Windows</span> und von der <span class="notranslate">Steam-Version</span> der IDE ausführen und Spiele für Steam entwickeln
+    für <span class="notranslate">Steam</span> entwickeln, dann müssen Sie möglicherweise auch die Option " <strong>Alternativen Launcher für <span class="notranslate">Steam-Anwendung</span></strong> verwenden" aktivieren. Diese Option bewirkt, dass Ihr Spiel beim Testen mit einem alternativen Startprogramm gestartet wird, um zu verhindern, dass es von <span class="notranslate">Steam</span>markiert wird
+    mit der Anwendungs-ID von <span class="notranslate">GameMaker Studio 2</span> anstelle der eigenen Anwendungs-ID Ihres Spiels. Sie sollten diese Option nur aktivieren, wenn Sie für <span class="notranslate">Steam</span> entwickeln und wenn Sie Probleme beim Starten Ihres Spiels haben.</p>
+  <p>Die vorletzte Option, die Sie haben, ist die Option " <strong>Dateisystem-Sandbox deaktivieren</strong>". Wenn Sie diese Option aktivieren, wird die <span class="notranslate">GameMaker Studio 2-Sandbox</span> für das Speichern und Laden von Dateien deaktiviert, so dass Ihre Spiele von überall auf dem System auf Dateien zugreifen können
+    auf dem das Spiel läuft. Diese Option ist standardmäßig nicht aktiviert, da wir empfehlen, die GameMaker <span class="notranslate">Studio 2-Sandbox</span> für Dateien auf allen Systemen beizubehalten, und wenn sie aktiviert ist, sind einige Speicher-/Ladebereiche je nach den Berechtigungen auf Betriebssystemebene möglicherweise immer noch nicht verfügbar.
+    Weitere Informationen zur Sandbox finden Sie auf den Seiten über das GameMaker <span class="notranslate">Studio</span> <a href="../../Additional_Information/The_File_System.htm">2-Dateisystem</a>.</p>
+  <p>Schließlich haben Sie die Option, dass <span class="notranslate">GameMaker Studio 2</span> eine ausführbare x64-Datei für Ihre <span class="notranslate">Windows-Projekte</span> erstellt. Wenn diese Option aktiviert ist, wird beim Kompilieren ein 64-Bit-Executable für Ihr Spiel erstellt, und wir <strong>empfehlen dringend, dass alle neuen Projekte diese Option verwenden</strong>.
+    Dies wird auf lange Sicht das Standardformat (und das einzige) für ausführbare <span class="notranslate">Windows-Dateien</span> sein, da der 32bit-Runner allmählich ausläuft. Beachten Sie, dass, wenn diese Option aktiviert ist, alle Erweiterungs-Dlls, die vom Projekt verwendet werden, ebenfalls 64bit sein müssen (siehe <a href="../../The_Asset_Editors/Extensions.htm">hier</a> für weitere Informationen).</p>
+  <p> </p>
+  <h2>Grafiken</h2>
+  <p><img alt="Windows Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Graphics_Options.png">Die Grafikoptionen sind diejenigen, die Sie konfigurieren sollten, um festzulegen, wie Ihr Spiel die Grafikkarte Ihres
+   <span class="notranslate">Ziel-Windows-PCs</span> verwendet. Die folgenden Optionen sind enthalten, die Sie ändern können:</p>
+  <ul class="colour">
+    <li><strong>Cursor anzeigen</strong>: Wenn diese Option aktiviert ist, wird der normale Windows-Cursor angezeigt. Wenn Sie die Option deaktivieren, wird kein Cursor angezeigt, es sei denn, Sie haben in Ihrem Spielcode einen erstellt. Diese Option ist standardmäßig aktiviert.</li>
+    <li><strong>Vollbild starten</strong>: Wenn dies aktiviert ist, wird das Spiel im Vollbildmodus gestartet, andernfalls wird es im Fenstermodus gestartet. Dies ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Allow Fullscreen <span class="notranslate">Switching (Vollbildumschaltung</span></strong> zulassen): Wenn diese Option aktiviert ist, kann der Benutzer mit den <span class="notranslate">Standard-Windows-Tastenkombinationen</span> von Vollbild auf Fenster umschalten und wieder zurück. Dies ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Interpoliert Farben zwischen Pixeln</strong>: Schaltet die <a class="glossterm" data-glossterm="lineare Interpolation" href="#">lineare Interpolation</a> ein, die im Grunde die Pixel &quot;glättet&quot;. Für gestochen scharfe Pixelgrafiken sollte sie ausgeschaltet sein, aber
+      Wenn Sie aber schöne Alpha-Mischungen und geglättete Kanten haben, ist es besser, sie eingeschaltet zu lassen.</li>
+    <li><strong>Synchronisation verwenden, um Tearing zu vermeiden</strong>: Hiermit schalten Sie <a class="glossterm" data-glossterm="v-sync" href="#">v-sync</a> ein oder aus. Beachten Sie, dass wenn Sie ein Spiel mit einer Raumgeschwindigkeit von 120 haben und der Spieler einen Monitor mit einer Bildwiederholrate
+      von 60 hat, wird durch das Einschalten dieser Option die Spielgeschwindigkeit ebenfalls auf 60 festgelegt. Diese Option ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Größenänderung des Fensters zulassen</strong>: Wenn diese Option aktiviert ist, kann der Benutzer die Größe des Spielfensters ändern (die Option "Randloses Fenster" muss deaktiviert sein, damit dies funktioniert). Diese Option ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Randloses Fenster</strong>: Wenn Sie diese Option aktivieren, wird Ihr Spiel mit einem randlosen Fenster ausgeführt, wobei die normalen Schaltflächen zum Minimieren, Maximieren und Schließen sowie der Spieltitel entfernt werden. Dies ist standardmäßig deaktiviert.</li>
+    <li><strong>Skalierung</strong>: Hier können Sie wählen, ob das Seitenverhältnis beibehalten werden soll (so dass ein 4:3-Raum auf einem 16:9-Bildschirm &quot;im Letterbox-Format&quot; dargestellt wird) oder ob er vollständig skaliert werden soll (das Bild wird gestreckt, damit es auf den gesamten Bildschirm passt).<br>
+      <br>
+      <span style="font-size:16px;"><strong>WARNUNG!</strong> <em><span class="notranslate">Wenn Sie</span>die Anwendungsoberfläche ausschalten, werden alle in den <span class="notranslate">Windows-Spieleoptionen</span> eingestellten Skalierungsoptionen deaktiviert, bis sie wieder eingeschaltet wird. Siehe Die Anwendungsoberfläche für weitere Details.</em></span></li>
+  </ul>
+  <p>Schließlich gibt es noch die Möglichkeit, die Größe der <a class="glossterm" data-glossterm="Textur-Seite" href="macOS.htm#">Texturseite</a> einzustellen. Die Standardgröße (und die kompatibelste) ist 2048x2048, aber Sie können zwischen 256x256 bis zu 8192x8192 wählen. Es
+    gibt es auch eine Schaltfläche mit der Bezeichnung <strong><strong>Vorschau </strong></strong>die die Texturseiten für diese Plattform generiert und dann ein Fenster öffnet, in dem Sie sehen können, wie sie aussehen. Dies kann sehr nützlich sein, wenn Sie sehen wollen, wie die Texturseiten aufgebaut sind
+    strukturiert sind und um zu verhindern, dass die Texturseiten größer (oder kleiner) als nötig sind. Weitere Informationen zu Texturseiten finden Sie <a href="../Texture_Information/Texture_Pages.htm">hier</a>.</p>
+  <p class="note"><strong>HINWEIS</strong>: Beachten Sie, dass Ihr Spiel auf PCs mit niedrigeren Spezifikationen umso weniger kompatibel ist, je größer die Texturseite ist.</p>
+  <p> </p>
+  <h2>Bilder</h2>
+  <p><img alt="Windows Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Images_Options.png">Im Abschnitt "Bilder" stellen Sie die Bilder bereit, die Ihr Spiel benötigt. Für <span class="notranslate">Windows</span> müssen Sie eine <strong>Symboldatei</strong> (im Format <span class="inline">.ico</span> ) und einen Begrüßungsbildschirm (im Format <span class="inline">.png</span>, <span class="inline">.bmp</span>, <span class="inline">.jpg</span> oder <span class="inline">.gif</span> ) bereitstellen.
+    Der Begrüßungsbildschirm wird beim Laden des Spiels angezeigt und kann durch Aktivieren der Option " <strong>Begrüßungsbildschirm verwenden</strong> " aktiviert oder deaktiviert werden (standardmäßig ist diese Option deaktiviert).</p>
+  <p>Es ist erwähnenswert, dass <span class="notranslate">GameMaker Studio 2</span> über ein <a href="../../IDE_Tools/Project_Image_Generator.htm">Projektbild-Generator-Tool</a> verfügt, das verwendet werden kann, um automatisch alle Bilder zu erstellen, die für die verschiedenen Zielplattformen benötigt werden, für die Ihr Spiel
+    kompiliert wird. Wenn Sie dieses Tool verwenden, sollten Sie die erstellten Bilder überarbeiten, um sicherzustellen, dass sie Ihren Anforderungen entsprechen.</p>
+  <p> </p>
+  <h2>Installateur</h2>
+  <p><img alt="Windows Installer Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Installer_Options.png"><span class="notranslate">Windows-Spiele</span> können mit einem <strong>Installer </strong>erstellt werden und hier können Sie die verschiedenen Einstellungen und Grafiken festlegen
+    festlegen, die <span class="notranslate">GameMaker Studio 2</span> bei der Erstellung verwenden wird. Als erstes haben wir die grafischen Optionen, die das Aussehen des Installers selbst bestimmen werden:</p>
+  <ul class="colour">
+    <li><strong>Beendet</strong>: Die Grafik, die auf der &quot;Finished&quot;-Seite des Installationsprogramms erscheint. Muss im Format <span class="inline">*.bmp</span> vorliegen und 164x314px groß sein.</li>
+    <li><strong>Kopfzeile</strong>: Die Grafik, die erscheint, während das Installationsprogramm ausgeführt wird. Muss im Format <span class="inline">*.bmp</span> vorliegen und 150x57px groß sein.</li>
+  </ul>
+  <p>Sie können auch auf eine bestimmte <strong>Lizenzvertragsdatei</strong> (ein Beispiel wird mit <span class="notranslate">GameMaker Studio 2</span> mitgeliefert) und eine eigene <strong>NSI-Scriptdatei</strong> (Details <a href="http://nsis.sourceforge.net/Main_Page">hier</a>) verweisen, falls Sie eine benötigen
+    oder klicken Sie auf die entsprechenden Schaltflächen, um zu den mit GameMaker <span class="notranslate">Studio 2</span> gelieferten Standarddateien zurückzukehren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Game_Options.htm">Spiel-Optionen</a></div>
+        <div style="float:right">Nächste: <a href="macOS.htm"><span class="notranslate">macOS</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Windows</span> Game Options
+NSIS
+Installer
+-->
+  <!-- TAGS
+windows_options
+-->
+
+</body></html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Der Profiler</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers the profiler in the debugger" />
+  <meta name="rh-index-keywords" content="Debugger - Profiling" />
+  <meta name="search-keywords" content="profile,profiler,profile game" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Profiler</h1>
+  <p>Mit dem Debugger können Sie Ihren Code Schritt für Schritt durchgehen und alle Probleme mit der Codebasis finden, aber manchmal müssen Sie auch auf subtilere Details achten, um Ihre Spiele richtig zu optimieren. Die Option <strong>Profil </strong>hilft Ihnen dabei, indem sie Ihnen eine
+    Die Option "Profil" hilft Ihnen dabei, indem sie Ihnen einen Leistungsüberblick gibt, der die Zeit anzeigt, die für den Aufruf von Funktionen und Skripten benötigt wird, und sogar, wie lange es dauert, bis ein bestimmtes Ereignis abgeschlossen ist.</p>
+  <p><img alt="Debug Profile Window" class="center" src="../../assets/Images/IDE Tools/Debug_Profile.png">Neben dem Hauptfenster, das alle verschiedenen Ereignisse, Skripte und aufgerufenen Funktionen anzeigt, haben Sie folgende Möglichkeiten, den
+    Profiler:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Aktivieren / Deaktivieren</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Dies ist die Schaltfläche zum Aktivieren oder Deaktivieren des Profilers. Wenn er aktiviert ist, wird der Profiler gestartet und Sie sehen, dass Ereignisse, Skripte und Funktionen im Hauptfenster zusammen mit verschiedenen Datenwerten für jeden von ihnen aufgelistet werden. Wie diese Daten angezeigt werden
+      hängt von der <strong>Zeitanzeige</strong> und dem <strong>Ansichtsmodus</strong> ab (beide werden weiter unten näher erläutert).</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Zeitanzeige</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Mit diesem Kontrollkästchen können Sie zwischen der <strong>durchschnittlichen </strong>Zeit und der <strong>absoluten </strong>Zeit für den Profiler umschalten. Wenn es nicht angekreuzt ist, werden im Hauptfenster die <em>Gesamtzahl </em>der Aufrufe der
+      Funktion, das Skript oder das Ereignis und die <em>Gesamtzeit </em>(Zeiten sind in <strong>Mikrosekunden</strong> angegeben), die im Verlauf des Profils benötigt wurde. Wenn Sie dies jedoch aktivieren, zeigen diese Spalten die <em>durchschnittlich </em>benötigte Zeit pro Schritt für jede Funktion,
+      Skript oder Ereignis und die <em>durchschnittliche </em>Anzahl der Aufrufe.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Ansichtsmodus</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">In diesem Menü können Sie den Ansichtsmodus auswählen, der entweder <strong>von oben nach unten</strong> oder <strong>von unten nach oben</strong> sein kann.</p>
+    <p class="dropspot">Wenn Sie den Ansichtsmodus <strong>"Von oben nach unten"</strong> auswählen, wird das Profil von oben nach unten angezeigt (entspricht in etwa der Aufrufstapel-Hierarchie), d. h. es wird das Ereignis, dann das Skript und dann alle verwendeten Funktionen angezeigt. Beachten Sie, dass Sie auf <img alt="LMB Icon" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_LMB.png" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf einen der Einträge doppelklicken können, um ihn im <strong>Quellcode-Debug-Fenster </strong>zu öffnen, wenn Sie eines haben.
+      ein solches haben. Wenn Sie ein <img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png"> -Symbol neben einem Namen sehen, gibt es weitere Skript- oder Funktionsaufrufe in diesem
+      Wenn Sie auf <img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png"> klicken, wird die Baumstruktur erweitert, um sie anzuzeigen.</p>
+    <p class="dropspot">Wenn Sie den Ansichtsmodus <strong>"Von unten nach oben"</strong> wählen, werden die Dinge von unten nach oben dargestellt, sodass Sie alle Funktionen und Skriptaufrufe einzeln sehen können. Wenn Sie in diesem Ansichtsmodus auf <img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png" width="12" height="12"> klicken, wird die Funktion oder das Skript erweitert, um zu zeigen, was sie tatsächlich aufgerufen hat.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Ansicht Ziel</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Mit dem <strong>Ansichtsziel</strong> können Sie wählen, ob Sie das <span class="notranslate">Projekt-GML</span> (Ereignis- und Codedaten), die Prozesse der Hintergrund-Engine oder beides anzeigen möchten. Wenn Sie &quot; GML&quot; wählen, erhalten Sie die Ereignisse, Funktionen und Skripte, die in jedem Schritt aufgerufen werden.
+      während die &quot;Engine&quot;-Ansicht nur die vom Projekt benötigten Engine-Aufrufe anzeigt, so dass Sie eventuelle Engpässe in der Art und Weise, wie Ihr Projekt Dinge handhabt, erkennen können. Wenn Sie &quot;Beide&quot; wählen, werden beide Datensätze angezeigt.
+      Wenn Sie &quot;Beides&quot; wählen, werden beide Datensätze angezeigt, aber beachten Sie, dass in Kombination mit der &quot;Bottom-Up&quot;-Ansicht die verschiedenen Skript- und Funktionsaufrufe in den Engine-Aufrufen verschachtelt sind und Sie auf <img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png" width="12" height="12"> klicken müssen, um diese zu sehen.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><br> Die Profildaten werden in vier Spalten angezeigt, und wenn Sie auf eine der Spalten klicken, werden die Daten nach den Kriterien der Spalte sortiert.</p>
+  <p><img alt="Profile Display" class="center" src="../../assets/Images/IDE Tools/Profiler_Display.gif" /></p>
+  <ul class="colour">
+    <li><strong>Name</strong>: Dies ist der Name des Ereignisses, Skripts oder der Funktion, die aufgerufen wird, und kann ein <img alt="Expand Debug Icon" height="12" src="../../assets/Images/Icons/Debug_Expand.png" width="12"> daneben haben, um weitere Aufrufe dazu oder
+      zu kennzeichnen (je nach dem gewählten <strong>Ansichtsmodus</strong> ). Sie können auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf einen der Namen doppelklicken, um den Codeblock
+      oder Skript im Quelltextfenster zu öffnen. Wenn Sie auf den oberen Teil dieser Spalte klicken, werden die Namen in alphabetischer Reihenfolge sortiert.</li>
+    <li><strong>Zeit</strong>: Hier wird entweder die <em>Gesamtzeit </em>angezeigt, die eine Funktion (oder ein Skript oder ein Ereignis) während der Profilerstellung benötigt hat, oder die <em>durchschnittliche </em>Zeit, die die einzelnen Schritte zum Aufrufen benötigt haben (je nach gewählter Option " <strong>Zeitanzeige"</strong> ), und sie wird in Mikrosekunden angezeigt.</li>
+    <li><strong>Aufrufe</strong>: Hier sehen Sie entweder die <em>Gesamtzahl </em>der Aufrufe des angegebenen Ereignisses, der Funktion oder des Skripts oder die <em>durchschnittliche </em>Anzahl der Aufrufe in einem einzelnen Schritt (wiederum abhängig von der gewählten Option " <strong>Zeitanzeige</strong> 
+      ausgewählt).</li>
+    <li><strong>Schritt%</strong>: Der hier angezeigte Wert ist der Gesamtprozentsatz eines Einzelschritts, den der Aufruf gemacht hat.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../The_Debugger.htm">Der Debugger</a></div>
+        <div style="float:right">Nächste: <a href="Watches.htm">Uhren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Profiler
+Profiling Your Game
+Profiler
+Debug Profiler
+-->
+  <!-- TAGS
+debug_profiler
+-->
+</body>
+</html>

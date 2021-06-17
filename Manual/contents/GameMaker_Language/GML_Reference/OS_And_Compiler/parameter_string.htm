@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Parameter_Zeichenfolge</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for parameter_string" />
+  <meta name="rh-index-keywords" content="parameter_string" />
+  <meta name="search-keywords" content="parameter_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Parameter_Zeichenfolge</h1>
+  <p>Befehlszeilenparameter sind die zusätzlichen Befehle, die Sie einer Exe hinzufügen können, um zu ändern, wie das Programm ausgeführt wird, und mit dieser Funktion können Sie den gewählten Befehlszeilenparameter als String erhalten. Sie können die Anzahl der Parameter für das aktuelle Spiel ermitteln
+    mit der Funktion <a href="parameter_count.htm"><tt>parameter_count()</tt></a>ermitteln, wobei der erste Parameter den Index 1 und der letzte den von der Funktion zurückgegebenen Index hat (ein Wert von 0 ist insofern besonders, als dass es sich um den Dateinamen der ausführbaren Datei des Spiels handelt,
+    einschließlich des Pfades). Es sollte beachtet werden, dass diese Funktion für auf der HTML5-Plattform funktioniert und die url-Parameter abruft.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">parameter_string(n);</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var p_num;<br> p_num = parameter_count();<br> if p_num &gt; 0<br> {
+    <br> var i;<br> for (i = 0; i &lt; p_num; i += 1)<br> {
+    <br> p_string[i] = parameter_string(i + 1);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code ermittelt die Anzahl der Befehlszeilenparameter, und wenn es 1 oder mehr sind, wird er sie in einer Schleife durchlaufen und als Zeichenketten in einem Array speichern.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="OS_And_Compiler.htm">OS und Compiler</a></div>
+        <div style="float:right">Weiter: <a href="environment_get_variable.htm">environment_get_variable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+parameter_string
+-->
+  <!-- TAGS
+parameter_string
+-->
+</body>
+</html>

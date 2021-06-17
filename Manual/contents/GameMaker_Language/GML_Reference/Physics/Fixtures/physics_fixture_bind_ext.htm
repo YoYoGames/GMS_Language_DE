@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_bind_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_bind_ext" />
+  <meta name="rh-index-keywords" content="physics_fixture_bind_ext" />
+  <meta name="search-keywords" content="physics_fixture_bind_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_bind_ext</h1>
+  <p>Nachdem wir unser Fixture definiert haben, muss es an eine Instanz gebunden werden. Das bedeutet, dass seine <i>Eigenschaften</i> an die ausgewählte Instanz übertragen werden, <b>nicht an das eigentliche Fixture selbst</b>, so dass ein Fixture an mehrere Instanzen gebunden werden kann, wenn alle
+    die gleichen Eigenschaften haben sollen. Sie können einen Objektindex für das Ziel angeben und alle Instanzen, die zu diesem Zeitpunkt im Raum vorhanden sind, erhalten die Eigenschaften dieses Fixtures (aber keine neuen Instanzen des Objekts, die später erzeugt werden), oder Sie können die speziellen
+    Schlüsselwörter <i>other</i> und <i>all</i> verwenden. Sie können sogar ein übergeordnetes Objekt angeben und alle Kindinstanzen mit diesem übergeordneten Objekt erhalten ebenfalls das Fixture. Sobald das Fixture an alle benötigten Instanzen gebunden wurde, kann es gelöscht werden, wenn es nicht mehr
+    Die Instanzen mit den Eigenschaften des Fixtures sind davon nicht betroffen und behalten diese Eigenschaften bei.</p>
+  <p>Normalerweise wird das Fixture an die Instanz gebunden, wobei der Massenschwerpunkt am Ursprung der Instanz positioniert wird. Dies ist jedoch nicht immer das, was Sie benötigen, und deshalb erlaubt Ihnen diese Funktion auch, die x- und y-Position, an der das Fixture
+    um einen bestimmten Wert zu verschieben (wenn Sie dies nicht benötigen, verwenden Sie stattdessen <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a> stattdessen). Es ist wichtig zu beachten, dass ein Fixture nur einen <i>einzigen</i> Offset unterstützen kann, da das Hinzufügen mehrerer Offsets
+    zu einem einzelnen Fixture wird von Box2D nicht unterstützt.</p>
+  <p><img alt="Extended physics fixture binding example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_bind_ext_image.png">Die Funktion gibt auch einen eindeutigen &quot;id&quot;-Wert für das gebundene Fixture zurück (nicht das Fixture<b>selbst), der</b> dann verwendet werden kann, um die Physikeigenschaften von der Instanz zu entfernen (&quot;un-bind&quot;), indem die Funktion <a href="physics_remove_fixture.htm"><tt>physics_remove_fixture()</tt></a>. Dies erlaubt Ihnen
+    physikalische Eigenschaften einer Instanz hinzuzufügen und zu entfernen, ohne Objekte zu zerstören und neu zu erstellen.</p>
+  <p class="note"><b>HINWEIS</b>: Fixtures sollten gelöscht werden, wenn sie nicht mehr benötigt werden, da andernfalls ein Speicherleck entstehen kann, das Ihr Spiel verlangsamt und schließlich zum Absturz bringt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_fixture_bind_ext(fixture, target, xoffset, yoffset)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Halterung</td>
+        <td>das Gerät, das gebunden werden soll</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>die Zielinstanz, die das Fixture empfangen soll (kann eine Instanz-ID, eine Objekt-ID, <i>andere</i> oder <i>alle</i> sein)</td>
+      </tr>
+      <tr>
+        <td>xOffset</td>
+        <td>der Versatz entlang der x-Achse</td>
+      </tr>
+      <tr>
+        <td>yOffset</td>
+        <td>der Versatz entlang der y-Achse</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var fix, inst;<br> fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(fix, 16);<br> physics_fixture_set_density(fix, 1.0);<br> inst = instance_create_layer(x, y, &quot;Instances&quot;, genericBodyObject);<br> my_fix = physics_fixture_bind_ext(fix,
+    inst, sprite_width / 2, -(sprite_height / 2));<br> physics_fixture_delete(fix);
+  </p>
+  <p>Der obige Code erstellt ein Fixture und weist seinen Index der Variablen &quot;fix&quot; zu. Anschließend wird die Form und Dichte des Fixtures definiert, bevor es mit einem Offset, der auf der Breite und Höhe des Sprites basiert, an die Instanz gebunden wird. Der Index für
+    das <b>gebundene</b> Fixture wird in der Variablen &quot;my_fix&quot; gespeichert. Schließlich wird das Fixture selbst gelöscht, um Speicherlecks zu vermeiden, da es nicht mehr benötigt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fixtures.htm">Fixtures</a></div>
+        <div style="float:right">Weiter: <a href="physics_fixture_set_collision_group.htm">physics_fixture_set_collision_group</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_bind_ext
+-->
+  <!-- TAGS
+physics_fixture_bind_ext
+-->
+</body>
+</html>

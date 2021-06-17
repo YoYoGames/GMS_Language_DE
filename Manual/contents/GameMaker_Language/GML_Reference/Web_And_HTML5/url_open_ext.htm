@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>url_open_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for url_open_ext" />
+  <meta name="rh-index-keywords" content="url_open_ext" />
+  <meta name="search-keywords" content="url_open_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>url_open_ext</h1>
+  <p>Dadurch wird die angegebene URL im Browser des gewählten Zielgeräts geöffnet, oder, wenn Sie das HTML5-Modul verwenden, im aktuell geöffneten Browser. Der Parameter &quot;target&quot;, den Sie angeben, ist derselbe wie der Standard-JavaScript-Wert &quot;name&quot;
+    Wert, wenn Sie die <tt>open()</tt> -Methode verwenden, und Sie sollten sich bewusst sein, dass alle außer &quot; _self<strong>&quot;</strong> dazu führen<strong> können</strong>, dass der Browser blockiert oder den Benutzer fragt, ob er es zulassen möchte.</p>
+  <p>Gültige Ziele sind:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Ziel</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>_blank</td>
+        <td>Öffnet das verknüpfte Dokument in einem neuen Fenster oder einer neuen Registerkarte (dies funktioniert nicht, wenn Pop-ups vom Benutzer blockiert werden; in diesem Fall können Sie stattdessen die <a href="Web_And_HTML5.htm"><tt>anklickbar_*</tt></a> Funktionen stattdessen verwenden).</td>
+      </tr>
+      <tr>
+        <td>_self</td>
+        <td>Öffnet das verknüpfte Dokument in demselben Rahmen, in dem es angeklickt wurde (dies ist die Voreinstellung).</td>
+      </tr>
+      <tr>
+        <td>_Elternteil</td>
+        <td>Öffnet das verknüpfte Dokument im übergeordneten Rahmen.</td>
+      </tr>
+      <tr>
+        <td>_top</td>
+        <td>Öffnet das verknüpfte Dokument im Volltext des Fensters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">url_open_ext(url, target);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>Die URL (Website-Adresse), auf die verlinkt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Dies ist der Zielbereich, in dem die URL geöffnet werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">url_open_ext(&quot;http://yoyogames.com&quot;, &quot;_blank&quot;);</p>
+  <p>Dies würde die <span class="notranslate">YoYo Games</span> Homepage in einem neuen Fenster öffnen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Web_And_HTML5.htm">Web und HTML5</a></div>
+        <div style="float:right">Weiter: <a href="url_open_full.htm">url_open_full</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+url_open_ext
+-->
+  <!-- TAGS
+url_open_ext
+-->
+</body>
+</html>

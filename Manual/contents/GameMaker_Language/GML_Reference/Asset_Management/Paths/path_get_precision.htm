@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pfad_get_präzision</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_precision" />
+  <meta name="rh-index-keywords" content="path_get_precision" />
+  <meta name="search-keywords" content="path_get_precision" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>pfad_get_präzision</h1>
+  <p>Diese Funktion gibt zurück, mit welcher Genauigkeit der angegebene Pfad &quot;geglättet&quot; wurde, und wird ein ganzzahliger Wert von 1 bis 8 sein. Obwohl Sie diesen Wert für einen geradlinigen Pfad erhalten (und setzen) können, hat er keinen Einfluss darauf, wie eine Instanz
+    den Pfad verwendet, da er nur relevant ist, wenn die Pfadart auf &quot;glatt&quot; eingestellt ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_get_precision(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu prüfenden Pfades.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (path_get_kind(pth_Patrol))<br> {
+    <br> if (path_get_precision(pth_Patrol)) != 8<br> {<br> path_set_precision(pth_Patrol, 8);<br> } <br> }</p>
+  <p>Der obige Code prüft den in &quot;pth_Patrol&quot; indizierten Pfad, um zu sehen, um welche Art es sich handelt, und wenn er glatt ist, prüft er dann, wie genau die Glättung ist. Wenn er kleiner als 8 ist, wird er dann auf einen Wert von 8 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Paths.htm">Pfade</a></div>
+        <div style="float:right">Weiter: <a href="path_get_speed.htm">path_get_speed</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_precision
+-->
+  <!-- TAGS
+path_get_precision
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_get_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_get_index" />
+  <meta name="rh-index-keywords" content="asset_get_index" />
+  <meta name="search-keywords" content="asset_get_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_get_index</h1>
+  <p>Mit dieser Funktion können Sie den eindeutigen identifizierenden Index für ein Spiel-Asset aus seinem Namen ermitteln. Wenn das Asset nicht gefunden wird, gibt die Funktion den Wert -1 zurück, andernfalls gibt sie die eindeutige Index-ID für das überprüfte Asset zurück. Diese ID kann dann
+    in anderen Funktionen wie jeder andere Indexwert verwendet werden, z. B. der <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a> oder die <a href="../Paths/Path_Variables/path_index.htm"><tt>pfad_index</tt></a>,
+    zum Beispiel. Bitte beachten Sie, dass Sie, obwohl diese Funktion verwendet werden kann, um Assets aus Strings zu referenzieren (siehe Beispiel unten), immer sicherstellen sollten, dass das Asset existiert, bevor Sie es verwenden, da Sie sonst Fehler erhalten können, die Ihr Spiel zum Absturz bringen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">asset_get_index(name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name des Spiel-Assets, von dem der Index abgerufen werden soll (eine Zeichenkette).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Asset-Index (Integer)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var obj = asset_get_index(&quot;obj_Feind_&quot; + string(global.Level));<br> if obj &gt; -1<br> {
+    <br> instance_create_layer(random(room_width), random(room_height), obj, &quot;Enemy_Layer&quot;);<br> }
+  </p>
+  <p>Der obige Code ermittelt einen Objektindex aus einer Zeichenkette, und wenn dieser Index existiert, wird eine Instanz des Objekts im Spiel erstellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Assets_And_Tags.htm">Assets und Tags</a></div>
+        <div style="float:right">Weiter: <a href="asset_get_type.htm">asset_get_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_get_index
+-->
+  <!-- TAGS
+asset_get_index
+-->
+</body>
+</html>

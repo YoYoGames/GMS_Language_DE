@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Code editieren</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to use the code editor windows
+" />
+  <meta name="rh-index-keywords" content="Code Editor - Editing" />
+  <meta name="search-keywords" content="edit code,code editor,autocomplete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Code editieren</h1>
+  <p>Wenn Sie den Skript-Editor verwenden, geben Sie einfach den gewünschten Code für das Skript-Asset oder für das Ereignis ein und folgen dabei der korrekten GML-Syntax <a class="glossterm" data-glossterm="Syntax" href="#">.</a> Während Sie dies tun
+    erhalten Sie Hilfe durch das <strong>Autovervollständigungsfenster</strong>:</p>
+  <p><img alt="Script Editor Code Complete" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_CodeComplete.png">Dieses Fenster erscheint, während Sie Ihren Code schreiben (normalerweise nach einer kleinen Pause, aber das kann in den <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">Voreinstellungen</a> eingestellt werden)
+    und gibt Ihnen eine Auswahl von &quot;Best-Fit&quot;-Antworten in alphabetischer Reihenfolge.</p>
+  <p>Während Sie den Code-Editor verwenden, können Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> klicken und die Maus ziehen, um eine Zeile des Codes auszuwählen, oder Sie halten <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> gedrückt und klicken dann auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> und ziehen, um Spalten des Codes auszuwählen. Alles, was auf diese Weise ausgewählt wird, kann dann <em>kopiert</em>, <em>ausgeschnitten </em>und <em>eingefügt werden </em>, indem Sie
+    die Standard-Tastaturkürzel <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot; <span class="inline">C</span>&quot;, <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot; und <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+  <p>Es ist erwähnenswert, dass Sie Ihren Code auf verschiedene Arten <strong>kommentieren </strong>können. Das Kommentieren Ihres Codes ist sehr wichtig für die Aufrechterhaltung der Produktivität, da es die Dinge klar hält und Codeabschnitte so trennt, dass es offensichtlich ist, was jeder
+    Teil tut und warum er da ist. Es bedeutet auch, dass Sie, wenn Sie in einem Team arbeiten, Notizen für die anderen Mitglieder hinterlassen können und dass diese genau wissen, was Sie getan haben oder wofür ein bestimmter Abschnitt des Codes da ist. Auch wenn Sie ein Solo-Entwickler sind,
+    ist es wichtig, Kommentare in Ihrem Code zu hinterlassen, besonders wenn Sie das Projekt verlassen und zu einem späteren Zeitpunkt darauf zurückkommen müssen.</p>
+  <p>Das Auskommentieren Ihres Codes ist einfach, denn Sie müssen nur &quot;<span class="inline">//</span>&quot; vor jeder Textzeile verwenden oder Sie können ganze Absätze auskommentieren, indem Sie &quot;<span class="inline">/* text here */</span>&quot; verwenden. Es gibt sogar zwei Tastatur
+    Tastenkombinationen, um ausgewählte Codezeilen zu kommentieren bzw. unkommentiert zu lassen: <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">K</span>&quot; zum Kommentieren und <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;<span class="inline">K</span>&quot; zum Dekommentieren. Das folgende Bild zeigt Code, der mit diesen beiden Methoden geschrieben wurde
+    geschrieben wurde, sowie einige <strong>JS-Doc-Kommentare</strong> (weiter unten ausführlicher erklärt):</p>
+  <p><img alt="Script Editor Comments" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_Comments.png">In Skripten können auch bestimmte JSDoc-ähnliche Kommentare hinzugefügt werden, um die Eigenschaften der darin enthaltenen Funktionen zu definieren, so dass sie bei der Verwendung von
+    die Funktionen in Ihrem Code verwenden, werden sie in der Autovervollständigung zusammen mit ihren Argumenten und anderen Details angezeigt. Weitere Informationen hierzu finden Sie im Abschnitt <a href="JSDoc_Script_Comments.htm">JSDoc-Skriptkommentare</a> für weitere Informationen.</p>
+  <p>Standardmäßig verfügt jeder geschriebene Code über <strong>Codefaltungssymbole</strong> neben jedem Satz passender geschweifter Klammern <span class="inline">{}</span>. Diese haben die Form von kleinen Plus- <span class="inline">+</span> oder Minus-Symbolen <span class="inline">-</span>, und wenn Sie darauf klicken, wird der Code innerhalb der passenden Klammern &quot;gefaltet&quot;, so dass er weniger visuellen Platz einnimmt.</p>
+  <p>Sie können auch manuell Code-Faltbereiche setzen, indem Sie die speziellen <span class="inline">#region</span> -Tags verwenden, um einen Codeabschnitt zu markieren. Dies funktioniert so, dass Sie ein <span class="inline">#region</span> -Tag (zusammen mit beliebigem Kommentartext) an den Anfang eines
+    eines Codeabschnitts ein <span class="inline">#endregion</span> -Tag (zusammen mit Kommentartext) am Anfang des Abschnitts einfügen und dann ein entsprechendes -Tag am Ende des Abschnitts hinzufügen.
+    zu einem bestimmten Zeitpunkt:</p>
+  <p><img alt="Script Editor Code Regions" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_CodeRegion.gif">Der aktuelle Code sieht in etwa so aus:</p>
+  <p class="code">#region Dies ist eine Beispielregion<br>
+    <br> width = sprite_get_width(sprite);<br> height = sprite_get_height(sprite);<br> xoff = sprite_get_xoffset(sprite);<br> yoff = sprite_get_yoffset(sprite);<br>
+    <br> #endregion Hier ggf. weiterer Kommentar</p>
+  <p>Wie Sie vielleicht schon bemerkt haben, sind Teile des Skripttextes farbig gekennzeichnet. Der Skript-Editor &quot;weiß&quot; über vorhandene Objekte, eingebaute Variablen und Funktionen etc... Bescheid und kodiert sie entsprechend farblich. Die Farbcodierung hilft sehr bei der Vermeidung von Fehlern
+    da Sie sofort sehen können, ob Sie einen Namen falsch geschrieben oder ein Schlüsselwort als Variable verwendet haben oder ob ein Syntaxfehler vorliegt. Wenn Ihnen die Farbcodierung jedoch nicht gefällt, können Sie sie in den Voreinstellungen ein- und ausschalten (Sie können auch <span class="inline">F10</span> verwenden, um sie im Editor ein- oder auszuschalten) sowie die verwendeten Farben anpassen.</p>
+  <p>Sie können auch mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> an beliebiger Stelle im Editor klicken, um das folgende Menü zu öffnen:</p>
+  <p><img alt="Script Editor Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_RMB_Menu.png">Neben den üblichen Funktionen zum Ausschneiden, Kopieren und Einfügen von Codezeilen haben Sie auch die Möglichkeit, markierten Text zu kommentieren oder unkommentiert zu lassen.
+    Sie haben auch die Möglichkeit, markierten Text zu kommentieren oder unkommentiert zu lassen, Einzüge hinzuzufügen oder zu entfernen sowie das Codefenster in 1, 2 oder 3 separate Bereiche aufzuteilen (beachten Sie, dass die Optionen in Bezug auf <span class="inline">#regions</span> nicht verfügbar sind, wenn Sie im bearbeiteten Code keine Einzüge definiert haben).</p>
+  <p>Die letzte Option für die Aufteilung in Bereiche teilt das eigentliche Fenster in verschiedene Teile auf, in die Sie dann ein Skript oder Event ziehen können, um es neben den anderen zum Vergleichen und Bearbeiten anzuzeigen.</p>
+  <p><img alt="Script Editor Panes" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_Panes.png">Dies ist besonders nützlich, um zwei Skripte zu vergleichen oder um verbundene Skripte gleichzeitig zu betrachten, ohne ein weiteres Fenster zu benötigen
+    oder ständig zwischen Registerkarten wechseln zu müssen.</p>
+  <p>Die anderen Optionen in diesem Menü sind das Umschalten eines Haltepunkts für die Verwendung mit dem <a href="../../IDE_Tools/The_Debugger.htm">Debugger</a> und die Konvertierung des <span class="notranslate">GML-Codes</span> in <span class="notranslate">DnD™</span>oder umgekehrt. Beachten Sie, dass bei der Konvertierung von Code in <span class="notranslate">DnD™</span> <em>keine </em>
+    einzelne Aktionen für jede Codezeile erstellt werden, sondern eine einzige Codeaktion verwendet wird, die alles enthält, was zuvor im Ereignis oder Skript enthalten war.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Scripts.htm">Der Skript-Editor</a></div>
+        <div style="float:right">Nächste: <a href="JSDoc_Script_Comments.htm">JSDoc-Kommentare</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Editing Code
+Code Editor
+Autocomplete
+Split Panes
+Regions
+#region
+#endregion
+-->
+  <!-- TAGS
+code_editor
+-->
+
+</body></html>

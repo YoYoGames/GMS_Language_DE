@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_ugc_create_item</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_create_item" />
+  <meta name="rh-index-keywords" content="steam_ugc_create_item,ugc_filetype_community,ugc_filetype_microtrans" />
+  <meta name="search-keywords" content="steam_ugc_create_item,ugc_filetype_community,ugc_filetype_microtrans" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_ugc_create_item</span></h1>
+  <p>Diese Funktion wird verwendet, um die Workshop-API vorzubereiten und eine veröffentlichte Datei-ID für das hinzuzufügende Element zu generieren. Die Funktion <i>muss</i> aufgerufen werden, bevor Sie etwas anderes mit dem hochzuladenden Element tun, da Sie den eindeutigen veröffentlichten
+    ID-Wert, den sie zurückgibt, im <span class="notranslate">Steam-Async-Ereignis</span> zum Aktualisieren verwenden müssen. Um diese Funktion zu verwenden, müssen Sie die <span class="notranslate">Steam-App-ID</span> für Ihr Spiel angeben und eine der folgenden Konstanten für das Argument " <tt>file_type</tt> " verwenden:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ugc_filetype_community</td>
+        <td>Dies wird verwendet, um Dateien zu erstellen, die hochgeladen werden und jedem in der Community zur Verfügung stehen.</td>
+      </tr>
+      <tr>
+        <td>ugc_filetype_microtrans</td>
+        <td>Dies wird verwendet, um Dateien zu beschreiben, die hochgeladen werden, aber nur für das Spiel bestimmt sind, um das Hinzufügen als offiziellen Inhalt zu erwägen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Wenn Sie diese Funktion verwenden, wird ein asynchroner ID-Wert zurückgegeben, der dann geparst werden kann, wenn das <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm">asynchrone</a> Ereignis <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">von Steam</span></a> ausgelöst wird, um die Erstellung des
+    Elements. Das Ereignis enthält die folgenden Schlüssel/Map-Werte in der <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> ds_map:</p>
+  <ul class="colour">
+    <li>&quot;id&quot; - Die asynchrone ID, die von der aufrufenden Funktion zurückgegeben wird</li>
+    <li>&quot;<b>result&quot; -</b> Das Ergebnis der Operation (ein reeller Wert). Dies wird entweder die <span class="notranslate">GML-Konstante</span> <tt>ugc_result_success</tt> oder eine andere reelle Zahl sein. Sie sollten also auf diese Konstante prüfen, um sicherzustellen, dass der Aufruf erfolgreich war, und wenn
+      andernfalls irgendetwas nicht korrekt funktioniert hat. Der Rest der möglichen Werte, die zurückgegeben werden, wird als Ergebnis des <span class="notranslate">Steam-</span> &quot;EResult&quot;-Wertes angezeigt, und Sie sollten in der Datei steamclientpublic <tt>.h in den SDK-Headern</tt> alle 89 möglichen Werte finden.</li>
+    <li>&quot; event_type<b>&quot; -</b> Dieser Schlüssel enthält den Wert &quot; ugc_create_item<b>&quot;</b></li>
+    <li>&quot;legal_agreement_required<b>&quot; -</b> Wird true oder <tt>false</tt> sein (siehe <tt>die</tt> Steam-Dokumente <a href="https://partner.steamgames.com/documentation/ugc#Legal" target="_blank"><span class="notranslate">für</span></a> weitere Details)</li>
+    <li>&quot;<b>published_file_id&quot; -</b> Dieser Schlüssel enthält die eindeutige Veröffentlichungs-ID für das Element, die ein int64 ist (und Sie müssen sie eventuell als solche casten, wenn Sie sie in nachfolgenden Funktionen mit der <a href="../../Variable_Functions/int64.htm"><tt>int64()</tt></a>      Funktion)</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_create_item</span>(consumer_app_id, file_type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>verbraucher_app_id</td>
+        <td>Die eindeutige App-ID für Ihr Spiel auf <span class="notranslate">Steam</span>.</td>
+      </tr>
+      <tr>
+        <td>file_type</td>
+        <td>Eine der verfügbaren Dateitypkonstanten (unten aufgeführt).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Async-ID</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>In diesem Beispiel rufen wir zunächst die Funktion auf und speichern den asynchronen ID-Wert in einer Variablen:</p>
+  <p class="code">var app_id = <span class="notranslate">steam_get_app_id</span>();<br> new_item = <span class="notranslate">steam_ugc_create_item</span>(app_id, ugc_filetype_community);</p>
+  <p>Dies würde dann eine Anfrage an die <span class="notranslate">Steam-API</span> senden, um den neuen Worksop-Artikel zu erstellen, was ein asynchrones Ereignis erzeugt, das wir wie folgt behandeln würden:</p>
+  <p class="code">var event_id = async_load[? &quot;id&quot;];<br> if event_id == new_item<br> {
+    <br> var type = async_load[? &quot;event_type&quot;];<br> if type == &quot;ugc_create_item&quot;<br> {
+    <br> global.Publish_ID = async_load[? &quot;published_file_id&quot;];<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft den Ereignistyp, und wenn er &quot;ugc_create_item&quot; ist, dann ruft er die veröffentlichte Datei-ID ab und speichert sie in einer globalen Variablen für zukünftige Referenzen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Weiter: <a href="steam_ugc_start_item_update.htm"><span class="notranslate">steam_ugc_start_item_update</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_create_item
+ugc_filetype_community
+ugc_filetype_microtrans
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_create_item
+-->
+</body>
+</html>

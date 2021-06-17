@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>device_mouse_raw_y</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for device_mouse_raw_y" />
+  <meta name="rh-index-keywords" content="device_mouse_raw_y" />
+  <meta name="search-keywords" content="device_mouse_raw_y" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>device_mouse_raw_y</h1>
+  <p>Diese Funktion gibt die rohe y-Position der Berührung auf einem Gerät zurück. Das bedeutet, dass sie die tatsächliche Gerätedefinition der y-Position, die berührt wird, zurückgibt, <i>nicht</i> die von <span class="notranslate">GameMaker Studio 2</span>, und daher Dinge wie
+    Ansichtsposition und Skalierung. Beachten Sie, dass die maximale Anzahl von Geräteberührungen, die erkannt werden können, sehr stark vom verwendeten Gerät und dem darauf laufenden Betriebssystem abhängt</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion ist sehr stark geräteabhängig und Sie sollten zunächst mit dem gewünschten Zielmodul und -gerät experimentieren, um zu sehen, was genau zurückgegeben wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">device_mouse_raw_y(device);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Das Gerät (von 0 - <i>n</i>), das geprüft wird.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if device_mouse_check_button(0, mb_left) &amp;&amp; device_mouse_check_button(1, mb_left)<br> {
+    <br> x_av = mean(device_mouse_raw_x(0), device_mouse_raw_x(1));<br> y_av = mean(device_mouse_raw_y(0), device_mouse_raw_y(1));<br> }
+  </p>
+  <p>Der obige Code prüft, ob Gerät1 und Gerät2 gedrückt werden, und wenn dies der Fall ist, wird die durchschnittliche Position der x/y-Koordinaten zwischen den einzelnen Druckpunkten berechnet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Device_Input.htm">Geräteeingang</a></div>
+        <div style="float:right">Weiter: <a href="device_mouse_x_to_gui.htm">device_mouse_x_to_gui</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_mouse_raw_y
+-->
+  <!-- TAGS
+device_mouse_raw_y
+-->
+
+</body></html>

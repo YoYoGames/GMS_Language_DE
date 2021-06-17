@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instanz_position_liste</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_position_list" />
+  <meta name="rh-index-keywords" content="instance_position_list" />
+  <meta name="search-keywords" content="instance_position_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instanz_position_liste</h1>
+  <p>Mit dieser Funktion können Sie eine Position auf eine Kollision mit allen Instanzen eines anderen Objekts prüfen. Wenn Sie dies verwenden, prüfen Sie einen einzelnen Punkt im Raum auf alle Instanzen eines Objekts, und die Prüfung erfolgt gegen die Bounding-Box der
+    Instanzen oder gegen die Maske der Instanzen, wenn für dieses Objekt präzise Kollisionen geprüft wurden.</p>
+  <p>Die Funktion füllt eine (zuvor erstellte) <a href="../../Data_Structures/DS_Lists/DS_Lists.htm">DS-Liste</a> mit den eindeutigen <a href="Instance_Variables/id.htm"><tt>id</tt></a> Werten aller Instanzen des Objekts, die als in
+    Sie haben die Möglichkeit, die Liste nach dem Abstand zwischen der zu prüfenden Position und dem Ursprung der Instanzen zu ordnen, die als kollidierend erkannt wurden. Beachten Sie, dass die Funktion auch das spezielle Schlüsselwort
+    <a href="../../../<span class=" notranslate"="">GML_Overview/Instance_Keywords.htm"><b><tt>alle</tt></b></a>akzeptiert. In diesem Fall werden alle Instanzen aufgelistet, bei denen eine Kollision festgestellt wurde. Die Funktion gibt die Anzahl der gefundenen Instanzen zurück, oder 0, wenn keine gefunden wurden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">instance_position_list(x, y, obj, list, ordered);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der nach Instanzen gesucht werden soll.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der nach Instanzen gesucht werden soll.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das Objekt, das auf Instanzen von geprüft werden soll.</td>
+      </tr>
+      <tr>
+        <td>Liste</td>
+        <td>Die DS-Liste, die zum Speichern der IDs kollidierender Instanzen verwendet wird.</td>
+      </tr>
+      <tr>
+        <td>bestellt</td>
+        <td>Ob die Liste nach Abstand sortiert werden soll<tt>(true</tt>) oder nicht<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Int (Die Anzahl der gefundenen Instanzen, die sich in Kollision befinden)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _list = ds_list_create();<br> var _num = instance_position_list(mouse_x, mouse_y, all, _list, false);<br> if _num &gt; 0<br> {
+    <br> for (var i = 0; i &lt; _num; ++i;)<br> {
+    <br> instance_destroy(_list[| i]);<br> }
+    <br> }
+    <br> ds_list_destroy(_list);
+  </p>
+  <p>Der obige Code prüft auf eine Kollision mit allen Instanzen, die an der Mausposition gefunden werden. Diese werden zu einer DS-Liste hinzugefügt, die dann in einer Schleife durchlaufen wird, um jede der kollidierten Instanzen zu zerstören.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="instance_id_get.htm">instance_id_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_position_list
+-->
+  <!-- TAGS
+instance_position_list
+-->
+</body>
+</html>

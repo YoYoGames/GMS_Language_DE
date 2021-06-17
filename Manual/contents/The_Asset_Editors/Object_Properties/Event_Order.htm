@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ereignis Bestellung</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the async events." />
+  <meta name="rh-index-keywords" content="Objects - Event Order" />
+  <meta name="search-keywords" content="event order" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ereignis Bestellung</h1>
+  <p>Bei der Betrachtung von Ereignissen in <span class="notranslate">GameMaker Studio 2</span> ist zu beachten, dass <strong>die genaue Reihenfolge, in der ALLE Ereignisse in den einzelnen Schritten auftreten, nicht eindeutig festgelegt werden kann</strong>, da sie von der internen Funktionsweise von <span class="notranslate">GameMaker Studio</span>
+    2 abhängt und diese sich im Laufe der Entwicklung der Software ändern kann. Es gibt jedoch bestimmte Ereignisse, die <em>immer </em>in der gleichen Reihenfolge ablaufen werden.</p>
+  <p>Die erste Gruppe von Ereignissen, die immer auf die gleiche Weise ablaufen, sind die, die beim ersten Betreten eines Raums auftreten. Die Reihenfolge, in der die verschiedenen Ereignisse ausgelöst werden, ist:</p>
+  <ul class="colour">
+    <li><strong>Objektvariablen / Instanzvariablen werden initialisiert</strong> (dies sind die Variablen, die Sie in der <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> des <a href="../Objects.htm">Objekteditors</a> oder des <a href="../Rooms.htm">Raumeditors</a> definieren können).
+      Wenn Sie ein Objekt mit angehängten Variablen haben, werden diese vor allem anderen erstellt und alle Instanzen mit angehängten Variablen werden danach definiert, so dass Sie Objektvariablen mit instanzspezifischen Variablen im Raumeditor überschreiben können
+      Editor.</li>
+    <li><strong><strong>Create-Ereignis</strong> </strong>, gefolgt vom<strong> Instanzerstellungscode </strong> <em>jeder </em>Instanz - wenn also jede Instanz erstellt wird, wird zuerst ihr Create-Ereignis und dann ihr Instanzerstellungscode ausgeführt
+      bevor er zur nächsten zu erstellenden Instanz weitergeht</li>
+    <li><strong>Spielstart-Ereignis</strong> - dieses Ereignis wird einmal im allerersten Raum des Spiels für alle Instanzen ausgelöst, die im Raum vom Raumeditor platziert werden (beachten Sie, dass der Aufruf von game_restart() dieses Ereignis erneut auslöst.</li>
+    <li><strong>Raumerstellungscode</strong> - dies ist der einmalige Code, der im Raumeditor geschrieben wird, wenn ein Raum zum ersten Mal betreten wird</li>
+    <li><strong>Raumstart-Ereignis aller Instanzen</strong> - gehört zur Kategorie der &quot;anderen&quot; Ereignisse und wird für alle Instanzen ausgelöst, ob persistent oder nicht</li>
+  </ul>
+  <p>Es ist außerdem erwähnenswert, dass Sie die Reihenfolge, in der bestimmte Instanzen erstellt werden, auch im Raumeditor selbst festlegen können, indem Sie sie in der Liste des Fensters " <a href="../Room_Properties/Layer_Properties.htm">Instance Layer Properties"</a> nach oben oder unten verschieben.</p>
+  <p>Abgesehen von diesen spezifischen Ereignissen gehört die einzige bekannte Reihenfolge, die immer auf die gleiche Weise auftritt, egal was passiert, zu den drei <strong>Schritt-Ereignissen </strong>und den verschiedenen <strong>Zieh-Ereignissen </strong>. Diese werden immer konsistent bleiben, wenn Sie also
+    Wenn Sie also Code haben, der sich auf ein bestimmtes Timing während der einzelnen Schritte des Spiels verlässt, sollten Sie verwenden:</p>
+  <ul class="colour">
+    <li><strong>Beginn des Schrittes Ereignis</strong></li>
+    <li><strong>Schritt-Ereignis</strong> (beachten Sie, dass das Schritt-Ereignis ausgeführt wird, kurz bevor die Instanzen an ihre neuen Positionen gesetzt werden)</li>
+    <li><strong>Ende Schritt Ereignis</strong></li>
+  </ul>
+  <p>Alle Ereignisse zum Zeichnen werden auch immer in der folgenden Reihenfolge behandelt (mit Ausnahme des Ereignisses <strong>Fenstergröße ändern </strong>, das anders ausgelöst wird):</p>
+  <ul class="colour">
+    <li><strong>Ereignis vor der Auslosung</strong></li>
+    <li><strong>Ereignis "Zeichnungsbeginn</strong></li>
+    <li><strong>Auslosung Ereignis</strong></li>
+    <li><strong>Zeichnen Ende Ereignis</strong></li>
+    <li><strong>Post Draw Event</strong></li>
+    <li><strong>Zeichnen GUI-Beginn-Ereignis</strong></li>
+    <li><strong>Zeichnen GUI-Ereignis</strong></li>
+    <li><strong>Zeichnen GUI Ende Ereignis</strong></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Object_Events.htm">Objekt-Ereignisse</a></div>
+        <div style="float:right">Nächste: <a href="Other_Events.htm">Andere Ereignisse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Event Order
+-->
+  <!-- TAGS
+object_event_order
+-->
+
+</body></html>

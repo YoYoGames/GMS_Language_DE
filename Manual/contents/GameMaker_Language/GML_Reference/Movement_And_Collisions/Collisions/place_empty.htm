@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>platz_leer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_empty" />
+  <meta name="rh-index-keywords" content="place_empty" />
+  <meta name="search-keywords" content="place_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>platz_leer</h1>
+  <p>Sie können diese Funktion verwenden, um zu prüfen, ob die aufrufende Instanz mit <i>einer anderen Instanz</i> eines Objekts oder mit allen Instanzen in Ihrem Spiel kollidieren würde. Damit diese Kollision korrekt aufgelöst wird, muss die Instanz, die den Code ausführt, eine gültige Kollisions
+    Maske haben (entweder für das Sprite selbst, oder durch die <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>maske_index</tt></a>) und es werden nur Kollisionen mit solchen Instanzen registriert, die ebenfalls eine gültige Maske haben.</p>
+  <p>Die Funktion prüft, ob es keine Kollisionen gibt, wenn die aufrufende Instanz an einer bestimmten Position platziert wird, und Sie können ein optionales Argument angeben, um die Prüfung zu verfeinern und nur zu prüfen, ob eine Position frei von Kollisionen mit Instanzen des angegebenen
+    Typs ist. Beachten Sie, dass die Prüfung für <i>alle</i> Instanzen innerhalb des Raums durchgeführt wird, wenn keine optionale Objekt-ID angegeben wird. Die Kollisionsprüfung erfolgt entweder präzise oder basierend auf dem Begrenzungsrahmen der Instanz, je nachdem, welche Art von Kollisionsmaske ausgewählt wurde.
+    Maske ausgewählt wurde. Damit präzise Kollisionen korrekt funktionieren, sollten alle Instanzen in der Prüfung präzise Kollisionsmasken haben.</p>
+  <p>Beachten Sie, dass die angegebenen x/y-Koordinaten vor der Prüfung auf die nächste Ganzzahl heruntergerechnet werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">place_empty(x, y, [object_id]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die zu prüfende x-Position.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die zu prüfende y-Position.</td>
+      </tr>
+      <tr>
+        <td>[object_id]</td>
+        <td>Optional! Das Objekt, gegen das geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if place_empty(mouse_x, mouse_y, obj_Enemy)<br> {
+    <br> x = mouse_x;<br> y = mouse_y;<br> }
+  </p>
+  <p>Der obige Code prüft auf eine Kollision mit einer beliebigen anderen Instanz des Objekts &quot;obj_Enemy&quot;, als ob die aufrufende Instanz an der gleichen Position wie die Maus stehen würde. Wenn keine Kollision festgestellt wird, werden die x/y-Koordinaten der Instanz
+    auf die der Maus gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="place_free.htm">place_free</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_empty
+-->
+  <!-- TAGS
+place_empty
+-->
+</body>
+</html>

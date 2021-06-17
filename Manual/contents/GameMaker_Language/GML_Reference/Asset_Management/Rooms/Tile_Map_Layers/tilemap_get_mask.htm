@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_get_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_get_mask" />
+  <meta name="rh-index-keywords" content="tilemap_get_mask" />
+  <meta name="search-keywords" content="tilemap_get_mask" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_get_mask</h1>
+  <p>Mit dieser Funktion können Sie den Bitmaskenwert für die angegebene Tilemap abrufen. Sie geben die ID des Tilemap-Elements an (die Sie erhalten, wenn Sie ein Tilemap-Element mit <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a> oder wenn
+    Sie die Funktion <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), und die Funktion gibt den aktuellen Maskenwert zurück oder -1, wenn ein Fehler vorliegt, oder 0, wenn keine Maske angegeben ist. Für weitere Informationen über Kachel-Map-Bitmasken
+    siehe die Funktion <a href="tilemap_set_mask.htm"><tt>tilemap_set_mask()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">tilemap_get_mask(tilemap_element_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>Der eindeutige ID-Wert des Tile-Map-Elements, um die Maske von</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (0 für keine Maske, -1 für einen Fehler)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var mask = tilemap_get_mask(map_id);<br> var new_mask = tile_mirror | tile_flip | tile_rotate | 255;<br> if mask != new_mask<br> {
+    <br> tilemap_set_mask(map_id, new_mask);<br> }
+  </p>
+  <p>Der obige Code holt sich die Tile-Map-ID aus der angegebenen Ebene und überprüft dann den damit verbundenen Maskenwert. Wenn er nicht mit dem in der Variablen &quot;new_mask&quot; definierten Wert übereinstimmt, wird er auf diesen Wert gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Tile_Map_Layers.htm">Kachelkartenebenen</a></div>
+        <div style="float:right">Weiter: <a href="tilemap_get_global_mask.htm">tilemap_get_global_mask</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_get_mask
+-->
+  <!-- TAGS
+tilemap_get_mask
+-->
+</body>
+</html>

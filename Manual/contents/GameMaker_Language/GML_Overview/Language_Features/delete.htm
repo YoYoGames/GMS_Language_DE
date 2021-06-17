@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>löschen.</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the delete function" />
+  <meta name="rh-index-keywords" content="delete" />
+  <meta name="search-keywords" content="delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>löschen.</h1>
+  <p>Der Operator <span class="inline">delete</span> wird verwendet, um eine <a href="../Structs.htm">Struktur</a> <strong>zu de-referenzieren</strong>, und hat die folgende Syntax:</p>
+  <p class="code">löschen &lt;Variable&gt;;</p>
+  <p>Das bedeutet, dass Sie den delete-Operator zusammen mit der Variablen aufrufen, die ein struct enthält, und er wird den spezifischen <em>Verweis </em>auf das struct entfernen, das in der angegebenen Variablen gespeichert ist (ein Verweis ist einfach ein Wert, der auf den Speicherbereich zeigt
+    zeigt, in dem das struct und sein Inhalt gespeichert sind). Wenn dieser Verweis der letzte Verweis auf das struct in Ihrem Spiel war, dann wird der <a class="glossterm" data-glossterm="Müllsammler" href="#">Garbage Collector</a> das struct aus dem Speicher in
+    einer folgenden <a class="glossterm" data-glossterm="Iteration" href="#">Iteration</a> aus dem Speicher entfernen, typischerweise gleich zu Beginn des nächsten Schritts.</p>
+  <p class="note"><strong>HINWEIS</strong>: <tt>delete</tt> kann nur zusammen mit Variablen und <i>nicht</i> mit Ausdrücken verwendet werden.</p>
+  <p>Standardmäßig werden Strukturen, auf die im Code nicht mehr verwiesen wird, in den auf ihre Verwendung folgenden Schritten automatisch gelöscht, aber es ist eine gute Praxis, diesen Operator zu verwenden, um sie explizit für den Garbage Collector zu markieren, damit er sie zu Beginn des folgenden Schritts aus dem Speicher entfernt.
+    Schritt aus dem Speicher zu entfernen, wodurch der Speicher schneller und effizienter freigegeben wird.</p>
+  <p>Das folgende Beispiel zeigt, wie eine Struktur erstellt wird - zum Beispiel im Create-Event einer Instanz:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 0,<br> b : 100,<br> c : &quot;Hello World&quot;<br> }
+  </p>
+  <p>Diese Struktur wird dann wie üblich in den Instanzereignissen verwendet, bevor sie schließlich im Ereignis " <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Aufräumen</a> " für die Garbage Collection gekennzeichnet wird, wie hier:</p>
+  <p class="code">mystruct löschen;</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="If_Else_and_Conditional_Operators.htm">if / else und bedingte Operatoren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+delete
+-->
+  <!-- TAGS
+delete
+-->
+
+</body></html>

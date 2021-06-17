@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sync_group_is_playing</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sync_group_is_playing" />
+  <meta name="rh-index-keywords" content="audio_sync_group_is_playing" />
+  <meta name="search-keywords" content="audio_sync_group_is_playing" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sync_group_is_playing</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob Audiodaten in einer synchronisierten Gruppe abgespielt werden. Sie müssen die Sync-Gruppen-ID angeben, wie sie von der Funktion <a href="audio_create_sync_group.htm"><tt>audio_create_sync_group()</tt></a>.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktionalität ist für die HTML5-Zielplattform nicht verfügbar.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_sync_group_is_playing(group_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>gruppen_index</td>
+        <td>Der zu prüfende Gruppenindex.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if audio_sync_group_is_playing(group_one)<br> {
+    <br> audio_stop_sync_group(group_one);
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob die Sync-Gruppe <tt>group_one</tt> gerade abgespielt wird, und wenn ja, wird die Gruppe gestoppt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Synchronisation.htm">Audio-Synchronisation</a></div>
+        <div style="float:right">Weiter: <a href="audio_create_sync_group.htm">audio_create_sync_group</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sync_group_is_playing
+-->
+  <!-- TAGS
+audio_sync_group_is_playing
+-->
+</body>
+</html>

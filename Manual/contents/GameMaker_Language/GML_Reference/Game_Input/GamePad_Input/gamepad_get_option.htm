@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_get_option</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_option" />
+  <meta name="rh-index-keywords" content="gamepad_get_option" />
+  <meta name="search-keywords" content="gamepad_get_option" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_option</h1>
+  <p>Diese Funktion kann verwendet werden, um den angegebenen Optionswert abzurufen. Sie geben den zu prüfenden Gamepad-&quot;Steckplatz&quot; sowie die Optionszeichenfolge an und die Funktion gibt den zugehörigen Wert zurück. Die verfügbare Optionszeichenfolge hängt von der Plattform ab, auf der
+    auf der das Projekt ausgeführt wird, wie unten aufgeführt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Option</th>
+        <th>Plattform</th>
+        <th>Beschreibung</th>
+        <th>Rückgabe</th>
+      </tr>
+      <tr>
+        <td>&quot;allow_rotation&quot;</td>
+        <td><span class="notranslate">tvOS</span></td>
+        <td>Gibt zurück, ob die Siri Remote drehgesperrt ist (d. h. nur vertikal verwendet werden kann) oder nicht. Wenn die Rotationssperre aufgehoben ist, wird durch Drehen des Steuerelements die Eingabe geändert, so dass bei einer Drehung um 90º nach links die &quot;rechte&quot; Seite des Touchpads nach oben zeigt usw.
+          usw., so dass alle Eingaben relativ zur Ausrichtung des Geräts erfolgen.</td>
+        <td>Boolesche</td>
+      </tr>
+      <tr>
+        <td>&quot;dpad_absolute&quot;</td>
+        <td><span class="notranslate">tvOS</span></td>
+        <td>Gibt zurück, ob das Touchpad der Siri Remote eine absolute oder eine relative Eingabe akzeptiert. Im absoluten Modus wird die Mitte des Touchpads als (0,0) Position betrachtet - d. h. dort, wo der Analogstick in Ruhe ist oder wo die Mitte des D-Pads sein würde
+          - und die Bewegung um diese Position erzeugt eine Eingabe. Bei der Einstellung "Relativ" wird die Position (0,0) als der Ort betrachtet, an dem die erste Berührung des Pads erfolgt, und alle Eingaben werden von dieser Position aus generiert, nicht von der Mitte des Pads.
+          des Pads.</td>
+        <td>Boolesche</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gamepad_get_option(gerät, option_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gerät</td>
+        <td>Welcher Gamepad-Geräte-&quot;Steckplatz&quot; zu prüfen ist.</td>
+      </tr>
+      <tr>
+        <td>option_name</td>
+        <td>Der Name der Option, von der der Wert geholt werden soll (eine Zeichenkette, siehe Tabelle oben)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Int, Bool, Real, String, N/A (abhängig von der Plattform)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">for(var i = 0; i &lt; 12; ++i;)<br> {
+    <br> if gamepad_is_connected(i) &amp;&amp; gamepad_get_description(i) == &quot; tvOS Siri<span class="notranslate">Remote&quot;</span><br> {
+    <br> if gamepad_get_option(i, &quot;allow_rotation&quot;) == false<br> {
+    <br> gamepad_set_option(i, &quot;allow_rotation&quot;, true);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code durchläuft alle Gamepad-Slots und sucht nach der &quot;Siri Remote&quot; auf der <span class="notranslate">tvOS-Plattform.</span> Wenn eine erkannt wird, wird die Fernbedienung so eingestellt, dass eine Eingabedrehung möglich ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Input.htm">Gamepad-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="gamepad_set_button_threshold.htm"> gamepad_set_button_threshold </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_option
+-->
+  <!-- TAGS
+gamepad_get_option
+-->
+
+</body></html>

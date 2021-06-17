@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_stack_pop</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_stack_pop" />
+  <meta name="rh-index-keywords" content="matrix_stack_pop" />
+  <meta name="search-keywords" content="matrix_stack_pop" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_stack_pop</h1>
+  <p>Diese Funktion holt die aktuelle Top-Matrix vom Stack.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">matrix_stack_pop();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var m1 = matrix_build(66, 145, 0, 0, 0, 0, 1, 1, 1);<br> var m2 = matrix_build(0, 0, 0, 0, 0, image_angle * 6, 1, 1, 1) ;<br> matrix_stack_push(m1);
+    <br> matrix_stack_push(m2);
+    <br> matrix_set(matrix_world, matrix_stack_top());<br> draw_sprite(tyre, 0, 0, 0);<br> matrix_stack_pop();
+    <br> matrix_stack_pop();
+  </p>
+  <p>Der obige Code erstellt zwei neue Matrizen und schiebt sie dann auf den Matrix-Stack. Die Weltmatrix wird dann an die Spitze des Stapels gesetzt, ein Sprite wird gezeichnet und die Transformationen werden dann vom Stapel gepoppt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Matrix_Functions.htm">Matrix-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="matrix_stack_top.htm">matrix_stack_top</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_stack_pop
+-->
+  <!-- TAGS
+matrix_stack_pop
+-->
+
+</body></html>

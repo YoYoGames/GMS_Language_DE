@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Skripte</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the script editor works" />
+  <meta name="rh-index-keywords" content="Script Editor" />
+  <meta name="search-keywords" content="scripts" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Skript-Editor</h1>
+  <p><img alt="The Script Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts.png">Dieser Abschnitt befasst sich mit dem <strong>Skript-Editor</strong> (auch <strong>Text-Editor</strong> genannt), in den Sie den gesamten Code eingeben, den
+    Ihr Spiel benötigt, um zu laufen. Dieser Editor wird zum Erstellen von benutzerdefinierten Skript-Assets sowie zum Codieren von <a href="Object_Properties/Object_Events.htm">Objektereignissen</a>, zum Hinzufügen von <a href="Room_Properties/Room_Properties.htm">Code für die Raumerstellung</a> und für viele andere Dinge verwendet,
+    und für viele andere Dinge. Daher wird in diesem Abschnitt nur beschrieben, wie der Skript-Editor funktioniert, <em>nicht aber</em>, wie Sie Skript-Assets erstellen oder wie Sie Skripts per <span class="notranslate">Drag and Drop™</span>erstellen. Dazu lesen Sie bitte die folgenden Abschnitte: </p>
+  <ul class="colour">
+    <li><a href="../GameMaker_Language/GML_Overview/Script_Functions.htm"><span class="notranslate">GML-Skripte</span> </a></li>
+    <li><a href="../Drag_And_Drop/Drag_And_Drop_Overview/Action_Block_Functions.htm"><span class="notranslate">DnD™</span>Skripte</a></li>
+  </ul>
+  <p>Im Script-Editor schreiben Sie Ihren <span class="notranslate">GameMaker Language-Code</span>, die eingebaute Programmiersprache, die <span class="notranslate">GameMaker Studio 2</span> verwendet (weitere Einzelheiten finden Sie im Abschnitt <a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">GML-Referenz</span></a> ).
+    Sobald Sie mit <span class="notranslate">GameMaker Studio 2</span> besser vertraut sind und es in vollem Umfang nutzen möchten, ist es ratsam, mit dem Erlernen dieser Sprache zu beginnen, da sie Ihre Möglichkeiten beim Erstellen von Spielen erheblich erweitert.</p>
+  <p>Ein Skript-Asset kann benannt werden, indem Sie im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> klicken und <em>Umbenennen</em> wählen,
+    Beachten Sie jedoch, dass der Skriptname den Skriptregeln für Funktionen entsprechen muss, d. h. er darf nur alphanumerisch sein, muss mit einem Buchstaben beginnen und darf als einziges Symbol das &quot;_&quot;-Unterstrich-Symbol enthalten. Der Skript-Editor an anderen Stellen
+    kann nicht umbenannt werden und hat einen Namen, der für das zu bearbeitende Objekt spezifisch ist, wie z. B. ein Objekt-Ereignis.</p>
+  <p>Wenn Sie das Skript-Editor-Fenster öffnen, hat es die folgenden Optionen und das folgende Layout:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Registerkarte Skript / Ereignis</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Der Skript-Editor wird in einem Fenster mit Registerkarten am oberen Rand geöffnet, damit Sie mehrere Skripte oder Ereignisse in einem Fenster haben können (obwohl dieses Verhalten in den <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">Voreinstellungen</a> geändert werden kann, um jedem Skript oder Ereignis ein neues Fenster zu geben). Sie können auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf eine Registerkarte klicken und sie dann ziehen, um die Reihenfolge der Registerkarten zu ändern, oder - wenn Sie es vorziehen - können Sie
+      aus dem aktuellen Fenster herausziehen und auf der Arbeitsfläche platzieren, um ein neues Fenster für dieses Skript zu erstellen (oder es zu einem anderen Fenster hinzuzufügen), und Sie können auch den Skript-Editor maximieren, um ebenfalls einen neuen Arbeitsbereich zu erstellen. Wenn Sie eine Skript-Registerkarte aus dem
+     <a class="glossterm" data-glossterm="IDE" href="#">IDE-Fenster</a> ziehen, wird eine neue IDE erzeugt, die diese Skript-Ressource enthält und die Sie wie das Hauptfenster verwenden können.</p>
+    <p class="dropspot">Beachten Sie, dass, wenn Sie Code aus einem <strong>Objektereignis </strong>im Skript-Editor bearbeiten und Sie den Skript-Editor maximiert haben oder ihn in einem separaten Fenster oder Arbeitsbereich haben, das Rechtsklick-Menü <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> Editor einige zusätzliche Optionen enthält:</p>
+    <p class="dropspot"><img alt="Script Editor RMB Object Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_RMB_Object_Menu.png" /></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>In Arbeitsbereich wiederherstellen</strong>: Dies nimmt den Skript-Editor aus einem maximierten/Arbeitsbereich-Zustand heraus und kettet ihn wieder an das Objekt im Arbeitsbereich.</li>
+      <li class="dropspot"><strong>Gehen Sie zu Objekt</strong>: Damit wechseln Sie zu dem Arbeitsbereich, auf dem sich das Objekt mit dem Code befindet, und fokussieren auf das Objekt.</li>
+      <li class="dropspot"><strong>Ereignis hinzufügen/öffnen</strong>: Damit können Sie dem Objekt, zu dem das aktuelle Skript gehört, ein neues Ereignis hinzufügen und eine neue Code-Registerkarte im Skript-Editor für das hinzugefügte Ereignis öffnen. Wenn das ausgewählte Ereignis bereits Code enthält, wird dieser
+        wird in einer neuen Registerkarte geöffnet.</li>
+    </ul>
+    <p class="dropspot">Informationen zu den übrigen Optionen des Rechtsklick-Menüs <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> finden Sie im Abschnitt " <strong>Bearbeiten"</strong> weiter unten.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Dachrinne</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Der <strong>Gutter </strong>wird verwendet, um die Zeilennummern für Ihren Code anzuzeigen und auch um einige spezifische Informationen über den Zustand des Codes zu vermitteln. Das Wichtigste: Wenn Sie einen <a class="glossterm" data-glossterm="Tippfehler" href="#">Tippfehler</a> machen oder den Code falsch konstruieren, informiert die <span class="notranslate">GameMaker Studio 2</span> <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> Sie über das Problem, indem sie die Codezeile mit einem roten Ausrufezeichen <img alt="Code Error Icon" height="17" src="../assets/Images/Icons/Icon_CodeError.png" width="18"> markiert, das einen <a class="glossterm" data-glossterm="Syntax" href="#">Syntaxfehler</a> anzeigt. Sie können dann mit der Maus über das Symbol fahren, um eine kurze Beschreibung des Problems zu erhalten:</p>
+    <p class="dropspot"><img alt="Script Editor Syntax Error" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Errors.png">Weitere Informationen zu Syntaxfehlern (und allgemeinen Fehlern beim Testen oder Kompilieren Ihres Codes) finden Sie im folgenden Abschnitt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../Additional_Information/Error_Reporting.htm">Fehlerberichterstattung</a></li>
+    </ul>
+    <p class="dropspot">Die Rinne markiert auch jede Zeile des Skripts, der ein <strong>Haltepunkt </strong>hinzugefügt wurde. Ein Haltepunkt ist einfach eine Stelle im Skript, an der Sie möchten, dass der <a href="../IDE_Tools/The_Debugger.htm">Debugger</a> die Ausführung Ihres Spiels anhält, wenn er diese Stelle erreicht.
+      Spiel anhalten soll, wenn er erreicht wird. Sie können einen Haltepunkt von jeder beliebigen Zeile eines Skripts oder Objekt-Events aus umschalten, indem Sie &quot;<span class="inline">f9</span>&quot; drücken oder das Rechtsklickmenü <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> verwenden. Wenn Sie einen Haltepunkt hinzufügen, wird er wie folgt in der Rinne angezeigt:</p>
+    <p class="dropspot"><img alt="Script Editor Breakpoint Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Breakpoint.png">Schließlich zeigt die Gosse auch alle mit Lesezeichen versehenen Elemente an. Um ein Lesezeichen für eine Code-Zeile zu setzen, halten Sie einfach <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + <span class="inline">Number</span> (von 0 bis 9) gedrückt, und dies erlaubt Ihnen, von überall in der IDE zu dieser Code-Zeile zurückzuspringen, indem Sie einfach <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">Number</span> (von 0 bis 9) verwenden. Um das Lesezeichen zu löschen, führen Sie einfach die gleiche Aktion aus, mit der Sie es hinzugefügt haben
+      auf die Codezeile aus. Wenn ein Lesezeichen hinzugefügt wurde, wird es wie folgt angezeigt:</p>
+    <p class="dropspot"><img alt="Script Editor Bookmark Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Bookmark.png" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Suchen / Ersetzen</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Während Sie im Skript-Editor arbeiten, können Sie <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">F</span>&quot; drücken, um das Suchfeld zu öffnen, oder <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">H</span>&quot;, um Suchen und Ersetzen zu öffnen:</p>
+    <p class="dropspot"><img alt="Script Editor Search Box" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Search.png">Hier können Sie eine <em>lokale </em>Suche nach dem eingegebenen Stichwort durchführen und nach Eingabe des Suchbegriffs mit Hilfe der
+      die Pfeile am oberen rechten Rand des Suchfensters von einem gefundenen Begriff zum nächsten im Skript springen. Sie können die Art und Weise, wie der Suchvorgang durchgeführt wird, durch Umschalten der folgenden Schaltflächen ändern:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Exact Word Icon" src="../assets/Images/Icons/Icon_ExactWord.png" style="margin-left: 24px;" /></td>
+          <td class="text">Wenn Sie dies einschalten, markiert die Suchfunktion nur die Zeichenfolgen, die mit der gesamten Eingabe übereinstimmen. Wenn sie beispielsweise ausgeschaltet ist, werden bei einer Suche nach &quot;<em>random&quot;</em> alle Wörter angezeigt, die diese Zeichenfolge enthalten - wie <span class="inline">irandom()</span>,
+            oder <span class="inline">randomise()</span> - während das Umschalten auf "Ein" nur die Funktion <span class="inline">random()</span> anzeigen würde.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Case Sensitive Icon" src="../assets/Images/Icons/Icon_CaseSensitive.png" style="margin-left: 24px" /></td>
+          <td class="text">Wenn diese Option eingeschaltet ist, weisen Sie <span class="notranslate">GameMaker Studio 2</span> an, nicht nur den Inhalt des Suchstrings zu prüfen, sondern auch die Groß-/Kleinschreibung. Wenn Sie z. B. ein Sprite mit dem Namen &quot;<span class="inline">spr_Dog</span>&quot; haben und eine Suche nach
+            &quot;Hund&quot; suchen, wird <em>der</em> Sprite-String hervorgehoben, wenn diese Option jedoch aktiviert ist, wird er nicht hervorgehoben, da &quot;Hund&quot; nicht mehr als &quot;Hund&quot; betrachtet wird.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Wenn Sie das Suchfenster mit <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">F</span>&quot; geöffnet haben, dann ist die Ersetzen-Funktion nicht sichtbar, so dass Sie auf die Schaltfläche Ersetzen <img alt="Replace Toggle Icon" class="icon" src="../assets/Images/Icons/Icon_ReplaceToggle.png"> klicken müssen, um sie zu öffnen.
+      sie zu öffnen. Sobald es geöffnet ist, können Sie eine Zeichenfolge eingeben, die zum Ersetzen einer beliebigen Suchzeichenfolge verwendet wird, indem Sie die folgenden Schaltflächen verwenden, um die Aktion auszuführen:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Replace Next Icon" src="../assets/Images/Icons/Icon_ReplaceNext.png" style="margin-left: 24px" /></td>
+          <td class="text">Wenn Sie hierauf klicken, wird der nächste im Skript gefundene Suchbegriff durch die angegebene Ersetzungszeichenfolge ersetzt. Beachten Sie, dass als &quot;nächster&quot; Begriff der nächste Begriff nach der aktuellen Cursorposition gilt, und Sie können mit den Pfeil
+            Schaltflächen oben rechts im Suchfenster zu verschiedenen Begriffen springen.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Replace All Icon" src="../assets/Images/Icons/Icon_ReplaceAll.png" style="margin-left: 24px" /></td>
+          <td class="text">Wenn Sie hierauf klicken, werden <em>alle </em>Beispiele des Suchbegriffs innerhalb des Skripts durch die angegebene Ersetzungszeichenfolge ersetzt.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Beachten Sie, dass Sie, wenn Sie eine <em>globale </em>Suche durchführen möchten (d. h. das gesamte Projekt und nicht das aktuelle Skript oder Ereignis durchsuchen), <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;F&quot; drücken können.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Haupt-Code-Editor</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Der Hauptcode-Editor ist der Ort, an dem Sie Ihren gesamten Code schreiben, um das Skript-Asset zu erstellen oder ein Objekt-Event zu füllen. Die eigentliche Bearbeitung Ihres Codes wird im Abschnitt " <strong>Bearbeiten"</strong> weiter unten auf dieser Seite behandelt.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Informationen</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Die Informationsleiste am unteren Rand der IDE zeigt Ihnen die aktuelle Zeilennummer, in der Sie sich befinden, und die Position in der Zeile an. Hier sehen Sie auch die Codehilfe, eine Textzeile, die die Funktion, die Sie gerade bearbeiten, zusammen mit
+      mit den Argumenten, die sie benötigt. Wenn Sie die Funktion im Editor ausfüllen, werden die Argumente hervorgehoben, um Ihnen zu zeigen, welches Argument Sie gerade bearbeiten.</p>
+    <p class="dropspot">Beachten Sie, dass alle optionalen Argumente in Ihren Skriptfunktionen mit <tt>[]</tt> -Klammern um sie herum angezeigt werden. Wenn Sie die <a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">JSDoc-Skriptkommentare</a> innerhalb eines Skript-Assets verwendet haben, werden die
+      Informationen, die Sie bereitgestellt haben, auch hier angezeigt.</p>
+  </div>
+  <p> </p>
+  <p>Weitere Informationen zur Verwendung des Skript- und Code-Editors erhalten Sie auf den folgenden Seiten:</p>
+  <ul class="colour">
+    <li><a href="Code_Editor_Properties/Editing_Code.htm">Code editieren</a></li>
+    <li><a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">JSDoc-Kommentare</a></li>
+    <li><a href="Code_Editor_Properties/Code_Snippets.htm">Code-Schnipsel</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Sequences.htm">Sequenzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Editor
+-->
+  <!-- TAGS
+script_editor
+-->
+
+</body></html>

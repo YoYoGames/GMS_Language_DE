@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_view_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_view_size" />
+  <meta name="rh-index-keywords" content="camera_set_view_size" />
+  <meta name="search-keywords" content="camera_set_view_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_view_size</h1>
+  <p>Sie können diese Funktion verwenden, um die Größe der Fachkamera innerhalb des Raums zu aktualisieren. Sie geben den eindeutigen Kamera-ID-Wert an (wie er von den verschiedenen <a href="camera_create.htm"><tt>camera_create()</tt></a> Funktionen zurückgegeben wird) und geben Sie dann die Breite und Höhe
+    (in Pixel) an, auf die die Kamera eingestellt werden soll.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_set_view_size(camera_id, width, height)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde.</td>
+      </tr>
+      <tr>
+        <td>Breite</td>
+        <td>Die Breite der Kameraansicht in Pixel</td>
+      </tr>
+      <tr>
+        <td>Höhe</td>
+        <td>Die Höhe der Kameraansicht in Pixel</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">camera_set_view_size(view_camera[0], view_wport[0], view_hport[0]);</p>
+  <p>Der obige Code stellt die Größe der Fachkamera für die Kamera ein, die dem Anschluss view[0] zugewiesen ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_set_view_speed.htm">camera_set_view_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_view_size
+-->
+  <!-- TAGS
+camera_set_view_size
+-->
+</body>
+</html>

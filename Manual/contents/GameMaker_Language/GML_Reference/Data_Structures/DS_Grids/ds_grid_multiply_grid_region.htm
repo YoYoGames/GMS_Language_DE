@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_multiply_grid_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_multiply_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_multiply_grid_region" />
+  <meta name="search-keywords" content="ds_grid_multiply_grid_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_multiply_grid_region</h1>
+  <p>Mit dieser Funktion können Sie einen Bereich innerhalb eines gegebenen DS-Gitters definieren, dann diese Werte nehmen und sie mit denen multiplizieren, die in einer separaten Region entweder desselben DS-Gitters oder eines anderen (das zuvor erstellt wurde) gefunden wurden. Die ursprüngliche Region wird
+    bleibt unverändert, während der Bereich, mit dem sie multipliziert wurden, nun die neuen Werte für jede Zelle speichert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_grid_multiply_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Zielgitters.</td>
+      </tr>
+      <tr>
+        <td>Quelle</td>
+        <td>Der Index des Quellgitters.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die linke Position des zu kopierenden Bereichs von Zellen aus dem Quellgitter.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die obere Position des Bereichs der Zellen, die aus dem Quellgitter kopiert werden sollen.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die rechte Position des zu kopierenden Bereichs von Zellen aus dem Quellgitter.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die untere Position des Bereichs der Zellen, die aus dem Quellgitter kopiert werden sollen.</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>Die x-Position auf dem Zielraster, mit der die Quellregion multipliziert werden soll.</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>Die y-Position auf dem Zielraster, mit der die Quellregion multipliziert werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">ds_grid_multiply_grid_region(mygrid, mygrid, 0, 0, 5, 5, 0, 0)</p>
+  <p>Dies würde den Bereich der Zellen von (0,0) bis (5,5) des DS-Gitters &quot;mygrid&quot; nehmen und mit den Zellen von der Position (0,0) des gleichen DS-Gitters multiplizieren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Grids.htm">DS-Gitter</a></div>
+        <div style="float:right">Weiter: <a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_multiply_grid_region
+-->
+  <!-- TAGS
+ds_grid_multiply_grid_region
+-->
+
+</body></html>

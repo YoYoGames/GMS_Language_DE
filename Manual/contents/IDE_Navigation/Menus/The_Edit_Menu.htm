@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Das Menü Bearbeiten</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section on the Edit Menu" />
+  <meta name="rh-index-keywords" content="Menu - Edit" />
+  <meta name="search-keywords" content="edit menu,search and replace,search,replace,undo,redo" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Das Menü Bearbeiten</h1>
+  <p><img alt="The Edit Menu" class="center" src="../../assets/Images/IDE_Input/Edit_Menu.png" /></p>
+  <p>Im Bearbeitungsmenü können Sie die allgemeinen Bearbeitungswerkzeuge der <span class="notranslate">GameMaker Studio 2-Oberfläche</span> verwenden. Die verfügbaren Optionen sind:</p>
+  <ul class="colour">
+    <li><strong>Rückgängig </strong>- Macht eine Aktion rückgängig.</li>
+    <li><strong>Wiederholen </strong>- Wiederholt eine vorherige Aktion.</li>
+    <li><strong>Suchen und Ersetzen </strong>- Damit wird ein Suchfenster geöffnet, mit dem Sie Ihren gesamten Code (einschließlich Raumerstellungscode, Skripte und Ereignisse) nach einer bestimmten Eingabe durchsuchen können - siehe unten für weitere Informationen.</li>
+  </ul>
+  <p>Wenn Sie im Menü "Bearbeiten" die Option "Suchen &amp; Ersetzen" wählen, wird das folgende Fenster geöffnet:</p>
+  <p><img alt="Search In Assets Window" class="center" src="../../assets/Images/IDE_Input/Search_Menu.png">Damit können Sie alle geskripteten Assets in Ihrem Spiel durchsuchen, einschließlich Raumcode, Ereigniscode, Skripts und <span class="notranslate">Shader</span>. Wenn Sie suchen, können Sie
+    können Sie einen neuen Suchbegriff in das Feld oben eingeben, oder Sie können auf das Pfeilsymbol rechts klicken, um eine Liste der zuvor gesuchten Begriffe zu öffnen. Sie haben auch die Möglichkeit, einen Ersatzbegriff anzugeben, der anstelle des ursprünglichen Suchbegriffs verwendet wird.
+    Begriff ersetzt werden soll, und auch hier gibt es die Möglichkeit, über die Pfeilschaltfläche rechts eine zuvor verwendete Ersetzungszeichenfolge zu verwenden.</p>
+  <p>Die Suche kann allgemein sein oder Sie können sie mit den Optionen unter den Suchbegriffeingaben verfeinern:</p>
+  <ul class="colour">
+    <li>Sie können die <strong>Groß-/Kleinschreibung</strong> bei der Suche <strong>berücksichtigen</strong>. In diesem Fall werden nur Wörter einbezogen, die genau mit der Groß-/Kleinschreibung des Suchstrings übereinstimmen, d. h.: Wenn Sie ohne diese Option nach &quot;My_Var&quot; suchen, erhalten Sie Ergebnisse mit &quot;my_var&quot;,
+      &quot;mY_VAR&quot; oder &quot;My_Var&quot;, aber wenn diese Option aktiviert ist, wird nur &quot;My_Var&quot; in die Suchergebnisse aufgenommen.</li>
+    <li>In diesem Fall werden alle Ergebnisse, die den <strong>Suchbegriff</strong> enthalten, aber keine exakte Übereinstimmung sind, ignoriert, d.h.: eine Suche nach &quot;game&quot; ohne diese Option
+      wird Dinge wie die Funktion &quot;game_end()&quot; oder Variablen wie &quot;game_state&quot; anzeigen, während eine Suche nach &quot;game&quot; mit dieser Option nur Ergebnisse zeigt, die &quot;game&quot; selbst sind.</li>
+    <li>Sie können wählen, ob die Suche <strong>Kommentare ignorieren</strong> soll. Wenn dies aktiviert ist, werden alle Kommentare in Ihrem Code, die den Suchbegriff enthalten, einfach ignoriert und nicht in den Ausgabeergebnissen angezeigt.</li>
+    <li>Sie können einen <strong>Filter </strong>auf die Suchergebnisse anwenden, der auf den verschiedenen Asset-Typen im Asset-Browser basiert. Standardmäßig ist dies auf &quot;Alles&quot; eingestellt, aber wenn Sie darauf klicken, öffnet sich das folgende Menü, in dem Sie Folgendes an- oder abwählen können
+      Assets, die in die Suche einbezogen werden sollen:</li>
+  </ul>
+  <p><img alt="Search Filter Options" class="center" src="../../assets/Images/IDE_Input/Search_Menu_Filter.png">Nachdem Sie einen Suchbegriff (und optional einen Ersetzungsbegriff) eingegeben und die Suchoptionen eingerichtet haben, können Sie mit den verschiedenen Schaltflächen am unteren Rand
+    wählen, wie die Suche durchgeführt werden soll und welche Aktionen durchgeführt werden sollen. Diese Schaltflächen sind:</p>
+  <ul class="colour">
+    <li><strong>Alle suchen</strong>: Findet alle Suchbegriffe und zeigt sie im Ausgabefenster an.</li>
+    <li><strong>Vorherige suchen</strong>: Sucht die vorherige Instanz des Suchbegriffs. Dadurch wird das Asset, das den Verweis enthält, im Arbeitsbereich geöffnet (wenn es nicht bereits geöffnet ist) und der Schwenk dorthin ausgeführt.</li>
+    <li><strong>Weiter suchen</strong>: Sucht die nächste Instanz des Suchbegriffs. Dadurch wird das Asset, das den Verweis enthält, im Arbeitsbereich geöffnet (wenn es nicht bereits geöffnet ist) und der Schwenk dorthin ausgeführt.</li>
+    <li><strong>Alle ersetzen</strong>: Dies führt eine Suche nach dem angegebenen Begriff mit den eingestellten Optionen durch und ersetzt ihn auch in den Assets durch den neuen Ersetzungsbegriff, den Sie angegeben haben.</li>
+    <li><strong>Ersetzen</strong>: Damit wird der aktuell ausgewählte Begriff im aktuellen Editor, wo er markiert ist, durch den ausgewählten Ersetzen-Begriff ersetzt.</li>
+    <li><strong>Suche anhalten</strong>: Stoppt die aktuelle Suche, wenn eine solche läuft.</li>
+  </ul>
+  <p>Wenn Sie die <strong>Escape-Taste </strong>drücken, während dieses Fenster geöffnet ist, wird das ausgewählte Feld gelöscht; wenn das Feld jedoch bereits leer ist, wird das Fenster geschlossen.</p>
+  <p>Alle Ergebnisse der Verwendung des Fensters "Suchen &amp; Ersetzen" werden im <a href="../../Introduction/The_Output_Window.htm">Fenster "Suchausgabe"</a> unten in der IDE angezeigt. Jedes Ergebnis kann <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> doppelt angeklickt werden, um das Asset mit dem Begriff im aktuellen Arbeitsbereich zu öffnen und dorthin zu schwenken, um es zu bearbeiten.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Menus.htm">Menüs</a></div>
+        <div style="float:right">Weiter: <a href="The_Build_Menu.htm">Das Menü "Bauen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Edit Menu
+-->
+  <!-- TAGS
+edit_menu
+-->
+</body>
+</html>

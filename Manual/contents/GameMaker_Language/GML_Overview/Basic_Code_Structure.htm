@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Grundlegende Code-Struktur</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the basic code structure when using GML" />
+  <meta name="rh-index-keywords" content="Code Structure" />
+  <meta name="search-keywords" content="Code Structure,begin,end,statement" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Grundlegende Code-Struktur</h1>
+  <p>Code wird in <em>Blöcken</em> geschrieben, und ein typischer Codeblock besteht aus einer Reihe von Anweisungen, den so genannten<span class="glossextra">Statements</span>, die dann von <span class="notranslate">GameMaker Studio</span>
+    2 interpretiert und verwendet werden, um etwas in Ihrem Spiel zu bewirken. Dieses &quot;Etwas&quot; kann so einfach sein wie die Addition von 2 und 2, um 4 zu erhalten, oder so komplex wie das Weglaufen eines Gegners, wenn seine Gesundheit unter einen bestimmten Wert sinkt. Die tatsächliche Struktur des Programms
+    kann stark variieren, je nachdem, welche Funktionen es verwendet, aber auf die Grundlagen heruntergebrochen sieht es so aus:</p>
+  <p class="code">&lt;Statement&gt;;<br> &lt;Statement&gt;;
+    <br> ...
+  </p>
+  <p>Anweisungen sollten mit einem ';'-Symbol getrennt werden, um Fehler mit <a class="glossterm" data-glossterm="variabel" href="#">Variablendeklarationen</a> zu vermeiden und Ihren Code sauber und ordentlich zu halten, und sie können aus Variablendeklarationen bestehen,
+   <a class="glossterm" data-glossterm="Ausdruck" href="#">Ausdrücken</a>und Aufrufen von bestimmten <strong>Funktionen</strong> bestehen. Sie können Anweisungen auch als Block &quot;gruppieren&quot;, indem Sie die geschweiften Klammern {} verwenden, damit sie zusammenlaufen, wie im folgenden
+     <a class="glossterm" data-glossterm="Bedingt" href="#">bedingten</a> Beispiel:</p>
+  <p class="code">if (&lt;Bedingung&gt;)<br> {
+    <br> &lt;Anweisung&gt;;
+    <br> &lt;Aussage&gt;;
+    <br> ...
+    <br> }
+  </p>
+  <p class="note"><b>HINWEIS</b>: Die <span class="notranslate">GameMaker-Sprache</span> akzeptiert auch <tt>begin</tt><span>  </span>und <tt>end</tt><span>  </span>anstelle der geschweiften Klammern <tt>{}</tt>, obwohl dies in der Regel nicht die gängigste Methode ist:</p>
+  <p class="code">if (&lt;Bedingung&gt;)<br> begin
+    <br> &lt;Anweisung&gt;;
+    <br> &lt;Aussage&gt;;
+    <br> ...
+    <br> end
+  </p>
+  <p><br> Hier ist eine weitere visuelle Darstellung, wie ein Codeblock aussehen kann, diesmal als <b>Script</b> im <span class="notranslate">GameMaker Studio 2</span> <a href="../../The_Asset_Editors/Scripts.htm">Script Editor</a> erstellt:</p>
+  <p><img alt="Program Example" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/ProgramExample.png" style="cursor: nwse-resize;" /></p>
+  <p>Es gibt verschiedene Arten von Anweisungen, Ausdrücken, Konditionalen und Funktionen, die alle in den folgenden Abschnitten des Handbuchs ausführlich behandelt werden.</p>
+  <p class="note"><strong>HINWEIS</strong>: Wenn Sie neu in der Programmierung sind, sollten Sie sich die <a href="../../Quick_Start_Guide/Quick_Start_Guide.htm">Kurzanleitung</a> ansehen, bevor Sie fortfahren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Weiter: <a href="Runtime_Functions.htm"><span class="notranslate">Laufzeitfunktionen</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Basic Code Structure
+code structure
+code block
+statements
+statement separator
+begin
+end
+-->
+  <!-- TAGS
+structure
+-->
+
+</body></html>

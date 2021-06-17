@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>window_set_fullscreen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_set_fullscreen" />
+  <meta name="rh-index-keywords" content="window_set_fullscreen" />
+  <meta name="search-keywords" content="window_set_fullscreen" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>window_set_fullscreen</h1>
+  <p>Mit dieser Funktion können Sie das Spielfenster als Vollbild<tt>(true</tt>) oder nicht<tt>(false</tt>) einstellen. Bitte beachten Sie, dass für das <b><span class="notranslate">macOS</span></b> Ziel die Option &quot;Im Vollbildmodus starten&quot; deaktiviert und die Option &quot;Dem Spieler das Ändern der Größe des Spielfensters erlauben&quot; in den Spieloptionen aktiviert sein <i>muss</i>.
+    die Option &quot;Allow the player to resize the game window&quot; in den <a href="../../../../Settings/Game_Options.htm">Spieloptionen aktiviert haben müssen, da</a> diese Funktion sonst fehlschlagen wird. Beachten Sie auch, dass diese Funktion <i>nicht</i> mit HTML5 funktioniert, es sei denn, sie wird als &quot;klickbarer&quot;
+    Callback (siehe <a href="../../Web_And_HTML5/clickable_add.htm">hier</a> für weitere Details).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">window_set_fullscreen(full);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>vollständig</td>
+        <td>Ob der Bildschirm auf Vollbild (true) oder nicht (false) eingestellt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> if window_get_fullscreen()<br> {
+    <br> window_set_fullscreen(false);
+    <br> }
+    <br> sonst
+    <br> {
+    <br> window_set_fullscreen(true);
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob eine Maustaste gedrückt wird, und setzt dann das Fenster auf Vollbild, wenn es das nicht schon ist, oder setzt es auf Fenster, wenn es das schon ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../The_Game_Window/The_Game_Window.htm">Das Spielfenster</a></div>
+        <div style="float:right">Weiter: <a href="../The_Game_Window/window_set_position.htm">window_set_position</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_set_fullscreen
+-->
+  <!-- TAGS
+window_set_fullscreen
+-->
+
+</body></html>

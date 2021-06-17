@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>position_change</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_change" />
+  <meta name="rh-index-keywords" content="position_change" />
+  <meta name="search-keywords" content="position_change" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>position_change</h1>
+  <p>Diese Funktion prüft eine Position auf eine Kollision mit <i>irgendwelchen Instanzen</i> am angegebenen Punkt, und wenn es eine gibt, ändert sie <b>alle</b> Instanzen in Kollision zu Instanzen des gewählten Objekts. Sie können das Argument &quot;perf&quot; auf
+   <tt>true</tt> setzen, was <span class="notranslate">GameMaker Studio 2</span> zwingt, die Ereignisse " <strong>Zerstören"</strong> und "Aufräumen <strong>"</strong> der gefundenen Instanz sowie das Ereignis " <strong>Erzeugen"</strong> der neuen Instanz auszuführen, oder <tt>false</tt>, um keine dieser Ereignisse auszuführen.
+    keines dieser Ereignisse auszuführen. Bitte beachten Sie, dass, wenn Sie die Ereignisse "Zerstören", "Aufräumen" und "Erzeugen" nicht ausführen, jede erzeugte Instanz, die eine normalerweise im Ereignis "Erzeugen" definierte Variable verwendet, das Spiel zum Absturz bringt, da diese Variable nicht mehr
+    existiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">position_change(x, y, obj, perf);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate, an der kollidierende Instanzen geändert werden sollen.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate, an der kollidierende Instanzen geändert werden sollen.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das neue Objekt, in das sich das aufrufende Objekt verwandeln soll.</td>
+      </tr>
+      <tr>
+        <td>perf</td>
+        <td>Ob das Ereignis "Create" für dieses neue Objekt ausgeführt werden soll (true) oder nicht (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">position_change(200, 200, obj_Bird, true);</p>
+  <p>Dadurch werden alle Instanzen, die am Punkt (200,200) kollidieren, in eine Instanz von &quot;obj_Bird&quot; umgewandelt, wobei das &quot;obj_Bird&quot;-Ereignis für jede dieser Instanzen ausgeführt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="position_destroy.htm">position_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_change
+-->
+  <!-- TAGS
+position_change
+-->
+</body>
+</html>

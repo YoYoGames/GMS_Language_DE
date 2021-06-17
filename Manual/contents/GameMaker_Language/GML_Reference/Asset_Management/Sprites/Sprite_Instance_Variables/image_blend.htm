@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>image_blend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_blend" />
+  <meta name="rh-index-keywords" content="image_blend" />
+  <meta name="search-keywords" content="image_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>image_blend</h1>
+  <p>Diese Variable steuert die &quot;Einfärbung&quot; des Instanz-Sprites und der Standardwert ist -1 (kann aber auch c_white sein). Jeder andere Wert (einschließlich interner Farbkonstanten wie <tt>c_red</tt> oder <tt>c_aqua</tt>) mischt die angegebene
+    Farbe mit dem Original-Sprite. Bitte beachten Sie, dass Änderungen in dieser Variablen nur dann sichtbar sind, wenn die Instanz entweder <i>kein</i> Draw-Ereignis hat (und <span class="notranslate">GameMaker Studio 2</span> das Sprite daher standardmäßig zeichnet) oder mit einer der erweiterten Zeichenfunktionen
+    Funktionen wie <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a> oder <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>.</p>
+  <p><img alt="image_blend Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/blend_image.png" /></p>
+  <p>Bitte beachten Sie, dass Sie versuchen sollten, das Überblenden auf der HTML5-Plattform zu begrenzen (es sei denn, Sie verwenden WebGL), da jedes überblendete Sprite separat zwischengespeichert werden muss und daher viele überblendete Sprites die Leistung beeinträchtigen können (Sie können die Cache-Größe auch mit der
+    die Funktion <a href="../Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">image_blend;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Gleitkommawert mit einfacher Genauigkeit)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">image_blend = make_colour_hsv(255, 255, random(255));</p>
+  <p>Der obige Code setzt das image_blend des für die Instanz definierten Sprites auf eine zufällige Farbe.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Instance_Variables.htm">Sprite-Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="image_index.htm">image_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_blend
+-->
+  <!-- TAGS
+image_blend
+-->
+</body>
+</html>

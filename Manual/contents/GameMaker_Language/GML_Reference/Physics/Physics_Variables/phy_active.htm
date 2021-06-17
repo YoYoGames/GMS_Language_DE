@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_aktiv</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_active" />
+  <meta name="rh-index-keywords" content="phy_active" />
+  <meta name="search-keywords" content="phy_active" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_aktiv</h1>
+  <p>Diese Variable steuert, ob die Instanz gerade &quot;aktiv&quot; ist oder nicht. Wenn sie auf <tt>false</tt> gesetzt wird, nimmt die Instanz nicht mehr an der Physikwelt teil, und wenn sie auf <tt>true</tt> gesetzt wird, nimmt sie wieder teil. Bitte
+    Bitte beachten Sie, dass dies nicht dasselbe ist wie das <a href="../../Asset_Management/Instances/Deactivating_Instances/Deactivating_Instances.htm">Deaktivieren der Instanz</a>, da die Instanz immer noch auf dem Bildschirm sichtbar ist und immer noch durch Code verändert werden kann, sondern
+    diese Funktion verhindert nur, dass sie an der Physiksimulation teilnimmt</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">phy_active;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolean (oder <tt>undefiniert</tt>, wenn die Instanz nicht physikaktiviert ist)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check_pressed(ord &quot;P&quot;)<br> {
+    <br> global.Pause = !global.Pause<br> with (obj_Parent)<br> {
+    <br> phy_active = !global.Pause;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code erkennt einen Tastendruck des Buchstaben &quot;P&quot; und schaltet dann die globale Variable &quot;Pause&quot; von true auf false und wieder <tt>zurück</tt> <tt>.</tt> Diese Variable wird dann verwendet, um in den Kindinstanzen des in der Variable "obj_Parent" indizierten Objekts festzulegen, ob die Physik aktiv ist oder nicht.
+    Instanzen des Objekts, das in der Variablen &quot;obj_Parent&quot; indiziert ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Physics_Variables.htm">Physik-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="phy_angular_velocity.htm">phy_angular_velocity</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_active
+-->
+  <!-- TAGS
+phy_active
+-->
+</body>
+</html>

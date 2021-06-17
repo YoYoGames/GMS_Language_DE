@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>schrift_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_get_uvs" />
+  <meta name="rh-index-keywords" content="font_get_uvs" />
+  <meta name="search-keywords" content="font_get_uvs" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>schrift_get_uvs</h1>
+  <p>Diese Funktion gibt ein <a href="../../../GML_Overview/Arrays.htm">Array</a> mit den UV-Koordinaten für die Schrifttextur auf der Texturseite zurück und füllt das Array mit den folgenden Werten auf:</p>
+  <ul class="colour">
+    <li>[0] = links</li>
+    <li>[1] = oben</li>
+    <li>[2] = rechts</li>
+    <li>[3] = unten</li>
+  </ul>
+  <p>Dieser Wert kann dann in anderen Zeichenfunktionen verwendet werden, insbesondere im allgemeinen Zeichnen bei Verwendung von <a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">Primitiven</a> sowie in den <a href="../Shaders/Shaders.htm"><span class="notranslate">Shader</span></a> Funktionen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">font_get_uvs(Schriftart);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Schriftart</td>
+        <td>Der Index der zu verwendenden Schriftart.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var tex = font_get_uvs(fnt_Main);<br> tex_left = tex[0];<br> tex_top = tex[1];<br> tex_right = tex[2];<br> tex_left = tex[3];</p>
+  <p>Der obige Code speichert die UV-Koordinaten für den gegebenen Hintergrund in einem lokalen Array und weist die Werte dann den Instanzvariablen zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fonts.htm">Schriftarten</a></div>
+        <div style="float:right">Weiter: <a href="font_get_info.htm">font_get_info</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_uvs
+-->
+  <!-- TAGS
+font_get_uvs
+-->
+</body>
+</html>

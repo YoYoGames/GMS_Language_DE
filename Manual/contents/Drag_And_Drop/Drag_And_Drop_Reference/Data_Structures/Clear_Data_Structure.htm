@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Datenstruktur löschen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Clear Data Structure action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Clear Data Structure" />
+  <meta name="search-keywords" content="Clear Data Structure" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Clear Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Data_Structure.png"> Datenstruktur löschen</h1>
+  <p>Diese Aktion löscht alle Werte aus der angegebenen Datenstruktur. Sie müssen zuerst den Typ der zu löschenden Datenstruktur auswählen und dann den Index der Datenstruktur angeben (der Index ist der Wert, der zurückgegeben und in einer Variablen gespeichert wird, wenn Sie
+    die Datenstruktur ursprünglich erstellt haben). Eine gelöschte Datenstruktur wird als &quot;leer&quot; betrachtet (d. h., sie hat keine Einträge), außer bei Gittern <i>.</i> Bei Gittern werden mit dieser Aktion einfach alle Gitterzellen auf 0 gelöscht.<b></b></p>
+  <p class="note"><b>HINWEIS</b>: Dadurch wird die Datenstruktur nicht aus dem Speicher befreit, sondern es werden lediglich alle Informationen aus ihr entfernt. Um den der Datenstruktur zugewiesenen Speicher freizugeben, müssen Sie die Aktion <a href="Free_Data_Structure.htm">Datenstruktur freigeben</a> verwenden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Clear Data Structure Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Clear_Data_Structure.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Aufbau</td>
+        <td>Der Typ der Datenstruktur, die Sie löschen (Liste, Karte, Raster oder Stapel)</td>
+      </tr>
+      <tr>
+        <td>Variabel</td>
+        <td>Die Variable, die den Index der zu löschenden Datenstruktur enthält</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Clear Data Structure Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Clear_Data_Structure.png">Der obige Code des Aktionsblocks prüft, ob die in der globalen Variablen referenzierte Datenstruktur
+    referenzierte Datenstruktur <i>nicht</i> leer ist, und wenn das der Fall ist, wird die Datenstruktur geleert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Data_Structure_Actions.htm">Datenstruktur-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Free_Data_Structure.htm">Freie Datenstruktur</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Clear Data Structure
+-->
+  <!-- TAGS
+action_ds_clear
+-->
+</body>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound_at</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound_at" />
+  <meta name="rh-index-keywords" content="audio_play_sound_at" />
+  <meta name="search-keywords" content="audio_play_sound_at" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_play_sound_at</h1>
+  <p>Mit dieser Funktion können Sie eine beliebige Klangressource an einer bestimmten Position innerhalb des Audio-Raums abspielen. Sie geben den Sound-Index an und weisen ihm dann eine Position innerhalb des 3D-Raums zu. Die Standardposition des Hörers ist (0, 0, 0), d. h., wenn der Hörer
+    nicht verschoben wurde und Sie möchten, dass der Ton z. B. von links kommt, sollten Sie die x-Position auf einen negativen Wert setzen (weitere Informationen zum Einstellen der Hörerposition finden Sie unter <a href="Audio_Listeners/audio_listener_position.htm"><tt>audio_listener_position()</tt></a>).</p>
+  <p>Sie können auch eine Abklingdistanz einstellen (bei 0 ist der Ton stumm, Voreinstellung ist 100), die den Ton ausklingen lässt, wenn er sich weiter von der Hörerposition entfernt. Wie die Ausblendung selbst gehört wird, hängt von der Falloff-Referenz ab (das ist der Abstand
+    (das ist die Entfernung, unter der die Lautstärke der Quelle normalerweise um die Hälfte abfällt) und dem Abklingfaktor (der den Klang nur über die Abklingreferenzdistanz hinaus beeinflusst) ab. Der voreingestellte Faktor ist normalerweise 1, und die Auswirkung der verschiedenen Falloff-Werte hängt
+    von dem gewählten Modell ab (eine vollständige Anleitung zu den verschiedenen Falloff-Modellen und der Verwendung dieser Werte finden Sie in der Funktion <a href="audio_falloff_set_model.htm"><tt>audio_falloff_set_model()</tt></a>).</p>
+  <p>Die letzten beiden Argumente dienen zum Festlegen, ob der Sound in einer Schleife laufen soll oder nicht, und schließlich zum Zuweisen einer Priorität für den Sound. Diese Priorität wird dann verwendet, um zu bestimmen, wie Klänge behandelt werden, wenn die Anzahl der spielenden Klänge über dem von der Funktion festgelegten Limit liegt
+    <a href="audio_channel_num.htm"><tt>audio_channel_num()</tt></a>. Klänge mit niedrigerer Priorität werden zugunsten von Klängen mit höherer Priorität gestoppt, und der Prioritätswert kann eine beliebige reale Zahl sein (der tatsächliche Wert ist willkürlich und kann von 0 bis 1 oder 0
+    bis 100 sein, da <span class="notranslate">GameMaker Studio 2</span> sie gleich priorisiert). Beachten Sie, dass bei der Priorität gilt: Je <i>höher</i> die Zahl, desto <i>höher</i> die Priorität, so dass ein Sound mit der Priorität 100 gegenüber einem Sound mit der Priorität 1 bevorzugt wird.</p>
+  <p>Diese Funktion gibt eine eindeutige Indexnummer für den abgespielten Sound zurück, die dann in einer Variablen gespeichert werden kann, so dass Sie ihn dann mit den entsprechenden Funktionen anhalten oder stoppen können. Das bedeutet, dass Sie, wenn Sie mehrere Instanzen desselben Klangs haben
+    Wenn Sie also mehrere Instanzen desselben Tons gleichzeitig abspielen, können Sie nur eine Instanz dieses Tons mit den Audiofunktionen bearbeiten.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_play_sound_at(index, x, y, z, falloff_ref, falloff_max, falloff_factor, loop, priority);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des abzuspielenden Tons.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die X-Position.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position.</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Die z-Position.</td>
+      </tr>
+      <tr>
+        <td>falloff_ref</td>
+        <td>Die Abblendreferenz relativ zum Hörer (Klammer).</td>
+      </tr>
+      <tr>
+        <td>falloff_max</td>
+        <td>Die maximale Falloff-Distanz relativ zum Hörer.</td>
+      </tr>
+      <tr>
+        <td>falloff_factor</td>
+        <td>Der Falloff-Faktor (Standardwert 1).</td>
+      </tr>
+      <tr>
+        <td>Schleife</td>
+        <td>Kennzeichnet den Ton als loopend oder nicht.</td>
+      </tr>
+      <tr>
+        <td>Priorität</td>
+        <td>Stellen Sie die Kanalpriorität für den Ton ein.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Index (Sound-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if global.SFX<br> {
+    <br> audio_play_sound_at(snd_Wasserfall, x, y, 0, 100, 300, 1, true, 1);<br> }
+  </p>
+  <p>Der obige Code prüft die globale Variable &quot;SFX&quot; und wenn er true zurückgibt, wird <tt>der</tt> in der Variable &quot;snd_Waterfall&quot; indizierte Sound an seiner Raumposition geloopt, mit einer Falloff-Referenz von 100, einem Falloff-Abstand von 300,
+    einem Falloff-Faktor von 1 und einer niedrigen Priorität.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_pause_sound.htm">audio_pause_ton</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound_at
+-->
+  <!-- TAGS
+audio_play_sound_at
+-->
+</body>
+</html>

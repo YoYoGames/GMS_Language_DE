@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tvOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details the tvOS Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - tvOS" />
+  <meta name="search-keywords" content="tvOS Game Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">tvOS-Spieloptionen</span> </h1>
+  <p>In diesem Abschnitt werden die verschiedenen Optionen beschrieben, die Ihnen zur Verfügung stehen und die steuern, wie Ihre <span class="notranslate">tvOS-Spielprojekte</span> kompiliert werden. Die verschiedenen Abschnitte sind:</p>
+  <p> </p>
+  <h2>Allgemein</h2>
+  <p><img alt="iOS General Options" class="center" src="../../assets/Images/Settings/tvOS_General_Options.png">Hier können Sie die <strong>Produktinformationen</strong> zu Ihrem Spiel eingeben, einschließlich des <strong>Anzeigenamens</strong>, der <strong>Bundle-ID</strong> und der <strong>Versionsinformationen </strong>. Beachten Sie, dass die Bundle-ID im korrekten Reverse-URL-Format sein muss, damit der endgültige Build des Spiels korrekt funktioniert, z. B.: <span class="inline">com.[Company].[GameName]</span>. Sie können auch den Speicherort für die <strong>App-Ausgabe</strong> auf dem Build-Mac festlegen und Sie können die Team-Kennung angeben, die Sie für das Signieren der endgültigen Anwendung verwenden möchten, die <span class="notranslate">GameMaker Studio 2</span> für Sie erstellt. Wenn Sie ihn hier einstellen, wird die Team-ID, die Sie in den <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/tvOS.htm"><span class="notranslate">tvOS-Voreinstellungen</span></a> angegeben haben, außer Kraft gesetzt.</p>
+  <p>Hier haben Sie auch die Möglichkeit, ein <strong>Podfile</strong> und ein <strong>Podfile.lock</strong> zu erzeugen. Diese Dateien werden benötigt, wenn Sie <span class="notranslate">CocoaPods</span> mit dem <a href="../../The_Asset_Editors/Extensions.htm">Extension Editor</a> zu einer <a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm"><span class="notranslate">tvOS-Erweiterung</span></a> hinzufügen. Die Dateien enthalten spezifische Makros, die von <span class="notranslate">GameMaker Studio 2</span> benötigt werden, um alle aufgelisteten <span class="notranslate">CocaoPods</span>beim Erstellen Ihres Spiels einzurichten. Wenn Sie auf die Schaltflächen klicken, werden die Dateien mit
+    die Makros vorgeneriert und öffnet außerdem einen Datei-Explorer am Speicherort der Dateien, falls Sie sie manuell bearbeiten möchten. Es gibt auch eine Schaltfläche, die Sie zur folgenden Anleitung führt:</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span> und <span class="notranslate">tvOS</span>: Verwendung von Cocoa Pods</a></li>
+  </ul>
+  <p> </p>
+  <h2>Grafiken</h2>
+  <p><img alt="tvOS Graphics Options" class="center" src="../../assets/Images/Settings/tvOS_Graphics_Options.png">Hier können Sie die folgenden Details in Bezug auf die Anzeige Ihres Spiels ändern, wobei die folgenden Optionen zur Verfügung stehen:</p>
+  <ul class="colour">
+    <li><strong>Interpoliert Farben zwischen Pixeln</strong>: Schaltet die <a class="glossterm" data-glossterm="lineare Interpolation" href="macOS.htm#">lineare Interpolation</a> ein, die im Grunde genommen Pixel &quot;glättet&quot;. Für scharfe Pixelgrafiken sollte diese Option
+      ausgeschaltet sein, aber wenn Sie schöne Alpha-Mischungen und geglättete Kanten haben, sollten Sie es eingeschaltet lassen. Standardmäßig ist dies ausgeschaltet.</li>
+    <li><strong>Skalieren</strong>: Hier können Sie wählen, ob Sie die Zeichenfläche unter Beibehaltung des Seitenverhältnisses innerhalb des Gerätebildschirms skalieren möchten - indem Sie &quot;Polster&quot; an den Rändern hinzufügen, um sie an den Bildschirm anzupassen - oder ob Sie die Zeichenfläche strecken möchten, um sie an den Bildschirm anzupassen.
+      den Gerätebildschirm anzupassen.</li>
+  </ul>
+  <p>Als nächstes gibt es die Möglichkeit, die Größe der <a class="glossterm" data-glossterm="Textur-Seite" href="macOS.htm#">Texturseite</a> einzustellen. Die Standardgröße (und die kompatibelste) ist 2048x2048, aber Sie können eine Größe zwischen 256x256 und 8192x8192 wählen. Es
+    Es gibt auch eine Schaltfläche mit der Bezeichnung <strong>Vorschau </strong>, die die Texturseiten für diese Plattform generiert und dann ein Fenster öffnet, in dem Sie sehen können, wie sie aussehen. Dies kann sehr nützlich sein, wenn Sie sehen möchten, wie die Texturseiten aufgebaut sind und
+    um zu verhindern, dass die Texturseiten größer (oder kleiner) als nötig sind. Weitere Informationen zu Texturseiten finden Sie <a href="../Texture_Information/Texture_Pages.htm">hier</a>.</p>
+  <p class="note"><strong>HINWEIS</strong>: Beachten Sie, dass Ihr Spiel mit verschiedenen Browsern und Geräten weniger kompatibel ist, je größer die Texturseite ist.</p>
+  <p>Schließlich wählen Sie, ob <strong>ein Cursor angezeigt werden</strong> soll oder nicht. Wenn das Kontrollkästchen aktiviert ist, zeigt das Betriebssystem einen Cursor an, wenn die Maus bewegt wird (an der Mausposition), und der Cursor wird ausgeblendet und verschwindet, wenn die Maus eine Zeit lang nicht bewegt wird.
+    Wenn das Häkchen nicht gesetzt ist, wird kein Cursor angezeigt.</p>
+  <p> </p>
+  <h2>Icons</h2>
+  <p><img alt="tvOS Images Icons Options" class="center" src="../../assets/Images/Settings/tvOS_Icons_Options.png">In diesem Abschnitt können Sie die verschiedenen <strong>Icons </strong>hinzufügen, die für die verschiedenen Geräte und die verschiedenen Teile des
+    App Store. Diese Icons sollten als 24-Bit-Bilder <span class="inline">*.png</span> in der jeweils angegebenen Größe verfasst werden.</p>
+  <p>Es ist erwähnenswert, dass <span class="notranslate">GameMaker Studio 2</span> über ein <a href="../../IDE_Tools/Project_Image_Generator.htm">Projektbild-Generator-Tool</a> verfügt, das verwendet werden kann, um automatisch alle Bilder zu erstellen, die für die verschiedenen Zielplattformen benötigt werden, für die Ihr Spiel
+    kompiliert wird. Wenn Sie dieses Tool verwenden, sollten Sie die erstellten Bilder überarbeiten, um sicherzustellen, dass sie Ihren Anforderungen entsprechen, insbesondere für diese Plattform, da die benötigten Icons rechteckig und nicht quadratisch sind. Dieses Tool generiert neben Icons auch Bilder (siehe
+    unten) als auch Icons.</p>
+  <p> </p>
+  <h2>Bilder</h2>
+  <p><img alt="tvOS Images Splash Screens Options" class="center" src="../../assets/Images/Settings/tvOS_Images_Options.png">In diesem Abschnitt können Sie separate Grafiken als &quot;Top Shelf&quot;-Bilder und Splash-Screens für jede der verschiedenen
+   <span class="notranslate">tvOS-Zielgrößen</span>. Diese Bilder müssen als einzelne 24-Bit-Bilder <span class="inline">*.png</span> ohne Transparenzen und in der richtigen Größe verfasst sein. Sie können auch eine Mindestzeit für die Anzeige der Splash-Screens im Dropdown-Menü am
+    am unteren Rand einstellen (von 0 bis 10 Sekunden).</p>
+  <p>Wie im Abschnitt über Symbole erwähnt, können Sie den <strong>Projektbildgenerator</strong> verwenden, um diese Bilder zu erstellen.</p>
+  <p> </p>
+  <h2>Sozial</h2>
+  <p><img alt="tvOS Social Options" class="center" src="../../assets/Images/Settings/tvOS_Social_Options.png">In diesem Abschnitt können Sie verschiedene <strong>soziale </strong>Funktionen in Ihrem <span class="notranslate">tvOS-Spiel</span> aktivieren. Die folgenden Optionen können gewählt werden:</p>
+  <ul class="colour">
+    <li><strong>Aktivieren Sie Push-Benachrichtigungen</strong>: Damit Ihr Spiel Push-Benachrichtigungen verwenden kann, müssen sie hier zuerst aktiviert werden, sonst funktionieren sie nicht.</li>
+    <li><strong>Aktivieren Sie Anmelden mit Apple</strong>: Diese Option ist für die Verwendung der <strong>Apple Sign In Extension</strong> auf <span class="notranslate">iOS</span>. Sie können diese Erweiterung über die <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">YoYo Spiele</span> <span class="notranslate">Marktplatz</span></a>,
+      und die Erweiterung selbst enthält eine vollständige Anleitung zur Verwendung. Wenn Sie diese Erweiterung nicht verwenden, sollten Sie diese Option nicht ankreuzen.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Game_Options.htm">Spiel-Optionen</a></div>
+        <div style="float:right">Nächste: <a href="Windows.htm"><span class="notranslate">Windows</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">tvOS</span> Game Options
+-->
+  <!-- TAGS
+tvos_options
+-->
+
+</body></html>

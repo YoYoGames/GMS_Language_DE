@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>schicht_hat_instanz</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_has_instance" />
+  <meta name="rh-index-keywords" content="layer_has_instance" />
+  <meta name="search-keywords" content="layer_has_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>schicht_hat_instanz</h1>
+  <p>Mit dieser Funktion kann geprüft werden, ob eine gegebene Instanz aktuell dem gegebenen Layer zugeordnet ist. Sie übergeben die Layer-ID (die Sie beim Erstellen des Layers mit <a href="layer_create.htm"><tt>ebene_erstellen()</tt></a>) oder den Ebenennamen (als String
+    - dies hat Auswirkungen auf die Leistung) und die Instanz-ID der Instanz, auf die geprüft werden soll. Sie können auch einen <tt>object_index</tt> (d. h. den Namen des Objekts im Asset-Browser) angeben, und die Funktion prüft, ob sich Instanzen dieses Objekts auf
+    der angegebenen Ebene befinden. Die Funktion gibt <tt>true</tt> zurück, wenn sich die Instanz auf der Ebene befindet, und <tt>false</tt>, wenn dies nicht der Fall ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_has_instance(layer_id, instance_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Ebene (oder der Ebenenname als String)</td>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>Die eindeutige Instanz-ID oder der Objektindex der Instanz, auf die geprüft werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !layer_has_instance(global.Bullet_Layer, obj_Bullet_Parent)<br> {
+    <br> layer_destroy(global.Bullet_Layer);
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob die angegebene Ebene irgendwelche Instanzen des Objekts &quot;obj_Bullet_Parent&quot; enthält und wenn nicht, wird die Ebene zerstört.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_instance_get_instance.htm">layer_instance_get_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_has_instance
+-->
+  <!-- TAGS
+layer_has_instance
+-->
+</body>
+</html>

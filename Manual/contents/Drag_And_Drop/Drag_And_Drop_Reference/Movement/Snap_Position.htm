@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Fangposition</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Snap Position action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Snap Position" />
+  <meta name="search-keywords" content="Snap Position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Snap Position Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Snap_To_Grid.png" width="32"> Einrastposition</h1>
+  <p>Diese Aktion wird verwendet, um eine Instanz an einer bestimmten Gitterkoordinatenposition &quot;einzufangen&quot;. Sie geben die Größe der &quot;Zelle&quot; des Rasters an und die Instanz wird an diesem Raster gefangen, z. B. wenn Sie die Rasterfangwerte für horizontal und
+    vertikal auf 8 setzen und die Instanz sich an der Position (4, 6) befindet, wird sie an der Position (0, 8) gefangen - im Wesentlichen wird die aktuelle Position auf den nächsten Wert gerundet, der durch die horizontalen und vertikalen Fangeinstellungen teilbar ist, wobei die Gitterzellen an der
+    oberen linken Ecke des Raums (0, 0) beginnen. Die Standardwerte sind auf einen Fang von (32, 32) eingestellt, aber Sie können sie auf jeden gewünschten positiven ganzzahligen Wert ändern.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><span><img alt="Snap To Grid Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Snap_To_Grid.png" /></span></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>horizontal</td>
+        <td>Der horizontale Zellenwert, an dem gefangen werden soll</td>
+      </tr>
+      <tr>
+        <td>vertikal</td>
+        <td>Der Wert der vertikalen Zelle, an dem gefangen werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Snap To Grid Example" class="center" height="491" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Snap_To_Grid.png" width="533">Der obige Code des Aktionsblocks prüft, ob die linke Maustaste
+    Wenn dies der Fall ist, folgt die Instanz der Maus, und wenn die Taste losgelassen wird, wird die Instanz in einem 32 x 32-Raster gefangen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Movement_Actions.htm">Bewegungs-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Wrap_Around_Room.htm">Wrap Around Room</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Snap Position
+-->
+  <!-- TAGS
+action_snap_position
+-->
+</body>
+</html>

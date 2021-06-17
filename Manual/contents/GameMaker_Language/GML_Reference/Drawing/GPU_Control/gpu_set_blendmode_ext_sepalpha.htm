@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_blendmode_ext_sepalpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_blendmode_ext_sepalpha" />
+  <meta name="rh-index-keywords" content="gpu_set_blendmode_ext_sepalpha,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+  <meta name="search-keywords" content="gpu_set_blendmode_ext_sepalpha,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_blendmode_ext_sepalpha</h1>
+  <p>Wenn <span class="notranslate">GameMaker Studio 2</span> ein Pixel zeichnen will, gibt es eine Quellfarbe (die Farbe des Pixels, das wir zeichnen wollen) und eine Zielfarbe (die Farbe, die bereits in dem Pixel enthalten ist, auf das wir zeichnen wollen).
+    Bei der Bestimmung der neuen Farbe des Pixels werden die Quell- und Zielfarben entsprechend dem gewählten Mischmodus berechnet. Jede Komponente der Farben wird als Fließkommawert zwischen 0 und 1 gespeichert, und die neue Farbe wird durch Multiplikation jeder Komponente der
+    Die neue Farbe wird berechnet, indem jede Komponente der Quellfarbe mit einem Faktor und jede Komponente der Zielfarbe mit einem anderen Faktor multipliziert wird und die Ergebnisse dann Komponente für Komponente addiert werden.</p>
+  <p>Mit dieser Funktion können Sie die verschiedenen Komponenten einstellen, die zusammengefügt werden sollen, um einen benutzerdefinierten Überblendungsmodus zu erstellen, indem Sie verschiedene Teile mit unterschiedlichen Überblendungsmodus-Faktoren für die RGB-Komponenten und die Alpha-Komponente auswählen. So werden die Argumente &quot;src&quot;
+    und &quot;dest&quot;-Argument die ersten 3 Blend Mode-Werte (RGB) und die Argumente &quot;alphasrc&quot; und &quot;alphadest&quot; den letzten Teil des Blend Mode-Faktors. Wenn Sie zum Beispiel die RGB-Quelle als <tt>bm_zero</tt> haben,
+    dann wird (0, 0, 0) verwendet. Wenn Sie dann die Alpha-Quelle als bm_one einstellen, wird (1) verwendet, was einen endgültigen Quellüberblendmodus von (0, 0, 0, 1) ergibt.</p>
+  <p>Das folgende Diagramm zeigt die RGBA-Werte für jeden Mischmodus, wobei (Rs, Gs, Bs, As) als Quellwerte und (Rd, Gd, Bd, Ad) als Zielwerte gelten. Die elf Konstanten, die zur Verwendung zur Verfügung stehen, können entweder Quelle oder Ziel sein
+    (oder beides) sein, wenn sie in dieser Funktion verwendet werden.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Überblendfaktor (Rot, Grün, Blau, Alpha)</th>
+      </tr>
+      <tr>
+        <td>bm_null</td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td>bm_eins</td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td>bm_src_colour</td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_colour</td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha</td>
+        <td>(As, As, As, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_alpha</td>
+        <td>(1-As, 1-As, 1-As, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_alpha</td>
+        <td>(Anzeige, Anzeige, Anzeige, Anzeige)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_alpha</td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_colour</td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_colour</td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha_sat</td>
+        <td>(f, f, f, 1) mit f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><b>WICHTIG!</b> HTML5 ohne aktiviertes WebGL kann die folgenden Modi <b>nicht</b> korrekt anzeigen:</p>
+  <ul class="colour" style="padding-left: 120px">
+    <li><tt>bm_src_colour</tt></li>
+    <li><tt>bm_inv_src_colour</tt></li>
+    <li><tt>bm_dest_colour</tt></li>
+    <li><tt>bm_inv_dest_colour</tt></li>
+    <li><tt>bm_src_alpha_sat</tt></li>
+  </ul>
+  <p> </p>
+  <p>Beachten Sie, dass Sie entweder vier einzelne Argumente an diese Funktion übergeben können oder ein Array von Argumenten (wie von der Funktion <a href="gpu_get_blendmode_ext_sepalpha.htm"><tt>gpu_get_blendmode_ext_sepalpha()</tt></a> zum Beispiel).
+    Wenn Sie ein Array übergeben, sollte es die folgenden vier Elemente enthalten:</p>
+  <ul class="colour">
+    <li>0] = Quell-Mischmodus abzüglich der Alphakomponente (Standard ist <tt>bm_src_alpha</tt> (As, As, As))</li>
+    <li>1] = Ziel-Mischmodus abzüglich der Alpha-Komponente (Standard ist <tt>bm_inv_src_alpha</tt> (1-As, 1-As, 1-As))</li>
+    <li>2] = Quell-Alpha-Komponente (Voreinstellung ist <tt>bm_src_alpha</tt> (As))</li>
+    <li>[3] = Ziel-Alpha-Komponente (Voreinstellung ist <tt>bm_inv_src_alpha</tt> (1-As))</li>
+  </ul>
+  <p>Damit Sie die Mischmodi optimal nutzen können und um zu verstehen, wie sie funktionieren und wie sie das endgültige Bild auf dem Bildschirm beeinflussen, empfehlen wir Ihnen, den folgenden Leitfaden zu lesen:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Anleitung zur Verwendung von Blendmodes</a></li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_set_blendmode(src, dest, alphasrc, alphadest);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td>Quellüberblendungsmodus-Faktor für RGB (siehe Konstanten oben).</td>
+      </tr>
+      <tr>
+        <td>dest</td>
+        <td>Ziel-Mischmodus-Faktor für RGB (siehe Konstanten oben)</td>
+      </tr>
+      <tr>
+        <td>alphasrc</td>
+        <td>Quell-Mischmodus-Faktor Alpha (siehe Konstanten oben).</td>
+      </tr>
+      <tr>
+        <td>alphadest</td>
+        <td>Ziel-Mischmodus-Faktor Alpha (siehe Konstanten oben)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var bm = gpu_get_blendmode_ext_sepalpha();<br> bm[0] = bm_src_alpha;<br> bm[1] = bm_inv_src_alpha;<br> gpu_set_blendmode_ext_sepalpha(bm);
+  </p>
+  <p>Der obige Code erstellt ein lokales Array und ruft den aktuellen erweiterten Mischmodus mit separaten Alphawerten ab. Dieses Array wird dann manipuliert und zurückgegeben, um den Mischmodus einzustellen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GPU_Control.htm">GPU-Steuerung</a></div>
+        <div style="float:right">Weiter: <a href="gpu_set_colourwriteenable.htm">gpu_set_colourwriteenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_blendmode_ext_sepalpha
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_set_blendmode_ext_sepalpha
+-->
+</body>
+</html>

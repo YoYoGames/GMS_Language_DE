@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>virtual_key_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for virtual_key_delete" />
+  <meta name="rh-index-keywords" content="virtual_key_delete" />
+  <meta name="search-keywords" content="virtual_key_delete" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>virtual_key_delete</h1>
+  <p>Wenn Ihr Spiel über verschiedene Räume oder Instanzen zur Steuerung von Menüs und Spielabläufen und anderen Dingen verfügt, ist es wahrscheinlich, dass Sie irgendwann die Position und Tastenbelegung Ihrer virtuellen Tasten ändern müssen. Dafür können Sie diese Funktion verwenden, um
+    die alten zu löschen, bevor Sie die neuen erstellen (falls erforderlich). Die Funktion erfordert, dass Sie die ID der zu löschenden virtuellen Taste angeben - wie sie von <a href="virtual_key_add.htm"><span class="inline">virtual_key_add()</span></a>.</p>
+  <p>Beachten Sie, dass alle virtuellen Keys automatisch aus dem Raum entfernt werden, wenn der Raum gewechselt wird, sodass diese Funktion <em>nur</em> notwendig ist, wenn Sie die Keys manuell entfernen möchten, bevor der Raum selbst beendet ist.</p>
+  <p> </p>
+  <h4>Syntax</h4>
+  <p class="code">virtual_key_delete(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index der zu löschenden virtuellen Taste.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">virtual_key_delete(global.Left);</p>
+  <p>Der obige Code löscht den virtuellen Schlüssel, der in der globalen Variable &quot;global.Left&quot; indiziert ist.</p>
+  <p><b></b></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Virtual_Keys_And_Keyboards.htm">Virtuelle Tasten und Tastaturen</a></div>
+        <div style="float:right">Weiter: <a href="keyboard_virtual_show.htm">keyboard_virtual_show</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+virtual_key_delete
+-->
+  <!-- TAGS
+virtual_key_delete
+-->
+
+</body></html>

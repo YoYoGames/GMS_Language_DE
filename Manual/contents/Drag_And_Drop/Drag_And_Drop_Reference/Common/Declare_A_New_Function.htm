@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Eine neue Funktion deklarieren</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Declare A New Function" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Declare A New Function" />
+  <meta name="search-keywords" content="Declare A New Function" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>
+    <img alt="Declare A New Function Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Declare_Function.png"> Eine neue Funktion deklarieren</h1>
+  <p>Diese Aktion kann verwendet werden, um eine neue benutzerdefinierte Funktion zu erstellen, die dann später in Ihrem Code jederzeit aufgerufen werden kann. Eine benutzerdefinierte Funktion ist eine Funktion, die Sie definieren, um eine Aufgabe auszuführen, die nicht von den verfügbaren DnD™-Aktionen oder <span class="notranslate">GML-Runner-Funktionen</span> abgedeckt wird,
+    und kann global, instanziell oder lokal sein (weitere Informationen zum Anwendungsbereich finden Sie <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">hier</a> ) und sie kann auch als <b>Konstruktor</b> verwendet werden, um <a href="../../../GameMaker_Language/GML_Overview/Structs.htm">Strukturen</a> zu erstellen.
+    Weitere Informationen über die Verwendung dieser Aktion zum Erstellen globaler Funktionen finden Sie im Abschnitt über das <a href="../../Drag_And_Drop_Overview/Action_Block_Functions.htm">Erstellen von Aktionsfunktionen</a>. Sie können die Funktion auch als <b>statisch</b> kennzeichnen,
+    was bedeutet, dass sie nur einmal definiert wird, wenn sie zum ersten Mal verwendet wird.</p>
+  <p>Um diese Aktion zu verwenden, können Sie sie zu einem Instanzereignis hinzufügen und dann der zu deklarierenden Funktion einen Namen geben. Anschließend geben Sie die erforderlichen Argumentnamen für jeden der Parameter an, die die Funktion annehmen soll. Wenn die Funktion als Konstruktor verwendet werden soll
+    Wenn die Funktion als Konstruktor verwendet werden soll (d. h., sie soll eine Struktur erstellen), müssen Sie das <strong>Flag " </strong>Konstruktor" aktivieren und dann die Funktion mit der Aktion "Neu" aufrufen. Wenn die Funktion nur lokal in demselben
+    Ereignis und nirgendwo anders verwendet werden soll, können Sie auch das Flag <strong>Temp </strong>auswählen. Nachdem Sie den Namen und die Parameter definiert haben, können Sie die Aktionen, die beim Aufruf der Funktion ausgeführt werden sollen, in Ihrem Code hinzufügen, indem Sie sie an der Seite von
+    der Aktion hinzufügen, wie in der folgenden Abbildung gezeigt:</p>
+  <p><img alt="Declare A New Function drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_declare_function.png">Beispiele für die Verwendung sowohl als reguläre Funktion als auch als Konstruktorfunktion sehen Sie
+    unten.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Declare A New Function Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Declare_Function.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Funktion</td>
+        <td>Der Name der neuen Funktion.</td>
+      </tr>
+      <tr>
+        <td>Argument0 ... ArgumentX</td>
+        <td>Die verschiedenen Argumente Namen für jeden der Parameter, die an die Funktion übergeben werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Erweitertes Beispiel 1:</h4>
+  <p><img alt="Declare A New Function Example 1" class="center" height="491" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_1.png" width="492">Der obige Aktionsblockcode würde in das <b>Ereignis "Create"</b> einer Instanz gehen und deklariert eine neue Funktion <tt>set_vec</tt> mit drei Argumenten: <tt>_x</tt>, <tt>_y</tt> und <tt>spd</tt>. Diese Argumente werden dann in den Aktionen verwendet, die die Funktion aufrufen wird, um die Richtung und die Geschwindigkeit der Instanz einzustellen,
+    wenn die Funktion aufgerufen wird. Sie würden die Funktion mit der Aktion <a href="Function_Call.htm">"Funktionsaufruf</a> " in jedem nachfolgenden Ereignis aufrufen, etwa so:</p>
+  <p><img alt="Declare A New Function Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_2.png">Die Funktion wird aufgerufen und setzt die Richtung der Instanz auf die
+    Maus-X/Y-Position und setzt die Geschwindigkeit der Instanz auf 5.</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel 2:</h4>
+  <p><img alt="Declare A New Function Exmaple 3" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png">Der obige Code des Aktionsblocks würde wahrscheinlich in das <b>Ereignis Create</b> einer
+    einer Instanz, und deklariert eine neue Konstruktorfunktion <tt>init_char_struct</tt> mit vier Argumenten: <tt>_str1</tt>, <tt>_str2</tt>, <tt>_val1</tt> und <tt>_val2</tt>. Diese Argumente werden dann verwendet, um die angegebenen Variablen innerhalb der struct
+    die die Funktion erzeugt. Sie würden dann die Funktion mit der Aktion <a href="New.htm">"Neu"</a> in jedem nachfolgenden Ereignis aufrufen, etwa so:</p>
+  <p><img alt="Declare A New Function Exmaple 4" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png">Die Funktion wird aufgerufen und gibt ein neues struct an das Array &quot;char&quot; zurück,
+    und das struct wird mit den Variablen &quot;name&quot;, &quot;location&quot;, &quot;hp&quot; und &quot;mana&quot; aufgefüllt, die auf die Werte gesetzt werden, die für die entsprechenden Argumente in der Funktion verwendet werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Common_Actions_Library.htm">Gemeinsame Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Assign_Variable.htm">Variable zuweisen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Declare A New Function
+-->
+  <!-- TAGS
+action_declare_function
+-->
+</body>
+</html>

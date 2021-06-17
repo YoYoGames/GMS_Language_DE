@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_get_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_get_value" />
+  <meta name="rh-index-keywords" content="physics_joint_get_value" />
+  <meta name="search-keywords" content="physics_joint_get_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_get_value</h1>
+  <p>Durch die Verwendung einer Reihe von vordefinierten Konstanten können Sie <span class="notranslate">GameMaker Studio 2</span> bitten, Ihnen eine Reihe von Dingen über den Zustand eines beliebigen Gelenks mitzuteilen. Dies ist sehr nützlich, da es Ihnen die Möglichkeit gibt, Gelenke zu löschen oder das Verhalten einer Instanz zu ändern, je nachdem, was Sie gerade brauchen.
+    je nachdem, was Sie gerade brauchen. Es gibt eine Reihe von Konstanten, die in dieser Funktion verwendet werden können und die Sie hier finden: <a href="Physics_Joint_Constants.htm">Physics Joint Constants</a>, aber beachten Sie, dass komplexe Berechnungen durchgeführt werden
+    Beachten Sie jedoch, dass beim Aufrufen dieser Konstanten komplexe Berechnungen durchgeführt werden. Sie sollten daher mit Vorsicht und nur bei Bedarf verwendet werden, und beachten Sie, dass <i>viele Konstanten nur für einen bestimmten Gelenktyp</i> gelten.</p>
+  <p>Wenn die Eigenschaft nicht vorhanden ist (wenn Sie z. B. ein Riemenscheibengelenk auf prismatische Verschiebung prüfen), ist der Rückgabewert 0.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_get_value(joint, wert)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>gemeinsame</td>
+        <td>Der Index des Gelenks, das Sie testen möchten</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Die Konstante für die gemeinsame Eigenschaft, die Sie testen möchten</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if shipJoint<br> {
+    <br> var reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);<br> var reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_y);<br> var reactionForce = point_distance(0, 0, reactionForceX,
+    reactionForceY);<br> if reactionForce &gt; 2<br> {
+    <br> physics_joint_delete(shipJoint);
+    <br> shipJoint = -1;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob die Variable &quot;shipJoint&quot; einen Gelenkindex enthält. Wenn dies der Fall ist, wird die Kraft, die auf dieses Gelenk wirkt, mit Hilfe der beiden Konstanten berechnet. Wenn schließlich die Gesamtkraft größer als 2 ist, wird das Gelenk gelöscht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_set_value.htm">physics_joint_set_value</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_get_value
+-->
+  <!-- TAGS
+physics_joint_get_value
+-->
+</body>
+</html>

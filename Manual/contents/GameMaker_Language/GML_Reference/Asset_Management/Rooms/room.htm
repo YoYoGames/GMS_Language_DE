@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Zimmer</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room" />
+  <meta name="rh-index-keywords" content="room" />
+  <meta name="search-keywords" content="room" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Zimmer</h1>
+  <p>Diese Variable enthält den Raumindex für den aktuellen Raum, in dem Ihr Spiel läuft. Dies ist <i>keine</i> schreibgeschützte Variable, aber wenn Sie diese Variable ändern, wird der Indexwert für den aktuellen Raum nicht geändert, sondern der Raum wird an den Index angepasst, auf den Sie die Variable
+    auf den Sie die Variable gesetzt haben. Seien Sie vorsichtig, wenn Sie dies tun, denn wenn der Index, auf den Sie die Variable ändern, nicht gültig ist, wird das Spiel einen Fehler ausgeben und geschlossen. Im Allgemeinen ist es viel besser, die Funktion <a href="room_goto.htm"><tt>room_goto()</tt></a>    um Räume zu ändern.</p>
+  <p class="note"><strong>Hinweis</strong>: Die Raum-IDs basieren nicht auf ihrer Reihenfolge im Asset-Browser oder im Raum-Manager, daher sollten Sie es vermeiden, direkt einen Zahlenwert anzugeben. Verwenden Sie stattdessen die <a class="glossterm" data-glossterm="Konstante" href="room_goto.htm#">Raumkonstante</a> für
+    die Kühlstelle, auf die Sie verweisen wollen (das ist einfach ihr Name), oder rufen Sie sie über eine Funktion ab.</p>
+  <h4>Syntax:</h4>
+  <p class="code">Zimmer;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (eindeutiger Indexwert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (room == rm_level1)<br> {<br> audio_play_sound(snd_level1, 1, 1);<br> }</p>
+  <p>Der obige Code prüft, ob der aktuelle Raum die erste Ebene ist, und spielt in diesem Fall die Musik dieser Ebene ab.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Rooms.htm">Räume</a></div>
+        <div style="float:right">Weiter: <a href="room_speed.htm">Raum_Geschwindigkeit</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+room
+-->
+  <!-- TAGS
+room
+-->
+
+</body></html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_start</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_start" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_start" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_start" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_start</h1>
+  <p>Diese Funktion muss aufgerufen werden, bevor Sie eine Multiplayer-Sitzung für den Benutzer starten können. Sie nimmt den Zeiger auf die Benutzer-ID, die Sie für ein bestimmtes Gamepad durch Aufruf der <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a>    Funktion abrufen können, und initialisiert die Multiplayer-API.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_matchmaking_start(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Der zu verwendende Zeiger für die Benutzer-ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.UserID = xboxlive_user_for_pad(global.PadIndex);<br> xboxlive_matchmaking_start(global.UserID);
+  </p>
+  <p>Der obige Code ruft die Benutzer-ID für den angegebenen Pad-Index ab und initialisiert dann die Multiplayer-Funktionen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Match_Making.htm">Match Making</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_matchmaking_stop.htm">xboxlive_matchmaking_stop</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_start
+-->
+  <!-- TAGS
+xboxlive_matchmaking_start
+-->
+</body>
+</html>

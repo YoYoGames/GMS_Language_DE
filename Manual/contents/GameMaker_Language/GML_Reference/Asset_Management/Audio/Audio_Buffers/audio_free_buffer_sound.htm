@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_free_buffer_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_free_buffer_sound" />
+  <meta name="rh-index-keywords" content="audio_free_buffer_sound" />
+  <meta name="search-keywords" content="audio_free_buffer_sound" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_free_buffer_sound</h1>
+  <p>Mit dieser Funktion können Sie den mit der Sound-ID verbundenen Zeigerindexwert freigeben. Freigegebene Sounds stehen nicht zum Abspielen zur Verfügung, und wenn mehrere Instanzen des Sounds abgespielt werden, werden sie alle gestoppt. Beachten Sie, dass Sie vor dem Löschen
+    den Puffer selbst löschen können, müssen Sie zuerst alle mit ihm verknüpften Sound-IDs freigeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_free_buffer_sound(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des gepufferten Tons, der freigegeben werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">audio_free_buffer_sound(soundID);</p>
+  <p>Der obige Code gibt den gepufferten Ton frei, der in der Variablen &quot;soundID&quot; indiziert ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Audio.htm">Audio-Puffer</a></div>
+        <div style="float:right">Weiter: <a href="audio_create_play_queue.htm">audio_create_play_queue</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_free_buffer_sound
+-->
+  <!-- TAGS
+audio_free_buffer_sound
+-->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Allgemeine Schichtfunktionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Layers in general" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="layer functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Allgemeine Schichtfunktionen</h1>
+  <p>Der <span class="notranslate">GameMaker Studio 2</span> <a href="../../../../../The_Asset_Editors/Rooms.htm">Raum-Editor</a> erlaubt es Ihnen, Ihrem Raum verschiedene <i>Ebenen</i> von Assets hinzuzufügen. Dies können Kachelmaps (unter Verwendung von Kachelsets), Hintergründe, Sprites oder Sequenzen und Instanzen sein,
+    Beachten Sie jedoch, dass Sie im Gegensatz zum Raum-Editor <i>nicht</i> auf einen einzigen Asset-Typ pro Ebene beschränkt sind und mehrere Asset-Typen zur selben Ebene hinzufügen können - Sie können z. B. einen Hintergrund und eine Tile Map auf derselben Ebene haben. Beachten Sie, dass jedes Element
+    das zu einer Ebene hinzugefügt wird, als ein <strong>Element</strong> dieser Ebene betrachtet wird.</p>
+  <p>Dieser Abschnitt beschreibt die allgemeinen Funktionen, die bei der Arbeit mit Raumebenen verwendet werden, sowie einige spezielle Funktionen für die Arbeit mit <strong><a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">Instanz-Layer</a> </strong>Elementen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_exists.htm">layer_exists</a></li>
+    <li><a href="layer_get_id.htm">layer_get_id</a></li>
+    <li><a href="layer_depth.htm">layer_get_depth</a></li>
+    <li><a href="layer_get_id_at_depth.htm">layer_get_id_at_depth</a></li>
+    <li><a href="layer_get_name.htm">layer_get_name</a></li>
+    <li><a href="layer_get_all.htm">layer_get_all</a></li>
+    <li><a href="layer_get_all_elements.htm">layer_get_all_elements</a></li>
+    <li><a href="layer_get_element_layer.htm">layer_get_element_layer</a></li>
+    <li><a href="layer_get_element_type.htm">layer_get_element_type</a></li>
+    <li><a href="layer_get_x.htm">layer_get_x</a></li>
+    <li><a href="layer_get_y.htm">layer_get_y</a></li>
+    <li><a href="layer_get_hspeed.htm">layer_get_hspeed</a></li>
+    <li><a href="layer_get_vspeed.htm">layer_get_vspeed</a></li>
+    <li><a href="layer_create.htm">Ebene_erstellen</a></li>
+    <li><a href="layer_destroy.htm">layer_destroy</a></li>
+    <li><a href="layer_x.htm">Schicht_x</a></li>
+    <li><a href="layer_y.htm">Schicht_y</a></li>
+    <li><a href="layer_hspeed.htm">Schicht_Geschwindigkeit</a></li>
+    <li><a href="layer_vspeed.htm">Schicht_Geschwindigkeit</a></li>
+    <li><a href="layer_add_instance.htm">layer_add_instance</a></li>
+    <li><a href="layer_has_instance.htm">schicht_hat_instanz</a></li>
+    <li><a href="layer_instance_get_instance.htm">layer_instance_get_instance</a></li>
+    <li><a href="layer_destroy_instances.htm">layer_destroy_instances</a></li>
+    <li><a href="layer_element_move.htm">schicht_element_verschieben</a></li>
+    <li><a href="layer_set_visible.htm">layer_set_visible</a></li>
+    <li><a href="layer_get_visible.htm">layer_get_visible</a></li>
+    <li><a href="layer_depth.htm">layer_depth</a></li>
+    <li><a href="layer_force_draw_depth.htm">layer_force_draw_depth</a></li>
+    <li><a href="layer_is_draw_depth_forced.htm">layer_is_draw_depth_forced</a></li>
+    <li><a href="layer_get_forced_depth.htm">layer_get_forced_depth</a></li>
+    <li><a href="layer_script_begin.htm">layer_script_begin</a></li>
+    <li><a href="layer_script_end.htm">layer_script_end</a></li>
+    <li><a href="layer_shader.htm">schicht_shader</a></li>
+    <li><a href="layer_get_script_begin.htm">layer_get_script_begin</a></li>
+    <li><a href="layer_get_script_end.htm">layer_get_script_end</a></li>
+    <li><a href="layer_get_shader.htm">layer_get_shader</a></li>
+  </ul>
+  <p> </p>
+  <p>Wir haben auch ein paar zusätzliche Funktionen, die sich auf das Ansteuern von Ebenen in einem anderen Raum beziehen. Es kann sein, dass Sie etwas in einem Raum ändern möchten, der nicht der aktuelle Raum ist, oder vielleicht möchten Sie Räume prozedural generieren, oder eine beliebige Anzahl von Dingen.
+    Um dies zu ermöglichen, verwenden wir die folgenden Funktionen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_set_target_room.htm">layer_set_target_room</a></li>
+    <li><a href="layer_get_target_room.htm">layer_get_target_room</a></li>
+    <li><a href="layer_reset_target_room.htm">layer_reset_target_room</a></li>
+  </ul>
+  <p> </p>
+  <p>Was Sie hier tun, ist, den Zielraum mit der entsprechenden Funktion einzustellen und dann die Ebenenfunktionen normal aufzurufen. Diese Layer-Funktionen gelten nun <i>nur</i> für den Zielraum und nicht für den aktuellen Raum. Wenn Sie fertig sind, rufen Sie die
+    reset-Funktion auf, um den Codebereich wieder auf den aktuellen Raum zurückzusetzen.</p>
+  <p class="note"><b>WARNUNG!</b> Während Sie einen anderen Raum anvisieren, können Sie alle regulären Layer-Funktionen verwenden <b>, außer dass</b> Sie keine Instanzen mit <span style="font-size:1px;"><a href="../../Instances/instance_create_layer.htm"><tt style="font-size: 14px">instance_create_layer()</tt></a></span>    oder <span style="font-size:1px;"><a href="../../Instances/instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span>erstellen, noch wird die Layer-Funktion <a href="layer_add_instance.htm"><span style="font-size:1px;"><tt style="font-size: 14px">layer_add_instance()</tt></span></a> sein
+    verfügbar.</p>
+  <p>Schließlich, und dies ist ausschließlich für die Verwendung mit <i>Instanzen</i> auf Ebenen (obwohl die Ebene selbst andere Elemente haben kann, werden diese von den folgenden Funktionen nicht beeinflusst), haben Sie ein paar Funktionen, die zum Deaktivieren oder Reaktivieren verwendet werden können
+    alle Instanzen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Instances/Deactivating_Instances/instance_deactivate_layer.htm">instance_deactivate_layer</a></li>
+    <li><a href="../../Instances/Deactivating_Instances/instance_activate_layer.htm">Instanz_aktivieren_Schicht</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Rooms.htm">Räume</a></div>
+        <div style="float:right">Nächste: <a href="../Tile_Map_Layers/Tile_Map_Layers.htm">Kachelkartenebenen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+General Layer Functions
+-->
+  <!-- TAGS
+layer_functions
+-->
+</body>
+</html>

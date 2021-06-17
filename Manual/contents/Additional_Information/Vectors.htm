@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Vektoren</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how vectors work" />
+  <meta name="rh-index-keywords" content="Vectors" />
+  <meta name="search-keywords" content="Vectors,vector maths" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Vektoren</h1>
+  <p>Irgendwann, wenn Sie ein Spiel von beliebiger Komplexität erstellen, werden Sie wahrscheinlich mit <strong>Vektoren</strong> zu tun haben. Sie werden in der Physik, in der KI, in der Trigonometrie und in vielen anderen Situationen verwendet, aber was ist ein Vektor? Nun, um es einfach auszudrücken, ist ein Vektor
+    eine <em>gerichtete Größe</em>. Betrachten wir zunächst einen eindimensionalen Vektor - was einer einzelnen Zahl entspricht - indem wir eine nummerierte Linie mit einem Pfeil zeichnen, der bei Null beginnt und bei 5 endet. Dies ist der Vektor &quot;a&quot;, der gleich
+    5 und wenn wir einen weiteren Pfeil zeichnen, der bei der 5 beginnt und bei der 8 endet, haben wir den Vektor &quot;b&quot;, der gleich 3 ist:</p>
+  <p><img alt="1D Vector Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_1D.png">Sie sollten sich darüber im Klaren sein, dass es keine Rolle spielt, wo ein Vektor beginnt, wichtig ist nur, wie lang er ist und in welche Richtung
+    er geht. Der Vektor &quot;b&quot; beginnt also bei 5, ist 3 Einheiten lang und zeigt nach &quot;rechts&quot;, ist also identisch mit einem Vektor, der bei 0 beginnt und bis 3 geht. Nun können Sie diese Vektoren auch addieren, indem Sie die beiden Vektoren &quot;a&quot;
+    und &quot;b&quot; aneinanderlegen, um den Vektor &quot;c&quot; zu erhalten, der gleich 8 ist. Was ist mit negativen Zahlen? Nun, wenn in der obigen Abbildung ein Vektor, der nach &quot;rechts&quot; zeigt, einer positiven Zahl entspricht, können Sie sehen, dass ein Vektor
+    der nach &quot;links&quot; zeigt, einer negativen Zahl entsprechen würde, so dass ein eindimensionaler Vektor nichts anderes als eine Zahl mit Vorzeichen ist. Dies erklärt das wesentliche Konzept eines Vektors: nur <em>Länge</em> und <em>Richtung</em> (&quot;links&quot;
+    oder &quot;rechts&quot; in diesem Fall) zählen, nicht die Position.</p>
+  <p>Was ist also mit 2-dimensionalen Vektoren? Nun, wir können sie uns so vorstellen, dass sie nicht nur aus &quot;links&quot; und &quot;rechts&quot; bestehen, sondern auch aus &quot;oben&quot; und &quot;unten&quot;:</p>
+  <p><img alt="Various 2D Vectors" class="center" height="310" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Various.png" width="406">Das sind jetzt noch keine wirklichen Vektoren, denn wir müssen sie noch mit Hilfe ihrer
+    Start- und Endkoordinaten. Wenn wir den Vektor &quot;a&quot; betrachten, sehen wir, dass er eine Startkoordinate von [2,2] und eine Endkoordinate von [4,3] hat, und um den Vektor zu erhalten, müssen wir ihn reduzieren, indem wir die Endkoordinaten von den Startkoordinaten subtrahieren
+    Koordinaten subtrahieren, etwa so:</p>
+  <p class="code">a = [(x2-x1), (y2-y1)] = [(4-2), (3-2)] = [2,1]</p>
+  <p>Machen wir das Gleiche jetzt für den Vektor b:</p>
+  <p class="code">b = [(-1.2 -(-3.2)) ,(2.1 - 1.1)] = [2 ,1]</p>
+  <p>Fällt Ihnen etwas auf? Diese beiden Vektoren sind identisch! Dies ist eine weitere Demonstration, dass ein Vektor keine Position hat, nur Richtung und Länge, und wir können diese Vektoren relativ zueinander um eine lokale [0,0]-Achse zeichnen:</p>
+  <p><img alt="2D Vectors aroun [0, 0]" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_2D.png">Das bedeutet, dass ein 2D-Vektor durch zwei Werte definiert ist, eine &quot;x&quot;- und eine &quot;y&quot;-Position relativ zur
+    der lokalen [0,0]-Achse. Und was ist mit 3D-Vektoren? Nun, sie haben die zusätzliche Dimension der &quot;Tiefe&quot; zu bewältigen und würden als Positionen &quot;x&quot;, &quot;y&quot; und &quot;z&quot; um eine lokale Achse etwa so berechnet werden:</p>
+  <p><img alt="3D Vectors" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_3D.png">Ein gutes Beispiel für einen Vektor, der in <span class="notranslate">GameMaker Studio 2</span> verwendet wird, ist die Eigenschaft "Physik <strong>Gravitation"</strong> im Raumeditor. Die
+    Schwerkraft wird als Vektor um eine [0,0]-Position berechnet. Wenn Sie also die Schwerkraft als [x0, y10] definieren, würde die Schwerkraft mit einer Kraft von 10 <em>nach unten</em> wirken.</p>
+  <p>Normalerweise können Vektoren in vielen Situationen verwendet werden, aber manchmal möchte man ihren Wert einschränken (wie beim Umgang mit Winkeln), weshalb wir sie <strong>normalisieren </strong>. Dies ist im Wesentlichen ein mathematischer Trick, der verwendet wird, um einen Vektor
+    der Länge <em>n</em> in einen Vektor der Länge 1 umzuwandeln, was bedeutet, dass die Vektorkomponenten auf einen Wert zwischen 0 und 1 <em>normiert </em>werden. Diese Vektoren werden auch <strong>Einheitsvektoren</strong> genannt:</p>
+  <p><img alt="Unit Vector example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1D.png">Um einen normalisierten Vektor zu berechnen, müssen wir zunächst die ursprünglichen Vektorkomponenten haben und diese dann verwenden, um die
+    die Länge des Vektors. Dann dividieren wir jede der Vektorkomponenten durch diese Länge, um die normalisierten Vektorkomponenten zu erhalten, die den normalisierten Vektor bilden, bei dem die <strong>Summe der Quadrate aller Koordinaten gleich 1 ist</strong>. So geht's
+    wie:</p>
+  <p><img alt="Vector Normalisation" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1.png">Zuerst nehmen wir die Koordinaten des Vektors und erhalten die Komponenten:</p>
+  <p class="code">vx = (x2 - x1) = (7 - 1) = 6<br> vy = (y2 - y1) = (4 - 1) = 3</p>
+  <p>Mit diesen Werten berechnen wir dann die Länge des Vektors:</p>
+  <p class="code">len = sqr(vx2 + vy2); // = sqr(36 + 9) = sqr(45) = 6,708203932499369</p>
+  <p>Damit haben wir nun die exakte Länge des Vektors &quot;a&quot; und können damit die beiden Vektorkomponenten <span class="inline">vx</span> und <span class="inline">vy</span> normieren:</p>
+  <p class="code">vx = (vx/len); // = (6 / 6.708203932499369) = 0.8944271909999159<br> vy = (vy/len); // = (3 / 6.708203932499369) = 0.4472135954999579</p>
+  <p>Super! Wir haben jetzt die Komponenten des Vektors normalisiert! Aber was nützt uns das im Kontext von <span class="notranslate">GameMaker Studio 2</span> praktisch? Okay, geben wir Ihnen ein praktisches Beispiel...</p>
+  <p>Angenommen, Sie haben ein Spiel, in dem der Spieler auf einen Gegner schießen muss, und Sie müssen wissen, wie weit sich das Geschossobjekt bei jedem Schritt entlang der x- und y-Achse bewegen muss, um es zu treffen:</p>
+  <p><img alt="Vector Game Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_2.png">Hierfür würden Sie die Spieler- und Feindkoordinaten verwenden, um die Vektorkomponenten und die Länge zu erhalten, dann
+    Sie normalisieren sie, um einen Wert zwischen 0 und 1 zu erhalten, den Sie schließlich mit der Geschwindigkeit multiplizieren, die das Geschoss bei jedem Schritt erreichen soll. Diese letzten beiden Werte würden Sie dann speichern und bei jedem Schritt zu den Start-X- und -Y-Koordinaten addieren.
+    Klingt kompliziert? Ist es nicht, sehen Sie (die Werte wurden der Einfachheit halber auf eine Dezimalstelle gerundet):</p>
+  <p class="code">px = 100;<br> py = 425;<br> ex = 356;<br> ey = 83;<br> bullet_speed = 5;<br>
+    <br> vx = (ex - px); // = 256<br> vy = (ey - py); // = -342<br>
+    <br> len = sqrt(vx2 + vy2); // = sqrt(65536 + 116964) = 427.2<br>
+    <br> vx = vx / len; // = 0.6<br> vy = vy / len; // = 0.8<br>
+    <br> speed_x = vx * bullet_speed; // = 3<br> speed_y = vy * bullet_speed; // = 4</p>
+  <p>Um das Ziel zu treffen, müssen wir also bei jedem Schritt 3 zur x-Koordinate des Geschosses und 4 zu seiner y-Koordinate addieren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Additional_Information.htm">Zusätzliche Informationen</a></div>
+        <div style="float:right">Nächste: <a href="Guide_To_Using_Buffers.htm">Anleitung zur Verwendung von Puffern</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Vectors
+Vector Maths
+-->
+  <!-- TAGS
+vector_maths
+-->
+</body>
+</html>

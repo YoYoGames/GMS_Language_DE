@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Puffer laden</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Load Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Load Buffer" />
+  <meta name="search-keywords" content="Load Buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Load Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Load_Buffer.png"> Ladepuffer</h1>
+  <p>Mit dieser Aktion können Sie einen Puffer laden, der zuvor mit der Aktion <a href="Save_Buffer.htm">Puffer speichern</a> gespeichert wurde. Die Aktion erstellt einen neuen Puffer, lädt die Datendatei in diesen und gibt den eindeutigen ID-Wert zur Identifizierung des Puffers an die
+    Variable zurück. Sie geben den Namen der zu ladenden Datei (als String) und eine Variable an, in der die zurückgegebene Puffer-ID gespeichert werden soll. Beachten Sie, dass Sie, wenn Sie die Variable als temporäre lokale Variable kennzeichnen, sicherstellen müssen, dass Sie den Puffer, den diese Funktion erstellt, löschen, bevor
+    Sie müssen sicherstellen, dass Sie den von dieser Funktion erstellten Puffer vor dem Ende des Aktionsskripts oder Ereignisses löschen, da Sie sonst den Verweis darauf verlieren und ein Speicherleck entsteht, wenn die Variable verworfen wird.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Load Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Load_Buffer.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Dateiname</td>
+        <td>Der Name (als String) der zu öffnenden Datei</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable, die den eindeutigen ID-Wert für den beim Laden erstellten Puffer enthält</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Load Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Load_Buffer.png">Der obige Code des Aktionsblocks erstellt eine Variable zur Aufnahme von Pufferdaten und prüft dann, ob eine
+    Pufferspeicherdatei zuvor erstellt wurde. Wenn die Datei vorhanden ist, wird sie in die erstellte Puffervariable geladen. Wenn sie jedoch nicht vorhanden ist, wird sie erstellt, beschrieben und dann gespeichert, damit sie beim nächsten Mal geladen werden kann.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="File_Actions.htm">Datei-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Save_Buffer.htm">Puffer speichern</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Load Buffer
+-->
+  <!-- TAGS
+action_buffer_load
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_erstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_create" />
+  <meta name="rh-index-keywords" content="array_create" />
+  <meta name="search-keywords" content="array_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_erstellen</h1>
+  <p>Mit dieser Funktion können Sie ein 1D-Array einer bestimmten Größe erzeugen. Sie teilen der Funktion die Länge des zu erstellenden Arrays mit, und sie gibt das &quot;Handle&quot; für das Array zurück, das Sie dann einer Variablen zuweisen können. Bei Arrays, die auf diese Weise erstellt werden, wird
+    jeden Eintrag auf 0 initialisiert, es sei denn, Sie geben einen (optionalen) Initialisierungswert an. Wenn Sie den zusätzlichen Wert für die Initialisierung des Arrays angeben, werden alle Indizes innerhalb des neuen Arrays auf diesen Wert anstelle von 0 gesetzt, aber beachten Sie, dass die Funktion
+    in diesem Fall einen größeren Performance-Overhead hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">array_create(Größe, [Wert]);</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argument</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>Größe</td>
+          <td>Die Größe des zu erstellenden Arrays.</td>
+        </tr>
+        <tr>
+          <td>Wert</td>
+          <td>Der Wert, der für die Initialisierung aller Array-Indizes verwendet werden soll (optional).</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Array-Referenz</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">instance_array = array_create(100, noone);</p>
+  <p>Der obige Code erzeugt ein neues Array mit 100 Einträgen, die jeweils auf das Schlüsselwort &quot; <tt>noone&quot;</tt> gesetzt werden, und weist es dann der Variablen &quot;instance_array&quot; zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="array_copy.htm">array_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_create
+-->
+  <!-- TAGS
+array_create
+-->
+</body>
+</html>

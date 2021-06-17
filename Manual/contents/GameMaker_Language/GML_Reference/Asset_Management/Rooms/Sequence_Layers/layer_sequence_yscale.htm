@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_yscale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_yscale" />
+  <meta name="rh-index-keywords" content="layer_sequence_yscale" />
+  <meta name="search-keywords" content="layer_sequence_yscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_yscale</h1>
+  <p>Mit dieser Funktion können Sie die Y-Skala für das angegebene Sequenzelement setzen. Sie übergeben die Sequenzelement-ID, wie sie von <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> oder von einer der <a href="../General_Layer_Functions/General_Layer_Functions.htm">Ebenenelement-Funktionen</a> zurückgegeben wird, zusammen mit dem neu zu setzenden Maßstab auf der Y-Achse und die Sequenz wird um diesen Betrag skaliert. Eine Skalierung von 1 bedeutet keine Skalierung (1:1), kleinere Werte skalieren nach unten (0,5 z. B. halbiert die Breite der Sequenz), größere Werte skalieren
+    und negative Werte spiegeln die Sequenz um ihren Ursprung <i>und</i> skalieren sie, es sei denn, der verwendete Wert ist genau -1 (in diesem Fall wird die Sequenz nur um ihren Ursprung gespiegelt und nicht skaliert).</p>
+  <p>Es ist sehr wichtig zu beachten, dass die Anwendung einer <em>ungleichmäßigen</em> Skalierung (z. B. Skalierung der X-Achse um 3 und der Y-Achse um 2) auf Sequenzelemente, die eine Instanz enthalten, die eine <em>Drehung</em> verwendet, <strong>zu Problemen mit dem Zeichnen der Instanz, Kollisionen, Culling und vielen anderen Dingen führen kann</strong>.
+    Grundsätzlich gilt: Wenn Ihre Sequenz auf <em>Instanzeigenschaften</em> angewiesen ist, empfehlen wir Ihnen nicht, eine ungleichmäßige Skalierung mit einer Instanzdrehung zu kombinieren.</p>
+  <p>Beachten Sie auch, dass Sie die Variablen <span class="inline">image_xscale</span> \ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span> nicht für alle
+    Instanzen in einer Sequenz, die diese Funktion verwendet, ändern sollten, da sie überschrieben werden, sobald die Sequenz nach dem Aufruf der Funktion aktualisiert wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_sequence_yscale(sequence_element_id, xscale)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sequenz_element_id</td>
+        <td>Der eindeutige ID-Wert des Sequenzelements, auf das abgezielt werden soll</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Der neue Skalenwert der Y-Achse, der auf das Sequenzelement angewendet werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if seq_scale &lt; 2<br> {
+    <br> seq_scale += 0.01;<br> layer_sequence_xscale(my_seq, seq_scale);<br> layer_sequence_yscale(my_seq, seq_scale);<br> }
+  </p>
+  <p>Der obige Code prüft den Wert in der Variablen <span class="inline">seq_scale</span>, und wenn er kleiner als 2 ist, addiert er ihn und verwendet den Wert, um die X- und Y-Skala des in der Variablen <span class="inline">my_seq</span> referenzierten Sequenzelements einzustellen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequence_Layers.htm">Sequenzschichten</a></div>
+        <div style="float:right">Weiter: <a href="layer_sequence_get_angle.htm">layer_sequence_get_angle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_yscale
+-->
+  <!-- TAGS
+layer_sequence_yscale
+-->
+</body>
+</html>

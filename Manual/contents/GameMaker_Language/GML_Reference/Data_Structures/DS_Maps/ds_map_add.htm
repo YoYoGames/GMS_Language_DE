@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_add" />
+  <meta name="rh-index-keywords" content="ds_map_add" />
+  <meta name="search-keywords" content="ds_map_add" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_add</h1>
+  <p>Diese Funktion sollte verwendet werden, um Sätze von Schlüssel/Wertpaaren in die angegebene <span class="misspell-word">DS-Map</span> hinzuzufügen. Sie können diese Funktion überprüfen, um zu sehen, ob sie erfolgreich war oder nicht (bei Erfolg gibt sie <tt>true</tt> zurück, ansonsten <tt>false</tt> ),
+    da sie fehlschlagen kann, wenn derselbe Schlüssel bereits in der DS-Map existiert oder Sie eine nicht existierende DS-Map als ID der Map angeben, zu der hinzugefügt werden soll. Die Schlüssel und Werte, die Sie übergeben, können aus einer beliebigen Kombination von Datentypen bestehen, so dass alle folgenden - und
+    mehr - sind akzeptabel (obwohl Sie in der Praxis am häufigsten eine Zeichenkette für den Schlüssel verwenden werden):</p>
+  <p class="code">ds_map_add(map, 5, undefined);<br> ds_map_add(map, &quot;level&quot;, 1);<br> ds_map_add(map, 89.6, &quot;hello world&quot;);<br> ds_map_add(map, 5, buffer_get_address(buff));</p>
+  <p>Sie können auch mit dem <a href="../../../GML_Overview/Accessors.htm">Accessor</a> &quot;?&quot; zu einer Karte hinzufügen, wie unten gezeigt:</p>
+  <p class="code">map[? 5] = undefiniert;<br> map[? &quot;level&quot;] = 1;<br> map[? 89.6] = &quot;hello world&quot;;<br> map[? 5] = buffer_get_address(buff);</p>
+  <p class="note"><b>HINWEIS</b>: Im Gegensatz zu anderen Datenstrukturen in <span class="notranslate">GameMaker Studio 2</span> geht dieser Schlüssel nicht an den Anfang (und auch nicht an das Ende) der <span class="misspell-word">DS-Map</span>, sondern er geht einfach <b>irgendwo</b> in die <span class="misspell-word">DS-Map</span> hinein.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_map_add(id, key, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der Map, zu der hinzugefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Der Schlüssel des hinzuzufügenden Wertes.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Der Wert, der zur Karte hinzugefügt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">inventory = ds_map_create();<br> ds_map_add(inventory, &quot;hp potion&quot;, 1);<br> ds_map_add(inventory, &quot;gold&quot;, 100);</p>
+  <p>Dadurch wird eine neue Karte erstellt, deren ID der Variablen &quot;inventory&quot; zugewiesen wird. Dann fügt es der Karte zwei neue Schlüssel hinzu, &quot;hp potion&quot; und &quot;gold&quot;, und setzt ihre Anfangswerte auf 1 und 100.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Maps.htm">DS-Karten</a></div>
+        <div style="float:right">Weiter: <a href="ds_map_clear.htm">ds_map_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_add
+-->
+  <!-- TAGS
+ds_map_add
+-->
+
+</body></html>

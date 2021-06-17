@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_add_sprite_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_add_sprite_ext" />
+  <meta name="rh-index-keywords" content="font_add_sprite_ext" />
+  <meta name="search-keywords" content="font_add_sprite_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_add_sprite_ext</h1>
+  <p>Mit dieser Funktion können Sie einen &quot;Sprite-Streifen&quot; (das Sprite selbst muss ein <b>Sprite-Asset</b> aus dem Asset-Browser sein, oder ein Sprite, das Sie mit sprite_add zu den Spiel-Ressourcen hinzugefügt haben <tt>)</tt> verwenden <tt>, um</tt> ein neues Font-Asset zu erstellen, bei dem jedes Unterbild
+    ein einzelnes Symbol oder einen Buchstaben darstellen würde. Anders als bei der normalen <a href="font_add_sprite.htm"><tt>font_add_sprite()</tt></a> die eine bestimmte Reihenfolge für die Sub-Images des Sprites hat, ordnet diese Funktion die Sprite-Sub-Images basierend auf dem Argument
+    &quot;string_map&quot; der Funktion. Dieses Argument ist eine Zeichenkette, mit der Sie <span class="notranslate">GameMaker Studio 2</span> mitteilen können, welche Reihenfolge die Unterbilder des Sprite-Fonts haben, und es wird diese beim Schreiben von Text automatisch zuordnen. Wenn Sie also zum Beispiel eine String-Zuordnung
+    von &quot;AaBbCcDdEeFfGgHh&quot; haben, muss Ihr Sprite-Font <i>die</i> Sub-Images in dieser Reihenfolge haben. Sie können als &quot;Leerzeichen&quot; jedes beliebige Zeichen definieren, z. B. eine einzelne Zeile in der Größe, die Sie als Leerzeichen wünschen, und alle Leerzeichen
+    im Text werden in dieser Breite gerendert (aber das gewählte Bild wird <i>nie</i> gerendert), oder wenn Sie kein Sprite für "space" angeben, wird stattdessen die Breite des breitesten Zeichens im Sprite-Font verwendet.</p>
+  <p>Sie können auch den Abstand für die Schrift proportional<tt>(true</tt>) oder nicht proportional<tt>(false</tt>) einstellen, wobei eine proportionale Schrift den Abstand auf der Basis der tatsächlichen Breite der Buchstaben hat (so nimmt der Buchstabe &quot;i&quot; weniger Platz ein als der Buchstabe &quot;w&quot;,
+    ), während eine nicht-proportionale Schriftart auf der Basis der Breite des Teilbildes platziert wird, wie eine monospaced Schriftart. Schließlich können Sie den Abstand zwischen den einzelnen Buchstaben beim Schreiben definieren, und dies kann ein beliebiger ganzzahliger Wert sein, wobei 0 kein Abstand ist (die
+    Buchstaben werden sich &quot;berühren&quot;, wenn sie proportional sind). Die Funktion gibt einen <i>Indexwert</i> zurück, der in einer Variablen gespeichert werden sollte, da dieser in allen weiteren Codes, die sich auf diese Schriftart beziehen, benötigt wird, oder sie gibt -1 zurück, wenn die Funktion aus irgendeinem Grund fehlschlägt.
+    Grund fehlschlägt.</p>
+  <p>Es ist erwähnenswert, dass, damit die Funktionen zur Ausrichtung der Schrift funktionieren (wie <a href="../../Drawing/Text/draw_set_halign.htm"><tt>draw_set_halign()</tt></a>), sollte der Ursprung des Font-Sprites auf die <i>linke obere Ecke</i> gesetzt werden. Wenn Sie andere Werte verwenden
+    verwenden, müssen Sie den Ursprungsversatz beim Zeichnen von Text mit der Schriftart berücksichtigen.</p>
+  <p class="note"><b>HINWEIS: </b>Wenn Sie eine Schriftart in <span class="notranslate">GameMaker Studio 2</span> laden, müssen Sie daran denken, sie wieder zu entfernen (mit <span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">font_delete()</tt></a></span>), wenn Sie sie nicht mehr benötigen, sonst besteht
+    besteht die Gefahr eines Speicherlecks, das Ihr Spiel verlangsamt und schließlich zum Absturz bringt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">font_add_sprite_ext(spr, string_map, prop, sep);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td>Das Sprite, auf dessen Basis eine Schrift hinzugefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>string_map</td>
+        <td>String, aus dem die Reihenfolge der Sprite-Subbilder entnommen wird.</td>
+      </tr>
+      <tr>
+        <td>Stütze</td>
+        <td>Als Proportionalschrift einstellen oder nicht.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>Der Abstand, der zwischen den einzelnen Buchstaben gelassen werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.Font = font_add_sprite_ext(spr_CalcFont, &quot;0123456789+-*/=&quot;, true, 2);</p>
+  <p>Der obige Code erstellt ein neues Font-Asset aus dem in der Variablen &quot;spr_CalcFont&quot; indizierten Sprite und speichert den Index des neuen Fonts in der Variablen &quot;global.Font&quot;. Die Unterbilder des Sprite-Fonts werden auf die angegebene Zeichenkette gemappt
+    angegeben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fonts.htm">Schriftarten</a></div>
+        <div style="float:right">Weiter: <a href="font_replace.htm">font_replace</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_add_sprite_ext
+-->
+  <!-- TAGS
+font_add_sprite_ext
+-->
+</body>
+</html>

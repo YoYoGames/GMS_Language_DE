@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dampf UGC</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the different Steam UGC functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Steam UGC,User Generated Content,Workshop,Steam Workshop" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Dampf</span></h1>
+  <p>Dieser Abschnitt ist für Benutzer gedacht, die Zugriff auf die <span class="notranslate">Steam-API</span> erhalten haben, um Ihr Spiel auf dieser Plattform zu veröffentlichen, und die die Möglichkeiten nutzen möchten, die Ihnen der <span class="notranslate">Steam-Workshop</span> und die Community zum Hinzufügen und Erzeugen von Benutzerinhalten in Ihren
+    Projekten. Die einfachste Form von benutzergenerierten Inhalten ist die Möglichkeit für den Benutzer, Screenshots zu erstellen und freizugeben, was durch die folgenden zwei Funktionen erleichtert wird:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="steam_is_screenshot_requested.htm"><span class="notranslate">steam_is_screenshot_requested</span></a></li>
+    <li><a href="steam_send_screenshot.htm"><span class="notranslate">steam_send_screenshot</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Die restlichen Funktionen auf dieser Seite beziehen sich auf die Verwendung des <strong><span class="notranslate">Steam-Workshops</span></strong> und einige von ihnen erfordern die <strong><span class="notranslate">Steam-App-ID</span></strong> für Ihr Projekt sowie eine <strong>Benutzer-ID</strong> für die Person, die das Spiel spielt, oder deren
+    Benutzernamen, die Sie mit den folgenden Funktionen herausfinden können:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Steam_API/steam_get_app_id.htm"><span class="notranslate">steam_get_app_id</span></a></li>
+    <li><a href="../Steam_API/steam_get_user_account_id.htm"><span class="notranslate">steam_get_user_account_id</span></a></li>
+    <li><a href="../Steam_API/steam_get_user_persona_name.htm"><span class="notranslate">steam_get_user_persona_name</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Bevor Sie eine der eingebauten Funktionen für die <span class="notranslate">Steam</span> UGC<strong>(</strong>User Generated Content) API verwenden, müssen Sie Ihr Spiel über das <span class="notranslate">Steam-Dashboard</span> korrekt eingerichtet haben und Sie sollten die erforderliche
+    Dokumentation gelesen haben, die Sie hier finden:</p>
+  <ul class="colour">
+    <li><a href="https://partner.steamgames.com/documentation/ugc#Tech" target="_blank">Freigeben von benutzergenerierten Inhalten</a></li>
+  </ul>
+  <p class="note"><strong>HINWEIS</strong>: Sie müssen Ihr Spiel für den <span class="notranslate">Steam-Online-Store</span> akzeptiert haben und Zugriff auf die Entwicklerbereiche der <span class="notranslate">Steam-API-Dokumentation</span> haben.</p>
+  <p>Alle abonnierten UGC-Elemente werden vom <span class="notranslate">Steam-Client</span> automatisch heruntergeladen, und Sie sollten Code im <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm">asynchronen Ereignis</a> von <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam</span></a> haben, um dies abzufangen und die
+    ID der UGC, die heruntergeladen wurde, zur Verwendung in den anderen UGC-Funktionen zu speichern.</p>
+  <p class="note"><b>WICHTIG!</b> <span class="notranslate">Steam</span> UGC-IDs können riesige Zahlen über 600.000.000 sein. Das bedeutet, dass Sie diese manchmal als String speichern müssen, anstatt zu versuchen, sie als echten Wert zu speichern, besonders wenn Sie mit Puffern arbeiten oder versuchen, den Wert in eine
+    eine Textdatei zu schreiben (da dies den Wert in ein vereinfachtes Standardformat wie &quot;6.6624e+003&quot; konvertiert, was beim Zurücklesen zu Problemen führt).</p>
+  <p>Der normale Arbeitsablauf, um UGC in Ihr Spiel zu bekommen, sieht folgendermaßen aus:</p>
+  <ol>
+    <li>Der Benutzer würde ein Element abonnieren (entweder von Ihrem Spiel mit <a href="steam_ugc_subscribe_item.htm"><tt><span class="notranslate">steam_ugc_subscribe_item</span>()</tt></a> oder aus dem Client/Browser.</li>
+    <li>Ihr Spiel würde mit dem entsprechenden Code im Steam Async Event auf neue Abonnements &quot;lauschen&quot;.</li>
+    <li>Wenn Sie ein asynchrones Abonnement-Ereignis erhalten, würden Sie dann prüfen, ob das Element installiert (d. h. heruntergeladen) ist mit <a href="steam_ugc_get_item_install_info.htm"><tt><span class="notranslate">steam_ugc_get_item_install_info</span>()</tt></a>.</li>
+    <li>Wenn das Element <i>nicht</i> installiert ist, müssen Sie eine Prüfung mit <a href="steam_ugc_get_item_update_info.htm"><tt><span class="notranslate">steam_ugc_get_item_update_info</span>()</tt></a> um den Fortschritt des Downloads zu verfolgen.</li>
+  </ol>
+  <p>Die folgenden Abschnitte erklären alle Funktionen, die erforderlich sind, um UGC in <span class="notranslate">GameMaker Studio 2</span> zum Laufen zu bringen:</p>
+  <p> </p>
+  <h2><label for="a">Erstellen und Bearbeiten von Inhalten</label></h2>
+  <p>Die folgenden Funktionen sind im Wesentlichen &quot;Wrapper&quot;-Funktionen für diejenigen, die in der Steam-API <span class="notranslate">zum</span> Erstellen und Hochladen von Inhalten auf deren Server bereitgestellt werden. Daher empfehlen wir, dass Sie die verlinkte <span class="notranslate">Steam-Dokumentation</span> durchlesen, bevor Sie sie verwenden
+    zu lesen, um ein besseres Verständnis für ihre Funktionsweise zu erhalten: <a href="https://partner.steamgames.com/documentation/ugc#CreateUploadContent" target="_blank">Erstellen und Hochladen von Inhalten</a>.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="steam_ugc_create_item.htm"><span class="notranslate">steam_ugc_create_item</span></a></li>
+    <li><a href="steam_ugc_start_item_update.htm"><span class="notranslate">steam_ugc_start_item_update</span></a></li>
+    <li><a href="steam_ugc_set_item_title.htm"><span class="notranslate">steam_ugc_set_item_title</span></a></li>
+    <li><a href="steam_ugc_set_item_description.htm"><span class="notranslate">steam_ugc_set_item_description</span></a></li>
+    <li><a href="steam_ugc_set_item_visibility.htm"><span class="notranslate">steam_ugc_set_item_visibility</span></a></li>
+    <li><a href="steam_ugc_set_item_tags.htm"><span class="notranslate">steam_ugc_set_item_tags</span></a></li>
+    <li><a href="steam_ugc_set_item_content.htm"><span class="notranslate">steam_ugc_set_item_content</span></a></li>
+    <li><a href="steam_ugc_set_item_preview.htm"><span class="notranslate">steam_ugc_set_item_preview</span></a></li>
+    <li><a href="steam_ugc_submit_item_update.htm"><span class="notranslate">steam_ugc_submit_item_update</span></a></li>
+    <li><a href="steam_ugc_get_item_update_progress.htm"><span class="notranslate">steam_ugc_get_item_update_progress</span></a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h2><label for="b">Inhalt konsumieren</label></h2>
+  <p>Sobald Ihre Benutzerinhalte erstellt wurden und im Workshop zum Download bereitstehen, können sie über die <span class="notranslate">Steam-App</span> oder über das Web-Portal abonniert werden. <span class="notranslate">GameMaker Studio 2</span> enthält jedoch auch die folgenden Funktionen zur Nutzung der <span class="notranslate">Steam</span>
+    API zum Erstellen und Beenden von Abonnements sowie zum Abrufen von Informationen darüber, was der Benutzer aktuell abonniert hat:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="steam_ugc_subscribe_item.htm"><span class="notranslate">steam_ugc_subscribe_item</span></a></li>
+    <li><a href="steam_ugc_unsubscribe_item.htm"><span class="notranslate">steam_ugc_unsubscribe_item</span></a></li>
+    <li><a href="steam_ugc_num_subscribed_items.htm"><span class="notranslate">steam_ugc_num_subscribed_items</span></a></li>
+    <li><a href="steam_ugc_get_subscribed_items.htm"><span class="notranslate">steam_ugc_get_subscribed_items</span></a></li>
+    <li><a href="steam_ugc_get_item_install_info.htm"><span class="notranslate">steam_ugc_get_item_install_info</span></a></li>
+    <li><a href="steam_ugc_get_item_update_info.htm"><span class="notranslate">steam_ugc_get_item_update_info</span></a></li>
+    <li><a href="steam_ugc_request_item_details.htm"><span class="notranslate">steam_ugc_request_item_details</span></a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h2><label for="c">Inhalt abfragen</label></h2>
+  <p>Es gibt auch eine große Anzahl von Funktionen, um die <span class="notranslate">Steam-API</span> über die verfügbaren UGC-Artikel abzufragen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="steam_ugc_create_query_user.htm"><span class="notranslate">steam_ugc_create_query_user</span></a></li>
+    <li><a href="steam_ugc_create_query_user_ex.htm"><span class="notranslate">steam_ugc_create_query_user_ex</span></a></li>
+    <li><a href="steam_ugc_create_query_all.htm"><span class="notranslate">steam_ugc_create_query_all</span></a></li>
+    <li><a href="steam_ugc_create_query_all_ex.htm"><span class="notranslate">steam_ugc_create_query_all_ex</span></a></li>
+    <li><a href="steam_ugc_query_set_cloud_filename_filter.htm"><span class="notranslate">steam_ugc_query_set_cloud_filename_filter</span></a></li>
+    <li><a href="steam_ugc_query_set_match_any_tag.htm"><span class="notranslate">steam_ugc_query_set_match_any_tag</span></a></li>
+    <li><a href="steam_ugc_query_set_search_text.htm"><span class="notranslate">steam_ugc_query_set_search_text</span></a></li>
+    <li><a href="steam_ugc_query_set_ranked_by_trend_days.htm"><span class="notranslate">steam_ugc_query_set_ranked_by_trend_days</span></a></li>
+    <li><a href="steam_ugc_query_add_required_tag.htm"><span class="notranslate">steam_ugc_query_add_required_tag</span></a></li>
+    <li><a href="steam_ugc_query_add_excluded_tag.htm"><span class="notranslate">steam_ugc_query_add_excluded_tag</span></a></li>
+    <li><a href="steam_ugc_query_set_return_long_description.htm"><span class="notranslate">steam_ugc_query_set_return_long_description</span></a></li>
+    <li><a href="steam_ugc_query_set_return_total_only.htm"><span class="notranslate">steam_ugc_query_set_return_total_only</span></a></li>
+    <li><a href="steam_ugc_query_set_allow_cached_response.htm"><span class="notranslate">steam_ugc_query_set_allow_cached_response</span></a></li>
+    <li><a href="steam_ugc_send_query.htm"><span class="notranslate">steam_ugc_send_query</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Sie können ein Vorschaubild eines beliebigen UGC-Elements aus dem Workshop abrufen, indem Sie die Funktion <tt><span class="notranslate">steam_ugc_send_query</span></tt> () verwenden, um das Handle der Vorschaudatei des Bildes zu erhalten, und dann die folgende Funktion aufrufen:</p>
+  <ul class="colour">
+    <li><a href="steam_ugc_download.htm"><span class="notranslate">dampf_ugc_download</span></a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Steam.htm"><span class="notranslate">Dampf</span></a></div>
+        <div style="float:right">Nächste: <a href="../Steam_API/Steam_API.htm">Allgemeine <span class="notranslate">Dampf-API</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Steam</span> UGC
+-->
+  <!-- TAGS
+ugc_functions
+-->
+</body>
+</html>

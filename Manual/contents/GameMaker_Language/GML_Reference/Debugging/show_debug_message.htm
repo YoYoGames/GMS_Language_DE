@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>show_debug_message</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for show_debug_message" />
+  <meta name="rh-index-keywords" content="show_debug_message" />
+  <meta name="search-keywords" content="show_debug_message" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_debug_message</h1>
+  <p>Diese Funktion erzeugt eine eigene Debug-Meldung, die zur <span class="notranslate">Laufzeit</span> im Compiler-Fenster angezeigt wird. Beachten Sie, dass die Meldung <i>entweder</i> eine Zeichenkette oder eine reelle Zahl sein kann, aber wenn Sie beides benötigen, muss die Zahl zuerst in eine Zeichenkette konvertiert werden, indem Sie
+    der Funktion <a href="../Strings/Strings.htm"><tt>string()</tt></a> Funktion in eine Zeichenkette konvertiert werden muss (siehe das Beispiel unten) und dass, wenn die Zahl mehr als zwei Dezimalstellen hat, Sie die Funktion <a href="../Strings/string_format.htm"><tt>string_format()</tt></a> um sie anzuzeigen
+    verwenden, da Dezimalzahlen standardmäßig auf die nächsten zwei Nachkommastellen gerundet werden (so würde &quot;1,2468&quot; als &quot;1,25&quot; im Ausgabefenster angezeigt).</p>
+  <p>Debug-Meldungen, die mit dieser Funktion angezeigt werden, werden sowohl im <a href="../../../Introduction/The_Output_Window.htm">Compiler-Ausgabefenster</a> unten in der IDE als auch in der <a href="../../../IDE_Tools/The_Debugger.htm">Graph-Ansicht</a> des
+    des Debuggers angezeigt, wenn das Spiel im Debug-Modus läuft. Wenn Sie die Meldungen nur im Debug-Modus sehen wollen, sollten Sie wahrscheinlich die Funktion <a href="debug_event.htm"><tt>debug_event()</tt></a> stattdessen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">show_debug_message(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>Die benutzerdefinierte Debug-Meldung, die angezeigt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4><b>Beispiel:</b></h4>
+  <p class="code">if !instance_exists(obj_Exit)<br> {
+    <br> show_debug_message(&quot;Exit not created!&quot;);<br> show_debug_message(&quot;Error Num: &quot; + string(global.error));<br> game_end();
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob eine Instanz vorhanden ist, und wenn nicht, wird eine Debug-Meldung im Kompilierfenster angezeigt und das Spiel wird beendet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Debugging.htm">Fehlersuche</a></div>
+        <div style="float:right">Weiter: <a href="show_debug_overlay.htm">show_debug_overlay</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+show_debug_message
+-->
+  <!-- TAGS
+show_debug_message
+-->
+</body>
+</html>

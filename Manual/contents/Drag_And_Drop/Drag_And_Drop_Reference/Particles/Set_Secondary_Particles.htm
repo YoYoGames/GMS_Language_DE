@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sekundärteilchen einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Secondary Particles action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Secondary Particles" />
+  <meta name="search-keywords" content="Set Secondary Particles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Secondary Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Secondary_Particles.png"> Satz Sekundärteilchen</h1>
+  <p>Diese Aktion ermöglicht es Ihnen, einen zweiten Partikeltyp zusammen mit dem primären Partikel zu verwenden. Sie geben den ID-Wert des primären Partikeltyps an (der derselbe sein sollte wie der Wert, den Sie bei der Erstellung des Partikels mit der Aktion " <a href="Create_Particle_Type.htm">Partikeltyp erstellen"</a> verwendet haben) und können dann wählen, ob er einen sekundären Partikeltyp bei jedem Spielbild, das er existiert, und/oder am Ende der Lebensdauer des primären Partikels emittieren soll. Sie müssen einen anderen Partikel-ID-Wert für den &quot;Secondary&quot; und dann eine Zahl
+    in der &quot;Anzahl&quot; erstellt werden.</p>
+  <p>Wenn als Ereignis &quot;Pro Schritt&quot; ausgewählt ist, wird bei jedem Spielbild, bei dem ein Primärpartikel auf dem Bildschirm vorhanden ist, die angegebene Anzahl von Sekundärpartikeln emittiert - zum Beispiel könnten Sie eine Rakete mit &quot;Flammen&quot;-Partikeln haben, und jedes Flammen
+    Partikel ein sekundäres &quot;Rauch&quot;-Partikel emittiert. Wenn das Ereignis auf &quot;Bei Tod&quot; eingestellt ist, werden die sekundären Partikel nur dann emittiert, wenn ein Partikel des primären Typs das Ende seiner Lebensdauer erreicht - zum Beispiel könnten Sie
+    einen &quot;Explosions&quot;-Partikel haben, der am Ende seiner Lebensdauer einen &quot;Staub&quot;-Partikel abgibt.</p>
+  <p>Es ist wichtig zu beachten, dass Sie <i>nicht</i> dieselbe Partikeltyp-ID als Primärpartikel wie für Sekundärpartikel verwenden <i>können</i> und dass Sie bei Verwendung dieser Aktion sehr schnell auf Leistungsprobleme stoßen können, da auf diese Weise leicht Tausende von
+    Achten Sie also darauf, die Lebensdauer und die Anzahl der Partikel zu begrenzen, die sowohl vom primären als auch vom sekundären Partikeltyp erzeugt werden. Beachten Sie auch, dass Sie jedem Partikeltyp einen Sekundärpartikel zuweisen können und so "Partikelketten" erstellen können, bei denen ein Partikel
+    &quot;Partikelketten&quot; erstellen können, bei denen ein Partikel bei jedem Schritt einen anderen erzeugt und dieser Partikel dann einen anderen erzeugt, wenn er das Ende seiner Lebensdauer erreicht, usw... Obwohl auch hier Vorsicht geboten ist, wenn Partikel auf diese Weise verkettet werden, um sicherzustellen, dass
+    dass die Leistung nicht leidet. Sie können diese Aktion auch zweimal für einen einzelnen Partikeltyp aufrufen und ihn sowohl bei Schritt als auch bei Tod platzen lassen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Secondary Particles Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Secondary_Particles.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typenbezeichnung</td>
+        <td>Der ID-Wert für den Partikeltyp, dem das sekundäre Partikel gegeben werden soll</td>
+      </tr>
+      <tr>
+        <td>Veranstaltung</td>
+        <td>Wann das Sekundärteilchen erzeugt werden soll, entweder &quot;Pro Schritt&quot; oder &quot;Bei Tod&quot;</td>
+      </tr>
+      <tr>
+        <td>Sekundärseite</td>
+        <td>Der ID-Wert für den Partikeltyp, der im gewählten sekundären Ereignis emittiert werden soll</td>
+      </tr>
+      <tr>
+        <td>Zählen Sie</td>
+        <td>Die Anzahl der Sekundärpartikel, die im gewählten Sekundärereignis erstellt werden sollen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Set Secondary Particles Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Set_Secondary_Particles.png">Der obige Code des Aktionsblocks weist zwei sekundäre Partikel zu
+    dem Partikel mit der in der Variablen &quot;p_fire&quot; gespeicherten ID zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Actions.htm">Partikel-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Burst_Particles.htm">Burst-Teilchen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Secondary Particles
+-->
+  <!-- TAGS
+action_part_type_secondary
+-->
+</body>
+</html>

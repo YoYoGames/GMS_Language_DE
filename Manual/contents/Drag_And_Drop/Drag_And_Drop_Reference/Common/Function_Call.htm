@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Funktionsaufruf</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Function Call" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Function Call" />
+  <meta name="search-keywords" content="Function Call" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Function Call Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Execute_Function.png"> Funktionsaufruf</h1>
+  <p>Mit dieser Aktion können Sie eine beliebige <a href="../../../GameMaker_Language/GML_Reference/GML_Reference.htm"><span class="notranslate">GML-Funktion</span></a> oder eine <a href="Declare_A_New_Function.htm">benutzerdefinierte Funktion</a> aufrufen. Sie geben die aufzurufende Funktion an und liefern dann alle zusätzlichen
+   <i>Argumente</i>, die sie benötigt, d. h. alle Werte (Strings, Ganzzahlen, Ressourcenindizes usw.), die Sie in die Funktion eingeben möchten, damit sie diese verwenden kann. Sie können zusätzliche Argumenteingaben hinzufügen, indem Sie auf das Plus-Symbol <span><img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>neben
+    der Aktion klicken, und Sie sollten sicherstellen, dass die Anzahl der Argumente mit der der verwendeten Funktion übereinstimmt (d. h.: wenn die Funktion 3 Argumente benötigt, sollten Sie 3 Argumente angeben). Einige Funktionen können auch einen Wert zur späteren Verwendung in der Aktionsblock
+    Liste zurückgeben, und so können Sie auch die <b>Zielvariable</b> angeben, die diesen Rückgabewert speichern soll, die zuvor erstellt worden sein kann oder eine neue temporäre lokale Variable sein kann (wenn Sie das Kontrollkästchen &quot; Temp&quot; aktivieren). Sowohl das Ziel
+    und das Argumentfeld können leer gelassen werden, wenn sie nicht benötigt werden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Function Call Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Execute_Function.png" /></p>
+  <h4>Argumente:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Funktion</td>
+        <td>Die aufzurufende <span class="notranslate">GML-Funktion</span>.</td>
+      </tr>
+      <tr>
+        <td>Argument0 ... ArgumentX</td>
+        <td>Die verschiedenen Argumente (Werte), die an die Funktion übergeben werden sollen.</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Der Name der Variablen, auf die die zurückgegebenen Werte abzielen sollen (kann leer gelassen werden).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Function Call Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Execute_Function.png">Der obige Aktionsblock-Code prüft, ob eine Instanz von &quot;<span class="inline">obj_Player</span>&quot;
+    existiert, und wenn dies der Fall ist, ruft er die Funktion <a href="../../../GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/point_distance.htm"><tt>point_distance()</tt></a><span> </span>auf und übergibt dabei die x- und y-Position der aktuellen Instanz,
+    sowie die &quot;<span class="inline">obj_player</span>&quot; x- und y-Position. Sie gibt den Abstand zwischen den beiden Punkten an die (zuvor erstellte) Instanzvariable <tt>dist</tt> zurück oder setzt die Variable auf 0, wenn es keine Instanz von
+    &quot;<span class="inline">obj_Player</span>&quot; im Raum gibt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Common_Actions_Library.htm">Gemeinsame Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Apply_To...htm">Anwenden auf...</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Function Call
+-->
+  <!-- TAGS
+action_function_call
+-->
+</body>
+</html>

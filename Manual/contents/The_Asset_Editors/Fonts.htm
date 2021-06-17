@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Schriftarten</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the font editor works" />
+  <meta name="rh-index-keywords" content="Font Editor" />
+  <meta name="search-keywords" content="fonts,font editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Font-Editor</h1>
+  <p><img alt="The Font Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts.png" /></p>
+  <p>Wenn Sie Text in Ihrem Spiel zeichnen möchten, wird dieser Text in einer <a class="glossterm" data-glossterm="Schriftart" href="#">Standardschriftart</a> Arial 12 Punkt gezeichnet, aber um interessantere oder einzigartig aussehende Texte zu erstellen, werden Sie wahrscheinlich andere Schriftarten verwenden wollen.
+    Um also verschiedene Schriftarten zu verwenden, die Sie auf Ihrem Computer haben, müssen Sie in <span class="notranslate">GameMaker Studio 2</span> eine <strong>Schriftart-Asset</strong> erstellen. Dazu klicken Sie mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> und wählen &quot;<em>Erstellen&quot; -&gt; &quot;Schriftart&quot;.</em> Für jedes Font-Asset, das Sie erstellen, geben Sie eine bestimmte Schriftart von Ihrem Computer an, die dann in Ihrem Spiel mit Hilfe der
+    dann in Ihrem Spiel mit Hilfe der Aktion oder des Codes zum Setzen einer Schriftart zum Zeichnen verwendet werden kann.</p>
+  <p>Wenn Sie zum ersten Mal eine Font-Ressource erstellen, wird das Font-Editor-Fenster mit den folgenden Optionen geöffnet:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Details</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Hier können Sie Ihrer Schrift einen eindeutigen Namen geben (nur alphanumerische Zeichen und das &quot;_&quot;-Unterstrichsymbol) sowie die zu verwendende Schriftart auswählen. Die Schriftart muss auf Ihrem Rechner installiert sein, und aus lizenzrechtlichen Gründen speichert <span class="notranslate">GameMaker Studio 2</span> nicht
+      Aufgrund von Lizenzproblemen speichert GameMaker Studio 2 die eigentlichen Schriftdateien standardmäßig nicht mit der Projektdatei, sondern die Schrift wird als eine Reihe von Bitmap-Glyphen auf eine <a href="../Settings/Texture_Information/Texture_Pages.htm">Texturseite</a> <a class="glossterm" data-glossterm="gerendert" href="#">gerendert</a>.
+      von Bitmap-Glyphen gerendert. Die Texturseite wird einer <a href="../Settings/Texture_Groups.htm">Texturgruppe</a> zugewiesen, die Sie auch hier über die Option <strong>Gruppe</strong> auswählen können.</p>
+    <p class="dropspot">Wenn Sie die eigentliche Schriftdatei ( <span class="inline">*.ttf</span> oder nur <tt>*.otf</tt> ) zusammen mit dem Projekt verteilen möchten, wenn Sie ein <span class="notranslate">Marketplace-Asset</span> erstellen oder aus anderen Gründen, können Sie die Option <strong>In Projekt kopieren</strong> aktivieren. Diese
+      öffnet den Datei-Explorer, in dem Sie die Schriftdatei auswählen können, die dann zu den mit dem Projekt gebündelten Dateien hinzugefügt wird.</p>
+    <p class="note"><strong>WICHTIG!</strong> Sie sollten nur Schriftarten verwenden, deren <strong>Weitergabe oder Verwendung in Ihrem Projekt rechtlich zulässig und lizenziert</strong> ist.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Voreinstellungen</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">In diesem Bereich können Sie die Größe (in Punkt - Standard ist 12pt) einstellen und ob die Schrift fett oder kursiv gezeichnet oder mit <a class="glossterm" data-glossterm="Anti-Aliasing" href="#">Anti-Aliasing</a> versehen werden soll. Das Vorschaufenster auf der rechten Seite
+      zeigt Ihnen den Text ungefähr so an, wie er in Ihrem Spiel mit der von Ihnen angegebenen Größe und den Transformationen aussehen wird.</p>
+    <p class="dropspot"><br />
+    </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Bereichskontrollen</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Wenn Sie eine Font-Ressource erstellen, ist es selten, dass Sie jede einzelne Glyphe des Fonts einbeziehen möchten. Aus diesem Grund verwendet <span class="notranslate">GameMaker Studio 2</span> standardmäßig nur die Zeichen von 32 bis 127 des gewählten Fonts, da dies die Zahlen und
+      die Klein- und Großbuchstaben sowie bestimmte Satzzeichen. Sie können jedoch den verwendeten Zeichenbereich ändern, um Ihre Spiele zu optimieren, d. h., wenn Sie nur die Zahlen einer bestimmten Schriftart benötigen, wählen Sie <em>nur </em>die Zahlen aus. Um dies
+      Klicken Sie dazu zuerst auf die Schaltfläche " <strong>Löschen" </strong>, um den aktuellen Bereich zu löschen (möglicherweise müssen Sie den Bereich markieren, damit dies funktioniert, indem Sie im Vorschaufenster auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> klicken).
+      Vorschaufenster) und dann auf die Schaltfläche <strong>Hinzufügen </strong>klicken, um einen neuen Bereich hinzuzufügen. Dadurch wird das folgende verkettete Fenster geöffnet:<br>
+    </p>
+    <p class="dropspot"><img alt="Font Range Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Range.png">Dieses Fenster enthält einige Schaltflächen, mit denen Sie einen Standardbereich für Ihre Schrift festlegen können:</p>
+    <p class="dropspot">   - Der <em>normale </em>Bereich von 32 bis 127<br>
+      <br> - Der <em>ASCII-Bereich </em>von 0 bis 255<br>
+      <br> - Der <em>Ziffernbereich </em>, der nur die 10 Ziffern enthält<br>
+      <br> - Der <em>Buchstabenbereich </em>, der nur alle Groß- und Kleinbuchstaben enthält<br>
+    </p>
+    <p class="dropspot">Andere Bereiche können verwendet werden, indem Sie den ersten und letzten Zeichenindex des gewünschten Bereichs in die Eingabefelder für den Zeichenbereich eingeben (wenn ein Zeichen nicht im Bereich liegt, wird es durch ein Leerzeichen ersetzt). Abgesehen von diesen Schaltflächen und Eingabefeldern,
+      haben Sie noch zwei weitere Optionen, die besonders nützlich sind:<br>
+    </p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Aus Code</strong>: Wenn Sie auf diese Schaltfläche und dann auf OK klicken, analysiert <span class="notranslate">GameMaker Studio 2</span> automatisch Ihren Spielcode nach Zeichenketten und erstellt dann verschiedene Zeichenbereiche, um den gesamten Text in Ihrem Spiel abzudecken. Beachten Sie, dass es nach
+        alle Zeichenketten (entweder innerhalb von &quot;&quot; oder '') und kann daher auch Dateinamen in die Zeichenbereiche aufnehmen.<br>
+      </li>
+      <li class="dropspot"><strong>Aus Datei</strong>: Dies funktioniert ähnlich wie die oben erklärte Option &quot;Aus Code&quot;. Wenn Sie darauf klicken, werden Sie aufgefordert, eine Datei anzugeben, und wenn das erledigt ist, sollten Sie auf OK klicken. <span class="notranslate">GameMaker Studio 2</span> parst dann die Datei
+        Datei und erstellt Zeichenbereiche für den darin gefundenen Text.</li>
+    </ul>
+    <p class="dropspot">Beachten Sie, dass Sie den Textbereich manuell bearbeiten können, indem Sie direkt im Vorschaufenster Textglyphen hinzufügen oder löschen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Textur-Steuerelemente</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Wie oben (im Abschnitt über <strong>Schriftartdetails</strong>) erwähnt, werden standardmäßig alle Schriftglyphen als Teil einer Texturgruppe in eine Texturseite <a class="glossterm" data-glossterm="gerendert" href="#">gerendert</a>, um sie in grafische
+      Wenn das Spiel kompiliert wird, wird die Schrift zu einer temporären Textur hinzugefügt, um ein einzelnes Bild mit allen erforderlichen Schriftglyphen zu erstellen, das dann der Haupttexturgruppe zum Exportieren hinzugefügt wird. Die Schaltflächen hier dienen zum Einstellen
+      wie die Schrifttextur generiert wird oder um eine neue Schrifttextur zu generieren.</p>
+    <p class="dropspot">Mit der Schaltfläche <strong>Optionen </strong>öffnen Sie die erweiterten Optionen für die Schrifttextur:</p>
+    <p class="dropspot"><img alt="Font Options Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Options.png">Diese Optionen können die Darstellung einer Schriftart im Spiel teilweise radikal verändern, und nicht alle Schriftarten benötigen die gleichen Einstellungen.
+      Die folgenden Optionen sollen Ihnen die größtmögliche Anpassung Ihrer Schriftart ermöglichen:</p>
+    <ul class="colour">
+      <li class="dropspot"><strong>Hinting</strong>: Font Hinting (auch als Instruktion bekannt) ist die Verwendung von mathematischen Anweisungen, um die Anzeige einer Umrissschrift so anzupassen, dass sie mit einem gerasterten Raster übereinstimmt. Bei niedrigen Bildschirmauflösungen ist das Hinting entscheidend für die Erzeugung von
+        Hier können Sie zwischen verschiedenen Hinting-Algorithmen wählen, um das bestmögliche Ergebnis zu erzielen. Die Voreinstellung ist &quot;normal&quot;.</li>
+      <li class="dropspot"><strong>Glyphen-Optionen</strong>: Mit diesen Optionen können Sie das Laden der Glyphen durch Aktivieren/Deaktivieren verschiedener Operationen ändern. Diese sind:
+        <ol>
+          <li><em>Hinting deaktivieren</em>: Damit wird das fonteigene Hinting und der Auto-Hintergrund deaktiviert.</li>
+          <li><em>Auto-Hinterlegung deaktivieren</em>: Dies deaktiviert den Auto-Hintergrund und verwendet stattdessen den nativen Hintergrund der Schriftart (wenn diese einen hat). Beachten Sie, dass dies die Option &quot;Auto-Hinterlegung bevorzugen&quot; außer Kraft setzt.</li>
+          <li><em>Auto-Hintergrund bevorzugen</em>: Diese Option weist <span class="notranslate">GameMaker Studio 2</span> an, den Auto-Hintergrund gegenüber dem nativen Hinting der Schriftart zu bevorzugen. Beachten Sie, dass dies durch die Optionen &quot;Auto-Hintergrund deaktivieren&quot; und &quot;Hinting deaktivieren&quot;
+            Optionen überschrieben wird.
+          </li>
+          <li><em>Verzerren</em>: Wenn Sie diese Option aktivieren, werden Glyphen leicht verzerrt, um die Rasterausrichtung zu verbessern. Beachten Sie, dass hierfür der Auto-Hintergrund und der Hinting-Modus &quot;Normal&quot; erforderlich sind.</li>
+          <li><em>Keine Skalierung</em>: Wenn diese Option aktiviert ist, bleiben die Glyphen in Schrifteinheiten und ignorieren die angeforderte Größe. Dies bedeutet, dass Hinting deaktiviert ist.<br>
+          </li>
+        </ol>
+        Der Standardzustand für alle oben genannten Optionen ist <strong>deaktiviert</strong>.</li>
+      <li class="dropspot"><strong>Interpreter</strong>: Hier können Sie die <em>TrueType-Version</em> auswählen, die <span class="notranslate">GameMaker Studio 2</span> zum Rendern von Schriften verwenden soll. Standard ist <em>TrueType v40</em>.</li>
+      <li class="dropspot"><strong>Rundung</strong>: Mit dieser Option wird die Rundungsmethode bei der Konvertierung von einer Festkomma-Dezimalgröße in eine Ganzzahl festgelegt. Standard ist &quot;floor&quot;.</li>
+    </ul>
+    <p class="dropspot">Mit der Schaltfläche <strong>Neu generieren </strong>können Sie die Schrifttextur neu generieren. Dies ist erforderlich, wenn Sie Änderungen, die Sie an einer bestehenden Schrift vorgenommen haben, aktualisieren möchten, oder wenn Sie eine neue Schrift erstellt haben und sehen möchten, wie sie im Vorschaufenster
+      Fenster. Beachten Sie, dass Sie Schriften auch über das Menü der rechten Taste <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> für die Schrift (oder die Schriften) im Asset-Browser regenerieren können.<br>
+    </p>
+    <p class="dropspot"><img alt="Regenerate Fonts RMB Menu Option" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_MenuRegenerate.png">Es ist wichtig zu beachten, dass beim ersten Erstellen einer neuen Schriftart, wenn Sie die Textur nicht im Editor regenerieren,
+      Wenn Sie die Textur nicht im Editor neu generieren, wird die Textur beim ersten Ausführen oder Testen des Spiels erstellt, aber das ist das einzige Mal, dass sie automatisch generiert wird. Das bedeutet, dass, sobald eine Schriftart eine generierte Textur hat, alle Änderungen an der Schriftart-Ressource erfordern
+      dass die Schriftart neu generiert werden muss, damit die Änderungen im Spiel sichtbar werden, andernfalls wird weiterhin die &quot;alte&quot; Schrifttextur verwendet.</p>
+    <p class="dropspot"><span class="notranslate">GameMaker Studio 2</span> rendert die generierte Schrifttextur als <span class="inline">PNG </span>Datei zusammen mit den restlichen Projektdateien, und sollten Sie das Projekt laden und die Basisschriftart nicht gefunden werden, dann wird das Spiel den Text trotzdem korrekt anzeigen
+      mit der gespeicherten Textur. Eine fehlende Schriftart bedeutet jedoch, dass Sie außer dem Namen, der Schriftfamilie und der Texturgruppe (über den <a href="../Settings/Texture_Groups.htm">Texturgruppen-Editor</a>) keine weiteren Eigenschaften mehr ändern können.</p>
+    <p class="dropspot"><br />
+    </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Vorschau-Modus</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">In diesem Bereich können Sie wählen, ob das Vorschaufenster entweder einen Beispieltext der ausgewählten Schriftart oder das gerenderte Texturbild, das für die Schriftart erzeugt wurde, anzeigen soll.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Vorschau</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Das
+     <strong>Vorschaufenster</strong> können Sie eine Vorschau der Schriftart sehen, entweder als Textmuster oder als Textur. Wenn der
+     <strong>Vorschaumodus </strong>eingestellt ist auf
+     <em>Sample</em> eingestellt ist, können Sie jeden Text, den Sie testen möchten, direkt in das Vorschaufenster eingeben, um zu sehen, wie er aussieht, während die Auswahl von
+     <em>Spielvorschau </em>wird das gerenderte Texturbild angezeigt, das für die Schriftart generiert wurde. Wenn kein Bild vorhanden ist, sollten Sie auf die Schaltfläche
+     <strong>Neu generieren </strong>klicken, um die Textur zu generieren.</p>
+    <p class="dropspot">Beachten Sie, dass das Texturbild vom Muster abweichen kann, da die Textur
+     <em>nicht</em> neu generiert wird, es sei denn, dies wird ausdrücklich gewünscht. Das bedeutet, dass nach dem anfänglichen Erzeugen einer Schrifttextur Änderungen, die an der Schriftressource vorgenommen wurden, nicht in das Spiel übernommen werden, es sei denn, die Textur wird neu generiert.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Bereich Vorschau</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Hier werden die verschiedenen Zeichenbereiche, die Sie für die Schriftart hinzugefügt haben, aufgelistet. Die Werte der Bereiche werden auf der linken Seite angezeigt und die diesen Werten entsprechenden Bereichsglyphen werden auf der rechten Seite angezeigt.</p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Notes.htm">Hinweise</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Font Editor
+Fonts
+-->
+  <!-- TAGS
+font_editor
+-->
+
+</body></html>

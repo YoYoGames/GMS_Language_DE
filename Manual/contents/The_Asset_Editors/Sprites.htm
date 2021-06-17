@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sprites</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the sprite editor works" />
+  <meta name="rh-index-keywords" content="Sprite Editor" />
+  <meta name="search-keywords" content="sprites,sprite editor, broadcast messages" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Sprite-Editor</h1>
+  <p><img alt="The Sprite Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Sprites.png">Im <strong>Sprite-Editor</strong> legen Sie die allgemeinen Eigenschaften für die von Ihnen erstellten <a class="glossterm" data-glossterm="Sprites" href="#">Sprites</a> 
+    die Sie erstellen. Sie können dieses Fenster öffnen, indem Sie ein neues Sprite erstellen (klicken Sie mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> im <a href="../Introduction/The_Asset_Browser.htm">Asset-Browser</a> und wählen Sie &quot;Create
+    Sprite&quot;), durch Doppelklick auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf ein vorhandenes Sprite oder durch Rechtsklick auf <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> ein vorhandenes Sprite und Auswahl von &quot; Eigenschaften<strong>&quot;.</strong></p>
+  <p>Die Teile, aus denen der Sprite-Editor besteht, sind wie folgt:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Sprite Name</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Hier können Sie das Sprite benennen. Der Sprite-Name wird in Ihrem gesamten Spielprojekt verwendet, um das Sprite als Ressource zu identifizieren, und kann nur alphanumerisch sein und darf nur das Unterstrich-Symbol &quot;_&quot; verwenden. Sie können zwar Zahlen im
+      Sprite-Namen können Sie zwar Zahlen verwenden, aber der Name darf nicht mit einer Zahl beginnen, da dies bei der Verwendung von <span class="notranslate">GML</span> oder <span class="notranslate">DnD™</span>einen ungültigen Ressourcennamen darstellen würde.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Bild-Eigenschaften</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">In diesem Bereich können Sie die Bildgröße einstellen, indem Sie auf die Schaltfläche <strong>Sprite Size</strong> <img alt="Sprite Size Icon" class="icon" src="../assets/Images/Icons/Icon_SpriteSize.png"> klicken. Dadurch wird das folgende Fenster geöffnet:</p>
+    <p class="dropspot"><img alt="Sprite Editor Resize Properties" class="center" src="../assets/Images/Asset_Editors/Editor_Sprites_ResizeProperties.png">Hier sehen Sie eine Vorschau des Sprites vor und nach der Anwendung der gewählten Transformationen, und der Abschnitt darunter ist
+      zum Einstellen der neuen Sprite-Eigenschaften und ist in zwei Teile aufgeteilt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Bild skalieren</strong>: Mit dieser Option können Sie die Größe der Sprite-Zeichenfläche ändern und alle im Sprite enthaltenen Bilder werden gestreckt und skaliert, um in die neue Größe zu passen. Sie können wählen, ob Sie skalieren und das Seitenverhältnis des Basisbildes beibehalten wollen,
+        und Sie können auch wählen, ob Sie in Pixeln oder in Prozent skalieren wollen. Je nach Art des Bildes, mit dem Sie arbeiten, können Sie auch die lineare Interpolation aktivieren oder nicht (im Allgemeinen &quot;glättet&quot; die lineare Interpolation Pixel über einen Bereich und ist daher am besten deaktiviert).
+        einen Bereich und ist daher am besten für Pixelkunst deaktiviert).</li>
+      <li class="dropspot"><strong>Größe der Leinwand ändern</strong>: Mit dieser Option wird die Größe der Zeichenfläche an die neue Größe angepasst, ohne den Inhalt zu skalieren. Sie können den &quot;Ankerpunkt&quot; für die Größenänderung mithilfe der Richtungspfeile festlegen und dann den Größenwert einstellen. Es gibt eine Option
+        um das Seitenverhältnis bei der Größenänderung der Leinwand beizubehalten, und unten können Sie wählen, ob Sie die Werte für die Größenänderung in Pixeln oder als Prozentsatz angeben möchten.</li>
+    </ul>
+    <p class="dropspot">Wenn Sie mit der neuen Größe zufrieden sind, können Sie auf " <em>Anwenden" </em>klicken, um die Änderungen zu übernehmen und das Fenster "Größe ändern" zu schließen. Beachten Sie, dass Sie beim Anwenden einer Skalierungs- oder Größenänderung auf ein Sprite auswählen können, dass die Änderung auch auf den Ursprung des Sprites angewendet werden soll.
+      Sie können die Änderung auch auf den Ursprung des Sprites anwenden, indem Sie das Kontrollkästchen <strong>Auf Ursprung anwenden </strong>neben der Schaltfläche <em>Anwenden </em>aktivieren. Wenn das Kontrollkästchen aktiviert ist - wenn der Ursprung nicht zu den Standardeinstellungen gehört und nicht im Sprite gesperrt ist -, wird seine Position skaliert, um der Änderung der Größe des Sprites zu entsprechen.
+      skaliert, um der Änderung der Größe des Sprites zu entsprechen. Wenn diese Option nicht aktiviert ist, wird keine Skalierung auf den Ursprung angewendet. Wenn der Ursprung kein benutzerdefinierter Wert ist oder gesperrt ist, wird er ausgegraut und ist nicht verfügbar. Sie können diese Option für alle Sprites in den
+     <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Sprite_Editor_Preferences.htm">Sprite-Editor-Voreinstellungen</a>.</p>
+    <div class="dropspotnote">HINWEIS: Diese Option ist nur für <a class="glossterm" data-glossterm="Bitmap" href="#">Bitmap-Sprites</a> verfügbar und wird für SWF- oder Skelettanimations-Sprites ausgegraut.</div>
+    <p class="dropspot">In diesem Bereich können Sie auch entweder den <a href="Image_Editor.htm">Bildeditor</a> öffnen, um Ihr Sprite zu zeichnen, oder Sie können auf die Schaltfläche &quot;<em>Importieren&quot;</em> klicken, um ein zuvor erstelltes Sprite zu importieren. Sprites können aus den meisten gängigen
+      Bitmap-Formaten ( <span class="inline">PNG</span>, <span class="inline">JPG</span>, <span class="inline">GIF</span>, etc...) importiert werden, aber <span class="notranslate">GameMaker Studio 2</span> unterstützt auch Vektor-Sprites (<span class="inline">SWF</span>) und Skelett-Animations-Sprites (
+      <span class="inline">Spine</span> ). Weitere Informationen zu diesen Formaten finden Sie im Abschnitt über <a href="../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Nicht-Bitmap-Sprites</a>. Beachten Sie beim Importieren von Bitmap-Sprites, dass Sie
+      mehrere Bilddateien im Datei-Explorer auswählen können und jede einzelne als separate Teilbilder (Frames) zum selben Sprite hinzugefügt wird.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Textur-Einstellungen</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">Dieser Abschnitt des Sprite-Eigenschaftsfensters befasst sich damit, wie <span class="notranslate">GameMaker Studio 2</span> die Bilder, aus denen Ihr Sprite besteht, auf<span class="glossextra">Texturseiten</span> für die Verwendung mit
+      Geräten und Browsern. Für Desktop-Plattformen ist dies vielleicht nicht so wichtig, aber wenn Sie anfangen, für Mobilgeräte oder das Web zu entwickeln, wird die ordnungsgemäße Verwaltung Ihrer Bild-Assets (Texturen) sehr wichtig, da sich schlecht verwaltete Texturen nachteilig auf Ihr Spiel auswirken und Leistungsprobleme verursachen können.
+      Auswirkungen auf Ihr Spiel haben und zu Leistungsproblemen führen können.</p>
+    <p class="dropspot">Die Kontrollkästchen <strong>"Horizontal kacheln</strong> " und <strong>"Vertikal kacheln"</strong> sind standardmäßig nicht aktiviert, da Sie die Sprites meistens nicht kacheln möchten. Unter bestimmten Umständen kann es jedoch erwünscht sein, dass sie gekachelt werden, was bedeutet, dass
+      Das bedeutet, dass Sie diese Optionen aktivieren sollten, insbesondere wenn Sie die Ansicht oder den Raum skalieren, da die Skalierung zu Artefakten in der Grafik eines Spiels führen kann, wenn die Texturseite nicht richtig generiert wird.</p>
+    <p class="dropspot">Wenn Ihr Sprite als Textur-Map in einem 3D-Spiel verwendet werden soll, sollten Sie das Kontrollkästchen " <strong>Separate Texture Page"</strong> aktivieren, damit das Sprite eine eigene Textur-Seite erhält (beachten Sie, dass jedes Unterbild ebenfalls eine eigene Textur-Seite erhält.
+      Seite erhält, d. h. wenn Ihr Sprite 10 Bilder hat, werden 10 Texturseiten erzeugt). Dies erhöht den Texturspeicherbedarf Ihres Spiels, weshalb Sie bei der Verwendung dieser Option sehr vorsichtig sein müssen. Beachten Sie auch, dass im Allgemeinen, wenn Ihr Sprite diese Option
+      für 3D verwendet, dann sollten die Texturen eine Potenz von 2 sein (d.h.: 128x128, 256x256, 512x512 usw...).</p>
+    <p class="dropspot">Die nächste Option ist die Aktivierung von " <strong>Pre-Multiplied Alpha"</strong> für die Sprite-Bilder. Wenn diese Option aktiviert ist, wird das Alpha aller Unterbilder des Sprites vormultipliziert. Dies ist normalerweise nur notwendig, wenn Sprites auf Oberflächen gezeichnet werden, oder für einige spezielle
+      Spezialeffekte. Bei normaler Sprite-Verwendung sollten Sie keinen merklichen Unterschied zwischen dem normalen Sprite und dem vormultiplizierten Sprite sehen.</p>
+    <p class="dropspot">Es gibt auch eine Option "<strong> Kantenfilterung"</strong>. Diese Option ist speziell für den Fall gedacht, dass Sie die <a class="glossterm" data-glossterm="lineare Interpolation" href="#">lineare Interpolation</a> für Ihr Spiel aktiviert haben und Sie &quot;Halos&quot;
+      um Ihre Sprites herum sehen. Dies wird dadurch verursacht, dass die Hardware aus mehreren <a class="glossterm" data-glossterm="texel" href="#">Quelltexeln</a>auf der Texturseite gleichzeitig interpoliert, und kann besonders auffällig sein, wenn Sie Spiele mit höherer Auflösung spielen.
+      besonders auffällig sein, wenn Sie Spiele in der Auflösung hochskalieren. Wenn Sie dies aktivieren, werden die Randpixel so gefiltert, dass sie die Farbe des nächstgelegenen Voll-Alpha-Sprite-Pixels annehmen und so die interpolierten Pixel ohne den zuvor vorhandenen Halo überblenden.</p>
+    <p class="dropspot">Schließlich können Sie die <strong>Texturgruppe</strong> auswählen, zu der die Sprite-Ressource gehören soll. Grundsätzlich ist eine Texturgruppe (zuvor im <a href="../Settings/Texture_Groups.htm">Texturgruppen-Manager</a> definiert) etwas, das Sie
+      einrichten können, damit alle Bildressourcen, die Sie für bestimmte Räume oder Ebenen Ihres Spiels benötigen, zusammen gespeichert werden können. So können Sie z. B. alle Bilder der Ebene 1 in einer Texturgruppe haben, alle Bilder der Ebene 2 in einer anderen usw...
+     <span class="notranslate">GameMaker Studio 2</span> wird versuchen, alle diese gruppierten Ressourcen auf derselben Texturseite zu platzieren, um das Austauschen von Texturseiten zu reduzieren, während Ihr Spiel auf der gewählten Zielplattform läuft.</p>
+    <div class="dropspotnote"><strong>HINWEIS</strong>: Dies ist möglicherweise nicht immer erforderlich und die Leistungssteigerung durch diese Methode hängt davon ab, ob das Zielgerät CPU- oder GPU-gebunden ist.</div>
+    <p class="dropspot">Mehr über Texturseiten erfahren Sie <a href="../Settings/Texture_Information/Texture_Pages.htm">hier</a>.</p>
+    <p class="dropspot">Texturgruppen sind nur für <a class="glossterm" data-glossterm="Bitmap" href="../Settings/Texture_Groups.htm#">Bitmap-Bilder</a> relevant. Nicht-Bitmap-Sprites werden keinen Texturgruppen zugewiesen und einige der oben genannten Optionen sind für sie nicht verfügbar
+      für sie. Einige Nicht-Bitmap-Sprites haben bereits eine eigene Textur-Seite (Skelett-Animations-Sprites), während andere einfach keine Texturen benötigen, da sie aus Vektoren bestehen ( <span class="glossextra">SWF-Sprites</span> ). Weitere Informationen finden Sie im folgenden Abschnitt:</p>
+    <ul class="dropspotlist">
+      <li><a href="../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Nicht-Bitmap-Sprites</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Kollisionsmaske</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">Alle Sprites haben eine <strong>Kollisionsmaske</strong>, die dem Bereich des Sprites entspricht, der zur Erkennung von Kollisionen verwendet wird, wenn das Sprite einer Instanz zugewiesen wird. Sie können zunächst den <strong>Modus </strong>für die Kollisionsmaske einstellen, der
+      einer der folgenden sein kann:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Automatisch</strong>: <span class="notranslate">GameMaker Studio 2</span> berechnet die Kollisionsmaske automatisch auf der Basis der Sprite-Alpha-Werte (dies hängt von der unten erläuterten Einstellung "Toleranz" ab).</li>
+      <li class="dropspot"><strong>Volles Bild</strong>: Die Maske wird so berechnet, dass ihre Grenzen mit den linken, rechten, oberen und unteren Grenzen des Sprites übereinstimmen.</li>
+      <li class="dropspot"><strong>Manuell</strong>: Wenn Sie dies auswählen, bedeutet dies, dass Sie die Grenzen der Kollisionsmaske anhand der Eingabewerte für links, rechts, oben und unten festlegen möchten.</li>
+    </ul>
+    <p class="dropspot">Neben dem Kollisionsmaskenmodus gibt es auch verschiedene <strong>Typen </strong>von Kollisionsmasken, die Sie aus dem Dropdown-Menü auswählen können:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Rechteck</strong>: Eine einfache rechteckige Kollisionsmaske. Dies ist die am schnellsten aufzulösende, wenn sie in Ihrem Projekt verwendet wird.</li>
+      <li class="dropspot"><strong>Rotated Rectangle</strong>: Dies ist eine einfache rechteckige Kollisionsmaske, die sich zusammen mit dem <span class="inline">image_angle</span> Wert der Instanz mit dem zugewiesenen Sprite dreht. Die Auflösung ist langsamer als bei der normalen rechteckigen
+        Kollisionsmaske, aber schneller als eine präzise Kollisionsmaske.</li>
+      <li class="dropspot"><strong>Ellipse</strong>: Erzeugt eine elliptische Kollisionsmaske. Diese ist langsamer aufzulösen als die rechteckige Maske.</li>
+      <li class="dropspot"><strong>Diamant</strong>: Erzeugt eine &quot;rautenförmige&quot; Kollisionsmaske. Diese ist langsamer aufzulösen und erzeugt mehr CPU-Overhead als die rechteckigen und elliptischen Masken.</li>
+      <li class="dropspot"><strong>Präzise</strong>: Damit wird eine präzise Kollisionsmaske auf der Grundlage der Umrisse des Sprites erstellt. Wenn das Sprite mehrere Teilbilder hat, wird diese aus den Kanten <em>aller </em>Teilbilder <em>zusammengesetzt </em>und übereinander gelegt.
+        Beachten Sie, dass die präzise Maske auf das <a class="glossterm" data-glossterm="Begrenzungsrechteck" href="#">Begrenzungsrechteck</a> abgeschnitten wird, wenn der Modus auf Manuell eingestellt ist und Sie die Standardwerte ändern. Dies ist sehr langsam und erzeugt eine Menge CPU-Overhead.</li>
+      <li class="dropspot"><strong>Präzise (pro Frame)</strong>: Damit wird eine präzise Kollisionsmaske auf Frame-Basis erstellt (d. h. die Maske passt sich an die Kontur jedes einzelnen Frames an). Beachten Sie, dass die präzise Maske am <a class="glossterm" data-glossterm="Begrenzungsrechteck" href="#">Begrenzungsrahmen</a> abgeschnitten wird, wenn der Modus auf Manuell eingestellt ist und Sie die Standardwerte ändern. Dies ist bei weitem der langsamste Typ von Kollisionsmaske und sollte außer in sehr, sehr speziellen und seltenen Fällen vermieden werden.
+        Fällen.
+      </li>
+    </ul>
+    <p class="dropspot">Das folgende Bild veranschaulicht die verschiedenen Maskenoptionen:</p>
+    <p class="dropspot"><img alt="Collisions" class="center" src="../assets/Images/Asset_Editors/bbox_image.png">Die Optionen für die Kollisionsprüfung sind sehr wichtig für Ihr Spiel, da sie direkten Einfluss darauf haben, wie Ihre Objekte interagieren und wie Ihr Spiel läuft, wobei
+      Die falschen Einstellungen haben sogar einen negativen Einfluss auf die Gesamtleistung. Warum ist das so? Nun, immer wenn sich zwei Instanzen treffen und beide Instanzen eine gültige Maske haben, wird ein Kollisionsereignis erzeugt, indem die Überlappung der Bounding Box <em>und der </em>
+      Maske, die entweder genau oder nicht genau sein kann und an den Bildindex angepasst ist oder nicht. Unten sehen Sie ein Bild, um dies zu veranschaulichen:</p>
+    <p class="dropspot"><img alt="Different collisions and how they are resolved" class="center" src="../assets/Images/Asset_Editors/basic_collisions_image.png" /></p>
+    <p class="dropspot">Unterhalb der Einstellung für die Kollisionsmaske befindet sich der Schieberegler für die <strong>Alpha-Toleranz </strong>, der die Toleranz für die Erstellung der Maske in Bezug auf die Transparenz der Pixel des Sprites angibt - bei einer höheren Toleranz werden Pixel, die teilweise transparent sind, außerhalb der Maske gelassen, während bei einer niedrigeren Toleranz diese Pixel berücksichtigt werden.
+      Bei einer höheren Toleranz werden Pixel, die teilweise transparent sind, außerhalb der Maske belassen, während bei einer niedrigeren Toleranz die Maske diese Pixel berücksichtigen wird. Dies beeinflusst sowohl den Begrenzungsrahmen (wenn er nicht auf manuell eingestellt ist) als auch die Maske für die präzise Kollisionsprüfung.</p>
+    <p class="dropspot">Schließlich können Sie die <strong>Bounding-Box-Grenzen</strong> für die Maske festlegen. Als Bounding Box bezeichnet man den rechteckigen Bereich, in den die Sprite-Maske passt. Nur Pixel innerhalb dieses Begrenzungsrahmens werden für die Maske verwendet und in die Kollisionsprüfung einbezogen.
+      Standardmäßig wird dies automatisch berechnet, wobei die Alpha-Toleranz berücksichtigt wird. Wenn Sie &quot;präzise (pro Frame)&quot; aktiviert haben, wird dies auch für jedes Teilbild separat berechnet. Wenn Sie es selbst einstellen, können Sie
+      Sie können die Werte in die Felder für links, rechts oben und unten eingeben, oder Sie können im Sprite-Vorschaufenster auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> klicken und es über das Sprite &quot;ziehen&quot;.
+      das Sprite ziehen. Beachten Sie, dass beim &quot;Ziehen&quot; des Begrenzungsrahmens die Maske automatisch so generiert wird, dass sie in die Endwerte passt, und der Begrenzungsrahmen kann die Maske &quot;abschneiden&quot;.</p>
+    <p class="dropspot">Es ist erwähnenswert, dass Sie im Vorschaufenster die Kollisionsmaske mithilfe der &quot;Griffe&quot; in jeder Ecke anpassen können. Durch Klicken und Ziehen dieser Griffe wird die Kollisionsmaske genauso angepasst wie durch die Eingabe von Werten für den Begrenzungsrahmen.
+      Box eingeben würden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down21" href="#">Neun Scheibe</a></p>
+  <div class="droptext" data-targetname="drop-down21">
+    <p class="dropspot"><strong><span data-keyref="Nine Slicing">Neuner-Slicing</span></strong> (auch bekannt als 9-Slicing) ist eine Technik zum Skalieren von rechteckigen Bildern, um Details zu erhalten, so dass sie nach dem Skalieren ihre ursprüngliche Form beibehalten. Weitere Informationen finden Sie auf der Seite zum <a href="Sprite_Properties/Nine_Slices.htm">Neuner-Slicing</a>.</p>
+    <p class="dropspot"><img class="center" src="../assets/Images/Asset_Editors/Nine_Slice_0_Preview.png">Im Abschnitt " <strong>Nine Slice"</strong> des Sprite-Editors können Sie das <span data-keyref="Nine Slicing">Nine Slicing</span> für ein Sprite aktivieren und es in der Vorschau
+      in Aktion im Fenster "Nine <strong>Slice Preview"</strong> auf der rechten Seite.</p>
+    <p class="dropspot">Das Fenster " <strong>Neun-Scheiben-Vorschau"</strong> ermöglicht die Größenänderung des Bildes und zeigt, wie das endgültige Bild aussehen wird, nachdem es mit der Neun-Scheiben-Technik skaliert wurde. Dieses Vorschau-Sprite kann auch gedreht werden.</p>
+    <p class="dropspot">Der Bereich " <strong>Nine Slice</strong> " hat die folgenden Optionen:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Nine Slice aktivieren:</strong> Diese Option steuert, ob beim Skalieren des Sprites die Nine-Slice-Skalierung verwendet wird. Wenn sie aktiviert ist, wird die Nine-Slice-Skalierung für das Sprite (und alle Objektinstanzen, die dieses Sprite verwenden) verwendet, das in einer Sequenz
+        oder einer Raumebene platziert sind, sowie für skalierte Sprites, die mit <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_ext.htm">draw_sprite_ext()</a> und anderen ähnlichen Funktionen gezeichnet werden.<br>
+        <br>
+        <span class="expandtext"><span style="font-size:17px;"><strong>HINWEIS</strong>: Nine Slicing funktioniert nicht mit Funktionen, die nur einen Teil des Sprites zeichnen oder es verzerren, wie <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_part.htm">draw_sprite_part()</a> und <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_pos.htm">draw_sprite_pos()</a></span></span>
+      </li>
+      <li class="dropspot"><strong>Führungen:</strong> In diesem Bereich wird der Offset jeder Hilfslinie auf ihrer Achse angezeigt und kann zum Ändern dieser Offsets verwendet werden. Diese Hilfslinien können auch innerhalb des <strong>Sprite-Vorschaufensters</strong> verschoben werden, indem Sie sie einfach mit der Maus ziehen.<br>
+        <br>
+       <span class="dropspotnote"><strong>HINWEIS:</strong></span>Hilfslinien auf derselben Achse können sich nicht überkreuzen, und wenn Sie eine Hilfslinie über die andere ziehen, wird die zweite Hilfslinie verschoben.<br>
+        <br>
+        <img class="center" height="348" src="../assets/Images/Asset_Editors/Nine_Slice_GIF_Guides.gif" width="612"><br> Der Versatz jeder Hilfslinie ist relativ zu ihrer entsprechenden Kante. Zum Beispiel ist die linke Hilfslinie gegenüber der linken Kante versetzt, die rechte
+        <br>
+        <br> Die Farbe und das Alpha jeder Hilfslinie kann durch Klicken auf die farbige Schaltfläche neben der Position der Hilfslinie geändert werden.<br>
+        <img class="center" src="../assets/Images/Asset_Editors/Nine_Slice_4_Color.png"></li>
+      <li class="dropspot"><strong>Hervorheben</strong>: Diese Option wirkt sich darauf aus, wie ein ausgewähltes Slice im Sprite-Vorschaufenster angezeigt wird. <strong>&quot;Invertiert&quot;</strong> hebt das Sprite mit einer Überlagerung hervor, mit Ausnahme des ausgewählten Slice, und &quot;Überlagerung&quot; <strong> hebt</strong> nur das ausgewählte Slice mit einer Überlagerung <strong> hervor</strong>.<br>
+        <img src="../assets/Images/Asset_Editors/Nine_Slice_5_Highlight.png"><br> Die Farbe und das Alpha der Überlagerung können durch Klicken auf die farbige Schaltfläche neben dem Dropdown-Menü geändert werden.</li>
+      <li class="dropspot"><strong>Ausgewählte Slice:</strong> Mit dieser Option kann ein Slice ausgewählt werden, wobei eines aus den Rand-Slices (links, oben, rechts, unten) und das mittlere ausgewählt wird. Ein Slice kann auch ausgewählt werden, indem Sie <img class="icon" src="../assets/Images/Icons/Icon_LMB.png"> im <strong>Sprite-Vorschaufenster</strong> mit der linken Maustaste anklicken und durch erneutes Anklicken wieder abwählen.</li>
+      <li class="dropspot"><strong>Kachelmodus: </strong>Diese Option wird in Verbindung mit der Option " <strong>Ausgewähltes Slice"</strong> verwendet, um zu steuern, wie das Slice erscheint, wenn das Sprite skaliert wird. Sie können einen der folgenden Kachelmodi auf jedes Slice anwenden:<br>
+        <img class="center" src="../assets/Images/Asset_Editors/Nine_Slice_3_TileModes.png">
+        <ul>
+          <li class="dropspot"><strong>Dehnen</strong><strong>:</strong> Das Slice wird gestreckt, um die Lücke zwischen den verbundenen Ecken zu füllen.</li>
+          <li class="dropspot"><strong>Wiederholen</strong><strong>:</strong> Das Slice wird wiederholt oder gekachelt, um Details zu erhalten.</li>
+          <li class="dropspot"><strong>Spiegeln</strong><strong>:</strong> Das Slice wird durch Spiegelung wiederholt.</li>
+          <li class="dropspot"><strong>Blank Repeat (Leere Wiederholung)</strong><strong>:</strong> Das Slice wird nur einmal angezeigt, so dass ein leerer Bereich hinter ihm entsteht.</li>
+          <li class="dropspot"><strong>Ausblenden</strong><strong>:</strong> Das Slice wird überhaupt nicht angezeigt.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down19" href="#">Broadcast-Meldungen</a></p>
+  <div class="droptext" data-targetname="drop-down19">
+    <p class="dropspot">Diese Schaltfläche fügt eine <strong>Broadcast-Nachricht</strong> zur Sprite-Zeitleiste hinzu und öffnet einen Dialog, in dem Sie die zu sendende Nachricht hinzufügen können. Die Nachricht wird an jeder Stelle hinzugefügt, an der sich der <a class="glossterm" data-glossterm="Abspielkopf" href="#">Abspielkopf</a> in der Frame-Ansicht befindet, und besteht aus einer einfachen Zeichenfolge, die im <a href="Sequence_Properties/Broadcast_Messages.htm">Ereignis "Broadcast Message</a> " abgeholt werden kann, wenn es ausgelöst wird, und auf die dann reagiert wird.</p>
+    <p class="dropspot"><img alt="Add broadcast messages to a sprite" class="center" src="../assets/Images/Asset_Editors/Sprite_Broadcast_Message.gif">Sobald die Nachricht hinzugefügt wurde, wird sie in der Rahmenansicht angezeigt und Sie können mit der rechten Maustaste <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> darauf klicken, um ein Menü zu öffnen, in dem Sie die Nachricht löschen oder bearbeiten können. Weitere Informationen zu Broadcast-Nachrichten finden Sie <a href="Sequence_Properties/Broadcast_Messages.htm">hier</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Rahmengeschwindigkeit</a></p>
+  <div class="droptext" data-targetname="drop-down12">
+    <p class="dropspot">In diesem Bereich können Sie die <strong>Geschwindigkeit </strong>einstellen, mit der die Animationsframes aus dem Eingabefeld auf der linken Seite wiedergegeben werden sollen. Die Einstellung der Bildgeschwindigkeit kann entweder auf &quot;Bilder<strong>pro Sekunde&quot; oder</strong> auf &quot;Bilder pro Spielbild<strong>&quot; basieren,</strong>
+      wobei eine Einstellung von 30 &quot;Frames pro Sekunde&quot; 30 Frames der Animation in einer Sekunde zeigt, während eine Einstellung von 30 &quot;Frames pro Spielframe&quot; versucht, alle 30 Frames in einem einzigen Spielschritt zu zeigen, weshalb &quot;Frames pro Spielframe&quot;
+      Werte in der Regel auf 1 oder niedriger eingestellt werden (z. B. wird bei einer Geschwindigkeit von 0,5 "Frames pro Spielbild" alle zwei Spielschritte ein neues Bild angezeigt).</p>
+    <p class="dropspot">Es ist wichtig zu beachten, dass die Einstellungen für die Bildgeschwindigkeit nicht nur die Wiedergabe der Animation im Vorschaufenster beeinflussen, sondern <strong>auch bestimmen, wie das Sprite in Ihren Spielen animiert wird.</strong> Die Geschwindigkeit, die Sie hier einstellen, zeigt die
+      Sprite-Vorschau so, wie es im Spiel mit einem Bildgeschwindigkeitsmultiplikator von 1 abläuft, aber das kann im Code mit der <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm"><span class="inline">image_speed</span></a> Variable
+      eingestellt werden, was bedeutet, dass das Sprite schneller oder langsamer laufen kann, je nachdem, was programmiert ist. Wenn Sie also zum Beispiel das Sprite auf 10 &quot;Bilder pro Sekunde&quot; einstellen und dann die <span class="inline">image_speed</span> auf 0,5 setzen, zeichnet das Spiel das Sprite
+      mit halber Geschwindigkeit - 5 Bilder pro Sekunde. Umgekehrt, wenn wir die <span class="inline">image_speed</span> für dasselbe Sprite auf 2 setzen, wird es im Spiel doppelt so schnell animiert gezeichnet - 20 Frames pro Sekunde. Beachten Sie, dass Sie die Bildgeschwindigkeit auch
+      im <a href="Image_Editor.htm">Bildeditor</a> eingestellt werden kann.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">Sprite Herkunft</a></p>
+  <div class="droptext" data-targetname="drop-down13">
+    <p class="dropspot">Die obere Leiste des Sprite-Editors enthält die Eigenschaften des <strong>Sprite-Ursprungs</strong>. Dies ist der Punkt auf dem Sprite, der seiner Position im Raum entspricht, d. h., wenn Sie eine Instanz an einer bestimmten x/y-Position erstellen, wird der Ursprung des
+      des Sprites dort platziert.</p>
+    <p class="dropspot">Standardmäßig ist der Ursprung die <em>linke obere </em>Ecke des Sprites, aber es ist oft bequemer, die <em>Mitte</em> zu verwenden, oder Sie möchten vielleicht eine andere Position verwenden (z. B. für einen Jump'n'Run-Charakter möchten Sie vielleicht die <em>untere Mitte</em>),
+      Sie können also auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf das Dropdown-Menü für den Ursprung klicken und einen der Standardwerte auswählen. Sie können den Ursprung auch manuell festlegen, indem Sie im Sprite-Vorschaubild auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> klicken, wodurch sich das Kreuz des Ursprungsmarkers zu dem von Ihnen angeklickten Punkt bewegt, oder indem Sie verschiedene Werte für x und y in die entsprechenden Felder eingeben. Beachten Sie, dass Sie sogar einen Ursprung außerhalb des Bereichs des Sprites setzen können, indem Sie negative
+      Zahlen (für links und oben) oder positive Zahlen, die größer sind als die Sprite-Breite und -Höhe (für rechts und unten), setzen können, was sehr nützlich sein kann, wenn Sie mit Objekten arbeiten, die zusammengesetzte Sprites zeichnen müssen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Zoom-Steuerungen</a></p>
+  <div class="droptext" data-targetname="drop-down14">
+    <p class="dropspot">Oben rechts im Vorschaufenster befinden sich die <strong>Zoom-Steuerelemente</strong>. Diese Schaltflächen steuern die aktuelle Zoomstufe des Vorschau-Sprites. Sie können das Sprite vergrößern oder verkleinern. Wenn Sie auf die Schaltfläche <img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png"> klicken, wird die Vorschau auf 1:1 mit dem zu bearbeitenden Sprite zurückgesetzt. Sie können auch auf die Schaltfläche Window Fit <img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"> klicken, damit die gesamte Sprite-Vorschau in das aktuelle Editorfenster passt.
+      das aktuelle Editor-Fenster passt (dabei wird das Fenster entsprechend vergrößert/verkleinert, damit es passt). Beachten Sie, dass Sie mit <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> und dem Mausrad <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> hinein- und herauszoomen können, und durch Drücken von <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> wird die Vorschau
+      auf 1:1 mit der aktuellen Sprite-Größe.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">Vorschau</a></p>
+  <div class="droptext" data-targetname="drop-down16">
+    <p class="dropspot">Das <strong>Sprite-Vorschaufenster </strong>zeigt das Sprite, wie es im Spiel aussehen wird, und kann mit dem Mausrad <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> vergrößert oder verkleinert und mit der mittleren Maustaste und Ziehen verschoben werden.
+      mittleren Maustaste <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> und Ziehen, oder alternativ mit der Kombination <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> und Ziehen. Mit den Steuerelementen für den Rahmen (siehe unten) können Sie auch die Darstellung des Vorschaubildes ändern.</p>
+    <p class="dropspot">In diesem Fenster wird auch ein &quot;Kreuz&quot; angezeigt, das den Ursprung <strong>des</strong> Sprites markiert (siehe den Abschnitt Sprite-Ursprung oben für weitere Details), und es kann auch die <strong>Kollisionsmaske</strong> anzeigen <strong>, wenn diese</strong> Option bearbeitet wird (siehe
+      Abschnitt "Kollisionsmaske", oben).</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down17" href="#">Wiedergabesteuerungen</a></p>
+  <div class="droptext" data-targetname="drop-down17">
+    <p class="dropspot">Die <strong>Wiedergabesteuerungen</strong> dienen dazu, die Animation der Frames im Vorschaufenster abzuspielen, wobei die Play-Taste <img alt="Sprite Play Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_Play.png"> die Animation startet/stoppt
+      und die Schaltfläche Schleife <img alt="Sprite Loop Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_Loop.png">, mit der Sie einstellen können, ob das Sprite eine Schleife <img alt="Sprite Loop On Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_LoopOn.png"> (geht zurück zu Bild 1, wenn das letzte Bild erreicht ist) oder ein Ping-Pong <img alt="Sprite Pingpong Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_PingPong.png"> (geht rückwärts durch die Bilder, wenn das letzte Bild erreicht ist).</p>
+    <p class="dropspot">Beachten Sie, dass die Loop-/Ping-Pong-Option <strong>keinen Einfluss darauf hat, wie das Sprite im Spiel angezeigt wird</strong>. Wenn Sie also diese Optionen im Sprite einstellen, ändert sich nicht die Art und Weise, wie es angezeigt wird, wenn das Spiel kompiliert und ausgeführt wird. Dies gilt auch für Loop-Punkte
+      die in der <strong>Frame-Ansicht </strong> gesetzt werden können (siehe unten für weitere Informationen) - diese sind nur im Sprite-Editor sichtbar und sollen Ihnen helfen, Ihre Animationen zu testen, haben aber keinen Einfluss darauf, wie die Sprite-Animation im Spiel angezeigt wird
+      in Ihren Spielen.</p>
+    <p class="dropspot">Ein weiterer Teil der Frame Controls ist die Anzeige und Eingabe <strong>des aktuellen Frames</strong> etwas weiter links. Das Feld zeigt die Gesamtzahl der Frames der Sprite-Animation sowie das aktuell angezeigte Frame an. Sie können den
+      Sie können das aktuelle Bild jederzeit ändern, indem Sie auf das Eingabefeld klicken und die Nummer des gewünschten Bildes eintippen.</p>
+    <div class="dropspotnote"><strong>WICHTIG!</strong> Die Frames werden von 1 bis zur <em>Maxframe-Nummer</em> nummeriert angezeigt. In Ihrem Spielcode werden die Frames jedoch von 0 bis zur <em>Maxframe-Nummer - 1</em> nummeriert.</div>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#">Rahmen</a></p>
+  <div class="droptext" data-targetname="drop-down18">
+    <p class="dropspot">In diesem Teil des Sprite-Editors werden die verschiedenen <strong>Frames </strong>angezeigt, aus denen ein einzelner Sprite-Satz entlang einer Sequenz-Zeitleiste besteht. Sie können auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf ein beliebiges Bild klicken und es nach links oder rechts ziehen, um die Reihenfolge zu ändern, in der sie animiert werden, und Sie können auch auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf ein beliebiges Bild doppelklicken, um den
+      den <a href="Image_Editor.htm">Bildeditor</a> zu starten und sie zu bearbeiten. Sie können Bilder ausschneiden, kopieren und einfügen, indem Sie die Standard-Tastaturkürzel oder die Menüoptionen der rechten Maustaste <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> verwenden, und Sie können auch mehrere Bilder auswählen, um sie mit <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> zu bearbeiten.</p>
+    <p class="dropspot">Das Menü der rechten Maustaste hat die folgenden Optionen:</p>
+    <p class="dropspot"><img alt="RMB Frame View Menu" class="center" src="../assets/Images/Asset_Editors/Sprite_RMB_Frame_menu.png" /></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Rahmen hinzufügen</strong> - Fügt der Animation am Ende einen neuen Rahmen hinzu.</li>
+      <li class="dropspot"><strong>Rahmen einfügen</strong> - Fügt einen neuen Rahmen in die Animation nach dem aktuell ausgewählten Rahmen ein.</li>
+      <li class="dropspot"><strong>Ausschneiden </strong>/ <strong>Kopieren </strong>/ <strong>Einfügen </strong>- Einen oder mehrere Rahmen ausschneiden, kopieren und einfügen.</li>
+      <li class="dropspot"><strong>Ausgewählte Rahmen löschen</strong> - Löscht den aktuell ausgewählten Rahmen oder die ausgewählten Rahmen.</li>
+    </ul>
+    <p class="dropspot">Abgesehen von der oben genannten Möglichkeit, einen Rahmen zu strecken, können Sie auch die Maus auf den Rand eines Rahmens positionieren und dann, wenn sich der Cursor in einen Doppelpfeil verwandelt, einfach auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> klicken und ziehen, um die Größe des Rahmens zu ändern, so dass es länger dauert:</p>
+    <p class="dropspot"><img alt="Stretch a frame using the mouse" class="center" src="../assets/Images/Asset_Editors/Sprite_Stretch_Frame.gif">Ein gestreckter Rahmen benötigt mehr Zeit, um angezeigt zu werden, so als ob Sie denselben Rahmen mehrfach dupliziert hätten. </p>
+    <p class="dropspot">Schließlich können Sie auch in der Rahmenzeitleiste zoomen, indem Sie die &quot;Griffe&quot; auf beiden Seiten der Rahmenansicht verwenden, wie im Bild unten gezeigt:</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Sprite_Loop_Markers.gif" src="../assets/Images/Asset_Editors/Sprite_Loop_Markers.gif" alt="Sprite frame view zoom controls" class="center" /><br /></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Tile_Sets.htm">Kachel-Sets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sprite Editor
+Origin
+Mask
+Collision Mask
+-->
+  <!-- TAGS
+sprite_editor
+-->
+
+</body></html>

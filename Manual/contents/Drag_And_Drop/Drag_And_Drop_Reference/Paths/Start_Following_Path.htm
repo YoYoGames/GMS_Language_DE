@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Start Folgender Pfad</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Start Following Path action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Start Following Path" />
+  <meta name="search-keywords" content="Start Following Path" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Start Following Path Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/i_Paths_Start_Following_Path.png" width="32"> Start Folgender Pfad</h1>
+  <p>Mit dieser Aktion wird eine Instanz gestartet, die einem Pfad folgt, der im Asset-Browser erstellt wurde. Mit dieser Aktion können Sie Ihrer Instanz mitteilen, welchem Pfad sie folgen soll, mit welcher Geschwindigkeit sie dem Pfad folgen soll (gemessen in Pixeln pro Spielframe), wie sie sich verhalten soll, wenn sie das Ende des Pfades erreicht, und ob sie der absoluten oder relativen Pfadposition folgen soll.
+    sich verhalten soll, wenn sie das Ende des Pfades erreicht, und ob sie der absoluten oder relativen Pfadposition folgen soll. Beim Einstellen der Geschwindigkeit können Sie negative Werte verwenden, um zu signalisieren, dass die Instanz dem Pfad in umgekehrter Richtung folgen soll, und es ist erwähnenswert, dass
+    die Geschwindigkeit, die Sie hier einstellen, durch den Geschwindigkeitsmodifikator modifiziert werden kann, der im Pfad-Editor für jeden Pfadpunkt eingestellt ist. Wenn Sie also die Pfadgeschwindigkeit auf 2 einstellen und einer der Punkte im Pfad einen Geschwindigkeitsmodifikator von 200 % hat, dann beträgt die tatsächliche Geschwindigkeit an diesem Punkt
+    4 Pixel pro Spielframe.</p>
+  <p>Nachdem Sie die anfängliche Pfadgeschwindigkeit eingestellt haben, können Sie mit den folgenden Optionen festlegen, wie sich die Instanz verhalten soll, wenn sie das Ende des Pfads erreicht (beachten Sie, dass, wenn eine Instanz das Ende eines Pfads erreicht, dies auch ein <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Ereignis "Other - Path Ended</a>" auslöst <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">):</a></p>
+  <ul class="colour">
+    <li><b>Stopp</b>: Beendet den Pfad und hält die Instanz am letzten Pfadpunkt an.</li>
+    <li><b>Neustart</b>: Setzt den Pfad vom Start aus fort und springt wieder an die Startposition, wenn der Pfad im Pfad-Editor nicht als geschlossen markiert ist.</li>
+    <li><b>Schleife</b>: Fahren Sie von der aktuellen Position aus fort, um den Pfad erneut abzufahren.</li>
+    <li><b>Rückwärts</b> fahren: Den Pfad wieder rückwärts fahren (erreicht durch Umkehrung der Pfadverfolgungsgeschwindigkeit), und wenn er den Anfang des Pfades erreicht, wird er wieder rückwärts fahren, usw...</li>
+  </ul>
+  <p>Schließlich können Sie den Pfad als <i>absolut </i>oder nicht absolut kennzeichnen. Standardmäßig beginnt die Instanz, dem Pfad von ihrer aktuellen Position aus zu folgen (die relative Position), aber wenn Sie das Kontrollkästchen " <em>Absolut"</em> aktivieren, beginnt sie, dem Pfad genau so zu folgen, wie Sie ihn im Pfad-Editor entworfen und platziert haben (die absolute Position).
+    Wenn Sie jedoch das Kontrollkästchen "Absolut" aktivieren, folgt die Instanz dem Pfad genau so, wie Sie ihn entworfen und im Pfad-Editor platziert haben (die absolute Position). Das Bild unten veranschaulicht dies:</p>
+  <p><img alt="Path Relative Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/path_relative_image.png">Wie Sie im obigen Bild sehen können, folgen die beiden Instanzen <i>demselben</i> Pfad, der mit dieser Aktion
+    mit dieser Aktion, aber eine der Instanzen folgt dem <i>absoluten</i> Pfad, während die andere dem <i>relativen</i> Pfad folgt. Es ist zu beachten, dass die Instanz, wenn &quot; <em>Absolute&quot; </em>markiert ist, an den Anfang des Pfades &quot;springt&quot;, egal wo im Raum sie sich befindet.
+    Pfades "springt", unabhängig davon, wo im Raum sie sich befindet.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Path Start Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/a_Paths_Start_Following_Path.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Pfad</td>
+        <td>Das Pfad-Asset zum Starten nach</td>
+      </tr>
+      <tr>
+        <td>Geschwindigkeit</td>
+        <td>Die Geschwindigkeit (in Pixeln pro Spielframe), um dem Pfad zu folgen</td>
+      </tr>
+      <tr>
+        <td>Ein Ende</td>
+        <td>Die Reaktion auf das Erreichen des Endes des Pfades</td>
+      </tr>
+      <tr>
+        <td>Absolut</td>
+        <td>Ob an absoluter oder relativer Position gestartet werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Path Start Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Paths/e_Paths_Start_Following_Path.png">Der obige Aktionsblock bewirkt, dass die aufrufende Instanz einem Pfad folgt (beginnend an ihrer absoluten
+    Position und weiter bis zum Ende), wenn eine Taste gedrückt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Actions.htm">Pfad-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Stop_Following_Path.htm">Stoppen nach Pfad</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Start Following Path
+-->
+  <!-- TAGS
+action_start_path
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_collision_group</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_collision_group" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_collision_group" />
+  <meta name="search-keywords" content="physics_fixture_set_collision_group" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_collision_group</h1>
+  <p>Sobald Sie Ihr Fixture erstellt haben, können Sie es als Teil einer Kollisionsgruppe definieren. Das bedeutet, dass Sie Instanzen mit diesem Fixture anweisen können, <i>immer</i> oder <i>nie</i> mit anderen Instanzen zu kollidieren, an die Fixtures mit derselben Kollisionsgruppe gebunden sind.
+    der gleichen Kollisionsgruppe gebunden sind. Die Werte, die zugewiesen werden können, basieren auf positiven oder negativen Zahlen, wobei 0 der Standardwert ist (was bedeutet, dass die Instanz mit dieser Fixture-Einstellung ignoriert wird, es sei denn, es wird ein Kollisionsereignis für sie erzeugt). Hier ist
+    ein Bild zur Erläuterung:</p>
+  <p><img alt="Collision groups example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_collision_group_image.png">Wie Sie sehen können, kann das Einstellen von Kollisionsgruppen sehr nützlich sein, um komplexe
+    physikalische Körper zu erstellen, die mit der physikalischen Welt um sie herum, aber nicht untereinander interagieren. Es sollte jedoch beachtet werden, dass aufgrund der Komplexität der Berechnung von Kollisionen, die auf solchen Gruppen basieren, empfohlen wird, die Anzahl der in einem Raum verwendeten
+    der in einem Raum verwendeten Gruppen auf ein absolutes Minimum zu beschränken.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_fixture_set_collision_group(fixture, group)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Halterung</td>
+        <td>das Gerät, das gebunden werden soll</td>
+      </tr>
+      <tr>
+        <td>Gruppe</td>
+        <td>die Gruppe, der dieses Gerät zugeordnet ist (entweder ein positiver Wert, 0, oder ein negativer Wert)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">physics_fixture_set_collision_group(fix_Wheel, -1);</p>
+  <p>Der obige Code setzt das in der Variable &quot;fix_Wheel&quot; indizierte Gerät in die Gruppe &quot;-1&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fixtures.htm">Fixtures</a></div>
+        <div style="float:right">Weiter: <a href="physics_fixture_delete.htm">physics_fixture_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_collision_group
+-->
+  <!-- TAGS
+physics_fixture_set_collision_group
+-->
+</body>
+</html>

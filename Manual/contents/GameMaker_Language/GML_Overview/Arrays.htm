@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Arrays</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining Arrays" />
+  <meta name="rh-index-keywords" content="Arrays" />
+  <meta name="search-keywords" content="Arrays" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Arrays</h1>
+  <p>Arrays können extrem nützlich sein und sind ein wesentlicher Bestandteil beim Erstellen von Spielen. Hier sind nur ein paar Dinge, die ohne Arrays unmöglich (oder zumindest viel schwieriger) wären:</p>
+  <ul class="colour">
+    <li>Menüs. Ein oder zwei Arrays können das Erstellen eines guten Menüsystems erheblich erleichtern.</li>
+    <li>RPGs. Arrays sind für die Erstellung von RPGs unverzichtbar, denn statt eines Wirrwarrs von Variablen haben Sie nur ein paar Zeilen, auf die Sie jederzeit zurückgreifen können.</li>
+    <li>Kartenspiele. Gut, um den Überblick über Karten und Hände zu behalten.</li>
+    <li>Highscores und andere Statistiken. Es ist viel einfacher, den Überblick über ein Array zu behalten als über mehrere Variablen.</li>
+  </ul>
+  <p>Das ist nur die Spitze des Eisbergs, denn Arrays sind eines der grundlegendsten und nützlichsten Programmierwerkzeuge, die Sie verwenden können, und Sie wären überrascht, welche Anwendungen sie haben können! Sie sind außerdem sehr speichereffizient und im Allgemeinen schnell zu parsen,
+    was sie ideal macht, um die Leistung auf einem Maximum zu halten.</p>
+  <p><label for="aone">Ein einfaches Array hat 1 <strong>Dimension</strong>, aber Sie können auch Arrays mit mehr als einer Dimension haben. In den folgenden Abschnitten wird etwas mehr über beide Arten von Arrays erklärt: </label></p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">1 Dimension Arrays</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Bevor wir weitermachen, wollen wir erst einmal klären, was ein Array eigentlich ist und wie es aufgebaut ist. Ein Array ist einfach ein <a href="Data_Types.htm">Datentyp</a>, der einer Variablen zugewiesen ist, und es kann nicht nur einen Wert enthalten, sondern mehrere
+      Werte enthalten. Das Bild unten zeigt ein Schema für ein einfaches Array: </p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/1DArrayExample.png" /></p>
+    <p class="dropspot">Dies wird als <strong>1D-Array</strong> (eindimensionales Array) bezeichnet, und wie Sie sehen können, wird das Array in der Variablen &quot;<span class="inline">a</span>&quot; gespeichert und enthält mehrere Werte. Um auf das Array zuzugreifen, würden Sie etwas wie das Folgende tun:</p>
+    <p class="code">var _val = a[0];<br> show_debug_message(_val);
+    </p>
+    <p class="dropspot">Der obige Code holt sich den Wert von Position 0 des Arrays &quot;a&quot; und gibt ihn dann auf der Konsole aus, was - basierend auf dem Inhalt des Arrays im obigen Bild - 125 ergeben würde. Wenn Sie das Folgende tun würden:</p>
+    <p class="code">var _val = a[3];<br> show_debug_message(_val);
+    </p>
+    <p class="dropspot">Der Ausgang würde &quot;Hi!&quot; anzeigen.</p>
+    <p class="dropspot">Wie Sie sehen können, geben Sie dem Array einen Variablennamen und dann einen Wert in eckigen Klammern <span class="inline">[]</span>, wobei der Wert die Position im Array ist, von der Daten abgerufen werden sollen. Ein Array ist also im Wesentlichen ein Container mit einer Anzahl von Leerzeichen, um
+      Werte zu speichern, und jede Position im Container hat eine bestimmte Nummer, um sie zu identifizieren, die wir in <span class="inline">[]</span> einsetzen. Es ist erwähnenswert, dass der Inhalt eines Arrays <b>immer bei 0 beginnt und</b> <i>niemals negativ sein</i> kann <i>!</i></p>
+    <p class="dropspot">Wir haben gezeigt, wie man ein Array auf Daten überprüft, aber wie erstellt man das Array, um damit zu beginnen? Zuerst muss es <i>initialisiert</i> werden, bevor wir es verwenden können, sonst gibt <span class="notranslate">GameMaker Studio 2</span> einen Fehler aus. Das Initialisieren eines Arrays bedeutet einfach, dass wir jeder
+      Position des Arrays einen Anfangswert geben, damit es an anderer Stelle im Projektcode verwendet werden kann. Dies ist wichtig zu wissen, da es bedeutet, dass Sie ein gewisses Maß an Planung betreiben müssen, bevor Sie Arrays verwenden, aber es ist einfach genug, ein Array mit einer Wiederholungsschleife wie dieser zu initialisieren.
+      ein Array mit einer Wiederholungsschleife wie dieser zu initialisieren...</p>
+    <p class="code">var i = 9;<br> repeat(10)
+      <br> {
+      <br> array[i] = 0;<br> i -= 1;<br> }
+    </p>
+    <p class="dropspot">Dieser einfache Code initialisiert ein Array mit zehn Positionen (von 0 bis 9), um den Wert 0 zu halten, d. h., jede Position im Array enthält den Wert 0. Sie werden feststellen, dass das Array <i>rückwärts</i> initialisiert wurde, wobei der letzte Wert zuerst definiert wurde. Diese
+      ist nicht unbedingt notwendig, aber optimal, da so ein Speicherplatz reserviert wird, der genau der Größe des Arrays entspricht, während bei der Initialisierung eines Arrays von 0 <em>aufwärts</em> der Speicher für jeden zusätzlichen Wert neu zugewiesen werden muss (bei einem Array mit zehn Elementen muss also der Speicher für jeden weiteren Wert neu zugewiesen werden).
+      Wert neu zugewiesen werden muss (bei einem Array mit zehn Elementen würde die Initialisierung in einer Schleife also die Speicherzuweisung zehnmal ändern). Der Geschwindigkeitsunterschied ist für kleinere Arrays vernachlässigbar, aber größere Arrays sollten so weit wie möglich auf diese Weise optimiert werden.</p>
+    <p class="note"><b>HINWEIS</b>: Der HTML5-Export ist die Ausnahme von der obigen Regel, und wenn Sie darauf abzielen, sollten Sie Arrays in fortlaufender Reihenfolge von 0 aufwärts initialisieren.</p>
+    <p class="dropspot">Sie können auch die <span class="notranslate">GML-Funktion</span> <a href="../GML_Reference/Variable_Functions/array_create.htm"><tt>array_create()</tt></a> verwenden, um ein Array auf eine feste Größe zu initialisieren, und Sie können sogar &quot;leere&quot; Arrays ohne Werte erzeugen, zum Beispiel:</p>
+    <p class="code">my_array= [];</p>
+    <p class="dropspot">Dies teilt <span class="notranslate">dem GameMaker</span> mit, dass die Variable &quot;my_array&quot; ein Array ist, und Sie können ihr dann in Zukunft jederzeit Werte hinzufügen. Wenn Sie jedoch versuchen, auf einen Wert in einem leeren Array zuzugreifen, erhalten Sie einen Fehler. In der Tat sollten Sie immer darauf achten
+      Sie sollten immer darauf achten, nur auf gültige Array-Positionen zuzugreifen, da der Versuch, auf einen Wert außerhalb eines Arrays zuzugreifen, ebenfalls zu einem Fehler führt. Dies führt z. B. dazu, dass das Projekt beim Ausführen abstürzt:</p>
+    <p class="code">mein_array = array_create(5, 0);<br> var _val = mein_array[6];</p>
+    <p class="dropspot">Das Array wurde nur mit 5 Positionen initialisiert, aber wir haben versucht, die Position 7 zu erreichen - Arrays werden von 0 an nummeriert, also ist <span class="inline">array[6]</span> die Position 7 - deshalb erzeugt das Spiel einen Fehler und stürzt ab.</p>
+    <p class="dropspot">Wir haben gezeigt, wie man ein Array mit dem gleichen Wert für jede Position initialisiert, aber was ist, wenn wir das Array mit unterschiedlichen Werten für jede Position initialisieren wollen? Nun, dafür müssen wir jede einzelne Position manuell selbst eingeben, aber
+      es gibt einen netten Trick, der uns dabei hilft, den Überblick zu behalten:</p>
+    <p class="code">var _count = 3;<br> array[_count] = &quot;Sie?&quot;<br> count -= 1;<br> array[_count] = &quot;sind &quot;<br> count -= 1;<br> array[_count] = &quot;Wie &quot;<br> count -= 1;<br> array[_count] = &quot;Hallo!&quot;<br> count -= 1;</p>
+    <p class="dropspot">Wie Sie sehen können, haben wir keine Zahlen im eigentlichen Array verwendet, sondern eine <a href="Variables/Local_Variables.htm">lokale Variable, um</a> durch die Werte herunterzuzählen. Das ist sehr nützlich, vor allem bei größeren Arrays, denn so müssen Sie nicht
+      Sie müssen nicht verfolgen, wie viele Positionen es gibt und an welcher Nummer Sie sich befinden, da der Code das für Sie übernimmt. Sie müssen nur wissen, wie viele Positionen das Array insgesamt enthalten muss.</p>
+    <p class="dropspot">Schließlich können Sie die Werte mit einem einzigen Variablenaufruf wie folgt einem Array zuweisen:</p>
+    <p class="code">var _a = [0, 1, 2, 3, 4];<br> var _b = [];</p>
+    <p class="dropspot">Das obige Beispiel erzeugt zwei Arrays als lokale Variablen, wobei das erste bereits mit 5 Elementen gefüllt ist und das zweite ein leeres Array ist, dem Werte hinzugefügt werden können.</p>
+    <p class="dropspot">Wenn das erledigt ist, wie verwenden wir dann ein Array für praktische Dinge? Genau so, wie wir eine normale Variable verwenden würden, wie die folgenden Beispiele zeigen:</p>
+    <p class="code">// Zwei Array-Werte addieren<br> total = array[0] + array[5];<br>
+      <br> // Einen Array-Wert prüfen<br> if (array[9]) == 10<br> {
+      <br> //detwas tun<br> }
+      <br>
+      <br> // einen Array-Wert zeichnen<br> draw_text(32, 32, array[3]);</p>
+    <p class="dropspot">Da Arrays fortlaufend nummeriert werden, bedeutet dies, dass Sie sie in einer Schleife durchlaufen können, um weitere Aktionen auszuführen, so wie wir es bei der Initialisierung getan haben:</p>
+    <p class="code">var total = 0;<br> for (var i = 0; i &lt; 10; ++i;)<br> {
+      <br> total += array[i];<br> draw_text(32, 32 + (i * 32), array[i]);<br> }
+      <br> draw_text(32, 32 + (i * 32), total);</p>
+    <p class="dropspot">Der obige Code addiert alle Werte in unserem Array, zeichnet jeden von ihnen und zeichnet den Gesamtwert am Ende.</p>
+    <p class="dropspot">Das letzte, was zu Arrays zu erwähnen ist, ist, dass Sie ein Array auch einfach löschen können, indem Sie die Variable, die es definiert, einem einzelnen Wert &quot;neu zuweisen&quot;. Dadurch wird der Speicher frei, der mit allen Positionen und Werten für dieses Array verbunden ist.
+      Zum Beispiel:</p>
+    <p class="code">//Erstellen des Arrays for (var i = 9; i &gt; -1; --i;)<br> {
+      <br> a[i] = i;<br> }
+      <br> //Löschen des Arrays<br> a = -1;</p>
+    <p class="dropspot">Wenn das Array mehrere Dimensionen hat (siehe unten), werden diese auch alle aufgeräumt. Beachten Sie, dass, wenn Sie Arrays in Instanzen erstellen, diese nicht aufgeräumt werden müssen, wenn die Instanz aus dem Spiel entfernt wird, da sie automatisch entfernt werden
+      durch den <a class="glossterm" data-glossterm="Müllsammler" href="#">Garbage Collector</a> beim Zerstören oder Raumende entfernt werden. Wenn jedoch eine der Array-Positionen Referenzen auf <em>dynamische</em> Assets enthält - wie Partikelsysteme, Puffer oder Datenstrukturen
+      - dann <em>müssen</em> diese zerstört werden, bevor das Array gelöscht wird oder die Instanz zerstört wird oder der Raum endet.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Mehrdimensionale Arrays</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><span style="text-align: justify;">Wir wissen, was ein eindimensionales Array ist, aber in <span class="notranslate">GameMaker Studio 2</span> können Sie Arrays mit mehreren Dimensionen haben, die im Wesentlichen als ein Array innerhalb eines Arrays innerhalb eines Arrays strukturiert sind... Zum Beispiel ist das folgende ein <strong>2D-Array</strong> (zwei Dimensionen)</span></p>
+    <p class="code"><span style="text-align: justify;"></span>array[0][0] = 5;</p>
+    <p class="dropspot">Damit wird dem <span class="notranslate">GameMaker</span> im Wesentlichen mitgeteilt, dass das Array eigentlich aus verschiedenen 1D-Arrays besteht. Hier ist ein erweitertes Beispiel:</p>
+    <p class="code">array[1][2] = 1;<br> array[1][1] = &quot;Hallo&quot;;<br> array[1][0] = 55,5;<br> array[0][2] = sprite_index;<br> array[0][1] = &quot;Welt&quot;;<br> array[0][0] = -67,89;</p>
+    <p class="dropspot">Ein mehrdimensionales Array muss vor der Verwendung initialisiert werden, genau wie ein einzelnes 1D-Array, und kann reelle Zahlen, Zeichenketten und jeden anderen <a href="Data_Types.htm">Datentyp</a> aufnehmen, genau wie jede Variable, was sie zu idealen Kandidaten für jedes Spiel macht
+      Das macht sie zu idealen Kandidaten für jedes Spiel, das große Datenmengen in einer leicht zugänglichen Weise speichern muss (denken Sie daran, dass Sie einfach durch ein Array schleifen können). Hier ist ein letztes Beispiel, wie dies in einem tatsächlichen Spiel verwendet werden kann... Angenommen, Sie wollen vier verschiedene Feinde an vier verschiedenen
+      Punkten in Ihrem Spiel spawnen, abhängig von einem Zufallswert. Nun, wir können ein Array mit 2 Dimensionen verwenden, um dies zu tun und uns das Schreiben einer Menge Code zu sparen.</p>
+    <p class="dropspot">Zuerst sollten wir das Array initialisieren, das wir im create-Ereignis unseres &quot;Controller&quot;-Objekts verwenden werden (beachten Sie die Verwendung von Kommentaren, um Sie daran zu erinnern, was jeder Array-Eintrag tut):</p>
+    <p class="code">feind[3][2] = 448; //y Position<br> feind[3][1] = 32; //x Position<br> feind[3][0] = obj_Slime; //Objekt<br> feind[2][2] = 448;<br> feind[2][1] = 608;<br> feind[2][0] = obj_Skeleton; <br> enemy[1][2] = 32;<br> enemy[1][1] = 608;<br> enemy[1][0] = obj_Knight;<br> enemy[0][2] = 32;<br> enemy[0][1] = 32;<br> enemy[0][0] = obj_Ogre;</p>
+    <p class="dropspot">Wir haben nun die Objekte, deren Instanzen gespawnt werden sollen, und ihre entsprechenden x- und y-Spawn-Koordinaten innerhalb des Raums alle in unserem Array gespeichert. Dies kann nun in einem anderen Ereignis des Controller-Objekts (z. B. einem Alarm oder einem Tastendruck) wie folgt verwendet werden
+      Ereignis):</p>
+    <p class="code"><br> var i = irandom(3);<br> //Verwenden Sie das Array, um das Objekt zu erstellen<br> instance_create_layer(enemy[i][1], enemy[i][2], &quot;Enemy_Layer&quot;, enemy[i][0]);</p>
+    <p class="dropspot">Dieser kurze Code wird nun einen zufälligen Feind im Spielraum erzeugen, und er verwendet viel weniger Code als eine &quot;if /<tt>then / else&quot;-Struktur</tt> oder sogar einen &quot;switch&quot;, und da<tt>das</tt> Array alle zusammen im &quot;create&quot;-Ereignis initialisiert wird
+      initialisiert wird, ist es VIEL einfacher, diese Werte zu bearbeiten und zu ändern, da sie nicht <a class="glossterm" data-glossterm="fest codiert" href="#">fest</a> in den restlichen Projektcode <a class="glossterm" data-glossterm="fest codiert" href="#">einkodiert</a> sind.</p>
+    <p class="dropspot">Es sollte auch beachtet werden, dass die Länge jeder Dimension im Array unterschiedlich sein kann, so dass Sie die anfängliche Arraydimension mit einer Länge von 3 haben können, aber der zweite Dimensionseintrag kann eine unterschiedliche Länge für jeden der anfänglichen Arraywerte haben
+      die ihm zugewiesen sind, eine andere Länge haben:</p>
+    <p class="code">array[2][2] = &quot;3&quot;;<br> array[2][1] = &quot;2&quot;;<br> array[2][0] = &quot;1&quot;;<br> array[1][3] = &quot;vier&quot;;<br> array[1][2] = &quot;drei&quot;;<br> array[1][1] = &quot;zwei&quot;;<br> array[1][0] = &quot;eins&quot;;<br> array[0][1] = 2;<br> array[0][0] = 1;</p>
+    <p class="dropspot">Schließlich sind mehrdimensionale Arrays nicht auf <em>nur </em>zwei Dimensionen beschränkt, und Sie können 3, 4 oder mehr Dimensionen für ein Array haben, wie in Ihrem Code erforderlich, indem Sie einfach weitere Argumente hinzufügen, z. B. <span class="inline">[n]</span>:</p>
+    <p class="code">array[0][0][0] = 1; // Ein dreidimensionales Array<br> array[0][0][0][0] = 1; // Ein vierdimensionales Array<br> // usw..</p>
+  </div>
+  <p> </p>
+  <p>Genau wie normale Variablen können Sie Arrays an <a href="Script_Functions.htm">Skriptfunktionen</a> und <a href="Method_Variables.htm">Methodenvariablen</a> übergeben, um sie zu verwenden und dann an die Instanz zurückzugeben, die die Funktion aufgerufen hat. Um dies zu tun,
+    müssen Sie lediglich die Array-Variable angeben (Sie brauchen weder die einzelnen Positionen noch die <span class="inline">[]</span> Klammern) und das gesamte Array wird <b>per Referenz</b> an die Funktion <b>übergeben</b>. Sollten Sie jedoch einen der
+    der Array-Werte ändern, wird das Array in ein <em>temporäres </em>Array nur für diese Funktion kopiert. <strong>Beachten Sie hier die Verwendung des Wortes <i>temporär</i></strong>! Sie übergeben nicht das Array selbst an die Funktion (wie eine
+    Variable), sondern Sie fordern die Funktion auf, eine <i>Kopie</i> dieses Arrays zu erstellen, die Sie dann verändern werden. Das bedeutet, dass Sie <b>das Array immer</b> aus der Funktion <b>zurückgeben müssen</b>, wenn Sie Array-Werte ändern wollen (dieses Verhalten
+    wird &quot;copy<em>on write&quot;</em> genannt<em>).</em></p>
+  <p class="note"><b>HINWEIS: </b>Aufgrund der internen Funktionsweise kann die Übergabe von Arrays an Funktionen die Leistung beeinträchtigen, insbesondere wenn das Array sehr groß ist. Verwenden Sie diese Funktionalität also mit Vorsicht!</p>
+  <p>Betrachten Sie als Beispiel den folgenden Code. Zuerst erstellen wir das Array, das wir verwenden möchten, und dann übergeben wir dieses Array an die Funktion:</p>
+  <p class="code">for (var i = 9; i &gt; -1; --i;)<br> {
+    <br> a[i] = i;<br> }
+    <br> my_array_func(a);
+  </p>
+  <p>Die Funktion selbst ist etwas Einfaches wie:</p>
+  <p class="code">my_array_func = function(array)<br> {
+    <br> for (var i = 9; i &gt; -1; --i;)<br> {
+    <br> array[i] = i * 100;<br> }
+    <br> }
+  </p>
+  <p>Nun würden Sie erwarten, dass das endgültige Array die Werte 900, 800, 700, usw. enthält. ABER das wird nicht der Fall sein, da wir das Array <i>nicht</i> von der Funktion zurückgegeben haben, so dass alles, was wir geändert haben, die temporäre Kopie war, die erstellt wurde, als wir das Array
+    als Argument an die Funktion übergeben haben, und wenn die Funktion beendet ist, verschwindet auch das im Grunde. Um dies zu korrigieren, hätten wir den Code wie folgt formatieren müssen:</p>
+  <p class="code">for (var i = 9; i &gt; -1; --i;)<br> {
+    <br> a[i] = i;<br> }
+    <br> a = my_array_func(a);</p>
+  <p>Und die Funktion sollte nun so aussehen:</p>
+  <p class="code">my_array_func = function(array)<br> {
+    <br> for (var i = 9; i &gt; -1; --i;)<br> {
+    <br> array[i] = i * 100;<br> }
+    <br> return array;<br> }
+  </p>
+  <p class="note"><b>HINWEIS: </b>Das obige ist <b>nicht</b> notwendig, wenn Sie keinen der Array-Werte ändern, sondern nur auf sie verweisen. Wenn Sie ein Array referenzieren, wird es nicht kopiert und ist schneller zu parsen.</p>
+  <p>Es ist auch erwähnenswert, dass Sie den Accessor <tt>@</tt> verwenden können, um ein Array von einer Funktion aus zu referenzieren und seine Werte direkt zu ändern, was den CPU-Overhead des Kopierens in die Funktion spart. Weitere Informationen über Accessoren und ihre Funktionsweise finden Sie unter
+    und deren Funktionsweise sowie ein Beispiel für Arrays finden Sie auf der folgenden Seite:</p>
+  <ul class="colour">
+    <li><a href="Accessors.htm">Accessors</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="Data_Types.htm">Datentypen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Arrays
+passing arrays to scripts
+deleting arrays
+-->
+  <!-- TAGS
+arrays
+-->
+
+</body></html>

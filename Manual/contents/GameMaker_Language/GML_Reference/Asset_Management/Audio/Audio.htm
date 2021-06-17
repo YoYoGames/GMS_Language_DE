@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Audio" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Audio" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Audio</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> verfügt über eine vollständige Audio-Engine, die auf den Soundformaten <tt>*.ogg</tt>, <tt>*.mp3</tt> und <tt>*.wav</tt> basiert. Klänge dieser Typen, die der IDE hinzugefügt werden, können dann mit den unten gezeigten grundlegenden Audiofunktionen in Ihrem Spiel verwendet werden. Für
+    Dinge, die komplexer sind als grundlegende Soundeffekte oder das Abspielen eines einzelnen Musikstücks, können Sie sich an die erweiterten Audiofunktionen wenden, mit denen Sie die Art und Weise, wie ein Sound abgespielt wird, verändern können. Es gibt auch eine Auswahl an spezielleren Funktionen für das Streaming
+    Audio, das Positionieren von Audio - für 3D-Sound - und das Gruppieren von Audio.</p>
+  <p class="note"><b>WICHTIG!</b> Wenn Sie Audio auf dem HTML5-Ziel verwenden, sollten Sie sich bewusst sein, dass nicht alle Browser Web Audio unterstützen und daher möglicherweise keinen Ton für Ihr Projekt abspielen, wenn es ausgeführt wird. Unter dem folgenden Link können Sie sich einen Überblick über die Web Audio-Unterstützung verschaffen:
+   <a href="https://caniuse.com/#search=WebAudio" target="_blank">Kann ich Web Audio verwenden?</a></p>
+  <p>Die folgenden Funktionen dienen dem möglichst unkomplizierten Umgang mit Audiosignalen. Sie vermeiden die Verwendung von Emittern und ermöglichen es dem Benutzer, auf einfache Weise Klänge zu erzeugen und Musik abzuspielen, da diese Klänge immer an der <i>Position des Hörers</i> erzeugt werden (weitere Einzelheiten zum <i>Hörer</i> finden Sie im unten verlinkten Abschnitt) und daher im Allgemeinen nicht von Änderungen am <i>Hörer</i> beeinflusst werden:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_exists.htm">audio_exists</a></li>
+    <li><a href="audio_get_name.htm">audio_get_name</a></li>
+    <li><a href="audio_get_type.htm">audio_get_type</a></li>
+    <li><a href="audio_play_sound.htm">audio_play_sound</a></li>
+    <li><a href="audio_play_sound_at.htm">audio_play_sound_at</a></li>
+    <li><a href="audio_pause_sound.htm">audio_pause_ton</a></li>
+    <li><a href="audio_pause_all.htm">audio_pause_alle</a></li>
+    <li><a href="audio_resume_sound.htm">audio_resume_sound</a></li>
+    <li><a href="audio_resume_all.htm">audio_resume_all</a></li>
+    <li><a href="audio_stop_sound.htm">audio_stop_ton</a></li>
+    <li><a href="audio_stop_all.htm">audio_stop_all</a></li>
+    <li><a href="audio_is_playing.htm">audio_ist_abspielend</a></li>
+    <li><a href="audio_is_paused.htm">audio_ist_pausiert</a></li>
+    <li><a href="audio_create_stream.htm">audio_erzeugen_strom</a></li>
+    <li><a href="audio_destroy_stream.htm">audio_destroy_stream</a></li>
+  </ul>
+  <p> </p>
+  <p>Die folgenden Funktionen dienen dazu, mehr Kontrolle darüber zu erhalten, wie die Audio-Engine arbeitet und wie die über sie abgespielten Klänge vom Hörer &quot;gehört&quot; werden. Daher wird empfohlen, dass Sie über gute Kenntnisse darüber verfügen, wie der Rest
+    der <span class="notranslate">GameMaker Studio 2</span> Audio-Engine haben, bevor Sie eine der folgenden Funktionen verwenden:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_sound_set_track_position.htm">audio_sound_set_track_position</a></li>
+    <li><a href="audio_sound_get_track_position.htm">audio_sound_get_track_position</a></li>
+    <li><a href="audio_sound_set_listener_mask.htm">audio_sound_set_listener_mask</a></li>
+    <li><a href="audio_sound_get_listener_mask.htm">audio_sound_get_listener_mask</a></li>
+    <li><a href="audio_sound_length.htm">audio_sound_length</a></li>
+    <li><a href="audio_sound_pitch.htm">audio_sound_pitch</a></li>
+    <li><a href="audio_sound_get_pitch.htm">audio_klang_get_pitch</a></li>
+    <li><a href="audio_sound_is_playable.htm">audio_klang_ist_abspielbar</a></li>
+    <li><a href="audio_falloff_set_model.htm">audio_falloff_set_model</a></li>
+    <li><a href="audio_sound_gain.htm">audio_sound_gain</a></li>
+    <li><a href="audio_sound_get_gain.htm">audio_sound_get_gain</a></li>
+    <li><a href="audio_master_gain.htm">audio_master_gain</a></li>
+    <li><a href="audio_set_master_gain.htm">audio_set_master_gain</a></li>
+    <li><a href="audio_get_master_gain.htm">audio_get_master_gain</a></li>
+    <li><a href="audio_channel_num.htm">audio_channel_num</a></li>
+    <li><a href="audio_debug.htm">audio_debug</a></li>
+  </ul>
+  <p> </p>
+  <p>Weitere erweiterte Funktionen, wie das Einstellen von Hörern, das Aufnehmen von Audio oder das zeitliche Synchronisieren mehrerer Audiospuren, finden Sie in den unten aufgeführten Unterabschnitten:</p>
+  <ul class="colour">
+    <li><a href="Audio_Emitters/Audio_Emitters.htm">Audio-Emitter</a></li>
+    <li><a href="Audio_Listeners/Audio_Listeners.htm">Audio-Hörer</a></li>
+    <li><a href="Audio_Groups/Audio_Groups.htm">Audio-Gruppen</a></li>
+    <li><a href="Audio_Buffers/Audio_Buffers.htm">Audio-Puffer</a></li>
+    <li><a href="Audio_Synchronisation/Audio_Synchronisation.htm">Audio-Synchronisation</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h2>Web Audio</h2>
+  <p>Beim Erstellen von Spielen für die HTML5-Zielplattform benötigt die Audio-Engine <b>Web-Audio-Unterstützung</b>, was wiederum bedeutet, dass Ihr Audio manchmal nicht abgespielt wird, wenn oder wie Sie es erwarten. Dies liegt daran, dass der Web Audio-Kontext möglicherweise nicht ausgeführt wird
+    oder nicht mehr läuft, wenn Ihr Spiel abgespielt wird. Die Ursachen hierfür variieren stark zwischen den Browsern und sogar zwischen verschiedenen Versionen desselben Browsers, daher ist es sehr wichtig zu erkennen, wann sich der Status des Web-Audio-Kontexts ändert, z. B. um
+    zu erkennen, wenn sich der Kontext ändert, und Audioschleifen wie Hintergrundmusik zu pausieren/starten.</p>
+  <p>Um bei diesem Problem zu helfen, verfügt <span class="notranslate">GameMaker Studio 2</span> über zwei verschiedene Möglichkeiten, die Änderung des Web-Audio-Kontextstatus zu erkennen, entweder mit der folgenden Funktion:</p>
+  <ul class="colour">
+    <li><a href="audio_system_is_available.htm">audio_system_ist_verfügbar</a></li>
+  </ul>
+  <p> </p>
+  <p>Sie können auch das <b>asynchrone Systemereignis</b> verwenden, das immer dann ausgelöst wird, wenn sich der Status von Web Audio ändert. In diesem Ereignis erhalten Sie die eingebaute <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a><span> DS-Map</span> mit dem Schlüssel &quot; event_type<tt>&quot;</tt> gefüllt, der wiederum die Zeichenkette &quot; audio_system_status<tt>&quot;</tt> enthält<tt>, wenn es</tt> sich um ein Audio-Ereignis handelt. Wenn dieser Schlüssel vorhanden ist, gibt es auch einen weiteren<tt>Schlüssel</tt>&quot;<tt>status&quot;</tt>, der
+    entweder &quot;<tt>verfügbar&quot; oder</tt>&quot;nicht verfügbar&quot; ist. Beachten Sie, dass dieses Ereignis auf <i>allen</i> Plattformen ausgelöst wird, aber auf allen außer HTML5 wird es nur einmal beim Spielstart ausgelöst, wenn die Audio-Engine zum ersten Mal
+    initialisiert wird. Weitere Informationen finden Sie im Abschnitt:</p>
+  <ul class="colour">
+    <li><a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">Das asynchrone Systemereignis</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Asset_Management.htm">Vermögensverwaltung</a></div>
+        <div style="float:right">Nächste: Pfade</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Audio
+-->
+  <!-- TAGS
+audio_functions
+-->
+</body>
+</html>

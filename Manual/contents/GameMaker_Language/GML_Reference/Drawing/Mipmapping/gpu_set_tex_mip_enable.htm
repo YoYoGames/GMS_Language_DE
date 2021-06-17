@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_tex_mip_enable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_tex_mip_enable" />
+  <meta name="rh-index-keywords" content="gpu_set_tex_mip_enable,mip_off,mip_on,mip_markedonly" />
+  <meta name="search-keywords" content="gpu_set_tex_mip_enable,mip_off,mip_on,mip_markedonly" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_tex_mip_enable</h1>
+  <p>Mit dieser Funktion können Sie ändern, ob das Mipmapping ausgeschaltet, für alles eingeschaltet oder nur für die im <a href="../../../../Settings/Texture_Groups.htm">Texturgruppen-Manager</a> ausgewählten Texturgruppen eingeschaltet ist. Die Funktion erfordert
+    eine der unten aufgeführten Konstanten.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>mip_aus</td>
+        <td>Mipmapping ist deaktiviert.</td>
+      </tr>
+      <tr>
+        <td>mip_on</td>
+        <td>Mipmapping für alle Texturen ist aktiviert.</td>
+      </tr>
+      <tr>
+        <td>mip_markedonly</td>
+        <td>Mipmapping ist für Texturen aktiviert, die es in den Texturgruppenoptionen aktiviert haben (Standard).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_set_tex_mip_enable(Einstellung);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Einstellung</td>
+        <td>Die mipmap-Einstellung (eine Konstante, Voreinstellung: <tt>mip_markedonly</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if gpu_get_tex_mip_enable != mip_on<br> {
+    <br> gpu_set_tex_mip_enable(mip_on);
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob mipmapping aktiviert ist, und wenn nicht, wird es aktiviert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Weiter: <a href="gpu_set_tex_mip_enable_ext.htm">gpu_set_tex_mip_enable_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_tex_mip_enable
+mip_off
+mip_on
+mip_markedonly
+-->
+  <!-- TAGS
+gpu_set_tex_mip_enable
+-->
+</body>
+</html>

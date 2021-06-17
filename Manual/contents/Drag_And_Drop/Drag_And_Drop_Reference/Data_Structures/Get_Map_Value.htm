@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kartenwert abrufen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Get Map Value action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Map Value" />
+  <meta name="search-keywords" content="Get Map Value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Map_Value.png"> Kartenwert holen</h1>
+  <p>Mit dieser Aktion können Sie den Wert abrufen, der zu einem bestimmten Schlüssel in einer Map-Datenstruktur gehört. Sie übergeben die Variable, die den Map-Index enthält (wie von der Aktion &quot; <a href="Create_Map.htm">Map erstellen&quot;</a> zurückgegeben) und geben dann einen &quot;Schlüssel&quot; an (der
+    ist der Bezeichner innerhalb der Map für einen Wert), und liefern auch eine Zielvariable, die den zurückgegebenen Wert enthält (die als temporäre lokale Variable gekennzeichnet werden kann).</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie einen Schlüssel angeben, der in der Map nicht vorhanden ist, gibt die Aktion <tt>undefiniert</tt> zurück. Sie können dies mit der Aktion <a href="../Common/If_Undefined.htm">"If Undefined</a> " überprüfen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Get Map Value Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Get_Map_Value.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Karte</td>
+        <td>Der Index (gespeichert in einer Variablen) der Map, aus der der Wert geholt werden soll</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Der zu erhaltende Schlüssel (real oder string)</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable, die den zurückgegebenen Map-Wert enthält</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Get Map Value Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Get_Map_Value.png">Der obige Code des Aktionsblocks prüft auf eine Kollision an der Instanzposition und wenn eine
+    gefunden wird, wird in einer Map nachgeschaut, um einen Wert aus dem Schlüssel &quot;damage&quot; zu erhalten, und dieser Wert wird dann verwendet, um die aufrufende Instanzvariable &quot;hp&quot; zu ändern.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Data_Structure_Actions.htm">Datenstruktur-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Remove_Map_Entry.htm">Karteneintrag entfernen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get Map Value
+-->
+  <!-- TAGS
+action_map_get_value
+-->
+</body>
+</html>

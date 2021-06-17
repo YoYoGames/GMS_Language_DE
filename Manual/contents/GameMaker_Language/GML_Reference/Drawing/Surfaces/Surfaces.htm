@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Oberflächen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Surface functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Surfaces,application_surface,application surface,app surface" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Oberflächen</h1>
+  <p>Bei den normalen Zeichenereignissen zeichnet <span class="notranslate">GameMaker Studio 2</span> eigentlich nicht direkt auf den Bildschirm, sondern auf eine <b>Oberfläche</b>, die so genannte <i>Programmoberfläche.</i> Diese Oberfläche ist im Grunde eine leere &quot;Leinwand&quot;, die dann später manipuliert werden kann
+    Diese Oberfläche ist im Grunde eine leere "Leinwand", die später manipuliert werden kann, bevor sie bei Bedarf auf den Bildschirm gezeichnet wird, und in den meisten Fällen erledigt <span class="notranslate">GameMaker Studio 2</span> dies für Sie (obwohl Sie sie auch selbst im Code für <span class="notranslate">Shader</span>, Skalierung und viele andere Dinge manipulieren können - weitere Details finden Sie weiter unten).</p>
+  <p>Abgesehen von dieser Anwendungsoberfläche können Sie jedoch auch eigene Oberflächen erstellen und diese verwenden, um verblüffende oder subtile Spezialeffekte in Ihrem Spiel zu erzeugen. Zum Beispiel können Sie Oberflächen verwenden, um Instanzen &quot;einzufangen&quot;, die dann zerstört werden können,
+    und auf diese Weise können Sie einen Abziehbild-Effekt erzeugen, bei dem das Sprite für die Instanz auf der Oberfläche angezeigt wird, als ob sie noch existierte, was grafische Effekte wie Trümmer, Blut usw. ermöglicht, ohne dass ein wirklicher Verarbeitungs-Overhead entsteht. Eine weitere Sache, die Sie
+    Sie können Oberflächen auch als Texturen verwenden, die manipuliert werden können, oder um Sprites &quot;on the fly&quot; zu erstellen, oder um komplexe Überlagerungen zu erzeugen. Die Verwendungsmöglichkeiten für Oberflächen sind endlos!</p>
+  <p>Normale Oberflächen sind recht einfach zu verwenden, aber es gibt ein paar Grundregeln, die Sie bei der Verwendung beachten sollten:</p>
+  <ul class="colour">
+    <li>Zunächst sollten Sie wissen, dass Oberflächen<i>(außer</i> der Anwendungsoberfläche) &quot;flüchtig&quot; sind. Das bedeutet, dass wenn das Gerät oder das Fenster den Fokus verliert oder minimiert wird (gute Beispiele sind, wenn Sie unter <span class="notranslate">Windows</span> mit ALT +Tab zu einem anderen Fenster und wieder zurück wechseln,
+      oder auf einem <span class="notranslate">Android-Gerät</span>, wenn die App aufgrund eines Anrufs den Fokus verliert), dann <strong>kann</strong> die Oberfläche <strong>zerstört werden</strong>. Dies liegt daran, dass sie <em>nur</em> im Texturspeicher<a class="glossterm" data-glossterm="VRAM" href="#">(VRAM</a>) gespeichert ist und
+      überschrieben werden kann, wenn die Zielplattform diesen Speicher für etwas anderes benötigt, was bedeutet, dass Sie <i><b>immer</b></i> eine Art ausfallsicherer Code vorhanden sein, normalerweise mit der <a href="surface_exists.htm"><tt>surface_exists()</tt></a>      Funktion.</li>
+  </ul>
+  <p class="note" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 4em"><strong>HINWEIS</strong>: Dies scheint nicht mit Sprites oder anderen visuellen Assets zu passieren (tut es aber tatsächlich!), da sie auch im regulären Speicher (RAM) gespeichert werden und wenn sie aus dem Texturspeicher (VRAM) entfernt werden, werden sie sofort wieder aus dem
+    regulären Speicher wiederhergestellt, wenn das Spiel den Fokus wiedererlangt.</p>
+  <ul class="colour">
+    <li>Zweitens sollten Sie beachten, dass Oberflächen große Mengen an VRAM benötigen können und Sie daher versuchen sollten, sie so klein wie möglich zu halten. Normalerweise würden Sie versuchen, sie nicht größer als die Größe der Ansicht oder des Anzeigefensters zu halten.</li>
+    <li>Drittens sollten Sie <b>Oberflächen nur im Draw-Event erstellen</b>. Wenn Sie eine Oberfläche im Create-Ereignis einer Instanz erstellen, könnten Sie möglicherweise den <i>gleichen</i> Index wie die <tt>application_surface</tt> erhalten. Das kann dann zu vielen Problemen
+      und Verwirrung stiften, da Sie denken, dass Sie Ihre eigene Oberfläche verwenden, tatsächlich aber das aktuelle Rendering-Ziel verwenden. Auch im Draw-Event sollten Sie immer versuchen, das <i>Zeichnen</i> auf eine Oberfläche zu beschränken, da aufgrund der optimierten Art und Weise, wie <span class="notranslate">GameMaker</span>
+      Studio 2 auf den Bildschirm zeichnet, ist es empfehlenswert, alle Zeichenfunktionen <i>innerhalb des Draw-Ereignisses</i> zu halten - dazu gehört auch das Löschen einer Oberfläche beim ersten Anlegen usw... Das Zeichnen auf eine Oberfläche außerhalb des Draw-Ereignisses ist möglich und kann
+      ist möglich und kann für einige Effekte sogar notwendig sein, aber es ist nicht die Art und Weise, wie es gemacht <em>werden sollte</em>.</li>
+    <li>Viertens: Wenn Sie manuell auf eine Fläche zeichnen, befindet sich die Fläche <i>immer</i> an der Position (0,0). Das bedeutet, dass Sie eventuell <em>absolute</em> Koordinaten in <em>relative</em> Koordinaten für die Fläche umwandeln müssen. Wenn Sie zum Beispiel eine
+      kameragroße Fläche haben und etwas, das gerade in der Kamera sichtbar ist, auf diese Fläche zeichnen möchten, sollten Sie die x- und y-Koordinaten der Kameraansicht von den tatsächlichen x- und y-Koordinaten subtrahieren, um eine relative Position zur Fläche (0,0) zu erhalten
+      Position zu erhalten. Der Code würde also etwa so aussehen:</li>
+  </ul>
+  <p class="code" style="margin-top: 0px;margin-right: 50px;margin-bottom: 0px;margin-left: 100px">if view_current = 0<br> {<br> surface_set_target(surf);
+    <br> with (obj_Effect)<br> {
+    <br> var _vx = camera_get_view_x(view_camera[1]);<br> var _vy = camera_get_view_y(view_camera[1]);<br> draw_sprite(sprite_index, image_index, x - _vx, y - _vy);<br> }
+    <br> surface_reset_target();
+    <br> }
+    <br> sonst
+    <br> {
+    <br> draw_surface(surf, 0, 0);<br> }
+  </p>
+  <ul class="colour">
+    <li>Schließlich ist noch anzumerken, dass beim Zeichnen auf eine Oberfläche die Farbe <em>und die</em> Alphakomponente jedes Pixels berücksichtigt wird, sowohl von der Oberfläche selbst als auch von dem, was auf sie gezeichnet wird. Dies kann zu einigen eher unintuitiven Ergebnissen führen
+      Ergebnissen führen (wenn Sie z. B. ein Sprite mit 0,5 Alpha auf eine Oberfläche mit 0 Alpha zeichnen, ergibt sich ein endgültiges Alpha von 0,25). Die Gründe dafür werden auf der folgenden Seite erklärt, und wir empfehlen Ihnen, diese Seite zu lesen, bevor Sie mit Oberflächen arbeiten: <a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Anleitung zum Verwenden von Blendmodes</a></li>
+  </ul>
+  <p class="note"><strong>HINWEIS</strong>: Dies gilt nicht für die Anwendungsoberfläche, sondern nur für vom Benutzer erstellte Oberflächen.</p>
+  <p>Die grundsätzliche Verwendung einer Oberfläche wäre wie folgt:</p>
+  <ul class="colour">
+    <li>Sie legen zunächst eine Fläche an und weisen deren Index einer Variablen zu.</li>
+    <li>Sie würden dann das Zeichenziel auf die Oberfläche und nicht auf das Display setzen.</li>
+    <li>Als nächstes würden Sie die gewünschten Dinge einzeichnen sowie weitere Manipulationen vornehmen.</li>
+    <li>Wenn Sie fertig sind, setzen Sie das Zeichenziel zurück, so dass alle weiteren Zeichnungen wieder auf dem Bildschirm stattfinden.</li>
+    <li>Schließlich würden Sie die Oberfläche zeichnen (oder sie in einem <span class="notranslate">Shader</span> verwenden, oder was auch immer erforderlich ist).</li>
+  </ul>
+  <p>Wenn Sie die gesamte Anzeige auf eine Oberfläche zeichnen möchten (einschließlich Kacheln, Hintergründe usw.), können Sie einfach auf die Anwendungsoberfläche selbst zugreifen (siehe unten für weitere Details) oder Sie können einem View-Port eine Oberfläche zuweisen
+    mit Hilfe der Variable <a href="../../Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm"><tt>view_surface_id[0..7]</tt></a> zuweisen, denn damit wird alles, was in diesem Viewport sichtbar ist, auf die entsprechende Oberfläche gezeichnet.</p>
+  <p>Für den Umgang mit Flächen gibt es die folgenden Funktionen (diese Funktionen sind spezifisch für das Erstellen und Manipulieren von Flächen, aber um sie tatsächlich auf den Bildschirm zu zeichnen, sollten Sie die spezifischen Zeichenfunktionen verwenden, die Sie weiter unten finden):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="surface_exists.htm">surface_exists</a></li>
+    <li><a href="surface_create.htm">Oberfläche_erstellen</a></li>
+    <li><a href="surface_create_ext.htm">oberfläche_erstellen_ext</a></li>
+    <li><a href="surface_resize.htm">oberfläche_verkleinern</a></li>
+    <li><a href="surface_set_target.htm">surface_set_target</a></li>
+    <li><a href="surface_set_target_ext.htm">oberfläche_ziel_ext_setzen</a></li>
+    <li><a href="surface_get_target.htm">surface_get_target</a></li>
+    <li><a href="surface_get_target_ext.htm">oberfläche_ziel_ext_holen</a></li>
+    <li><a href="surface_reset_target.htm">oberfläche_zurueck_ziel</a></li>
+    <li><a href="surface_copy.htm">oberfläche_kopie</a></li>
+    <li><a href="surface_copy_part.htm">oberfläche_kopieren_teil</a></li>
+    <li><a href="surface_depth_disable.htm">oberfläche_tiefe_deaktivieren</a></li>
+    <li><a href="surface_get_height.htm">oberfläche_holen_höhe</a></li>
+    <li><a href="surface_get_width.htm">oberfläche_get_width</a></li>
+    <li><a href="surface_get_texture.htm">oberfläche_holen_textur</a></li>
+    <li><a href="surface_get_depth_disable.htm">surface_get_depth_disable</a></li>
+    <li><a href="surface_getpixel.htm">surface_getpixel</a></li>
+    <li><a href="surface_getpixel_ext.htm">oberfläche_getpixel_ext</a></li>
+    <li><a href="surface_free.htm">Oberfläche_frei</a></li>
+    <li><a href="surface_save.htm">oberfläche_sichern</a></li>
+    <li><a href="surface_save_part.htm">oberfläche_speichern_teil</a></li>
+  </ul>
+  <p> </p>
+  <p>Zum Zeichnen von Flächen gibt es folgende Funktionen:</p>
+  <p class="note"><b>HINWEIS: </b>Bei der Arbeit mit Oberflächen besteht die Möglichkeit, dass diese jederzeit aufhören können zu existieren, da sie im Texturspeicher abgelegt sind. Sie sollten <b>IMMER</b> prüfen, ob eine Oberfläche existiert, indem Sie <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span> überprüfen, bevor Sie
+    sie direkt referenzieren.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_surface.htm">Fläche_zeichnen</a></li>
+    <li><a href="draw_surface_ext.htm">fläche_zeichnen_ext</a></li>
+    <li><a href="draw_surface_part.htm">flaeche_teilen_zeichnen</a></li>
+    <li><a href="draw_surface_part_ext.htm">flaeche_teil_ext_zeichnen</a></li>
+    <li><a href="draw_surface_stretched.htm">Fläche_gestreckt_zeichnen</a></li>
+    <li><a href="draw_surface_stretched_ext.htm">flaeche_gestreckt_ext zeichnen</a></li>
+    <li><a href="draw_surface_tiled.htm">fläche_gekippt_zeichnen</a></li>
+    <li><a href="draw_surface_tiled_ext.htm">fläche_gekippt_ext zeichnen</a></li>
+    <li><a href="draw_surface_general.htm">fläche_zeichnen_allgemein</a></li>
+  </ul>
+  <p> </p>
+  <p>Schließlich haben Sie zwei Funktionen zum Speichern und Abrufen von Oberflächen in <a href="../../Buffers/Buffers.htm">Puffern</a>:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Buffers/buffer_get_surface.htm">buffer_get_surface</a></li>
+    <li><a href="../../Buffers/buffer_set_surface.htm">buffer_set_surface</a></li>
+  </ul>
+  <p> </p>
+  <p>Wie bereits erwähnt, rendert <span class="notranslate">GameMaker Studio 2</span> die meisten Dinge nicht direkt auf den Bildschirm, sondern auf die <b>Programmoberfläche.</b> Diese ist im Wesentlichen eine Oberfläche - genau wie jede, die Sie selbst mit den
+    Oberflächenfunktionen erstellen können - und als solche kann sie manipuliert, gezeichnet, an <span class="notranslate">Shader</span> gesendet werden usw.. Grundsätzlich kann alles, was Sie normalerweise mit einer von Ihnen erstellten Oberfläche tun würden, auch auf die Anwendungsoberfläche angewendet werden.</p>
+  <p class="note"><b>HINWEIS</b>: Das Einzige, was Sie mit der Anwendungsoberfläche <b>nicht</b> tun <b>können</b>, ist sie freizugeben. Sie ist immer vorhanden, obwohl sich der Indexwert für den Zugriff auf sie ändern kann.</p>
+  <p>Wenn Sie Ihr Spiel ausführen, wird diese Oberfläche beim ersten Aufruf des <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">Draw-Ereignisses</a> in jedem neuen Raum, den Sie betreten, erstellt, was bedeutet, dass bis zu diesem Zeitpunkt nichts gezeichnet wird
+    Punkt. Sie können jedoch immer noch die Position der Anwendungsoberfläche abrufen und ihre Größe im <b>Create-Ereignis</b> oder jedem anderen Ereignis ändern, ohne dass Sie Fehler erhalten, und die verwendeten Werte sind für die Oberfläche relevant, wenn sie erstellt wird. Die eigentliche Reihenfolge der
+    Ereignisse für das Erstellen und Zeichnen der Anwendungsoberfläche ist wie folgt:</p>
+  <ul class="colour">
+    <li>Pre-Draw-Ereignis<br> --- &gt; die <b>Anwendungsoberfläche wird erstellt (falls sie nicht existiert) und das Rendering-Ziel wird gesetzt</b></li>
+    <li><b></b>Für jeden sichtbaren Viewport, oder, wenn keine Viewports aktiv sind, einmal
+      <ul class="colour">
+        <li>Ereignis "Zeichnen beginnen</li>
+        <li>Draw-Ereignis</li>
+        <li>Draw end event<br> --- &gt; <b>hier wird</b>das <b>Rendering-Ziel der Anwendungsoberfläche zurückgesetzt</b></li>
+      </ul>
+    </li>
+    <li><b></b>Post-Draw-Ereignis<br> --- &gt; die <b>Anwendungsoberfläche wird nun standardmäßig in den <a class="glossterm" data-glossterm="Display-Puffer" href="#">Anzeigepuffer</a> gezeichnet<br></b> 
+	                 (obwohl Sie dies mit <span class="inline"><a href="application_surface_draw_enable.htm">application_surface_draw_enable()</a></span> ausschalten können)</li>
+    <li><b></b>Ereignis "Draw GUI begin</li>
+    <li>GUI-Ereignis Zeichnen</li>
+    <li>GUI-Endereignis zeichnen</li>
+  </ul>
+  <p>Die Verwendung dieser Oberfläche bedeutet, dass Sie leicht unglaubliche Übergänge mit <span class="notranslate">Shadern</span> erstellen können, oder den Bildschirm nehmen und ihn um eine 3D-Form wickeln, oder einfach ein Spiel mit niedriger Auflösung auf einen Bildschirm mit beliebiger Auflösung skalieren... Die Möglichkeiten sind endlos!</p>
+  <p>Um auf diese Oberfläche zuzugreifen, müssen Sie die eingebaute globale Variable <tt>application_surface</tt> verwenden, die auf der folgenden Seite erläutert wird:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="application_surface.htm">application_surface</a></li>
+  </ul>
+  <p> </p>
+  <p>Außerdem gibt es einige Spezialfunktionen, die <em>nur </em>für die Anwendungsoberfläche vorgesehen sind:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="application_surface_enable.htm">application_surface_enable</a></li>
+    <li><a href="application_surface_is_enabled.htm">application_surface_is_enabled</a></li>
+    <li><a href="application_get_position.htm">application_get_position</a></li>
+    <li><a href="application_surface_draw_enable.htm">application_surface_draw_enable</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Drawing.htm">Zeichnung</a></div>
+        <div style="float:right">Nächste: <a href="../Lighting/Lighting.htm">Beleuchtung</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Surfaces
+app surface
+application surface
+-->
+  <!-- TAGS
+surfaces_functions
+-->
+
+</body></html>

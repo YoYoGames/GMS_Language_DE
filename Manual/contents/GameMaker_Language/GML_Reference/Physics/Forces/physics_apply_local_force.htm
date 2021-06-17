@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_local_force</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_local_force" />
+  <meta name="rh-index-keywords" content="physics_apply_local_force" />
+  <meta name="search-keywords" content="physics_apply_local_force" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_local_force</h1>
+  <p>Eine weitere Möglichkeit, Kraft in der Physikwelt zu verwenden, besteht darin, sie <i>lokal</i> auf eine Instanz anzuwenden. Das bedeutet, dass die Stärke und Richtung der Kraft auf der Grundlage des Ursprungs (oder der Position, wenn sie kein Sprite hat) der Instanz berechnet wird, ohne
+    ohne die Richtung oder Drehung zu berücksichtigen, die sie im Spielraum oder in der Physikwelt haben kann. Es ist zu beachten, dass bei dieser Funktion die Kräfte nicht auf den Massenschwerpunkt des Objekts, sondern auf einen Punkt relativ zur Instanz angewendet werden
+    und sie werden nicht sofort angewandt, da sie von anderen Kräften abhängen, die auf das Objekt wirken (z. B. Schwerkraft). Diese Abbildung veranschaulicht, wie eine lokale Kraft wirkt:</p>
+  <p><img alt="Apply local physics force illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_local_force_image.png">Wie Sie sehen können, werden die Koordinaten xlocal und ylocal auf der Basis von
+    die Achsenposition <i>immer</i> als Ursprung der Instanz (0,0) betrachtet wird, so dass, egal wo im Raum sich das Objekt befindet, xlocal und ylocal immer gleich sein werden. Sie müssen dann entscheiden, wo die Vektorkomponenten der Kraft
+    (xforce und yforce) relativ zur xlocal/ylocal-Position positioniert werden sollen. Die genaue Kraft wird durch den Vektor definiert, den wir aus den Komponenten xforce/yforce in Bezug auf diese Koordinaten erhalten - was einfach bedeutet, dass die Kraft berechnet wird als
+    der Abstand von xlocal/ylocal zu xforce/yforce in Newton, und die Richtung ist der Winkel, den wir von xlocal/ylocal zu xforce/yforce erhalten. Das mag etwas verwirrend erscheinen, aber Sie müssen sich nur die Abbildung ansehen, um zu sehen, wie das funktioniert, und
+    es erspart Ihnen einige komplizierte Rechenoperationen!</p>
+  <p class="note"><b>HINWEIS</b>: Die Physikwelt verwendet Meter für alle ihre Berechnungen, und das Verhältnis von Pixeln pro Meter wird im Raumeditor oder mit <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_apply_local_force(xlocal, ylocal, xforce, yforce)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>xLokal</td>
+        <td>Die x-Koordinate <i>relativ zum Ursprung</i>, an der die Kraft angreifen soll</td>
+      </tr>
+      <tr>
+        <td>yLokal</td>
+        <td>Die y-Koordinate <i>relativ zum Ursprung</i>, an der die Kraft angreifen soll</td>
+      </tr>
+      <tr>
+        <td>xforce</td>
+        <td>die x-Komponente des Kraftvektors</td>
+      </tr>
+      <tr>
+        <td>yforce</td>
+        <td>die y-Komponente des Kraftvektors</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check(vk_right)<br> {
+    <br> physics_apply_local_force(-25, 0, -50, 0);<br> }
+  </p>
+  <p>Der obige Code wendet auf die Instanz eine Kraft von 50 Newton von links nach rechts <i>relativ</i> zum Ursprung an, während die rechte Pfeiltaste gedrückt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Forces.htm">Kräfte</a></div>
+        <div style="float:right">Weiter: <a href="physics_apply_local_impulse.htm">physics_apply_local_impulse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_local_force
+-->
+  <!-- TAGS
+physics_apply_local_force
+-->
+</body>
+</html>

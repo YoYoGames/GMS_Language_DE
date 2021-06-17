@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gml_freigabe_mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gml_release_mode" />
+  <meta name="rh-index-keywords" content="gml_release_mode" />
+  <meta name="search-keywords" content="gml_release_mode" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gml_freigabe_mode</h1>
+  <p>Wenn Ihr Spiel kompiliert wird, enthält es auch bestimmte interne Funktionen zur Fehlerprüfung während der Ausführung. Diese internen Prüfungen decken viele Aspekte des Spielcodes ab, einschließlich Bereiche, Parameter und einige allgemeine Aspekte des internen <span class="notranslate">GML-Compilers</span> und sind
+    was in vielen Fällen die endgültigen Fehlermeldungen hervorbringt. Diese Funktion kann jedoch verwendet werden, um diese internen Prüfungen auszuschalten (d.h.: sie komplett aus dem kompilierten Spiel zu entfernen), was einen Geschwindigkeitsschub für Ihr endgültiges Projekt bedeutet.</p>
+  <p>Bitte beachten Sie, dass dies bedeutet, dass das kompilierte Spiel <i>einfach abstürzen</i> oder ein <i>sehr unerwartetes Verhalten</i> zeigen kann, wenn Sie etwas in Ihrem Spielcode falsch machen. Wenn zum Beispiel auf ein <tt>DS-Gitter</tt> an einer
+    Koordinate außerhalb der definierten Größe zugegriffen wird, würden Sie im Entwicklermodus eine Fehlermeldung im Compilerfenster erhalten, aber die vorhandenen Prüfungen würden es ermöglichen, dass das Spiel weiterläuft. Im Freigabemodus sind diese Prüfungen jedoch nicht vorhanden, und so könnte der Code
+    entweder einen NULL-Zeiger oder einen fehlerhaften Zeiger zurückgeben, der wiederum auf einen zufälligen Speicher verweist. Im besten Fall werden also die falschen Daten zurückgegeben, im schlimmsten Fall kann etwas im Speicher überschrieben werden - Daten, Grafiken oder sogar der Code selbst. Ein weiteres Beispiel
+    wäre die Erstellung von Primitiven - wenn Sie die Daten für Farbe, Position, Textur usw. in einer anderen Reihenfolge liefern als der, die Sie bei der Erstellung des Vertex-Formats definiert haben, dann kann das Spiel abstürzen oder unerwartete Ergebnisse liefern, wenn der Freigabemodus
+    eingeschaltet ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gml_release_mode(flag);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Flagge</td>
+        <td>Entweder <tt>true</tt>, um den Freigabemodus einzustellen, oder false für die allgemeine Entwicklung.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">gml_release_mode(true);</p>
+  <p>Mit dem obigen Beispielcode wird das Spiel beim Kompilieren auf den Freigabemodus eingestellt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="OS_And_Compiler.htm">OS und Compiler</a></div>
+        <div style="float:right">Weiter: <a href="gml_pragma.htm">gml_pragma</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gml_release_mode
+-->
+  <!-- TAGS
+gml_release_mode
+-->
+</body>
+</html>

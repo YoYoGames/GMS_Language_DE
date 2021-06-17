@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_add_instances</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_add_instances" />
+  <meta name="rh-index-keywords" content="mp_grid_add_instances" />
+  <meta name="search-keywords" content="mp_grid_add_instances" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_add_instances</h1>
+  <p>Diese Funktion verwendet die Instanz-Kollisionsmaske (entschieden durch die Sprite-Eigenschaften oder den Maskenindex der aufrufenden Instanz), um Zellen in einem MP-Gitter als verboten oder nicht verboten zu markieren, wobei verbotene Zellen von keiner der Pathfinding-Funktionen gekreuzt werden können.
+    Sie können in der Funktion angeben, ob präzise Kollisionen berücksichtigt werden sollen oder nicht und die markierten verbotenen Zellen ändern sich in Abhängigkeit von dieser Einstellung. Dieses Bild veranschaulicht dieses Verhalten:</p>
+  <p><img alt="Add instances example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_instance_image.png">Die beiden obigen Instanzen wurden mit der Funktion <span class="inline">mp_grid_add_instances()</span> in das MP-Gitter eingefügt, wobei precise auf true gesetzt wurde. Wie Sie sehen können, hat die grüne Instanz nur die Gitterquadrate, die sie &quot;berührt&quot;, als verboten markiert, da ihre Sprite-Maske auch auf präzise eingestellt ist. Die zweite Instanz hat jedoch auch andere
+    Zellen markiert, die sich nicht zu berühren <i>scheinen</i>. Das liegt daran, dass die Sprite-Maske <b>nicht</b> auf präzise eingestellt ist, d. h., auch wenn Sie die präzise Einstellung in der Funktion verwenden, wird nur die Bounding-Box des Sprites berücksichtigt. Dies
+    würde auch passieren, wenn Sie das precise-Argument der Funktion auf false setzen - selbst Instanzen mit einer präzisen Sprite-Maske werden anhand ihrer Bounding-Boxen in das Raster eingefügt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_grid_add_instances(id, obj, prec);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Index des mp_grid, das verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Objektindex bzw. Instanz-ID der Instanzen, die in das mp_grid eingefügt werden sollen</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Ob die Prüfung auf pixelgenauen Kollisionen (true = langsam) oder allgemein auf der Bounding Box basiert (false = schnell).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">mp_grid_add_instances(grid, obj_Wall, true);</p>
+  <p>Der obige Code fügt alle Instanzen von &quot;obj_Wall&quot; in das mp_grid ein, das in der Variablen &quot;grid&quot; indiziert ist, wobei die genaue Kollisionsmaske und nicht die Bounding Box verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_grid_add_rectangle.htm">mp_grid_add_rectangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_add_instances
+-->
+  <!-- TAGS
+mp_grid_add_instances
+-->
+</body>
+</html>

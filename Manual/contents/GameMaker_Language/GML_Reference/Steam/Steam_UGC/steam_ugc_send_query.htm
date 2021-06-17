@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_ugc_send_query</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_send_query" />
+  <meta name="rh-index-keywords" content="steam_ugc_send_query" />
+  <meta name="search-keywords" content="steam_ugc_send_query" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_ugc_send_query</span></h1>
+  <p>Diese Funktion kann verwendet werden, um eine Abfrageanfrage zu senden. Sie definieren zunächst die Abfrage mit den entsprechenden <tt><span class="notranslate">steam_ugc_create_query_*</span></tt> () Funktionen, die ein &quot;Abfrage-Handle&quot; zurückgeben. Dieses Handle wird dann zum Setzen von Filtern etc.... verwendet, bevor es
+    in dieser Funktion verwendet wird, um die Abfrage abzuschicken. Die Funktion gibt einen eindeutigen Async-ID-Wert zurück, der verwendet werden kann, um die Details im <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm"><span class="notranslate">Steam-Async-Ereignis</span></a> korrekt zu überprüfen.
+    Dieses Ereignis wird die <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> DS-Map, die mit den folgenden Schlüssel/Wert-Paaren bestückt wird:</p>
+  <ul class="colour">
+    <li>&quot;id&quot; - Die asynchrone ID, die von der Funktion zurückgegeben wird, die das Ereignis ausgelöst hat</li>
+    <li>&quot;<b>Ergebnis&quot; -</b> Das Ergebnis der Operation (ein reeller Wert). Dies wird entweder die <span class="notranslate">GML-Konstante</span> <tt>ugc_result_success</tt> oder eine andere reelle Zahl sein. Sie sollten also auf diese Konstante prüfen, um sicherzustellen, dass der Aufruf erfolgreich war, und wenn
+      andernfalls irgendetwas nicht korrekt funktioniert hat. Der Rest der möglichen Werte, die zurückgegeben werden, wird als Ergebnis des <span class="notranslate">Steam-</span> &quot;EResult&quot;-Wertes angezeigt, und Sie sollten in der Datei steamclientpublic <tt>.h in den SDK-Headern</tt> alle 89 möglichen Werte finden.</li>
+    <li>&quot; event_type<b>&quot; -</b> Die Zeichenkette &quot; ugc_query&quot;</li>
+    <li>&quot;num_results<b>&quot; -</b> Die Anzahl der zurückgegebenen Ergebnisse (max. 50)</li>
+    <li>&quot;total_matching<b>&quot; -</b> Die Gesamtzahl der übereinstimmenden Ergebnisse</li>
+    <li>&quot; cached_data<b>&quot; -</b> Zeigt an, ob diese Daten aus dem lokalen On-Disk-Cache abgerufen wurden oder nicht (wird entweder true oder <tt>false</tt> sein <tt>)</tt> </li>
+    <li>&quot;<b>results_list&quot; - Ein</b> DS-Listenindex, bei dem jeder Listeneintrag ein DS-Map-Index ist, der Details zu dem jeweiligen Element enthält</li>
+  </ul>
+  <p>Wenn Sie den asynchronen Ereignistyp &quot;ugc_query&quot; erhalten, können Sie anschließend die Ergebnisliste parsen und die folgenden Informationen aus jeder der DS-Maps extrahieren (eine Map pro Element in der Liste):</p>
+  <ul class="colour">
+    <li>&quot;<b>published_file_id&quot; &quot; -Hält</b> die eindeutige veröffentlichte Datei-ID für das Element</li>
+    <li>&quot; file_type<b>&quot; -</b> Der Typ der verwendeten Datei</li>
+    <li>&quot;creator_app_id<b>&quot; -</b> Die Steam-ID <span class="notranslate">des</span> Artikelerstellers</li>
+    <li>&quot;<b>consumer_app_id&quot; -</b> Die Steam-ID <span class="notranslate">des</span> Artikelkonsumenten</li>
+    <li>&quot;Titel<b>&quot; -</b> Der Titel des Elements</li>
+    <li>&quot;<b>description&quot; -</b> Die Beschreibung des Artikels</li>
+    <li>&quot;steam_id_owner<b>&quot; -</b> Die Steam-ID <span class="notranslate">des</span> Eigentümers des Artikels</li>
+    <li>&quot;time_created<b>&quot; -</b> Die Zeit, zu der das Element erstmals erstellt wurde</li>
+    <li>&quot;time_updated<b>&quot; -</b> Das letzte Mal, dass das Element aktualisiert wurde</li>
+    <li>&quot;time_added_to_user_list<b>&quot; -</b> Die Zeit, zu der das Element abonniert wurde</li>
+    <li>&quot;<b>visibility&quot; -</b> Die Sichtbarkeit des Objekts (siehe <a href="steam_ugc_set_item_visibility.htm"><tt><span class="notranslate">steam_ugc_set_item_visibility</span>()</tt></a> für die zurückgegebenen Konstanten)</li>
+    <li>&quot; banned<b>&quot; -</b> Ob das Element verboten wurde (true) oder<tt>nicht (</tt>false)</li>
+    <li>&quot;<b>accepted_for_use&quot; -</b> Ob das Element zur Verwendung akzeptiert wurde (true) oder<tt>nicht (</tt>false)</li>
+    <li>&quot; tags_truncated<b>&quot; -</b> Kurzversion der Tags als Array</li>
+    <li>&quot;Tags&quot;<b>- Eine</b> Zeichenkette mit den Tags für das Element, jeweils durch ein Komma getrennt</li>
+    <li>&quot;<b>handle_file&quot; -</b> Das eindeutige Dateihandle für das Element</li>
+    <li>&quot;<b>handle_preview_file&quot; -</b> Das eindeutige Handle für die Bildvorschau für den Artikel (kann als Argument verwendet werden mit <a href="steam_ugc_download.htm"><tt><span class="notranslate">steam_ugc_download</span>()</tt></a> verwendet werden, um ein Vorschaubild herunterzuladen)</li>
+    <li>&quot;Dateiname<b>&quot; -</b> Der Name der Artikeldatei</li>
+    <li>&quot;file_size<b>&quot; -</b> Die Größe der Artikeldatei</li>
+    <li>&quot;<b>preview_file_size&quot; -</b> Die Größe des Vorschaubildes</li>
+    <li>&quot;url&quot;<b>-</b> Die vollständige URL für das Element</li>
+    <li>&quot;votes_up<b>&quot; -</b> Die Anzahl der erhaltenen Up-Votes</li>
+    <li>&quot;votes_down<b>&quot; -</b> Die Anzahl der erhaltenen Down-Votes</li>
+    <li>&quot; score<b>&quot; -</b> Die Gesamtbewertung des Elements</li>
+    <li>&quot;<b>account_id_owner&quot; -</b> Die Konto-ID des <span class="notranslate">Steam-ID-Besitzers</span> (diese kann in der Funktion <a href="steam_ugc_create_query_user_ex.htm"><tt><span class="notranslate">steam_ugc_create_query_user_ex</span>()</tt></a>)</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_send_query</span>(ugc_query_handle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ugc_query_handle</td>
+        <td>Das zu sendende Abfrage-Handle.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var query_handle = <span class="notranslate">steam_ugc_create_query_all</span>(ugc_query_RankedByTrend, ugc_match_Items, 1);<br> <span class="notranslate">steam_ugc_query_add_required_tag</span>(query_handle, &quot;RPG&quot;);<br> <span class="notranslate">steam_ugc_query_set_return_long_description</span>(query_handle, true);<br> <span class="notranslate">steam_ugc_query_set_allow_cached_response</span>(query_handle,
+    true);<br> query_ID = <span class="notranslate">steam_ugc_send_query</span>(query_handle);</p>
+  <p>Der obige Code erstellt eine Abfrage und speichert deren Handle in einer lokalen Variablen für die spätere Verwendung in den übrigen Funktionen, die die Abfrage vor dem Senden der Abfrage weiter definieren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Weiter: <a href="steam_ugc_download.htm"><span class="notranslate">steam_ugc_download</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_send_query
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_send_query
+-->
+</body>
+</html>

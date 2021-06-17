@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_liste_lesen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_read" />
+  <meta name="rh-index-keywords" content="ds_list_read" />
+  <meta name="search-keywords" content="ds_list_read" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_liste_lesen</h1>
+  <p>Mit dieser Funktion können Sie eine gespeicherte DS-Liste wiederherstellen (eine, die zuvor als String mit <a href="ds_list_write.htm"><tt>ds_list_write()</tt></a>). Sie müssen zunächst eine neue DS-Liste erstellen, in die Sie den String einlesen, und wenn die DS-Liste
+    bereits existiert und Informationen darin gespeichert sind, werden diese vor dem Lesen gelöscht. Diese Funktion ist von entscheidender Bedeutung, wenn Sie Speicher-/Lademechanismen für Ihr Spiel erstellen.Beachten Sie, dass wenn die Datenstruktur mit früheren Versionen von <i><span class="notranslate">GameMaker</span></i>    erstellt wurde, sollten Sie das optionale Argument &quot;legacy&quot; hinzufügen, indem Sie es auf true setzen, da sich <tt>das</tt> String-Format mit dieser Version geändert hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_list_read(id, str [, legacy]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der Datenstruktur, in die eingelesen werden soll.</td>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>Die Zeichenkette, aus der gelesen werden soll.</td>
+      </tr>
+      <tr>
+        <td>Vermächtnis<i>(optional</i>)</td>
+        <td>Kann entweder <tt>wahr</tt> oder <tt>falsch</tt> sein oder komplett weggelassen werden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">list = ds_list_create();<br> ini_open(&quot;save.ini&quot;);
+    <br> var str = ini_read_string(&quot;Listen&quot;, &quot;0&quot;, &quot;&quot;);<br> if str != &quot;&quot;<br> {
+    <br> ds_list_read(list, str);<br> }
+    <br> ini_close();
+  </p>
+  <p>Der obige Code erstellt eine Liste und speichert den Index in der Variablen &quot;list&quot;. Dann wird eine <tt>ini-Datei</tt> geöffnet und eine Zeichenkette daraus gelesen, wobei zuerst überprüft wird, dass die Zeichenkette nicht als leer zurückgegeben wird. Diese Zeichenkette wird dann in die
+    die neu erstellte ds_list eingelesen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Lists.htm">DS-Listen</a></div>
+        <div style="float:right">Weiter: <a href="ds_list_write.htm">ds_list_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_read
+-->
+  <!-- TAGS
+ds_list_read
+-->
+
+</body></html>

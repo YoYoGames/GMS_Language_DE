@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Gamepad-Eingang</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Gamepad Input" />
+  <meta name="rh-index-keywords" content="gp_face1,gp_face2,gp_face3,gp_face4,gp_shoulderl,gp_shoulderlb,gp_shoulderr,gp_shoulderrb,gp_select,gp_start,gp_stickl,gp_stickr,gp_padu,gp_padd,gp_padl,gp_padr,gp_axislh,gp_axislv,gp_axisrh,gp_axisrv,gp_axis_acceleration_x,gp_axis_acceleration_y,gp_axis_acceleration_z,gp_axis_angular_velocity_x,gp_axis_angular_velocity_y,gp_axis_angular_velocity_z,gp_axis_orientation_x,gp_axis_orientation_y,gp_axis_orientation_z,gp_axis_orientation_w" />
+  <meta name="search-keywords" content="Gamepad Input,gamepads,gp_face1,gp_face2,gp_face3,gp_face4,gp_shoulderl,gp_shoulderlb,gp_shoulderr,gp_shoulderrb,gp_select,gp_start,gp_stickl,gp_stickr,gp_padu,gp_padd,gp_padl,gp_padr,gp_axislh,gp_axislv,gp_axisrh,gp_axisrv,gp_axis_acceleration_x,gp_axis_acceleration_y,gp_axis_acceleration_z,gp_axis_angular_velocity_x,gp_axis_angular_velocity_y,gp_axis_angular_velocity_z,gp_axis_orientation_x,gp_axis_orientation_y,gp_axis_orientation_z,gp_axis_orientation_w" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>GamepadEingabe</h1>
+  <p><b></b><span class="notranslate">GameMaker Studio 2</span> verfügt über eine Reihe spezieller Funktionen, mit denen Sie sowohl analoge als auch digitale Steuerelemente von mehreren angeschlossenen Gamepads erkennen können. Diese Funktionen funktionieren ähnlich wie die <a href="../Device_Input/Device_Input.htm">Geräteeingänge</a>,
+    insofern, als dass Sie bis zu vier verschiedene angeschlossene XInput-Gamepads (und bis zu 8 DirectInput-Gamepads) erkennen und die Eingaben von jedem einzelnen mit denselben Funktionen verarbeiten können. Beachten Sie, dass, wenn ein Gamepad an Ihr Gerät angeschlossen wird (oder es entfernt wird)
+    dann wird ein asynchrones <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">Systemereignis</a> ausgelöst, bei dem Sie die Situation mit den entsprechenden Funktionen behandeln können.</p>
+  <p>Die Gamepad-&quot;Steckplätze&quot; sind von 0 aufwärts indiziert, und der tatsächliche Steckplatz, der einem Gamepad zugewiesen wird, hängt von einer Vielzahl von Faktoren ab, nicht zuletzt vom Betriebssystem, unter dem das Projekt läuft. Auf dem <strong><span class="notranslate">Windows</span></strong> Target sind die Steckplätze 0 -
+    3 einschließlich <i>nur für Xinput-Gamepads</i>, d. h. Xbox360-Controller und kompatible Geräte. Sie können jedoch auch die Slots 4 bis einschließlich 11 für <i>DirectInput-Gamepads</i> überprüfen, was bedeutet, dass Sie viele andere Controller-Modelle erkennen können, wenn sie über diese Slots
+    über diese Steckplätze. Auf anderen Plattformen können Pads an <em>jedem</em> Steckplatz erkannt werden, den das Betriebssystem ihnen zugewiesen hat, also z. B. Steckplatz 3 oder Steckplatz 20 oder mehr. Ein Beispiel, <strong><span class="notranslate">Android</span></strong> Geräte speichern Bluetooth-Gamepads in einem Steckplatz und reservieren dann
+    Sie <em>können</em> also <em>nicht</em> davon ausgehen, dass ein einzelnes angeschlossenes Gamepad mit Steckplatz 0 verbunden ist, da dies wahrscheinlich nicht der Fall sein wird.</p>
+  <p>Es ist zu beachten, dass bei der Verwendung von DirectInput-Gamepads unter <span class="notranslate">Windows</span> oder generischen Gamepads auf anderen Plattformen die unten angegebenen Konstanten <strong>möglicherweise nicht genau mit den Tasten übereinstimmen, die Sie erwarten, wenn sie gedrückt werden</strong>, da die API der Controller-Hersteller fragmentiert und nicht standardisiert ist.
+    nicht standardisierten Art und Weise, wie die API von den Controller-Herstellern implementiert wird. Aus diesem Grund wird empfohlen, dass Sie in Ihren Spielen eine Art Gamepad-Setup-Bildschirm einrichten, in dem die Tasten des Gamepads basierend auf den Eingaben von einem angeschlossenen Gerät neu definiert werden können.
+    Es gibt Gamepad-&quot;Mapping&quot;-Funktionen, die bei Windows <span class="notranslate">Desktop,</span> Ubuntu, <span class="notranslate">macOS</span> und <span class="notranslate">Android-Zielen</span> helfen können, während Sie dies bei allen anderen Geräten selbst mit Code tun müssen.</p>
+  <h2>Eingangskonstanten</h2>
+  <p>Bei der Arbeit mit den Gamepad-Funktionen können Eingaben von <strong>Achsen</strong>, <strong>Tasten</strong> oder <strong>Hats</strong> kommen, die <span class="notranslate">GameMaker Studio 2</span> den folgenden eingebauten Konstanten zuordnet (beachten Sie, dass &quot;Hats&quot; in der Regel nur
+    nur bei Nicht-Standard-Controllern erkannt werden):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><tt>gp_face1</tt></td>
+        <td>Obere Taste 1 (diese entspricht dem <i>&quot;A&quot; auf einem</i> Xbox 360-Controller und dem Kreuz auf einem <i>PS-Controller</i> )</td>
+      </tr>
+      <tr>
+        <td><tt>gp_face2</tt></td>
+        <td>Obere Taste 2 (diese entspricht dem <i>&quot;B&quot; auf einem</i> Xbox 360-Controller und dem Kreis auf <i>einem PS-Controller</i> )</td>
+      </tr>
+      <tr>
+        <td><tt>gp_face3</tt></td>
+        <td>Obere Taste 3 (diese entspricht dem <i>&quot;X&quot; auf einem</i> Xbox 360-Controller und dem Quadrat auf <i>einem PS-Controller</i> )</td>
+      </tr>
+      <tr>
+        <td><tt>gp_face4</tt></td>
+        <td>Obere Taste 4 (dies entspricht dem <i>&quot;Y&quot; auf einem</i> Xbox 360-Controller und dem Dreieck <i>auf einem PS-Controller</i> )</td>
+      </tr>
+      <tr>
+        <td><tt>gp_Schulterl</tt></td>
+        <td>Linke Schultertaste</td>
+      </tr>
+      <tr>
+        <td><tt>gp_Schulterlb</tt></td>
+        <td>Linker Schulterauslöser</td>
+      </tr>
+      <tr>
+        <td><tt>gp_shoulderr</tt></td>
+        <td>Rechte Schultertaste</td>
+      </tr>
+      <tr>
+        <td><tt>gp_Schulterrb</tt></td>
+        <td>Rechter Schulterauslöser</td>
+      </tr>
+      <tr>
+        <td><tt>gp_select</tt></td>
+        <td>Die Auswahltaste (dies ist die <i>PS-Taste</i> auf einem DS4-Controller)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_start</tt></td>
+        <td>Die Start-Taste (dies ist die &quot;Optionen&quot;-Taste auf einem PS4-Controller)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_stickl</tt></td>
+        <td>Der linke Stick gedrückt (als Taste)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_stickr</tt></td>
+        <td>Der rechte Stick gedrückt (als Taste)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_padu</tt></td>
+        <td>D-Pad nach oben</td>
+      </tr>
+      <tr>
+        <td><tt>gp_padd</tt></td>
+        <td>D-Pad nach unten</td>
+      </tr>
+      <tr>
+        <td><tt>gp_padl</tt></td>
+        <td>D-Pad links</td>
+      </tr>
+      <tr>
+        <td><tt>gp_padr</tt></td>
+        <td>D-Pad rechts</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axislh</tt></td>
+        <td>Linker Knüppel horizontale Achse (analog)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axislv</tt></td>
+        <td>Linker Knüppel vertikale Achse (analog)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axisrh</tt></td>
+        <td>Rechter Knüppel horizontale Achse (analog)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axisrv</tt></td>
+        <td>Rechter Knüppel vertikale Achse (analog)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Zum besseren Verständnis, welchen Teil des Controllers die einzelnen Konstanten darstellen, können Sie sich das folgende Bild eines Standard-XInput-Gamepads ansehen:</p>
+  <p><img alt="Xinput gamepad illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Game_Input/GamePad.png" /></p>
+  <p>Die folgenden Konstanten können mit der Funktion <tt><a href="gamepad_axis_value.htm">gamepad_axis_value()</a></tt> Funktion verwendet werden, wenn Sie das DualSense-Gamepad auf einer PS4 oder PS5 verwenden:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_acceleration_x</tt></td>
+        <td>Die Beschleunigung des Gamepads auf der X-Achse</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_acceleration_y</tt></td>
+        <td>Die Beschleunigung des Gamepads auf der Y-Achse</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_acceleration_z</tt></td>
+        <td>Die Beschleunigung des Gamepads auf der Z-Achse</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_angular_velocity_x</tt></td>
+        <td>Die Winkelgeschwindigkeit des Gamepads auf der X-Achse</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_angular_velocity_y</tt></td>
+        <td>Die Winkelgeschwindigkeit des Gamepads auf der Y-Achse</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_angular_velocity_z</tt></td>
+        <td>Die Winkelgeschwindigkeit des Gamepads auf der Z-Achse</td>
+      </tr>
+      <tr>
+        <td><tt>gp_Achse_Orientierung_x</tt></td>
+        <td>Die X-Ausrichtung des Gamepads</td>
+      </tr>
+      <tr>
+        <td><tt>gp_Achse_Orientierung_y</tt></td>
+        <td>Die Y-Ausrichtung des Gamepads</td>
+      </tr>
+      <tr>
+        <td><tt>gp_Achse_Orientierung_z</tt></td>
+        <td>Die Z-Ausrichtung des Gamepads</td>
+      </tr>
+      <tr>
+        <td><tt>gp_Achse_Orientierung_w</tt></td>
+        <td>Die W-Ausrichtung des Gamepads</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>HINWEIS</strong>: Die Ausrichtung des Gamepads ist eine Quaternion <a href="https://en.wikipedia.org/wiki/Quaternion" title="Quaternion">,</a> weshalb sie vier Werte hat (X, Y, Z und W).</p>
+  <p>Diese Konstanten werden derzeit nur auf PS4 und PS5 unterstützt. Bei Verwendung auf anderen Plattformen geben die Eingabefunktionen <tt>0</tt> zurück, auch bei Verwendung eines DualSense-Gamepads.</p>
+  <h2>Funktionen</h2>
+  <p>Im Folgenden finden Sie eine Liste aller Gamepad-Funktionen:</p>
+  <ul class="colour">
+    <li><a href="gamepad_is_supported.htm">gamepad_ist_unterstützt</a></li>
+    <li><a href="gamepad_is_connected.htm">gamepad_ist_verbunden</a></li>
+    <li><a href="gamepad_get_guid.htm">gamepad_get_guid</a></li>
+    <li><a href="gamepad_get_device_count.htm">gamepad_get_device_count</a></li>
+    <li><a href="gamepad_get_description.htm">gamepad_get_description</a></li>
+    <li><a href="gamepad_get_button_threshold.htm">gamepad_get_button_threshold</a></li>
+    <li><a href="gamepad_get_axis_deadzone.htm">gamepad_get_axis_deadzone</a></li>
+    <li><a href="gamepad_get_option.htm">gamepad_get_option</a></li>
+    <li><a href="gamepad_set_button_threshold.htm">gamepad_set_button_threshold</a></li>
+    <li><a href="gamepad_set_axis_deadzone.htm">gamepad_set_axis_deadzone</a></li>
+    <li><a href="gamepad_set_vibration.htm">gamepad_set_vibration</a></li>
+    <li><a href="gamepad_set_colour.htm">gamepad_set_colour</a></li>
+    <li><a href="gamepad_set_option.htm">gamepad_set_option</a></li>
+    <li><a href="gamepad_axis_count.htm">gamepad_axis_count</a></li>
+    <li><a href="gamepad_axis_value.htm">gamepad_axis_value</a></li>
+    <li><a href="gamepad_button_check.htm">gamepad_button_check</a></li>
+    <li><a href="gamepad_button_check_pressed.htm">gamepad_button_check_pressed</a></li>
+    <li><a href="gamepad_button_check_released.htm">gamepad_button_check_released</a></li>
+    <li><a href="gamepad_button_count.htm">gamepad_button_count</a></li>
+    <li><a href="gamepad_button_value.htm">gamepad_taste_wert</a></li>
+    <li><a href="gamepad_hat_count.htm">gamepad_hat_count</a></li>
+    <li><a href="gamepad_hat_value.htm">gamepad_hat_value</a></li>
+  </ul>
+  <p> </p>
+  <p>Die folgenden Gamepad-Funktionen sind ebenfalls vorhanden und werden für die Neuzuordnung der eingebauten Konstanten zu den direkten physischen Eingaben eines bestimmten Gamepads verwendet. Diese Funktionen sind nur für die Zielplattformen <span class="notranslate">Windows</span> Desktop, <span class="notranslate">Ubuntu</span>, <span class="notranslate">macOS</span> und <span class="notranslate">Android</span> und unter <span class="notranslate">Windows</span>
+    sind sie nur für Direkteingabegeräte gültig. <span class="notranslate">GameMaker Studio 2</span> wird zwar mit Mappings für eine Reihe verschiedener Gamepads basierend auf der <a href="https://github.com/gabomdq/SDL_GameControllerDB" target="_blank">SDL Gamepad Controller DB</a> ausgeliefert, aber
+    Aufgrund der großen Anzahl von Controller-Typen und -Marken ist es jedoch unmöglich, die <span class="notranslate">GML-Konstanten</span> auf die richtigen Eingänge für jedes Fabrikat und Modell abzubilden, so dass Sie mit diesen Funktionen die Möglichkeit haben, Ihre eigenen benutzerdefinierten Mappings zu erstellen.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gamepad_get_mapping.htm">gamepad_get_mapping</a></li>
+    <li><a href="gamepad_test_mapping.htm">gamepad_test_mapping</a></li>
+    <li><a href="gamepad_remove_mapping.htm">gamepad_remove_mapping</a></li>
+  </ul>
+  <p> </p>
+  <p>Es ist erwähnenswert, dass Direct-Input-Gamepads im <i>kooperativen Modus</i> betrieben werden, was bedeutet, dass Ihr Spiel nur Zugriff auf sie hat, wenn es die Vordergrundanwendung ist, was wiederum dazu führt, dass Direct-Input-Controller &quot;verloren&quot; gehen, wenn das
+    Das wiederum führt dazu, dass Direct Input-Controller &quot;verloren&quot; gehen, wenn das Spiel den Fokus verliert, und dann wieder &quot;gefunden&quot; werden, wenn es wieder in den Fokus kommt (dies kann im Systemereignis erkannt und behandelt werden). In ähnlicher Weise werden keine Eingaben von Gamepads erkannt, wenn das Spiel nicht im Fokus ist, und wir empfehlen, dass Sie
+    verwenden Sie die Funktion <a href="../../OS_And_Compiler/os_is_paused.htm"><tt>os_is_paused()</tt></a> oder <a href="../../Cameras_And_Display/The_Game_Window/window_has_focus.htm"><tt>window_has_focus()</tt></a> zu verwenden, um dies zu erkennen und das Spiel zu pausieren oder etwas
+    Wir empfehlen, die Funktion oder zu verwenden, um dies zu erkennen und das Spiel anzuhalten oder etwas Ähnliches, da jede Taste, die zu dem Zeitpunkt gedrückt wird, an dem das Spiel den Fokus verliert, den gedrückten Zustand beibehält, bis das Spiel den Fokus wiedererlangt.</p>
+  <p> </p>
+  <h2>Kompatibilität</h2>
+  <p>Die folgende Liste zeigt die aktuelle Kompatibilität zwischen den Plattformen (beachten Sie, dass sich diese mit zukünftigen Updates ändern wird):</p>
+  <ul class="colour">
+    <li><strong><span class="notranslate">Windows</span> </strong>wird vollständig unterstützt, wobei bis zu 12 angeschlossene Geräte gleichzeitig zulässig sind (nummeriert von 0 bis 11, wobei 0 - 3 XInput-Geräte und 4 - 11 DirectInput-Geräte sind). Die Neuzuordnung von Controller-Konstanten ist ebenfalls zulässig.</li>
+    <li><strong><span class="notranslate">macOS</span> </strong>wird unterstützt, wobei maximal 4 angeschlossene Geräte auf einmal erlaubt sind und diese Geräte NUR vom Typ <span class="notranslate">Playstation3</span>oder Xbox 360 sein können. Bitte beachten Sie, dass die Option &quot;Build for Mac AppStore&quot; in den Mac-Spieloptionen
+      ausgeschaltet sein muss, damit die Pad-Unterstützung funktioniert. Das Remapping von Controller-Konstanten ist ebenfalls erlaubt.</li>
+    <li><strong><span class="notranslate">Ubuntu</span> </strong>unterstützt auch die Gamepad-Eingabe, aber Sie müssen möglicherweise zusätzliche Bibliotheken aus dem <span class="notranslate">Ubuntu-Repository</span> installieren. Sie können dies einfach tun, indem Sie ein Kommandozeilen-Terminal öffnen und Folgendes eingeben (dadurch wird die GUI-Unterstützung
+      für den Joystick/das Gamepad sowie die Joystick/Gamepad-API selbst - ein Remapping von Controller-Konstanten ist <i>nicht</i> erlaubt):
+     <p class="code">sudo apt-get install jstest-gtk<br> sudo apt-get install joystick.</p>
+    </li>
+    <li><strong>HTML5-Spiele </strong>mit Gamepads werden von den meisten gängigen Browsern unterstützt, außer von <i>Safari</i>. Die Neuzuordnung von Controller-Konstanten ist <i>nicht</i> zulässig.</li>
+    <li>Die Gamepad-Unterstützung erstreckt sich auch auf <strong><span class="notranslate">iOS</span> </strong>mit dem iCade-Gehäuse. Die linke Achse entspricht dem Stick-Controller (obwohl der Eingang digital und nicht analog ist), die vier &quot;Face&quot;-Tasten entsprechen den Tasten an der Vorderseite des Gehäuses, und die vier
+      Schultertasten entsprechen den Tasten auf der Rückseite des Gehäuses.</li>
+    <li><strong><span class="notranslate">Android</span> </strong>(und <strong><span class="notranslate">Amazon Feuer</span></strong>) Export unterstützt NYKO-Controller und generische Bluetooth-Controller, aber nur, wenn sie aktiviert sind, was bedeutet, dass Sie die iCade/Bluetooth-Option im Abschnitt <a href="../../../../Settings/Game_Options/Android.htm">"Allgemein"</a> der <span class="notranslate">Android-Spieloptionen</span> ankreuzen müssen. Sie benötigen API-Level 12, damit sie vollständig funktionieren, und es sollte beachtet werden, dass <span class="notranslate">GameMaker Studio 2</span> alle Bluetooth-Geräte, mit denen Ihr Gerät gekoppelt ist, als verbunden registriert, unabhängig davon, ob es tatsächlich verbunden ist oder nicht
+      verbunden ist. Daher sollte dies bei der Zuweisung und Überprüfung von &quot;Slots&quot; berücksichtigt werden. Beachten Sie, dass auch das Remapping von Controller-Konstanten erlaubt ist.</li>
+    <li>Auf der <strong>PS4</strong> müssen Sie, wenn Sie das Touchpad-Tracking verwenden möchten, die <a href="../Device_Input/Device_Input.htm"><tt>gerät_maus_*</tt></a> Tasten. Das Remapping von Controller-Konstanten ist <i>nicht</i> erlaubt.</li>
+    <li>Auf <strong><span class="notranslate">Windows</span> </strong><strong>UWP</strong>, <strong>XBoxOne </strong>und <strong><span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span></strong> Targets werden Gamepads vollständig unterstützt, aber das Mapping von Controller-Konstanten ist <i>nicht</i> erlaubt.</li>
+  </ul>
+  <p>Idealerweise möchten Sie auf <i>allen</i> Zielplattformen eine Liste der verfügbaren Gamepad-&quot;Steckplätze&quot; auflisten und dann prüfen, ob Geräte erkannt werden, etwa so:</p>
+  <p class="code">var _maxpads = gamepad_get_device_count();<br>
+    <br> for (var i = 0; i &lt; _maxpads; i++)<br> {
+    <br> if (gamepad_is_connected(i))<br> {
+    <br> // Sachen mit Pad &quot;i&quot; machen<br> }
+    <br> }
+  </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Game_Input.htm">Spiel-Eingabe</a></div>
+        <div style="float:right">Weiter: <a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">Virtuelle Tasten und virtuelle Tastaturen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Gamepad Input Functions
+gp_face1
+gp_face2
+gp_face3
+gp_face4
+gp_shoulderl
+gp_shoulderlb
+gp_shoulderr
+gp_shoulderrb
+gp_select
+gp_start
+gp_stickl
+gp_stickr
+gp_padu
+gp_padd
+gp_padl
+gp_padr
+gp_axislh
+gp_axislv
+gp_axisrh
+gp_axisrv
+gp_axis_acceleration_x
+gp_axis_acceleration_y
+gp_axis_acceleration_z
+gp_axis_angular_velocity_x
+gp_axis_angular_velocity_y
+gp_axis_angular_velocity_z
+gp_axis_orientation_x
+gp_axis_orientation_y
+gp_axis_orientation_z
+gp_axis_orientation_w
+-->
+  <!-- TAGS
+gamepad_functions
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>raum_zuweisen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_assign" />
+  <meta name="rh-index-keywords" content="room_assign" />
+  <meta name="search-keywords" content="room_assign" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>raum_zuweisen</h1>
+  <p>Diese Funktion kopiert einen Raum in einen anderen, wobei alle Instanzen, Kacheln usw. aus dem Raum, in den kopiert wird, entfernt und komplett durch den neuen Rauminhalt ersetzt werden. Sie geben den Index für den Raum an, in den kopiert werden soll (entweder wie im Asset-Browser definiert
+    im Asset-Browser oder als Rückgabewert der Funktion <a href="room_add.htm"><tt>room_add()</tt></a>) sowie den Index des Quellraums. Beachten Sie, dass der Aufruf dieser Funktion bei einem Raum-Asset, das im Asset-Browser erstellt wurde <strong>, den Inhalt des Raums dauerhaft ändert</strong>,
+    und selbst der Aufruf von <span class="inline">game_restart()</span> wird den Raum nicht in seinen ursprünglichen Zustand zurückversetzen (nur wenn Sie das Spiel beenden und erneut öffnen, beginnt der Raum wieder in seinem ursprünglichen Zustand).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">room_assign(ind, source);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des Raums, <i>in den kopiert</i> werden soll.</td>
+      </tr>
+      <tr>
+        <td>Quelle</td>
+        <td>Der Index des Raums, <i>aus dem kopiert</i> werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.rm = room_add();<br> room_assign(global.rm, rm_Base);</p>
+  <p>Der obige Code fügt dem Spiel einen neuen Raum hinzu und kopiert dann den Inhalt des als &quot;rm_Base&quot; indizierten Raums in diesen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Rooms.htm">Räume</a></div>
+        <div style="float:right">Weiter: <a href="room_instance_add.htm">room_instance_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_assign
+-->
+  <!-- TAGS
+room_assign
+-->
+</body>
+</html>

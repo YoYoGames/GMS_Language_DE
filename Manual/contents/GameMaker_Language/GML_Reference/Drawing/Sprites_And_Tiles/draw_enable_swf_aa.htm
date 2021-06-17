@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_enable_swf_aa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_enable_swf_aa" />
+  <meta name="rh-index-keywords" content="draw_enable_swf_aa" />
+  <meta name="search-keywords" content="draw_enable_swf_aa" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_enable_swf_aa</h1>
+  <p>Mit dieser Funktion können Sie Anti-Aliasing (AA) für Vektorsprites im SWF-Format aktivieren oder deaktivieren. AA glättet einfach die Kanten von Vektorbildern, um ihnen ein schöneres Aussehen zu geben. Wie viel AA verwendet wird, hängt von dem Wert ab, den Sie mit der Funktion <a href="draw_set_swf_aa_level.htm"><tt>draw_set_swf_aa_level()</tt></a>.
+    Standardmäßig ist dies deaktiviert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_enable_swf_aa(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>aktivieren.</td>
+        <td>Aktivieren<tt>(true</tt>) oder deaktivieren<tt>(false</tt>) Sie AA für alle SWF-Sprites.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if draw_get_swf_aa_level() == 0<br> {
+    <br> draw_enable_swf_aa(true);
+    <br> draw_set_swf_aa_level(0.5);
+    <br> }
+  </p>
+  <p>Der obige Code überprüft den AA-Wert für Sprites im SWF-Format, und wenn er 0 ist, aktiviert er AA und setzt den Wert auf 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprites_And_Tiles.htm">Sprites und Kacheln</a></div>
+        <div style="float:right">Weiter: <a href="draw_set_swf_aa_level.htm">draw_set_swf_aa_level</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_enable_swf_aa
+-->
+  <!-- TAGS
+draw_enable_swf_aa
+-->
+</body>
+</html>

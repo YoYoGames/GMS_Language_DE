@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_queue_head</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_queue_head" />
+  <meta name="rh-index-keywords" content="ds_queue_head" />
+  <meta name="search-keywords" content="ds_queue_head" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_queue_head</h1>
+  <p>Diese Funktion <i>liest</i> nur den ersten Wert der Warteschlange (den, der &quot;am Kopf&quot; steht). Der Wert wird nicht <i>aus der Warteschlange entfernt</i>, d. h. er kann auch in Zukunft noch von dieser Funktion oder der Funktion <a href="ds_queue_dequeue.htm"><tt>ds_queue_dequeue()</tt></a>.
+    Wenn die Warteschlange leer ist, gibt die Funktion die Konstante <tt>undefiniert</tt> zurück, andernfalls gibt sie den in der Warteschlange enthaltenen Real- oder String-Wert zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_queue_head(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der Datenstruktur, aus der gelesen werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">In der Warteschlange gespeicherter Wert vom Datentyp</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">num = ds_queue_head(control_queue);</p>
+  <p>Der obige Code liest den Wert aus der in der Variablen &quot;control_queue&quot; indizierten Warteschlange und speichert den Rückgabewert in der Variablen &quot;num&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Queues.htm">DS-Warteschlangen</a></div>
+        <div style="float:right">Weiter: <a href="ds_queue_tail.htm">ds_queue_tail</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_head
+-->
+  <!-- TAGS
+ds_queue_head
+-->
+
+</body></html>

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_info" />
+  <meta name="rh-index-keywords" content="sprite_get_info" />
+  <meta name="search-keywords" content="sprite_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_info</h1>
+  <p>Diese Funktion wird verwendet, um Informationen für das angegebene Sprite abzurufen. Sie geben einen Sprite-Index an (der ein über den <a href="../../../../../Introduction/The_Asset_Browser.htm">Asset-Browser</a> hinzugefügtes Asset oder ein zur <span class="notranslate">Laufzeit</span> <a href="../Sprite_Manipulation/sprite_add.htm">hinzugefügtes</a> Sprite sein kann) und die Funktion gibt eine <a href="../../../../GML_Overview/Structs.htm">Struktur</a> mit den folgenden Variablen zurück:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th style="">Variable Name</th>
+        <th>Daten Typ</th>
+        <th style="">Beschreibung</th>
+      </tr>
+      <tr>
+        <td style=""><strong>Breite</strong></td>
+        <td>real</td>
+        <td style="">Die Breite des Sprites (in Pixel)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>Höhe</strong></td>
+        <td>real</td>
+        <td style="">Die Höhe des Sprites (in Pixel)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>xOffset</strong></td>
+        <td>real</td>
+        <td style="">Der X-Offset/Ursprung des Sprites (in Pixel)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>yOffset</strong></td>
+        <td>real</td>
+        <td style="">Y-Offset/Ursprung des Sprites (in Pixel)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>transparent</strong></td>
+        <td>boolean</td>
+        <td style=""><tt>true</tt>, wenn das Sprite als transparent markiert ist, sonst <tt>false</tt>.<br>
+         <span>(Dies kann nur über <tt><a href="../Sprite_Manipulation/sprite_add.htm">sprite_add()</a></tt> oder ähnliche Funktionen angegeben werden und ist für Sprites, die in der IDE erstellt wurden, <tt>false</tt></span>)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>glatt</strong></td>
+        <td>boolean</td>
+        <td style=""><tt>true</tt>, wenn das Sprite als glatt markiert ist, sonst <tt>false</tt><br>
+          <span><span>(Dies kann nur durch <tt><a href="../Sprite_Manipulation/sprite_add.htm">sprite_add()</a></tt> oder ähnliche Funktionen angegeben werden und wird für Sprites, die in der IDE erstellt wurden, <tt>false</tt> sein)</span><span></span></span>
+        </td>
+      </tr>
+      <tr>
+        <td style=""><strong>Typ</strong></td>
+        <td>real</td>
+        <td style="">Der Typ des Sprites:<br>
+         <tt>0</tt> - Bitmap (Reguläre Sprites)<br>
+         <tt>1</tt> - SWF<br>
+         <tt>2</tt> - Wirbelsäule</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_left</strong></td>
+        <td>real</td>
+        <td style="">Position des linken Randes der Bounding Box (in Pixel)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_top</strong></td>
+        <td>real</td>
+        <td style="">Position der oberen Kante des Begrenzungsrahmens (in Pixel)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_right</strong></td>
+        <td>real</td>
+        <td style="">Position des rechten Randes der Bounding Box (in Pixel)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_bottom</strong></td>
+        <td>real</td>
+        <td style="">Position der unteren Kante des Begrenzungsrahmens (in Pixel)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>Name</strong></td>
+        <td>String</td>
+        <td style="">Der Name des Sprites</td>
+      </tr>
+      <tr>
+        <td style=""><strong>num_subimages</strong></td>
+        <td>real</td>
+        <td style="">Die Anzahl der Sub-Images (oder Frames) im Sprite</td>
+      </tr>
+      <tr>
+        <td style=""><strong>verwenden_maske</strong></td>
+        <td>boolean</td>
+        <td style=""><tt>true</tt>, wenn dieses Sprite eine Kollisionsmaske verwendet, sonst <tt>false</tt></td>
+      </tr>
+      <tr>
+        <td style=""><strong>num_masks</strong></td>
+        <td>real</td>
+        <td style="">Die Anzahl der Masken in diesem Sprite (wird größer als 1 sein, wenn das Sprite Per-Frame-Masken verwendet)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>Neuner-Scheibe</strong><strong></strong></td>
+        <td>struct</td>
+        <td style="">Die <a href="../Nine_Slice_Struct.htm">Nine-Slice-Struktur</a> für dieses Sprite, oder <tt>undefiniert</tt>, wenn es keine Nine-Slice-Daten hat</td>
+      </tr>
+      <tr>
+        <td style=""><strong>Meldungen</strong></td>
+        <td>Array</td>
+        <td style="">Array von Broadcast-Nachrichten für dieses Sprite, wobei jede Broadcast-Nachricht ein struct ist, das Informationen über die Nachricht enthält (weitere Informationen unter &quot;Allgemeine Sprite-Daten&quot;)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>frame_info</strong></td>
+        <td>Array</td>
+        <td style="">Array von Frames für dieses Sprite, wobei jedes Frame ein struct ist, das Informationen zu seinem Timing enthält (weitere Informationen unter &quot;Allgemeine Sprite-Daten&quot;)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>Diese zusätzliche Variable ist nur für Bitmap (reguläre) Sprites verfügbar:</strong></p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Variable Name</th>
+        <th style="">Daten Typ</th>
+        <th style="">Beschreibung</th>
+      </tr>
+      <tr>
+        <td><strong>Rahmen</strong></td>
+        <td style="">Array</td>
+        <td style="">Array von Frames für dieses Sprite, wobei jedes Frame ein struct ist, das Informationen über seine Textur enthält (weitere Informationen unter &quot;Bitmap-Sprite-Daten&quot;)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>Diese zusätzlichen Variablen sind nur für Spine-Sprites verfügbar:</strong></p>
+  <table>
+    <tbody>
+      <tr>
+        <th style="">Variable Name</th>
+        <th>Daten Typ</th>
+        <th style="">Beschreibung</th>
+      </tr>
+      <tr>
+        <td style=""><strong>num_atlas</strong></td>
+        <td>real</td>
+        <td style="">Die Anzahl der verwendeten Atlastexturen</td>
+      </tr>
+      <tr>
+        <td style=""><strong>atlas_textur</strong></td>
+        <td>Array</td>
+        <td style="">Array mit Textur-IDs, die für den Atlas verwendet werden</td>
+      </tr>
+      <tr>
+        <td style=""><strong>vormultipliziert</strong></td>
+        <td>boolean</td>
+        <td style=""><tt>true</tt>, wenn dieses Sprite als vormultipliziert markiert ist, sonst <tt>false</tt></td>
+      </tr>
+      <tr>
+        <td style=""><strong>animation_names</strong></td>
+        <td>Array</td>
+        <td style="">Array mit den Namen der einzelnen Animationen in diesem Sprite</td>
+      </tr>
+      <tr>
+        <td style=""><strong>skin_names</strong></td>
+        <td>Array</td>
+        <td style="">Array mit den Namen der einzelnen Skins in diesem Sprite</td>
+      </tr>
+      <tr>
+        <td style=""><strong>Knochen</strong></td>
+        <td>Array</td>
+        <td style="">Array mit Strukturen für jeden Bone in diesem Sprite (weitere Informationen unter &quot;Spine-Sprite-Daten&quot;)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>Steckplätze</strong></td>
+        <td>Array</td>
+        <td style="">Array mit Strukturen für jeden Slot in diesem Sprite (weitere Informationen unter &quot;Spine Sprite Data&quot;)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Die Funktion gibt einen <tt>undefinierten Wert</tt> zurück, wenn das angegebene Sprite nicht vorhanden ist. Beachten Sie auch, dass die in dieser Struktur zurückgegebenen Informationen als <strong>schreibgeschützt</strong> betrachtet werden sollten, da das Ändern einer dieser Variablen keine Auswirkungen auf das Sprite hat.</p>
+  <p>Die folgenden Abschnitte enthalten Informationen zu den Arrays und Strukturen, die in der zurückgegebenen Struktur enthalten sind, basierend auf dem Sprite-Typ:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Allgemeine Sprite-Daten</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p>Dieser Abschnitt enthält Informationen zu Variablen, die in der Struktur für alle Arten von Sprites enthalten sind.</p>
+    <p>Die Variable <tt>messages</tt> ist ein Array, das Informationen über die Broadcast-Nachrichten enthält, die im angegebenen Sprite vorhanden sind. Jede Broadcast-Nachricht in diesem Array ist eine Struktur, die die folgenden Variablen enthält:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Variable Name</th>
+          <th>Daten Typ</th>
+          <th style="">Beschreibung</th>
+        </tr>
+        <tr>
+          <td style=""><strong>Rahmen</strong></td>
+          <td>real</td>
+          <td style="">Das Timing dieser Broadcast-Nachricht ab dem Start der Animation (in Frames)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>Nachricht</strong></td>
+          <td>String</td>
+          <td style="">Der String der Broadcast-Nachricht</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p>Die Variable <tt>"frame_info"</tt> ist ein Array, das Informationen über die Timings der Frames des Sprites enthält. Jedes Frame in diesem Array ist ein struct, das die folgenden Variablen enthält:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Variable Name</th>
+          <th>Daten Typ</th>
+          <th style="">Beschreibung</th>
+        </tr>
+        <tr>
+          <td style=""><strong>Rahmen</strong></td>
+          <td>real</td>
+          <td style="">Das Timing für den Start dieses Frames (in Frames)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>image_index</strong></td>
+          <td>real</td>
+          <td style="">Der Bildindex dieses Rahmens</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Bitmap-Sprite-Daten</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p>Dieser Abschnitt enthält Informationen zu Variablen, die in der Struktur für Bitmap-Sprites enthalten sind (Sprites, die nicht vom Typ Spine oder SWF sind).</p>
+    <p>Die Variable <tt>frames</tt> ist ein Array, das Informationen über die Texturen der Frames des Sprites enthält. Jeder Rahmen in diesem Array ist eine Struktur, die die folgenden Variablen enthält:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Variable Name</th>
+          <th>Daten Typ</th>
+          <th style="">Beschreibung</th>
+        </tr>
+        <tr>
+          <td style=""><strong>x</strong></td>
+          <td>real</td>
+          <td style="">Die X-Position dieses Rahmens auf seiner Texturseite (in Pixel)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y</strong></td>
+          <td>real</td>
+          <td style="">Die Y-Position dieses Rahmens auf seiner Texturseite (in Pixel)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>w</strong></td>
+          <td>real</td>
+          <td style="">Die logische Breite des Rahmens (in Pixel), die intern verwendet wird</td>
+        </tr>
+        <tr>
+          <td style=""><strong>h</strong></td>
+          <td>real</td>
+          <td style="">Die logische Höhe des Rahmens (in Pixel), die intern verwendet wird</td>
+        </tr>
+        <tr>
+          <td style=""><strong>Textur</strong></td>
+          <td>real</td>
+          <td style="">Die Texturseiten-ID für diesen Rahmen</td>
+        </tr>
+        <tr>
+          <td style=""><strong>ursprüngliche_Breite</strong></td>
+          <td>real</td>
+          <td style="">Die ursprüngliche Breite des Rahmens (in Pixel)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>ursprüngliche_Höhe</strong></td>
+          <td>real</td>
+          <td style="">Die ursprüngliche Höhe des Rahmens (in Pixel)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>beschneiden_breite</strong></td>
+          <td>real</td>
+          <td style="">Die tatsächliche Breite des Rahmens auf der Texturseite nach dem Beschneiden und Skalieren (da GMS2 automatisch den leeren Raum um ein Bild herum beschneidet und es auch verkleinert, wenn es nicht passt)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>crop_height</strong></td>
+          <td>real</td>
+          <td style="">Die tatsächliche Höhe des Rahmens auf der Texturseite nach dem Zuschneiden und Skalieren</td>
+        </tr>
+        <tr>
+          <td style=""><strong>x_Offset</strong></td>
+          <td>real</td>
+          <td style="">Der X-Versatz von der linken Kante des Originalbildes zur linken Kante des ausgeschnittenen Ausschnitts</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y_Offset</strong></td>
+          <td>real</td>
+          <td style="">Der Y-Versatz von der Oberkante des Originalbildes zur Oberkante des ausgeschnittenen Ausschnitts</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Wirbelsäulen-Sprite-Daten</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p>Dieser Abschnitt enthält Informationen zu Variablen, die in der Struktur für Spine-Sprites enthalten sind.</p>
+    <p>Die <tt>Bones-Variable</tt> ist ein Array, das Informationen über alle Bones im angegebenen Spine-Sprite enthält. Jeder Bone in diesem Array ist eine Struktur, die die folgenden Variablen enthält:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Variable Name</th>
+          <th>Daten Typ</th>
+          <th style="">Beschreibung</th>
+        </tr>
+        <tr>
+          <td style=""><strong>Elternteil</strong></td>
+          <td>String</td>
+          <td style="">Der Name des übergeordneten Bones, oder <tt>undefiniert</tt>, wenn dieser Bone keinen übergeordneten Bone hat</td>
+        </tr>
+        <tr>
+          <td style=""><strong>Name</strong></td>
+          <td>String</td>
+          <td style="">Der Name dieses Knochens</td>
+        </tr>
+        <tr>
+          <td style=""><strong>index</strong></td>
+          <td>real</td>
+          <td style="">Der Index dieses Knochens</td>
+        </tr>
+        <tr>
+          <td style=""><strong>Länge</strong></td>
+          <td>real</td>
+          <td style="">Die Länge dieses Knochens</td>
+        </tr>
+        <tr>
+          <td style=""><strong>x</strong></td>
+          <td>real</td>
+          <td style="">Die X-Position dieses Knochens</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y</strong></td>
+          <td>real</td>
+          <td style="">Die Y-Position dieses Knochens</td>
+        </tr>
+        <tr>
+          <td style=""><strong>Rotation</strong></td>
+          <td>real</td>
+          <td style="">Die Rotation dieses Knochens</td>
+        </tr>
+        <tr>
+          <td style=""><strong>skala_x</strong></td>
+          <td>real</td>
+          <td style="">(Intern zur Wirbelsäule) Skalenwert an X</td>
+        </tr>
+        <tr>
+          <td style=""><strong>skala_y</strong></td>
+          <td>real</td>
+          <td style="">(Intern zur Wirbelsäule) Skalenwert auf Y</td>
+        </tr>
+        <tr>
+          <td style=""><strong>scher_x</strong></td>
+          <td>real</td>
+          <td style="">(Intern zur Wirbelsäule) Scherwert an X</td>
+        </tr>
+        <tr>
+          <td style=""><strong>scheren_y</strong></td>
+          <td>real</td>
+          <td style="">(Intern zur Wirbelsäule) Scherwert an Y</td>
+        </tr>
+        <tr>
+          <td style=""><strong>transform_mode</strong></td>
+          <td>real</td>
+          <td style="">(Intern zu Spine) Der Transformationsmodus</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note"> <strong>HINWEIS</strong>: Weitere Informationen zu den internen Variablen von <a href="http://en.esotericsoftware.com/spine-documentation" title="Spine Documentation">Spine</a> entnehmen Sie bitte der <a href="http://en.esotericsoftware.com/spine-documentation" title="Spine Documentation">Spine-Dokumentation</a>.</p>
+    <p>Die Variable " <tt>slots"</tt> ist ein Array, das Informationen über alle Slots im angegebenen Spine-Sprite enthält. Jeder Slot in diesem Array ist eine Struktur, die die folgenden Variablen enthält:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Variable Name</th>
+          <th>Daten Typ</th>
+          <th style="">Beschreibung</th>
+        </tr>
+        <tr>
+          <td style=""><strong>Name</strong></td>
+          <td>String</td>
+          <td style="">Der Name des Steckplatzes</td>
+        </tr>
+        <tr>
+          <td style=""><strong>index</strong></td>
+          <td>real</td>
+          <td style="">Der Index des Steckplatzes</td>
+        </tr>
+        <tr>
+          <td style=""><strong>Knochen</strong></td>
+          <td>String</td>
+          <td style="">Der Name des Bones des Steckplatzes, oder &quot;( <tt>none)&quot;, wenn</tt> es keinen Bone für diesen Steckplatz gibt</td>
+        </tr>
+        <tr>
+          <td style=""><strong>Anhang</strong></td>
+          <td>String</td>
+          <td style="">Name des Anhängers</td>
+        </tr>
+        <tr>
+          <td style=""><strong>rot</strong></td>
+          <td>real</td>
+          <td style="">Rotanteil der Farbe des Steckplatzes (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>grün</strong></td>
+          <td>real</td>
+          <td style="">Grünanteil der Farbe des Steckplatzes (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>blau</strong></td>
+          <td>real</td>
+          <td style="">Blauanteil der Farbe des Steckplatzes (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>alpha</strong></td>
+          <td>real</td>
+          <td style="">Alpha-Komponente der Farbe des Slots (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>blendMode</strong></td>
+          <td>real</td>
+          <td style="">(Intern zu Spine) Überblendmodus für den Steckplatz</td>
+        </tr>
+        <tr>
+          <td style=""><strong>dunkel_rot*</strong></td>
+          <td>real</td>
+          <td style="">Rotanteil der dunklen Farbe des Steckplatzes (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>dunkel_grün*</strong></td>
+          <td>real</td>
+          <td style="">Grünanteil der dunklen Farbe des Steckplatzes (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>dunkel_blau*</strong></td>
+          <td>real</td>
+          <td style="">Blauanteil der dunklen Farbe des Steckplatzes (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>dunkel_alpha*</strong></td>
+          <td>String</td>
+          <td style="">Alpha-Komponente der dunklen Farbe des Slots (0-1)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">* <strong>HINWEIS</strong>: Die dunklen Farbvariablen sind nur verfügbar, wenn der Steckplatz <a href="http://en.esotericsoftware.com/spine-slots#Tint-black" title="Tint Black">Tint Black</a> aktiviert hat.</p>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_get_info(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Sprites, für das die Informationen abgerufen werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe</h4>
+  <p class="code">Struktur (oder undefiniert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _info = sprite_get_info(sprite_index);<br>
+    <br> if (_info != undefined &amp;&amp; _info.type == 0)<br> {
+    <br> var _messages = _info.messages;<br> var _messageCount = array_length(_messages);<br>     <br> for (var i = 0; i &lt; _messageCount; i ++)<br> {<br> var _message = _messages[i];<br> show_debug_message(&quot;Meldung
+    bei Frame &quot; + string(_message.frame) + &quot;: &quot; + _message.message);<br> } <br> }
+  </p>
+  <p>Der obige Code ruft die Info-Struktur für das Sprite der Instanz ab und prüft dann, ob es nicht undefiniert ist <tt>und</tt> ob sein Typ 0 ist (was bedeutet, dass es sich um ein Bitmap-Sprite handelt). In diesem Fall wird das Broadcast-Message-Array für dieses Sprite abgerufen und
+    führt dann eine for-Schleife aus, um jede Broadcast-Nachricht (zusammen mit ihrem Frame) in das Ausgabeprotokoll zu drucken.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Information.htm">Sprite-Informationen</a></div>
+        <div style="float:right">Weiter: <a href="../Sprite_Manipulation/sprite_exists.htm">sprite_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_info
+-->
+  <!-- TAGS
+sprite_get_info
+-->
+</body>
+</html>

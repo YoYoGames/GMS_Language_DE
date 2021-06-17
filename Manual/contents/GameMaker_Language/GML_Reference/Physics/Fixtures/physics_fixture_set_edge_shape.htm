@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_edge_shape</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_edge_shape" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_edge_shape" />
+  <meta name="search-keywords" content="physics_fixture_set_edge_shape" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_edge_shape</h1>
+  <p>Diese Funktion definiert eine &quot;Rand&quot;-Fixture-Form. Eine Kantenform ist einfach eine Linie, die eine Kollision erzeugt, wenn andere Fixtures sie überlappen, und kann sehr nützlich sein, um (z. B.) Terrain zu erzeugen oder um Grenzen um einen Raum herum zu schaffen.
+    Die Position der Kante wird mit Hilfe des <i>lokalen</i> Raums definiert, d. h. die x/y-Position der Instanz wird als (0,0) betrachtet, daher sollte dies bei der Erstellung berücksichtigt werden (im Codebeispiel unten wäre die Instanz an
+    (0,0) im Raum platziert, um Komplikationen zu vermeiden).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_fixture_set_edge_shape(fixture, local_x1, local_y1, local_x2, local_y2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Halterung</td>
+        <td>der Index der Halterung</td>
+      </tr>
+      <tr>
+        <td>lokal_x1</td>
+        <td>Start-X-Position für die Kante</td>
+      </tr>
+      <tr>
+        <td>lokal_y1</td>
+        <td>Start-Y-Position für die Kante</td>
+      </tr>
+      <tr>
+        <td>lokal_x2</td>
+        <td>x-Endposition für die Kante</td>
+      </tr>
+      <tr>
+        <td>lokal_y2</td>
+        <td>y-Endposition für die Kante</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var xx = 0;<br> var y1 = room_height - 100;<br> var y2 = room_height - 50 - irandom(100);<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> var fix = physics_fixture_create();<br> physics_fixture_set_edge_shape(fix, xx, y1, xx + 50, y2);<br> physics_fixture_bind(fix, id);<br> physics_fixture_delete(fix);
+    <br> xx += 50;<br> y1 = y2;<br> y2 = room_height - 50 - irandom(100);<br> }
+  </p>
+  <p>Der obige Code erzeugt eine Reihe von &quot;Rand&quot;-Einbauten mit unterschiedlichen Höhen über die Länge des Raums.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fixtures.htm">Fixtures</a></div>
+        <div style="float:right">Weiter: <a href="physics_fixture_set_chain_shape.htm">physics_fixture_set_chain_shape</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_edge_shape
+-->
+  <!-- TAGS
+physics_fixture_set_edge_shape
+-->
+</body>
+</html>

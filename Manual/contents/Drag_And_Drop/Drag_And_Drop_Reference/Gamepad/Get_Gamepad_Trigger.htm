@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Gamepad-Trigger holen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Get Gamepad Trigger action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Gamepad Trigger" />
+  <meta name="search-keywords" content="Get Gamepad Trigger" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Gamepad Get Trigger Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_Get_Trigger.png"> Gamepad-Trigger erhalten</h1>
+  <p>Mit dieser Aktion können Sie den Wert der verschiedenen Auslöser eines bestimmten Gamepads abrufen. Sie geben den Gamepad-Index an (dies ist die Nummer des &quot;Steckplatzes&quot;, den ein Gamepad belegt) und wählen den zu prüfenden Auslöser (links oder rechts). Der zurückgegebene Wert
+    liegt zwischen 0 und 1, wobei 0 für keinen Druck auf den Trigger und 1 für vollen Druck steht. Dieser zurückgegebene Wert wird in der Zielvariablen gespeichert, die Sie für die zukünftige Verwendung angeben. Beachten Sie, dass diese Funktion die <a href="Set_Gamepad_Button_Threshold.htm">Schwellenwerteinstellung</a> <em>nicht</em> berücksichtigt.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Get Gamepad Trigger Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_Get_Trigger.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gamepad</td>
+        <td>Der Gamepad-Index.</td>
+      </tr>
+      <tr>
+        <td>Auslöser</td>
+        <td>Der zu prüfende Trigger (links/rechts)</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable, in der der zurückgegebene Wert gespeichert werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Get Gamepad Trigger Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_Get_Trigger.png">Der obige Code des Aktionsblocks erstellt eine lokale (temporäre) Variable und verwendet sie dann zum Speichern
+    den aktuellen Wert für den linken Trigger. Wenn der Triggerwert über 0,5 liegt, wird eine Instanz an der Position der aufrufenden Instanz erzeugt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Gamepad_Actions.htm">Gamepad-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Get_Gamepad_Count.htm">Gamepad Get Count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Gamepad Get Trigger
+-->
+  <!-- TAGS
+action_get_gamepad_trigger_value
+-->
+</body>
+</html>

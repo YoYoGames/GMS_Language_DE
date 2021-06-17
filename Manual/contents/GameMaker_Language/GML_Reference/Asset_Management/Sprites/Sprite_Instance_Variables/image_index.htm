@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>image_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_index" />
+  <meta name="rh-index-keywords" content="image_index" />
+  <meta name="search-keywords" content="image_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>image_index</h1>
+  <p>Ein Sprite besteht aus einem oder mehreren <i>Teilbildern</i>, die das Sprite animiert erscheinen lassen können, wenn sie von einem zum anderen wechseln, oder zwischen denen im Code umgeschaltet werden kann, um verschiedene &quot;Zustände&quot; zu erzeugen, ähnlich wie eine Schaltfläche in Fenstern.
+    Wenn das Sprite animiert ist, können Sie das aktuelle Bild der Animation abrufen, indem Sie die Variable <tt>image_index</tt> überprüfen, oder wenn Sie den Zustand eines statischen Sprites ändern möchten, können Sie ein neues Unterbild auswählen, indem Sie diese Variable auf das gewünschte
+    Teilbild des Sprites setzen. Bitte beachten Sie, dass die Instanz entweder <i>kein</i> Draw-Ereignis haben sollte (so dass <span class="notranslate">GameMaker Studio 2</span> das Sprite standardmäßig zeichnet) oder mit einer der Zeichenfunktionen gezeichnet werden sollte, damit Änderungen in dieser Variablen sichtbar werden
+    <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a> oder <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a> gezeichnet werden (indem Sie den image_index im entsprechenden Argument übergeben).</p>
+  <p>Beachten Sie, dass das direkte Setzen dieser Variablen auf einen Frame <em>keine</em> Broadcast-Meldungen auslöst, die möglicherweise auf diesem Frame vorhanden sind.</p>
+  <p>Beachten Sie auch, dass Sie bei der Verwendung von Skelett-Animations-Sprites weiterhin die <tt>image_index-Werte</tt> erhalten und setzen können - siehe die Funktion <a href="../Skeletal_Animation/Animation/skeleton_animation_get_duration.htm"><tt>skeleton_animation_get_duration()</tt></a> für
+    Beispiele, wie Sie dies tun können.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">image_index;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Gleitkommawert mit einfacher Genauigkeit)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (image_speed &gt; 0)<br> {
+    <br> if (image_index &gt;= image_number - 1) instance_destroy();<br> }
+  </p>
+  <p>Der obige Code prüft, ob das Sprite animiert ist, und wenn ja, dann prüft er, ob der aktuelle image_index am letzten Frame ist und zerstört in diesem Fall die Instanz.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Instance_Variables.htm">Sprite-Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="image_number.htm">image_number</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_index
+-->
+  <!-- TAGS
+image_index
+-->
+</body>
+</html>

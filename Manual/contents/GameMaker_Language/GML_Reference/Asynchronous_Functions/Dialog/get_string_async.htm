@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_string_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for get_string_async" />
+  <meta name="rh-index-keywords" content="get_string_async" />
+  <meta name="search-keywords" content="get_string_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_string_async</h1>
+  <p>Diese Funktion öffnet ein Fenster und zeigt eine Meldung sowie ein Feld für die Eingabe einer Zeichenkette an (die zu Beginn die mitgelieferte Standardzeichenkette enthalten wird). Dies ist eine asynchrone Funktion, und als solche blockiert <span class="notranslate">GameMaker Studio 2</span> <i>nicht</i> 
+    GameMaker Studio 2 blockiert das Gerät, auf dem sie ausgeführt wird, nicht, während es auf eine Antwort wartet, sondern führt die Ereignisse wie gewohnt weiter aus. Sobald der Benutzer seine Zeichenfolge eingegeben und die Schaltfläche &quot;Okay&quot; gedrückt hat, <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">wird </a>ein asynchrones <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">Dialog-Ereignis </a>
+    ausgelöst, das <i>nur</i> für die Dauer dieses Ereignisses eine DS-Map in der Variablen <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Diese Map enthält die drei Schlüssel &quot;id&quot;,<strong>&quot;</strong>status&quot; und &quot;<strong>result</strong>&quot;. &quot;id&quot; ist der<strong>Wert, der</strong> von der Funktion beim Aufruf zurückgegeben wurde, &quot;status&quot; ist entweder true, wenn die Schaltfläche &quot;Okay&quot; gedrückt wurde, oder false, wenn die Nachricht abgebrochen wurde (gegebenenfalls, da nicht alle Zielplattformen den Abbruch erlauben).
+    ist entweder <tt>true</tt>, wenn die Schaltfläche &quot;Okay&quot; gedrückt wurde, oder false, wenn <tt>die</tt> Nachricht abgebrochen wurde (gegebenenfalls, da nicht alle Zielplattformen den Abbruch der Nachricht erlauben). Schließlich gibt &quot;result&quot; die Zeichenkette
+    zurück, die der Benutzer eingegeben hat (oder eine leere Zeichenkette &quot;&quot;, wenn keine eingegeben wurde).</p>
+  <p class="note"><strong><em>HINWEIS:</em></strong><em> Diese Funktion ist <span data-keyref="Dialog for debug only"> <strong>nur</strong> für <strong>Debugging- und Testzwecke</strong></span>gedacht <span data-keyref="Dialog for debug only">und sollte nicht in veröffentlichten Spielen verwendet werden. Zu diesem Zweck sollten Sie eine benutzerdefinierte Benutzeroberfläche erstellen, um Eingaben von Spielern zu erhalten, so dass Sie die vollständige Kontrolle darüber haben, wie die Dialoge aussehen und sich verhalten.</span></em></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">get_string_async(string, default);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Zeichenfolge</td>
+        <td>Die Meldung, die im Dialog angezeigt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Standard</td>
+        <td>Die Standardzeichenkette.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p> </p>
+  <p>Das <b>linke Maustasten-Ereignis</b> (z. B.) des Objekts, das die Nachricht anzeigt, würde den folgenden Code haben:</p>
+  <p class="code">msg = get_string_async(&quot;Wie ist Ihr Name?&quot;, &quot;Anon&quot;);</p>
+  <p>Oben wird eine Meldung angezeigt, die den Benutzer auffordert, eine Zeichenfolge einzugeben und &quot;Okay&quot; zu drücken. Die Funktions-ID wird in der Variablen &quot;msg&quot; gespeichert und im asynchronen Ereignis &quot;Dialoge&quot; wie unten gezeigt verwendet:</p>
+  <p class="code">var i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> if ds_map_find_value(async_load, &quot;result&quot;) != &quot;&quot;<br> {
+    <br> global.Name = ds_map_find_value(async_load, &quot;ergebnis&quot;);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft den &quot;id&quot;-Schlüssel der zurückgegebenen DS-Map <tt>gegen</tt> den in der Variablen &quot;msg&quot; gespeicherten Wert. Wenn sie gleich sind, prüft er dann, ob &quot;Okay&quot; gedrückt wurde (und nicht das Fenster geschlossen/abgebrochen wurde)
+    und wenn es <tt>&quot;true&quot;</tt> zurückgibt, prüft es dann das &quot;Ergebnis&quot; eines Strings, um sicherzustellen, dass keine leeren Strings zurückgegeben wurden, bevor eine globale Variable gesetzt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Dialog.htm">Dialog</a></div>
+        <div style="float:right">Weiter: <a href="get_integer_async.htm">get_integer_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_string_async
+-->
+  <!-- TAGS
+get_string_async
+-->
+</body>
+</html>

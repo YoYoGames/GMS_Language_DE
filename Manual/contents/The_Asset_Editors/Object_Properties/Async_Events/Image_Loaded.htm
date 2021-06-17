@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bild geladen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the Image Loaded async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Image Loaded Event" />
+  <meta name="search-keywords" content="Image Loaded,ev_web_image_load" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Bild geladen</h1>
+  <p><img alt="Image Loaded Event" class="center" src="../../../assets/Images/Asset_Editors/Async_ImageLoaded.png">Dieses Ereignis wird ausgelöst, wenn Sie ein Bild in <span class="notranslate">GameMaker Studio 2</span> laden, entweder über HTML5 oder über einen <a class="glossterm" data-glossterm="URL" href="#">URL</a>. Nehmen wir an, Sie möchten ein Sprite-Bild laden und das aktuelle Sprite für die Instanz erst dann in das neue ändern, wenn es geladen wurde. Im Create-Ereignis (oder jedem anderen Ereignis) würden Sie so etwas haben:</p>
+  <p class="code">var _url = &quot;http://www.angusgames.com/game/background1.png&quot;;<br> spr = sprite_add(_url, 0, false, false, 0, 0);</p>
+  <p>Dieser beginnt nun, das Bild in das Gerät oder den Browser zu laden, blockiert aber nicht <span class="notranslate">GameMaker Studio 2</span>, während es darauf wartet, dass die Datei geladen wird. Stattdessen läuft <span class="notranslate">GameMaker Studio 2</span> normal weiter, bis das Bild geladen ist und der <a class="glossterm" data-glossterm="Rückruf" href="#">Callback</a> das <strong>Ereignis "Bild geladen"</strong> auslöst, bei dem eine <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> erstellt und in der speziellen Variablen
+    <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>. Die Map enthält die folgenden Informationen:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">filename</span>&quot;: Der vollständige Pfad zu der angeforderten Datei.</li>
+    <li class="dropspot">&quot;<span class="inline">id</span>&quot;: Die ID der Ressource, die Sie geladen haben. Dies ist dieselbe wie die Variable, der Sie die Ressource zugewiesen haben.</li>
+    <li class="dropspot">&quot;<span class="inline">status</span>&quot;: Gibt bei einem Fehler einen Wert kleiner als 0 zurück.</li>
+  </ul>
+  <p>In diesem Ereignis würden Sie dann das neu geladene Bild einem Sprite zuweisen. Das folgende Codebeispiel zeigt, wie die zurückgegebenen Informationen verwendet werden würden:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == spr<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) &gt;= 0<br> {<br> sprite_index = spr;<br> } <br> }
+  </p>
+  <p>Der obige Code prüft zuerst die <span class="inline">id</span> der erstellten DS-Map und dann die <span class="inline">status</span> des Callbacks. Wenn der Wert größer oder gleich 0 ist (was Erfolg signalisiert), wird das Ergebnis von
+    des Callbacks dann dazu verwendet, den Sprite-Index auf das neu geladene Bild zu setzen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Async_Events.htm">Asynchrone Ereignisse</a></div>
+        <div style="float:right">Nächste: <a href="Networking.htm">Vernetzung</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Image Loaded Event
+ev_web_image_load
+-->
+  <!-- TAGS
+ev_web_image_load
+-->
+
+</body></html>

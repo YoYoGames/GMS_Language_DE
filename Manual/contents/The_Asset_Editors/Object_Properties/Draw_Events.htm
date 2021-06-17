@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Zeichnen von Ereignissen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the draw event." />
+  <meta name="rh-index-keywords" content="Objects - Draw Events" />
+  <meta name="search-keywords" content="draw event,draw begin,draw end,pre-draw,post draw,draw GUI,draw order" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die Auslosungsereignisse</h1>
+  <p><img alt="The Draw Event" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Draw.png">Die Ereigniskategorie "Zeichnen" enthält alle Ereignisse, die bestimmen, was Sie auf dem Bildschirm sehen, wenn Sie Ihr Spiel ausführen. Sie ist aufgeteilt in verschiedene
+    Die folgende Abbildung veranschaulicht die Reihenfolge, in der die einzelnen Ereignisse ausgeführt werden:</p>
+  <p><img alt="Object Editor Draw Diagram" class="center" src="../../assets/Images/Asset_Editors/Editor_Events_DrawOrder.png">Das normale Ereignis "Zeichnen" unterteilt sich in drei Untertypen: Das <strong>Draw Begin</strong>, das Standard <strong>Draw</strong> und das
+   <strong>Draw End-Ereignis</strong>. Im Allgemeinen werden Sie nur das Standard-Ereignis "Draw" verwenden müssen, und Sie sollten sich darüber im Klaren sein, dass dieses Ereignis bei jedem Spielschritt für alle Instanzen in einem Raum ausgelöst wird, so dass dieses Ereignis immer aufgerufen wird, solange
+    solange die Instanz das <strong>Sichtbar-Flag </strong>auf true gesetzt hat. Es ist wichtig zu verstehen, dass auch dann, wenn Sie in den Objekteigenschaften nichts für dieses Sub-Ereignis definiert haben (d. h.: kein Code und keine Aktionen), <em>wenn dem Objekt ein Sprite zugewiesen ist, es trotzdem ein Draw-Ereignis hat, das ausgelöst wird</em>.
+    Das liegt daran, dass <span class="notranslate">GameMaker Studio 2</span> zwei Möglichkeiten hat, Dinge im Draw-Ereignis zu zeichnen:</p>
+  <ul class="colour">
+    <li>das <strong>standardmäßige Zeichnen</strong>, d. h., wenn Sie das Sprite in den Objekteigenschaften definieren und keine Aktionen oder Code im normalen Draw-Ereignis platzieren, und in diesem Fall zeichnet <span class="notranslate">GameMaker Studio 2</span> das zugewiesene Sprite automatisch. Beachten Sie, dass alle Transformationen
+      die Sie in anderen Ereignissen durchführen, um den Bildmaßstab, den Index, die Überblendung usw. zu ändern, ebenfalls berücksichtigt werden, solange das Draw-Ereignis leer ist.</li>
+    <li>das <strong>benutzerdefinierte Zeichnen</strong>, d. h., wenn Sie Code oder Aktionen im Zeichnungsereignis platzieren. Damit teilen Sie <span class="notranslate">GameMaker Studio 2</span> mit: &quot;Ich <em>möchte steuern, was für Instanzen dieses Objekts gezeichnet werden soll&quot;, und</em> es überschreibt vollständig die Standard
+      Zeichnen. Das bedeutet, dass Sie z. B. ein Objekt mit einem Sprite zugewiesen haben können, dann das Draw-Ereignis auf "Text zeichnen" setzen und der Text wird auf dem Bildschirm gezeichnet, aber das Sprite wird <em>nicht </em>gezeichnet, da Sie <span class="notranslate">GameMaker Studio 2</span> nicht gesagt haben, es zusammen mit dem Text zu zeichnen.
+      es zusammen mit dem Text zu zeichnen.</li>
+  </ul>
+  <p>Die restlichen Auslosungsereignisse werden in den unten aufgeführten Abschnitten erläutert:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Zeichnen Anfang und Zeichnen Ende</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Neben dem Hauptzieh-Ereignis haben Sie auch ein <strong> Zieh-Beginn-</strong> und ein <strong>Zieh-Ende-Ereignis</strong>. Diese verhalten sich genauso wie ein Standard-Zeichen-Ereignis (d. h., sie zeichnen das, was Sie in sie eingeben, in jedem Schritt des Spiels und für alle Ansichtsfenster).
+      alle Ansichtsfenster), aber sie zeichnen nichts &quot;standardmäßig&quot;, wenn sie nicht explizit zu einem Objekt hinzugefügt wurden, und sie werden immer vor/nach dem Standard-Draw-Ereignis ausgeführt. Wenn das Spiel also läuft, haben Sie <em>immer</em> das
+      Draw Begin-Ereignis für alle Instanzen, dann das Draw-Ereignis für alle Instanzen und schließlich das Draw End-Ereignis für alle Instanzen.</p>
+    <p class="dropspot">Auf diese Weise können Sie in einer Instanz Dinge zeichnen oder Zeicheneigenschaften im Schritt "Draw Begin" festlegen und sicher sein, dass alle Instanzen mit einem Standard-Ereignis "Draw" oder einem Ereignis "Draw End" diese Eigenschaften verwenden oder über das zeichnen, was die erste Instanz gezeichnet hat. Im Grunde genommen
+      ist es ein sicherer Weg, um zu garantieren, dass bestimmte Dinge zu bestimmten Zeiten gezeichnet werden, ähnlich wie es die Ereignisse " <strong>Begin Step"</strong> und " <strong>End Step" </strong>tun.</p>
+    <p class="dropspot">Es gibt ein paar Dinge zu beachten, wenn Sie in <span class="notranslate">GameMaker Studio 2</span> Dinge zeichnen, egal ob es sich um ein Sprite, einen Shader <span class="notranslate">oder</span> einen 3D-Buffer handelt, den Sie zeichnen:</p>
+    <ul class="colour">
+      <li class="dropspot">Das Draw-Ereignis ist ein sehr intensives Ereignis, da es eines der Ereignisse ist, das die meiste Zeit und die meisten Ressourcen in Anspruch nimmt... deshalb ist es nie eine gute Idee, im Draw-Ereignis etwas anderes zu tun als zu zeichnen. Sparen Sie sich also Ihren umfangreichen Code oder komplexe Aktionen
+        für das Step-Ereignis oder Alarme oder was auch immer für ein anderes Ereignis passt, aber lassen Sie das Draw-Ereignis für das Zeichnen frei, denn das ist es, was es am besten kann.</li>
+      <li class="dropspot">Wenn für Ihr Objekt der Parameter visible auf <em>off </em> gesetzt wurde (so dass die Instanzen des Objekts nicht gezeichnet werden), <strong>werden alle Draw-Events übersprungen </strong>(mit Ausnahme des <strong>Resize-Events </strong>). Das bedeutet, dass das Unsichtbarmachen einer Instanz
+        unsichtbar macht, wird der gesamte Code, der in einem dieser Ereignisse platziert wird, nicht mehr ausgeführt.</li>
+      <li class="dropspot">Was Sie zeichnen, hat nichts mit der gewählten Kollisions-Engine (traditionell oder Physik) zu tun, da diese durch die Objekteigenschaften und das Sprite (oder die Maske), das dem Objekt zugewiesen wurde, definiert ist.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">GUI zeichnen</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Der Ereignistyp "Draw GUI" fällt unter die Kategorie "Draw Event" und ist speziell für das Zeichnen von <a class="glossterm" data-glossterm="GUI" href="#">GUI-Elementen</a> vorgesehen, die nicht von der Skalierung oder Drehung der Ansichtskamera betroffen sind. Das bedeutet, dass Sie
+      Das bedeutet, dass Sie eine Instanz alle Elemente für Ihr <a class="glossterm" data-glossterm="HUD" href="#">HUD</a> oder Ihre Benutzeroberfläche zeichnen lassen können, ohne dass die gesamte Positionierung der Elemente auf der Position der Instanz innerhalb des Raums oder der Position der aktuellen Kameraansicht basieren muss.
+      der aktuellen Kameraansicht abhängen.</p>
+    <p class="dropspot">Beim Zeichnen in diesem Ereignis ist es wichtig, dass Sie verstehen, dass sich die Zeichenkoordinaten nicht ändern, auch wenn Kameraansichten aktiv sind und (0,0) <em>immer </em>die linke obere Ecke der Anwendungsoberfläche oder der Anzeige ist (siehe den
+      Hinweis am Ende dieses Abschnitts), und die Standardbreite und -höhe sind 1:1 mit der Anwendungsoberfläche. Die Tiefenordnung wird zwischen verschiedenen Instanzen auf verschiedenen Ebenen beibehalten (eine Instanz auf einer höheren Ebene wird also unter
+      (eine Instanz auf einer höheren Ebene wird also unter einer Instanz auf einer niedrigeren Ebene gezeichnet) und auch innerhalb der Ereignisse selbst, da das Ereignis " <strong>Draw GUI Begin</strong> " zuerst für alle Instanzen zeichnet, dann das Standard-Ereignis " <strong>Draw GUI"</strong> für alle darüber liegenden Instanzen, und schließlich das Ereignis " <strong>Draw Gui End </strong>
+      ausgelöst wird.</p>
+    <p class="dropspot">Auf diese Weise können Sie in einer Instanz Dinge zeichnen oder Zeicheneigenschaften im Ereignis "Draw GUI Begin" setzen und sicher sein, dass alle Instanzen mit einem Standard-Ereignis "Draw GUI" oder "Draw GUI End" diese Eigenschaften verwenden oder über das zeichnen, was die erste Instanz gezeichnet hat. Im Grunde genommen
+      ist dies ein sicherer Weg, um zu garantieren, dass bestimmte Dinge zu bestimmten Zeiten gezeichnet werden, ähnlich wie es die Ereignisse Begin <strong>Step und</strong> End <strong>Step</strong> tun.</p>
+    <p class="dropspot">Diese Ereignisse können auch in Verbindung mit den normalen Draw-Ereignissen verwendet werden (die wie üblich von der Position, Skalierung und Drehung der Kameraansicht beeinflusst werden). Wenn Sie kein Draw-Ereignis, aber ein Draw-GUI-Ereignis haben, wird <span class="notranslate">GameMaker Studio 2</span> trotzdem
+      das Sprite für die Instanz (wenn sie eines hat) wie gewohnt zeichnen.</p>
+    <p class="dropspot">In Bezug auf die anderen Zeichenereignisse zeichnen die Draw-GUI-Ereignisse immer über alles, was in den normalen Zeichenereignissen gezeichnet wird. Wenn Sie also eine Instanz auf einem niedrigeren Layer mit einem Draw GUI-Ereignis haben, wird sie über die Instanz auf einem höheren Layer
+      mit einem normalen Draw-Ereignis. Wenn beide Instanzen ein "Draw GUI"-Ereignis haben, wird die Reihenfolge der Ebenen beachtet.</p>
+    <p class="note"><strong>HINWEIS</strong>: Dieses Ereignis zeichnet standardmäßig 1:1 mit der Größe der Anwendungsoberfläche, die normalerweise die Größe des Raums oder des View Ports ist. Das bedeutet, dass, wenn Sie die <strong>Seitenverhältniskorrektur</strong> in den Spieloptionen aktiviert haben
+      eingeschaltet haben, wird die GUI nicht über die schwarzen Balken gezeichnet, die das Spiel &quot;letterboxen&quot;. Dieses Verhalten können Sie mit der Funktion <a href="../../GameMaker_Language/GML_Reference/Cameras_And_Display/display_set_gui_maximise.htm"><span style="font-size:14px;"> <span class="inline" style="font-size: 14px">display_set_gui_maximise()</span></span></a> Funktion,
+      und Sie können auch das GUI-Ereignis auf eine bestimmte Größe sperren, die dann automatisch an die Abmessungen des Displays oder der Anwendungsoberfläche angepasst wird, indem Sie die Funktion <a href="../../GameMaker_Language/GML_Reference/Cameras_And_Display/display_set_gui_size.htm"><span class="inline" style="font-size: 14px">display_set_gui_size()</span></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Vor und nach der Auslosung</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Die Ereignisse "Pre Draw" und "Post Draw" sind Teil der Kategorie "Draw Event". Im Gegensatz zu den anderen Draw-Ereignissen zeichnen diese jedoch <em>direkt </em>in den <a class="glossterm" data-glossterm="Display-Puffer" href="#">Anzeigepuffer</a>, der die Größe
+      des kombinierten Bildschirmbereichs für alle derzeit sichtbaren Ansichtsfenster <em>bzw. </em>die Fenstergröße, wenn nur ein Ansichtsfenster oder gar keines verwendet wird. Das folgende Bild veranschaulicht dies:</p>
+    <p class="dropspot"><img alt="Object Editor Post Draw" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_PostDraw.png">Wenn Sie also die Pre- oder Post-Draw-Ereignisse verwenden, zeichnen Sie auf das Vollbild-Rendering-Ziel (Anzeigepuffer), das
+      die gleiche Größe wie das Fenster hat, in das alle Ansichtsfenster eingepasst werden. Wenn Sie keine Ansichtsfenster aktiv haben, wird dies stattdessen auf die Größe des Fensters selbst eingestellt.</p>
+    <p class="dropspot">Das Pre-Draw-Ereignis wird vor jedem anderen Draw-Ereignis ausgelöst, und in ihm können Sie Werte setzen, Draw-Eigenschaften einstellen und sogar Dinge zeichnen, ohne sich um die Viewports oder die Größe der GUI-Ebene zu kümmern (die Größe der GUI-Ebene kann dieselbe sein wie der Bildschirm
+      Puffer sein, muss es aber nicht, da Sie die GUI-Auflösung im Code einstellen können).</p>
+    <p class="dropspot">Es ist erwähnenswert, dass dieses Ereignis eintritt <em>, bevor </em>der Anzeigepuffer für das reguläre Zeichnen geleert wird, was bedeutet, dass, wenn Sie die Ansichtsleerung im Raumeditor nicht ausschalten, nichts von dem, was im Ereignis "Vor dem Zeichnen" gezeichnet wird, zu sehen sein wird, da das
+      das erste Zeichnen des Ansichtsfensters diesen löschen wird. Wenn Sie durch die Ansichtsfenster selbst hindurchsehen wollen oder gar keine Ansichtsfenster verwenden, dann sollten Sie auch die Hintergrundfarbe mit einem Alpha-Wert von 0 in der Datei <strong><a href="../Rooms.htm">Raum-Editor</a></strong>.</p>
+    <p class="note"><strong>HINWEIS</strong>: Wenn Sie diese Optionen ausschalten, kann es vorkommen, dass beim Testen des Spiels unerwünschte Artefakte auf dem Bildschirm gezeichnet werden (wie &quot;Spuren&quot; von Instanzen). Das liegt daran, dass Sie direkt über den vorherigen Frame
+      des Anzeigepuffers zeichnen, ohne dass dieser geleert wird. Sie können jedoch mit <span class="inline" style="font-size: 14px"><a href="../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/draw_clear_alpha.htm">draw_clear_alpha()</a> </span>um dies zu tun
+      selbst.</p>
+    <p class="dropspot">Das Post Draw-Ereignis wird <em>nach </em>allen Standard-Zeichenereignissen, aber <em>vor </em>den Draw-GUI-Ereignissen ausgelöst. Wie das Pre Draw-Ereignis basiert es auf der Größe des Anzeigepuffers und ist vor den Draw-GUI-Ereignissen platziert, damit Sie
+      Nachbearbeitungseffekte und andere Dinge auf einer Vollbildschirmbasis einfach und leicht durchführen zu können, ohne irgendwelche <a class="glossterm" data-glossterm="GUI" href="#">HUD/GUI-Elemente</a> zu beeinträchtigen
+      die Sie möglicherweise in Ihrem Spiel haben.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Fenstergröße ändern</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Dieser Ereignistyp fällt unter die Kategorie "Draw-Ereignis", und obwohl er eigentlich nichts zeichnet, reagiert er auf Änderungen im Anzeigepuffer - insbesondere ist er für die Reaktion auf die Änderung der Größe des UWP-Anzeigepuffers vorgesehen, wenn das
+      Spielfenster &quot;gefangen&quot; wird.</p>
+    <p class="dropspot">Auf der UWP-Zielplattform ist es wichtig, dass Sie jede Größenänderung des Anzeigepuffers durch das &quot;Einrasten&quot; des Spielfensters abfangen (wenn der Benutzer das Fenster z. B. an den Rand des Displays zieht). Dieses Ereignis wird genau das tun und
+      wird jedes Mal ausgelöst, wenn das Fenster verändert wird, so dass Sie hier benutzerdefinierten Code hinzufügen können, der die Größe der Ansicht ändert oder <a class="glossterm" data-glossterm="HUD" href="#">HUD-Elemente</a> neu positioniert, falls erforderlich. Diese Funktion wird als bequeme Möglichkeit angeboten
+      Weg, um zu vermeiden, dass Sie Schritt-Ereigniscode haben, der diese Dinge ständig überprüft.</p>
+    <p class="note"><strong>HINWEIS</strong>: Sie können in diesem Ereignis nicht zeichnen! Es wird durch die Größenänderung des Fensters ausgelöst und ist nur dazu da, diese Änderung abzufangen... jegliches Zeichnen, das noch erfolgen soll, muss in einem der anderen Draw-Events erfolgen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Object_Events.htm">Objekt-Ereignisse</a></div>
+        <div style="float:right">Nächste: <a href="Async_Events.htm">Asynchrone Ereignisse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Draw Events
+Pre Draw Event
+Post Draw Event
+Draw Begin Event
+Draw End Events
+Draw GUI Events
+Draw GUI Begin Event
+Draw GUI End Event
+Pre Draw Event
+Post Draw Event
+Window Resize Event
+-->
+  <!-- TAGS
+draw_events
+-->
+
+</body></html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_schlafend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_sleeping" />
+  <meta name="rh-index-keywords" content="phy_sleeping" />
+  <meta name="search-keywords" content="phy_sleeping" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_schlafend</h1>
+  <p>Diese <b>schreibgeschützte</b> Variable gibt zurück, ob die Instanz gerade &quot;schläft&quot; (true) oder<tt>nicht (</tt>false). Eine<tt>&quot;</tt>schlafende&quot; Instanz ist eine, die nicht aktiv an einer physikalischen Simulation beteiligt ist. <span class="notranslate">GameMaker Studio 2</span> versetzt Objekte in den Ruhezustand, um Simulationszyklen zu sparen, wenn eine Instanz in Ruhe ist und nicht mit einer anderen Instanz kollidiert</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">phy_sleeping;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolean (oder <tt>undefiniert</tt>, wenn die Instanz nicht physikaktiviert ist)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if phy_sleeping<br> {
+    <br> instance_destroy();
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob das Objekt aktiv simuliert wird oder nicht, und wenn nicht, wird es zerstört.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Physics_Variables.htm">Physik-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="phy_collision_points.htm">phy_collision_points</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_sleeping
+-->
+  <!-- TAGS
+phy_sleeping
+-->
+</body>
+</html>

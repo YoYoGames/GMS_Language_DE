@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn Objekt am Ort</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Object At Place action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Object At Place" />
+  <meta name="search-keywords" content="If Object At Place" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Object At Place Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_At.png"> Wenn Objekt am Ort</h1>
+  <p>Diese Aktion wird verwendet, um anhand der Kollisionsmaske der aufrufenden Instanz zu prüfen, ob eine Kollision mit einer oder mehreren Instanzen eines bestimmten Objekts vorliegt, wobei die aktuelle Instanz an einem Punkt im Raum platziert ist. Die Aktion wird zu <tt>true</tt> ausgewertet, wenn eine Kollision erkannt wird, oder andernfalls zu <tt>false</tt>. Sie geben das Objekt an, auf das geprüft werden soll, und die Position, an der die Instanz &quot;platziert&quot; werden soll, um die Prüfung durchzuführen - das kann eine absolute Position im Raum oder eine Position relativ zur Instanz sein
+    - und Sie können auch das <b>Not-Flag</b> setzen, um zu prüfen, ob es an der angegebenen Position <i>keine</i> Kollision gibt. In diesem Fall wird die Aktion nur dann als <tt>true</tt> ausgewertet, wenn <i>keine</i> Kollisionen gefunden werden, andernfalls wird sie als <tt>false</tt> ausgewertet.</p>
+  <p>Nachdem Sie das Objekt und die Position angegeben haben, können Sie die Option " <b>Liste zurückgeben"</b> aktivieren/deaktivieren. Wenn Sie diese Option aktivieren, erstellt und füllt die Aktion eine Datenstruktur<span> </span>mit
+    mit <i>allen</i> Instanzen, die mit der Instanz kollidieren, und setzt die Variable <b>Target</b> auf die DS-Listen-ID. Wenn die Option nicht aktiviert ist, wird die Variable <b>"Target"</b> nur dann auf einen Wert kleiner als 0 gesetzt, wenn keine Kollision erkannt wird, oder auf den eindeutigen ID-Wert <i>einer</i> der Instanzen in der Kollision (beachten Sie, dass Sie bei einer Kollision mehrerer Instanzen nicht wissen können, welche Instanz-ID zurückgegeben wird, wenn Sie keine Liste verwenden).</p>
+  <p>Wenn Sie ausgewählt haben, dass eine Liste zurückgegeben werden soll - und die Zielvariable <i>nicht</i> auf <b>Temp</b> gesetzt ist -, dann können Sie auch die Option <b>Free Target</b> auswählen. Wenn diese Option auf <tt>true</tt> gesetzt ist, wird die in der Zielvariablen enthaltene Liste zerstört und
+    eine neue Liste erstellt (und an die Zielvariable zurückgegeben), wenn Sie die Aktion aufrufen. Auf diese Weise können Sie dieselbe Variable wiederverwenden, ohne sich Gedanken über Speicherlecks zu machen, denn wenn Sie die Option "Free <b>Target</b> " <i>nicht</i> aktivieren, sind Sie dafür verantwortlich
+    für das Löschen der Liste verantwortlich, bevor Sie die Variable erneut in der Aktion verwenden. Beachten Sie, dass <i>unabhängig</i> davon, ob diese Option aktiviert ist oder nicht, wenn Sie die Aktion auf <b>"Liste zurückgeben"</b> eingestellt haben, die Zielvariable <i>immer eine Listen-ID enthält</i>,
+    und als solche muss sie freigegeben werden, wenn die Instanz zerstört wird oder der Raum endet (Sie können dafür z. B. das Ereignis <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm"><b>Aufräumen</b></a> Ereignis verwenden, z. B. zusammen mit der Aktion " <a href="../Data_Structures/Free_Data_Structure.htm">Datenstruktur freigeben"</a><span> </span>).
+    Es ist erwähnenswert, dass Sie die Option <b>"Free Target"</b> so einstellen können, dass eine vordefinierte Variable oder ein Ausdruck verwendet wird und Sie so steuern können, wann die Listendatenstruktur freigegeben wird, indem Sie die Variable an anderer Stelle setzen (oder unterschiedliche Ergebnisse für den Ausdruck haben)
+    solange sie zu <tt>true/false</tt> ausgewertet wird.</p>
+  <p>Schließlich geben Sie die <b>Zielvariable</b> an, die den zurückgegebenen Wert oder die Listen-ID enthalten soll. Wenn Sie die Zielvariable, die den zurückgegebenen Wert enthalten soll, als <b>Temp-Variable</b> (lokale Variable) kennzeichnen, wird die Aktion diese Variable erstellen, um den Rückgabewert nur bis zum Ende des Ereignisses zu halten.
+    In diesem Fall bewirkt die Option "Free Target" nichts und Sie sind für das Löschen der DS-Liste verantwortlich, wenn diese Option aktiviert wurde. Wenn keine Zielvariable übergeben wird und die Option <b>Rückgabeliste</b> aktiviert ist, wird keine Liste erstellt.</p>
+  <p class="note"><b>WICHTIG!</b> Kollisionen werden nur für die Instanzen registriert, die eine gültige Kollisionsmaske haben, d. h.: sie haben ein Sprite, das dem <tt>sprite_index</tt> zugeordnet ist, oder ein Sprite, das dem <tt>mask_index</tt> zugeordnet ist. Wenn <b>eine der</b> Instanzen in
+    der Kollision keine Kollisionsmaske hat, wird die Kollision nicht erkannt, unabhängig davon, was die Instanz zu diesem Zeitpunkt gerade zeichnet.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in einen &quot;<span class="inline">if</span>&quot; Block, diese an der Seite <i>der</i> Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="If Object At Place drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_At.png" /></p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="If Object At Place Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_At.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Objekt</td>
+        <td>Das zu prüfende Objekt für Instanzen von</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die zu prüfende x-Position</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die zu prüfende y-Position</td>
+      </tr>
+      <tr>
+        <td>Freies Ziel</td>
+        <td>Kann auf eine Variable oder einen Ausdruck gesetzt werden oder auf <tt>true/false</tt> gesetzt werden, um das Freigeben des Listenspeichers bei der Wiederverwendung einer Listenvariablen zu steuern</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Variable, die als Ziel für den Rückgabewert der Aktion dienen soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="If Object At Place Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_At.png">Der obige Aktionsblockcode prüft auf eine Kollision mit beliebigen Instanzen des Objekts &quot;
+    <span class="inline">obj_Wall</span> &quot; nach links und nach rechts und kehrt, wenn eine gefunden wird, die horizontale Richtung der aufrufenden Instanz um.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collision_Actions.htm">Kollisions-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="If_Collision_Shape.htm">Wenn Kollisionsform</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Object At Place
+-->
+  <!-- TAGS
+action_if_object_at_place
+-->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Grundformulare</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Basic Forms functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Basic Forms" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Grundformulare</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> verfügt über eine ganze Sammlung von Funktionen zum Zeichnen verschiedener Formen und Gestalten. Diese Funktionen sollten immer nur im Draw-Event einer Instanz verwendet werden (Sie <i>können</i> sie
+    anderweitig verwenden, aber Sie werden nichts sehen!) und erzeugen rein grafische Effekte, d. h. sie erzeugen keine Kollisionsereignisse, da diese nur über das Sprite oder die Kollisionsmaske, die einer Instanz zugewiesen wurde, erfolgen können. Alle diese Funktionen
+    werden von der aktuellen Zeichenfarbe, dem Alpha- und dem Überblendungsmodus beeinflusst (siehe den Abschnitt über <a href="../Colour_And_Alpha/Colour_And_Alpha.htm">Farbe</a>).</p>
+  <p class="note"><b>WICHTIG!</b> Linien, Punkte und Formen werden immer im Verhältnis 1:1 mit der <strong>Bildschirmauflösung</strong> gezeichnet, unabhängig davon, in welchem Event sie gezeichnet werden.</p>
+  <p class="note"><strong>WICHTIG!</strong> Diese Funktionen unterbrechen das Vertex-Batching und erhöhen die Anzahl der Textur-Swaps in Ihrem Spiel, so dass mehrere Aufrufe einer dieser Funktionen in einem einzelnen Draw-Frame zu Performance-Problemen führen können.</p>
+  <p>Zum Zeichnen von Grundformen gibt es die folgenden Zeichenfunktionen. Beachten Sie, dass diese Funktionen langsam aufzurufen sind und nur als grundlegende Zeichenwerkzeuge geliefert werden:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_arrow.htm">zeichnen_pfeil</a></li>
+    <li><a href="draw_circle.htm">kreis_zeichnen</a></li>
+    <li><a href="draw_circle_colour.htm">draw_circle_colour</a></li>
+    <li><a href="draw_ellipse.htm">zeichnen_ellipse</a></li>
+    <li><a href="draw_ellipse_colour.htm">draw_ellipse_colour</a></li>
+    <li><a href="draw_line.htm">Linie_zeichnen</a></li>
+    <li><a href="draw_line_colour.htm">draw_line_colour</a></li>
+    <li><a href="draw_line_width.htm">draw_line_width</a></li>
+    <li><a href="draw_line_width_colour.htm">draw_line_width_colour</a></li>
+    <li><a href="draw_point.htm">Punkt_zeichnen</a></li>
+    <li><a href="draw_point_colour.htm">draw_point_colour</a></li>
+    <li><a href="draw_rectangle.htm">rechtwinklig_zeichnen</a></li>
+    <li><a href="draw_rectangle_colour.htm">Rechteck_Farbe_zeichnen</a></li>
+    <li><a href="draw_roundrect.htm">draw_roundrect</a></li>
+    <li><a href="draw_roundrect_colour.htm">draw_roundrect_colour</a></li>
+    <li><a href="draw_roundrect_ext.htm">draw_roundrect_ext</a></li>
+    <li><a href="draw_roundrect_colour_ext.htm">draw_roundrect_colour_ext</a></li>
+    <li><a href="draw_triangle.htm">zeichnen_dreieck</a></li>
+    <li><a href="draw_triangle_colour.htm">draw_triangle_colour</a></li>
+  </ul>
+  <p> </p>
+  <p>Die folgenden Funktionen sind auch in <span class="notranslate">GameMaker Studio 2</span> enthalten, um die Zeichengenauigkeit einzustellen und einige sehr spezielle Dinge zu zeichnen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_set_circle_precision.htm">draw_set_circle_precision</a></li>
+    <li><a href="draw_button.htm">Zeichnen_Schaltfläche</a></li>
+    <li><a href="draw_healthbar.htm">draw_healthbar</a></li>
+    <li><a href="draw_path.htm">Pfad_zeichnen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Drawing.htm">Zeichnung</a></div>
+        <div style="float:right">Nächste: <a href="../Sprites_And_Tiles/Sprites_And_Tiles.htm">Sprites und Kacheln</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Basic Forms
+-->
+  <!-- TAGS
+form_functions
+-->
+</body>
+</html>

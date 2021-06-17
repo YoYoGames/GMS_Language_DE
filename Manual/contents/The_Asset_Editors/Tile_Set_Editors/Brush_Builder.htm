@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bürsten-Builder</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor brush builder works" />
+  <meta name="rh-index-keywords" content="Tile Sets - Brush Builder" />
+  <meta name="search-keywords" content="brush builder,brushes,tile brushes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Kachelsatz-Bürstengenerator</h1>
+  <p>Standardmäßig wählen Sie beim &quot;Malen&quot; von Kacheln auf eine <a class="glossterm" data-glossterm="Kachelplan" href="#">Kachel-Map-Ebene im</a> Raumeditor eine einzelne Kachel aus und malen mit dieser. Kachelsätze sind jedoch fast immer so konzipiert, dass sie Abschnitte haben
+    die auf unterschiedliche Weise zusammenpassen, um ganze Bereiche oder Objekte zu bilden. Ein RPG-Kachelsatz kann z. B. Landschaftskacheln enthalten, die je nach Anzahl der verwendeten Kacheln zu größeren oder kleineren Objekten - wie Bäumen und Gebäuden - verbunden werden können.
+    verwendet werden. Würden Sie nun mehrere solcher Features auf einer Raumebene platzieren, müssten Sie viele Male hin- und hergehen, um die Kacheln zu wechseln, was nicht gut für Ihren Arbeitsablauf ist. Um dieses Problem zu lösen, ermöglicht <span class="notranslate">GameMaker Studio 2</span> das Erstellen von <strong>Kachelpinseln </strong>im
+    dem Kachel-Set-Editor zu erstellen, der verfügbar ist, wenn Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf die Schaltfläche " <strong>Brush Builder</strong> " klicken:</p>
+  <p><img alt="Brushes" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Brushes.png">Im <strong>Brush Builder</strong> haben Sie auf der linken Seite das ursprüngliche Kachelset und auf der rechten Seite eine leere &quot;Leinwand&quot;. Sie können nun eine
+    Sie können nun eine beliebige Kachel auf der linken Seite auswählen und sie auf der rechten Seite malen, um benutzerdefinierte &quot;Pinsel&quot; zu erstellen, die Sie dann im Raumeditor verwenden können. Beachten Sie, dass Sie die linke Maustaste <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> gedrückt halten und dann auf das Kachelset ziehen können, um mehrere Kacheln auszuwählen, die Sie in die Pinsel-Leinwand malen möchten. Sie können auch <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> gedrückt halten, um bestimmte einzelne Kacheln hinzuzufügen oder <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> gedrückt halten, um bestimmte Kacheln zu entfernen.</p>
+  <p>Das folgende Bild zeigt unsere bereits erwähnten Landschaftsmerkmale als Beispiel für drei benutzerdefinierte Bürsten, die aus einem einzigen Kachelsatz erstellt wurden:</p>
+  <p><img alt="Features As Brushes Example" class="center" height="534" src="../../assets/Images/Asset_Editors/Editor_Tilesets_FeaturesBrushes.png" width="940">Auf der rechten Seite sehen Sie drei Funktionen, die wir gemacht haben (im Bild mit einem orangefarbenen Kästchen hervorgehoben
+    im Bild). Beachten Sie, dass wir zwischen den einzelnen Features eine Lücke von einer Kachel gelassen haben - das liegt daran, dass jede <em>sich berührende Gruppe von Kacheln im</em> Raum-Editor <em>als ein einzelner Pinsel behandelt</em> wird, also lassen wir eine Lücke von einer Kachel, um zu zeigen, dass jeder Satz ein eigener
+    Pinsel ist, den wir erstellen wollen. Während Sie Ihre Pinsel erstellen, malen Sie mit der linken Maustaste <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> und löschen mit der rechten Maustaste <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">. Sie können auch das Kachelblatt oder die Pinsel-Leinwand mit <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> und dem Mausrad <img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21"> vergrößern, wenn sich die Maus über einem der Fenster
+    wenn sich die Maus über einem der Fenster befindet, oder Sie können mit <img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> oder
+    die mittlere Maustaste <img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21"> und Ziehen. Beachten Sie, dass Sie auch die Zoom-Werkzeuge in der <strong>Toolbox</strong> innerhalb der Editor-Fenster verwenden können, um die
+    Sie können auch die Zoom-Werkzeuge in der Toolbox innerhalb der Editor-Fenster verwenden, um die Zoom-Stufen der beiden Fenster zu ändern und die Sichtbarkeit und Farbe des Rasters umzuschalten.</p>
+  <p>Oben rechts sehen Sie das aktuell ausgewählte Werkzeug, und Sie können auch die Größe des Pinsels einstellen, mit dem Sie malen möchten. Die Standardgröße ist 1, was einer einzelnen Kachel entspricht, aber wenn Sie sie auf höhere Werte einstellen, können Sie mit einem größeren Pinsel malen (und löschen), der aus der ausgewählten Kachel besteht, die wiederholt wird.
+    Wenn Sie jedoch einen höheren Wert einstellen, können Sie mit einem größeren Pinsel malen (und löschen), der aus der Wiederholung der ausgewählten Kachel besteht, wie in der Abbildung unten gezeigt:</p>
+  <p><img alt="Tile Size Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Tile_Size.gif">In der Toolbox können Sie das Werkzeug auswählen, das Sie für viele verschiedene Aufgaben im Kachelsatz-Editor verwenden möchten, von denen einige davon abhängen, ob
+    Sie etwas in Ihrer <a href="Auto_Tiles.htm">automatischen Kachelbibliothek</a> definiert haben. Nachfolgend finden Sie eine kurze Beschreibung der einzelnen Werkzeuge (beachten Sie, dass diese Toolbox zusammen mit weiteren Zeichenwerkzeugen oben im Arbeitsbereich des Raums angezeigt wird, wenn Sie eine Kachel-Ebene im Raum-Editor ausgewählt haben).
+    Arbeitsbereich angezeigt wird, zusammen mit weiteren Zeichenwerkzeugen):</p>
+  <table class="icons" style="margin-left: 32auto">
+    <tbody>
+      <tr>
+        <td class="icons"><img alt="Pencil Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Draw.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Bleistift</strong></td>
+        <td class="text">Dies ist das Bleistift-Werkzeug. Es verwendet die ausgewählte Kachel, um im Pinsel-Fenster mit der linken Maustaste <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> zu malen, und Sie können mit der rechten Maustaste <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> löschen.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Eraser Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Erase.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Radiergummi</strong></td>
+        <td class="text">Mit dem Radiergummi-Werkzeug können Sie die linke Maustaste <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> verwenden, um eine bestimmte Kachel im Pinselfenster zu löschen. Im Wesentlichen wird dabei nur der Kachelindex auf 0 gesetzt, was
+          die reservierte &quot;leere&quot; Kachel.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Selection Tool Icon" height="24" src="../../assets/Images/Icons/Icon_TileSelect.png" style="margin-left: 24px;" width="24" /></td>
+        <td class="icons"><strong>Auswahl</strong></td>
+        <td class="text">Dies ist das Auswahlwerkzeug, mit dem Sie einen Bereich des Pinselfensters für die Bearbeitung festlegen können. Sie können mit der linken Maustaste <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> klicken und dann die Maus ziehen
+          um einen rechteckigen Bereich zu erstellen, oder Sie können <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> drücken, um mehrere Auswahlen hinzuzufügen, und <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">, um einen Teil der Auswahl zu löschen. Um die gesamte Auswahl zu löschen, können Sie <img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55"> drücken. Wenn Sie einen Bereich des Pinselfensters ausgewählt haben, funktionieren die übrigen Werkzeuge (Stiften, Spiegeln, Drehen usw.) nur innerhalb des ausgewählten Bereichs. Beachten Sie, dass Sie auch Kacheln im Fenster auswählen und dann kopieren ( <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">+ &quot;<span class="inline">C</span>&quot;), ausschneiden ( <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;) und einfügen können
+          ( <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;
+          <font face="Lucida Console"><span style="font-size: 16px;"><b>V</b></span></font>&quot;), wodurch das Werkzeug auf den Bleistift umgeschaltet wird und Sie damit &quot;malen&quot; können.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Autotile Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Auto.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>AutoTile</strong></td>
+        <td class="text">Wenn Sie auf dieses Werkzeug klicken, wird der Malstil <strong>"Autokacheln"</strong> aktiviert. Wenn dies aktiv ist, können Sie eine beliebige Kachel aus der Registerkarte "Autokacheln" auswählen und sie dann in das Pinsel-Fenster malen, und <span class="notranslate">GameMaker Studio 2</span> passt sie automatisch
+          an die umgebenden Kacheln anpassen, sofern Sie die <a href="Auto_Tiles.htm">Registerkarte "Autokacheln</a>" korrekt eingerichtet haben. Beachten Sie, dass die Auswahl einer Kachel aus dem Kachelsatz, die nicht Teil der Autotile-Bibliotheken ist, das Zeichenwerkzeug auf das Standard
+          Bleistift-Werkzeug.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Flip Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Flip.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Flip</strong></td>
+        <td class="text">Wenn Sie mit der linken Maustaste auf das Werkzeug &quot;Spiegeln&quot; klicken <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (oder das Tastaturkürzel &quot;<span class="inline">X</span>&quot; verwenden), wird die Kachel oder die Kacheln, die gerade zum Zeichnen ausgewählt sind, entlang der horizontalen Achse gespiegelt.
+          (wenn Sie einen benutzerdefinierten Pinsel zum Zeichnen ausgewählt haben, wird der gesamte Pinsel umgedreht). Wenn Sie keine Kachel zum Zeichnen ausgewählt haben, aber eine Gruppe von Kacheln im Pinselfenster ausgewählt haben
+          im Pinselfenster ausgewählt haben, werden die ausgewählten Kacheln mit dem Kippwerkzeug gekippt.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Mirror Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Mirror.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Spiegel</strong></td>
+        <td class="text">Wenn Sie mit der linken Maustaste auf das Werkzeug &quot;Spiegeln&quot; klicken <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (oder das Tastaturkürzel &quot; <span class="inline">Y</span>&quot; verwenden), werden die aktuell zum Zeichnen ausgewählten Kacheln
+          spiegelt die aktuell zum Zeichnen ausgewählte(n) Kachel(n) entlang der <em>vertikalen </em>Achse, ohne das Zeichenwerkzeug zu wechseln (wenn Sie einen benutzerdefinierten Pinsel zum Zeichnen ausgewählt haben, wird der gesamte Pinsel gespiegelt). Wenn Sie keine Kachel zum Zeichnen ausgewählt haben, aber eine Gruppe von Kacheln im Pinselfenster ausgewählt haben
+          im Pinselfenster ausgewählt haben, dann spiegelt das Werkzeug "Spiegeln" die ausgewählten Fliesen.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Rotate Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Rotate.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Drehen</strong></td>
+        <td class="text">Wenn Sie mit der linken Maustaste auf das Werkzeug &quot;Drehen&quot; klicken <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (oder das Tastaturkürzel &quot; <span class="inline">Z</span>&quot; verwenden), wird die aktuell zum Zeichnen ausgewählte(n) Kachel(n) um 90° im Uhrzeigersinn gedreht, ohne das Zeichenwerkzeug zu wechseln.
+          zum Zeichnen ausgewählten Kachel(n) um 90° <em>im Uhrzeigersinn</em>, ohne das Zeichenwerkzeug zu wechseln (wenn Sie einen benutzerdefinierten Pinsel zum Zeichnen ausgewählt haben, wird der gesamte Pinsel gedreht). Wenn Sie keine Kachel zum Zeichnen ausgewählt haben, aber eine Gruppe von Kacheln im
+          Pinselfenster ausgewählt ist, werden die ausgewählten Kacheln mit dem Werkzeug "Drehen" gedreht.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Unterhalb der Werkzeuge finden Sie zwei verschiedene Abschnitte zur Auswahl beliebiger <a href="Auto_Tiles.htm"><strong>Auto-Kachel</strong></a> oder <a href="Animated_Tiles.htm"><strong>animierten</strong></a> Kacheln, die unter Verwendung des aktuellen Kachelsatzbildes erstellt wurden.
+    Ein einzelnes Sprite, das für ein Kachelset verwendet wird, kann viele, viele Einzelzellenbilder enthalten, und diese können im Animations- oder Autotile-Editor kombiniert werden, um benutzerdefinierte Pinsel zu erstellen, die in diesen Abschnitten angezeigt werden und in Verbindung mit folgenden Elementen verwendet werden können
+    regulären statischen Kacheln zum Erstellen von Pinseln (beachten Sie, dass eine animierte Kachel unabhängig davon animiert wird, ob Sie sie aus der Bibliothek oder aus dem Basis-Kachelsatz ausgewählt haben).</p>
+  <p>Sobald Sie alle benötigten Pinsel eingerichtet haben, können Sie diese verwenden, um Kacheln auf eine beliebige Kachel-Map-Ebene im <a href="../Rooms.htm">Raum-Editor</a> zu malen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Tile_Sets.htm">Kachel-Sets</a></div>
+        <div style="float:right">Nächste: <a href="Animated_Tiles.htm">Animierte Kacheln</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Tile Brushes
+Brush Builder
+-->
+  <!-- TAGS
+tile_set_editor_brushes
+-->
+
+</body></html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ort_besprechung</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_meeting" />
+  <meta name="rh-index-keywords" content="place_meeting" />
+  <meta name="search-keywords" content="place_meeting" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ort_besprechung</h1>
+  <p>Mit dieser Funktion können Sie eine Position auf eine Kollision mit einer anderen Instanz oder allen Instanzen eines Objekts prüfen, indem Sie die Kollisionsmaske der Instanz verwenden, die den Code für die Prüfung ausführt. Wenn Sie dies verwenden, fordern Sie <span class="notranslate">GameMaker Studio 2</span> effektiv auf, die Instanz an die neue Position zu bewegen, auf eine Kollision zu prüfen, zurückzufahren und Ihnen mitzuteilen, ob eine Kollision gefunden wurde oder nicht. Dies funktioniert bei präzisen Kollisionen, aber nur, wenn sowohl für die Instanz als auch für das zu prüfende Objekt präzise Kollisionsmasken
+    ausgewählt sind, da sonst nur Bounding-Box-Kollisionen angewendet werden. Diese Funktion akzeptiert auch die speziellen Schlüsselwörter <b>all</b> und <b>other</b>. Bitte beachten Sie, dass Sie, wenn Sie die eindeutige <b>Instanz-ID</b> des Objekts, mit dem kollidiert wird, benötigen, die Funktion
+    verwenden sollten <a href="../../Asset_Management/Instances/instance_place.htm"><tt>instance_place()</tt></a>.</p>
+  <p><img alt="Place meeting example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/place_meeting.png">Beachten Sie, dass die angegebenen x/y-Koordinaten auf die nächste Ganzzahl heruntergerechnet werden, bevor die Prüfung durchgeführt wird
+    durchgeführt wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">place_meeting(x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die zu prüfende x-Position.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die zu prüfende y-Position.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Die Instanz oder das Objekt, auf das geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if keyboard_check(vk_left)<br> {
+    <br> if !place_meeting(x - 5, y, obj_wall) x -=5;<br> }
+  </p>
+  <p>Der obige Code prüft, ob es links von der Instanz <i>keine</i> Kollision gibt und verschiebt die Instanz, wenn es keine gibt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collisions.htm">Kollisionen</a></div>
+        <div style="float:right">Weiter: <a href="position_empty.htm">position_empty</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_meeting
+-->
+  <!-- TAGS
+place_meeting
+-->
+</body>
+</html>

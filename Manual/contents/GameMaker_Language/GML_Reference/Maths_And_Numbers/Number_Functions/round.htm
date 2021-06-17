@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>rund</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for round" />
+  <meta name="rh-index-keywords" content="round" />
+  <meta name="search-keywords" content="round" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>rund</h1>
+  <p>Wie der Name schon sagt, nimmt <tt>round()</tt> eine reelle Zahl und rundet sie auf die nächste ganze Zahl auf oder ab. In dem speziellen Fall, dass die übergebene Zahl genau eine halbe Ganzzahl ist (1,5, 17,5, -2,5 usw.), wird die Zahl auf den nächsten <i>geraden</i> Wert gerundet, z. B. würde 2,5 auf 2 gerundet werden, während 3,5 auf 4 gerundet wird. Diese Art der Rundung wird <i>Banker-Rundung</i> genannt und ergibt bei einer großen Anzahl von Iterationen oder bei Verwendung von Fließkomma-Mathematik eine statistisch bessere Rundung
+    als der traditionellere Ansatz &quot;aufrunden, wenn über 0,5 und sonst abrunden&quot;.</p>
+  <p>Das bedeutet, wenn der Bruchteil eines Wertes 0,5 ist, dann ist das gerundete Ergebnis die <i>gerade ganze Zahl</i>, die dem Eingabewert am nächsten liegt. So wird z. B. 23,5 zu 24, ebenso wie 24,5, während -23,5 zu -24 wird, ebenso wie -24,5. Diese Methode behandelt positive
+    Diese Methode behandelt positive und negative Werte symmetrisch, ist also frei von Vorzeichenverzerrungen, und, was noch wichtiger ist, für vernünftige Verteilungen von Werten ist der erwartete (durchschnittliche) Wert der gerundeten Zahlen derselbe wie der der ursprünglichen Zahlen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">rund(n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Die zu rundende Zahl.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">score += round(hp / 5);</p>
+  <p>Der obige Code fügt eine gerundete Ganzzahl zum Score-Wert hinzu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Number_Functions.htm">Zahlenfunktionen</a></div>
+        <div style="float:right">Weiter: <a href="floor.htm">Boden</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+round
+-->
+  <!-- TAGS
+round
+-->
+
+</body></html>

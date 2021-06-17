@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_set_bbox</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_set_bbox" />
+  <meta name="rh-index-keywords" content="sprite_set_bbox" />
+  <meta name="search-keywords" content="sprite_set_bbox" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_set_bbox</h1>
+  <p>Mit dieser Funktion können Sie die Bounding-Box-Werte für ein Sprite festlegen. Sie geben den zu verwendenden Sprite-Index und dann die linken, oberen, rechten und unteren Werte für die Positionen des Begrenzungsrahmens an. Die Positionen sind <i>absolute</i> Werte, wobei die Position (0, 0)
+    der linken oberen Ecke des Sprites entspricht, unabhängig vom Offset für das Sprite, von &quot;leeren&quot; Pixeln, die das Sprite haben kann, oder davon, wo es im Raum gezeichnet wird.</p>
+  <p class="note"><b>HINWEIS:</b> Diese Funktion wirkt sich auf das <b>Sprite-Asset </b>aus, so dass alle weiteren Instanzen mit diesem Sprite denselben Begrenzungsrahmen haben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_set_bbox(ind, left, top, right, bottom);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des Sprites, auf das die Bounding Box gesetzt werden soll.</td>
+      </tr>
+      <tr>
+        <td>links</td>
+        <td>Die linke Seite des Begrenzungsrahmens</td>
+      </tr>
+      <tr>
+        <td>oben</td>
+        <td>Der obere Rand des Begrenzungsrahmens.</td>
+      </tr>
+      <tr>
+        <td>rechts</td>
+        <td>Die rechte Seite des Begrenzungsrahmens</td>
+      </tr>
+      <tr>
+        <td>unten</td>
+        <td>Der untere Rand des Begrenzungsrahmens.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if sprite_get_bbox_mode(sprite_index) == 2<br> {
+    <br> left = irandom(sprite_width / 2);<br> right = irandom((sprite_width / 2) + irandom(sprite_width / 2));<br> top = irandom(sprite_height / 2);<br> bottom = irandom((sprite_height / 2) + irandom(sprite_height / 2));<br> sprite_set_bbox(sprite_index,
+    left, top, right, bottom);<br> }
+  </p>
+  <p>Der obige Code prüft den Begrenzungsrahmenmodus des Sprites, das dem <tt>sprite_index</tt> zugewiesen ist, und wenn er auf <tt>manuell</tt> eingestellt ist, wird sein Begrenzungsrahmen geändert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Manipulation.htm">Sprite-Manipulation</a></div>
+        <div style="float:right">Weiter: <a href="sprite_set_speed.htm">sprite_set_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_set_bbox
+-->
+  <!-- TAGS
+sprite_set_bbox
+-->
+</body>
+</html>

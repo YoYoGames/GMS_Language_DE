@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_erzeugen_strom</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_create_stream" />
+  <meta name="rh-index-keywords" content="audio_create_stream" />
+  <meta name="search-keywords" content="audio_create_stream" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_erzeugen_strom</h1>
+  <p>Mit dieser Funktion können Sie einen neuen Tonindex erstellen, der dann in den regulären Audiofunktionen verwendet werden kann, um Audio direkt von einer externen OGG-Dateiquelle zu streamen. Die Funktion benötigt den Dateinamen (der z. B. eine eingebundene Datei sein kann) und
+    gibt den neuen Sound-Index zur Verwendung zurück. Beachten Sie, dass Sie, nachdem Sie den Sound nicht mehr benötigen, die Funktion <a href="audio_destroy_stream.htm"><tt>audio_destroy_stream()</tt></a> mit dem Sound-Index aufrufen, um ihn aus dem
+    Speicher zu entfernen, da sonst ein Speicherleck entstehen kann, das Ihr Spiel verlangsamt und schließlich zum Absturz bringt.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktionalität ist für die HTML5-Zielplattform nicht verfügbar.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_create_stream(filename);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Dateiname</td>
+        <td>Die Datei (nur OGG), von der das Audio gestreamt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Ton-Index</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">snd = audio_create_stream(&quot;Music/Track1.ogg&quot;);<br> audio_play_sound(snd, 0, true);</p>
+  <p>Der obige Code erzeugt einen neuen Sound-Index in der Variablen &quot;snd&quot; aus der angegebenen Datei und spielt dann diesen Sound ab.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_destroy_stream.htm">audio_destroy_stream</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_create_stream
+-->
+  <!-- TAGS
+audio_create_stream
+-->
+</body>
+</html>

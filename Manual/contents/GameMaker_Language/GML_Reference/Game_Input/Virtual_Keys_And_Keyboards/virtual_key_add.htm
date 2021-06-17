@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>virtual_key_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for virtual_key_add" />
+  <meta name="rh-index-keywords" content="virtual_key_add" />
+  <meta name="search-keywords" content="virtual_key_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>virtual_key_add</h1>
+  <p>Mit dieser Funktion können Sie &quot;Berührungen&quot; eines Bildschirmbereichs auf Tastaturereignisse abbilden. Das bedeutet, dass, sobald Sie einen Bereich einer virtuellen Taste zugewiesen haben, alle Berührungen dieses Bereichs das Tastaturereignis auslösen, das der Taste entspricht, die Sie dem Bereich zugewiesen haben
+    dem Bereich zugeordnet haben. Sie können jede von Ihnen definierte virtuelle Taste auch einer Variablen zuweisen, die dann in den weiteren Funktionen der virtuellen Tasten zum Ein-, Ausblenden und Löschen verwendet werden kann. Diese Tasten werden <i>pro Raum</i> zugewiesen und werden automatisch
+    von <span class="notranslate">GameMaker Studio 2</span> bei einem Raumwechsel automatisch entfernt.</p>
+  <p>Die tatsächliche Position der virtuellen Taste basiert auf der <i>Bildschirmposition</i> und nicht auf der Raumposition, daher sind die x/y-Werte absolut auf dem Bildschirm. Das bedeutet, dass Sie sich nicht um die Verwendung von Ansichten oder die relativen Raumkoordinaten kümmern müssen,
+    und können einfach die Tasten im <strong>Create-Event</strong> eines Objekts definieren (Sie müssen eine virtuelle Taste nur einmal pro Raum definieren) und dann Ihre Tasten-Sprites im <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">Draw-GUI-Event</a> zeichnen,
+    wobei die Größe der GUI-Ebene mit der des Bildschirms übereinstimmen muss.</p>
+  <p> </p>
+  <h4>Syntax</h4>
+  <p class="code">virtual_key_add(x, y, w, h, keycode);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate (linke Seite) der virtuellen Taste <i>auf dem Bildschirm</i></td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate (Oberseite) der virtuellen Taste <i>auf dem Bildschirm</i></td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die Breite der virtuellen Taste</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe der virtuellen Taste</td>
+      </tr>
+      <tr>
+        <td>Tastencode</td>
+        <td>Welches Tastatur-Tasten-Ereignis soll durch Berühren dieses Bereichs ausgelöst werden</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Index der virtuellen Taste</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.Left = virtual_key_add(32, 32, 64, 64, vk_left);</p>
+  <p>Der obige Code erzeugt eine virtuelle Taste mit 64x64 Pixeln im Quadrat, die auf dem Bildschirm bei (32, 32) positioniert ist und bei Berührung das Ereignis vk_left auslöst, und weist den Index dieser virtuellen Taste einer globalen Variablen zu.</p>
+  <p><b></b></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Virtual_Keys_And_Keyboards.htm">Virtuelle Tasten und Tastaturen</a></div>
+        <div style="float:right">Weiter: <a href="virtual_key_show.htm">virtual_key_show</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+virtual_key_add
+-->
+  <!-- TAGS
+virtual_key_add
+-->
+</body>
+</html>

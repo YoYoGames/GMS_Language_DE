@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_light_define_direction</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_light_define_direction" />
+  <meta name="rh-index-keywords" content="draw_light_define_direction" />
+  <meta name="search-keywords" content="draw_light_define_direction" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_light_define_direction</h1>
+  <p>Diese Funktion dient zur Definition eines gerichteten Lichts, wobei die Richtung und die Intensität durch die eingegebenen Werte für den x-, y- und z-Einheitsvektor festgelegt werden (d. h. sie müssen zwischen -1 und 1 liegen, wobei 1 oder -1 die volle Intensität und 0 keine Intensität bedeutet). Die
+    Lichtern kann auch eine Farbe gegeben werden, die ebenfalls die wahrgenommene Intensität des Lichts beeinflusst, da bestimmte Farben &quot;dunkler&quot; erscheinen als andere. Sie müssen dem Licht auch eine Indexnummer geben, die in anderen Funktionen verwendet wird, um es zu referenzieren.
+    es.</p>
+  <p class="note"><b>HINWEIS</b>: Es stehen nur 8 Hardware-Lichter zur Verfügung, so dass nur 8 definierte Lichter gleichzeitig aktiviert werden können (obwohl mehr definiert werden können).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_light_define_direction(ind, x, y, z, col);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Die Indexnummer der Leuchte (beliebig)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Komponente des Lichtvektors</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Komponente des Lichtvektors</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Die z-Komponente des Lichtvektors</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Die Farbe, die für das Licht verwendet werden soll (entweder eine Konstante, ein Real- oder ein Hex-Wert).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_set_lighting(true);<br> draw_light_define_direction(1, 0, 1, 0, c_white);<br> draw_light_enable(1, true);</p>
+  <p>Der obige Code aktiviert die Beleuchtung für die gesamte Szene, definiert dann ein weißes, gerichtetes Licht im Raum und schaltet schließlich dieses Licht ein.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Lighting.htm">Beleuchtung</a></div>
+        <div style="float:right">Weiter: <a href="draw_light_enable.htm">draw_light_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_light_define_direction
+-->
+  <!-- TAGS
+draw_light_define_direction
+-->
+</body>
+</html>

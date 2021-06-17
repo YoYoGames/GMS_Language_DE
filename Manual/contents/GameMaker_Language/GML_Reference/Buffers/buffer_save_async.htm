@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_save_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_save_async" />
+  <meta name="rh-index-keywords" content="buffer_save_async" />
+  <meta name="search-keywords" content="buffer_save_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_save_async</h1>
+  <p>Mit dieser Funktion können Sie einen Teil des Inhalts eines Puffers in einer Datei speichern, um ihn dann mit der Funktion <a href="buffer_load.htm"><tt>buffer_load()</tt></a> Funktion (oder einer der anderen Funktionen zum Laden von Puffern) wieder in den Speicher eingelesen werden kann. Der &quot;Versatz&quot;
+    definiert die Startposition innerhalb des Puffers für die Speicherung (in Bytes), und die &quot;Größe&quot; ist die Größe des zu speichernden Pufferbereichs ab diesem Offset (ebenfalls in Bytes). Diese Funktion arbeitet asynchron, so dass das Spiel während des Speicherns weiterläuft
+    und alle Dateien, die mit dieser Funktion gespeichert werden, werden in einem &quot;Standard&quot;-Ordner abgelegt. Dieser Ordner muss <i>nicht</i> in den Dateinamen aufgenommen werden, da er vom <span class="notranslate">GameMaker</span> automatisch hinzugefügt wird. Zum Beispiel würde der Dateinamenpfad &quot; Data\Player_Save<tt>.sav&quot;</tt>
+    tatsächlich unter &quot;<tt>default\Data\Player_Save.sav&quot;</tt> gespeichert werden<tt>.</tt> Wenn Sie die Datei dann aber mit der Funktion <a href="buffer_load_async.htm"><tt>buffer_load_async()</tt></a>laden, müssen Sie den &quot;default&quot;-Teil des Pfades auch nicht angeben
+    Teil des Pfades auch nicht angeben (aber jede andere Dateifunktion benötigt ihn, außer auf den Konsolen Xbox One, PS4 und <span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span>).</p>
+  <p class="note"><b>HINWEIS</b>: Bei HTML5 wird &quot;default/&quot; nicht automatisch hinzugefügt und Sie müssen dies möglicherweise in Ihrem Code berücksichtigen.</p>
+  <p>Die Funktion gibt einen eindeutigen ID-Wert zurück und löst ein <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">asynchrones Save/Load-Ereignis</a> aus, bei dem Sie die zurückgegebene ID verwenden können, um den <tt>async_load-ID-Wert</tt> zu überprüfen,
+    wie in dem erweiterten Beispiel unten gezeigt. Die <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> Map im Ereignis enthält die folgenden zwei Schlüssel/Wertpaare:</p>
+  <ul>
+    <li><b>&quot;id&quot;: die ID der </b>asynchronen Funktion, wie sie von der Speicherfunktion zurückgegeben wird.</li>
+    <li><b>&quot;status&quot;: </b>gibt true zurück, wenn <tt>die</tt> Daten korrekt gespeichert/geladen wurden, <tt>andernfalls</tt> false.</li>
+  </ul>
+  <p>Beachten Sie, dass Sie mehrere Puffer in einem auslagern können, indem Sie diese Funktion mehrfach zwischen den Aufrufen von <a href="buffer_async_group_begin.htm"><tt>buffer_async_group_begin()</tt></a> und <a href="buffer_async_group_end.htm"><tt>buffer_async_group_end()</tt></a>    aufrufen (siehe diese Funktionen für weitere Informationen dazu).</p>
+  <p class="note"><b>HINWEIS</b>: Bei HTML5 werden die zurückgegebenen Ergebnisse als base64-kodierte Strings gespeichert, wenn sie in einer Datei gespeichert werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_save_async(buffer, Dateiname, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu speichernden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Dateiname</td>
+        <td>Der Name der Datei, unter dem gespeichert werden soll.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Offset innerhalb des Puffers, ab dem gespeichert werden soll (in Bytes).</td>
+      </tr>
+      <tr>
+        <td>Größe</td>
+        <td>Die Größe des zu speichernden Pufferbereichs (in Bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>Die Funktion <tt>buffer_save_async()</tt> kann von jedem Ereignis aus aufgerufen werden, und da sie asynchron ist, kann der Callback fast sofort erfolgen oder mehrere Sekunden dauern. Der Aufruf der Funktion ist einfach und würde etwa so aussehen:</p>
+  <p class="code">saveid = buffer_save_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);</p>
+  <p>Der obige Code speichert den Inhalt des Puffers &quot; buff&quot;<i>in die</i> angegebene Speicherdatei und speichert die ID des Funktionsaufrufs in der Variablen &quot; saveid&quot;. Wenn das Speichern abgeschlossen ist, wird das asynchrone Ereignis "Save/Load" ausgelöst
+    ausgelöst und Sie können die <tt>async_load-Map</tt> nach der korrekten ID der Funktion parsen, etwa so:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == saveid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == false<br> {
+    <br> show_debug_message(&quot;Speichern fehlgeschlagen!&quot;);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft zunächst die ID der erstellten DS-Map, dann den Status des Callbacks und gibt eine Debug-Meldung aus, wenn es Probleme gab.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_load.htm">buffer_load</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_save_async
+-->
+  <!-- TAGS
+buffer_save_async
+-->
+</body>
+</html>

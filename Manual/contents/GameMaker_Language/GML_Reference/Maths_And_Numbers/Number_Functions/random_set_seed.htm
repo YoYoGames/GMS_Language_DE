@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>random_set_seed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for random_set_seed" />
+  <meta name="rh-index-keywords" content="random_set_seed" />
+  <meta name="search-keywords" content="random_set_seed" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>random_set_seed</h1>
+  <p>Um eine Zufallszahl zu erzeugen, startet <span class="notranslate">GameMaker Studio 2</span> mit einer zufälligen Seed-Zahl. Mit dieser Funktion können Sie diesen Seed auf einen bekannten Wert setzen und so &quot;erzwingen&quot;, dass das Ergebnis aller nachfolgenden Zufallsereignisse bei jedem Programmdurchlauf das gleiche ist
+    laufen. Diese Funktion kann zum Beispiel in Verbindung mit <a href="random_get_seed.htm"><tt>random_get_seed()</tt></a> verwendet werden, um prozedural generierte Inhalte zu erstellen und die Ergebnisse zu speichern, ohne große Savegames zu haben (Sie speichern nur den Seed, kein
+    für irgendetwas anderes). Sollten Sie wirklich zufällige Ergebnisse für alles benötigen, sollten Sie die <a href="randomise.htm"><tt>randomise()</tt></a> Funktion verwenden.</p>
+  <p class="note"><b>HINWEIS</b>: Während dieser Seed auf jeder Zielplattform konsistente Ergebnisse liefert, können die Ergebnisse zwischen den Plattformen aufgrund der unterschiedlichen Arbeitsweise der einzelnen Ziele variieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">random_set_seed(val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Das Saatgut zum Setzen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if debug<br> {<br> random_set_seed(1);<br> }</p>
+  <p>Der obige Code setzt die Zufallsauswahl nur dann auf 1, wenn die Variable &quot;debug&quot; wahr ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Number_Functions.htm">Zahlenfunktionen</a></div>
+        <div style="float:right">Weiter: <a href="random_get_seed.htm">random_get_seed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+random_set_seed
+-->
+  <!-- TAGS
+random_set_seed
+-->
+
+</body></html>

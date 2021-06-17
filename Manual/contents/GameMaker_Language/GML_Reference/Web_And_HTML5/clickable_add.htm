@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>anklickbar_hinzufügen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for clickable_add" />
+  <meta name="rh-index-keywords" content="clickable_add" />
+  <meta name="search-keywords" content="clickable_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>anklickbar_hinzufügen</h1>
+  <p>Mit dieser Funktion können Sie ein benutzerdefiniertes, anklickbares Symbol erstellen, das als &quot;Schaltfläche&quot; außerhalb des Spiel-Canvas, aber innerhalb des Browserfensters selbst fungiert. Die Funktion gibt einen id-Wert zurück, der in einer Variablen gespeichert werden muss, damit er in allen
+    weiteren Schaltflächenfunktionen verwendet wird, die das neue Symbol referenzieren. Diese Funktion ist sehr nützlich, um zu verhindern, dass der Browser ein Popup-Fenster erstellt, wenn Sie auf die Schaltfläche klicken, da dies alles durch <span class="notranslate">GameMaker Studio 2</span> selbst geschieht.</p>
+  <p>Sie müssen zuerst die Position setzen, die relativ zur (0,0) des Browser-Fensters (linke obere Ecke) ist, und dann den Textur-Seiteneintrag für das Sprite angeben, das das Schaltflächen-Icon haben soll (siehe: <a href="../Asset_Management/Sprites/Sprite_Information/sprite_get_tpe.htm"><tt>sprite_get_tpe()</tt></a>).
+    Sie können dann entweder einen URL angeben, der geöffnet werden soll, oder ein Script (aus dem Asset Browser von <span class="notranslate">GameMaker Studio 2</span>), das geöffnet oder ausgeführt werden soll. Der Parameter &quot;target&quot;, den Sie angeben, ist derselbe wie der Standard-JavaScript-Wert &quot;name&quot;, wenn Sie
+    Methode <tt>open()</tt> verwenden (beachten Sie, dass alle Werte außer &quot;_self&quot; dazu führen können, dass der Browser das Öffnen blockiert oder den Benutzer fragt, ob er es zulassen will), und das Argument &quot;params&quot; ist dasselbe wie der JavaScript-Parameter &quot;specs&quot; für
+    der steuert, welche Eigenschaften das neue Fenster/die neue Registerkarte anzeigen soll (nicht alle Browser unterstützen möglicherweise alle Funktionen). Wenn Sie das Symbol verwenden, um ein internes Skript auszuführen, können diese letzten beiden Argumente als leere Strings &quot;&quot; belassen werden.</p>
+  <p>Gültige Ziele sind:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Ziel</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>_blank</td>
+        <td>Öffnet das verknüpfte Dokument in einem neuen Fenster oder einer neuen Registerkarte.</td>
+      </tr>
+      <tr>
+        <td>_self</td>
+        <td>Öffnet das verknüpfte Dokument in demselben Rahmen, in dem es angeklickt wurde (dies ist die Voreinstellung).</td>
+      </tr>
+      <tr>
+        <td>_Elternteil</td>
+        <td>Öffnet das verknüpfte Dokument im übergeordneten Rahmen.</td>
+      </tr>
+      <tr>
+        <td>_top</td>
+        <td>Öffnet das verknüpfte Dokument im Volltext des Fensters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Gültige Parameter sind:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Parameter</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td><b>height=[px]'</b></td>
+        <td>Die Höhe des Fensters, wobei der Mindestwert 100 ist.</td>
+      </tr>
+      <tr>
+        <td><b>width=[px]'</b></td>
+        <td>Die Breite des Fensters, wobei der Mindestwert 100 ist.</td>
+      </tr>
+      <tr>
+        <td><b>links=[px]'</b></td>
+        <td>Die linke Position des Fensters.</td>
+      </tr>
+      <tr>
+        <td><b>'top=[px]'</b></td>
+        <td>Die obere Position des Fensters (nur IE).</td>
+      </tr>
+      <tr>
+        <td><b>location=[boolean</b>]'</td>
+        <td>Ob das Adressfeld angezeigt werden soll oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>menubar=[boolean</b>]'</td>
+        <td>Ob die Menüleiste angezeigt werden soll oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>resizable=[boolean</b>]'</td>
+        <td>Ob das Fenster in der Größe veränderbar ist oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>'scrollbars=[boolean</b>]'</td>
+        <td>Ob Bildlaufleisten angezeigt werden sollen oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>status=[boolean</b>]'</td>
+        <td>Ob eine Statusleiste hinzugefügt werden soll oder nicht (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td><b>'titlebar=[boolean</b>]'</td>
+        <td>Ob die Titelleiste angezeigt werden soll oder nicht. Dies wird ignoriert, es sei denn, die aufrufende Anwendung ist eine HTML-Anwendung oder ein vertrauenswürdiges Dialogfeld (Standard ist 1);</td>
+      </tr>
+      <tr>
+        <td><b>toolbar=[boolean</b>]'</td>
+        <td>Ob die Browser-Symbolleiste angezeigt werden soll oder nicht (Standard ist ja).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Es ist auch erwähnenswert, dass, wenn das URL-Argument, das Sie übergeben, der Name einer <a href="../../GML_Overview/Script_Functions.htm">Skriptfunktion</a> ist (d. h.: es beginnt nicht mit &quot;http://&quot;) UND das Skript aufgerufen wird <tt><b>gmcallback_*</b></tt>    aufruft, dann können Sie direkte Feeds in ein html5-Ereignis erhalten. <span class="notranslate">GameMaker Studio 2</span> Scriptfunktionsnamen werden <i>nicht</i> verschleiert, wenn sie mit <tt>gmcallback_</tt> beginnen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">clickable_add(x, y, tpe, url, target, params);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position innerhalb des <i>Fensters</i>.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position innerhalb des <i>Fensters</i>.</td>
+      </tr>
+      <tr>
+        <td>tpe</td>
+        <td>Der Texturseiteneintrag für das zu verwendende Sprite.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>Die URL (Website-Adresse), auf die verlinkt werden soll, oder das Skript, das ausgeführt werden soll.</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Dies ist der Zielbereich, in dem die URL geöffnet werden soll (siehe Beschreibung).</td>
+      </tr>
+      <tr>
+        <td>Parameter</td>
+        <td>Die verschiedenen Parameter für das Symbol (siehe Beschreibung).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;);</p>
+  <p>Der obige Code erstellt ein anklickbares DOM-Symbol an der Position (32, 32) der Seite, auf der das Game Canvas läuft. Das Symbol verwendet das Sprite, das von der Texturseite als &quot;spr_MS_Home&quot; referenziert wird, und wenn das Symbol angeklickt wird, öffnet sich ein neues Fenster
+    für die angegebene URL und mit den definierten Eigenschaften für dieses Fenster.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Web_And_HTML5.htm">Web und HTML5</a></div>
+        <div style="float:right">Weiter: <a href="clickable_add_ext.htm">clickable_add_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+clickable_add
+-->
+  <!-- TAGS
+clickable_add
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Während</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the While action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - While" />
+  <meta name="search-keywords" content="While" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="While Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_While.png"> Während</h1>
+  <p>Die <b>While-Aktion</b> wird verwendet, um Schleifen auszuführen, die nur beendet werden, wenn eine bestimmte Bedingung <tt>erfüllt ist</tt>. Sie können z. B. eine Variable verwenden und sie auf <tt>"false"</tt> setzen, dann die While-Schleife ausführen und diese Variable überprüfen lassen, dann zu
+    irgendwann in der Schleife setzen Sie die Variable auf <tt>true</tt> und die Schleife wird beendet. Beachten Sie, dass unabhängig davon, wo Sie die Bedingung innerhalb der while-Schleife setzen, <i>alle</i> Aktionen innerhalb der Schleife bis zum Ende ausgeführt werden, bevor der Rest des Skripts
+    oder Ereignis fortgesetzt wird, das Ändern der Bedingung führt nicht zum sofortigen Verlassen der Schleife.</p>
+  <p>Wenn Sie eine While-Aktion in Ihren Code einfügen, müssen Sie die zu prüfende Variable, die Art der Prüfung (kleiner als, größer als, gleich, etc...) und den Wert, gegen den die Variable geprüft werden soll, angeben (Sie können auch markieren, <i>dass</i> die While
+    Schleife nicht prüft, ob die Bedingung <i>nicht</i> wahr ist). Dann fügen Sie die Aktionen hinzu, die innerhalb der While-Schleife ausgeführt werden sollen, ähnlich wie Sie eine Aktion zu einem &quot;if&quot; hinzufügen würden, d. h.: Sie fügen sie an der Seite der Aktion ein und nicht unter ihr:</p>
+  <p><img alt="While drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/While_Drop.png">Alle zur Seite hinzugefügten Aktionen werden in das While eingeschlossen und werden ausgeführt, bevor das Ereignis oder Skript
+    mit den darunter hinzugefügten Aktionen fortfährt (wie im Beispiel unten gezeigt). Beachten Sie, dass Sie jede Schleife vorzeitig beenden können, wenn Sie die <a href="Break.htm">Break-Aktion</a> aufrufen.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="While Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/a_Loops_While.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Variabel</td>
+        <td>Die in der Prüfung zu verwendende Variable</td>
+      </tr>
+      <tr>
+        <td>Ist</td>
+        <td>Der Typ der durchzuführenden Auswertung (kleiner als, größer als, gleich, größer oder gleich und kleiner oder gleich)</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der Wert, gegen den die Variable geprüft werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="While Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/e_Loops_While.png">Der obige Code des Aktionsblocks erstellt eine temporäre lokale Variable und setzt sie auf <tt>false</tt>. Diese Variable wird
+    Diese Variable wird dann in der While-Schleife überprüft und solange sie false zurückgibt, wird die Schleife ausgeführt. In der Schleife werden zwei temporäre lokale Variablen für eine zufällige x/y-Position im Raum erzeugt, dann wird diese Position auf eine Kollision geprüft. Wenn keine Kollision gefunden wird, wird die ursprüngliche
+    Variable auf <tt>true</tt> gesetzt und die Schleife beendet. Nach Beendigung der Schleife wird eine neue Instanz an der zufälligen Position erzeugt, bei der wir keine Kollisionen festgestellt haben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Loop_Actions.htm">Schleifen-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="For.htm">Für</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - While
+-->
+  <!-- TAGS
+action_while_loop
+-->
+</body>
+</html>

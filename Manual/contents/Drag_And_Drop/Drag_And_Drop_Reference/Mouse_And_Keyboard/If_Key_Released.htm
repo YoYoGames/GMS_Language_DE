@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn die Taste freigegeben ist</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Key Released action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Key released" />
+  <meta name="search-keywords" content="If Key Released Action" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Keyboard Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyReleased.png"> Wenn Taste losgelassen</h1>
+  <p>Diese Aktion prüft, wann eine Taste der Tastatur losgelassen wurde. Sie gibt bei dem einzelnen Spielschritt (Frame), bei dem die Taste losgelassen wird, <tt>true</tt> zurück und zu allen anderen Zeiten <tt>false</tt>. Wenn Sie den Modifikator <tt>not</tt> aktivieren, wird diese Aktion
+    Wenn Sie den Modifikator not aktivieren, wird diese Aktion umgekehrt und prüft, ob die Taste <i>nicht</i> losgelassen wurde, und gibt <tt>false</tt> bei dem Spielschritt (Frame) zurück, bei dem sie losgelassen wurde, und <tt>true</tt> zu allen anderen Zeitpunkten.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in den &quot;if&quot;-Block diese an der Seite der Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="If Key Released drop actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Key_ReleasedDrop.png">Diese Aktionen werden nun ausgeführt, wenn der &quot;if&quot;-Block als wahr ausgewertet wird,
+    während alle Aktionen, die an anderer Stelle ausgelassen werden, nach dem &quot;if&quot;-Block ausgeführt werden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><span><img alt="If Key Released Action" class="center" height="131" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_KeyReleased.png" width="272" /></span></p>
+  <h4>Argumente:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Der Name des zu prüfenden Schlüssels.</td>
+      </tr>
+      <tr>
+        <td>Nicht</td>
+        <td>Negieren der Prüfung (aus true wird false und umgekehrt)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><span><img alt="If Key Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_KeyDown.png"></span>Der obige Code des Aktionsblocks fragt den Tastaturstatus bei jedem Schritt ab und
+    wenn eine Taste gedrückt gehalten wird, prüft er, ob die Taste beim ersten Drücken gedrückt wird. Wenn die Prüfung auf den anfänglichen Tastendruck <tt>zutrifft</tt>, wird ein Ton abgespielt und dann, während die Taste gedrückt gehalten wird, wird die Sprite-Überblendung auf rot geändert. Wenn die Taste nicht gehalten wird
+    wird eine Prüfung beim Loslassen der Taste durchgeführt, um die Überblendungsfarbe auf Weiß zurückzusetzen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Mouse_And_Keyboard_Actions.htm">Maus- und Tastatur-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Show_Virtual_Keyboard.htm">Virtuelle Tastatur anzeigen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Key Released
+-->
+  <!-- TAGS
+action_if_key_released
+-->
+</body>
+</html>

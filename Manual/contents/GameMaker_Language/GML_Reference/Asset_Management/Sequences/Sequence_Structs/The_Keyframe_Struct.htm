@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Die Keyframe-Struktur</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Struct" />
+  <meta name="search-keywords" content="The Keyframe Struct,frame,length,stretch,channels" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Die <span class="notranslate">Keyframe-Struktur</span> </h1>
+  <p>Jeder Spur (wie auf der Seite über <a href="The_Track_Struct.htm">Spurstrukturen</a> definiert) werden eine oder mehrere <a href="../../../../GML_Overview/Structs.htm">Keyframe-Strukturen</a> zugewiesen (die Sie über die <tt><span class="notranslate">keyframes</span></tt> Eigenschaft
+    der Spur-Struktur ablesen können), und jede davon hat die folgenden Eigenschaften:</p>
+  <ul class="colour">
+    <li><tt>Rahmen</tt>: Die Position (in Frames) entlang der Zeitleiste für den <span class="notranslate">Keyframe</span>. Der Standardwert ist 0.<tt></tt></li>
+    <li><tt>Länge</tt>: Die Länge des <span class="notranslate">Keyframes</span>. Der Standardwert ist 1. Wenn er auf größere Werte gesetzt wird, wird die Spureigenschaft, auf die sich der <span class="notranslate">Keyframe</span> bezieht, für die Dauer der angegebenen Länge auf dem Anfangswert gehalten. Beachten Sie, dass die Eigenschaft <tt>stretch</tt> 
+      dies außer Kraft setzt, wenn sie auf <tt>"true"</tt> gesetzt ist.</li>
+    <li><tt>strecken</tt>: Wenn diese Eigenschaft auf <tt>true</tt> gesetzt ist, wird der <span class="notranslate">Keyframe</span> entweder bis zum nächsten <span class="notranslate">Keyframe</span> für die Spur oder bis zum Ende der Spur gedehnt, wenn es der letzte Keyframe ist <span class="notranslate">.</span> Sie können diesen Wert abrufen oder setzen, und
+      der Standardwert ist <tt>false</tt>.</li>
+    <li><tt>Kanäle</tt>: Diese Eigenschaft ermöglicht den Zugriff auf die Liste der <a href="The_Keyframe_Data_Struct.htm"><span class="notranslate">Keyframe-Datenstrukturen</span></a> für die Kanäle der Spur. Wenn Sie diese Eigenschaft erhalten, wird ein <a href="../../../../GML_Overview/Arrays.htm">Array</a> von
+     <span class="notranslate">Keyframe-Datenstrukturen</span> zurückgegeben, und beim Setzen dieser Eigenschaft sollte ein Array von <span class="notranslate">Keyframe-Datenstrukturen</span> angegeben werden.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="The_Keyframe_Data_Struct.htm">Die <span class="notranslate">Keyframe-Datenstruktur</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Keyframe</span> Struct
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>
+-->
+
+</body></html>

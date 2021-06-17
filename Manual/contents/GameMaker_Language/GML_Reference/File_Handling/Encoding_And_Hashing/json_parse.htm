@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>json_parse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for json_parse" />
+  <meta name="rh-index-keywords" content="json_parse" />
+  <meta name="search-keywords" content="json_parse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_parse</h1>
+  <p>Mit dieser Funktion kann ein JSON-String geparst werden (entweder zuvor mit <a href="json_stringify.htm">json_stringify</a> erstellt oder aus einer beliebigen gültigen Quelle) und in eine Sammlung von Arrays oder Structs konvertiert werden, wobei ein Array das Äquivalent eines
+    JSON-Array ist und ein struct das Äquivalent eines JSON-Objekts ist. Sie geben die zu parsende Zeichenkette an, und die Funktion gibt das Array oder Struct der obersten Ebene zurück, das dann in Ihrem Code überprüft werden kann. Wenn Sie sich über den Inhalt des JSON nicht sicher sind, können Sie
+    die verschiedenen <a href="../../Variable_Functions/Variable_Functions.htm">Variablenfunktionen</a> verwenden (wie <a href="../../Variable_Functions/typeof.htm"><span class="inline">typeof()</span></a> oder <a href="../../Variable_Functions/variable_struct_get_names.htm"><span class="inline">variable_struct_get_names()</span></a>)
+    verwenden, um den zurückgegebenen Inhalt zu überprüfen. Beachten Sie, dass der Versuch, einen ungültigen Wert zu analysieren (d. h.: keine Zeichenkette), einen Ausnahmefehler auslöst.</p>
+  <p>Wenn die übergebene JSON-Zeichenfolge &quot;undefined&quot; als Wert für eine Eigenschaft enthält, wird sie <tt>beim</tt> Parsen in pointer_null umgewandelt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><code>json_parse</code>(json)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>json</td>
+        <td>Das zu parsende JSON (eine Zeichenkette)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Verschachtelte Strukturen und Arrays</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>In diesem Beispiel wird die folgende JSON-Zeichenfolge geparst, die in der Variablen &quot;json&quot; gespeichert wird:</p>
+  <p class="code">json = &quot;{\&quot;myObj\&quot;: { \&quot;apples\&quot;:10, \&quot;oranges\&quot;:12, \&quot;potatoes\&quot;:100000, \&quot;avocados\&quot;:0 }, \&quot;myArray\&quot;:[0, 1, 2, 2, 4, 0, 1, 5, 1]}&quot;</p>
+  <p>Diese Zeichenkette würde etwa so geparst werden:</p>
+  <p class="code">data = json_parse(json);<br> if variable_struct_exists(data, &quot;myObj&quot;)<br> {
+    <br> if is_struct(data.myObj)<br> {<br> var _names = variable_struct_get_names(data.myObj);<br> var _str = &quot;&quot;;<br> for (var i = 0; i &lt; array_length(_names); i++;) <br> {<br> _str = _names[i] + &quot;:
+    &quot; + string(variable_struct_get(data.myObj, _names[i]));<br> show_debug_message(_str);<br> } <br> } <br> if variable_struct_exists(data, &quot;meinArray&quot;)<br> {<br> if is_array(data.meinArray)<br> {<br> show_debug_message(data.meinArray);<br> } <br> } <br> }
+  </p>
+  <p>Der obige Code parst die angegebene JSON-Zeichenfolge und erzeugt die folgende Konsolenausgabe:</p>
+  <p class="code">Orangen: 12<br> Kartoffeln: 100000<br> Avocados: 0<br> Äpfel: 10<br> [ 0,1,2,2,4,0,1,5,1 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Encoding_And_Hashing.htm">Datei-Codierung</a></div>
+        <div style="float:right">Weiter: <a href="base64_encode.htm">base64_encode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+json_parse
+-->
+  <!-- TAGS
+json_parse
+-->
+</body>
+</html>

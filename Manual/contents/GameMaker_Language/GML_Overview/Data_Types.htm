@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Daten-Typen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining Data Types" />
+  <meta name="rh-index-keywords" content="Data Types" />
+  <meta name="search-keywords" content="Data Types" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Daten-Typen</h1>
+  <p>In den vorherigen Abschnitten haben wir <a href="Variables_And_Variable_Scope.htm">Variablen und ihre Scoping-Regeln</a> behandelt, aber es wurde wenig über die verschiedenen <b>Datentypen</b> gesagt, die eine Variable speichern kann. Daher werden in diesem Abschnitt die verschiedenen
+    Typen und wofür sie verwendet werden können.</p>
+  <p>Bevor wir fortfahren, wollen wir kurz erklären, was wir mit &quot;Datentypen&quot; meinen. Wenn Sie eine Variable erstellen, kann sie Informationen enthalten, und wenn Sie eine Funktion aufrufen, kann sie auch zurückgegebene Informationen speichern. Allerdings können diese Informationen
+    kann in verschiedenen &quot;Geschmacksrichtungen&quot; vorliegen - zum Beispiel kann es eine reelle <em>Zahl oder</em> eine Zeichenkette sein. Diese verschiedenen Arten von Werten werden als <b>Datentypen</b> bezeichnet, und bei der Verwendung <i>der </i><span class="notranslate">GameMaker-Sprache</span> können sie
+    jeder der folgenden sein:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Strings</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot"><label for="one">Eine Zeichenkette ist einfach ein beliebiger Text, der in Anführungszeichen &quot;...&quot; gesetzt wurde. Sie können bestimmte Operationen mit Strings durchführen, z. B. zwei Strings zusammenfügen, um einen längeren String zu erzeugen (Verkettung), und Sie können auch die Eigenschaften von Strings ändern und sogar reelle Zahlen daraus extrahieren. Für weitere Informationen über Strings und die String-Funktionen siehe: <a href="../GML_Reference/Strings/Strings.htm"><span class="notranslate">GML-Referenz</span></a>- Strings.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Echte Zahlen</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Reelle Zahlen sind alle Werte, die weder eine Zeichenkette, noch einer der anderen möglichen Datentypen sind. So sind 124, 45639,566546456, 0, -45,5 usw... alles Beispiele für reelle Zahlen. Alle reellen Zahlen werden als doppelt genaue Fließkommazahlen oder Integer-Werte gespeichert
+      Werte gespeichert (entweder 32-Bit-Ganzzahlen - <span class="inline">int32</span> - oder 64-Bit-Ganzzahlen - <span class="inline">int64</span>), und der Compiler optimiert, wo dies möglich ist (z. B. wird 0,0 auf den Ganzzahlwert 0 optimiert). Beim Umgang mit
+      mit einem Wert, der keine ganze Zahl ist, können aufgrund der Natur der Fließkommamathematik leichte Rundungsfehler auftreten. Weitere Informationen zu dieser und anderen Funktionen, die sich auf Zahlen beziehen, finden Sie unter: <a href="../GML_Reference/Maths_And_Numbers/Number_Functions/Number_Functions.htm"><span class="notranslate">GML-Referenz</span></a>- Zahlenfunktionen.</p>
+    <p class="note"><b>HINWEIS</b>: Auf dem <b>HTML5-Ziel</b> sind alle reellen Zahlen Doppelwerte.</p>
+    <p class="dropspot">Beachten Sie, dass erstellte Variablen in <span class="notranslate">GameMaker Studio 2</span> zwar alle als doppelpräzise Fließkommazahlen oder Ganzzahlen gespeichert werden, Sie aber im Umgang mit Erweiterungen auch andere Formate verwenden können. Diese können von einer Erweiterung an <span class="notranslate">GameMaker Studio 2</span> übergeben werden
+      übergeben und dann mit der entsprechenden <tt>is_*()</tt> -Funktion überprüft werden, eine Liste davon finden Sie <a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">hier</a>.</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Arrays</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><label for="three">Ein Array ist ein spezieller Datentyp, der zur Aufnahme mehrerer Werte verwendet werden kann. Sie weisen das Array einer Variablen zu und &quot;füllen&quot; dann verschiedene Indizes des Arrays mit Werten. Dieses Array kann dann an Skripte und Funktionen auf einer Pass-by-Reference-Basis weitergegeben werden. Sollten Sie jedoch das übergebene Array ändern, wird es zu einer Kopie des ursprünglichen Arrays und muss daher an die ursprüngliche Variable zurückgegeben werden, damit das Array aktualisiert werden kann. Für weitere Informationen über Arrays siehe: <a href="Arrays.htm"><span class="notranslate">GML</span></a> Übersicht - Arrays.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Strukturen</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"><label for="eleven">Ein struct (manchmal auch &quot;leichtgewichtiges Objekt&quot; genannt) ist eine Rohdatenstruktur, die als Container für Variablen aller Datentypen dient. Ein struct weisen Sie einer Variablen zu und in dem struct können Sie dann weitere Variablen definieren, aus denen dann nach Bedarf gelesen oder in die geschrieben werden kann. Nähere Informationen zu Structs finden Sie im Abschnitt <a href="Structs.htm"><span class="notranslate">GML-Übersicht</span></a>- Structs.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Methoden-Variablen</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot"><label for="twelve">Eine Methodenvariable ist eine Variable, der eine Funktion zugewiesen wurde, und sie kann genau so verwendet werden, wie Sie eine <span class="notranslate">GML-Laufzeitfunktion</span> verwenden würden. Genauere Informationen finden Sie im Abschnitt <a href="Method_Variables.htm">Methodenvariablen</a>.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Hexadezimale Werte</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot"><span class="notranslate">GameMaker Studio 2</span> kann <b>hexadezimale Literale</b> als legitime Werte akzeptieren. Hexadezimale Werte werden besonders häufig bei der Arbeit mit Farben verwendet, können aber überall dort eingesetzt werden, wo ein positiver Integer-Wert benötigt wird. Beachten Sie, dass hexadezimale Werte wie folgt formatiert werden können
+      auf eine der beiden folgenden Arten formatiert werden können, wobei <span class="inline">&lt;<em>abcd</em>&gt;</span> der tatsächliche Hexadezimalwert ist:</p>
+    <p class="code"><span style="background-color: transparent;">$&lt; abcd&gt;</span><span style="background-color: transparent;"></span><br> 0x&lt;
+     <em>abcd&gt;</em></p>
+    <p class="dropspot">Die folgenden Werte können beispielsweise wie gezeigt als Hexadezimalwert ausgedrückt werden:</p>
+    <p class="code">11406 = $2c8e = 0x2c8e<br> 16777215 = $ffffff = 0xffffff</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Boolesche</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Ein Boolean ist einfach ein Wert, der entweder <tt>wahr</tt> oder <tt>falsch</tt> sein kann. Beachten Sie, dass derzeit <span class="notranslate">GameMaker Studio 2</span> eine reelle Zahl gleich oder kleiner als 0,5 als <tt>falschen</tt> Wert und jede reelle Zahl größer als 0,5 als <tt>wahr</tt> interpretiert.
+      Dies bedeutet jedoch <i>nicht</i>, dass Sie 1 und 0 (oder jede andere reelle Zahl) auf true und false prüfen sollten, da Sie auch die <b>Konstanten</b> <tt>true</tt> und <tt>false</tt> zur Verfügung haben, die in Ihrem Code immer verwendet werden sollten, um
+      um Probleme zu vermeiden, falls in einem zukünftigen Update echte boolesche Datentypen hinzugefügt werden.</p>
+    <p class="dropspot">Sie können jede reelle Zahl in einen implizit booleschen Wert umwandeln, indem Sie die folgende Funktion verwenden:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GML_Reference/Variable_Functions/bool.htm">bool</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Zeiger</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Ein Zeiger ist ein Datentyp, der auf eine Speicherstelle &quot;zeigt&quot;. Sie können keine Operationen mit einem Zeiger durchführen und er wird nur für einige sehr spezifische Funktionen verwendet, wie z. B. das Abrufen einer Textur- oder Pufferadresse aus dem Speicher für eine andere Funktion. Für Beispiele
+      von Funktionen, die einen Zeiger zurückgeben, finden Sie unter <a href="../GML_Reference/Buffers/buffer_get_address.htm"><tt>buffer_get_address()</tt></a> oder <a href="../GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm"><tt>sprite_get_texture()</tt></a>.</p>
+    <p class="dropspot">Es gibt auch eine Funktion, die prüft, ob ein Wert ein Zeiger ist (siehe &quot; Prüfen von<b>Datentypen&quot;,</b> unten) und eine Funktion, die einen Wert in einen Zeiger umwandelt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GML_Reference/Variable_Functions/ptr.htm" style="background-color: transparent;">ptr</a></li>
+    </ul>
+    <p class="dropspot">Sie können auch die folgenden eingebauten Konstanten verwenden (und zurückerhalten), wenn Sie Zeiger verwenden:</p>
+    <p class="dropspot"> </p>
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Konstant</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td><span class="inline">pointer_null</span></td>
+          <td>Diese Konstante zeigt an, dass der Zeiger auf nichts Sinnvolles zeigt (dasselbe wie <tt>NULL</tt> in C++ oder null in C#)</td>
+        </tr>
+        <tr>
+          <td><span class="inline">pointer_invalid</span></td>
+          <td>Diese Konstante bedeutet einfach, dass der Wert kein gültiger Zeiger ist</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Enum</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Ein Enum ist ein &quot;Aufzählungszeichen&quot; und erlaubt es Ihnen im Wesentlichen, Ihren eigenen begrenzten Datentyp mit einer Liste konstanter Werte zu erstellen. Enums werden auf der Seite für <a href="Variables/Constants.htm">Konstanten</a> ausführlich erklärt.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Undefiniert</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><label for="seven">Ein undefinierter Wert (auch als &quot;Null&quot;-Wert bezeichnet) liegt vor, wenn ein Ausdruck keinen korrekten Wert hat, obwohl er syntaktisch korrekt ist, und daher etwas zurückgeben muss. Nehmen wir zum Beispiel an, Sie haben eine <a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> und verwenden die Funktion <a href="../GML_Reference/Data_Structures/DS_Maps/ds_map_find_value.htm"><tt>ds_map_find_value()</tt></a>. Was passiert nun, wenn die Map nicht den gesuchten Wert hat? Nun, da die Funktion korrekt formatiert ist und das Problem darin besteht, dass kein solcher Wert existiert, würde sie die <b>Konstante</b> <tt>undefiniert</tt> zurückgeben, und Sie können auf diese Konstante prüfen, wie Sie auf <tt>true</tt> oder einen anderen Wert prüfen würden.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">NaN</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><label for="nine"><tt>NaN</tt> steht für &quot;not a number&quot; und ist eine Konstante, die zurückgegeben werden kann, wenn der Compiler das Ergebnis einer Operation nicht als Zahl auswerten kann. Zum Beispiel kann 0/0 nicht als reelle Zahl definiert werden und wird daher durch <tt>NaN</tt> dargestellt, oder die Quadratwurzel einer negativen Zahl - die als &quot;imaginäre&quot; Zahl gilt - kann nicht als reelle Zahl dargestellt werden und wird daher durch NaN dargestellt.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Unendlichkeit</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">Die Konstante <tt>Unendlich</tt> bezieht sich auf eine Zahl, die als unendlich angesehen wird, wie z. B. das Ergebnis, das Sie erhalten würden, wenn Sie eine beliebige Fließkommazahl durch Null dividieren, z. B.: 1,0/0.</p>
+  </div>
+  <p> </p>
+  <p>Sie können den Datentyp einer beliebigen Variablen mit den auf der folgenden Seite aufgeführten Funktionen überprüfen:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">Variable Funktionen</a></li>
+  </ul>
+  <p>Hier finden Sie auch arithmetische Typentabellen, die die Ergebnisse verschiedener Operationen mit gemischten variablen Datentypen zeigen:</p>
+  <ul class="colour">
+    <li><a href="../../Additional_Information/Type_Tables.htm">Typ-Tabellen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="Instance_Keywords.htm">Instanz-Schlüsselwörter</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Data Type - Real
+Data Type - String
+Data Type - Pointer
+Data Type - Undefined
+Data Type - Enum
+Data Type - True
+Data Type - False
+Data Type - Array
+Data Type - Boolean
+Data Type - NaN
+Data Type - Infinite
+Data Type - Struct
+real
+string
+pointer
+undefined
+enum
+true
+false
+arrays
+boolean
+NaN
+infinite
+ptr
+struct
+pointer_null
+pointer_invalid
+-->
+  <!-- TAGS
+data_type
+real
+string
+pointer
+undefined
+enum
+true
+false
+arrays
+boolean
+ptr
+struct
+pointer_null
+pointer_invalid
+-->
+</body>
+</html>

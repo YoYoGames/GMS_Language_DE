@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Lokale Anlagenpakete</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers creating and installing local asset packages" />
+  <meta name="rh-index-keywords" content="Local Asset Packages" />
+  <meta name="search-keywords" content="local asset packages,asset packages,local packages" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Lokale Anlagenpakete</h1>
+  <p>Im <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">Menü "Tools"</a> haben Sie zwei Optionen zum Erstellen und Importieren von <strong>lokalen Asset-Paketen</strong>. Ein Local Asset Package ist eine Gruppe von Ressourcen, die im Dateiformat <span class="inline">*.yymp</span> gespeichert sind und einfach in bestehende Projekte installiert werden können. Das bedeutet, dass Sie Ihre eigene Bibliothek mit Paketen für häufig verwendete Ressourcen wie Skriptbibliotheken, Splash-Screen-Intros, Menüsysteme usw. erstellen können, ohne dass Sie die
+    die <span class="notranslate">YoYo Games</span> <a href="../Introduction/The_Marketplace.htm"><span class="notranslate">Marktplatz</span></a>.</p>
+  <p> </p>
+  <h2>Erstellen eines Anlagenpakets</h2>
+  <p>Um ein Anlagenpaket zu erstellen, müssen Sie zunächst die Ressourcen erstellt haben, die Sie in einem Projekt auslagern möchten, und dann im Menü <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">Extras</a> die Option <strong>Lokales Paket erstellen</strong> wählen.
+    Dadurch wird das folgende Fenster geöffnet:</p>
+  <p><img alt="Create Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Create.png">In diesem Fenster können Sie einen optionalen <strong>Herausgebernamen</strong> und einen erforderlichen <strong>Anzeigenamen</strong> und eine
+   <strong>Paket-ID</strong>. Die Paket-ID wird verwendet, um den Dateinamen zu generieren, unter dem das Paket gespeichert wird, und wird bei der Erstellung automatisch mit der Dateierweiterung <span class="inline">*.yymp</span> angehängt. Sie können auch die
+   <a class="glossterm" data-glossterm="Versionsnummer" href="#">Versionsnummer</a> des Pakets festlegen und wählen, ob es signiert werden soll oder nicht (dies ist standardmäßig deaktiviert). Um ein Paket zu signieren, müssen Sie ein <strong>Signierzertifikat</strong> erstellt haben (Sie können dies
+    Dies bedeutet, dass ein signiertes Asset nicht importiert werden kann, wenn es nach der Erstellung manipuliert wurde.
+    Erstellung.</p>
+  <p>Nachdem Sie die Details des Pakets ausgefüllt haben, können Sie die gewünschten Assets aus dem Bereich &quot;<strong>Projekt&quot;</strong> auf der rechten Seite auswählen (mit der linken Maustaste <img alt="LMB Icon" class="icon" height="22" src="../assets/Images/Icons/Icon_LMB.png" width="20"> oder einer Kombination aus <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> und <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> zusammen mit der linken Maustaste). Ausgewählte Ressourcen können in die Ansicht &quot;<strong>Asset-Paket&quot;</strong> verschoben werden, indem Sie
+    mit den Schaltflächen " <strong>Hinzufügen </strong>" oder<strong> "Alle hinzufügen"</strong> in die Ansicht "Anlagenpaket" verschoben und mit den Schaltflächen " <strong>Entfernen" </strong>und " <strong>Alle</strong> entfernen" wieder entfernt werden.</p>
+  <p>Wenn Sie mit der Auswahl der Ressource zufrieden sind und die erforderlichen Details eingegeben haben, wird durch Klicken auf die Schaltfläche <strong>"Ok" </strong>ein Datei-Explorer geöffnet, in dem Sie den Speicherort für das Paket auswählen können. Nach der Auswahl wird das Paket erstellt
+    und ein Bestätigungsfenster wird angezeigt, mit der Option, den Speicherort des Pakets im Datei-Explorer des Betriebssystems zu öffnen.</p>
+  <p> </p>
+  <h2>Importieren eines Asset-Pakets</h2>
+  <p>Es gibt zwei Möglichkeiten, ein lokales Anlagenpaket zu importieren:</p>
+  <ul class="colour">
+    <li>die erste ist, die Datei <span class="inline">*.yymp</span> einfach aus einem Explorer-Fenster auf die <span class="notranslate">GameMaker Studio 2</span> IDE zu ziehen</li>
+    <li>die zweite ist die Auswahl der Option &quot;<strong>Lokales Paket importieren&quot;</strong> aus dem Menü &quot;Extras <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">&quot;.</a></li>
+  </ul>
+  <p>Wenn Sie das Menü "Extras" verwenden, öffnet sich ein Explorer-Fenster, in dem Sie zum Speicherort des Pakets navigieren und es zum Importieren auswählen können. In beiden Fällen öffnet sich dann das folgende Fenster in <span class="notranslate">GameMaker Studio 2</span>:</p>
+  <p><img alt="Import Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Import.png">Auf der linken Seite befindet sich der Inhalt des Pakets und auf der rechten Seite die Teile des Pakets, die Sie importieren möchten. Sie können eine
+    oder mehrere Ressourcen aus dem Paket auswählen (mit der linken Maustaste <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> oder einer Kombination aus <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> und <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> zusammen mit der linken Maustaste
+    Taste) und dann die Schaltfläche <strong>Hinzufügen </strong>verwenden, um sie zum Importieren hinzuzufügen, oder die Schaltfläche <strong>Alles hinzufügen </strong>, um alles zum Importieren hinzuzufügen.</p>
+  <p>Wenn Sie alles vorbereitet haben, können Sie dann auf die Schaltfläche <strong>Importieren </strong>klicken, um die ausgewählten Ressourcen zu Ihrem Projekt hinzuzufügen. Beachten Sie, dass Sie auch die Möglichkeit haben, <strong>alle</strong> Ressourcen in ein neues Projekt <strong>zu importieren</strong>, wodurch ein neues
+    Projekt erstellen (und Sie auffordern, einen Speicherort anzugeben) und dann die Paketressourcen zu diesem Projekt hinzufügen.</p>
+  <p>Bitte beachten Sie, dass Asset-Pakete, die mit einer Version vor <span class="notranslate">GameMaker Studio 2</span>.3 erstellt wurden, konvertiert werden müssen, da sich das Projektdateiformat mit dem 2.3-Update geändert hat. Das bedeutet, dass es möglicherweise besser ist, das gesamte Projekt zu importieren und alles zu konvertieren
+    und es dann als neues Paket an einen neuen Speicherort zu exportieren, wenn die Assets häufig in andere Projekte importiert werden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Additional_IDE_Tools.htm">Zusätzliche IDE-Werkzeuge</a></div>
+        <div style="float:right">Weiter: <a href="Project_Image_Generator.htm">Projekt Image Generator</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Local Asset Packages
+Asset Packages
+Local Packages
+-->
+  <!-- TAGS
+local_asset_packages
+-->
+
+</body></html>

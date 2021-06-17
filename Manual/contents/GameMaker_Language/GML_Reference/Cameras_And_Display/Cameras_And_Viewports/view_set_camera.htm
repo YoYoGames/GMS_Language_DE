@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ansicht_setzen_kamera</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_set_camera" />
+  <meta name="rh-index-keywords" content="view_set_camera" />
+  <meta name="search-keywords" content="view_set_camera" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ansicht_setzen_kamera</h1>
+  <p>Diese Funktion setzt eine Kamera auf einen bestimmten Ansichtsanschluss. Sie geben den zu setzenden Ansichtsanschluss an (von 0 bis 7) und liefern den eindeutigen Kamera-ID-Wert (wie er von den <a href="camera_create.htm"><tt>camera_create()</tt></a> Funktionen oder bei Verwendung von <a href="view_get_camera.htm"><tt>view_get_camera()</tt></a>).
+    Wenn Sie als Kamera-ID den Wert -1 angeben, entfernen Sie eine Kamera aus dem Ansichtsanschluss und beachten Sie, dass, wenn dieser Ansichtsanschluss aktiviert und sichtbar ist, Sie möglicherweise unvorhersehbare Ergebnisse erhalten.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">view_set_camera(view_port, camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ansicht_Port</td>
+        <td>Der anzuvisierende Ansichtsanschluss (0 - 7)</td>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var cam = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1);<br> view_set_camera(0, cam);</p>
+  <p>Der obige Code erstellt eine neue Kamera und weist ihr dann view port[0] zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="view_set_visible.htm">view_set_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_set_camera
+-->
+  <!-- TAGS
+view_set_camera
+-->
+</body>
+</html>

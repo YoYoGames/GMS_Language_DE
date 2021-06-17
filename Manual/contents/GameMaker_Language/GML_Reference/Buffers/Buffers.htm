@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Puffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Buffer functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Buffers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Puffer</h1>
+  <p>Ein Puffer ist ein Bereich des physischen Speichers, der verwendet wird, um Daten vorübergehend zu speichern, während sie von einem Ort zum anderen verschoben oder auf irgendeine Weise manipuliert werden, z. B. können Sie einen Puffer verwenden, um Paketdaten zu speichern, die auf die Übertragung über ein Netzwerk warten, oder um
+    eines Pakets, das über ein Netzwerk empfangen wurde. <span class="notranslate">GameMaker Studio 2</span> verfügt über eine Reihe spezifischer Funktionen im Zusammenhang mit dem Erstellen, Ändern und Laden/Speichern von Puffern, aber bevor Sie diese verwenden, beachten Sie bitte die folgenden Punkte:</p>
+  <ul class="colour">
+    <li>Wenn ein Puffer angelegt wird, wird er automatisch gelöscht und auf 0 gefüllt.</li>
+    <li>Das Argument &quot;Größe&quot; der Pufferfunktionen bezieht sich immer auf die Größe <i>des</i> Puffers in Bytes.</li>
+    <li>Das &quot;Alignment&quot;-Argument bezieht sich darauf, wie die Daten in einem Puffer gespeichert werden. Wenn die Ausrichtung auf z. B. 4 eingestellt ist und Sie ein einzelnes Datenstück mit einer Größe von 1 Byte schreiben und dann einen <tt>buffer_tell</tt> ausführen, erhalten Sie einen Offset von 1,
+      Wenn Sie jedoch ein weiteres Stück Daten schreiben, das ebenfalls 1 Byte groß ist, und dann einen <tt>buffer_tell</tt> ausführen, erhalten Sie einen Offset von 5, da die Ausrichtung die Daten auf diese Größe &quot;aufgefüllt&quot; hat. Die Ausrichtung wirkt sich nur darauf aus <i>, wohin</i> die Daten geschrieben werden, wenn Sie also
+      Wenn Sie also einen <tt>buffer_tell</tt> ausführen, nachdem Sie etwas geschrieben haben, wird die aktuelle Schreibposition zurückgegeben, die unmittelbar auf die Daten folgt, die Sie geschrieben haben. Beachten Sie jedoch, dass, wenn Sie dann ein weiteres Stück Daten schreiben, der Puffer intern die
+      die Schreibposition auf das nächste Vielfache der Ausrichtungsgröße verschiebt, bevor er die Daten tatsächlich schreibt.</li>
+    <li>Beim &quot;Offset&quot; handelt es sich um den Wert in Bytes <i>, um</i> den die Daten innerhalb des gegebenen Puffers <i>versetzt werden sollen</i>. Wenn Ihr Puffer also 2 Byte ausgerichtet ist und Sie die ersten 4 ausgerichteten Stellen überspringen möchten, hätten Sie einen Offset von <tt>2 * 4 Byte</tt>.</li>
+    <li>Einige der Pufferfunktionen erzeugen auch einen neuen Puffer (wie z. B. <tt>buffer_load</tt> ). Denken Sie daran, dass diese Puffer auch aus dem Speicher entfernt werden müssen, wenn sie nicht verwendet werden, indem Sie die Funktion <tt>buffer_delete</tt> verwenden.</li>
+    <li>Der Speicher, der für die Erstellung von Puffern verwendet wird, ist <i>Systemspeicher</i>, so dass alle in einem Puffer gespeicherten Daten sicher sein sollten, auch wenn das Spiel nicht den Fokus hat.</li>
+  </ul>
+  <p>Die folgenden Seiten erklären die Funktionsweise von Puffern im Kontext von <span class="notranslate">GameMaker Studio 2</span> und enthalten einige Code-Beispiele für diejenigen Benutzer, die sich nicht sicher sind, wie man sie benutzt:</p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">Puffer verwenden</a></li>
+  </ul>
+  <p class="note"><em><strong>WICHTIG!</strong></em> Wenn Sie einen Buffer erstellen, ist der Indexwert, mit dem er identifiziert wird, ein ganzzahliger Wert, der bei 0 beginnt. Diese Indizes werden vom <span class="notranslate">GameMaker</span> wiederverwendet, so dass ein zerstörter Buffer-Indexwert anschließend von einem neu erstellten verwendet werden kann,
+    und wir empfehlen, dass Sie jede Variable, die einen Buffer-Index enthält, auf -1 setzen, nachdem Sie den Buffer zerstört haben.</p>
+  <p>Die folgenden Funktionen stehen Ihnen für die Verwendung mit Binärpuffern in Ihren Spielen zur Verfügung:</p>
+  <ul class="colour">
+    <li><a href="buffer_exists.htm">Puffer_vorhanden</a></li>
+    <li><a href="buffer_create.htm">puffer_erzeugen</a></li>
+    <li><a href="buffer_create_from_vertex_buffer.htm">buffer_create_from_vertex_buffer</a></li>
+    <li><a href="buffer_create_from_vertex_buffer_ext.htm">buffer_create_from_vertex_buffer_ext</a></li>
+    <li><a href="buffer_delete.htm">Puffer_Löschen</a></li>
+    <li><a href="buffer_read.htm">puffer_lesen</a></li>
+    <li><a href="buffer_write.htm">buffer_write</a></li>
+    <li><a href="buffer_fill.htm">puffer_fuellen</a></li>
+    <li><a href="buffer_seek.htm">puffer_suchen</a></li>
+    <li><a href="buffer_tell.htm">puffer_erzählen</a></li>
+    <li><a href="buffer_peek.htm">Pufferspeicher</a></li>
+    <li><a href="buffer_poke.htm">Puffer_Stange</a></li>
+    <li><a href="buffer_save.htm">puffer_sichern</a></li>
+    <li><a href="buffer_save_ext.htm">puffer_speichern_ext</a></li>
+    <li><a href="buffer_save_async.htm">buffer_save_async</a></li>
+    <li><a href="buffer_load.htm">Puffer_laden</a></li>
+    <li><a href="buffer_load_ext.htm">puffer_laden_ext</a></li>
+    <li><a href="buffer_load_async.htm">puffer_laden_async</a></li>
+    <li><a href="buffer_load_partial.htm">puffer_laden_teilweise</a></li>
+    <li><a href="buffer_compress.htm">puffer_komprimieren</a></li>
+    <li><a href="buffer_decompress.htm">puffer_dekomprimieren</a></li>
+    <li><a href="buffer_async_group_begin.htm">buffer_async_group_begin</a></li>
+    <li><a href="buffer_async_group_option.htm">puffer_async_gruppe_option</a></li>
+    <li><a href="buffer_async_group_end.htm">buffer_async_group_end</a></li>
+    <li><a href="buffer_copy.htm">Puffer_kopieren</a></li>
+    <li><a href="buffer_copy_from_vertex_buffer.htm">puffer_kopieren_vom_vertex_puffer</a></li>
+    <li><a href="buffer_get_type.htm">puffer_get_type</a></li>
+    <li><a href="buffer_get_alignment.htm">buffer_get_alignment</a></li>
+    <li><a href="buffer_get_address.htm">buffer_get_address</a></li>
+    <li><a href="buffer_get_size.htm">buffer_get_size</a></li>
+    <li><a href="buffer_get_surface.htm">buffer_get_surface</a></li>
+    <li><a href="buffer_set_surface.htm">buffer_set_surface</a></li>
+    <li><a href="buffer_resize.htm">puffer_verkleinern</a></li>
+    <li><a href="buffer_sizeof.htm">puffer_groß</a></li>
+    <li><a href="buffer_md5.htm">Puffer_md5</a></li>
+    <li><a href="buffer_sha1.htm">puffer_sha1</a></li>
+    <li><a href="buffer_crc32.htm">Puffer_crc32</a></li>
+    <li><a href="buffer_base64_encode.htm">buffer_base64_encode</a></li>
+    <li><a href="buffer_base64_decode.htm">puffer_base64_decode</a></li>
+    <li><a href="buffer_base64_decode_ext.htm">puffer_base64_decode_ext</a></li>
+    <li><a href="buffer_set_used_size.htm">buffer_set_used_size</a></li>
+  </ul>
+  <p> </p>
+  <p>Es gibt auch zwei zusätzliche Funktionen, die sich auf Puffer beziehen, die zum Speichern und Laden von Spielzuständen verwendet werden können (beachten Sie, dass sie voraussetzen, dass zuvor ein Puffer erstellt wurde):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../General_Game_Control/game_load_buffer.htm">spiel_laden_puffer</a></li>
+    <li><a href="../General_Game_Control/game_save_buffer.htm">game_save_buffer</a></li>
+  </ul>
+  <p> </p>
+  <p>Schließlich können Sie auch spezielle <b>Vertex-Buffer</b> verwenden, um Ihre eigenen benutzerdefinierten Primitive oder Modelle usw. zu erstellen. Sie können mehr über diese aus dem folgenden Abschnitt des Handbuchs erfahren:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">Primitives Gebäude</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../GML_Reference.htm"><span class="notranslate">GML-Referenz</span></a></div>
+        <div style="float:right">Nächste: <a href="../UWP_And_XBox_Live/UWP_And_XBox_Live.htm">UWP und XBox Live</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Buffers
+-->
+  <!-- TAGS
+buffer_functions
+-->
+</body>
+</html>

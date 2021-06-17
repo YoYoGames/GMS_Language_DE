@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pufferspeicher</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_peek" />
+  <meta name="rh-index-keywords" content="buffer_peek,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_peek" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pufferspeicher</h1>
+  <p>Mit der Funktion <a href="buffer_read.htm"><tt>buffer_read()</tt></a> Funktion können Sie Daten aus dem angegebenen Puffer an der aktuellen &quot;seek&quot;-Position lesen, wobei jedes zu lesende Datenstück diese Position um die zu lesenden oder zu schreibenden Bytes vorverlegt.
+    Es kann jedoch notwendig sein, ein bestimmtes Stück Daten zu lesen, ohne die aktuelle "seek"-Position zu verändern, und in diesem Fall würden Sie diese Funktion verwenden. Sie übergeben der Funktion einfach eine Puffer-ID und dann eine Offset-Position (vom
+    Sie geben der Funktion einfach eine Puffer-ID und eine Offset-Position (vom Pufferanfang) innerhalb des Puffers an, aus dem Sie lesen wollen, sowie den Datentyp, den Sie lesen wollen.</p>
+  <p class="note"><b>HINWEIS</b>: Die Verwendung des falschen Datentyps für die zu lesenden Daten führt zu fehlerhaften Werten!</p>
+  <p>Bei Erfolg der Funktion wird ein Wert (Real, string, int, etc...) je nach Datentyp zurückgegeben, während bei einem Fehler einfach 0 zurückgegeben wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_peek(buffer, offset, type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu verwendenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Die Offset-Position (in Bytes) innerhalb des Puffers, aus dem die angegebenen Daten gelesen werden sollen.</td>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der Daten, die aus dem Puffer gelesen werden sollen (siehe die Liste der Konstanten <a href="buffer_read.htm">hier</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real/String oder 0, wenn es fehlschlägt.</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var red = buffer_peek(buff, 1, buffer_u8);<br> var green = buffer_peek(buff, 2, buffer_u8);<br> var blue = buffer_peek(buff, 3, buffer_u8);<br> image_blend = make_colour_rgb(red, green, blue);</p>
+  <p>Der obige Code holt sich drei Werte von drei verschiedenen Positionen innerhalb des Puffers, die in der Variablen &quot;buff&quot; indiziert sind, und verwendet dann diese Werte, um die Bildüberblendung der Instanz einzustellen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_poke.htm">buffer_poke</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_peek
+-->
+  <!-- TAGS
+buffer_peek
+-->
+</body>
+</html>

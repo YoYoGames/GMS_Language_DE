@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_einfügen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_insert" />
+  <meta name="rh-index-keywords" content="array_insert" />
+  <meta name="search-keywords" content="array_insert" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span>array_einfügen</span></h1>
+  <p>Mit dieser Funktion können Sie einen Wert (oder mehrere Werte) an einer beliebigen Position in ein Array einfügen. Die Funktion benötigt eine Variable, die das Array enthält, den Index (die Position) im Array, an der eingefügt werden soll, sowie mindestens <em>einen</em> einzufügenden Wert.
+    Sie können jedoch optional weitere Argumente angeben, die dann alle in fortlaufender Reihenfolge ab dem angegebenen Index in das Array eingefügt werden.</p>
+  <p>Beachten Sie, dass, wenn der angegebene Index außerhalb der Länge des Arrays liegt, die Werte am angegebenen Index hinzugefügt werden und alle leeren Stellen im Array zwischen dem letzten Wert und den eingefügten Werten auf einen Standardwert von 0 gesetzt werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">array_insert(variable, index, wert, [wert], [wert], [usw...]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>variabel</td>
+        <td>Die Variable, die das Array enthält.</td>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index (Position) im Array zum Einfügen des/der Werte(s) </td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der einzufügende Wert</td>
+      </tr>
+      <tr>
+        <td>[Wert], [Wert], [etc...]</td>
+        <td>(Optional) Weitere Werte zum Einfügen in das Array</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">array_insert(score_array, score_rank, current_score);</p>
+  <p>Der obige Code fügt den aktuellen Punktestand in das Punkte-Array ein, und zwar an dem durch die Variable <tt>score_rank</tt> definierten Index.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="array_delete.htm">array_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_insert
+-->
+  <!-- TAGS
+array_insert
+-->
+</body>
+</html>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Animationskurven verwenden</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to use animation curves with sequences
+" />
+  <meta name="rh-index-keywords" content="Sequences - Animation Curves" />
+  <meta name="search-keywords" content="curves,animation curves" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Animationskurven verwenden</h1>
+  <p>Eine wichtige Funktion des <a href="Using_The_Dope_Sheet.htm"><span class="notranslate">Dotierfolie</span></a> ist die Möglichkeit, Parameterspuren innerhalb der Sequenz <a href="../Animation_Curves.htm">Animationskurven</a> zuzuweisen, um <strong>Parameterkurven</strong> anstelle von
+    von <span class="notranslate">Parameter-Keyframes</span>. Es gibt zwei Arten von Kurven, die für Parameterspuren verwendet werden können:</p>
+  <ul class="colour">
+    <li><strong>Eingebettete Kurven</strong>: Dies sind Kurven, die in die Sequenz eingebettet sind und für die Parameterspur, auf der sie verwendet werden, eindeutig sind.</li>
+    <li><strong>Gemeinsame Kurven</strong>: Dies sind Kurven, die unabhängig von der Sequenz mit dem <a href="../Animation_Curves.htm">Animationskurven-Editor</a> erstellt werden.</li>
+  </ul>
+  <p>Wir beginnen mit der Erläuterung der Verwendung eines Animationskurven-Assets, bei dem es einfach darum geht, eine neue Kurve zu erstellen, die Kanäle im Animationskurven-Editor einzurichten und dann das Kurven-Asset in das Dope <span class="notranslate">Sheet</span> zu ziehen <span class="notranslate">, um</span> es auf einen Parameter anzuwenden
+    Spur:</p>
+  <p><br />
+    <img alt="Add Animation Curve Asset To The Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_AddAnimCurve.gif" /></p>
+  <p>Sie können auch die Menüoption <strong>Gemeinsame Kurve zuweisen (Import)</strong><strong> </strong>der rechten Maustaste <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> verwenden, um ein Animationskurvenelement
+    zu der ausgewählten Parameterspur hinzuzufügen. Dadurch wird der Asset-Explorer geöffnet, in dem Sie die gewünschte Kurve aus den dargestellten auswählen können:</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_Shared_Curve.gif">Es ist wichtig zu beachten, dass das Animationskurven-Asset <strong>die richtige Anzahl von Kanälen für die Spur haben muss, auf die es angewendet wird</strong>, da jede
+    Typ der Parameterspur erfordert eine unterschiedliche Anzahl von Kanälen in der Animationskurve. Alle Animationskurven, die nicht genügend Kanäle haben, werden im Asset-Browser mit einem <img class="icon_small" src="../../assets/Images/Icons/Invalid_Triangle_Yellow.png"> Indikator angezeigt.</p>
+  <p>Nachfolgend finden Sie eine Liste der verschiedenen Parameterspuren und der Kanäle, die sie in jeder Kurvenanlage benötigen (die Kanäle sollten in der für jeden Parametertyp angegebenen Reihenfolge hinzugefügt werden):</p>
+  <ul class="colour">
+    <li><strong>Position</strong>: 2 Kanäle, X und Y.</li>
+    <li><strong>Drehung</strong>: 1 Kanal.</li>
+    <li><strong>Farbe multiplizieren</strong>: 4 Kanäle, Alpha, Rot, Grün und Blau, und der Bereich <em>muss</em> zwischen 0 und 255 liegen.</li>
+    <li><strong>Bild-Index</strong>: 1 Kanal.</li>
+    <li><strong>Bildgeschwindigkeit</strong>: 1 Kanal.</li>
+    <li><strong>Ursprung</strong>: 2 Kanäle, X und Y.</li>
+    <li><strong>Skalierung</strong>: 2 Kanäle, X-Skala und Y-Skala, und beachten Sie, dass der Wert ein Multiplikator ist, d. h. der Basiswert ist 1 (keine Skalierung) und größer als 1 macht das Bild größer, und kleiner als 1 macht es kleiner. Negative Werte spiegeln oder
+      spiegeln das Bild und wenden die Skalierung an.</li>
+    <li><strong>Tonhöhe</strong>: 1 Kanal, der mindestens den Wert 0 haben <em>muss</em>, wobei 1 die Standardtonhöhe des Klangs ist.</li>
+    <li><strong>Lautstärke</strong>: 1 Kanal, der mindestens 0 und maximal 1 sein <em>muss </em>.</li>
+  </ul>
+  <p>Wenn Sie eine Animationskurve importieren, die nicht genügend Kanäle für die Parameterspur hat, werden Sie aufgefordert zu wählen, ob die fehlenden Kanäle in die Animationskurve eingefügt werden sollen:</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Invalid_Curve.png" /></p>
+  <p>Gemeinsame Kurven können auch ungültig gemacht werden, wenn erforderliche Kanäle in einem externen Animationskurven-Editor gelöscht werden. In einem solchen Fall erscheint die gemeinsame Kurve als ungültig und Sie können auf &quot;Kanal(e) hinzufügen&quot; klicken, um die
+    Sie können auf "Kanal(e) hinzufügen" klicken, um die fehlenden Kanäle zu erstellen, wodurch die Kurve wieder gültig wird:</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Invalid_Curve_Error.png" /></p>
+  <p>Standardmäßig wird die Animationskurve über die gesamte Länge des Asset-Schlüssels, an den sie angehängt ist, angewendet. Sie können jedoch, ähnlich wie bei <span class="notranslate">Keyframes</span>, auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf eine Kurve klicken und sie ziehen, um sie auf der Zeitleiste neu zu positionieren, und Sie können auch die Taste <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> gedrückt halten und ziehen, um die Länge der Kurve zu ändern
+    (dies gilt auch für <strong>eingebettete Kurven</strong>):</p>
+  <p><img alt="Resize and reposition anim curves" class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_ResizeCurve.gif">Die andere Möglichkeit, eine Parameterkurve zu einer Spur hinzuzufügen, besteht darin, sie einzubetten. Dies geschieht entweder durch Klicken mit der rechten Maustaste
+    <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> auf die Parameterspur klicken und &quot;<em>In Kurve konvertieren&quot;</em> wählen<em>, oder</em> indem Sie auf die Schaltfläche &quot; <strong>Kurvenmodus</strong> umschalten&quot; <img src="../../assets/Images/Icons/Icon_Seq_ToggleCurves.png"> klicken, wodurch Sie die Spur als Animationskurve im gesamten <span class="notranslate">Dope-Sheet-Bereich</span> sehen <span class="notranslate">und</span> dann auf die <strong>Schaltfläche &quot;</strong> In <strong>Kurve</strong> konvertieren&quot; klicken können <strong>:</strong> </p>
+  <p><img alt="Convert keyframes to a curve" class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_ConvertToCurve.gif">Nachdem Sie die <span class="notranslate">Parameter-Keyframe-Spur</span> in eine Kurve konvertiert haben, kann sie im <span class="notranslate">Dope-Sheet</span> bearbeitet werden, und zwar genau so wie
+    Dies beinhaltet das Hinzufügen oder Entfernen von Punkten, das Ändern ihrer Position, das Ändern des <a href="../Animation_Curves.htm">Kurventyps</a>(linear, glatt oder Bezier), das Anwenden von Voreinstellungen und das Umbenennen von Kanälen und den damit verbundenen Farben.
+    die mit ihnen verbunden sind.</p>
+  <p class="note"><strong>WICHTIG</strong>: Sie können auf diese Weise auch Animationskurven-Assets bearbeiten, die auf Parameterspuren angewendet wurden, allerdings werden alle Änderungen, die Sie vornehmen, <strong>auf alle Spuren angewendet, die die Animationskurve verwenden</strong>, da Sie
+    Kurven-Asset bearbeiten und nicht eine einzelne Kopie davon. Um ein Animationskurven-Asset, das auf eine Spur angewendet wurde, <strong>nur</strong> auf dieser Spur zu bearbeiten, müssen Sie zunächst das rechte Mausmenü <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> auf der Parameterspur verwenden und <b>Kurve einbetten</b> auswählen. Dadurch wird das Animationskurven-Asset dupliziert und als unabhängige Kurve nur für diese Spur in die Pararmeterspur eingebettet. Umgekehrt können Sie eine eingebettete Animationskurve
+    in ein Animationskurven-Asset umwandeln, indem Sie mit der rechten Maustaste <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> die Menüoption <strong>Export To Shared Curve</strong> wählen. Dies konvertiert die eingebettete
+    Kurve in ein neues Asset um, das dann wie gewohnt bearbeitet und bei Bedarf auch auf andere Parameterspuren angewendet werden kann.</p>
+  <p><img alt="The dope sheet curve editor" class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_EmbeddedCurves.png" /></p>
+  <p>Das Bild oben zeigt, wie der eingebettete Animationskurven-Editor aussieht, und er ist dem <a href="../Animation_Curves.htm">Animationskurven-Editor</a> sehr ähnlich <a href="../Animation_Curves.htm">.</a> Erweitern Sie jeden Abschnitt unten, um weitere Informationen zu den verschiedenen Abschnitten zu erhalten.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Kurve Name</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Dies ist der Name des externen Animationskurven-Assets oder der Name der Parameterspur für eine eingebettete Kurve.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Kurvenbibliothek</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Die Schaltfläche <img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" style="cursor: nwse-resize;" width="13"> öffnet das <strong><span data-keyref="Animation_Curve_Presets_Library">Animationskurven-Bibliothek</span></strong> Fenster,
+      in dem Sie den Kurventyp der eingebetteten oder gemeinsamen Kurve ändern und eine Voreinstellung auf den ausgewählten Kanal anwenden können.</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library.png">Informationen zu <a href="../Animation_Curve_Properties/Animation_Curve_Library.htm" title="Animation Curve Library">Kurventypen</a> und Voreinstellungen finden Sie im Abschnitt über die
+      Informationen zu Kurventypen und Voreinstellungen. Beachten Sie, dass beim Öffnen des Fensters über die Schaltfläche <img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" style="cursor: nwse-resize;" width="13"> standardmäßig der Anwendungsmodus <strong>&quot;Überschreiben&quot;</strong> ausgewählt ist.</p>
+    <ul class="dropspotlist"><br />
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Kanal-Liste</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">In der Kanalliste können Sie die verschiedenen Kanäle bearbeiten, aus denen Ihre Parameterkurve besteht. Jeder Kanal muss einen eindeutigen Namen haben ( <span data-keyref="Asset name restriction">nur alphanumerische Zeichen und das Unterstrichsymbol &quot;_&quot;</span> verwenden <span data-keyref="Asset name restriction">),</span>
+      und Sie können auch die Farbe für den Kanal festlegen, indem Sie auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> auf das Farbfeld links doppelklicken, wodurch sich der Farbwähler öffnet und Sie eine neue Farbe auswählen können.
+      Um den Kanal umzubenennen, können Sie einen langsamen Doppelklick <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> und umbenennen machen, und Sie können auch die rechte Maustaste <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> verwenden, um ein Menü zu öffnen, in dem Sie wählen können, ob Sie den Kanal umbenennen, die Farbe ändern oder kopieren möchten. Kanäle können durch Klicken auf den Pfeil neben dem Namen erweitert werden, um jeden der Punkte auf der Kanalkurve anzuzeigen, und diese Punkte können manuell bearbeitet werden, indem Sie auf
+      den aktuellen Wert klicken und den neuen Wert eintippen. Sie können die Sichtbarkeit des Kanals im <span class="notranslate">Dotierungsblatt</span> auch umschalten, indem Sie auf das &quot;Augen&quot;-Symbol <img alt="Eye Icon" class="icon" src="../../assets/Images/Icons/Icon_ToggleVisibility.png"> klicken.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Konvertierungssteuerung</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Hier können <span class="notranslate">Keyframes</span> in Parameterkurven umgewandelt werden (wie weiter oben auf dieser Seite erklärt), aber es gibt auch eine Schaltfläche zum Umwandeln von Parameterkurven in <span class="notranslate">Keyframes</span>. Sie sollten sich jedoch bewusst sein, dass es dabei einige Vorbehalte gibt. <span class="notranslate">Keyframes</span>
+      können nicht &quot;zwischen&quot; Frames liegen, so dass einige Kurvenwerte auf den nächsten Frame gerundet werden müssen, was wiederum das Verhalten der Parameterspur verändert. Wenn die Parameterkurve außerdem eine Katmull- oder Bezier-Interpolation verwendet, <strong>geht diese verloren </strong>und
+      die Interpolation zwischen <span class="notranslate">Keyframes</span> wird auf lineare Interpolation gesetzt.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Menü "Kurve</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Dieses Menü enthält Optionen, die an anderen Stellen des Editors verfügbar sind, aber alle an einem Ort. Die Optionen sind:</p>
+    <ul class="dropspotlist">
+      <li><strong>Bereich einstellen</strong>: Stellen Sie den vertikalen Bereich der Parameterkurve ein (siehe <em>Kanalbereich</em>, unten).</li>
+      <li><strong>In Kurve konvertieren</strong>: Wandelt die ausgewählte Parameterspur mithilfe von <span class="notranslate">Keyframes</span> in eine Parameterkurve um.</li>
+      <li><strong>Kurve einbetten</strong>: Bettet das gemeinsame Kurven-Asset, das von der Parameterspur verwendet wird, in die Spur ein.</li>
+      <li><strong>Zugewiesene gemeinsam genutzte Kurve (Import)</strong>: Weisen Sie ein Animationskurven-Asset zu, das als gemeinsame Kurve für die Parameterspur verwendet werden soll.</li>
+      <li><strong>In Keys konvertieren</strong>: Wandelt die ausgewählte Parameterspur mit Hilfe von Parameterkurven in <span class="notranslate">Keyframes</span> um.</li>
+      <li><strong>In gemeinsam genutzte Kurve exportieren</strong>: Konvertieren Sie die eingebettete Kurve in ein gemeinsames Kurven-Asset.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Kanalbereich</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Die Schaltfläche "Kanalbereich" dient zum Einstellen des visuellen vertikalen Bereichs für den Kanal-Editor. Standardmäßig ist dieser von -1 bis 1 eingestellt, aber wenn Sie auf diese Schaltfläche klicken, wird das folgende Fenster geöffnet:</p>
+    <p><img alt="Animation Curve Editor Channel Range" class="center" height="136" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Range.png" width="198" /></p>
+    <p class="dropspot">Wenn Sie diese Werte ändern, ändert sich die Darstellung der Daten im Kanal-Editor-Bereich, so dass Sie höhere/niedrigere Werte entlang der Kanalkurve als nur -1 bis 1 haben können. Beachten Sie, dass dies rein visuell ist und die Werte für den Kanal nicht festhält.
+      den Kanal.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Kanal-Editor</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Der Kanal-Editor zeigt eine visuelle Darstellung der verschiedenen Kanäle, die in der Parameterkurve verwendet werden. Standardmäßig werden hier alle Kanäle angezeigt, aber Sie können nur den aktuell in der Kanalliste ausgewählten Kanal bearbeiten, der im Editor hervorgehoben wird
+      im Editor. Sie können die Position jedes der Punkte entlang der Kanalkurve ändern, indem Sie auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> klicken und sie im Editor verschieben, aber beachten Sie, dass
+      Beachten Sie jedoch, dass der erste und der letzte Punkt nur entlang der vertikalen Achse geändert werden können und ihr horizontaler Wert immer 0 bzw. 1 sein wird.</p>
+    <div class="droptext" data-targetname="drop-down7">
+      <p class="dropspot">Sie können Punkte direkt zur Kanalkurve hinzufügen, indem Sie die Maus in die Nähe der Hauptkanallinie bewegen und dann auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> klicken, wenn der Cursor zum Werkzeug &quot;<strong>Punkt</strong> hinzufügen<strong>&quot;</strong> wechselt.
+        Sie können diese Punkte dann bearbeiten, indem Sie auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> klicken und ziehen oder indem Sie ihre Werte in den erweiterten Kanaloptionen in der Kanalliste ändern:</p>
+      <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor.gif" /></p>
+    </div>
+    <p class="dropspot">Sie können mehrere Punkte auf einmal bearbeiten, indem Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> klicken und innerhalb des Editors ziehen, um alle zu bearbeitenden Punkte auszuwählen, oder indem Sie <img alt="CTRL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> verwenden, um Punkte einzeln zur Auswahl hinzuzufügen. Wenn Sie die Maustaste loslassen und dann erneut auf einen der Punkte in der Auswahl klicken und ziehen, werden sie alle zusammen verschoben:</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor_Move.gif">Sie können <img class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> mit der rechten Maustaste auf eine beliebige Stelle im Kanal-Editor klicken, um das Fenster <a href="../Animation_Curve_Properties/Animation_Curve_Library.htm">"Animationskurven-Bibliothek"</a> zu öffnen (nur wenn der ausgewählte Kurventyp <strong>Bezier</strong> ist). Das Anwenden einer Voreinstellung auf diese Weise wirkt sich auf den gesamten Kanal aus. Um nur einen Teil des Kanals zu ändern, können Sie <img class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> mit der rechten Maustaste auf eine einzelne Linie klicken, um eine Voreinstellung darauf anzuwenden, oder mehrere Linien auswählen, indem Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> klicken und ziehen und dann <img class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> mit der rechten Maustaste auf die Auswahl klicken, um eine Voreinstellung auf die ausgewählten Linien anzuwenden.</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor_Library.gif">Beachten Sie, dass beim Öffnen des Fensters &quot; <strong>Animationskurvenbibliothek&quot;</strong> über den Kanal-Editor standardmäßig der Anwendungsmodus <strong>&quot;Zwischen&quot;</strong> ausgewählt ist.</p>
+  </div>
+  <p> </p>
+  <p>Wenn Sie mit der Bearbeitung der Parameterkurven fertig sind, können Sie durch Klicken auf die Schaltfläche " <strong>Toggle Curve Mode"</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_ToggleCurves.png"> zur regulären <span class="notranslate">Dope-Sheet-Ansicht</span> der verschiedenen Spuren zurückkehren.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Nächste: <a href="Broadcast_Messages.htm">Broadcast-Nachrichten</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Editor
+Rooms
+Layers
+Layer Properties
+-->
+  <!-- TAGS
+room_editor
+-->
+</body>
+</html>

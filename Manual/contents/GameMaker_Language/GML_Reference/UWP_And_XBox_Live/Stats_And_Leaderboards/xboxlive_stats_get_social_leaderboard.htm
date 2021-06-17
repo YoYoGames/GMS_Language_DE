@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_get_social_leaderboard</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_get_social_leaderboard" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_get_social_leaderboard, achievement_stat_event" />
+  <meta name="search-keywords" content="xboxlive_stats_get_social_leaderboard,achievement_stat_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_get_social_leaderboard</h1>
+  <p>Diese Funktion kann verwendet werden, um eine soziale Rangliste der Ränge für eine bestimmte Statistik abzurufen. Sie liefern die Benutzer-ID (wie sie z. B. von der Funktion <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>), die
+    stat string (wie bei der Erstellung mit den xboxlive_stats_set_stat_*-Funktionen definiert), und dann geben Sie eine Reihe von Details darüber an, welche Leaderboard-Informationen Sie abrufen möchten. Beachten Sie, dass Sie eine soziale Bestenliste nur für
+    int- oder real-Statistiken abrufen können, nicht aber für String-Statistiken, und dass, wenn Sie das Argument &quot;favourites_only&quot; als wahr markieren, die Ergebnisse nur Daten für die Freunde enthalten, die vom Benutzer als &quot;Favoriten&quot; markiert sind.</p>
+  <p class="note"><b>WICHTIG!</b> Statistiken, die in sozialen Bestenlisten verwendet werden, müssen <b>nicht</b> als &quot;Featured Stats&quot; im XDP/Windows<span class="notranslate">Dev</span> Center registriert werden...</p>
+  <p>Die Funktion erzeugt einen Callback, der ein <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">asynchrones Systemereignis</a> auslöst. Dieses Ereignis hat die spezielle DS-Map <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    die dann für die folgenden Schlüssel geparst werden sollte:</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - Enthält die Konstante <tt>achievement_stat_event</tt></li>
+    <li>&quot;Ereignis<b>&quot; -</b> enthält die Zeichenkette &quot;GetLeaderboardComplete<i>&quot;</i></li>
+    <li>&quot;userid<b>&quot; -</b> Die mit der Anfrage verbundene Benutzer-ID</li>
+    <li>&quot; error<b>&quot; - 0</b> bei Erfolg, ein anderer Wert, wenn ein Fehler aufgetreten ist. Der folgende ist der häufigste zurückgegebene Fehler:
+      <ul>
+        <li>-2145844848: Schlechte Anfrage (die Statistik ist kein gültiger Leaderboard-Typ, d. h. ein String)</li>
+      </ul>
+    </li>
+    <li>&quot;errormessage<b>&quot; - Eine</b> Zeichenkette mit einer Fehlermeldung, falls eine vorhanden ist</li>
+    <li>&quot;<b>display_name&quot; -</b> Die eindeutige ID für das Leaderboard, wie sie auf dem Provider-Dashboard definiert ist.</li>
+    <li>&quot; numentries<b>&quot; -</b> Die Anzahl der Einträge in der Rangliste, die Sie erhalten haben.</li>
+  </ul>
+  <p>Der Rest der DS-Karte enthält auch die Ranglistendaten mit dem folgenden Format (wobei &quot;N&quot; die Position in den Ranglistendaten ist, von 0 bis &quot;numentries&quot;):</p>
+  <ul class="colour">
+    <li>&quot;<b>PlayerN&quot; -</b> Der Name des Spielers, wobei &quot;N&quot; ein ganzzahliger Wert ist, der seiner Position innerhalb der Liste der Einträge in der Bestenliste entspricht.</li>
+    <li>&quot;<b>PlayeridN&quot; -</b> Die eindeutige Benutzer-ID des Players, &quot;N&quot;.</li>
+    <li>&quot; RankN<b>&quot; -</b> Der Rang des Spielers &quot;N&quot; innerhalb der Rangliste.</li>
+    <li>&quot; ScoreN<b>&quot; -</b> Der Punktestand des Spielers &quot;N&quot;.</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_stats_get_social_leaderboard(user_id, stat, num_entries, start_rank, start_at_user, favourites_only);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Die Benutzer-ID des Benutzers, für den die Bestenliste angezeigt werden soll</td>
+      </tr>
+      <tr>
+        <td>stat</td>
+        <td>Die Statistik (als String), aus der die globale Rangliste erstellt werden soll</td>
+      </tr>
+      <tr>
+        <td>num_entries</td>
+        <td>Die Anzahl der Einträge aus der globalen Rangliste, die abgerufen werden sollen</td>
+      </tr>
+      <tr>
+        <td>start_rank</td>
+        <td>Der Rang in der Rangliste, von dem aus gestartet werden soll (verwenden Sie 0, wenn das Argument &quot;start_at_user&quot; auf true gesetzt ist)</td>
+      </tr>
+      <tr>
+        <td>start_am_benutzer</td>
+        <td>Auf <tt>true</tt> gesetzt, um mit dem Rang der Benutzer-ID zu beginnen, andernfalls <tt>false</tt> (auf <tt>false</tt> gesetzt, wenn das Argument &quot;start_rank&quot; etwas anderes als 0 ist)</td>
+      </tr>
+      <tr>
+        <td>favoriten_nur</td>
+        <td>Auf <tt>true</tt> setzen, um nur Freunde anzuzeigen, die als &quot;Favoriten&quot; markiert sind, <tt>sonst</tt> false</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>Im Folgenden finden Sie ein erweitertes Beispiel, wie diese Funktion verwendet werden kann. Zunächst würden Sie sie in einem Ereignis wie Room <b>Start oder</b> <b>Create</b> aufrufen <b>:</b></p>
+  <p class="code">xboxlive_stats_get_social_leaderboard(user_id, &quot;GlobalTime&quot;, 20, 1, false, false);</p>
+  <p>Der obige Code würde aufgerufen werden, um eine Liste aller globalen Leaderboard-Positionen für das Spiel zu erhalten, und erzeugt einen asynchronen Ereignisrückruf, den wir wie folgt behandeln würden:</p>
+  <p class="code">if (async_load[? &quot;id&quot;] == achievement_stat_event)<br> {
+    <br> if (async_load[? &quot;event&quot;] == &quot;GetLeaderboardComplete&quot;)<br> {
+    <br> global.numentries = async_load[? &quot;numentries&quot;];<br> for(var i = 0; i &lt; numentries; i++;)<br> {
+    <br> global.playername[i] = async_load[? &quot;Player&quot; + string(i)];<br> global.playerid[i] = async_load[? &quot;Playerid&quot; + string(i)];<br> global.playerrank[i] = async_load[? &quot;Rang&quot; + string(i)];<br> global.playerscore[i] = async_load[? &quot;Score&quot; + string(i]);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft die zurückgegebene DS-Map im sozialen asynchronen Ereignis, und wenn ihre &quot;id&quot; mit der zu prüfenden Konstante übereinstimmt, prüft er dann, ob das Ereignis durch zurückgegebene Leaderboard-Daten ausgelöst wurde, bevor er eine Schleife durch die Map
+    und speichert alle verschiedenen Werte in einer Reihe von globalen Arrays.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Stats_And_Leaderboards.htm">Statistiken und Ranglisten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_achievements_set_progress.htm">xboxlive_achievements_set_progress</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_get_social_leaderboard
+achievement_stat_event
+-->
+  <!-- TAGS
+xboxlive_stats_get_social_leaderboard
+-->
+</body>
+</html>

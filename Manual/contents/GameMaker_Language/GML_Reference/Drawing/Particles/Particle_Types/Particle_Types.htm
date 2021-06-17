@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Partikel-Typen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Particle Type functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Particle Types" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Partikel-Typen</h1>
+  <p>Partikel sind die grafischen Effekte, die durch die Verwendung von Partikelsystemen in einem Spiel erzeugt werden können. Die Partikel, die Sie mit diesen Funktionen definieren, können in jedem von Ihnen erstellten System verwendet werden, und die normale Vorgehensweise wäre, alle Ihre Partikel
+    einmal zu Beginn eines Spiels zu definieren und ihre Indexwerte in globalen Variablen zu speichern. Diese globalen Variablen können dann während des Spiels jederzeit zum Ausbrechen, Emittieren oder Erstellen von Partikeln verwendet werden. Sie können Partikel auch nach Bedarf erstellen, verwenden und dann zerstören
+    wenn der Speicherplatz knapp ist oder wenn Sie viele verschiedene Typen nur an bestimmten Stellen im Spiel einsetzen möchten. Was auch immer Sie wählen, Partikel sind eine sehr vielseitige Ressource!</p>
+  <p>Partikel müssen erstellt und ihr Index in einer Variablen gespeichert werden, damit alle weiteren Partikelroutinen korrekt auf sie zugreifen können. Die folgenden Funktionen werden zum Erzeugen, Überprüfen, Löschen und Zerstören von Partikeltypen verwendet:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_exists.htm">teil_art_vorhanden</a></li>
+    <li><a href="part_type_create.htm">part_type_create</a></li>
+    <li><a href="part_type_destroy.htm">teil_art_zerstören</a></li>
+    <li><a href="part_type_clear.htm">part_type_clear</a></li>
+  </ul>
+  <p> </p>
+  <p>Sobald Sie Ihren Partikeltyp erstellt haben, sollten Sie ihm eine <i>Form</i> geben. Dies kann eine der 14 eingebauten Formen sein, die 64x64-Pixel-Sprites mit Alpha-Blending sind, oder Sie können Ihre eigenen Sprites verwenden, die animiert oder statisch sein können oder
+    zufällige Teilbilder. Die folgenden Funktionen definieren die visuelle Grundform der einzelnen Partikel:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_shape.htm">teil_art_form</a></li>
+    <li><a href="part_type_sprite.htm">part_type_sprite</a></li>
+  </ul>
+  <p> </p>
+  <p>Das folgende Bild zeigt die 14 eingebauten Partikeltypen, aus denen Sie wählen können:</p>
+  <p><img alt="The different built-in particle sprites" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Particle_Sprites.png">Nachdem Sie das Sprite für den Partikeltyp ausgewählt haben (entweder eine Standardform oder Ihre eigene
+    eigene), können Sie die Größe und den Maßstab angeben. Die Größe kann als Bereich angegeben werden und alle Partikel werden mit einer Größe erstellt, die innerhalb des angegebenen Bereichs liegt. Der Maßstab ist der &quot;Basis&quot;-Wert für den x- und y-Achsenmaßstab des Partikels, bevor irgendwelche
+    Größenvariationen hinzugefügt werden, und die folgenden Funktionen werden zur Steuerung dieser Werte verwendet:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_size.htm">teil_art_grösse</a></li>
+    <li><a href="part_type_scale.htm">teil_art_skala</a></li>
+  </ul>
+  <p> </p>
+  <p>Partikel können auch eine Orientierung und Bewegung haben. Wie bei den meisten Partikelfunktionen werden Geschwindigkeit, Richtung und Orientierung als Zufallswert aufgelöst, der aus einem vorgegebenen Bereich ausgewählt wird und mit den folgenden Funktionen eingestellt werden kann:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_speed.htm">teil_art_drehzahl</a></li>
+    <li><a href="part_type_direction.htm">part_type_direction</a></li>
+    <li><a href="part_type_gravity.htm">part_type_gravity</a></li>
+    <li><a href="part_type_orientation.htm">teil_art_ausrichtung</a></li>
+  </ul>
+  <p> </p>
+  <p>Sobald Sie den Stil und die Bewegung Ihrer Partikel festgelegt haben, können Sie ihre Farb- und Alphawerte einstellen, die beide als absoluter Wert während der gesamten Lebensdauer des Partikels oder als Skala von Werten, die von einem zum anderen gehen, eingestellt werden können
+    anderen. Beachten Sie, dass es auch eine spezielle Funktion gibt, mit der Sie die Überblendung für Partikel und ihre Umgebung einstellen können, die entweder normal oder additiv sein kann und einige fantastische Effekte ergibt.
+    und Überblendung sind:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_colour_mix.htm">part_type_colour_mix</a></li>
+    <li><a href="part_type_colour_rgb.htm">part_type_colour_rgb</a></li>
+    <li><a href="part_type_colour_hsv.htm">teil_art_farbe_hsv</a></li>
+    <li><a href="part_type_colour1.htm">part_type_colour1</a></li>
+    <li><a href="part_type_colour2.htm">teil_art_farbe2</a></li>
+    <li><a href="part_type_colour3.htm">teil_art_farbe3</a></li>
+    <li><a href="part_type_alpha1.htm">teil_art_alpha1</a></li>
+    <li><a href="part_type_alpha2.htm">part_type_alpha2</a></li>
+    <li><a href="part_type_alpha3.htm">part_type_alpha3</a></li>
+    <li><a href="part_type_blend.htm">part_type_blend</a></li>
+  </ul>
+  <p> </p>
+  <p>Partikel existieren auf dem Bildschirm für eine begrenzte Zeit und diese wird als &quot;Lebensdauer&quot; bezeichnet. Die Lebensdauer der Partikel wird in Schritten gemessen und (wie bei den vorherigen Funktionen) als ein Wertebereich ausgedrückt, aus dem der Partikel eine bestimmte Lebensdauer erhält
+    eine bestimmte Lebensdauer erhält. Es gibt auch eine Reihe interessanter Funktionen, die dazu verwendet werden können, dass Partikel <i>andere</i> Partikel erzeugen, entweder bei jedem Schritt oder wenn sie &quot;sterben&quot; (d. h. vom Bildschirm entfernt werden), aber
+    Seien Sie sehr vorsichtig mit diesen Funktionen, da sie schnell Tausende von Partikeln erzeugen und das Spiel zum Absturz bringen können! Die Funktionen, die Lebensdauer und Schritt oder Tod emittieren gesetzt sind wie folgt:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_life.htm">teil_art_leben</a></li>
+    <li><a href="part_type_step.htm">part_type_step</a></li>
+    <li><a href="part_type_death.htm">part_type_death</a></li>
+  </ul>
+  <p> </p>
+  <p>Es ist erwähnenswert, dass das Erstellen von Partikeln durch Code oft ein mühsamer und zeitaufwändiger Prozess sein kann, aufgrund der großen Anzahl von Parametern, die geändert und angepasst werden können. Aus diesem Grund ist es empfehlenswert, dass Sie sich nach einem Particle Designer umsehen und
+   <b>Partikel-Designer</b> zu besorgen (oder selbst einen zu erstellen!), um sich die mühsame Erstellung von Partikeln zu ersparen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Particles.htm">Partikel</a></div>
+        <div style="float:right">Nächste: <a href="../Particle_Emitters/Particle_Emitters.htm">Partikel-Emitter</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Particle Types
+-->
+  <!-- TAGS
+particle_type_functions
+-->
+</body>
+</html>

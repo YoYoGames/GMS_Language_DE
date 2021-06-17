@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_eof</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_text_eof" />
+  <meta name="rh-index-keywords" content="file_text_eof" />
+  <meta name="search-keywords" content="file_text_eof" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_eof</h1>
+  <p>Diese Funktion gibt <tt>true</tt> zurück, wenn das Ende einer gegebenen geöffneten Textdatei erreicht wurde oder <tt>false</tt>, wenn nicht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">file_text_eof(fileid);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>fileid</td>
+        <td>Die ID der zu prüfenden Datei.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var num = 0;<br> var file = file_text_open_read(working_directory + &quot;Game_Data.txt&quot;);<br> while (!file_text_eof(file))<br> {
+    <br> str[num++] = file_text_readln(file);<br> }
+    <br> file_text_close(file);
+  </p>
+  <p>Der obige Code öffnet eine Datei zum Schreiben und läuft dann in einer Schleife durch die bereits in die Datei geschriebenen Textzeilen, bis er das Ende erreicht hat, wobei jede Zeile im Array &quot;str&quot; gespeichert wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Text_Files.htm">Textdateien</a></div>
+        <div style="float:right">Weiter: <a href="file_text_close.htm">file_text_close</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_eof
+-->
+  <!-- TAGS
+file_text_eof
+-->
+</body>
+</html>

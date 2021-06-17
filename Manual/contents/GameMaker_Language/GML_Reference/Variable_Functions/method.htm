@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Methode</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function method" />
+  <meta name="rh-index-keywords" content="method" />
+  <meta name="search-keywords" content="method" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Methode</h1>
+  <p>Mit dieser Funktion können Sie eine beliebige Funktion, die zuvor definiert wurde, an eine bestimmte Instanz oder Struktur binden und so eine <a href="../../GML_Overview/Method_Variables.htm">Methodenvariable</a> erzeugen, die
+    später verwendet werden kann. Sie geben die zu verwendende Instanz-ID (es <i>muss</i> eine Instanz sein, die aktiv und im Raum ist, und kann keine Objekt-ID sein) oder eine struct-Referenz an, sowie die ID der Funktion, die Sie binden möchten.
+    Die Funktion wird eine <a class="glossterm" data-glossterm="Methode" href="#">Methode</a> zurückgeben, die von der Variablen, der sie zugewiesen ist, aufgerufen werden kann (siehe das Codebeispiel unten). Es ist erwähnenswert, dass Sie sowohl eingebaute Funktionen als auch benutzerdefinierte Funktionen binden können.
+    definierte Funktionen binden können, und Sie können auch <tt>undefiniert</tt> als Instanz/Strukt-Argument angeben, was bedeutet, dass der aktuelle <a href="../../GML_Overview/Instance_Keywords.htm"><tt>selbst</tt></a> Bereich
+    für die Bindung verwendet wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">method(struct_ref_oder_instance_id, function);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>struct_ref_oder_instanz_id</td>
+        <td>Die eindeutige Referenz oder der ID-Wert der zu verwendenden Struktur oder Instanz (oder <tt>undefiniert</tt> für <tt>self</tt>)</td>
+      </tr>
+      <tr>
+        <td>Funktion</td>
+        <td>Die ID der zu verwendenden Funktion</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Methode</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _inst = instance_position(mouse_x, mouse_y, obj_Enemy);<br> if instance_exists(_inst)<br> {
+    <br> feind_func = method(_inst, feind_ai);<br> }
+  </p>
+  <p>Der obige Code prüft, ob an der angegebenen Position eine Instanz existiert, und wenn ja, dann wird eine Funktion an die Instanz gebunden und als Methodenvariable &quot;enemy_func&quot; zurückgegeben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="method_get_self.htm">methode_get_self</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+method
+-->
+  <!-- TAGS
+method
+-->
+
+</body></html>

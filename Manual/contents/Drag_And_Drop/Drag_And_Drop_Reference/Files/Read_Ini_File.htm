@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ini-Datei lesen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Read Ini File action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Read Ini File" />
+  <meta name="search-keywords" content="Read Ini File" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Read Ini File Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Read_Ini_File.png" width="32"> Ini-Datei lesen</h1>
+  <p>Mit dieser Aktion können Sie ein Stück Daten aus einer Ini-Datei lesen. Sie müssen die Ini-Datei zuvor mit der Aktion <a href="Open_Ini_File.htm">Open Ini File</a> zum Lesen/Schreiben geöffnet haben, und dann geben Sie mit dieser Aktion den Typ der zu lesenden Daten
+    (entweder eine reelle Zahl oder eine in &quot;&quot; eingeschlossene Zeichenkette), sowie die Abschnittsüberschrift und den Schlüssel innerhalb dieses Abschnitts, von dem die Daten abgerufen werden sollen. Sie können auch einen Standardwert angeben, der entweder eine reelle Zahl oder eine Zeichenkette sein kann, und der Typ sollte
+    mit dem in der Aktion eingestellten &quot;Typ&quot; übereinstimmen. Diese Standardaktion wird von der Aktion zurückgegeben, wenn einer der folgenden Fälle eintritt:</p>
+  <ul class="colour">
+    <li>Die Ini-Datei, die Sie geöffnet haben, existiert nicht</li>
+    <li>Die Abschnittsüberschrift, auf die Sie verweisen, existiert nicht</li>
+    <li>Der Schlüssel, von dem Sie versuchen, Daten abzurufen, existiert nicht</li>
+  </ul>
+  <p>Unter jedem der oben genannten Umstände erhalten Sie den Standardwert zurück und nicht einen Wert aus der Ini-Datei. Welcher Wert auch immer zurückgegeben wird, wird in der von Ihnen angegebenen Zielvariablen gespeichert, die auch in diesem Moment erstellt werden kann, wenn sie als
+    als temporäre lokale Variable.</p>
+  <p class="note"><b>WICHTIG!</b> Der Versuch, Daten aus einer Ini-Datei zu lesen, die zuvor nicht mit der Aktion " <a href="Open_Ini_File.htm">Ini-Datei öffnen</a> " geöffnet wurde, führt zu einem schwerwiegenden Fehler und zum Absturz Ihres Spiels.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Read Ini File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Read_Ini_File.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der zu lesenden Daten, entweder eine <tt>Zeichenkette</tt> (in Anführungszeichen &quot;&quot;), oder eine reelle <tt>Zahl</tt></td>
+      </tr>
+      <tr>
+        <td>Abschnitt</td>
+        <td>Der Abschnitt der Ini-Datei, aus dem gelesen werden soll (als String)</td>
+      </tr>
+      <tr>
+        <td>Taste</td>
+        <td>Der Schlüssel innerhalb des Abschnitts, aus dem gelesen werden soll (als String)</td>
+      </tr>
+      <tr>
+        <td>Standard</td>
+        <td>Der Standardwert, der zurückgegeben wird, wenn entweder die Datei, der Abschnitt oder der Schlüssel nicht existiert</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable zur Aufnahme des Rückgabewerts der Aktion</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Read Ini File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Read_Ini_File.png">Der obige Aktionsblockcode öffnet eine Ini-Datei zum Lesen und verwendet dann die daraus gelesenen Daten zum Setzen von
+    3 verschiedene globale Variablen, bevor er die Datei wieder schließt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="File_Actions.htm">Datei-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="If_File_Exists.htm">Wenn Datei vorhanden ist</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Read Ini File
+-->
+  <!-- TAGS
+action_ini_read
+-->
+
+</body></html>

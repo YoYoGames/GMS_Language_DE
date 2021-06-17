@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_prioritaet_wechseln_prioritaet</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_priority_change_priority" />
+  <meta name="rh-index-keywords" content="ds_priority_change_priority" />
+  <meta name="search-keywords" content="ds_priority_change_priority" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_prioritaet_wechseln_prioritaet</h1>
+  <p>Diese Funktion nimmt einen gegebenen Wert und ändert dessen Priorität innerhalb der referenzierten Prioritätswarteschlange.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_priority_change_priority(id, val, priority);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der zu ändernden Prioritätswarteschlange.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Der Wert, für den die Priorität geändert werden soll.</td>
+      </tr>
+      <tr>
+        <td>Priorität</td>
+        <td>Die neue Priorität des Wertes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (global.Game_Time &lt; 1000)<br> {
+    <br> ds_priority_change(ai_priority, AI_Search, 1);<br> }
+  </p>
+  <p>Der obige Code prüft eine globale Variable, und wenn sie unter einem bestimmten Wert liegt, ändert er die Priorität des Skriptfunktionsindex, der in der Prioritätswarteschlange gehalten wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Priority_Queues.htm">DS Prioritäts-Warteschlangen</a></div>
+        <div style="float:right">Weiter: <a href="ds_priority_delete_max.htm">ds_priority_delete_max</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_priority_change_priority
+-->
+  <!-- TAGS
+ds_priority_change_priority
+-->
+
+</body></html>

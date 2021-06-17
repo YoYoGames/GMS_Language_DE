@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kollisionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Collision functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="collisions,collision functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Kollisionen</h1>
+  <p>Bei der Planung von Bewegungen oder der Entscheidung für bestimmte Aktionen ist es oft wichtig zu sehen, ob es an bestimmten Stellen in der Spielwelt Kollisionen mit anderen Objekten gibt, und oft ist die Auswahl der richtigen Kollision für die Aufgabe die wichtigste Aufgabe
+    von allen. <span class="notranslate">GameMaker Studio 2</span> verfügt über eine Reihe von eingebauten Funktionen, die Ihnen helfen, mit Kollisionen korrekt und entsprechend den Anforderungen Ihres Projekts umzugehen.</p>
+  <p class="note"><b>WICHTIG!</b> Alle Kollisionsfunktionen arbeiten mit ganzzahligen Positionen, unabhängig von den Eingabewerten. Alle nicht-ganzzahligen Werte werden auf die nächste Ganzzahl gerundet.</p>
+  <p> </p>
+  <h2><label for="one">Einfache Kollisionsprüfung</label></h2>
+  <p>Die folgenden Funktionen behandeln die verschiedenen Möglichkeiten, wie Sie eine Instanz auf Kollisionen mit einer anderen Instanz prüfen lassen können:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="place_empty.htm">platz_leer</a></li>
+    <li><a href="place_free.htm">platz_frei</a></li>
+    <li><a href="place_meeting.htm">ort_besprechung</a></li>
+    <li><a href="position_empty.htm">position_leer</a></li>
+    <li><a href="position_meeting.htm">position_meeting</a></li>
+    <li><a href="position_change.htm">position_change</a></li>
+    <li><a href="position_destroy.htm">position_destroy</a></li>
+    <li><a href="../../Asset_Management/Instances/instance_place.htm">Instanz_Ort</a></li>
+    <li><a href="../../Asset_Management/Instances/instance_place_list.htm">instanz_platz_liste</a></li>
+    <li><a href="../../Asset_Management/Instances/instance_position.htm">Instanz_Position</a></li>
+    <li><a href="../../Asset_Management/Instances/instance_position_list.htm">instanz_position_liste</a></li>
+  </ul>
+  <p> </p>
+  <h2>Erweiterte Kollisionsprüfung</h2>
+  <p>Dazu können die folgenden Routinen verwendet werden (sowie weitere Funktionen, die in den Abschnitten zu " <b>Moving Around"</b> und " <b>Instances"</b> beschrieben sind). Diese Kollisionsfunktionen arbeiten alle etwas anders, aber sie haben drei gemeinsame Argumente
+    die wir hier erläutern werden:</p>
+  <ul class="colour">
+    <li><b>obj</b>. Hier geben wir das Objekt an, mit dem die Funktion auf eine Kollision prüfen soll. Es kann eine Instanz-ID, ein Objekttyp oder das spezielle GM-Schlüsselwort <b>all</b> sein. Es ist auch erwähnenswert, dass, wenn der gewählte Objekttyp der designierte
+     <b>Elternteil</b> anderer Objekte ist, dann werden auch alle <i>Kinder</i> dieses Objekts in die Prüfung einbezogen.<b></b></li>
+    <li><b>prec</b>. Dies kann entweder <tt>true</tt> oder <tt>false</tt> sein und bezieht sich auf die Genauigkeit der Kollisionsprüfung. Bei <tt>true</tt> werden präzise Kollisionen berechnet (aber nur, wenn das zu prüfende Objekt in seinen Maskeneigenschaften &quot;precise&quot;
+      für seine Kollisionserkennung in den Maskeneigenschaften markiert hat), was eine etwas komplexere Aufgabe für die CPU darstellt und daher mit Vorsicht verwendet werden sollte. Wenn <tt>false</tt>, dann werden Kollisionen auf der Grundlage des Begrenzungsrahmens des zu prüfenden Objekts berechnet
+      für.<b></b></li>
+    <li><b>notme</b>. Möglicherweise müssen Sie nach Kollisionen mit einem Objekt suchen, das denselben Index hat wie das Objekt, das den Code ausführt. Um zu verhindern, dass der Code eine Kollision mit sich selbst findet, können Sie dies auf <tt>true</tt> setzen. Wenn Sie speziell nach
+      nach der Instanz des Objekts suchen, das den Code ausführt, oder es nicht wichtig ist, können Sie den Wert auf <tt>false setzen.</tt></li>
+  </ul>
+  <p>Die Basisfunktionen geben entweder die ID einer kollidierenden Instanz oder das spezielle Schlüsselwort <tt>noone</tt> zurück, wenn keine Kollision vorliegt, während die <i>Listenfunktionen</i> die Anzahl der kollidierenden Instanzen zurückgeben und eine vorgefertigte DS-Liste mit deren IDs auffüllen.
+    eine vorgefertigte DS-Liste mit ihren IDs. Beachten Sie, dass, wenn es mehrere Kollisionen mit den von diesen Funktionen definierten Bereichen und Instanzen des angegebenen Objekts gibt, nur <i>eine</i> Instanz-ID zurückgegeben wird, und diese kann eine <i>beliebige der Instanzen in der Kollision</i> sein.</p>
+  <p>Es gibt die folgenden Funktionen, die sich mit erweiterten Kollisionen befassen.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="collision_circle.htm">kollision_kreis</a></li>
+    <li><a href="collision_circle_list.htm">kollision_kreis_liste</a></li>
+    <li><a href="collision_ellipse.htm">kollision_ellipse</a></li>
+    <li><a href="collision_ellipse_list.htm">kollision_ellipse_liste</a></li>
+    <li><a href="collision_line.htm">kollisions_linie</a></li>
+    <li><a href="collision_line_list.htm">kollisions_linien_liste</a></li>
+    <li><a href="collision_point.htm">kollisions_punkt</a></li>
+    <li><a href="collision_point_list.htm">kollisionspunkt_liste</a></li>
+    <li><a href="collision_rectangle.htm">Kollisions_Rechteck</a></li>
+    <li><a href="collision_rectangle_list.htm">kollision_rechteck_liste</a></li>
+  </ul>
+  <p> </p>
+  <h2>Kollisionsprüfung ohne Maske</h2>
+  <p>Alle oben genannten Funktionen beziehen sich auf <i>Kollisionsprüfungsinstanzen</i> und sind als solche auf die Kollisionsmaske angewiesen, die für die Instanz definiert ist. Es gibt jedoch viele Momente, in denen Sie auf &quot;Kollisionen&quot; mit einem Punkt
+    oder einem Bereich zu überprüfen, insbesondere wenn Ihrer Instanz kein Sprite zugewiesen ist, oder wenn Sie mit der Maus arbeiten usw... Deshalb bietet <span class="notranslate">GameMaker Studio 2</span> auch die folgenden Funktionen, die Ihnen in diesen Situationen helfen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="point_in_rectangle.htm">Punkt_im_Rechteck</a></li>
+    <li><a href="point_in_triangle.htm">Punkt_im_Dreieck</a></li>
+    <li><a href="point_in_circle.htm">Punkt_im_Kreis</a></li>
+    <li><a href="rectangle_in_rectangle.htm">Rechteck_im_Rechteck</a></li>
+    <li><a href="rectangle_in_triangle.htm">Rechteck_im_Dreieck</a></li>
+    <li><a href="rectangle_in_circle.htm">Rechteck_im_Kreis</a></li>
+  </ul>
+  <p> </p>
+  <h2>Physik Kollisionen</h2>
+  <p>Wenn Sie die eingebaute Physik verwenden, funktionieren die oben genannten Kollisionsfunktionen bei physikfähigen Instanzen nicht garantiert. Das liegt vor allem daran, dass diese Instanzen die meisten der regulären eingebauten Variablen nicht mehr verwenden (stattdessen haben Physik
+    aktivierte Instanzen haben stattdessen einen <a href="../../Physics/Physics_Variables/Physics_Variables.htm">eigenen Satz von Variablen</a>) und sie verwenden auch nicht die Kollisionsmaske oder die Bounding Box, da sie stattdessen <a href="../../Physics/Fixtures/Fixtures.htm">Fixtures</a> verwenden. Es gibt jedoch eine spezielle Funktion zum Testen von Kollisionen mit aktivierter Physik, die auf überlappende Fixtures prüft:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Physics/physics_test_overlap.htm">physik_test_überlappung</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Movement_And_Collisions.htm">Bewegung und Kollisionen</a></div>
+        <div style="float:right">Nächste: <a href="../Movement/Movement.htm">Bewegung</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Collision Functions
+-->
+  <!-- TAGS
+collision_functions
+-->
+</body>
+</html>

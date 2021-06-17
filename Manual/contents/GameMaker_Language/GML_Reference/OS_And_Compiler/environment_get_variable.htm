@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>umwelt_get_variable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for environment_get_variable" />
+  <meta name="rh-index-keywords" content="environment_get_variable" />
+  <meta name="search-keywords" content="environment_get_variable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>umwelt_get_variable</h1>
+  <p>Diese Funktion gibt den Wert (eine Zeichenkette) der Umgebungsvariablen mit dem angegebenen Namen (ebenfalls eine Zeichenkette) zurück. Sie können die verfügbaren Umgebungsvariablen unter <span class="notranslate">macOS</span> und <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) erhalten, indem Sie &quot; env&quot; in die Terminal-App eingeben, und für
+    Informationen über <span class="notranslate">Windows-Umgebungsvariablen</span> erhalten Sie, wenn Sie die Eingabeaufforderung verwenden, indem Sie &quot; echo<tt>%PATH%&quot;</tt> eingeben, und mit PowerShell ist es &quot; ls env&quot;. Beachten Sie, dass sowohl unter <span class="notranslate">macOS</span> als auch unter <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) die Umgebungsvariable &quot;HOME&quot;
+    Umgebungsvariable den Pfad &quot; ~/&quot; zurückgibt, der<tt> unter macOS</tt> auf &quot; /Users/&lt;Benutzername&gt;<tt>&quot; und</tt> unter Ubuntu (<tt>Linux</tt>) auf<tt>&quot; /home/&lt;Benutzername&gt;</tt> <span class="notranslate">&quot;</span> abgebildet wird<tt>.</tt></p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion ist nur für <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span> und <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) verfügbar.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">environment_get_variable(name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Der Name (eine Zeichenkette) der zu prüfenden Umgebungsvariablen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Zeichenfolge</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">e_str = environment_get_variable(&quot;APPDATA&quot;);</p>
+  <p>Der obige Code gibt den vollständigen Pfad für die Umgebungsvariable &quot; %appdata%<tt>&quot;</tt> zurück<tt>,</tt> der normalerweise &quot; C:\Benutzer\{Benutzername}\AppData\Roaming<tt>&quot;</tt> lautet<tt>.</tt></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="OS_And_Compiler.htm">OS und Compiler</a></div>
+        <div style="float:right">Weiter: <a href="external_define.htm">external_define</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+environment_get_variable
+-->
+  <!-- TAGS
+environment_get_variable
+-->
+</body>
+</html>

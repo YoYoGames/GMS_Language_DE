@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Objektinstanz ändern</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Change Object Instance action" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Change Object INdex" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Change Object INstance Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Change.png"> Objektinstanz ändern</h1>
+  <p>Mit dieser Aktion können Sie eine Instanz in eine andere Instanz ändern. Sie müssen das Objekt angeben, von dem die Instanz in eine andere Instanz geändert werden soll, und die Aktion ändert die Instanz, indem sie das Zerstörungsereignis und das Aufräumereignis der
+    der ursprünglichen Instanz und das Ereignis "Erstellen" der neuen Instanz aus. Beachten Sie, dass, wenn Sie keine Richtung oder Geschwindigkeit usw. angeben, die neue Instanz diese Werte &quot;erbt&quot;. Wenn die ursprüngliche Instanz zum Beispiel einen <tt>image_angle</tt> (Rotation)
+    von 180, bewegt sich mit 2px pro Spieltick und hat eine <tt>image_speed</tt> (Animationsgeschwindigkeit) von 0,5, dann wird die Instanz, in die sie wechselt, diese Werte beibehalten, sofern sie nicht explizit im Ereignis "Create" der neuen Instanz festgelegt werden.</p>
+  <p>Es ist erwähnenswert, dass das Ändern der Instanz bedeutet, dass Sie <i>bis zum nächsten Spieltick keine weiteren Aktionen mit dieser Instanz durchführen können</i>, insbesondere der Versuch, auf Variablen usw. zuzugreifen, da dies einen Fehler verursacht. Grundsätzlich gilt, dass Sie
+    Sie ändern die Instanz, aber sie ist bis zum Ende des aktuellen Schritts nicht wirklich verfügbar, so dass ein direkter Zugriff auf eine der darin enthaltenen Variablen (z. B. durch den Aufruf von <tt>inst_changed.x</tt>) nicht funktioniert.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Change Object Instance Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Change.png" /></p>
+  <h4>Argumente:</h4>
+  <p></p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argument</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>Objekt</td>
+          <td>Der Name des Objekts, das in eine Instanz von geändert werden soll.</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Change Object Instance Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Change.png">Der obige Code des Aktionsblocks prüft auf einen Mausdruck und wenn einer erkannt wird
+    dann ändert er die Instanz in eine andere.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Actions_Library.htm">Instanz-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Alarm.htm">Alarm-Countdown einstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Change Object Instance
+-->
+  <!-- TAGS
+action_change_instance
+-->
+</body>
+</html>

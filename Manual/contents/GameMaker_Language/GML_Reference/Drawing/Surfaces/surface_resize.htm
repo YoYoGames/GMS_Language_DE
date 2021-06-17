@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>oberfläche_verkleinern</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_resize" />
+  <meta name="rh-index-keywords" content="surface_resize" />
+  <meta name="search-keywords" content="surface_resize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>oberfläche_verkleinern</h1>
+  <p>Diese Funktion ändert die Größe einer Oberfläche auf die angegebenen Abmessungen (in Pixel). Die &quot;surface_id&quot; ist die einer Oberfläche, die Sie zuvor erstellt haben, oder die <a href="application_surface.htm"><tt>application_suface</tt></a>und die Funktion ändert die Größe
+    dieser Fläche. Beachten Sie, dass dadurch der Inhalt der Fläche weder beschnitten noch gestreckt wird, sondern dass die aktuelle Fläche zerstört und mit demselben Handle (surface_id) mit den neuen Abmessungen neu erzeugt wird, d. h. sie muss gelöscht
+    und erneut gezeichnet werden muss (es sei denn, es handelt sich um die <tt>application_surface</tt>, in diesem Fall erledigt <span class="notranslate">GameMaker Studio 2</span> dies automatisch).</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie die Größe der Anwendungsoberfläche ändern, werden diese Änderungen erst zu Beginn des nächsten Zeichnungsrahmens registriert, was bedeutet, dass der Aufruf der Funktion <span style="font-size:1px;"><a href="surface_get_width.htm"><tt style="font-size: 14px">surface_get_width()</tt></a></span>    oder <span style="font-size:1px;"><a href="surface_get_height.htm"><tt style="font-size: 14px">surface_get_height()</tt></a></span> Funktionen in demselben Ereignis oder Schritt die vorherigen Werte zurückgeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">surface_resize(surface_id, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>oberfläche_id</td>
+        <td>Die ID der zu ändernden Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die Breite der neuen Fläche.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe der neuen Oberfläche.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)<br> {
+    <br> surface_resize(application_surface, view_wport[0],view_hport[0]);<br> }
+  </p>
+  <p>Der obige Code prüft die Größe des Ansichtsports mit der der Oberfläche &quot;aplication_surface&quot; und wenn sie unterschiedlich ist, wird die Oberfläche neu dimensioniert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="surface_set_target.htm">surface_set_target</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_resize
+-->
+  <!-- TAGS
+surface_resize
+-->
+</body>
+</html>

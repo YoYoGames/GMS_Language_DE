@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Android-Erweiterungen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how Android extensions work" />
+  <meta name="rh-index-keywords" content="Extensions - Creating Android Extensions" />
+  <meta name="search-keywords" content="Android extensions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Android-Erweiterungen</span> </h1>
+  <p>Um eine Erweiterung für <span class="notranslate">Android</span> zu erstellen, müssen Sie es in zwei Teilen tun. Der erste Teil wäre das Hinzufügen der Erweiterung selbst, zusammen mit den erforderlichen Dateien usw... und der zweite Teil ist die Erstellung der Funktionen und Makros/Konstanten, die die Erweiterung benötigt.
+    Die Funktionen und Konstanten werden mit Hilfe von <strong>Platzhalterdateien </strong>hinzugefügt, um sie zu gruppieren. Sie würden also einen Platzhalter hinzufügen und dann die Funktionen und Makros wie im obigen Abschnitt beschrieben definieren. Um den Rest der Dateien hinzuzufügen, müssen Sie jedoch
+    müssen Sie zuerst das Kontrollkästchen <em><span class="notranslate">Android</span> </em>Kontrollkästchen im Abschnitt " <strong>Zusätzliche Funktionen"</strong> des Editors aktivieren:</p>
+  <p class="dropspot"><img alt="Android Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Android.png" /></p>
+  <p>Hier machen Sie die folgenden Angaben:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Klassenname</strong>: Ihre Erweiterung kann mehrere Klassen haben, wobei jede Klasse ihre eigenen Funktionen und Konstanten hat, daher sollten Sie ihr einen Namen geben, der ihren Zweck widerspiegelt.</li>
+    <li class="dropspot"><strong><span class="notranslate">Android-Berechtigungen</span></strong>: Hier können Sie alle zusätzlichen Berechtigungen hinzufügen, die Ihre Erweiterung benötigt. Welche Berechtigungen dies sind, hängt ganz von der Verwendung der Erweiterung ab. Daher sollten Sie <a href="https://developer.android.com/reference/android/Manifest.permission.html">die von Google bereitgestellte Dokumentation</a> für die <span class="notranslate">Android-Plattform</span> <a href="https://developer.android.com/reference/android/Manifest.permission.html">prüfen</a> oder, wenn Sie ein SDK eines Drittanbieters verwenden, die mit dem SDK gelieferte Dokumentation. Um eine neue Berechtigung hinzuzufügen, müssen Sie auf die Schaltfläche <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> klicken, um eine Platzhalterberechtigung hinzuzufügen, und dann mit einem langsamen Klick auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> die Berechtigung so bearbeiten, dass sie den Anforderungen entspricht. Sie können Berechtigungen mit der Schaltfläche <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"> entfernen.</li>
+    <li class="dropspot"><strong>In die Gradle-Abhängigkeiten injizieren</strong>: Hier können Sie jeglichen zusätzlichen Code hinzufügen, der in die Gradle-Build-Abhängigkeiten injiziert (hinzugefügt) werden soll.</li>
+    <li class="dropspot"><strong>In das <span class="notranslate">AndroidManifest</span></strong>.xml-Manifest injizieren: Hier legen Sie jeglichen zusätzlichen Code fest, der in die <span class="notranslate">Android-Manifest-XML-Datei</span> injiziert (hinzugefügt) werden soll, wenn Ihr Spiel zum Testen oder für die endgültige Veröffentlichung gebaut wird. Stellen Sie sicher, dass Sie dies (und Ihre Berechtigungen) sorgfältig überarbeiten
+      bevor Sie Spiele an den Store übermitteln, da falsche Einstellungen dazu führen, dass Ihr Spiel nicht übermittelt werden kann.</li>
+    <li class="dropspot"><strong>In die <span class="notranslate">AndroidManifest</span></strong>.xml-Anwendung injizieren: Hier legen Sie zusätzlichen Code fest, der in die <span class="notranslate">Android-Manifest-XML-Datei</span> unter der Überschrift "Application" (Anwendung) injiziert (hinzugefügt) werden soll, wenn Ihr Spiel zum Testen oder zur endgültigen Veröffentlichung erstellt wird. Stellen Sie sicher, dass Sie
+      (und Ihre Berechtigungen) sorgfältig, bevor Sie Spiele an den Store übermitteln, da falsche Einstellungen dazu führen, dass Ihr Spiel nicht übermittelt werden kann.</li>
+    <li class="dropspot"><strong>Inject to <span class="notranslate">AndroidManifest</span></strong>.xml RunnerActivity: Hier legen Sie zusätzlichen Code fest, der in die <span class="notranslate">Android-Manifest-XML-Datei</span> unter der Überschrift "RunnerActivity" injiziert (hinzugefügt) werden soll, wenn Ihr Spiel zum Testen oder für die endgültige Veröffentlichung erstellt wird. Stellen Sie sicher, dass Sie
+      Sie dies (und Ihre Berechtigungen) sorgfältig, bevor Sie Spiele an den Store übermitteln, da falsche Einstellungen dazu führen, dass Ihr Spiel nicht übermittelt werden kann.</li>
+  </ul>
+  <p>Sobald Sie dies korrekt eingerichtet haben, müssen Sie die erforderlichen Dateien hinzufügen, damit Ihr Erweiterungspaket funktioniert. Klicken Sie dazu auf die Schaltflächen am unteren Rand, entweder <em>Add SDK</em> oder <em>Add Source</em>, und suchen Sie dann die Dateien, die Sie
+    die Sie hinzufügen möchten. Die hinzugefügten Dateien werden zusammen mit Ihrer Erweiterung im Verzeichnis <span class="inline"><span class="notranslate">Android</span>Source gespeichert. Sie können diesen Speicherort jederzeit öffnen, indem Sie mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> auf die Erweiterung klicken und <em>Erweiterungsverzeichnis öffnen</em> auswählen.</p>
+  <p>Weitere Informationen zur Erstellung von <span class="notranslate">Android-Erweiterungen</span> finden Sie in der <a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension"><span class="notranslate">YoYo Games</span></a> Knowledge Base.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Extensions.htm">Der Erweiterungseditor</a></div>
+        <div style="float:right">Weiter: <a href="iOS_Extensions.htm"><span class="notranslate">iOS-Erweiterungen</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Android</span> Extensions
+-->
+  <!-- TAGS
+extensions_android
+-->
+</body>
+</html>

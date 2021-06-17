@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_ugc_get_item_update_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_get_item_update_info" />
+  <meta name="rh-index-keywords" content="steam_ugc_get_item_update_info" />
+  <meta name="search-keywords" content="steam_ugc_get_item_update_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_ugc_get_item_update_info</span></h1>
+  <p>Mit dieser Funktion können Sie Informationen über den aktuellen Download-Status für die angegebene Datei-ID abrufen. Sie geben die Element-ID an und liefern den Index einer leeren <a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a>, die dann mit folgenden Schlüssel/Wertpaaren gefüllt wird
+    mit den folgenden Schlüssel/Wertpaaren gefüllt wird, wenn das Element existiert:</p>
+  <ul class="colour">
+    <li>&quot;needs_update<b>&quot; -</b> Gibt true oder <tt>false</tt> zurück <tt>, je</tt> nachdem, ob das Element eine Aktualisierung benötigt oder nicht.</li>
+    <li>&quot;is_downloading<b>&quot; -</b> Gibt true oder <tt>false</tt> zurück <tt>, je</tt> nachdem, ob das Element gerade heruntergeladen wird oder nicht.</li>
+    <li>&quot;bytes_downloaded<b>&quot; -</b> Die Anzahl der Bytes, die heruntergeladen wurden.</li>
+    <li>&quot;bytes_total<b>&quot; -</b> Die Gesamtgröße (Anzahl der Bytes), die für das Element auf der Festplatte benötigt wird.</li>
+  </ul>
+  <p>Wenn das Element existiert, gibt die Funktion <tt>true</tt> zurück und füllt die Karte auf, andernfalls gibt sie <tt>false</tt> zurück und die Karte bleibt leer.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_get_item_update_info</span>(published_file_id, info_map);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>veröffentlichte_datei_id</td>
+        <td>Die eindeutige Datei-ID für die zu prüfende UGC.</td>
+      </tr>
+      <tr>
+        <td>info_map</td>
+        <td>Ein (zuvor erstellter) DS-Map-Index.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var info_map = ds_map_create();<br> var info = <span class="notranslate">steam_ugc_get_item_update_info</span>(global.fileID, info_map);<br> if info<br> {
+    <br> draw_text(32, 15, &quot;needs_update: &quot; + string(info_map[? &quot;needs_update&quot;]));<br> draw_text(32, 30, &quot;is_downloading: &quot; + string(info_map[? &quot;is_downloading&quot;]));<br> draw_text(32, 45, &quot;bytes_downloaded:
+    &quot; + string(info_map[? &quot;bytes_downloaded&quot;]));<br> draw_text(32, 60, &quot;bytes_total: &quot; + string(info_map[? &quot;bytes_total&quot;]));<br> }
+  </p>
+  <p>Der obige Code fragt den Download-Status des Elements ab, das in der globalen Variablen &quot;fileID&quot; indiziert ist, wobei eine DS-Map zum <tt>Speichern</tt> der Informationen verwendet wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Weiter: <a href="steam_ugc_request_item_details.htm"><span class="notranslate">steam_ugc_request_item_details</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_get_item_update_info
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_get_item_update_info
+-->
+</body>
+</html>

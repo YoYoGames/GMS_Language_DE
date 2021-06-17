@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn die Sequenz vorhanden ist</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Sequence Exists action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Sequence Exists" />
+  <meta name="search-keywords" content="If Sequence Exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Sequence Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_exists.png"> Wenn die Sequenz vorhanden ist</h1>
+  <p>Mit dieser Aktion kann geprüft werden, ob das angegebene Sequenzelement im Spielraum vorhanden ist. Sie geben die Element-ID an, wie sie von der Aktion " <a href="Create_Sequence_Element.htm">Sequenz erstellen"</a> zurückgegeben wird, und wenn das Sequenzelement im Raum existiert, dann
+    die Aktion " <tt>true"</tt> zurück, andernfalls wird <tt>"false"</tt> zurückgegeben.</p>
+  <p>Wenn Sie das Argument &quot; Not&quot; markieren, prüft die Aktion, ob kein solches Sequenzelement vorhanden ist, und gibt, wenn keines gefunden wird, true zurück.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in den &quot;<span class="inline">if</span>&quot; Block, diese an der Seite der Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="If Sequence Exists dropping actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_exists_drop.png">Diese Aktionen werden nun ausgeführt, wenn der &quot;<span class="inline">if</span>&quot;
+    zu <tt>true</tt> ausgewertet wird, während alle Aktionen, die an anderer Stelle ausgelassen werden, nach dem &quot;<span class="inline">if</span>&quot; Block ausgeführt werden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="If Sequence Exists Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_exists.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Sequenz</td>
+        <td>Die Element-ID des zu prüfenden Sequenzelements.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="If Sequence Exists Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_exists.png">Der obige Aktionsblockcode prüft, ob das in der Variablen gespeicherte Sequenzelement
+    &quot;<span class="inline">my_seq</span>&quot; gespeichert ist, und wenn dies der Fall ist, dann wird es zerstört.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequence_Actions_Library.htm">Sequenz-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Get_Sequence_Length.htm">Sequenzlänge abrufen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Pause Sequence
+-->
+  <!-- TAGS
+action_pause_sequence
+-->
+</body>
+</html>

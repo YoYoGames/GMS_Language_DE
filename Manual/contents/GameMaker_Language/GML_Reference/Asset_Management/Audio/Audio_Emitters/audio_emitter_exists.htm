@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_exists" />
+  <meta name="rh-index-keywords" content="audio_emitter_exists" />
+  <meta name="search-keywords" content="audio_emitter_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emitter_exists</h1>
+  <p>Diese Funktion gibt zurück, ob ein Audioemitter existiert<tt>(true</tt>) oder nicht<tt>(false</tt>). Beachten Sie, dass diese Funktion einen Fehler verursacht, wenn der gesuchte Index zuvor nicht initialisiert wurde, da sie nach nicht existierenden Indizes sucht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_emitter_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Emitters, dessen Vorhandensein geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if audio_emitter_exists(s_emit)<br> {
+    <br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+    <br> sonst
+    <br> {
+    <br> s_emit = audio_emitter_create();<br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+  </p>
+  <p>Der obige Code prüft, ob ein Emitter existiert, der in der (zuvor initialisierten) Variablen &quot;s_emit&quot; indiziert ist. Wenn dies der Fall ist, wird ein Ton über ihn abgespielt. Wenn nicht, wird er erstellt und dann der Ton abgespielt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio_Emitters.htm">Audio-Emitter</a></div>
+        <div style="float:right">Weiter: <a href="audio_emitter_position.htm">audio_emitter_position</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_exists
+-->
+  <!-- TAGS
+audio_emitter_exists
+-->
+</body>
+</html>

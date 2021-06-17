@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Gehäuse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Case action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Case" />
+  <meta name="search-keywords" content="Case" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Case Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/i_Switches_Case.png"> Gehäuse</h1>
+  <p>Diese Aktion erzeugt einen neuen Fall innerhalb einer <a href="Switch.htm"><span class="notranslate">Schalter</span></a>. Sie geben den Wert für den Fall an und dieser wird mit dem Eingabewert für den <span class="notranslate">Schalter</span> verglichen, und wenn sie übereinstimmen, werden die unter dem Fall hinzugefügten Aktionen ausgeführt.
+    Aktionen, die zu einem Case hinzugefügt werden, um <i>nur</i> in diesem Case ausgeführt zu werden, sollten an der Seite der Aktion abgelegt werden, ähnlich wie Sie eine Aktion zu einem &quot;wenn&quot; hinzufügen würden:</p>
+  <p><img alt="Case drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/Case_Drop.png">Beachten Sie, dass ein Case-Wert <i>eine Konstante sein muss</i>, die ein beliebiger Datentyp sein kann (Real, String, etc...),
+    solange er beim Kompilieren zu einem einzigen Wert ausgewertet wird - Sie können also keine Ausdrücke verwenden, die von Variablen abhängen. Beachten Sie auch, dass Case nicht außerhalb eines <span class="notranslate">Switches</span> verwendet werden kann und der Versuch, dies zu tun, zu einem Fehler führt.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Case Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/a_Switches_Case.png" /></p>
+  <h4>Argumente:</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argument</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>Konstant</td>
+          <td>Der konstante Wert, der gegen den Eingangswert <span class="notranslate">Switch</span> ausgewertet werden soll</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Case Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Switch/e_switches.png">Der obige Aktionsblockcode ruft den in einer Variablen gespeicherten Wert ab und vergleicht ihn dann mit
+    den verschiedenen möglichen Fällen. Wenn einer der Fälle mit dem Wert übereinstimmt, dann wird die Aktion unter diesem Fall ausgeführt, andernfalls wird der nächste Fall ausgewertet. Nachdem der Schalter gelaufen ist, wird ein Alarm auf 30 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Switch_Actions.htm"><span class="notranslate">Schalter-Aktionen</span></a></div>
+        <div style="float:right">Nächste: <a href="Default.htm">Standard</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Case
+-->
+  <!-- TAGS
+action_case
+-->
+</body>
+</html>

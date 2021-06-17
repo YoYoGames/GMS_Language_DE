@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Argument</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the argument variable" />
+  <meta name="rh-index-keywords" content="argument[n],argument0 - argument15" />
+  <meta name="search-keywords" content="argument" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Argument</h1>
+  <p>Diese Variable enthält ein <a href="../../Arrays.htm">Array</a>, das zusammen mit der schreibgeschützten Variable <a href="argument_count.htm">argument_count</a> in <a href="../../Script_Functions.htm">Skriptfunktionen</a> oder <a href="../../Method_Variables.htm">Methoden</a> verwendet wird.
+    Jede Array-Position enthält einen Eingabewert für die Funktion und ist speziell für die Verwendung mit Funktionen <em>mit variablen </em>Argumenten vorgesehen.</p>
+  <p>Beachten Sie, dass es auch eine Reihe unabhängiger globaler Bereichsvariablen gibt, die auch in benutzerdefinierten Funktionen verwendet werden können, um die verschiedenen Eingangsargumente zu referenzieren: <span class="inline">argument0</span>, <span class="inline">argument1</span>, <span class="inline">argument2</span>,
+    usw... bis hin zu <span>.<span class="inline">argument15</span></span>
+  </p>
+  <p class="note"><strong>HINWEIS</strong>: Dies ist nicht mehr zwingend erforderlich und dient eher der Unterstützung von älteren Funktionen als alles andere. Alle benutzerdefinierten Funktionen akzeptieren variable Argumente, und jedes an eine Funktion übergebene Argument, das nicht Teil der benannten
+    Inputs ist, wird standardmäßig auf <span class="inline" style="font-size: 14px">undefiniert</span> initialisiert, was mit der Funktion <a href="../../../GML_Reference/Variable_Functions/is_undefined.htm">is_undefined()</a> überprüft werden kann.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">argument<em>[n</em>]<br> argument1
+    <br> argument2
+    <br> ...
+    <br> argument15
+  </p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Wert (kann ein beliebiger <a href="../../Data_Types.htm">Datentyp</a> sein, der der Funktion übergeben wird)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">function mein_array()<br> {
+    <br> var i, arg;<br> for (i = 0; i &lt; 5; i += 1;)<br> {
+    <br> if argument_count &gt; i<br> {
+    <br> arg[i] = argument[i]<br> }
+    <br> sonst
+    <br> {
+    <br> arg[i] = -1;<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code verwendet die Variable <tt>argument_count</tt> zusammen mit dem Array <span class="inline">argument</span>, um Variablen zu initialisieren, und ist ein Beispiel dafür, wie man einer benutzerdefinierten Funktion erlauben kann, eine variable Anzahl von Argumenten zu akzeptieren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Global_Variables.htm">Globale Variablen</a></div>
+        <div style="float:right">Weiter: <a href="argument_count.htm">argument_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+argument
+-->
+  <!-- TAGS
+argument
+-->
+</body>
+</html>

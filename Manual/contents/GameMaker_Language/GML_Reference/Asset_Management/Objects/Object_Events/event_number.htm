@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ereignis_Nummer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function event_number" />
+  <meta name="rh-index-keywords" content="event_number" />
+  <meta name="search-keywords" content="event_number" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ereignis_Nummer</h1>
+  <p>Diese <b>schreibgeschützte</b> Variable gibt die Nummer des aktuell aufgerufenen Ereignisses zurück, wobei sich die Nummer eigentlich auf das &quot;Unterereignis&quot; des Ereignisses bezieht, d. h.: für das Schritt-Ereignis könnte die Ereignisnummer eine der Konstanten ev_step_normal <b>,</b>
+   <b>ev_step_begin</b>, oder <b>ev_step_end</b> sein. Eine vollständige Liste der Konstanten, die für die spezifischen Unterereignisse verfügbar sind, finden Sie unter <a href="event_perform.htm"><tt>event_perform()</tt></a>, und wenn Sie das Hauptereignis selbst kennen müssen, sollten Sie
+    überprüfen Sie die <a href="event_type.htm"><tt>event_type</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">event_number;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">switch (event_number)<br> {
+    <br> case ev_step_normal: show_debug_message(&quot;Step event!&quot;); break;<br> case ev_game_start: show_debug_message(&quot;Game Start!&quot;); break;<br> case ev_room_start: show_debug_message(&quot;Room Start!&quot;); break;<br> }
+  </p>
+  <p>Der obige Code könnte von einem Skript aus aufgerufen und verwendet werden, um Debug-Meldungen anzuzeigen, die Sie darüber informieren, welches Ereignis gerade ausgelöst wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Generating_Object_Events.htm">Objekt-Ereignisse generieren</a></div>
+        <div style="float:right">Weiter: <a href="event_object.htm">event_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+event_number
+-->
+  <!-- TAGS
+event_number
+-->
+</body>
+</html>

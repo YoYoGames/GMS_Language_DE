@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>delta_zeit</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for delta_time" />
+  <meta name="rh-index-keywords" content="delta_time" />
+  <meta name="search-keywords" content="delta_time" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>delta_zeit</h1>
+  <p>Der Zweck des Delta-Timings ist es, die Auswirkungen der Verzögerung oder Langsamkeit von Computern zu beseitigen, die versuchen, komplexe Grafiken oder eine Menge Code zu verarbeiten. Es ist ein Wert, der zur Geschwindigkeit von Objekten addiert werden kann, so dass sie sich schließlich mit der gleichen
+    Geschwindigkeit bewegen, unabhängig vom Lag. Dies wird in <span class="notranslate">GameMaker Studio 2</span> durch die Verwendung der <b>schreibgeschützten</b> Variable <tt>delta_time</tt> bei jedem Schritt erreicht, da sie die Zeit, die zwischen einem Schritt und dem nächsten vergangen ist, in Mikrosekunden misst (1Mikrosekunde ist 1.000.000stel
+    einer Sekunde). Daher kann die Variable <tt>delta_time</tt> verwendet werden, um zu berechnen, wie viel schneller (z. B.) sich eine Spielfigur bewegen muss, um eine Verzögerungsspitze im Spiel auszugleichen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">delta_zeit</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Ganzzahl)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _dt = delta_time / 1000000;<br> speed = spd * dt;</p>
+  <p>Der obige Code setzt die Geschwindigkeit der Instanz unter Verwendung der Delta-Zeit, um die Verzögerung zu korrigieren. Die Variable &quot;_dt&quot; wird verwendet, um den zuvor berechneten Deltazeitwert zu halten, so dass das Verhältnis verwendet werden kann, um den Basisgeschwindigkeitswert (gehalten in der Variablen &quot;spd&quot;) zu multiplizieren.
+    in der Variablen &quot;spd&quot;) multipliziert werden kann und so eine konsistente Geschwindigkeit für die Instanz erhält.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Date_And_Time.htm">Datum und Uhrzeit</a></div>
+        <div style="float:right">Weiter: <a href="date_set_timezone.htm">date_set_timezone</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+delta_time
+-->
+  <!-- TAGS
+delta_time
+-->
+
+</body></html>

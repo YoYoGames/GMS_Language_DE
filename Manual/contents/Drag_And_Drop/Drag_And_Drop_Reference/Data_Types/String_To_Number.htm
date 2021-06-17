@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Zeichenfolge in Zahl</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the String To Number action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - String To Number" />
+  <meta name="search-keywords" content="String To Number" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="String To Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_String_To_Number.png"> String To Number</h1>
+  <p>Diese Aktion kann eine Zeichenkette in eine Zahl umwandeln. Sie geben die zu ändernde Zeichenkette und dann eine Zielvariable an, an die die reale Zahl zurückgegeben werden soll (diese Variable kann als temporäre lokale Variable gekennzeichnet werden). Beachten Sie, dass, wenn die Zeichenkette andere Zeichen als
+    Wenn die Zeichenkette jedoch mit einer Zahl <i>beginnt</i>, wird diese <i>konvertiert</i> und der Rest der Zeichenkette ausgeschlossen. Es ist wichtig zu beachten, dass bei der Übergabe von Dezimalzahlen an diese
+    Aktion Dezimalstellen übergeben werden, die zurückgegebene Zeichenkette nur auf <i>zwei</i> Dezimalstellen gerundet wird. Nachfolgend finden Sie eine Tabelle mit den Eingabewerten und den zu erwartenden Rückgaben</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Zeichenfolge</th>
+        <th>Zurückgegebener Wert</th>
+      </tr>
+      <tr>
+        <td>&quot;123&quot;</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <td>&quot;123 Hallo Welt&quot;</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <td>&quot;Hallo Welt&quot;</td>
+        <td>0 (standardmäßig wird 0 zurückgegeben, wenn der String nicht konvertiert werden kann)</td>
+      </tr>
+      <tr>
+        <td>&quot;Hallo Welt 123&quot;</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>&quot;123.45678&quot;</td>
+        <td>123.46</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="String To Number Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_String_To_Number.png" /></p>
+  <h4>Argumente:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Die zu konvertierende Zeichenkette</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable, die den zurückgegebenen Wert aufnehmen soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="String To Number Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_String_To_Number.png">Der obige Aktionsblockcode initialisiert eine globale Variable und lädt dann eine Datei mit
+    einem darin gespeicherten Puffer. Zwei Zeichenketten werden aus dem Puffer gelesen und in einer temporären lokalen Variablen gespeichert, bevor eine von ihnen in eine reelle Zahl umgewandelt und in einer anderen temporären lokalen Variablen gespeichert wird. Diese werden dann globalen Variablen zugewiesen, und
+    der Puffer wird gelöscht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Data_Type_Actions.htm">Datentyp-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Number_To_String.htm">Zahl zu String</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - String To Number
+-->
+  <!-- TAGS
+action_string_to_number
+-->
+</body>
+</html>

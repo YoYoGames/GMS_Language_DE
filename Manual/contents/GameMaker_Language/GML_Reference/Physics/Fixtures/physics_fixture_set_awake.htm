@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_awake</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_awake" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_awake" />
+  <meta name="search-keywords" content="physics_fixture_set_awake" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_awake</h1>
+  <p>Wenn Sie einen Raum mit Physik starten oder Fixtures an Instanzen binden, werden die Fixtures immer als &quot;wach&quot; betrachtet... das heißt, sie verarbeiten Events und interagieren mit den umgebenden Instanzen. Dies kann jedoch manchmal zu Problemen führen
+    zu Problemen führen, besonders wenn Sie mehrere Instanzen mit Fixtures haben, die nebeneinander stehen, wenn ein Raum startet (denken Sie an einen Turm, der aus verschiedenen Instanzen mit Fixtures besteht), da sie sich, wenn sie &quot;wach&quot; sind, bewegen und möglicherweise ihre Position ändern werden
+    aufgrund des plötzlichen Einsetzens der Schwerkraft und der Kollisionen, die auf sie einwirken. In diesen Fällen können Sie diese Funktion verwenden, um das Fixture als &quot;schlafend&quot; zu kennzeichnen, in diesem Fall wird es nichts verarbeiten, wenn es zum ersten Mal im Raum erstellt wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_fixture_set_awake(fixture, state)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Halterung</td>
+        <td>der Index der Halterung</td>
+      </tr>
+      <tr>
+        <td>Flagge</td>
+        <td>ob ein Gerät wach ist<tt>(true</tt>) oder nicht<tt>(false</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">physics_fixture_set_awake(fix_Cloud, true);</p>
+  <p>Der obige Code kennzeichnet das Fixture als &quot;wach&quot;, wenn es an eine Instanz gebunden ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fixtures.htm">Fixtures</a></div>
+        <div style="float:right">Weiter: <a href="physics_get_friction.htm">physics_get_friction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_awake
+-->
+  <!-- TAGS
+physics_fixture_set_awake
+-->
+</body>
+</html>

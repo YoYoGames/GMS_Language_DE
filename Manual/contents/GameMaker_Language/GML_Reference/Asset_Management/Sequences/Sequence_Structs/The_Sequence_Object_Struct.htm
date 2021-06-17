@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Das Sequenz-Objekt Struktur</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Sequence Object Struct" />
+  <meta name="rh-index-keywords" content="Sequence Object Struct" />
+  <meta name="search-keywords" content="The Sequence Object Struct,seqplay_oneshot,seqplay_loop,seqplay_pingpong,spritespeed_framespersecond,spritespeed_framespergameframe,name,loopmode,playbackSpeed,playbackSpeedType,length,volume,xorigin,yorigin,messageEventKeyframes,momentKeyframes,tracks" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Das Sequenz-Objekt Struktur</h1>
+  <p>Ein Sequenz-Objekt ist der Name für die Struktur, die vom Sequenz-Asset abgerufen wird, wie im Asset-Browser für Ihr Spiel definiert. Diese <a href="../../../../GML_Overview/Structs.htm">Struktur</a> hat die folgenden Eigenschaften, die geändert werden können:</p>
+  <ul class="colour">
+    <li><tt>name</tt>: Dies ist der Name der Sequenz als Zeichenkette und Sie können diesen Wert nach Bedarf abrufen oder setzen. Beachten Sie, dass Sequenzen, die mit der Funktion <a href="../sequence_create.htm"><tt>sequence_create()</tt></a> erstellt werden, keinen Namen haben und dieser
+      einfach eine leere Zeichenkette &quot;&quot; sein wird.<tt></tt></li>
+    <li><tt>loopmode</tt>: Dies ist der Wiedergabemodus des Sequenz-Objekts und kann ausgelesen oder gesetzt werden. Er gibt die folgenden Konstanten zurück (oder kann auf sie gesetzt werden):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+        <th>Wert</th>
+      </tr>
+      <tr>
+        <td><tt>seqplay_oneshot</tt></td>
+        <td>Die Sequenz wird einmal abgespielt und stoppt, wenn sie beendet ist.</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><tt>seqplay_loop</tt></td>
+        <td>Die Sequenz wird in einer Schleife abgespielt, wobei der Abspielkopf an den Anfang zurückkehrt, wenn er das Ende des Wiedergabebereichs erreicht.</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><tt>seqplay_pingpong</tt></td>
+        <td>Die Sequenz wird in einer Schleife abgespielt, wobei der Abspielkopf die Richtung umkehrt, wenn er das Ende des Wiedergabebereichs erreicht.</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>playbackSpeed</tt>: Gibt die Wiedergabegeschwindigkeit der Sequenz an, die je nach <tt>playbackSpeedType</tt> (siehe unten) entweder als Bilder pro Sekunde oder als Bilder pro Spiel-Frame interpretiert wird. Sie können diesen Wert abrufen oder setzen.</li>
+    <li><tt>playbackSpeedType</tt>: Dies gibt an, wie die <tt>Wiedergabegeschwindigkeit</tt> interpretiert werden soll, und Sie können diesen Wert erhalten oder setzen. Sie können eine der folgenden Konstanten verwenden, um den Wert zu setzen (oder eine dieser Konstanten wird zurückgegeben, wenn die
+      der Eigenschaft):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+        <th>Wert</th>
+      </tr>
+      <tr>
+        <td><tt>spritespeed_framespersecond</tt></td>
+        <td>Gibt an, dass <tt>playbackSpeed</tt> als Bilder pro Sekunde interpretiert werden soll</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><tt>spritespeed_framespergameframe</tt></td>
+        <td>Gibt an, dass <tt>playbackSpeed</tt> als Frames-per-Game-Frame interpretiert werden soll.</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>Länge</tt>: Die Länge der Sequenz in Frames. Sie können diesen Wert abrufen oder festlegen, aber beachten Sie, dass eine Verkürzung der Sequenz zu Problemen führen kann, wenn der Abspielkopf einer Sequenzinstanz, die diese Sequenz referenziert, über die neue Länge hinaus eingestellt ist.</li>
+    <li><tt>Lautstärke</tt>: Dies ist ein skalarer Wert von 0 bis 1, der verwendet wird, um die Lautstärke aller Audiospuren in der Sequenz zu skalieren. Sie können diesen Wert abrufen oder setzen und er ändert die globale Audioausgabe für alle Spuren - wenn Sie z. B. eine Audiospur
+      mit einer Lautstärke von 0,8 haben und dann die Eigenschaft " <tt>Sequenzlautstärke"</tt> auf 0,5 setzen, hat die Audiospur eine Endlautstärke von 0,4.</li>
+    <li><tt>xUrsprung</tt>: Dies ist der Ursprung der Sequenz entlang der X-Achse. Sie können diesen Wert abrufen oder setzen.</li>
+    <li><tt>yUrsprung</tt>: Dies ist der Ursprung der Sequenz entlang der Y-Achse. Sie können diesen Wert abrufen oder setzen.</li>
+    <li><tt>messageEventKeyframes</tt>: Ermöglicht den Zugriff auf die <span class="notranslate">Message-Event-Keyframes</span> für die Sequenz. Sie können diese Nachrichtenereignisse abrufen oder setzen, und wenn Sie diese Eigenschaft abrufen, wird ein Array von <span class="notranslate">Keyframe-Strukturen</span> zurückgegeben, und zum Setzen der Eigenschaft sollten Sie
+      sollten Sie ein Array von <span class="notranslate">Keyframe-Strukturen</span> bereitstellen. Weitere Informationen finden Sie auf der Seite über <a href="../Sequence_Events_Moments_Broadcast.htm">Sequenzereignisse und Momente</a>.</li>
+    <li><tt>momentKeyframes</tt>: Dies ermöglicht den Zugriff auf die <span class="notranslate">Moment-Event-Keyframes</span> für die Sequenz. Sie können diese Moment-Ereignisse abrufen oder setzen, und wenn Sie diese Eigenschaft abrufen, wird ein Array von <span class="notranslate">Keyframe-Strukturen</span> zurückgegeben, und zum Setzen der Eigenschaft sollten Sie
+      ein Array von <span class="notranslate">Keyframe-Strukturen</span>. Weitere Informationen finden Sie auf der Seite über <a href="../Sequence_Events_Moments_Broadcast.htm">Sequenzereignisse und Momente</a>.</li>
+    <li><tt>Spuren</tt>: Dies ermöglicht den Zugriff auf die Liste der <b>Asset-Spuren</b> auf der obersten Ebene der Sequenz. Sie können diese Eigenschaft abrufen oder setzen, und wenn Sie diese Eigenschaft abrufen, wird ein Array von Track-Strukturen zurückgegeben, und zum Setzen der Eigenschaft sollten Sie
+      ein Array von Track-Strukturen liefern. Weitere Informationen finden Sie im Abschnitt über <a href="The_Track_Struct.htm"><b>Spur-Strukturen</b></a>.</li>
+  </ul>
+  <p>Beachten Sie, dass Sie, wenn Sie auf die Eigenschaften einer Sequenz zugreifen wollen, die im Asset-Browser erstellt wurde, zuerst die Funktion <a href="../sequence_get.htm"><tt>sequence_get()</tt></a> für den Asset-Index aufrufen, um die Sequenzobjekt-Struktur abzurufen.
+    Beachten Sie auch, dass alle Änderungen, die an dieser Sequenz-Struktur vorgenommen werden, bedeuten, dass alle weiteren Instanzen dieses Sequenz-Assets ebenfalls diese Änderungen haben werden, und sie werden beibehalten, solange das Spiel läuft, auch wenn Sie die Funktion <span class="inline">game_restart()</span> aufrufen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="The_Sequence_Instance_Struct.htm">Die Sequenz-Instanz-Struktur</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequence Object Struct
+seqplay_oneshot
+seqplay_loop
+seqplay_pingpong
+spritespeed_framespersecond
+spritespeed_framespergameframe
+name
+loopmode
+playbackSpeed
+playbackSpeedType
+length
+volume
+xorigin
+yorigin
+messageEvent<span class="notranslate">Keyframes</span>
+moment<span class="notranslate">Keyframes</span>
+tracks
+-->
+  <!-- TAGS
+sequence_object
+-->
+</body>
+</html>

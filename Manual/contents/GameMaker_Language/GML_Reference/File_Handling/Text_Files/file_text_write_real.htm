@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_write_real</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_text_write_real" />
+  <meta name="rh-index-keywords" content="file_text_write_real" />
+  <meta name="search-keywords" content="file_text_write_real" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_write_real</h1>
+  <p>Mit dieser Funktion können Sie eine Zahl in die zuvor geöffnete Textdatei schreiben. Beachten Sie, dass, da der zu schreibende Wert eine reelle Zahl sein kann, alle Nachkommastellen mit einem &quot;.&quot;-Punkt als Trennzeichen geschrieben werden. Wenn die Datei bereits Informationen enthält,
+    werden diese Informationen gelöscht und die Zeichenfolge wird an den Anfang der Datei geschrieben, es sei denn, Sie haben die Datei mit der Option <a href="file_text_open_append.htm"><tt>file_text_open_append()</tt></a>. Sie können dies auch vermeiden, indem Sie den
+    <a href="file_text_readln.htm"><tt>file_text_readln()</tt></a> Funktion zusammen mit der <a href="file_text_eof.htm"><tt>file_text_eof()</tt></a> Funktion den Inhalt der Datei in einer Schleife durchlaufen, bis Sie am Ende angelangt sind, und dann mit dem Schreiben beginnen.</p>
+  <p>Es ist wichtig zu beachten, dass beim Schreiben sehr großer Zahlen in eine Textdatei mit dieser Funktion der Wert möglicherweise in ein vereinfachtes Standardformat wie &quot;6.6624e+003&quot; übersetzt wird, das nicht <span class="notranslate">korrekt</span> in GameMaker <span class="notranslate">Studio 2</span> zurückgelesen werden kann.
+    Um solche Probleme zu vermeiden, sollten Sie den Wert stattdessen in einen String konvertieren und die Funktion <a href="file_text_write_string.htm"><tt>file_text_write_string()</tt></a> verwenden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">file_text_write_real(fileid, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>fileid</td>
+        <td>Die ID der zu bearbeitenden Datei.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Der tatsächliche Wert, der in die Datei geschrieben werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var file = file_text_open_write(working_directory + &quot;hiscore.txt&quot;);<br> for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> file_text_write_real(file, scr[i]);<br> file_text_writeln(file);
+    <br> file_text_write_string(datei, scr_name[i]);<br> file_text_writeln(datei);
+    <br> }
+    <br> file_text_close(file);
+  </p>
+  <p>Der obige Code öffnet eine Datei zum Schreiben und läuft dann in einer Schleife durch zwei Arrays, wobei jeder Array-Wert in eine neue Zeile der Datei geschrieben wird. Die Datei wird dann geschlossen, wenn die Schleife beendet ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Text_Files.htm">Textdateien</a></div>
+        <div style="float:right">Weiter: <a href="file_text_write_string.htm">file_text_write_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_write_real
+-->
+  <!-- TAGS
+file_text_write_real
+-->
+</body>
+</html>

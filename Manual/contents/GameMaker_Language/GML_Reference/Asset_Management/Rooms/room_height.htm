@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Raum_Höhe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_height" />
+  <meta name="rh-index-keywords" content="room_height" />
+  <meta name="search-keywords" content="room_height" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Raum_Höhe</h1>
+  <p>Diese Variable enthält die Höhe des aktuellen Raums in Pixel. Sie können diese Variable jederzeit ändern, um die Höhe des Raums zu ändern. Änderungen werden auf den unteren Teil des Raums angewendet, da der Ursprung als die linke obere Ecke betrachtet wird. Beispiel,
+    Wenn der Raum z. B. 480px hoch ist und Sie ihn auf 640px einstellen, wird der Raum nach unten erweitert und am unteren Rand um 180px vergrößert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">Raum_Höhe;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if bbox_bottom &gt; room_height<br> {
+    <br> y += room_height - bbox_bottom;<br> }
+  </p>
+  <p>Der obige Code prüft, ob die Sprite Bounding Box der aktuellen Instanz größer ist als die Höhe des Raums, und wenn dies der Fall ist, wird die Instanz nach oben verschoben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Rooms.htm">Räume</a></div>
+        <div style="float:right">Weiter: <a href="room_width.htm">room_width</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_height
+-->
+  <!-- TAGS
+room_height
+-->
+</body>
+</html>

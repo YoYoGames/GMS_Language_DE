@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Skelett_Knochen_Zustand_holen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_bone_state_get" />
+  <meta name="rh-index-keywords" content="skeleton_bone_state_get" />
+  <meta name="search-keywords" content="skeleton_bone_state_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Skelett_Knochen_Zustand_holen</h1>
+  <p>Ihre Skelettanimation besteht aus einer Reihe von &quot;Bones&quot;, die Sie in Ihrem Animationsprogramm definiert und benannt haben, und mit dieser Funktion können Sie jederzeit bestimmte Daten für den benannten Bone abrufen. Beachten Sie, dass sich diese Daten
+    auf die <b>aktuelle</b> Pose des Skeletts beziehen, je nach verwendetem Animationsset, und die Funktion eine vorher erstellte <a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> benötigt, die dann nach dem Aufruf der Funktion folgende Schlüssel und deren
+    äquivalenten Werten nach dem Aufruf der Funktion:</p>
+  <ul class="colour">
+    <li><b>&quot;x&quot;:</b> Die lokale x-Position des Bones relativ zum übergeordneten Bone.</li>
+    <li><b>&quot;y&quot;:</b> Die lokale y-Position des Bones relativ zum übergeordneten Bone.</li>
+    <li><b>&quot;Winkel&quot;:</b> Die lokale Drehung des Bones relativ zum übergeordneten Bone.</li>
+    <li><b>&quot;xSkala&quot;:</b> Der lokale horizontale Maßstab des Bones, bezogen auf den übergeordneten Bone.</li>
+    <li><b>&quot;ySkala&quot;:</b> Der lokale vertikale Maßstab des Bones, bezogen auf den übergeordneten Bone.</li>
+    <li><b>&quot;worldScaleX&quot;:</b> Die Größe (immer positiv) der Weltskala X (dies ist ein <i>reiner Lesewert</i> ).</li>
+    <li><b>&quot;worldScaleY&quot;:</b> Die Größe (immer positiv) der Weltskala Y (dies ist ein <i>reiner Lesewert</i> ).</li>
+    <li><b>&quot;worldAngleX&quot;:</b> Die Weltdrehung für die X-Achse (dies ist ein <i>reiner Lesewert</i> ).</li>
+    <li><b>&quot;worldAngleY&quot;:</b> Die Weltdrehung für die Y-Achse (dies ist ein <i>reiner Lesewert</i> ).</li>
+    <li><b>&quot;worldX&quot;:</b> Die Welt-X-Position (dies ist ein <i>reiner Lesewert</i> ).</li>
+    <li><b>&quot;worldY&quot;:</b> Die Welt-Y-Position (dies ist ein <i>nur lesbarer</i> Wert).</li>
+    <li><b>&quot;angewandterWinkel&quot;:</b> Dies ist die lokale Drehung, die für die Pose der Skelettknochen verwendet wird.</li>
+    <li><b>&quot;übergeordnet&quot;:</b> Der Name (eine Zeichenkette) des übergeordneten Bones.</li>
+  </ul>
+  <p>Die zurückgegebenen Kartendaten ähneln denen, die für die Standard-Pose zurückgegeben werden, wenn Sie <a href="skeleton_bone_state_get.htm"><tt>skeleton_bone_data_get()</tt></a>zurückgegeben werden, nur dass Sie jetzt die zusätzlichen &quot;Welt&quot;-Tasten haben. Diese beziehen sich auf die Position des Bones
+    Diese beziehen sich auf die Position des Bones relativ zur <i>Wurzel</i> (Ursprung) des Skelettanimationssprites, und die zurückgegebenen Werte berücksichtigen keine Skalierung oder Drehung, die durch Setzen der eingebauten Sprite-Variablen wie <tt>image_xscale</tt> oder <tt>image_angle</tt> vorgenommen wurde.
+    Die World-Werte sind <i>nur lesbar</i> und können nicht gesetzt werden.</p>
+  <p>Diese Funktion wird zur Verfügung gestellt, damit Sie Animationsdaten &quot;abfangen&quot; und ändern können, bevor sie auf dem Bildschirm gezeichnet werden, und als solche würden Sie sie im <a href="../../../../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Ereignis</a> &quot;Other - <a href="../../../../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Animation Update</a> &quot; verwenden wollen <a href="../../../../../../The_Asset_Editors/Object_Properties/Other_Events.htm">,</a> da dieses Ereignis kurz vor den Draw Events ausgelöst wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">skeleton_bone_state_get(bone, map);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Knochen</td>
+        <td>Der Name (als String) des Bones.</td>
+      </tr>
+      <tr>
+        <td>Karte</td>
+        <td>Die (zuvor erstellte) DS-Map, in der die Bone-Daten gespeichert sind.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var map = ds_map_create();<br> skeleton_bone_state_get(&quot;head&quot;, map);<br> var xx = ds_map_find_value(map, &quot;worldX&quot;);<br> var yy = ds_map_find_value(map, &quot;worldY&quot;);<br> var deltax = mouse_x - (x + xx);<br> var deltay
+    = mouse_y - (y + yy);<br> var angle = -radtodeg(arctan2(deltay, deltax));<br> ds_map_replace(map, &quot;angle&quot;, angle);<br> skeleton_bone_state_set(&quot;head&quot;, map);<br> ds_map_destroy(map);
+  </p>
+  <p>Der obige Code erstellt eine DS-Map und füllt sie dann mit den Daten des Bones namens &quot;head&quot;. Er extrahiert dann die Weltposition für den Bone und verwendet diese Daten, um den &quot;Winkel&quot; des Bones so einzustellen, dass er die Mausposition im
+    Spiel zu verfolgen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rückseite: <a href="Bones.htm">Knochen</a></div>
+        <div style="float:right">Weiter: <a href="skeleton_bone_state_set.htm">skeleton_bone_state_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_bone_state_get
+-->
+  <!-- TAGS
+skeleton_bone_state_get
+-->
+</body>
+</html>

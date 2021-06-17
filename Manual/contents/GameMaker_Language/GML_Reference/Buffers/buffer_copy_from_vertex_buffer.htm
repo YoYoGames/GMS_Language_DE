@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>puffer_kopieren_vom_vertex_puffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_copy_from_vertex_buffer" />
+  <meta name="rh-index-keywords" content="buffer_copy_from_vertex_buffer" />
+  <meta name="search-keywords" content="buffer_copy_from_vertex_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>puffer_kopieren_vom_vertex_puffer</h1>
+  <p>Mit dieser Funktion können einige (oder alle) Scheitelpunktdaten, die in einem Scheitelpunktpuffer gespeichert sind, in einen zuvor erstellten regulären Puffer kopiert werden. Wenn Sie mit dieser Funktion aus einem Scheitelpunkt-Puffer in einen regulären Puffer kopieren, müssen beide Puffer zuvor
+    erstellt worden sein (mit den Befehlen <a href="../Drawing/Primitives/vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a> und <a href="buffer_create.htm"><tt>buffer_create()</tt></a> Funktionen). Sie können den Bereich der Scheitelpunktdaten angeben, den Sie
+    Sie können den Bereich der Scheitelpunktdaten angeben, den Sie in den Puffer kopieren möchten, wobei der Start-Scheitelpunkt irgendwo zwischen 0 und der Anzahl der Scheitelpunkte -1 liegen kann, und Sie können die Anzahl der Scheitelpunkte angeben, die von diesem Punkt an kopiert werden sollen. Sie können die Funktion <a href="../Drawing/Primitives/vertex_get_number.htm"><tt>vertex_get_number()</tt></a>    auf den Scheitelpunktpuffer anwenden, um die Gesamtzahl der gespeicherten Scheitelpunkte zu erhalten. Schließlich geben Sie den Pufferindex an, in den die Scheitelpunktdaten kopiert werden sollen, sowie einen Datenoffset, um die Position zu definieren, an die die Scheitelpunktdaten im Zielpuffer kopiert werden sollen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_copy_from_vertex_buffer(vertex_buffer, start_vertex, num_vertices, dest_buffer, dest_offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>vertex_buffer</td>
+        <td>Der Index des Vertex-Puffers, <i>aus dem</i> kopiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>start_vertex</td>
+        <td>Der Startscheitelpunkt.</td>
+      </tr>
+      <tr>
+        <td>num_vertices</td>
+        <td>Die Gesamtzahl der zu verwendenden Scheitelpunkte.</td>
+      </tr>
+      <tr>
+        <td>dest_buffer</td>
+        <td>Der Index des Puffers, <i>in den</i> kopiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td>Die Offsetposition, an die die Daten kopiert werden sollen (in Bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var v_num = vertex_get_number(model_buff); buffer_copy_from_vertex_buffer(model_buffer, 0, v_num - 1, player_buffer, 0);</p>
+  <p>Der obige Code kopiert die Scheitelpunktdaten, die in dem in der Variablen &quot;model_buffer&quot; indizierten Scheitelpunktpuffer gespeichert sind, und fügt sie dann in den in der Variablen &quot;player_buffer&quot; indizierten Puffer ein.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_get_type.htm">buffer_get_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_copy_from_vertex_buffer
+-->
+  <!-- TAGS
+buffer_copy_from_vertex_buffer
+-->
+</body>
+</html>

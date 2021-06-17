@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Timeline-Status setzen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Timeline State action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Timeline State" />
+  <meta name="search-keywords" content="Set Timeline State" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Timeline State Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_State.png" width="32"> Zustand der Zeitleiste einstellen</h1>
+  <p>Mit dieser Aktion können Sie eine Zeitleiste starten, stoppen, pausieren oder fortsetzen. Die Zeitleiste muss zuerst mit der Aktion <a href="Set_Instance_Timeline.htm">Setze Instanz-Zeitleiste</a> für die Instanz gesetzt worden sein, und dann können Sie diese Aktion jederzeit verwenden, um
+    ihren Betriebszustand aus den folgenden Optionen ändern</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Option</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Start</td>
+        <td>Starten Sie die der Instanz zugewiesene Zeitleiste (wenn die Zeitleiste angehalten wurde, wird dadurch die Startposition wieder auf den Zeitpunkt 0 gesetzt).</td>
+      </tr>
+      <tr>
+        <td>Lebenslauf</td>
+        <td>Fortsetzen einer angehaltenen Timeline (wenn die Timeline angehalten und nicht pausiert wurde, bewirkt dies nichts).</td>
+      </tr>
+      <tr>
+        <td>Pausiert</td>
+        <td>Halten Sie die der Instanz zugewiesene Zeitleiste an (im angehaltenen Zustand werden die Momente in einer Zeitleiste nicht mit den Spielframes weitergeschaltet).</td>
+      </tr>
+      <tr>
+        <td>Stopp</td>
+        <td>Stoppt die der Instanz zugewiesene Zeitleiste.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p><img alt="Set Timeline State Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_State.png" /></p>
+  <p> </p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Zustand</td>
+        <td>Der Zustand, in den die Zeitleiste gesetzt werden soll (siehe Tabelle oben)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Set Timeline State Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Timeline_State.png">Der obige Code des Aktionsblocks prüft den Wert, der in einer globalen Variablen gespeichert ist, und
+    wenn er <tt>wahr</tt> ist, wird die Zeitleiste angehalten, und wenn er <tt>falsch</tt> ist, wird die Zeitleiste wieder fortgesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Timeline_Actions.htm">Zeitleisten-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Instance_Timeline.htm">Instanz-Zeitleiste einstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Timeline State
+-->
+  <!-- TAGS
+action_set_timeline_state
+-->
+</body>
+</html>

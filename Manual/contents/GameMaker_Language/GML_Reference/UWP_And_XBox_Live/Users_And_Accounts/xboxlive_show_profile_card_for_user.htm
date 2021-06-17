@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_profil_karte_zeigen_für_benutzer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_show_profile_card_for_user" />
+  <meta name="rh-index-keywords" content="xboxlive_show_profile_card_for_user" />
+  <meta name="search-keywords" content="xboxlive_show_profile_card_for_user" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_profil_karte_zeigen_für_benutzer</h1>
+  <p>Mit dieser Funktion können Sie anfordern, dass die XBox die Profilkarte für den Ziel-Benutzer-ID-Zeiger anzeigt. Die Funktion benötigt sowohl den Benutzer-ID-Zeiger für den Benutzer, der die Informationen <i>anfordert</i>, als auch den Benutzer-ID-Zeiger des Benutzers
+    des <i>Zielbenutzers</i>, dessen Profilkarte sie abrufen möchte.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_show_profile_card_for_user(requesting_user_id, target_user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>anfrage_benutzer_id</td>
+        <td>Die Benutzer-ID (ein Zeiger) des anfragenden Benutzers</td>
+      </tr>
+      <tr>
+        <td>ziel_benutzer_id</td>
+        <td>Die Benutzer-ID (ein Zeiger) des Benutzers, von dem die Profilkarte abgerufen werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if (gamepad(0, gp_start))<br> {
+    <br> xboxlive_show_profile_card_for_user(user[0], user[1]);<br> }
+  </p>
+  <p>Der obige Code prüft auf einen Tastendruck des Gamepads und zeigt, wenn einer erkannt wird, die Profilkarte für den angegebenen Benutzer an.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Users_And_Accounts.htm">Benutzer und Konten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_reputation_for_user.htm">xboxlive_reputation_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_show_profile_card_for_user
+-->
+  <!-- TAGS
+xboxlive_show_profile_card_for_user
+-->
+</body>
+</html>

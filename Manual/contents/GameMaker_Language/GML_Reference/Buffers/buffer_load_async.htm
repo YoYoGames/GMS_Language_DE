@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>puffer_laden_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load_async" />
+  <meta name="rh-index-keywords" content="buffer_load_async" />
+  <meta name="search-keywords" content="buffer_load_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>puffer_laden_async</h1>
+  <p>Mit dieser Funktion können Sie eine Datei, die Sie zuvor mit der <a href="buffer_save.htm"><tt>buffer_save()</tt></a> Funktion (oder einer der anderen Funktionen zum Speichern von Puffern) in einen Puffer geladen haben. Der &quot;Offset&quot; definiert die Start
+    Position innerhalb des Puffers für das Laden (in Bytes), und die &quot;Größe&quot; ist die Größe des zu ladenden Pufferbereichs ab diesem Offset (ebenfalls in Bytes). Sie können für das Argument "Größe" den Wert -1 angeben und der gesamte Puffer wird geladen.
+    Beachten Sie, dass die Funktion aus einem &quot;Standard&quot;-Ordner lädt, der nicht als Teil des angegebenen Dateipfads enthalten sein <i>muss</i>. Dieser Ordner wird erstellt, wenn er nicht vorhanden ist oder wenn Sie eine Datei mit <a href="buffer_save_async.htm"><tt>buffer_save_async()</tt></a>.</p>
+  <p>Die Funktion gibt einen eindeutigen ID-Wert zurück, der dann im <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">asynchronen Ereignis "Speichern/Laden</a> " verwendet werden kann, um den  <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    ID-Wert, wie im folgenden erweiterten Beispiel gezeigt. Die <tt>async_load-Map</tt> im Ereignis hat die folgenden zwei Schlüssel/Wertpaare:</p>
+  <ul class="colour">
+    <li><b>&quot;id&quot;: die ID der </b>asynchronen Funktion, wie sie von der Speicherfunktion zurückgegeben wird.</li>
+    <li><b>&quot;status&quot;: </b>gibt true zurück, wenn <tt>die</tt> Daten korrekt gespeichert/geladen wurden, <tt>andernfalls</tt> false.</li>
+  </ul>
+  <p class="note"><b>HINWEIS</b>: Bei <b>HTML5</b> ist dies die bevorzugte Methode zum Laden einer Datei, wenn Sie von einem Server und nicht von einem lokalen Speicher laden, da das synchrone Laden bei den meisten Browsern veraltet ist und irgendwann überholt sein wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_load_async(buffer, filename, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu ladenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Dateiname</td>
+        <td>Der Name der zu ladenden Datei.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Offset innerhalb des Puffers, in den geladen werden soll (in Bytes).</td>
+      </tr>
+      <tr>
+        <td>Größe</td>
+        <td>Die Größe des zu ladenden Pufferbereichs (in Bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>Die Funktion <tt>buffer_load_async()</tt> kann von jedem Ereignis aus aufgerufen werden, und da sie asynchron ist, kann der Callback fast sofort erfolgen oder mehrere Sekunden dauern. Der Aufruf der Funktion ist einfach und würde in etwa wie folgt aussehen:</p>
+  <p class="code">loadid = buffer_load_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);</p>
+  <p>Der obige Code lädt den Inhalt der Datei &quot;<i>Player_Save.sav&quot; in den</i> angegebenen Puffer und speichert die ID des Funktionsaufrufs in der Variablen &quot; loadid&quot;. Wenn das Laden abgeschlossen ist, wird das asynchrone Save/Load-Ereignis
+    ausgelöst und Sie können die <tt>async_load-Map</tt> nach der richtigen ID der Funktion analysieren, etwa so:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == loadid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == false<br> {
+    <br> show_debug_message(&quot;Laden fehlgeschlagen!&quot;);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft zunächst die ID der erstellten DS-Map, dann den Status des Callbacks und gibt eine Debug-Meldung aus, wenn es Probleme gegeben hat.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_load_partial.htm">buffer_load_partial</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load_async
+-->
+  <!-- TAGS
+buffer_load_async
+-->
+</body>
+</html>

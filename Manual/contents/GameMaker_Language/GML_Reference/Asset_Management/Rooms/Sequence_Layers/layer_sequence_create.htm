@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_create" />
+  <meta name="rh-index-keywords" content="layer_sequence_create" />
+  <meta name="search-keywords" content="layer_sequence_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_create</h1>
+  <p>Mit dieser Funktion können Sie eine Instanz eines Sequenz-Assets auf der angegebenen Ebene erzeugen. Sie geben die Ebenen-ID an, die eine Zeichenkette des Ebenennamens sein kann - wie im Raumeditor definiert - oder die eindeutige Ebenen-ID - wie sie von der Funktion <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>,
+    sowie die X- und Y-Position im Raum, an der die Sequenz erstellt werden soll, und schließlich die ID der zu erstellenden Sequenz. Die Sequenz-ID ist die Namenskonstante, die Sie im Asset-Browser für die Sequenz definiert haben. Die Funktion gibt die eindeutige ID
+    des Sequenzelements zurück, die dann in allen weiteren Ebenenfunktionen für Sequenzen verwendet werden kann, oder sie kann zum Abrufen der Sequenzinstanzstruktur mit der Funktion <a href="layer_sequence_get_sequence.htm"><tt>layer_sequence_get_instance()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_sequence_create(layer_id, x, y, sequence_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Instanzschicht</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position im Raum, an der die Sequenz erstellt werden soll</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position im Raum, an der die Sequenz erstellt werden soll</td>
+      </tr>
+      <tr>
+        <td>sequenz_id</td>
+        <td>Die zu erstellende Sequenz-ID, wie im Asset-Browser definiert</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Element-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _s = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_pause(_s);
+  </p>
+  <p>Der obige Code erstellt eine neue Sequenz auf der Ebene &quot;Hintergrund&quot; und hält sie dann an.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequence_Layers.htm">Sequenzschichten</a></div>
+        <div style="float:right">Weiter: <a href="layer_sequence_destroy.htm">layer_sequence_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_create
+-->
+  <!-- TAGS
+layer_sequence_create
+-->
+</body>
+</html>

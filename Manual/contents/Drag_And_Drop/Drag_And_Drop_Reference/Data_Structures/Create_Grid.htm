@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Raster erstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Create Grid action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Grid" />
+  <meta name="search-keywords" content="Create Grid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png"> Raster erstellen</h1>
+  <p>Diese Aktion erstellt eine neue <b>Grid-Datenstruktur</b> und gibt den Indexwert zurück, damit Sie später über die anderen Datenstruktur-Aktionen auf das Grid zugreifen können. Der Gitterindex wird an die von Ihnen angegebene Zielvariable zurückgegeben, die zuvor mit
+    Sie können auch das Kontrollkästchen &quot; <a href="../Common/Declare_Temporary_Variable.htm">Temp</a>&quot; markieren, um eine temporäre lokale Variable zu benennen und zu erstellen, die den Wert bis zum Ende der Anwendung speichert.
+    um den Wert bis zum Ende des Scripts oder Ereignisses zu speichern. Beachten Sie, dass Gitter im Gegensatz zu anderen Datenstrukturen <i>nicht</i> &quot;leer&quot; erstellt werden und jede Zelle eines neu erstellten Gitters den Wert 0 hat. Es liegt an Ihnen, die Zelldaten zu ändern
+    oder das Raster selbst mit der Aktion <a href="Clear_Grid.htm">Raster löschen</a> auf einen anderen Wert zu setzen. Beachten Sie, dass Sie weitere DS-Gitter erstellen können, indem Sie auf das Plus-Symbol<span> <span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"></span></span>
+    neben der Aktion klicken und eine weitere Variable auswählen, die die ID des Gitters enthält, und erneut die Werte für Breite und Höhe angeben.<b></b></p>
+  <p class="note"><b>WICHTIG!</b> Das Erstellen von Datenstrukturen verbraucht Speicher auf der Zielplattform, und daher sollten alle Datenstrukturen mit der Aktion <a href="Free_Data_Structure.htm">"Datenstruktur</a> freigeben" freigegeben werden, wenn sie nicht mehr benötigt werden, sonst entsteht ein
+    Speicherleck, das die Leistung Ihres Spiels beeinträchtigen oder sogar zum Absturz führen kann. Dies ist besonders relevant, wenn Sie temporäre lokale Variablen zum Speichern von Datenstrukturindizes verwenden, da diese Variablen am Ende des Codes oder Ereignisses entfernt werden, aber
+    Das bedeutet aber nicht, dass auch die Datenstruktur entfernt wird! Die Datenstruktur existiert weiterhin, Sie haben nur keine Möglichkeit, sie zu referenzieren, also verwenden Sie entweder eine Instanzvariable und geben Sie die Struktur zu einem späteren Zeitpunkt frei, oder geben Sie die Struktur vor dem Ende von
+    des Ereignisses oder der Funktion, wenn ihr Index in einer temporären Variablen gespeichert ist.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Create Grid Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Create_Grid.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Zielvariable, in der der Grid-Index gespeichert wird</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Create Grid Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Create_Grid.png">Der obige Code des Aktionsblocks erstellt zwei temporäre Variablen, um die Anzahl der 32px-Zellen
+    entlang der Breite und Höhe des Raums zu halten, und erstellt dann eine neue globale Bereichsvariable, um den Index einer neu erstellten Rasterdatenstruktur zu halten. Das Raster wird dann mit dem Schlüsselwort <tt>"noone"</tt> geleert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Data_Structure_Actions.htm">Datenstruktur-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Create_Stack.htm">Stapel erstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Grid
+-->
+  <!-- TAGS
+action_create_grid
+-->
+</body>
+</html>

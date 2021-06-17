@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pfad_klar_punkte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_clear_points" />
+  <meta name="rh-index-keywords" content="path_clear_points" />
+  <meta name="search-keywords" content="path_clear_points" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>pfad_klar_punkte</h1>
+  <p>Mit dieser Funktion können Sie alle Punktdefinitionen aus einem Pfad entfernen und so effektiv einen &quot;leeren&quot; Pfad erstellen. Damit wird der Pfad <i>nicht</i> gelöscht, dafür sollten Sie die Funktion <a href="path_delete.htm"><tt>path_delete()</tt></a>,
+    Es sollte jedoch beachtet werden, dass <strong>diese Funktion das eigentliche Pfad-Asset ändert</strong> und somit dauerhaft beeinflusst, wie der Pfad von allen Instanzen im Spiel ab dem Zeitpunkt der Verwendung der Funktion bis zum Ende des Spiels verwendet wird. Wenn dies
+    nicht gewünscht ist, sollten Sie eine Funktion wie <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> verwenden, um zunächst eine Kopie des Pfades zu erstellen und dann diese Funktion für das duplizierte Asset aufzurufen (vergessen Sie nicht, die Funktion
+    <span class="inline"><a href="path_delete.htm">path_delete()</a></span> für das Asset aufzurufen, wenn es nicht mehr benötigt wird).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_clear_points(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu löschenden Pfades.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if path_get_number(meinpfad) &gt; 0<br> {
+    <br> path_clear_points(meinpfad);
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob es Punkte auf dem Pfad gibt, die in der Variablen &quot;mypath&quot; indiziert sind, und wenn ja, löscht er den Pfad.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Manipulation.htm">Pfadmanipulation</a></div>
+        <div style="float:right">Weiter: <a href="path_append.htm">path_append</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_clear_points
+-->
+  <!-- TAGS
+path_clear_points
+-->
+</body>
+</html>

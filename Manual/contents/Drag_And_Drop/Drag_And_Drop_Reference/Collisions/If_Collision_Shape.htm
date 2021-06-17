@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn Kollisionsform</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Collision Shape action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Collision Shape" />
+  <meta name="search-keywords" content="If Collision Shape" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Collision Shape Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Shape.png" width="32"> Wenn Kollisionsform</h1>
+  <p>Diese Aktion wird verwendet, um zu prüfen, ob es eine Kollision mit einer Instanz eines bestimmten Objekts innerhalb eines bestimmten geformten Bereichs oder entlang einer Linie gibt. Sie geben die Form (Rechteck, Ellipse oder Linie) und das zu prüfende Objekt an und liefern dann die Koordinaten für
+    die obere linke und untere rechte Ecke der verwendeten Form bzw. im Falle einer Linie die Start- und Endposition. Dabei kann es sich um absolute Positionen innerhalb des Spielraums oder um Positionen relativ zu der Instanz handeln, die die Aktion ausführt. Sie können sehen, wie
+    dies funktioniert, sehen Sie im folgenden Bild:</p>
+  <p><img alt="Example of different collision shapes" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/collision_shape_example.png">Wie Sie sehen können, hängen die Ergebnisse von der Kollisionsmaske der Instanz ab
+    ab, d. h. die Instanz des gesuchten Objekts <i>muss</i> ein Sprite haben, das dem <tt>sprite_index</tt> zugeordnet ist, oder ein Sprite, das dem <tt>mask_index</tt> zugeordnet ist. Wenn dies nicht der Fall ist, wird es von diesen Funktionen nicht erkannt,
+    unabhängig davon, ob sie ein Sprite zeichnet oder nicht. Es ist erwähnenswert, dass jede Instanz, die vollständig innerhalb der für die Ellipsen- oder Rechteckform festgelegten Grenzen liegt, ebenfalls eine Kollision zurückgibt. Die Aktion wird als <tt>true</tt> ausgewertet, wenn
+    Die Aktion wird als true ausgewertet, wenn eine Kollision erkannt wird, oder andernfalls als <tt>false</tt>, obwohl Sie auch das <b>Not-Flag</b> überprüfen können, um zu prüfen, ob es <i>keine</i> Kollision mit dem angegebenen geformten Bereich gibt, und die Aktion wird dann nur als <tt>true</tt> ausgewertet, wenn <i>keine</i> Kollisionen
+    gefunden werden, andernfalls wird sie als <tt>false</tt> ausgewertet. Sie können auch die Option <b>Exclude Self</b> setzen, um die aufrufende Instanz von der Kollisionsprüfung auszuschließen.</p>
+  <p>Als nächstes können Sie die Option " <b>Liste zurückgeben"</b> aktivieren/deaktivieren. Wenn Sie dies ankreuzen, erstellt und füllt die Aktion eine Datenstruktur<span> </span>mit <i>allen Instanzen</i>, die mit der Form kollidieren.
+    mit der Form und setzt die Variable <b>Target</b> auf die DS-Listen-ID. Wenn das Kontrollkästchen nicht aktiviert ist, wird die Variable <b>Target</b> nur dann auf einen Wert kleiner als 0 gesetzt, wenn keine Kollision erkannt wird, oder auf den eindeutigen ID-Wert <i>einer</i> der Instanzen in der Kollision
+    (beachten Sie, dass Sie bei einer Kollision mehrerer Instanzen nicht wissen können, welche Instanz-ID zurückgegeben wird, wenn Sie keine Liste verwenden).</p>
+  <p>Wenn Sie ausgewählt haben, dass eine Liste zurückgegeben werden soll - und die Zielvariable <i>nicht</i> auf <b>Temp</b> gesetzt ist -, dann können Sie auch die Option <b>Free Target</b> auswählen. Wenn diese Option auf <tt>true</tt> gesetzt ist, wird die in der Zielvariablen enthaltene Liste zerstört und
+    eine neue Liste erstellt (und an die Zielvariable zurückgegeben), wenn Sie die Aktion aufrufen. Auf diese Weise können Sie dieselbe Variable wiederverwenden, ohne sich Gedanken über Speicherlecks zu machen, denn wenn Sie die Option "Free <b>Target</b> " <i>nicht</i> aktivieren, sind Sie dafür verantwortlich
+    für das Löschen der Liste verantwortlich, bevor Sie die Variable erneut in der Aktion verwenden. Beachten Sie, dass <i>unabhängig</i> davon, ob diese Option aktiviert ist oder nicht, wenn Sie die Aktion auf <b>"Liste zurückgeben"</b> eingestellt haben, die Zielvariable <i>immer eine Listen-ID enthält</i>,
+    und als solche muss sie freigegeben werden, wenn die Instanz zerstört wird oder der Raum endet (Sie können dafür z. B. das Ereignis <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm"><b>Aufräumen</b></a> Ereignis verwenden, z. B. zusammen mit der Aktion " <a href="../Data_Structures/Free_Data_Structure.htm">Datenstruktur freigeben"</a><span> </span>).
+    Es ist erwähnenswert, dass Sie die Option <b>"Free Target"</b> so einstellen können, dass eine vordefinierte Variable oder ein Ausdruck verwendet wird und Sie so steuern können, wann die Listendatenstruktur freigegeben wird, indem Sie die Variable an anderer Stelle setzen (oder unterschiedliche Ergebnisse für den Ausdruck haben)
+    solange sie zu <tt>true/false</tt> ausgewertet wird.</p>
+  <p>Schließlich geben Sie die <b>Zielvariable</b> an, die den zurückgegebenen Wert oder die Listen-ID enthalten soll. Wenn Sie die Zielvariable, die den zurückgegebenen Wert enthalten soll, als <b>Temp-Variable</b> (lokale Variable) kennzeichnen, wird die Aktion diese Variable erstellen, um den Rückgabewert nur bis zum Ende des Ereignisses zu halten.
+    In diesem Fall bewirkt die Option "Free Target" nichts und Sie sind für das Löschen der DS-Liste verantwortlich, wenn diese Option aktiviert wurde. Wenn keine Zielvariable übergeben wird und die Option <b>Rückgabeliste</b> aktiviert ist, wird keine Liste erstellt.</p>
+  <p class="note"><b>WICHTIG!</b> Kollisionen werden nur für die Instanzen registriert, die eine gültige Kollisionsmaske haben, d. h.: sie haben ein Sprite, das dem <tt>sprite_index</tt> zugeordnet ist, oder ein Sprite, das dem <tt>mask_index</tt> zugeordnet ist. Wenn die Instanzen des Objekts, das
+    überprüft werden, keine Kollisionsmaske haben, wird die Kollision nicht erkannt, unabhängig davon, was die Instanz zu diesem Zeitpunkt zeichnet.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in einen &quot;<span class="inline">if</span>&quot; Block, diese an der Seite <i>der</i> Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="If Collision Shape drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_Shape.png" /></p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="If Collision Shape Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_Shape.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Form</td>
+        <td>Die zu verwendende Form</td>
+      </tr>
+      <tr>
+        <td>Objekt</td>
+        <td>Das zu prüfende Objekt für Instanzen von</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Position, von der aus gestartet werden soll</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Position, von der aus gestartet werden soll</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Position, an der beendet werden soll</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Position, an der beendet werden soll</td>
+      </tr>
+      <tr>
+        <td>Freies Ziel</td>
+        <td>Kann auf eine Variable oder einen Ausdruck gesetzt werden oder auf <tt>true/false</tt> gesetzt werden, um das Freigeben des Listenspeichers bei der Wiederverwendung einer Listenvariablen zu steuern</td>
+      </tr>
+      <tr>
+        <td>Ziel</td>
+        <td>Die Variable, die als Ziel für den Rückgabewert der Aktion dienen soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="If Collision Shape Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_Shape.png">Der obige Code des Aktionsblocks prüft auf eine Kollision mit allen Instanzen des Objekts &quot;
+    <span class="inline">obj_Enemy</span> &quot; innerhalb eines Kreises von 100px um die Position der aufrufenden Instanz. Die Aktion erzeugt eine Liste aller Instanzen, bei denen eine Kollision festgestellt wurde, und speichert die ID der Liste in der Variablen Target. Wenn die Aktion den Wert
+   <tt>true</tt> auswertet, wird die Liste in einer Schleife durchlaufen und für jede Instanz, deren ID in der Liste gespeichert ist, wird die Variable &quot;<span class="inline">hp</span>&quot; um 1 reduziert. Die DS-Liste wird dann freigegeben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collision_Actions.htm">Kollisions-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="If_Collision_Point.htm">Wenn Kollisionspunkt</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Collision Shape
+-->
+  <!-- TAGS
+action_if_collision_shape
+-->
+</body>
+</html>

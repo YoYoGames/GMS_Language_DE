@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>make_colour_hsv</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function make_colour_hsv" />
+  <meta name="rh-index-keywords" content="make_colour_hsv,make_color_hsv" />
+  <meta name="search-keywords" content="make_colour_hsv,make_color_hsv" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>make_colour_hsv</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> stellt diese Funktion (sowie weitere) zur Verfügung, um dem Benutzer die Möglichkeit zu geben, seine eigenen Farben zu erstellen. Diese spezielle Funktion nimmt drei Komponenten, den <i>Farbton</i>, die <i>Sättigung</i> und den <i>Wert</i> (auch als &quot;Leuchtkraft&quot; bekannt)
+    um die gewünschte Farbe zu erzeugen. Diese Werte werden als zwischen 0 und 255 liegend angenommen, so dass Sie damit 16.777.216 (256*256*256) Farben erzeugen können! Unten sehen Sie ein Bild, wie diese Komponenten aussehen, wenn sie getrennt sind:</p>
+  <p><img alt="Make HSV colour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/HSV.png">Das Bild auf der linken Seite ist eine Aufschlüsselung der einzelnen Komponenten der Funktion, und dann auf der rechten Seite ist eine Illustration
+    wie sich die Änderung dieser Komponenten auf die Endfarbe auswirkt. Wie Sie sehen, können wir die Farbe auch ohne Änderung des Farbtons (er bleibt bei 0, rot) mit den beiden anderen Einstellungen drastisch verändern, wobei die Sättigung den Farbton von grau (0)
+    zu einem reinen Ton (255), und mit dem Wert von dunkler (0) zu heller (255).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">make_colour_hsv(hue, sat, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Farbton</td>
+        <td>Der Farbton der Farbe</td>
+      </tr>
+      <tr>
+        <td>satt</td>
+        <td>Wie gesättigt die Farbe ist</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Wie dunkel die Farbe ist</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">col = make_colour_hsv(100, 145, 255);</p>
+  <p>Der obige Code verwendet die Funktion, um eine Farbe zu erzeugen und ihren Wert in der Variablen &quot;col&quot; zur späteren Verwendung zu speichern.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Colour_And_Alpha.htm">Farbe und Alpha</a></div>
+        <div style="float:right">Weiter: <a href="make_colour_rgb.htm">make_colour_rgb</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+make_colour_hsv
+make_color_hsv
+-->
+  <!-- TAGS
+make_colour_hsv
+-->
+</body>
+</html>

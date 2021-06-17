@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ini-Datei öffnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Open Ini File action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Open Ini File" />
+  <meta name="search-keywords" content="Open Ini File" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Open Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Open_Ini_File.png"> Ini-Datei öffnen</h1>
+  <p>Mit dieser Aktion können Sie eine Ini-Datei zum Lesen und/oder Schreiben öffnen. Wenn die Ini-Datei an dem Ort, den Sie prüfen, nicht existiert, kann <span class="notranslate">GameMaker Studio 2</span> eine erstellen, aber <i>nur</i>, wenn Sie Daten in sie schreiben. Wenn Sie nur Informationen aus der
+    der Ini-Datei gelesen haben, werden die Standardwerte für die Lesefunktion zurückgegeben, aber die Ini-Datei wird nicht tatsächlich erstellt.</p>
+  <p>Bitte beachten Sie, dass <i>immer</i> nur <i>eine Ini-Datei geöffnet</i> sein kann und dass Sie die <a href="Close_Ini_File.htm">Ini-Datei schließen</a> müssen, wenn Sie mit dem Lesen/Schreiben der Ini-Datei fertig sind, da die Informationen erst dann auf der Festplatte gespeichert werden.
+    gespeichert werden (sie werden im Speicher gehalten, bis die Datei geschlossen wird).</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Open Ini File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Open_Ini_File.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Dateiname</td>
+        <td>Der Name - als String und mit der Erweiterung <tt>.ini</tt> - der zu öffnenden Datei</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Open Ini File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Open_Ini_File.png">Der obige Code des Aktionsblocks öffnet eine Ini-Datei zur Verwendung und ruft dann den Wert ab, der mit
+    dem Schlüssel &quot;name&quot; unter der Kopfzeile &quot;player&quot;. Wenn der zurückgegebene Name mit dem Standardwert für den Namen übereinstimmt (d. h.: die Datei, der Abschnitt oder der Schlüssel existiert <i>nicht</i> ), wird eine globale Variable in die Datei geschrieben, bevor sie geschlossen wird (und die neuen Daten auf die Festplatte geschrieben werden).
+    der neuen Daten auf die Festplatte).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="File_Actions.htm">Datei-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Close_Ini_File.htm">Ini-Datei schließen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Open Ini File
+-->
+  <!-- TAGS
+action_open_ini
+-->
+
+</body></html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_proj_mat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_proj_mat" />
+  <meta name="rh-index-keywords" content="camera_set_proj_mat" />
+  <meta name="search-keywords" content="camera_set_proj_mat" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_proj_mat</h1>
+  <p>Diese Funktion setzt die <b>Projektionsmatrix</b> für eine gegebene Kamera. Sie geben den eindeutigen Kamera-ID-Wert (wie er von den verschiedenen <a href="camera_create.htm"><tt>kamera_erzeugen()</tt></a> Funktionen zurückgegeben wird) und eine anzuwendende Ansichtsmatrix. Sie können
+    mehr über das Erstellen von Projektionsmatrizen aus dem Abschnitt <a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">Matrixfunktionen</a>, insbesondere <tt><a href="../../Maths_And_Numbers/Matrix_Functions/matrix_build_projection_perspective.htm">matrix_build_projection_perspective()</a></tt> und .
+    <a href="../../Maths_And_Numbers/Matrix_Functions/matrix_build_projection_ortho.htm"><tt>matrix_build_projection_ortho()</tt></a>. Beachten Sie, dass, wenn Ihre Kamera eine automatische Objektverfolgung durchführt - d. h.: sie wurde mit <a href="camera_create_view.htm"><tt>camera_create_view()</tt></a>    mit einem Objektindex / einer Instanz-ID, die nicht -1 ist, oder Sie stellen eine im Raum-Editor definierte Kamera ein, oder Sie stellen die Standardkamera ein - dann wird diese Matrix im nächsten Spiel-Frame überschrieben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_set_proj_mat(camera_id, matrix)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde.</td>
+      </tr>
+      <tr>
+        <td>Matrix</td>
+        <td>Die eindeutige Matrix-ID, die beim Erstellen der Matrix zurückgegeben wurde.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">view_camera[0] = camera_create();<br> var viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br> var projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br> camera_set_view_mat(view_camera[0], viewmat);<br> camera_set_proj_mat(view_camera[0],
+    projmat);</p>
+  <p>Der obige Code erstellt eine neue Kamera und weist sie dem View-Port[0] zu. Dieser Kamera werden dann ihre Ansichts- und Projektionsmatrizen zugewiesen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_set_update_script.htm">camera_set_update_script</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_proj_mat
+-->
+  <!-- TAGS
+camera_set_proj_mat
+-->
+</body>
+</html>

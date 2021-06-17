@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_resize</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_resize" />
+  <meta name="rh-index-keywords" content="array_resize" />
+  <meta name="search-keywords" content="array_resize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_resize</h1>
+  <p>Mit dieser Funktion können Sie die Größe eines bestehenden Arrays auf eine neue Größe ändern. Sie geben das Array an, dessen Größe geändert werden soll, sowie die neue Anzahl der Indizes für das Array, und die Funktion ändert die Größe dieses Arrays. Beachten Sie, dass diese Funktion für die Größenänderung
+    ein Array auf eine kleinere Länge <i>zu</i> verkleinern, da Sie die Größe durch einfaches Setzen eines neuen Index im Array ändern können. Wenn Sie die Funktion zum Vergrößern eines Arrays verwenden, werden alle neuen Indizes auf den Standardwert 0 gesetzt.</p>
+  <p>Diese Funktion kann auch für mehrdimensionale Arrays verwendet werden, solange Sie bei der Übergabe des Array-Indexes angeben, welche Dimension Sie in der Größe verändern wollen, und zwar nach diesem Muster:</p>
+  <p class="code">// Größenänderung der ersten Dimension des Arrays<br> array_resize(mein_Array, 10);<br>
+    <br> // Größenänderung der zweiten Dimension des Arrays<br> array_resize(mein_Array[0], 10);<br>
+    <br> // Größenänderung der dritten Dimension des Arrays<br> array_resize(mein_Array[0][0], 10);<br>
+    <br> // usw...</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">array_resize(array_index, new_size);</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argument</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>array_index</td>
+          <td>Der Index des Arrays, dessen Größe geändert werden soll.</td>
+        </tr>
+        <tr>
+          <td>neue_Größe</td>
+          <td>Die neue Größe für das Array (eine Ganzzahl, beginnend bei 0).</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if array_length(a) &gt; 10<br> {
+    <br> array_resize(a, 10);<br> }
+  </p>
+  <p>Der obige Code prüft die Länge eines Arrays und wenn es mehr als 10 Indizes hat, dann wird es in der Größe angepasst.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="array_length_1d.htm">array_length_1d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_resize
+-->
+  <!-- TAGS
+array_resize
+-->
+</body>
+</html>

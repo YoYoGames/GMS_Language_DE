@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz_Position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_position" />
+  <meta name="rh-index-keywords" content="instance_position" />
+  <meta name="search-keywords" content="instance_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Instanz_Position</h1>
+  <p>Mit dieser Funktion können Sie eine Position auf eine Kollision mit einer anderen Instanz oder allen Instanzen eines Objekts prüfen. Wenn Sie dies verwenden, prüfen Sie einen einzelnen Punkt im Raum auf eine Instanz oder ein Objekt. Diese Prüfung wird gegen die Bounding
+    Box der Instanz oder gegen die Maske der Instanz durchgeführt, wenn diese Instanz präzise Kollisionen geprüft hat, und gibt die eindeutige Instanz <a href="Instance_Variables/id.htm"><tt>id</tt></a>. Wenn Sie die ID der kollidierenden Instanz nicht benötigen, sollten Sie
+    sollten Sie die Verwendung von <a href="../../Movement_And_Collisions/Collisions/position_meeting.htm"><tt>position_meeting()</tt></a> stattdessen verwenden. Diese Funktion akzeptiert auch die speziellen <a href="../../../GML_Overview/Instance_Keywords.htm">Schlüsselwörter</a>
+    <span class="inline"><b>alle</b></span> und <span class="inline"><b>other</b></span> und gibt das Schlüsselwort <span class="inline"><b>noone</b></span> zurück, wenn keine Kollision auftritt, oder den eindeutigen ID-Wert der gefundenen Instanz, wenn eine Kollision auftritt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">instance_position( x, y, obj );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der nach Instanzen gesucht werden soll.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der nach Instanzen gesucht werden soll.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Das Objekt, das auf Instanzen von geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (entweder ein Instanz-ID-Wert oder das Schlüsselwort <tt>noone</tt>)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var inst;<br> inst = instance_position(mouse_x, mouse_y, obj_Pause_Button);<br> if (inst != noone)<br> {
+    <br> with (inst) image_index=1;<br> instance_create_layer(room_width / 2, 0, &quot;Controllers&quot;, obj_Menu);<br> }
+  </p>
+  <p>Der obige Code prüft auf eine Kollision mit einer Instanz von &quot;obj_Pause_Button&quot; an der Mausposition, und wenn es eine gibt, verwendet er die zurückgegebene id, um seinen image_index auf einen neuen Wert zu setzen, bevor er eine neue Instanz des Objekts
+    &quot;obj_Menu&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="instance_position_list.htm">instance_position_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_position
+-->
+  <!-- TAGS
+instance_position
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_view_angle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_view_angle" />
+  <meta name="rh-index-keywords" content="camera_set_view_angle" />
+  <meta name="search-keywords" content="camera_set_view_angle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_view_angle</h1>
+  <p>Mit dieser Funktion können Sie den Winkel der Fachkamera innerhalb des Raums aktualisieren. Sie geben den eindeutigen Kamera-ID-Wert an (wie er von den verschiedenen <a href="camera_create.htm"><tt>camera_create()</tt></a> Funktionen zurückgegeben wird) und geben dann den Winkel an, den Sie
+    Sie den Winkel angeben, auf den Sie die Kameraansicht einstellen möchten. Der Standardwert ist 0°, wobei positive Werte die Kamera <b>gegen den Uhrzeigersinn</b> drehen, d. h.: wenn Sie den Wert auf 90 setzen, wird die Kamera um 90° nach links gedreht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_set_view_angle(camera_id, angle)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde</td>
+      </tr>
+      <tr>
+        <td>Winkel</td>
+        <td>Der neue Winkel, auf den die Kameraansicht eingestellt werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">camera_set_view_angle(view_camera[0], point_direction(x, y, mouse_x, mouse_y));</p>
+  <p>Der obige Code stellt den Winkel der Fachkamera für die Kamera ein, die dem Anschluss view[0] zugewiesen ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_set_view_target.htm">camera_set_view_target</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_view_angle
+-->
+  <!-- TAGS
+camera_set_view_angle
+-->
+</body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_get_stats_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_get_stats_for_user" />
+  <meta name="rh-index-keywords" content="xboxlive_get_stats_for_user" />
+  <meta name="search-keywords" content="xboxlive_get_stats_for_user" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_get_stats_for_user</h1>
+  <p>Diese Funktion kann verwendet werden, um Daten über bestimmte Statistiken von den Xbox Live-Servern abzurufen. Sie liefern die Benutzer-ID, wie sie von der Funktion <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>zurückgegeben wird, dann Ihre Spiele Service
+    Konfigurations-ID (wie auf der XDP-Konsole angezeigt) und schließlich die gewünschten Statistiken. Sie können bis zu maximal 14 Statistiken abfragen, aber das garantiert nicht, dass Sie 14 Statistik-Ergebnisse erhalten, da die Gesamtlänge der Anfrage begrenzt ist und
+    daher hängt die maximale Anzahl der Statistiken von der Länge der Namen der Statistiken selbst ab.</p>
+  <p>Die Funktion gibt 0 zurück, wenn die Statistikanfrage gesendet wurde, oder -1, wenn ein Fehler aufgetreten ist, und der Callback löst ein <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">asynchrones Systemereignis</a> aus. Dieses Ereignis hat
+    die spezielle DS-Map <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> die dann für den folgenden Schlüssel geparst werden sollte:</p>
+  <ul class="colour">
+    <li>&quot; event_type<b>&quot; -</b> sollte die Zeichenkette &quot; stat_result&quot; enthalten, wenn<b>das Ereignis</b> durch diese Funktion ausgelöst wurde</li>
+  </ul>
+  <p>Wenn sich der Ereignistyp auf diese Funktion bezieht, dann gibt es auch den folgenden zusätzlichen Schlüssel:</p>
+  <ul class="colour">
+    <li>&quot; user&quot;<b>-</b> enthält die Benutzer-ID für die angeforderte Statistik.</li>
+  </ul>
+  <p>Es kann auch einen zusätzlichen Satz von Schlüssel-Wert-Paaren geben, wobei der Schlüssel der angeforderte Statistikname ist und der Wert der Wert für diese Statistik auf dem Server. Beachten Sie, dass, wenn eine Statistik für diesen Benutzer nie erstellt wurde (weil er nicht die Ereignisse ausgelöst hat, die
+    gesetzt wurde), kann kein Wert für diese Statistik zurückgegeben werden (<a href="../../Data_Structures/DS_Maps/ds_map_exists.htm"><tt>ds_map_exists()</tt></a> kann verwendet werden, um nach den Statistiken in der <tt>async_load-Map</tt> zu suchen).</p>
+  <p>Wenn die Anfrage aufgrund einer zu großen Anfragelänge fehlschlägt, sollte in der Konsolenausgabe eine Meldung mit Angabe des Fehlercodes erscheinen:</p>
+  <p class="code">xboxlive_get_stats_for_user - Ausnahme beim Erhalten der Ergebnisse aufgetreten - 0x80190190</p>
+  <p>Wenn dies geschieht, sollte die async-Ereignis-DS-Map einen &quot;succeeded&quot;-Schlüssel mit dem Wert &quot;0&quot; haben, und in diesem Fall sollten Sie versuchen, weniger Statistiken in einem einzigen Aufruf abzurufen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_get_stats_for_user(user_id, serviceconfig_id, statname1, ...);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Der Zeiger für die Benutzer-ID.</td>
+      </tr>
+      <tr>
+        <td>serviceconfig_id</td>
+        <td>Die ID der Dienstkonfigurationsdatei</td>
+      </tr>
+      <tr>
+        <td>statname1 (2, 3, usw...)</td>
+        <td>Die Statistiknamen, für die die Informationen abgerufen werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _uid = xboxlive_get_user(0);<br> var _configid = &quot;00000000-0000-0000-0000-00000000000000&quot;;<br> xboxlive_get_stats_for_user(xbuser, _configid, &quot;GameProgress&quot;, &quot;CurrentMode&quot;);</p>
+  <p>Der obige Code ruft die Benutzer-ID ab und verwendet diese dann, um Informationen über bestimmte Statistiken für diesen Benutzer anzufordern.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Stats_And_Leaderboards.htm">Statistiken und Ranglisten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_read_player_leaderboard.htm">xboxlive_read_player_leaderboard</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_get_stats_for_user
+-->
+  <!-- TAGS
+xboxlive_get_stats_for_user
+-->
+</body>
+</html>

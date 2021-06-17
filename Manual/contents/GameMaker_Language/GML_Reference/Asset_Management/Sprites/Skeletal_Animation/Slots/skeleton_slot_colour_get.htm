@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skelett_schlitz_farbe_holen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_slot_colour_get" />
+  <meta name="rh-index-keywords" content="skeleton_slot_colour_get" />
+  <meta name="search-keywords" content="skeleton_slot_colour_get,skeleton_slot_color_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skelett_schlitz_farbe_holen</h1>
+  <p>Mit dieser Funktion können Sie die Farbe eines Anbauplatzes ermitteln. Sie liefern den Slot-Namen (eine Zeichenkette) und die Funktion gibt einen Integer-Wert für die Farbe zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">skeleton_slot_colour_get(slot);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Steckplatz</td>
+        <td>Der zu prüfende Steckplatzname, eine Zeichenkette</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">slot_list = ds_list_create();<br> skeleton_find_slot(mouse_x, mouse_y, slot_list);<br> if !ds_list_empty(slot_list)<br> {
+    <br> for (var i = 0; i &lt; ds_list_size(slot_list); ++i;) <br> {
+    <br> if skeleton_slot_colour_get(slot_list[| i]) != c_white<br> {
+    <br> skeleton_slot_colour_set(slot_list[| i], c_white, 1);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code erstellt eine DS-Liste und füllt sie dann mit den Slot-Namen, die an der Position der Maus im Raum gefunden wurden. Anschließend durchläuft er die Slot-Liste und setzt die Farbe für die gefundenen Slots auf Weiß mit einem Alpha-Wert von 1 zurück, wenn die Farbe nicht
+    bereits weiß ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Slots.htm">Schlitze</a></div>
+        <div style="float:right">Weiter: <a href="skeleton_slot_alpha_get.htm">skeleton_slot_alpha_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_slot_colour_get
+skeleton_slot_color_get
+-->
+  <!-- TAGS
+skeleton_slot_colour_get
+-->
+</body>
+</html>

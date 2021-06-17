@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Datenstruktur-Aktionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing all the Data Structure actions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Data Structure Actions Library" />
+  <meta name="search-keywords" content="Data Structure Actions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Datenstruktur-Aktionsbibliothek</h1>
+  <p><img alt="Data Structure Library" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/Lib_DS.png" /></p>
+  <p>In Spielen müssen Sie oft Informationen in einer präzisen und geordneten Weise speichern. Sie müssen z. B. Listen von Gegenständen speichern, die eine Person bei sich trägt, oder Sie möchten ein Raster von Orten speichern, die noch besucht werden müssen. Nun, Sie können mehrere Variablen
+    verwenden, aber wenn Sie kompliziertere Operationen durchführen wollen, wie z. B. das Sortieren der Daten oder die Suche nach einem bestimmten Gegenstand, müssen Sie große Teile des Codes von Aktionsblöcken schreiben, die nur langsam ausgeführt werden können, schwer zu debuggen sind und sehr mühsam zu schreiben sind!</p>
+  <p>Um hier Abhilfe zu schaffen, verfügt <span class="notranslate">GameMaker Studio 2</span> über eine Reihe von eingebauten Datenstrukturen, auf die über spezielle Funktionen zugegriffen werden kann. Es gibt vier verschiedene Arten von Datenstrukturen, die über <span class="notranslate">Drag and Drop</span> verfügbar sind (es sind sechs, wenn Sie <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm"><span class="notranslate">GML</span></a>),
+    Jede hat ihre eigenen Vor- und Nachteile, je nachdem, welche Art von Informationen Sie speichern wollen und wie Sie sie später manipulieren möchten - die vier Typen sind:</p>
+  <table class="icons" style="margin-left: 32auto">
+    <tbody>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /></td>
+        <td class="icons"><b>Listen</b></td>
+        <td class="text"><span>Eine Liste ist eine Datenstruktur, die Informationen sequentiell speichert, während sie hinzugefügt werden. Listenindizes beginnen bei 0 und steigen mit jedem Element, das am Ende der Liste hinzugefügt wird, obwohl Sie auch Daten an einer anderen als der letzten Position einfügen können. Anders als bei der Datenstruktur "Stack" (siehe unten) können Sie jederzeit von jedem Index der Liste auf die Daten zugreifen.</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /></td>
+        <td class="icons"><strong>Karten</strong></td>
+        <td class="text"><span>Die Map-Datenstruktur ist eine außerordentlich nützliche Struktur, da sie die Speicherung von </span><i>Schlüssel</i><span> und </span><i>Wert</i><span> Paare. Zum Beispiel kann ein Charakter in Ihrem Spiel eine Menge verschiedener Gegenstände haben (Schlüssel) und für jeden einzelnen Gegenstand kann er eine Anzahl davon haben (Werte), wie in einem RPG, wo man 10 Gesundheitstränke, 5 Manatränke und 100 Gold haben kann. Karten halten solche Paare alle zusammen an einem Ort, und Sie können der Karte Paare hinzufügen und mit einigen einfachen Funktionen auch nach dem Wert suchen, der bestimmten Schlüsseln entspricht. Karten sind nicht in irgendeiner (erkennbaren) Weise sortiert, was bedeutet, dass Sie, um einen bestimmten Schlüssel zu finden, möglicherweise durch das ganze Ding iterieren müssen (was sehr langsam ist), und es gibt auch keine Möglichkeit, zwei Schlüssel zu halten, die gleich sind, noch können Sie einem Schlüssel zwei Werte zuweisen.</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /></td>
+        <td class="icons"><strong>Gitter</strong></td>
+        <td class="text"><span>Ein Raster ist eine zweidimensionale Anordnung von Werten, deren Breite und Höhe Sie festlegen. Dadurch wird die Gesamtzahl der Gitter-&quot;Zellen&quot; innerhalb des Gitters festgelegt (die Breite und Höhe multipliziert) und diese Zellen werden dann verwendet, um verschiedene Datenwerte zu halten, die jeder der zulässigen Datentypen sein können. Mit diesem Strukturtyp können Sie den Wert von Zellen im Raster setzen und abrufen, indem Sie die x- (Spalte) und y-Position (Zeile) davon angeben (sowohl Zeilen als auch Spalten beginnen bei 0 und gehen bis zur Rasterbreite - 1 und der Rasterhöhe -1). Wenn Sie auf Grid-Datenstrukturen zugreifen, sollten Sie immer versuchen, ganzzahlige Werte für die Zellenposition zu verwenden, und alle nicht ganzzahligen Indizes werden von </span><span class="notranslate">GameMaker</span>
+          Studio 2 werden alle nicht-ganzzahligen Indizes unterdrückt<span>, wenn Sie dies nicht tun. Wenn das nicht der Fall ist, müssen Sie die Rundung vorher selbst vornehmen, bevor Sie den Index übergeben, den Sie überprüfen möchten.</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td>
+        <td class="icons"><strong>Stapel</strong></td>
+        <td class="text"><span>Eine Stack-Datenstruktur ist eine so genannte Last-In-First-Out (LIFO)-Struktur. Sie können Werte auf einen Stapel schieben und wieder entfernen, indem Sie sie aus dem Stapel herausnehmen, und der Wert, der zuletzt auf den Stapel geschoben wurde, ist der erste, der wieder herausgenommen wird (denken Sie einfach an einen Münzstapel, bei dem jede Münze, die Sie hinzufügen, zuerst wieder entfernt werden muss, bevor Sie an die restlichen Münzen darunter gelangen können). Stapel werden oft verwendet, wenn Unterbrechungen zu behandeln sind, oder wenn Sie rekursive Funktionen haben, oder sogar wenn Sie eine rudimentäre KI für Ihre Spiele konstruieren.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Im Wesentlichen funktionieren alle Datenstrukturen auf die gleiche Weise - Sie erstellen eine Datenstruktur und speichern ihren Indexwert in einer Variablen. Diesen Index verwenden Sie dann, um die Datenstruktur in allen weiteren Funktionsaufrufen zu referenzieren, die Operationen auf ihr durchführen können. Zum Schluss,
+    wenn Sie fertig sind, zerstören Sie die Datenstruktur wieder, um sie aus dem Speicher zu entfernen. Sie können so viele der Strukturen gleichzeitig verwenden, wie Sie benötigen, und alle Strukturen können sowohl Zeichenketten als auch reale Werte speichern.</p>
+  <p class="note"><b>HINWEIS</b>: Wie alle dynamischen Ressourcen belegen auch Datenstrukturen Speicherplatz und sollten daher <b>immer zerstört werden, wenn sie nicht mehr benötigt werden</b>, um Speicherlecks zu vermeiden, die Ihr Spiel verlangsamen und schließlich zum Absturz bringen.</p>
+  <p>Die <b>Datenstrukturbibliothek</b> verfügt über die folgenden Aktionen:</p>
+  <p> </p>
+  <table class="dnd" style="text-align: left;margin-left:">
+    <tbody>
+      <tr style="height: 1px;">
+        <td class="icons" style="margin-left: 16px;"><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /></td>
+        <td class="dnd" style=""><a href="Create_List.htm">Liste erstellen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /></td>
+        <td class="dnd" style=""><a href="Create_Map.htm">Karte erstellen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /></td>
+        <td class="dnd" style=""><a href="Create_Grid.htm">Raster erstellen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td>
+        <td class="dnd" style=""><a href="Create_Stack.htm">Stapel erstellen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Data_Structure.png" /></td>
+        <td class="dnd" style=""><a href="Clear_Data_Structure.htm">Datenstruktur löschen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Free Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Free_Data_Structure.png" /></td>
+        <td class="dnd" style=""><a href="Free_Data_Structure.htm">Freie Datenstruktur</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Add To List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Add_To_List.png" /></td>
+        <td class="dnd" style=""><a href="Add_To_List.htm">Zur Liste hinzufügen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Remove From List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_From_List.png" /></td>
+        <td class="dnd" style=""><a href="Remove_From_List.htm">Aus Liste entfernen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get List Item At Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_At.png" /></td>
+        <td class="dnd" style=""><a href="Get_List_Item_At.htm">Listenelement holen bei</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Index Of List Item Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Index_Of_List_Item.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Get_Index_Of_List_Item.htm">Index des Listenelements holen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Insert Into List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Insert_Into_List.png" /></td>
+        <td class="dnd" style=""><a href="Insert_Into_List.htm">In Liste einfügen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get List Item Count" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_Count.png" /></td>
+        <td class="dnd" style=""><a href="Get_List_Item_Count.htm">Anzahl der Listenelemente abrufen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Map_Value.png" /></td>
+        <td class="dnd" style=""><a href="Set_Map_Value.htm">Kartenwert setzen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Map Value Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Map_Value.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Get_Map_Value.htm">Kartenwert abrufen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Remove Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_Map_Entry.png" /></td>
+        <td class="dnd" style=""><a href="Remove_Map_Entry.htm">Karteneintrag entfernen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Grid Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Grid_Value.png" /></td>
+        <td class="dnd" style=""><a href="Set_Grid_Value.htm">Rasterwert setzen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Grid Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Grid_Value.png" /></td>
+        <td class="dnd" style=""><a href="Get_Grid_Value.htm">Rasterwert holen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Grid.png" /></td>
+        <td class="dnd" style=""><a href="Clear_Grid.htm">Raster löschen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Push Onto Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Push_Onto_Stack.png" /></td>
+        <td class="dnd" style=""><a href="Push_Onto_Stack.htm">Auf den Stapel schieben</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Pop Stack Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Pop_Stack.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Push_Onto_Stack.htm">Pop Stack</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If Data Structure Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Exists.png" /></td>
+        <td class="dnd" style=""><a href="If_Data_Structure_Exists.htm">Wenn Datenstruktur vorhanden ist</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If Data Structure Empty Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Empty.png" /></td>
+        <td class="dnd" style=""><a href="If_Data_Structure_Empty.htm">Wenn die Datenstruktur leer ist</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../DnD_Reference.htm">Index</a></div>
+        <div style="float:right">Nächste: <a href="../Buffers/Buffer_Actions.htm">Puffer-Aktionen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Data Structure Actions
+Data Structure Actions
+-->
+  <!-- TAGS
+dnd_data_structures
+-->
+</body>
+</html>

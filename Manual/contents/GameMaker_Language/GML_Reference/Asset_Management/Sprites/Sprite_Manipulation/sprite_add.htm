@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_add" />
+  <meta name="rh-index-keywords" content="sprite_add" />
+  <meta name="search-keywords" content="sprite_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_add</h1>
+  <p>Mit dieser Funktion können Sie ein Bild als Sprite hinzufügen, indem Sie es aus einer externen Quelle laden, wobei die zu ladende Bilddatei <b>immer</b> entweder im Format <tt>*.png</tt>, <tt>*.gif</tt>, <tt>*.jpg/jpeg</tt> oder <tt>*.json</tt> vorliegen sollte<tt>(*json-Dateien</tt> werden zum Laden von mit Spine erstellten <a href="../Skeletal_Animation/Skeletal_Animation.htm">Skelett-Animationssprites</a> verwendet). Die Funktion gibt den neuen Sprite-Index zurück, der dann in jedem weiteren Code, der sich auf das Sprite bezieht, verwendet werden muss. Wenn
+    Sie diese Funktion mit HTML5 verwenden oder ein Bild von einer URL abrufen, erzeugt diese Funktion auch ein asynchrones Ereignis <b>"Image Loaded"</b>. Siehe <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Image_Loaded.htm">diese Seite</a> für
+    mehr Informationen.</p>
+  <p>Alle Bilder, die in animierte Sprites umgewandelt werden sollen - außer <tt>*.gif</tt> (siehe unten) - sollten ein &quot;Streifen&quot;-Format haben (siehe das Bild unten) und es wird in die angegebene Anzahl von Unterbildern aufgeteilt, die der Regel sprite <b>width = strip width / sub images folgen.</b></p>
+  <p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png" /></p>
+  <p>Wie Sie im obigen Bild sehen können, wurde das Sprite auf einem dunkelvioletten Hintergrund platziert, und dieser kann entfernt werden, indem das Argument &quot;removeback&quot; auf true gesetzt wird. Dies funktioniert, indem das <i>untere linke</i> Pixel des Sprites auf
+    auf die dortige Farbe überprüft und diese dann als die zu entfernende Farbe verwendet. Wenn zum Beispiel im obigen Bild die Farbe des unteren linken Pixels grün wäre, würden alle grünen Teile des Sprites entfernt und der Rest des lila Hintergrunds ignoriert werden.</p>
+  <p>Wenn Sie die Option &quot;removeback&quot; wählen, möchten Sie vielleicht auch, dass GameMaker <span class="notranslate">Studio 2</span> die Kanten des Sprites <span class="notranslate">glättet</span>, indem Sie das Argument &quot;smooth&quot; auf true setzen. Dadurch wird lediglich ein halbtransparenter Rand um die Kanten des
+    des Sprites, nachdem der Hintergrund entfernt wurde.</p>
+  <p>Schließlich können Sie auch den x- und <i>y-Ursprung</i> für das Sprite angeben. Dies ist der Punkt, an dem das Sprite auf der Instanz &quot;fixiert&quot; ist, die es verwendet, und wird immer relativ zur 0,0 oberen linken Ecke eines Sprite-Subbildes berechnet. Also,
+    Ein Sprite, das 32 x 32 Pixel groß ist und bei dem diese Werte auf (16,16) gesetzt sind, hat seinen Ursprung also in der Mitte.</p>
+  <p>Wenn Sie ein Bild im <tt>*.gif-Format</tt> hinzufügen, müssen Sie nur den Dateinamen und die Bildnummer angeben (die für das erste Bild 1 sein sollte) und können alle anderen Argumente auf 0 belassen, wobei Sie beachten, dass <b>nur das erste Bild des GIFs geladen wird</b>.
+    Bei <tt>*.json-Sprites</tt> sollte die Bildnummer 1 sein, und die Einstellungen &quot;removeback&quot; und &quot;smooth&quot; werden ignoriert.</p>
+  <p>Standardmäßig werden die Bounding-Boxen aller neuen Sprites automatisch berechnet (die genaue Bounding-Box hängt von der Größe und der Transparenz des Sprites ab), Sie können dies jedoch anpassen.
+    <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p>Es ist zu beachten, dass der verwendete Speicher beim Hinzufügen eines Sprites auf diese Weise größer ist, als Sie vielleicht erwarten. Das liegt daran, dass <span class="notranslate">GameMaker Studio 2</span> das Sprite als Texturseite speichert <i>und</i> es auch im GPU-Speicher abgelegt wird, so dass der Gesamtspeicher
+    Der Gesamtspeicher ist also größer als für eine Bilddatei desselben Sprites zu erwarten wäre.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie ein Sprite in <span class="notranslate">GameMaker Studio 2</span> laden, müssen Sie daran denken, es wieder zu entfernen (mit <a href="sprite_delete.htm"><tt>sprite_delete()</tt></a>), wenn es nicht mehr benötigt wird, sonst besteht die Gefahr eines Speicherlecks, das Ihr Spiel verlangsamt und
+    schließlich Ihr Spiel zum Absturz bringt.</p>
+  <p class="note"><b>HINWEIS</b>: Bei <b><span class="notranslate">iOS</span></b>wenn Sie eine eingebundene Datei aus einem Ordner laden, d. h. mit einem Pfad wie &quot;<span style="font-size:1px;"><tt>Hintergründe/background1.png</tt></span>&quot;, müssen Sie den Ordner NICHT als Teil des
+    Pfades angeben und es reicht aus, den Dateinamen anzugeben. Auf allen anderen Plattformen müssen Sie den/die Ordner als Teil des Pfades zur Datei angeben.</p>
+  <p class="note"><b>HINWEIS</b>: Bei <b>HTML5</b> müssen Sie, wenn Sie ein Sprite von einem sicheren Server laden, möglicherweise den Cross-Origin-Typ setzen und einen relativen Pfad anstelle eines absoluten Pfads verwenden. Siehe <span style="font-size:1px;"><a href="../../../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm"><tt style="font-size: 14px">http_set_request_crossorigin()</tt></a></span> für
+    weitere Details.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_add(fname, imgnumb, removeback, smooth, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Der Name (ein String-Dateipfad) der hinzuzufügenden Datei.</td>
+      </tr>
+      <tr>
+        <td>imgnum</td>
+        <td>Geben Sie damit die Anzahl der Teilbilder an (1 für ein einzelnes Bild oder für ein <tt>*.gif</tt>).</td>
+      </tr>
+      <tr>
+        <td>zurücknehmen</td>
+        <td>Gibt an, ob alle Pixel mit der Hintergrundfarbe (linkes unteres Pixel) transparent gemacht werden sollen.</td>
+      </tr>
+      <tr>
+        <td>glatt</td>
+        <td>Gibt an, ob die Kanten geglättet werden sollen, wenn sie transparent sind.</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td>Geben Sie die x-Position des Ursprungs im Sprite an.</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td>Geben Sie die y-Position des Ursprungs im Sprite an.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Sprite-ID-Wert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">spr = sprite_add(&quot;spieler_5.png&quot;, 16, true, true, 0, 0);</p>
+  <p>Der obige Code lädt ein Sprite in das Spiel und speichert dessen Index in der Variablen &quot;spr&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Manipulation.htm">Sprite-Manipulation</a></div>
+        <div style="float:right">Weiter: <a href="sprite_replace.htm">sprite_replace</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_add
+-->
+  <!-- TAGS
+sprite_add
+-->
+</body>
+</html>

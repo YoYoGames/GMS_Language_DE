@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>netzwerk_senden_broadcast</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_send_broadcast" />
+  <meta name="rh-index-keywords" content="network_send_broadcast" />
+  <meta name="search-keywords" content="network_send_broadcast" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>netzwerk_senden_broadcast</h1>
+  <p>Mit dieser Funktion können Sie die Daten aus einem Puffer lokal an einen Bereich von IP-Adressen senden (für weitere Informationen zu Puffern siehe <a href="../Buffers/Buffers.htm">Referenz - Puffer</a>). Der Bereich ist auf den des Geräts beschränkt, auf dem der Server läuft,
+    Wenn also das Gerät eine IP-Adresse von 92.168.11.130 hat, werden die Daten über den Bereich 92.168.11.* gesendet. Die Funktion gibt die Anzahl der gesendeten Datenbytes zurück oder eine Zahl kleiner als 0, wenn das Senden fehlgeschlagen ist.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion funktioniert nur, wenn sie mit UDP verwendet wird - Ihr Server muss TCP sein und Ihr Client muss einen UDP-Client-Socket erstellt haben mit <span style="font-size:1px;"><a href="network_create_socket_ext.htm"><tt style="font-size: 14px">network_create_socket_ext()</tt></a></span>    erstellt werden, um alle vom Server gesendeten Broadcasts zu empfangen.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion funktioniert nicht, wenn sie in einem Projekt verwendet wird, das auf dem HTML5-Target läuft.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">network_send_broadcast(socket, port, buffer, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Steckdose</td>
+        <td>Die ID des zu verwendenden Sockets.</td>
+      </tr>
+      <tr>
+        <td>Hafen</td>
+        <td>Der Port, den der Server verwenden wird.</td>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Die ID des Puffers, aus dem die Daten geholt werden sollen.</td>
+      </tr>
+      <tr>
+        <td>Größe</td>
+        <td>Die Größe (in Bytes) der Daten.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">buffer_seek(broadcast_buffer, buffer_seek_start, 0);<br> buffer_write(broadcast_buffer, buffer_string, global.ServerName);<br> network_send_broadcast(server, 6511, broadcast_buffer, buffer_tell(broadcast_buffer));</p>
+  <p>Der obige Code schreibt die Namenszeichenkette des aktuellen Servers (gespeichert in &quot;global.ServerName&quot;), dann schreibt er sie in einen Binärpuffer mit der ID &quot;broadcast_buffer&quot;. Diese Daten werden dann lokal an einen Bereich von IPs (die Geräte-IP ist
+    derzeit als Broadcast-Basisbereich impliziert) an Port 6511 gesendet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Networking.htm">Networking</a></div>
+        <div style="float:right">Weiter: <a href="network_send_packet.htm">network_send_packet</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_send_broadcast
+-->
+  <!-- TAGS
+network_send_broadcast
+-->
+</body>
+</html>

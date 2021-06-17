@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Streicher</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for string functions" />
+  <meta name="rh-index-keywords" content="\r,\b,\f,\t,\v,\\,\a,\u,\x,\,\r,\b,\f,\t,\v,\\,\a,\u,\x,\" />
+  <meta name="search-keywords" content="Strings,\n,\r,\b,\f,\t,\v,\\,\a,\u,\x,\,string literal,@" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Streicher</h1>
+  <p>Irgendwann bei der Erstellung Ihres Spiels werden Sie Text verwenden müssen. Text in Spielen wird mit Hilfe der <b>String-Funktionen</b> behandelt (ein String ist nur eine andere Art, eine Textzeile zu sagen), und <span class="notranslate">GameMaker Studio 2</span> verfügt über einen kompletten Satz von Funktionen, die
+    GameMaker Studio 2 verfügt über einen kompletten Satz von Funktionen, die es Ihnen erlauben, Strings auf vielfältige Weise zu manipulieren, einschließlich des Einfügens eines Strings in einen anderen, des Kopierens von Strings und der Möglichkeit, Strings auf die darin enthaltenen Ziffern oder Buchstaben zu analysieren. Im Allgemeinen kann eine Zeichenkette <i>nur</i> erstellt werden
+    durch Hinzufügen von Text innerhalb von doppelten Anführungszeichen &quot; &quot; erstellt werden, und <em>Strings</em> in einfachen <em>Anführungszeichen werden nicht akzeptiert. Auch können</em> Sie den String nicht über mehrere Zeilen aufteilen und erwarten, dass GameMaker <span class="notranslate">Studio 2</span> ihn so <span class="notranslate">darstellt</span>, als wären die Zeilenumbrüche Zeilenumbrüche (es sei denn, ein
+   <strong>String-Literal</strong> <span class="inline">@</span> Bezeichner verwendet wird, wie unten erklärt).</p>
+  <p>Es ist erwähnenswert, dass es bestimmte Konventionen gibt, die Sie beim Erstellen von Zeichenketten verwenden können, die sich hauptsächlich auf die Verwendung von <i>Escape-Zeichen</i> beziehen. Dies sind Zeichen, denen ein &quot;<span class="inline">\</span>&quot; Symbol vorangestellt ist. Wenn Sie also zum Beispiel
+    Wenn Sie also beispielsweise Anführungszeichen in eine Zeichenkette einfügen möchten, würden Sie etwa so vorgehen:</p>
+  <p class="code">str = &quot;Hallo\&quot;Welt\&quot;&quot;;</p>
+  <p><span class="notranslate">GameMaker Studio 2</span> verfügt außerdem über eine vollständige, vier Byte breite Unicode-Zeichenunterstützung, die es Ihnen ermöglicht, Unicode-Zeichen im oberen Bereich des Standards zu dekodieren und zu kodieren (einschließlich - aber nicht beschränkt auf - Emoji). Um mit Unicode-Zeichen umzugehen, können Sie
+    können Sie das &quot;<span class="inline">\</span>&quot; verwenden, um ein beliebiges Unicode-Literal voranzustellen - Ziffern in Hexadezimalzeichen, denen ein &quot;<span class="inline">u</span>&quot; vorangestellt ist, z. B. &quot;<span class="inline"><tt>\u00e2</tt></span>&quot; für &quot;á&quot; - wobei
+    die Ziffern die Nummer des Unicode-Zeichens sind. Wenn Sie auf diese Weise mit Unicode arbeiten, müssen Sie sich darüber im Klaren sein, dass <span class="notranslate">GameMaker Studio 2</span> <i>alle</i> Ziffern nach dem &quot;<span class="inline">u</span>&quot; interpretiert, also
+    wenn Sie z. B. &quot;áa&quot; schreiben wollten, sollten Sie verwenden:</p>
+  <p class="code">&quot;\u00e2\a&quot;</p>
+  <p>oder</p>
+  <p class="code">&quot;\u00e2\u61&quot;</p>
+  <p>oder</p>
+  <p class="code">&quot;\u00e2&quot; + &quot;a&quot;</p>
+  <p>da die Verwendung von &quot; \u00e2a<tt>&quot;</tt> tatsächlich das Unicode-Zeichen &quot; ส&quot; ergeben würde (<tt>im Wesentlichen</tt> zu &quot; \ue2a&quot;).<i></i></p>
+  <p><span class="notranslate">GameMaker Studio 2</span> kann auch jedes hexadezimale Literal verarbeiten - normalerweise geschrieben als Hexadezimalziffern nach &quot;<span class="inline">0x</span>&quot;, zum Beispiel &quot;<span class="inline">0xff</span>&quot;, wobei die Ziffern die Nummer des
+    des zu verwendenden Zeichens sind. In <span class="notranslate">GameMaker Studio 2</span> werden diese mit &quot; \x&quot;<tt> und</tt> dann dem Hex-Wert geschrieben. Diese und andere vordefinierte Escape-Zeichen sind in der folgenden Tabelle aufgeführt:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>\n</td>
+        <td>Zeilenumbruch</td>
+      </tr>
+      <tr>
+        <td>\r</td>
+        <td>Schlittenrücklauf</td>
+      </tr>
+      <tr>
+        <td>\b</td>
+        <td>Rücktaste (0x08)</td>
+      </tr>
+      <tr>
+        <td>\f</td>
+        <td>Form Feed (0x0c)</td>
+      </tr>
+      <tr>
+        <td>\t</td>
+        <td>Horizontaler Tabulator (0x09)</td>
+      </tr>
+      <tr>
+        <td>\v</td>
+        <td>Vertikaler Tabulator (0x0b)</td>
+      </tr>
+      <tr>
+        <td>\\</td>
+        <td>Backslash selbst (0x5c)</td>
+      </tr>
+      <tr>
+        <td>\a</td>
+        <td>Warnung (0x07)</td>
+      </tr>
+      <tr>
+        <td>\u[Hex-Ziffern]</td>
+        <td>Unicode-Zeichen einfügen</td>
+      </tr>
+      <tr>
+        <td>\x[Hex-Ziffern]</td>
+        <td>Hex-Literalzeichen einfügen</td>
+      </tr>
+      <tr>
+        <td>Oktalziffern]</td>
+        <td>Oktales Unicode-Zeichen einfügen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>HINWEIS</b>: Strings unterstützen Formfeed, vertikale Tabulatoren usw., aber das bedeutet nicht, dass das <b>Rendering</b> dies auch tut, und beim Zeichnen von Strings können diese Zeichen ignoriert werden.</p>
+  <p>Sie können auch wortwörtliche <i>Zeichenfolgenliterale</i> erstellen, indem Sie der gesamten Zeichenfolge das Zeichen <span class="inline">@</span> voranstellen:</p>
+  <p class="code">var test = @&quot;<br> Zeilenumbruch<br> über mehrere<br> Zeilen
+    <br> &quot;;
+  </p>
+  <p>Der obige Code rendert die Zeichenfolge über mehrere Zeilen, als ob ein Zeilenumbruch-Escape-Zeichen enthalten wäre. Ein Verbatim-Stringliteral ähnelt den Stringliteralen früherer <span class="notranslate">GameMaker-Versionen</span>, aber sie verwenden ebenfalls doppelte oder einfache Anführungszeichen und müssen
+   <span class="inline">@</span> Sie können über mehrere Zeilen in der Codedatei umbrochen werden und sie unterstützen KEINE Escape-Zeichen, d. h. <span class="inline">@&quot;Hello\World&quot;</span> versucht <em>nicht</em>, das W
+    bei World nicht zu entschlüsseln und wird wortwörtlich gespeichert. Beachten Sie jedoch, dass Sie bei der Verwendung von String-Literalen wie diesem den String umbrechen müssen, wenn Sie Anführungszeichen als Teil des Strings einschließen möchten, d. h:</p>
+  <p class="code">var test = @&quot;Hallo &quot; + &quot;\&quot;&quot; + @&quot;Welt&quot; + &quot;\&quot;&quot;</p>
+  <p>Zu beachten ist auch, dass das Unicode-Zeichen 9647 (▯) verwendet wird, um fehlende Glyphen zu ersetzen, die Sie möglicherweise in der gewünschten Schriftart haben, wenn Sie diese im Draw-Event rendern. Wenn also Ihre Schriftart z. B. das °-Symbol nicht hat, dann wird das Schreiben von
+    90° tatsächlich 90▯ erzeugen.</p>
+  <p>Die folgende Liste von Funktionen sind alle für den Umgang mit Strings:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ansi_char.htm">ansi_char</a></li>
+    <li><a href="chr.htm">chr</a></li>
+    <li><a href="ord.htm">ord</a></li>
+    <li><a href="real.htm">real</a></li>
+    <li><a href="string.htm">String</a></li>
+    <li><a href="string_byte_at.htm">string_byte_at</a></li>
+    <li><a href="string_byte_length.htm">string_byte_length</a></li>
+    <li><a href="string_set_byte_at.htm">string_set_byte_at</a></li>
+    <li><a href="string_char_at.htm">string_char_at</a></li>
+    <li><a href="string_ord_at.htm">string_ord_at</a></li>
+    <li><a href="string_copy.htm">string_copy</a></li>
+    <li><a href="string_count.htm">string_count</a></li>
+    <li><a href="string_delete.htm">string_delete</a></li>
+    <li><a href="string_digits.htm">string_digits</a></li>
+    <li><a href="string_format.htm">string_format</a></li>
+    <li><a href="string_insert.htm">string_einfügen</a></li>
+    <li><a href="string_length.htm">string_length</a></li>
+    <li><a href="string_letters.htm">String_Buchstaben</a></li>
+    <li><a href="string_lettersdigits.htm">string_lettersdigits</a></li>
+    <li><a href="string_lower.htm">string_niedrig</a></li>
+    <li><a href="string_pos.htm">string_pos</a></li>
+    <li><a href="string_pos_ext.htm">string_pos_ext</a></li>
+    <li><a href="string_last_pos.htm">string_last_pos</a></li>
+    <li><a href="string_last_pos_ext.htm">string_last_pos_ext</a></li>
+    <li><a href="string_repeat.htm">string_repeat</a></li>
+    <li><a href="string_replace.htm">string_replace</a></li>
+    <li><a href="string_replace_all.htm">string_replace_all</a></li>
+    <li><a href="string_upper.htm">string_oben</a></li>
+    <li><a href="string_height.htm">string_height</a></li>
+    <li><a href="string_height_ext.htm">string_height_ext</a></li>
+    <li><a href="string_width.htm">string_width</a></li>
+    <li><a href="string_width_ext.htm">string_width_ext</a></li>
+    <li><a href="string_hash_to_newline.htm">string_hash_to_newline</a></li>
+    <li><a href="../Variable_Functions/is_string.htm">is_string</a></li>
+  </ul>
+  <p> </p>
+  <p>Abgesehen von den Funktionen, die sich speziell auf Zeichenketten beziehen, erlaubt das <b><span class="notranslate">Windows</span></b> target erlaubt auch den Zugriff auf die Zwischenablage, um Textinformationen zu erhalten und zu setzen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="clipboard_has_text.htm">zwischenablage_hat_text</a></li>
+    <li><a href="clipboard_get_text.htm">Zwischenablage_get_text</a></li>
+    <li><a href="clipboard_set_text.htm">zwischenablage_setzen_text</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../GML_Reference.htm"><span class="notranslate">GML-Referenz</span></a></div>
+        <div style="float:right">Nächste: <a href="../Maths_And_Numbers/Maths_And_Numbers.htm">Mathe und Zahlen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Strings
+\n
+\r
+\b
+\f
+\t
+\v
+\\
+\a
+\u
+\x
+\
+-->
+  <!-- TAGS
+string_functions
+-->
+
+</body></html>

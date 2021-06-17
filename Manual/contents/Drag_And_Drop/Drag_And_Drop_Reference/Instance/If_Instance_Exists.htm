@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn die Instanz vorhanden ist</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Instance Exists action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Instance Exists" />
+  <meta name="search-keywords" content="If Instance Exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Instance Exists Icon" class="icon" height="31" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Exists.png" width="31"> Wenn die Instanz existiert</h1>
+  <p>Diese Aktion kann verwendet werden, um zu prüfen, ob eine Instanz eines bestimmten Objekts im Spielraum vorhanden ist, oder ob eine bestimmte Instanz selbst vorhanden ist. Sie geben das Objekt aus dem Asset-Explorer an, und wenn eine Instanz im Raum vorhanden ist, gibt die Aktion <tt>true</tt> zurück, andernfalls wird sie <tt>false</tt> zurückgeben. Beachten Sie, dass Sie hier eine Variable mit der eindeutigen ID für eine bestimmte Instanz verwenden können (z. B. wie sie von der Aktion <a href="Create_Object_Instance.htm">Objektinstanz erstellen</a> zurückgegeben wird) oder sogar die Instanz-ID
+    Wert verwenden können, der vom Raumeditor zurückgegeben wurde, als Sie die Instanz hinzugefügt haben.</p>
+  <p>Wenn Sie das &quot;Not&quot;-Argument markieren, dann prüft die Aktion, ob keine <i>Instanz</i> vorhanden ist, und wenn keine gefunden wird, wird true zurückgegeben, und <tt>wenn</tt> sogar eine vorhanden ist, wird false zurückgegeben.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in den &quot;if&quot;-Block diese an der Seite der Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="Instance Exists drop example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists_Drop.png" /></p>
+  <p>Diese Aktionen werden nun ausgeführt, wenn der &quot;if&quot;-Block als wahr ausgewertet wird, <tt>während</tt> alle an anderer Stelle ausgelassenen Aktionen nach dem &quot;if&quot;-Block ausgeführt werden.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Instance Exists Action" class="center" height="124" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists.png" width="260" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Objekt</td>
+        <td>Der Name des Objekts, das auf eine Instanz von geprüft werden soll (oder eine Instanz-ID).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Instance Exists Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Exists.png">Der obige Aktionsblockcode prüft auf eine Kollision und gibt den eindeutigen ID-Wert der Instanz
+    zurück, mit der kollidiert wird. Dieser Wert wird in einer temporären Variablen gespeichert und dann geprüft, ob der Wert einer Instanz entspricht, die sich gerade im Raum befindet (wenn keine Kollision gefunden wird, enthält die Variable das Schlüsselwort &quot; noone<tt>&quot;),</tt>
+    und wenn dies der Fall ist, wird eine Variable in der Instanz gesetzt, mit der kollidiert wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Actions_Library.htm">Instanz-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Call_Parent_Event.htm">Elternereignis aufrufen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Instance Exists
+-->
+  <!-- TAGS
+action_if_instance_exists
+-->
+</body>
+</html>

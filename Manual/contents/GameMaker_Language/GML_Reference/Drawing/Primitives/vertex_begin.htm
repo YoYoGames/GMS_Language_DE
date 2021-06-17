@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_begin" />
+  <meta name="rh-index-keywords" content="vertex_begin" />
+  <meta name="search-keywords" content="vertex_begin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_begin</h1>
+  <p>Mit dieser Funktion beginnen Sie die Definition eines benutzerdefinierten Primitivs. Sie weisen einen Puffer zu, in den das Primitiv geschrieben wird, und das zu verwendende Scheitelpunktformat (das zuvor mit den Scheitelpunktformat-Funktionen definiert wurde). Anschließend definieren Sie die erforderlichen Punkte für jeden
+    Scheitelpunkt des Primitivs, bevor Sie <a href="vertex_end.htm"><tt>vertex_end()</tt></a> aufrufen, um die Erstellung des Primitivs abzuschließen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">vertex_begin(buffer, format);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Puffer, in den geschrieben werden soll.</td>
+      </tr>
+      <tr>
+        <td>Format</td>
+        <td>Das zu verwendende Scheitelpunktformat.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> v_format = vertex_format_end();<br> v_buff = vertex_create_buffer();<br> vertex_begin(v_buff, v_format);</p>
+  <p>Der obige Code definiert ein neues Scheitelpunktformat, erstellt einen neuen Puffer und startet den Definitionsprozess eines neuen Primitivs.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Primitives_And_Vertex_Formats.htm">Primitive und Vertex-Formate</a></div>
+        <div style="float:right">Weiter: <a href="vertex_colour.htm">vertex_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_begin
+-->
+  <!-- TAGS
+vertex_begin
+-->
+</body>
+</html>

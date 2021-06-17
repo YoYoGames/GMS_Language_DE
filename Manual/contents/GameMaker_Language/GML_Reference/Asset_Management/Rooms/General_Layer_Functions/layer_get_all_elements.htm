@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_all_elements</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_all_elements" />
+  <meta name="rh-index-keywords" content="layer_get_all_elements" />
+  <meta name="search-keywords" content="layer_get_all_elements" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_all_elements</h1>
+  <p>Mit dieser Funktion können Sie die <i>Element-IDs</i> der angegebenen Ebene ermitteln. Sie übergeben die Layer-ID (die Sie beim Erstellen des Layers mit <a href="layer_create.htm"><tt>layer_create()</tt></a>) oder den Ebenennamen (als String - dies hat
+    Die Funktion gibt ein <a href="../../../../GML_Overview/Arrays.htm">Array</a> von IDs zurück, wobei jeder Eintrag im Array eine eindeutige ID für ein Element auf dieser Ebene ist. Wenn die Ebene beispielsweise eine Vermögensebene ist, wird das Array
+    mit den ID-Werten für jedes Sprite-Asset gefüllt, das der Ebene zugewiesen ist. Beachten Sie, dass die Verwendung von Code für die Arbeit mit Ebenen bedeutet, dass Sie der gleichen Ebene verschiedene Elementtypen zuweisen können - Sie können also Sprite-Assets zusammen mit Instanzen haben,
+    zum Beispiel - in diesem Fall können Sie dann die Funktion <a href="layer_get_element_type.htm"><tt>layer_get_element_type()</tt></a> verwenden, um den Typ des Elements zu ermitteln, auf den sich die ID bezieht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_get_all_elements(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der Ebene, von der die Elemente abgerufen werden sollen (oder der Ebenenname als String)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Array (1D, bestückt mit Element-IDs)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> for (var i = 0; i &lt; array_length(a); i++;) <br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sprite<br> {
+    <br> layer_sprite_destroy(a[i])
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code ruft die IDs für alle Instanzelemente ab, die der Ebene der Instanz zugewiesen sind, die den Code ausführt. Der Code prüft dann, ob eines der zurückgegebenen Elemente Sprite-Assets sind, und wenn ja, werden sie zerstört.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_get_element_layer.htm">layer_get_element_layer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_all_elements
+-->
+  <!-- TAGS
+layer_get_all_elements
+-->
+</body>
+</html>

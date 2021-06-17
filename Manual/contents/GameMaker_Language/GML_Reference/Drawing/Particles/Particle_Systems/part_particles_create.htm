@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teil_partikel_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_particles_create" />
+  <meta name="rh-index-keywords" content="part_particles_create" />
+  <meta name="search-keywords" content="part_particles_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teil_partikel_erzeugen</h1>
+  <p>Diese Funktion ist ideal für Effekte, die keine der von <a href="../Particle_Emitters/Particle_Emitters.htm">Partikelemittern</a> angebotenen Funktionen benötigen (z. B. um Rauch aus einer Rakete oder einen einfachen Explosionseffekt zu erzeugen), da
+    sie Ihnen erlaubt, schnell und einfach Partikel an jeder beliebigen Position im Spielraum zu erzeugen. Beachten Sie, dass Sie das Partikelsystem und den Partikeltyp zuvor erstellt haben müssen, damit diese Funktion verwendet werden kann.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_particles_create(ind, x, y, parttype, number);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des Partikelsystems.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate, an der die Partikel erstellt werden sollen.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate, an der die Partikel erstellt werden sollen.</td>
+      </tr>
+      <tr>
+        <td>parttype</td>
+        <td>Der Index (Typ) der zu erstellenden Partikel.</td>
+      </tr>
+      <tr>
+        <td>Nummer</td>
+        <td>Die Anzahl der zu erstellenden Partikel.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if mouse_check_button(mb_left)<br> {
+    <br> part_particles_create(sname, mouse_x, mouse_y, p_CursorEffect, 5);<br> }
+  </p>
+  <p>Der obige Code prüft, ob die Maustaste gedrückt wird, und wenn er <tt>true</tt> zurückgibt, erzeugt er 5 Partikel an der Mausposition.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Systems.htm">Partikel-Systeme</a></div>
+        <div style="float:right">Weiter: <a href="part_particles_create_colour.htm">part_particles_create_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_particles_create
+-->
+  <!-- TAGS
+part_particles_create
+-->
+</body>
+</html>

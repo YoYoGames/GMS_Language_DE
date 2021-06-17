@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pfade</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the path editor works" />
+  <meta name="rh-index-keywords" content="Path Editor" />
+  <meta name="search-keywords" content="paths,path editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Pfad-Editor</h1>
+  <p><img alt="The Path Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Paths.png">Irgendwann beim Erstellen Ihrer Spiele müssen Sie vielleicht eine Ihrer Instanzen einem Pfad durch einen Level folgen lassen. Das kann man im Code machen, indem man einfach ein Array von
+    ein Array von Positionen innerhalb des Raums erstellen und dann eine Instanz zwischen diesen Positionen hin- und herbewegen lassen, aber das kann eine lästige Aufgabe sein und ist schwierig zu ändern, zu testen und für verschiedene Instanzen anzupassen. Aus diesem Grund verfügt <span class="notranslate">GameMaker Studio 2</span> über Pfadressourcen und einen
+    speziellen Pfad-Editor.</p>
+  <p>Die Grundidee ist recht einfach - Sie definieren einen Pfad, indem Sie ihn im Pfad-Editor zeichnen, dann können Sie eine Aktion (oder Code) im Erstellungsereignis eines Objekts platzieren, um der Instanz zu sagen, dass sie diesem bestimmten Pfad folgen soll. Sie können auch die Geschwindigkeit festlegen, mit der
+    Sie können auch die Geschwindigkeit festlegen, mit der der Pfad verfolgt wird, sowie eine Reihe anderer Aktionen, die sich auf die Position und Ausrichtung des Pfades im Raum beziehen. Wenn Sie zum ersten Mal eine Pfadressource erstellen, wird das Pfad-Editorfenster mit den folgenden Optionen geöffnet:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Pfad-Eigenschaften</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Wie bei allen Ressourcen in <span class="notranslate">GameMaker Studio 2</span> sollten Sie Ihrem neuen Pfad einen eindeutigen Namen geben, da er im gesamten Spiel, das Sie erstellen, zur Identifizierung verwendet wird.
+      voranzustellen (oder zu ergänzen), damit sie in Code oder Aktionen leicht zu erkennen ist (z. B.: <span class="inline">path_Enemy_1</span> oder <span class="inline">PowerUp_path</span>). <br></p>
+    <p class="dropspot">Nachdem Sie den Pfad benannt haben, können Sie damit beginnen, ihn zu definieren, indem Sie Punkte im Haupteditor auf der rechten Seite platzieren, wobei jeder Punkt hier zusammen mit seiner Position und Geschwindigkeit in die Liste aufgenommen wird. Der Geschwindigkeitswert für Pfadpunkte wird durch einen Prozentwert definiert
+      der Geschwindigkeit, mit der Sie die Instanz entlang des Pfades bewegen lassen (Standard ist 100 %). Wenn Sie also eine Instanz mit einer Geschwindigkeit von 2 (2 Pixel pro Schritt) entlang eines Pfades starten und dann einer der Pfadpunkte einen Geschwindigkeitswert von 50 % hat, wird die Instanz die Geschwindigkeit
+      wenn sie sich diesem Punkt nähert, auf eine Geschwindigkeit von 1 (50 % der Pfadgeschwindigkeit). Genauso können Sie die Geschwindigkeit auf 150% setzen und die Instanz wird beschleunigen, wenn sie den Punkt erreicht. Auf diese Weise können Sie eine schöne, dynamisch aussehende Bewegung ohne jeglichen Code
+      erstellen.
+    </p>
+    <p class="dropspot">Es ist erwähnenswert, dass Sie einen schnellen Doppelklick <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> auf einen der definierten Punkte in der Liste machen können, um den Editor auf
+      den ausgewählten Punkt zu schwenken, oder langsam auf einen der Werte <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> doppelklicken, um ihn manuell zu bearbeiten (x, y oder Geschwindigkeit).<br></p>
+    <p class="dropspot">Sie können auch die Verbindungsart für den gesamten Pfad angeben und ob der Pfad geschlossen sein soll oder nicht (ein geschlossener Pfad verbindet den letzten Punkt des Pfades mit dem ersten). Die Verbindungsart kann entweder <strong>geradlinig</strong> oder <strong>glatt </strong>sein, wobei
+      eine gerade Verbindung einfach die Punkte eines Pfades auf linearer Basis verbindet, mit Winkeländerungen an jedem Punkt, während eine glatte Verbindung einen viel weicheren Pfad erzeugt, der möglicherweise nicht direkt durch einen der Punkte verläuft, sondern eher eine
+      eine ungefähre Linie, die durch <a data-glossterm="glatte Interpolation" class="glossterm" href="#">weiche Interpolation</a> schöne Kurven erzeugt. Sie können auch die Genauigkeit für die Kurven angeben (Standard ist 4), die zwischen 1 und 8 liegen kann, wobei 8 die
+      am glattesten ist. Das Bild unten zeigt ein Beispiel dafür, wie sich diese Optionen auf den Pfad auswirken:</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Paths_Examples.png" src="../assets/Images/Asset_Editors/Editor_Paths_Examples.png" alt="Path Editor Examples" class="center" /><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Pfad-Bearbeitung</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Sie können dem Pfad Punkte hinzufügen, indem Sie auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> an einer beliebigen Stelle des Bearbeitungsfensters klicken, und alle nachfolgenden Klicks fügen weitere Punkte hinzu. Sobald ein Punkt im Editor platziert ist, kann er verschoben werden, indem Sie
+      Klicken Sie auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> und ziehen Sie ihn oder ändern Sie die Werte, die Ihnen links für die X- und Y-Position und die Geschwindigkeit angezeigt werden (siehe <strong>Pfadeigenschaften</strong>, oben). Sie
+      Sie können <img alt="CTRL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> verwenden und mit der linken Maustaste <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf mehrere Punkte klicken, um sie gemeinsam auszuwählen, und diese Gruppe von Punkten kann dann beliebig verschoben und platziert werden. Sie können auch <img alt="Delete Key Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Delete.png" width="55"> drücken, um den ausgewählten Punkt oder die ausgewählten Punkte zu löschen.</p>
+    <p class="dropspot">Im Editor-Fenster steht Ihnen ein zusätzliches Menü zur Verfügung, wenn Sie mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> klicken, wie unten gezeigt:</p>
+    <p class="dropspot"><img alt="Path Editor RMB Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Paths_Menu.png">Jeder der Punkte in diesem Menü funktioniert wie folgt:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Punkte löschen</strong> - Löscht den ausgewählten Punkt oder die ausgewählten Punkte.</li>
+      <li class="dropspot"><strong>Auf Pfad schwenken</strong> - Schwenkt die Ansicht im Editor auf die Mitte des Pfades.</li>
+      <li class="dropspot"><strong>Umkehren</strong> - Kehrt die Reihenfolge der Pfadpunkte um. Dadurch werden sie nicht verschoben, sondern die Reihenfolge, in der sie verarbeitet werden, wird so geändert, dass der Anfang zum Ende wird und andersherum.</li>
+      <li class="dropspot"><strong>Spiegeln</strong> - Spiegelt den Pfad entlang der horizontalen Achse.</li>
+      <li class="dropspot"><strong>Spiegeln</strong> - Spiegelt den Pfad entlang der vertikalen Achse.</li>
+    </ul>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Der Werkzeugkasten</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Mit den Schaltflächen des Werkzeugkastens oben können Sie steuern, wie die Dinge im Editorfenster gezeichnet werden. Sie können das Hintergrundraster ein- oder ausschalten und festlegen, ob die hinzugefügten Pfadpunkte an diesem Raster gefangen werden sollen oder nicht:<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Paths_GridOptions.png" src="../assets/Images/Asset_Editors/Editor_Paths_GridOptions.png" class="center" alt="Path Editor Grid Options">Die Fangwerte geben die Größe der Gitterzellen an
+      und kann auf jeden gewünschten Wert geändert werden. Der Rest der Werkzeuge dient zum Vergrößern und Verkleinern und zum Schwenken des Editorbereichs. Sie können auf die Schaltfläche <img data-cke-saved-src="../assets/Images/Icons/Icon_ZoomReset.png" src="../assets/Images/Icons/Icon_ZoomReset.png" alt="Zoom Reset Icon" class="icon"> klicken, um die Anzeige auf 1:1 zurückzusetzen. Beachten Sie, dass Sie, wenn Sie zu weit von der Stelle schwenken, an der Sie den Pfad zeichnen möchten, das Menü der rechten Maustaste <img data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png" src="../assets/Images/Icons/Icon_RMB.png" class="icon" alt="RMB Icon"> verwenden und dann auf " <strong>Pan to Path" (Auf Pfad schwenken)</strong> klicken können, um zu der Stelle zurückzuscrollen, an der Sie gearbeitet haben.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Wegpunkte</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Pfade sind einfach eine Sammlung von Punkten, die durch eine Linie miteinander verbunden sind. Im Editor platzieren Sie diese Punkte mit der linken Maustaste <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">. Sie können an beliebiger Stelle im Raumeditor Punkte hinzufügen, die dann nacheinander in die Punkteliste aufgenommen werden, um einen Pfad zu bilden. Wenn Sie einen Punkt in der Nähe einer Verbindungslinie oder eines anderen Knotens platzieren, wird der neue Punkt in den Pfad eingefügt und nicht zu ihm hinzugefügt
+      (Sie können den Erkennungsabstand dafür in den <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Spline_Editor.htm">Voreinstellungen</a> einstellen). Sie können <img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" class="icon" alt="CTRL Icon"> / <img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" class="icon" alt="CMD Icon"> drücken und auf <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> auf bereits platzierte Punkte klicken, um sie auszuwählen, und dann werden alle Operationen, die an den Pfadpunkten vorgenommen werden, wie z. B. das Verschieben, auf alle
+      die ausgewählten Punkte als Gruppe angewendet. Um einen Punkt oder eine Auswahl von Punkten zu entfernen, können Sie mit der rechten Maustaste auf <img data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png" src="../assets/Images/Icons/Icon_RMB.png" class="icon" alt="RMB Icon"> klicken und &quot;Delete
+      Punkt&quot; wählen oder die Taste <img data-cke-saved-src="../assets/Images/Icons/Icon_Delete.png" src="../assets/Images/Icons/Icon_Delete.png" width="55" height="20" class="icon" alt="Delete Key Icon"> drücken.</p>
+    <p class="dropspot">Beachten Sie, dass Sie auch die folgenden Tastenkombinationen verwenden können, um einige zusätzliche Operationen durchzuführen, die nicht über das Menü der rechten Maustaste auf dem/den ausgewählten Pfadpunkt(en) verfügbar sind:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">T + <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: Versetzen (Verschieben) der Bahnpunkte</li>
+      <li class="dropspot">R + <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: Drehen der Pfadpunkte</li>
+      <li class="dropspot">S + <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: Skalieren der Bahnpunkte</li>
+    </ul>
+    <p class="dropspot"><br /></p>
+    <p class="dropspot"></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left"><a href="Rooms.htm">Zurück: Die Asset-Redaktion</a></div>
+        <div style="float:right"><a href="Rooms.htm">Nächste:</a> Zimmer</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Path Editor
+Paths
+-->
+  <!-- TAGS
+path_editor
+-->
+
+</body></html>

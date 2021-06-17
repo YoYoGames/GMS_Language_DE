@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Senderbereich einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Emitter Region action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Emitter Region" />
+  <meta name="search-keywords" content="Set Emitter Region" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Emitter Region Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Emitter_Region.png"> Emitter-Region einstellen</h1>
+  <p>Diese Aktion wird verwendet, um den Bereich und die Form eines Emitters innerhalb eines Partikelsystems festzulegen. Sie geben die Partikelsystem-ID an, zu der der Emitter gehört (wie von der Aktion <a href="Create_Particle_System.htm">Create Particle System</a> zurückgegeben) und dann
+    die eigentliche Emitter-ID (wie von der Aktion <a href="Create_Particle_Emitter.htm">Create Particle Emitter</a> zurückgegeben), und geben Sie dann eine Form an, die der Emitter innerhalb der angegebenen Bounding-Box-Werte annehmen soll. Die möglichen Emitter-Formen sind:</p>
+  <p><img alt="Emitter Shapes Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Emitter_Shapes.png">Um Ihre Formen zu definieren, geben Sie die Koordinaten für einen &quot;Begrenzungsrahmen&quot; an, in den die gegebene
+    Form platziert wird (im Fall von Rechteck-, Ellipsen- und Rautenformen) oder die erste und zweite Koordinate für den Start- und Endpunkt (im Fall einer Linie). Alle Partikel, die vom Emitter ausgestoßen oder gestreamt werden, werden innerhalb
+    innerhalb der Grenzen der Form in diesem Begrenzungsrahmen erzeugt. Sie können auch die Verteilung der Partikel mit der Option von einstellen:</p>
+  <ul class="colour">
+    <li><b>Linear</b>: Die Partikel werden an einer beliebigen Stelle innerhalb der angegebenen Form erzeugt.</li>
+    <li><b>Gaußförmig</b>: Es werden überwiegend Partikel in der Mitte der Form und weniger an den Rändern erzeugt.</li>
+    <li><b>Inverse Gaußform</b>: Es werden vorwiegend Partikel an den Rändern der Form erzeugt, weniger in der Mitte.</li>
+  </ul>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Emitter Region Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Emitter_Region.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>System</td>
+        <td>Die eindeutige ID des Systems, zu dem der Emitter gehört</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td>Die eindeutige ID des Emitters, für den die Form eingestellt werden soll</td>
+      </tr>
+      <tr>
+        <td>Form</td>
+        <td>Die Partikelform, die verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>Verteilung</td>
+        <td>Die Verteilung der Partikel innerhalb der gegebenen Form</td>
+      </tr>
+      <tr>
+        <td>Links</td>
+        <td>Die Position der linken Seite des Begrenzungsrahmens der Form (in Pixel)</td>
+      </tr>
+      <tr>
+        <td>Top</td>
+        <td>Die Position des oberen Randes des Begrenzungsrahmens der Form (in Pixel)</td>
+      </tr>
+      <tr>
+        <td>Rechts</td>
+        <td>Die Position der rechten Seite des Begrenzungsrahmens der Form (in Pixel)</td>
+      </tr>
+      <tr>
+        <td>Unten</td>
+        <td>Die Position des unteren Randes des Begrenzungsrahmens der Form (in Pixel)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Set Emitter Region Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png">Der obige Code des Aktionsblocks erstellt einen Partikelemitter, setzt dessen
+    Region und setzt ihn dann so, dass er einen Strom von Partikeln aussendet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Actions.htm">Partikel-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Do_Effect.htm">Do-Effekt</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Emitter Region
+-->
+  <!-- TAGS
+action_part_emit_region
+-->
+</body>
+</html>

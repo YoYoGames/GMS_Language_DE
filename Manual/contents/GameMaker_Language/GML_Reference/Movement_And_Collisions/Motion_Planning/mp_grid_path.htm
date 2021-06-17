@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_path</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_path" />
+  <meta name="rh-index-keywords" content="mp_grid_path" />
+  <meta name="search-keywords" content="mp_grid_path" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_path</h1>
+  <p>Mit dieser Funktion können Sie einen Pfad erstellen, der von einem Startpunkt zu einem Zielpunkt unter Verwendung eines zuvor definierten <tt>mp_grid</tt> navigiert und dabei bereits in das Gitter eingefügte Hindernisse vermeidet. Die Argumente xstart und ystart
+    geben den Start des Pfades in Raumkoordinaten an, während die Argumente xgoal und ygoal das Ziel angeben. Sie können auch wählen, ob Sie nur horizontale/vertikale Bewegungen zulassen wollen, oder ob Sie volle diagonale Bewegungen zulassen wollen, indem Sie true im Argument allowdiag angeben.
+    Die Funktion gibt entweder true (sie konnte einen Pfad finden) oder false (sie ist gescheitert) zurück und setzt den gewählten Pfad. Im folgenden Bild können Sie sehen, wie das alles zusammen funktioniert:</p>
+  <p><img alt="MP Grid path example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_path_image.png">Wie Sie sehen können, wurden die &quot;Pipe&quot;-Objekte in das Gitter eingefügt, was bedeutet, dass jeder
+    Pfad um sie herumgeführt werden muss. Es wurden zwei Pfade im Bild erstellt, einer (grün) wurde mit erlaubten Diagonalen und der andere (rot) ohne erstellt. Der Unterschied zwischen den beiden ist ziemlich offensichtlich, wobei der grüne Pfad viel &quot;eleganter&quot; und direkter wirkt.
+    und direkter, aber es hängt alles davon ab, welche Verwendung Sie vorziehen. Beachten Sie, dass der Pfad unabhängig von der aktuellen Instanz ist - es ist ein Pfad durch das Gitter, nicht ein Pfad für eine bestimmte Instanz, auch wenn eine bestimmte Instanz
+    die Variable haben kann, die den Pfadindex speichert. Möglicherweise müssen Sie diese Pfade auch debuggen, um zu sehen, wie sie erstellt werden und innerhalb der Spielumgebung interagieren, in diesem Fall sollten Sie die <tt><a href="../../Drawing/Basic_Forms/draw_path.htm">draw_path()</a></tt> Funktion.</p>
+  <p class="note"><b>HINWEIS</b>: Der Pfad muss zuvor erstellt worden sein (entweder im Code mit <span style="font-size:1px;"><a href="../../Asset_Management/Paths/Path_Manipulation/path_add.htm"><tt style="font-size: 14px">path_add()</tt></a></span> oder als Ressource)
+    und wird durch den von dieser Funktion erzeugten Pfad ersetzt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_grid_path(id, path, xstart, ystart, xgoal, ygoal, allowdiag);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Index des mp_grid, das verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>Pfad</td>
+        <td>Index des Pfades, der von der Funktion verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>x Start</td>
+        <td>Start-X-Koordinate des neuen Pfades</td>
+      </tr>
+      <tr>
+        <td>y Start</td>
+        <td>Start-Y-Koordinate des neuen Pfades</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>End-x-Koordinate der neuen Bahn</td>
+      </tr>
+      <tr>
+        <td>yZiel</td>
+        <td>End-Y-Koordinate der neuen Bahn</td>
+      </tr>
+      <tr>
+        <td>allowdiag</td>
+        <td>Zeigt an, ob diagonale Bewegungen erlaubt sind, anstatt nur horizontale oder vertikale</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">global.grid = mp_grid_create(0, 0, room_width div 32, room_height div 32, 32, 32);<br> mp_grid_add_instances(global.grid, obj_wall, false);<br> with (obj_Enemy)<br> {
+    <br> path = path_add();<br> if mp_grid_path(global.grid, path, x, y, obj_Player.x, obj_Player.y, 1)<br> {
+    <br> path_start(path, 0, 3, 0);<br> }
+    <br> }
+  </p>
+  <p>Der obige Code erzeugt eine globale Variable &quot;global.grid&quot;, generiert dann ein mp_grid und weist dessen Index (id) dieser Variablen zur Verwendung in allen weiteren mp_grid-Funktionsaufrufen zu. Dann fügt er alle Instanzen von &quot;obj_Wall&quot; in das Raster ein, bevor
+    alle Instanzen von &quot;obj_Enemy&quot;, um einen Pfad zu erstellen, und verwendet dann mp_grid_path <tt>, um</tt> eine Route von ihrer Position zur Position von &quot;obj_Player&quot; zu berechnen. Wenn eine Route existiert, dann startet das Objekt selbst entlang des Pfades.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_grid_add_cell.htm">mp_grid_add_cell</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_path
+-->
+  <!-- TAGS
+mp_grid_path
+-->
+</body>
+</html>

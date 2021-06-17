@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Adressierung von Variablen in anderen Instanzen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining hoe to address variables in other instances" />
+  <meta name="rh-index-keywords" content="Addressing Variables In Other Instances" />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Adressierung von Variablen in anderen Instanzen</h1>
+  <p>In den Abschnitten, die den <a href="Variables_And_Variable_Scope.htm">Variablen</a> gewidmet sind, haben Sie erfahren, wie Sie Variablen innerhalb einer einzelnen Instanz oder auf globaler Ebene erstellen und verwenden können, aber was passiert, wenn Sie von einer Instanz aus auf eine Variable in einer anderen,
+    anderen Instanz zugreifen? Es gibt viele Fälle, in denen Sie dies tun möchten, z. B. bei einer Kollision mit einem Kugelobjekt, wenn Sie herausfinden möchten, wie viel Schaden die Kugel anrichtet, indem Sie auf eine Variable in der Kugel zugreifen, oder wenn Sie die Bewegung aller Kugeln in einem Puzzle stoppen möchten
+    aller Kugeln in einem Puzzle stoppen, oder die Hauptfigur an eine bestimmte Position bewegen, oder eine beliebige Anzahl anderer Situationen, die Sie typischerweise in einem Spiel antreffen. Glücklicherweise ist die <span class="notranslate">GameMaker-Sprache</span> mit Mechanismen ausgestattet, um dies zu erreichen
+    dies zu erreichen.</p>
+  <p>Eine der gebräuchlichsten Methoden, um auf eine Variable in einer anderen Instanz zuzugreifen oder sie zu ändern, besteht darin, ihren Objektnamen als Bezeichner zu verwenden und dann einen Punkt &quot;<span class="inline">.</span>&quot; zu verwenden, um GameMaker <span class="notranslate">Studio 2</span> mitzuteilen <span class="notranslate">, dass die</span> Variable, die nach
+    verwendet wird, in diesem Objekt zugewiesen oder geändert werden soll. Die Syntax hierfür lautet:</p>
+  <p class="code">&lt;Objekt_id&gt;.&lt;Variable&gt;<em>= &lt;Wert&gt;;</em></p>
+  <p>In der Praxis würde das so aussehen:</p>
+  <p class="code">obj_ball.speed = 0;</p>
+  <p>Mit dem obigen Code stellen Sie die Geschwindigkeit einer Instanz von &quot;obj_ball<tt>&quot;</tt> ein<tt>.</tt> Wenn Sie jedoch mehr als eine Instanz des gegebenen Objekts im Raum haben, <em>dann gilt es für ALLE gleichermaßen</em> - es sei denn, Sie verwenden <b>HTML5</b>,
+    in diesem Fall betrifft es nur <em>eine</em>, aber Sie haben keine Möglichkeit zu wissen, welche - wenn Sie also auf alle Instanzen eines Objekts zugreifen müssen, sollten Sie <a href="Language_Features/with.htm"><tt>mit()</tt></a>verwenden, denn das ist
+    100% plattformübergreifend kompatibel ist. Im Allgemeinen sollte dieses Format nur verwendet werden, wenn Sie eine einzelne Instanz des Objekts im Raum haben, oder (wie Sie im nächsten Teil sehen werden), wenn Sie eine bestimmte <i> <b>Instanz-ID</b></i> haben.</p>
+  <p>Sie können auch auf eine einzelne Instanz eines Objekts zugreifen, wenn es mehrere Instanzen im Raum gibt, indem Sie den eindeutigen <b>Instanznamen</b> verwenden, um <span class="notranslate">GameMaker Studio 2</span> mitzuteilen, welche Instanz genau angesprochen werden soll. Die <b>Instanznamenskonstante</b> ist die
+    eindeutige Identifizierungskonstante, die jeder einzelnen Instanz, die einem Raum in Ihrem Spiel hinzugefügt wird, zugewiesen wird. Sie finden diese Konstante, indem Sie im <a href="../../The_Asset_Editors/Rooms.htm">Raumeditor</a> auf eine Instanz doppelklicken:</p>
+  <p><img alt="The instance constant in the room editor" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Instance_Constant.png">Beachten Sie, dass dieser Name bearbeitet und mit einem aussagekräftigeren Namen versehen werden kann - allerdings <em>muss</em> der Name
+    für das gesamte Spiel eindeutig sein - und er kann als linke Seite des Punktes verwendet werden:</p>
+  <p class="code">inst_4DB70D2.speed = 0;</p>
+  <p>Die bei weitem gebräuchlichste und praktischste Methode ist jedoch die Verwendung einer <i>Variablen</i> links vom Punkt, solange die betreffende Variable<i> eine gültige <b>Instanz-ID</b></i> gespeichert hat. Die folgenden Beispiele verdeutlichen dies.</p>
+  <p class="code">// Beispiel 1<br> var _inst = instance_position(mouse_x, mouse_y, all);<br> if instance_exists(_inst)<br> {
+    <br> _inst.speed = 0;<br> }
+    <br>
+    <br> // Beispiel 2<br> var _inst = instance_create_layer(mouse_x, mouse_y, &quot;Enemies&quot;, obj_E_Parent);<br> _inst.direction = point_direction(_inst.x, _inst.y, x, y);<br> _inst.target = id;</p>
+  <p>Im obigen Code für Beispiel 1 gibt es einen <a href="../GML_Reference/Asset_Management/Instances/instance_exists.htm"><tt>instance_exists()</tt></a> Aufruf in dem Codeblock. Das liegt daran, dass die Verwendung der point-Methode zum Zugriff auf eine andere Instanz oder zum Ändern des
+    Wert zuzugreifen oder zu ändern, einen Fehler auslöst und das Spiel zum Absturz bringt, wenn die Instanz nicht existiert, und es besteht die Möglichkeit, dass dies in diesem Beispiel der Fall ist. In den Beispielen 2 und 3 brauchen wir die Prüfung jedoch nicht, weil wir wissen, dass die Instanz vorhanden ist
+    da wir sie in Beispiel 2 erzeugt haben, und in Beispiel 3 ist es die andere Instanz in einem Kollisionsereignis. Wenn jedoch die Möglichkeit <i>besteht</i>, dass die Instanz zerstört, deaktiviert oder anderweitig aus dem Raum entfernt werden könnte, während Sie diese Methode verwenden,
+    sollten Sie <i>immer</i> vorher mit der Funktion <tt>instance_exists()</tt> oder der <a href="../GML_Reference/Asset_Management/Instances/instance_number.htm"><tt>instance_number()</tt></a> Funktion.</p>
+  <p>Beachten Sie, dass Sie das spezielle <a href="Instance_Keywords.htm">Schlüsselwort</a> &quot; all&quot; mit dieser Methode nicht verwenden können, um alle Instanzen anzusprechen (z. B.: <span class="inline">all.val = 10</span> würde einen Fehler ergeben), aber Sie können <i>die</i> Schlüsselwörter
+    &quot; other<tt>&quot; und</tt>&quot; self&quot; ohne Probleme verwenden. Verwenden Sie zum Beispiel " <tt>other"</tt> in einem <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">Kollisionsereignis</a>:</p>
+  <p class="code">// Beispiel 3 other.hp -= 10;<br> if other.hp &lt;= 0<br> {
+    <br> other.sprite_index = spr_E_Dead;<br> }
+  </p>
+  <p>Es ist auch wichtig zu beachten, dass Sie keine Funktion selbst als linke Seite einer Zuweisung verwenden können. Der folgende Code würde zum Beispiel einen Fehler verursachen:</p>
+  <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
+  <p>Der Rückgabewert für den Ausdruck in diesem Codebeispiel ist eine Ganzzahl (der eindeutige ID-Wert für die nächste Instanz) und muss daher in Klammern <span class="inline">()</span> eingeschlossen werden, um auf diese Weise verwendet zu werden und die Instanz richtig anzusprechen
+    erforderlich. Der obige Code würde korrekt geschrieben werden als:</p>
+  <p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
+    <br> //or
+    <br>
+    <br> var inst = instance_nearest(x, y, obj);<br> inst.speed = 0;</p>
+  <p>Dies sind alles vollkommen gültige Wege, um Variablen in anderen Instanzen zu lesen, zu ändern und zu setzen, und sie funktionieren, weil der Punkt eigentlich ein <i>Operator</i> ist. Er nimmt einen Wert als linken <a class="glossterm" data-glossterm="Operand" href="#">Operanden</a> und eine Variable als rechten Operanden und gibt die Adresse dieser bestimmten Variable im angegebenen Objekt oder der Instanz zurück. Alle Objektnamen, Konstanten, IDs etc... stellen einfach Werte dar und diese können wie jeder andere Wert behandelt werden.</p>
+  <p>Die andere Möglichkeit, Variablen in einer anderen Instanz zu referenzieren, ist die Verwendung der <span class="notranslate">GameMaker Language-Funktion</span> <span class="inline">with()</span>, die <a href="Language_Features/with.htm">hier</a> im Detail besprochen wird:</p>
+  <p class="code">// Dies betrifft alle Instanzen des Objekts &quot;obj_Enemy&quot;<br> with (obj_Enemy)<br> {<br> target = other.parent;<br> } <br>
+    <br> // Dies betrifft eine Instanz des Objekts &quot;obj_Enemy&quot;<br> var _enemy = instance_nearest(x, y, obj_Enemy);<br> if instance_exists(_enemy)<br> {<br> with (_enemy)<br> {<br> target_x = mouse_x;<br> target.y = mouse_y;<br> } <br> }</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="Evaluation_Order.htm">Auswertung Auftrag</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables - addressing
+addressing variables
+-->
+  <!-- TAGS
+addressing_variables
+-->
+
+</body></html>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_gelenk_pulley_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_pulley_create" />
+  <meta name="rh-index-keywords" content="physics_joint_pulley_create" />
+  <meta name="search-keywords" content="physics_joint_pulley_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_gelenk_pulley_erzeugen</h1>
+  <p>Das Flaschenzuggelenk wird verwendet, um zwei Instanzen innerhalb der Physikwelt so zu verbinden, dass die Bewegung der einen die Bewegung der anderen direkt beeinflusst. Diese Gelenke werden zunächst an zwei Punkten im Weltraum verankert, die jeweils mit einer Instanz
+    in ihrem Massenschwerpunkt. Dies kann durch das Setzen der lokalen Anker x/y-Koordinaten relativ zum Ursprung der Instanz geändert werden, d. h. die tatsächliche Verbindung von der Instanz zum Ankerpunkt der Physikwelt kann an einen anderen Ort als
+    ihrem Ursprung. Die folgende Abbildung veranschaulicht dies:</p>
+  <p><img alt="Pulley joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/pulley_joint_image.png">Wenn Sie sich inst2 anschauen, können Sie sehen, dass sein lokaler Ankerpunkt um 20 Pixel nach &quot;links&quot; versetzt wurde
+    seines Ursprungs versetzt wurde (Zur Erinnerung! Die Weltankerpunkte werden über die Raumkoordinaten definiert, während die lokalen Ankerpunkte relativ zum Ursprung der Instanz definiert werden). Sie können auch ein Verhältnis für das Seilzuggelenk angeben, das die eine oder andere Seite
+    Bei einem Wert unter 1 bewegt sich die erste Instanz schneller (z. B. bei 0,5 bewegt sie sich doppelt so schnell) und bei einem Wert über 1 bewegt sich die zweite Instanz schneller (z. B. bei 2 bewegt sie sich doppelt so schnell).</p>
+  <p>Wie bei allen Gelenken können <tt>die</tt> beiden Instanzen miteinander interagieren und kollidieren, wenn Sie den &quot;col&quot;-Wert auf &quot;true&quot; setzen, aber nur, wenn <i>sie</i> Kollisionsereignisse haben; wenn er jedoch auf &quot;false&quot; gesetzt ist, kollidieren <tt>sie</tt> nicht
+    egal was passiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_pulley_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, l_anchor1_x, l_anchor1_y, l_anchor2_x, l_anchor2_y, ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>Die erste Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>Die zweite Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>w_Anker1_x</td>
+        <td>Die x-Koordinate, an der der erste Teil des Gelenks verankert ist, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker1_y</td>
+        <td>Die y-Koordinate, an der der erste Teil des Gelenks verankert ist, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker2_x</td>
+        <td>Die x-Koordinate, an der der zweite Teil des Gelenks verankert ist, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>w_Anker2_y</td>
+        <td>Die y-Koordinate, an der der zweite Teil des Gelenks verankert ist, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>l_Anker1_x</td>
+        <td>Die lokale x-Koordinate, an der Gelenk 1 an der ersten Instanz verankert ist</td>
+      </tr>
+      <tr>
+        <td>l_Anker1_y</td>
+        <td>Die lokale y-Koordinate, an der Gelenk 1 an der ersten Instanz verankert ist</td>
+      </tr>
+      <tr>
+        <td>l_Anker2_x</td>
+        <td>Die lokale x-Koordinate, an der Gelenk 2 an der zweiten Instanz verankert ist</td>
+      </tr>
+      <tr>
+        <td>l_Anker2_y</td>
+        <td>Die lokale y-Koordinate, an der Gelenk 2 an der zweiten Instanz verankert ist</td>
+      </tr>
+      <tr>
+        <td>Verhältnis</td>
+        <td>Einstellen des Geschwindigkeitsverhältnisses zwischen zwei Instanzen</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Ob die beiden Instanzen kollidieren können (true) oder nicht (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Index des Gelenks)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var t_fix, inst1, inst2;<br> t_fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(t_fix, 20);<br> inst1 = instance_create_layer(150, room_height - 90, &quot;Instances&quot;, obj_Block);<br> inst2 = instance_create_layer(300, room_height
+    - 90, &quot;Instances&quot;, obj_Block);<br> physics_fixture_bind(t_fix, inst1);<br> physics_fixture_bind(t_fix, inst2);<br> physics_joint_pulley_create(inst1, inst2, 150, room_height - 140, 300, room_height - 140, 0, 0, 0, 0, 2, 0);<br> physics_fixture_delete(t_fix);
+  </p>
+  <p>Der obige Code erstellt und definiert ein neues Fixture, erstellt zwei Instanzen von &quot;obj_Block&quot; und bindet dann dieses Fixture an sie. Anschließend wird eine Seilzugverbindung zwischen diesen Instanzen definiert, ohne Versatz für die Verbindungen, mit einem Verhältnis von 2:1 (was bedeutet
+    dass inst2 sich schneller bewegt). Es treten keine Kollisionen zwischen den beiden Instanzen in der Umlenkrolle auf.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_gear_create.htm">physics_joint_gear_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_pulley_create
+-->
+  <!-- TAGS
+physics_joint_pulley_create
+-->
+</body>
+</html>

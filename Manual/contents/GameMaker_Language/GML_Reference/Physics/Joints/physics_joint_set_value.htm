@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_set_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_set_value" />
+  <meta name="rh-index-keywords" content="physics_joint_set_value" />
+  <meta name="search-keywords" content="physics_joint_set_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_set_value</h1>
+  <p>Bestimmte Gelenkeigenschaften können auch nach der Erstellung des Gelenks geändert und eingestellt werden. Es gibt eine Reihe von Konstanten, die in dieser Funktion verwendet werden können und die Sie hier finden: <a href="Physics_Joint_Constants.htm">Physik Gelenkkonstanten</a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_set_value(Gelenk, Feld, Wert)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>gemeinsame</td>
+        <td>Der Index der Verbindung, die Sie ändern möchten</td>
+      </tr>
+      <tr>
+        <td>Feld</td>
+        <td>Die Konstante für die gemeinsame Eigenschaft, die Sie ändern möchten</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der neue Wert für die gemeinsame Eigenschaft</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if physics_joint_get_value(revJoint, phy_joint_max_motor_torque) &lt; 2<br> {
+    <br> physics_joint_set_value(revJoint, phy_joint_max_motor_torque, 2);<br> }
+  </p>
+  <p>Der obige Code prüft, ob das maximale Motordrehmoment der Gelenke auf weniger als 2 eingestellt ist, und wenn dies der Fall ist, setzt er es auf 2.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_distance_create.htm">physics_joint_distance_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_set_value
+-->
+  <!-- TAGS
+physics_joint_set_value
+-->
+</body>
+</html>

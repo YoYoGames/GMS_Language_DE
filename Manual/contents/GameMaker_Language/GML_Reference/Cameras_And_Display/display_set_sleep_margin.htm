@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_sleep_margin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_set_sleep_margin" />
+  <meta name="rh-index-keywords" content="display_set_sleep_margin" />
+  <meta name="search-keywords" content="display_set_sleep_margin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>display_set_sleep_margin</h1>
+  <p>Mit dieser Funktion können Sie den für das Rendering-Timing Ihres Spiels verwendeten Wert für den Ruhezustand einstellen und benötigen einen Millisekundenwert. Die Standardwerte sind wie folgt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Plattform</th>
+        <th>Millisekunden</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Windows</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">macOS</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Ubuntu</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>HTML5</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Android</span></td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">iOS</span></td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Windows UWP</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>Xbox</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>PS4</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span></td>
+        <td>10</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Beachten Sie, dass selbst wenn die Timing-Methode auf die Verwendung von Vsync-Timing gesetzt ist, der Sleep-Margin eine gewisse Auswirkung auf das Rendering des Spiels hat und Sie daher beim Setzen dieses Wertes vorsichtig sein sollten. Weitere Informationen zum Anzeige-Timing finden Sie unter <a href="display_set_timing_method.htm"><tt>display_set_timing_method()</tt></a>.</p>
+  <p class="note"><strong>HINWEIS</strong>: Zusätzlich zum Ruhebereich können Sie die Leistung und den Stromverbrauch unter <span class="notranslate">Windows</span> weiter kontrollieren, indem Sie <a href="../OS_And_Compiler/scheduler_resolution_set.htm">die Auflösung des Thread-Schedulers zur</a> Laufzeit anpassen <span class="notranslate">.</span></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">display_set_sleep_margin(milliseconds);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Millisekunden</td>
+        <td>Die Anzahl der Millisekunden für den Schlafabstand</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if display_get_timing_method() != tm_sleep<br> {
+    <br> display_set_timing_method(tm_sleep);
+    <br> if display_get_sleep_margin() != 20<br> {
+    <br> display_set_sleep_margin(20);
+    <br> }
+    <br> }
+  </p>
+  <p>Der obige Code prüft die Timing-Methode, und wenn sie nicht auf tm_sleep eingestellt ist, wird <tt>sie</tt> auf diesen Wert gesetzt und die Sleep-Marge auf 20 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Kameras und Display</a>
+        <div style="float:left">Zurück: </div>
+        <div style="float:right">Weiter: <a href="screen_save.htm">screen_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_sleep_margin
+-->
+  <!-- TAGS
+display_set_sleep_margin
+-->
+</body>
+</html>

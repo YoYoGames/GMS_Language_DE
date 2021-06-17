@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pfad_get_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_speed" />
+  <meta name="rh-index-keywords" content="path_get_speed" />
+  <meta name="search-keywords" content="path_get_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pfad_get_speed</h1>
+  <p>Diese Funktion gibt den Geschwindigkeitsfaktor einer beliebigen Position auf einem Pfad zurück. Die Position sollte ein Wert zwischen 0 und 1 sein (Sie können <a href="Path_Variables/path_position.htm"><tt>weg_position</tt></a>verwenden, wenn Sie zum Beispiel die aktuelle
+    Position der Instanz), wobei 0 die Startposition und 1 das Ende ist. Der zurückgegebene Wert ist der Faktor, um den die aktuelle <tt><a href="Path_Variables/path_speed.htm">Weg_Geschwindigkeit</a> </tt>gesetzt wird. Zum Beispiel, auf einem Pfad
+    mit nur zwei Punkten, 0 und 1, bei dem der Geschwindigkeitsfaktor von Punkt 0 100 und der von Punkt 1 0 ist, gibt die Funktion <tt>path_get_speed(path, 0.5)</tt> den Wert 50 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_get_speed(ind, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu prüfenden Pfades.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>Wie weit durch den Pfad geprüft werden soll. Zwischen 0 (Anfang) und 1 (Ende), kann dezimal sein.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">Geschwindigkeit = path_get_speed(pth_Patrol, 0.5) / 20;</p>
+  <p>Dadurch wird die Geschwindigkeit der aufrufenden Instanz auf den Geschwindigkeitsfaktor des Punktes auf genau der Hälfte des angegebenen Pfades, geteilt durch 20, gesetzt. Wenn der gefundene Geschwindigkeitsfaktor also der Standardwert 100 ist, wird die Geschwindigkeit der aufrufenden Instanz auf 5 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Paths.htm">Pfade</a></div>
+        <div style="float:right">Weiter: <a href="path_get_x.htm">path_get_x</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_speed
+-->
+  <!-- TAGS
+path_get_speed
+-->
+</body>
+</html>

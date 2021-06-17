@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <title>Nicht-Bitmap-Sprites</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section explaining non-bitmap sprites in GameMaker" />
+  <meta name="search-keywords" content="SWF,Spine,skeleton animation,vector sprites" />
+  <meta name="rh-index-keywords" content="Texture Goups - Non-Bitmap Sprites,SWF,Spine" />
+</head>
+<body>
+  <h1>Nicht-Bitmap-Sprites</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> bietet Unterstützung für Nicht-Bitmap-Sprites in Form von <a class="glossterm" data-glossterm="Vektor" href="#">Vektor-Dateien</a> <span class="inline">SWF </span>oder <strong>Spine Skeletal Animation-Dateien</strong>. Beide Formate haben ihre Vor- und Nachteile, und die beiden folgenden Abschnitte erklären, wie Sie sie in den <a href="../../The_Asset_Editors/Sprites.htm">Sprite-Editor</a> importieren können, sowie ein paar Informationen darüber, wie sie gezeichnet werden.</p>
+  <p> </p>
+  <h2>Skelett-Animation Sprites (Wirbelsäule)</h2>
+  <p>Ein Sprite, das mit einer Skelettanimation erstellt wurde, ist ein Sprite, bei dem ein Basis-&quot;Skelett&quot; erstellt und mit Keyframes animiert wurde, um die Komponenten des Skeletts im Laufe der Zeit zu bewegen. Dieses Skelett wird dann von einem <a class="glossterm" data-glossterm="Textur-Atlas" href="#">Texturatlas</a> gehäutet und die resultierende Animation in einem der vielen Dateitypen exportiert. Mit <span class="notranslate">GameMaker</span> Studio 2 können Sie diese Art von Sprite importieren, sofern es als Datei im Format <span class="inline">*.json</span> exportiert wurde und die
+    korrekt zugeordnete Texturatlasdatei (<span class="inline">*.atlas</span>) und Bilddatei (als <span class="inline">*.png</span>) <em>im gleichen Verzeichnis</em>.</p>
+  <p><img alt="Spine UI" class="center" src="../../assets/Images/Settings/Spine_Example.png">Derzeit kann <span class="notranslate">GameMaker Studio 2</span> <strong>nur Vektorbilder aus Dateien im JSON-Format importieren, die vom Programm <a href="http://esotericsoftware.com/">Spine</a></strong> erstellt wurden,
+    allerdings ist die Art und Weise, sie in das Programm zu importieren, fast identisch mit der, ein normales Bitmap-Bild hinzuzufügen. Um eine Skelettanimation hinzuzufügen, müssen Sie ein neues Sprite erstellen, woraufhin der Standarddialog <strong>Sprite laden</strong> erscheint, nur
+    Hier müssen Sie nur sicherstellen, dass Sie im Dateifilter unten <span class="inline">*.json</span> ausgewählt haben:</p>
+  <p><img alt="Import Spine Sprite" class="center" src="../../assets/Images/Settings/Spine_Import.png" /></p>
+  <p>Wenn Sie auf die Schaltfläche &quot;Laden&quot; klicken, wird die Skelettanimation dem <a href="../../Introduction/The_Asset_Browser.htm">Asset-Browser als Sprite</a> hinzugefügt, wobei ein Fortschrittsbalken angezeigt wird, während die Datei verarbeitet wird. Beachten Sie, dass dies, je nach Komplexität der Datei
+    der Datei einen oder zwei Augenblicke dauern kann. Wenn die Verarbeitung abgeschlossen ist, kehren Sie zum Dialog "Sprite-Eigenschaften" zurück, der nun wie folgt aussieht:</p>
+  <p><img alt="Spine SPrite In The Sprite Editor" class="center" src="../../assets/Images/Settings/Spine_OptionsDisabled.png">Nachdem Sie die Animation importiert haben, können Sie die Kollisionseigenschaften einstellen, aber beachten Sie, dass Sie hier nur auf die Verwendung von
+    präzise Kollisionen oder Bounding-Box-Kollisionen zu verwenden, und dass die Kollisionsdaten für eine Skelettanimation explizit aus den bereitgestellten Daten übernommen werden. <span class="notranslate">GameMaker Studio 2</span> generiert keine Kollisionsmaske, wenn die Daten in der importierten Datei fehlen, d. h.
+    Sie erhalten einfach keine funktionierenden Kollisionen, wenn die Masken in dem Programm, mit dem das zu importierende Bild erstellt wurde, nicht korrekt eingestellt sind.</p>
+  <p class="note"><strong>HINWEIS</strong>: Aufgrund der Komplexität von Skelettanimationen ist das im Sprite-Editor angezeigte Vorschaubild nicht dazu gedacht, Ihre Animation genau darzustellen, sondern Sie erhalten ein einfaches Bild, das die Animation zur Visualisierung
+    im Raum-Editor.</p>
+  <p>Im Gegensatz zu Bitmap-Sprites <strong>kann</strong> das importierte Skelett-Animationssprite <strong>im Editor nicht</strong> in irgendeiner Weise <strong>modifiziert werden</strong>, aber es gibt eine Reihe von Funktionen innerhalb der <span class="notranslate">GameMaker Language</span><span class="notranslate">(GML</span>), die verwendet werden können, um Skins zu ändern, Eigenschaften zu setzen,
+    und andere Aspekte der Animation steuern. Sie können auch keine Texturoptionen für das Sprite einstellen, da <span class="notranslate">GameMaker</span> den mitgelieferten Texturatlas verwendet, der von dem Programm erstellt wurde, das das Sprite erzeugt hat.</p>
+  <p>Es gibt eine Reihe von Dingen, die Sie beim Importieren von Skelett-Animationssprites beachten sollten. Das Wichtigste ist, dass einige der Sprite-Zeichen- und Sprite-Verwaltungsfunktionen aus technischen Gründen nicht unterstützt werden, insbesondere jene
+    Zeichenfunktionen, die nur einen Teil eines Sprites zeichnen oder die Position in irgendeiner Weise &quot;verdrehen&quot; (siehe die einzelnen <a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/Sprites_And_Tiles.htm"><span class="inline">draw_sprite_*()</span></a> Funktionen
+    für genaue Details darüber). Die grundlegenden Sprite-Zeichenfunktionen werden jedoch voll unterstützt, ebenso wie die eingebauten Sprite-Variablen. Abgesehen von diesen Funktionen und Variablen können Sie Animations-Eigenschaften auch mit speziellen <span class="inline">skeleton_*</span> Funktionen einstellen und ändern, die im Referenzabschnitt über <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Skelett-Animationen</a> aufgelistet und erklärt werden.</p>
+  <p> </p>
+  <p> </p>
+  <h2>Vektor-Sprites (SWF)</h2>
+  <p>Generell verwenden alle Sprites im <span class="notranslate">GameMaker</span> Bitmaps, die zwar inhaltlich flexibel sind, aber sowohl die Größe als auch die Anzahl der möglichen Frames in einem Sprite einschränken, bevor der Speicherverbrauch untragbar wird. Vektor-Sprites umgehen diese Beschränkungen
+    indem sie ihren Inhalt anders speichern und zeichnen: Anstelle eines Pixelgitters, das bei der Skalierung blockig oder unscharf werden kann, werden sie als Dreiecke mit Hilfe von Vektormathematik gezeichnet, und diese können nach oben (oder unten) skaliert werden, ohne die Definition zu verlieren, wie in der folgenden Abbildung dargestellt
+    im Bild unten:</p>
+  <p><img alt="Vector And Bitmap Sprite Comparison" class="center" src="../../assets/Images/Settings/Vector_Compare.png">Zur Veranschaulichung zeigt das folgende Bild dasselbe Vektor-Feuermann-Sprite, nur dass jetzt die Polygone zu sehen sind, die
+    verwendet werden, um das Bild in <span class="notranslate">GameMaker Studio 2</span> zu erstellen:</p>
+  <p><img alt="Polygons Of A Vector Sprite" class="center" src="../../assets/Images/Settings/Vector_Polys.png">Bei der Programmierung von Spielen gibt es jedoch nichts umsonst, und der Nachteil von Vektorsprites ist, dass sie beim Zeichnen mehr CPU-Kosten verursachen als Bitmap-Sprites.
+    Dieser Geschwindigkeitsunterschied nimmt zu, wenn die Komplexität der importierten Animation steigt. Außerdem wird ihr Speicherverbrauch im Gegensatz zu Bitmap-Sprites durch ihre visuelle Komplexität beeinflusst. Unter Berücksichtigung dieser Tatsache ermöglichen sie
+    die Möglichkeit, große animierte Grafiken auf eine Weise hinzuzufügen, die mit herkömmlichen Bitmap-Sprites unmöglich wäre.</p>
+  <p>Auf der Kehrseite der Performance-Gleichung, weil Vektor-Sprites nur die absolut benötigten Pixel zeichnen (im Gegensatz zu Bitmap-Sprites, die auch den leeren Raum um das Bild herum &quot;zeichnen&quot;), können sie aus GPU-Sicht günstiger sein. Außerdem sind im Allgemeinen
+    sind Vektorsprites viel kleiner als ihre Bitmap-Äquivalente - für das obige Feuerwehrmann-Beispiel sind die Größen der verschiedenen Sprite-Typen wie folgt:</p>
+  <p class="code">Bitmap bei 70x68 = 4x70x68 Bytes x 12 Frames = 223k<br> Vektor = 54k</p>
+  <p>Wenn Sie die Auflösung des Sprites vervierfachen:</p>
+  <p class="code">Bitmap bei 280x272 = 4x280x272 Bytes x 12 Frames = 3570k<br> Vektor = 54k</p>
+  <p>Wie Sie also sehen können, kann durch die Verwendung von Vektor-Sprites eine Menge Speicherplatz eingespart werden, und wir haben noch viel Potenzial für zukünftige Platzeinsparungen.</p>
+  <p>Derzeit hat <span class="notranslate">GameMaker Studio 2</span> eine <em>begrenzte </em>Unterstützung für Vektorsprites. und kann nur Vektorbilder aus Dateien im Format <span class="inline">SWF</span> importieren. Die Art und Weise, sie in das Programm zu importieren, ist fast identisch mit dem Hinzufügen eines normalen
+    Bitmap-Bildes. Um ein Vektor-Sprite hinzuzufügen, erstellen Sie ein neues Sprite, woraufhin der Standarddialog "Sprite laden" erscheint, aber stellen Sie sicher, dass Sie im Dateifilter unten <span class="inline">*.swf</span> ausgewählt haben.</p>
+  <p><img alt="Import Vector Image" class="center" src="../../assets/Images/Settings/Import_Vector.png" style="cursor: nwse-resize;">Wenn Sie auf die Schaltfläche &quot;Laden&quot; klicken, wird das Vektorbild oder die Animation dem <a href="../../Introduction/The_Asset_Browser.htm">Asset-Browser</a> hinzugefügt <a href="../../Introduction/The_Asset_Browser.htm">,</a>
+    Dabei wird ein Fortschrittsbalken angezeigt, während die Datei verarbeitet wird. Beachten Sie, dass dies je nach Komplexität der Datei eine Weile dauern kann (bis zu einer Minute bei komplexeren Animationen). Wenn die Verarbeitung abgeschlossen ist, kehren Sie zum Dialog "Sprite-Eigenschaften
+    Dialog zurück, der nun wie folgt aussieht:</p>
+  <p><img alt="Disabled Texture Settings" class="center" src="../../assets/Images/Settings/Vector_Spine_Disabled_Options.png">Im Sprite-Editor hat sich nicht viel geändert, aber die Schaltfläche " <strong>Bild</strong> bearbeiten" ist jetzt ausgegraut und kann nicht
+    angeklickt werden, da es bei dieser Art von Sprite keine Bitmaps zum Bearbeiten gibt. Zweitens sind auch alle Textur-Optionen ausgegraut worden. SWF-Sprites sind mathematikbasiert und haben daher normalerweise keine Texturen, so dass keine der
+    verfügbaren Optionen sind für diese Art von Sprites anwendbar.</p>
+  <p class="note"><strong>HINWEIS</strong>: Wie das Bild in dem von Ihnen gewählten Vorschau-Editor aussieht, entspricht weder dem Aussehen im Spiel noch dem Aussehen im Vorschaufenster des Sprite-Editors. Das Vektorbild wird in der Größe importiert, in der es erstellt wurde,
+    was nicht notwendigerweise die Größe ist, in der die Vorschau angezeigt wird (Browser skalieren das Bild normalerweise, damit es passt, z. B.).</p>
+  <p>Eine Ergänzung zum Sprite-Editor ist, dass Sie die <em>Qualität </em>des Vektor-Sprites beim Zeichnen mit dem Schieberegler <strong>SWF Precision</strong> oben einstellen können. Dadurch wird einfach die Anzahl der Dreiecke, die zur Erzeugung des Sprites verwendet werden, reduziert oder erhöht
+    - wobei ein Wert von ca. 50 % für die meisten Spiele ausreichend ist - Sie sollten jedoch mit diesem Wert experimentieren, wenn Sie extreme Skalierung verwenden oder Leistungsprobleme haben.</p>
+  <p>Es gibt eine Reihe von Dingen, die Sie beim Importieren von Vektor-Sprites beachten sollten. Das Wichtigste ist, dass einige der Sprite-Zeichen- und Sprite-Verwaltungsfunktionen aus technischen Gründen nicht unterstützt werden, insbesondere jene Zeichenfunktionen
+    die nur einen Teil eines Sprites zeichnen, oder die die Position in irgendeiner Weise &quot;verdrehen&quot; (siehe die einzelnen <a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/Sprites_And_Tiles.htm"><span class="inline">draw_sprite_*()</span></a> Funktionen
+    für genaue Details darüber). Die grundlegenden Sprite-Zeichenfunktionen werden jedoch voll unterstützt, ebenso wie die eingebauten Sprite-Variablen. Sie können auch verschiedene <a class="glossterm" data-glossterm="Anti-Aliasing" href="#">Anti-Aliasing</a>(AA)-Werte einstellen
+    für die zu zeichnenden SWF-Sprites mit den Funktionen <span class="inline"><a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_enable_swf_aa.htm">draw_enable_swf_aa()</a></span>, <span class="inline"><a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_get_swf_aa_level.htm">draw_get_swf_aa_level()</a></span> oder <span class="inline"><a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_set_swf_aa_level.htm">draw_set_swf_aa_level()</a></span> einstellen.</p>
+  <p>Sie sollten auch Folgendes beachten:</p>
+  <ul class="colour">
+    <li>Beim Importieren einer <span class="inline">*.SWF</span> Datei wird Actionscript <em>nicht </em>unterstützt. Wenn Ihre SWF also darauf angewiesen ist, um korrekt zu funktionieren, wird sie wahrscheinlich nicht richtig funktionieren. Ähnlich verhält es sich mit eingebetteten Filmclips, die ihre eigene Zeitleiste haben
+      haben, wird während der gesamten Animation nur das erste Bild angezeigt - alle Animationen müssen auf der Hauptzeitleiste stattfinden.</li>
+    <li>Wenn Ihre Vektordatei besonders feine Details aufweist, können Sie gelegentlich feststellen, dass in den resultierenden Sprites Löcher oder seltsame Dreiecke erscheinen. Das liegt daran, dass Geometrien in kleinen Maßstäben manchmal zusammenfallen können, so dass Formen entstehen, die einfach nicht
+      Dreiecke nicht gut passen. In diesem Fall haben Sie zwei Möglichkeiten - Sie können den Inhalt der Vektordatei vergrößern, was dem Importer mehr Spielraum gibt, oder Sie können versuchen, den Detailgrad des Objekts, das bricht, zu reduzieren.</li>
+    <li><span class="notranslate">GameMaker Studio 2</span> verwendet die Bühnengröße der SWF als Begrenzung des resultierenden Sprites. Wenn Sie jedoch etwas auf der Bühne außerhalb dieser Grenzen haben, wird es trotzdem gezeichnet. Das bedeutet, dass Sie entweder versuchen sollten, alles außerhalb der
+      Bühne zu platzieren, wenn Sie nicht wollen, dass es angezeigt wird, oder eine Maskenebene zu verwenden, um das Zeichnen auf diesen Bereich zu beschränken.</li>
+    <li>Die Bühnengröße wirkt sich auch auf die Größe der generierten Kollisionsmasken aus. Wenn Sie also eine große Bühnengröße und viele Frames in Ihrer Animation haben, können Sie potenziell viel Speicherplatz verbrauchen. Verwenden Sie also nur dann präzise Kollisionsmasken, wenn Sie
+      wirklich brauchen.</li>
+    <li>Da eine SWF-Datei aus mehreren Ebenen erstellt wird, von denen sich einige möglicherweise überlappen, funktioniert Alpha nicht ganz so wie bei Bitmap-Sprites - überlappende Bereiche sehen nicht so transparent aus wie andere Teile des Sprites, da die Pixel dort
+      mehrfach überzeichnet werden.</li>
+    <li>Bitmap-Füllungen <em>werden </em>unterstützt, aber wenn Sie gekachelte Bitmap-Füllungen als Teil Ihrer SWF-Datei verwenden, müssen Sie sicherstellen, dass die Bitmap eine Zweierpotenz groß ist, da sie sonst nicht richtig gekachelt werden kann. Das Rendern von Text wird ebenfalls unterstützt, aber Sie müssen
+      Sie müssen jedoch die Schriftart in Ihre SWF-Datei einbetten, damit sie im resultierenden Sprite angezeigt wird. Außerdem wird derzeit nur linksbündiger einzeiliger Text unterstützt.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Texture_Groups.htm">Textur-Gruppen</a></div>
+        <div style="float:right">Nächste: <a href="Texture_Pages.htm">Textur-Seiten</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+
+</body></html>

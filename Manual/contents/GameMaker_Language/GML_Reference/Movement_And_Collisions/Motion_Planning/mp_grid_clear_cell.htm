@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_clear_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_clear_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_clear_cell" />
+  <meta name="search-keywords" content="mp_grid_clear_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_clear_cell</h1>
+  <p>Diese Funktion kann verwendet werden, um eine bestimmte &quot;Zelle&quot; eines MP-Gitters zu löschen. Zellen werden <i>nicht</i> als Raumkoordinaten, sondern als Gitterkoordinaten berechnet, wobei (0,0) die obere linke Ecke des Gitters ist.
+    Position im Raum zu löschen, müssen wir die x- und y-Koordinaten in Zellkoordinaten umwandeln, indem wir sie durch die Auflösung des MP-Gitters teilen. Das Codebeispiel unten zeigt, wie das funktioniert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_grid_clear_cell(id, h, v);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Index des mp_grid, das verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Horizontale Position der zu löschenden Zelle</td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>vertikale Position der zu löschenden Zelle</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">with (obj_Box)<br> {
+    <br> mp_grid_clear_cell(grid, floor(x / 32), floor(y /32));<br> instance_destroy();
+    <br> }
+  </p>
+  <p>Der obige Code bewirkt, dass sich alle &quot;obj_Box&quot; selbst zerstören und die von ihnen belegten Zellen im mp_grid, die in der Variablen &quot;grid&quot; indiziert sind, als frei markieren. In diesem Beispiel finden wir die entsprechende Zelle, indem wir die x/y-Koordinate
+    des Objekts nehmen und durch die Auflösung des Gitters dividieren (mit <tt>floor</tt>, um die Werte als Ganzzahlen zu erhalten).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_grid_clear_rectangle.htm">mp_grid_clear_rectangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_clear_cell
+-->
+  <!-- TAGS
+mp_grid_clear_cell
+-->
+</body>
+</html>

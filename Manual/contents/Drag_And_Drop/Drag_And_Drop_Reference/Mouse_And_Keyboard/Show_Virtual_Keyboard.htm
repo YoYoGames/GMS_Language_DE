@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Virtuelle Tastatur anzeigen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Show Virtual Keyboard action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Show Virtual Keyboard" />
+  <meta name="search-keywords" content="Show Virtual Keyboard" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Show Virtual Keyboard Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Show.png"> Virtuelle Tastatur anzeigen</h1>
+  <p>Diese Aktion kann verwendet werden, um die virtuelle Tastatur auf dem Gerät anzuzeigen, auf dem das Spiel läuft. Wenn Sie diese Aktion aufrufen, werden Sie aufgefordert, für jedes der ersten drei Argumente eine der folgenden Konstanten anzugeben:</p>
+  <ul class="colour">
+    <li><b>Tastaturtyp</b>: Mit dieser Konstante wird eingestellt, welcher Tastensatz auf der virtuellen Tastatur zur Verfügung steht. Die verfügbaren Tastaturtypen sind:
+      <table>
+        <tbody>
+          <tr>
+            <th>Tastatur-Typ</th>
+            <th>Beschreibung</th>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_default</span></td>
+            <td>Der Standard-Tastaturtyp für das aktuelle System.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_ascii</span></td>
+            <td>Eine reine ASCII-Tastatur.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_url</span></td>
+            <td>Eine normale Tastatur, die für die Eingabe von URLs optimiert ist. Verfügt in der Regel über eine &quot;.com&quot;- oder eine andere Domänen-Taste sowie über &quot;/&quot;- und &quot;.&quot;-Tasten.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_email</span></td>
+            <td>Eine normale Tastatur, die für die E-Mail-Eingabe optimiert ist. Verfügt in der Regel über &quot;@&quot;- und &quot;.&quot;-Zeichen.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_numbers</span></td>
+            <td>Eine reine Zifferntastatur, die in der Regel als Ziffernblock angezeigt wird.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_phone</span></td>
+            <td>Eine Tastatur mit Telefonblock. Normalerweise nur Zahlen mit den Tasten &quot;*&quot; und &quot;#&quot;.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_type_phone_name</span></td>
+            <td>Eine Tastatur, die für die Eingabe einer Rufnummer und eines Namens optimiert ist. In der Regel ähnlich wie eine ASCII-Tastatur, jedoch mit eingeschränkter Sonderzeichenauswahl.</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li><b>Rückgabetyp</b>: Mit dieser Konstante wird eingestellt, was auf der Return-/Aktionstaste der virtuellen Tastatur angezeigt wird. Die verfügbaren Rückgabetypen sind:
+      <table>
+        <tbody>
+          <tr>
+            <th>Rückgabetyp</th>
+            <th>Beschreibung</th>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_default</span></td>
+            <td>Der Standard-Rückkehrtastentitel für das aktuelle System.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_go</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Go&quot;.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_google</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Google&quot; oder in manchen Fällen auf ein allgemeines Suchsymbol.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_join</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Los&quot;.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_next</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Weiter&quot;.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_route</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Route&quot;.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_search</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Suchen&quot; oder in manchen Fällen auf ein generisches Suchsymbol.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_send</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Senden&quot;.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_yahoo</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Yahoo&quot; oder in manchen Fällen auf ein allgemeines Suchsymbol.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_done</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Fertig&quot;.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_continue</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Weiter&quot;.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_emergency</span></td>
+            <td>Setzt den Titel der Rückgabetaste auf &quot;Notruf&quot;.</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li><b>Autokapitalisierungstyp</b>: Mit dieser Konstante wird festgelegt, wie die über die virtuelle Tastatur getippten Wörter automatisch großgeschrieben werden sollen. Die verfügbaren Autokapitalisierungsarten sind:
+      <table>
+        <tbody>
+          <tr>
+            <th>Autokapitalisierung Typ</th>
+            <th>Beschreibung</th>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_autocapitalize_none</span></td>
+            <td>Autokapitalisierung ist deaktiviert.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_autocapitalize_words</span></td>
+            <td>Wörter werden automatisch großgeschrieben.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_autocapitalize_sentences</span></td>
+            <td>Sätze werden automatisch großgeschrieben.</td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_autocapitalize_characters</span></td>
+            <td>Alle Zeichen werden großgeschrieben.</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+  <p>Das letzte Argument ist das Aktivieren/Deaktivieren von Textvorhersage, und dies würde auf <tt>true</tt> gesetzt werden, um es zuzulassen, und andernfalls auf <tt>false</tt>, aber beachten Sie, dass nur weil es erlaubt ist, nicht bedeutet, dass es verwendet wird, da dies von den Einstellungen
+    des Benutzers auf dem Gerät abhängt. Im Modus "Textvorhersage" erzeugt die virtuelle Tastatur keine normalen <span class="notranslate">GameMaker Studio 2-Tastendruckereignisse</span>. Stattdessen werden nur das <i>zuletzt</i> gedrückte Zeichen und die Tastaturstring-Variablen aktualisiert. Dies ist darauf zurückzuführen, dass
+    der Unfähigkeit zu erkennen, ob eine Änderung im internen Textfeld, das zur Erkennung von Tastendrücken verwendet wird, von einer tatsächlichen Taste der virtuellen Tastatur oder von einem Textvorschlag stammt. In diesen Fällen würden Sie die <tt>keyboard_string-Eingabe</tt> lesen wollen, im Gegensatz zu
+    als jede Art von roher Tasteneingabe zu lesen.</p>
+  <p>Es ist auch wichtig zu beachten, dass der Benutzer je nach Plattform-Betriebssystem unterschiedliche Tastaturen mit unterschiedlichen Fähigkeiten erhält, mit den folgenden Vorbehalten für die Verwendung pro Ziel:</p>
+  <ul class="colour">
+    <li><b>UWP</b>: Die UWP-Implementierung unterstützt nicht <tt>return_key_type</tt>, <tt>autocapitalization_type</tt> oder <tt>predictive_text_enabled</tt>. Die Übergabe dieser Parameter in eine Funktion führt zu keinen Fehlern, sie haben nur keine
+      Auswirkungen auf die Tastatur.</li>
+    <li><b><span class="notranslate">Android</span> / <span class="notranslate">Amazon Fire</span></b>: Unter <span class="notranslate">Android</span> wird der Tastaturtyp <tt>kbv_type_phone_name</tt> nicht unterstützt und zeigt stattdessen eine ASCII-Tastatur an, und der Rückgabetastentyp kann nur <tt>kbv_returnkey_go</tt>, <tt>kbv_returnkey_search</tt>, <tt>kbv_returnkey_next</tt> sein,
+     <tt>kbv_returnkey_send</tt> oder <tt>kbv_returnkey_done</tt> sein. Wenn auf dieser Plattform andere Rückgabetastentypen verwendet werden, werden standardmäßig die unten aufgeführten Ersatzrückgabetasten verwendet:
+      <table>
+        <tbody>
+          <tr>
+            <th>Nicht verfügbarer Rückgabeschlüssel</th>
+            <th>Ersatztaste</th>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_google</span><br>
+              <span class="inline">kbv_returnkey_yahoo</span></td>
+            <td><span class="inline">kbv_returnkey_search</span></td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_join</span><br>
+              <span class="inline">kbv_returnkey_route</span><br>
+              <span class="inline">kbv_returnkey_emergency</span></td>
+            <td><span class="inline">kbv_returnkey_go</span></td>
+          </tr>
+          <tr>
+            <td><span class="inline">kbv_returnkey_continue</span></td>
+            <td><span class="inline">kbv_returnkey_next</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <br />
+    <li><b><span class="notranslate">AndroidTV</span></b>/ FireTV: Benutzerdefinierte Return-Tastentypen werden auf ASCII-Tastaturen <i>nicht</i> unterstützt - es wird immer die Standard-Return-Taste angezeigt.</li>
+    <li><b><span class="notranslate">tvOS</span></b>: Prädiktiver Text und automatische Großschreibung werden unter <span class="notranslate">tvOS</span> nicht unterstützt, und die Höhe der Tastatur, die von Systemereignissen und der Funktion <a href="../../../GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/keyboard_virtual_height.htm"><tt>keyboard_virtual_height()</tt></a>      zurückgegebene Höhe der Tastatur entspricht standardmäßig der Bildschirmhöhe, da sie sich über den gesamten Bildschirm erstreckt und die Funktionen zur Rektaldimensionierung der Tastatur unter <span class="notranslate">tvOS</span> deaktiviert sind. Beachten Sie auch, dass physische (Bluetooth-)Tastatur-Ereignisse nicht gesendet werden, solange die virtuelle Tastatur
+      geöffnet wurde.</li>
+  </ul>
+  <p>Der Aufruf dieser Funktion erzeugt ein <a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">asynchrones Systemereignis</a>, bei dem die <tt><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> </tt>   <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> mit den folgenden Schlüssel/Wert-Paaren aufgefüllt wird:</p>
+  <ul class="colour">
+    <li>&quot; event_type<b>&quot; -</b> dies wird &quot; virtual<b>keyboard status&quot;</b> sein<b>, wenn</b> es durch Aktionen der virtuellen Tastatur ausgelöst wird.</li>
+    <li>&quot;<b>screen_height&quot; -</b> die Höhe der virtuellen Tastatur (in Pixel). Dieser Wert ist 0, wenn die Tastatur unsichtbar ist.</li>
+    <li>&quot;<b>keyboard_status&quot; -</b> der aktuelle Status der Tastatur, zurückgegeben als eine der folgenden Zeichenketten:
+      <ul class="colour">
+        <li>&quot;versteckt&quot;</li>
+        <li>&quot;versteckt&quot;</li>
+        <li>&quot;zeigend&quot;</li>
+        <li>&quot;sichtbar&quot;</li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Show Virtual Keyboard Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Show.png" /></p>
+  <h4>Argumente:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>keyboard_type</td>
+        <td>Legt den auf der virtuellen Tastatur verfügbaren Tastensatz fest.</td>
+      </tr>
+      <tr>
+        <td>return_key_type</td>
+        <td>Legt fest, was auf der Return-/Aktionstaste der virtuellen Tastatur angezeigt wird.</td>
+      </tr>
+      <tr>
+        <td>autokapitalisierung_type</td>
+        <td>Legt fest, wie/ob die über die virtuelle Tastatur eingegebenen Wörter automatisch großgeschrieben werden.</td>
+      </tr>
+      <tr>
+        <td>predictive_text_enabled</td>
+        <td>Setzen Sie diese Option auf <tt>true/false</tt>, um die Texterkennung zu aktivieren/deaktivieren.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Show Virtual Keyboard Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_VirtualKeyboard_Show.png">Der obige Code des Aktionsblocks prüft, ob eine Maus nach unten gedrückt wird, und wenn dies der Fall ist
+    wird geprüft, ob die virtuelle Tastatur des Betriebssystems eingeblendet ist. Ist dies nicht der Fall, wird die virtuelle Tastatur mit einem numerischen Tastenfeld eingeblendet, und wenn sie bereits eingeblendet ist, wird sie ausgeblendet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Mouse_And_Keyboard_Actions.htm">Maus- und Tastatur-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Hide_Virtual_Keyboard.htm">Virtuelle Tastatur ausblenden</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Show Virtual Keyboard
+-->
+  <!-- TAGS
+action_show_virtual_keyboard
+-->
+</body>
+</html>

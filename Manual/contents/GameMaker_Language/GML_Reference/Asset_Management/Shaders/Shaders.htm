@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Shader</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Shaders" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Shaders,_YY_GLSLES_,_YY_GLSL_,_YY_HLSL11_,_YY_PSSL_" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Shader</span></h1>
+  <p><span class="notranslate">Shader</span> sind ein unglaublich mächtiges Werkzeug, um zu manipulieren, was und wie Dinge von der Grafikkarte auf den Bildschirm <a class="glossterm" data-glossterm="gerendert" href="#">gerendert</a> werden. Da diese winzigen Programme tatsächlich auf der Grafikkarte selbst ausgeführt werden
+    selbst ausgeführt werden, bedeutet dies, dass sie extrem schnell zu verarbeiten sind, wodurch wertvolle CPU-Zyklen für weitere Spiellogik frei werden.</p>
+  <p>Um einen <span class="notranslate">Shader</span> zu erstellen, müssen Sie sowohl einen <b> <span class="notranslate">Vertex-Shader</span></b> als auch einen <b> <span class="notranslate">Fragment-Shader</span></b> (auch <b> <span class="notranslate">Pixel-Shader</span></b> genannt) mit dem <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">Shader-Editor</span></a> geschrieben haben, und selbst wenn (zum Beispiel)
+    Sie nur die Vertex-Positionen für eine gezeichnete Instanz ändern wollen, oder wenn Sie nur die Farbwerte für die Pixel ändern wollen, benötigen Sie trotzdem <b>beide</b> Programme, damit ein vollständiger <span class="notranslate">Shader</span> funktioniert.</p>
+  <p class="note"><b>HINWEIS</b>: <span class="notranslate">Shader</span> erlauben es Ihnen <b>nicht</b>, den Wert von Variablen zu ändern, die Sie ihnen übergeben, und daher werden diese in der gesamten Dokumentation, die sich auf sie bezieht, als <b><span class="notranslate">Shader-Konstanten</span></b> bezeichnet.</p>
+  <p>Eine vollständige Übersicht über die verfügbaren GLSL ES-Funktionen und -Variablen, mit denen Sie die <span class="notranslate">Shader</span> selbst programmieren können, finden Sie auf den <a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">OpenGL ES Shading Language (GLSL ES) Reference Pages</a>.
+    Der folgende Link ist ebenfalls nützlich, da er einige Schnellreferenzkarten für die OpenGL ES-API enthält (beachten Sie, dass nur die letzten beiden gezeigten Karten auf <span class="notranslate">GameMaker Studio 2</span> anwendbar sind): <a href="https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf">OpenGL ES-Referenzkarten</a>.</p>
+  <p>Die Verwendung eines <span class="notranslate">Shaders</span> in Ihren Projekten ist sehr einfach und erfordert nur ein paar Zeilen Code, um den grundlegendsten Nutzen daraus zu ziehen:</p>
+  <p class="code"><span class="notranslate">shader_set</span>(myShader);<br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Wie Sie sehen können, werden sie ähnlich wie Mischmodi und Flächen verwendet, wobei Sie zunächst den <span class="notranslate">Shader</span> auswählen (einstellen), damit zeichnen, was Sie wollen, und danach das Zeichenziel wieder zurücksetzen. Wenn Sie den gesamten Bildschirm durch einen <span class="notranslate">Shader</span> rendern wollen,
+    und nicht nur ein einzelnes Sprite oder einen Hintergrund rendern möchten, müssen Sie eine Oberfläche einrichten, um die aktuelle Ansicht abzufangen, und diese dann an den <span class="notranslate">Shader</span> weitergeben (siehe <a href="../../Drawing/Surfaces/Surfaces.htm">Oberflächen</a> für weitere Informationen).</p>
+  <p class="note"><b>HINWEIS</b>: <span class="notranslate">Shader</span> können, wie alles, was mit dem Zeichnen zu tun hat, <b>nur im Draw-Event verwendet werden</b>. Es ist auch erwähnenswert, dass, wenn Sie versuchen, einen Farbwert in einem <span class="notranslate">Shader</span> zu verwenden und das Objekt keine Textur hat, die Ergebnisse schwarz ausfallen werden.</p>
+  <p>Wenn der von Ihnen verwendete <span class="notranslate">Shader</span> Eingabewerte hat, werden diese mit den <i>Uniform-Funktionen</i> gesetzt. Sie würden zunächst das <i>Uniform-Handle</i> (das im Wesentlichen ein ID-Wert für die zu setzende Uniform ist) mit der Funktion <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader_get_uniform</span>()</tt></a> in
+    des <b>Ereignisses "Create"</b> der Instanz, die den <span class="notranslate">Shader</span> verwendet, und speichern dann diese Handles in Variablen, etwa so:</p>
+  <p class="code">color_to_find = <span class="notranslate">shader_get_uniform</span>(sShaderDemo5, &quot;f_Colour1&quot;);<br> colour_to_set = shader_get_uniform(sShaderDemo5<span class="notranslate">, &quot;f_Colour2</span>&quot;);</p>
+  <p>Sobald Sie die einheitlichen Handles haben, können diese dann im <span class="notranslate">Shader-Code</span> für das <b>Draw-Event</b> wie folgt gesetzt werden:</p>
+  <p class="code"><span class="notranslate">shader_set</span>(sShaderDemo5);<br> <span class="notranslate">shader_set_uniform_f</span>(color_to_find, 1,1,1 );<br> <span class="notranslate">shader_set_uniform_f</span>(color_to_set, 1,0,0 );<br> draw_sprite(sprite_index,image_index,x+24, y);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Abschließend ist zu beachten, dass <span class="notranslate">Shader</span> zwar plattformübergreifend akzeptiert werden, aber dennoch gerätespezifisch sind und Sie eine Fehlermeldung erhalten, wenn die Hardware oder Software des Geräts keine <span class="notranslate">Shader</span> verwenden kann. Es wird daher empfohlen, zu überprüfen, ob
+    dass der <span class="notranslate">Shader</span> kompiliert wurde, bevor Sie Uniformen einstellen oder den <span class="notranslate">Shader</span> selbst verwenden, etwa so:</p>
+  <p class="code">if<span class="notranslate">(shader_is_compiled</span>(myShader))<br> {
+    <br> <span class="notranslate">shader_set</span>(myShader);
+    <br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+    <br> }
+    <br> else show_debug_message(&quot; Shader failed&quot;);</p>
+  <p>Als zusätzliche Prüfung können Sie auch die Funktion <a href="shaders_are_supported.htm"><tt><span class="notranslate">shaders_are_supported</span>()</tt></a> aufrufen, um zu sehen, ob die Hardware überhaupt <span class="notranslate">Shader</span> unterstützt. Im Allgemeinen führen Sie diese Prüfungen beim Spielstart durch und speichern die Ergebnisse in einer
+   <a href="../../../GML_Overview/Variables/Global_Variables.htm">globale Variable</a> speichern, um sie dann später zu überprüfen.</p>
+  <p>Es ist wichtig zu beachten, dass <span class="notranslate">GameMaker Studio 2</span> auch einige bedingte <b>Kompilierungsmakros</b> unterstützt, die innerhalb von GLSL <span class="notranslate">ES-Shadern</span> verwendet werden können, damit diese auf bestimmten unterstützten Plattformen alternativen Code ausführen können. Die Makros und die Plattformen, auf denen sie
+    generiert werden, sind in der folgenden Tabelle aufgeführt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th><span class="notranslate">Shader-Makro</span> </th>
+        <th>Wert</th>
+        <th>Ziel-Plattform</th>
+      </tr>
+      <tr>
+        <td>{YYY_GLSLES_}</td>
+        <td>1</td>
+        <td>Alle Zielplattformen</td>
+      </tr>
+      <tr>
+        <td>{YY_GLSL_}</td>
+        <td>2</td>
+        <td>Mac und <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+      </tr>
+      <tr>
+        <td>{YY_HLSL11_}</td>
+        <td>3</td>
+        <td><span class="notranslate">Windows</span>, UWP, XboxOne</td>
+      </tr>
+      <tr>
+        <td>{YY_PSSL_}</td>
+        <td>4</td>
+        <td>PS4</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Wenn Sie Ihr <span class="notranslate">GameMaker Studio 2-Projekt</span> auf einer der aufgelisteten Plattformen mit einem <span class="notranslate">Shader</span> im GLSL ES-Format kompilieren, wird <i>eines</i> der oben genannten Makros generiert, das dann im <span class="notranslate">Shader-Code</span> wie folgt geprüft verwendet werden kann:</p>
+  <p class="code">#ifdef _YY_HLSL11_<br> // <span class="notranslate">HLSL-Shader-Code</span> hier<br> #else
+    <br> // <span class="notranslate">GLSL-Shader-Code</span> hier<br> #endif
+  </p>
+  <p>Wenn Sie neu im Umgang mit <span class="notranslate">Shadern</span> sind oder eine umfassendere Anleitung zur Erstellung und Verwendung von Shadern mit <span class="notranslate">GameMaker Studio 2</span> wünschen, dann lesen Sie bitte die folgende Seite des Handbuchs:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Shaders.htm">Anleitung zur Verwendung von <span class="notranslate">Shadern</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Zum Zeichnen und Einstellen von <span class="notranslate">Shadern</span> stehen die folgenden Funktionen zur Verfügung:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="shader_get_name.htm"><span class="notranslate">shader_get_name</span></a></li>
+    <li><a href="shader_get_uniform.htm"><span class="notranslate">shader_get_uniform</span></a></li>
+    <li><a href="shader_get_sampler_index.htm"><span class="notranslate">shader_get_sampler_index</span></a></li>
+    <li><a href="shader_set.htm"><span class="notranslate">shader_set</span></a></li>
+    <li><a href="shader_set_uniform_f.htm"><span class="notranslate">shader_set_uniform_f</span></a></li>
+    <li><a href="shader_set_uniform_f_array.htm"><span class="notranslate">shader_set_uniform_f_array</span></a></li>
+    <li><a href="shader_set_uniform_i.htm"><span class="notranslate">shader_set_uniform_i</span></a></li>
+    <li><a href="shader_set_uniform_i_array.htm"><span class="notranslate">shader_set_uniform_i_array</span></a></li>
+    <li><a href="shader_set_uniform_matrix.htm"><span class="notranslate">shader_set_uniform_matrix</span></a></li>
+    <li><a href="shader_set_uniform_matrix_array.htm"><span class="notranslate">shader_set_uniform_matrix_array</span></a></li>
+    <li><a href="shader_reset.htm"><span class="notranslate">shader_reset</span></a></li>
+    <li><a href="shader_is_compiled.htm"><span class="notranslate">shader_ist_kompiliert</span></a></li>
+    <li><a href="shaders_are_supported.htm"><span class="notranslate">shader_werden_unterstützt</span></a></li>
+    <li><a href="shader_current.htm"><span class="notranslate">shader_current</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Wir haben auch eine spezielle Funktion, die einen globalen Zustand für alle <span class="notranslate">Shader</span> definiert:</p>
+  <ul>
+    <li><a href="shader_enable_corner_id.htm"><span class="notranslate">shader_enable_corner_id</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Wenn Sie mit Textur-Samplern in <span class="notranslate">Shadern</span> arbeiten, benötigen Sie Informationen über die verwendete Textur, in diesem Fall können Sie die folgenden Funktionen verwenden:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Sprites/Sprite_Information/sprite_get_texture.htm">sprite_get_texture</a></li>
+    <li><a href="../Sprites/Sprite_Information/sprite_get_uvs.htm">sprite_get_uvs</a></li>
+    <li><a href="../Fonts/font_get_texture.htm">schrift_get_textur</a></li>
+    <li><a href="../Fonts/font_get_uvs.htm">schrift_get_uvs</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_width.htm">textur_get_width</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_height.htm">textur_get_height</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_texel_width.htm">textur_get_texel_width</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_texel_height.htm">textur_get_texel_height</a></li>
+    <li><a href="../../Drawing/Textures/texture_set_stage.htm">textur_set_stage</a></li>
+    <li><a href="../../Drawing/GPU_Control/gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></li>
+    <li><a href="../../Drawing/GPU_Control/gpu_set_texrepeat.htm">gpu_set_texrepeat</a></li>
+  </ul>
+  <p> </p>
+  <p>In diesem Handbuch werden zwar <b>nicht</b> alle Open <span class="notranslate">GL-Shader-Funktionen</span> und -Variablen behandelt, es enthält jedoch eine Liste derjenigen, die nur in <span class="notranslate">GameMaker Studio 2</span> verwendet werden. Diese Konstanten sind nicht Teil der Open GL-Spezifikation für <span class="notranslate">Shader</span> und werden mitgeliefert
+    um die Integration von <span class="notranslate">Shadern</span> in Ihre Projekte zu vereinfachen.</p>
+  <ul class="colour">
+    <li><a href="Shader_Constants.htm"><span class="notranslate">Shader-Konstanten</span> </a></li>
+  </ul>
+  <p> </p>
+  <p>Schließlich erlaubt Ihnen <span class="notranslate">GameMaker Studio 2</span>, eigene <b>Vertex-Formate</b> zu definieren, aus denen Sie Ihre eigenen benutzerdefinierten Primitive erstellen können. Dies kann die <span class="notranslate">Shader-Operationen</span> erheblich beschleunigen oder dazu dienen, deren Fähigkeiten zu erweitern und überraschende Effekte zu erzeugen.
+    Informationen dazu finden Sie in den folgenden Abschnitten:</p>
+  <ul class="colour">
+    <li><a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">Primitive und Vertex-Formate</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Asset_Management.htm">Vermögensverwaltung</a></div>
+        <div style="float:right">Nächste: <a href="../Sequences/Sequences.htm">Sequenzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Shaders</span>
+_YY_GLSLES_
+_YY_GLSL_
+_YY_HLSL11_
+_YY_PSSL_
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_functions
+-->
+
+</body></html>

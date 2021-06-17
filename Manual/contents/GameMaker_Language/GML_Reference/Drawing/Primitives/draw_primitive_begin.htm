@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_primitive_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_primitive_begin" />
+  <meta name="rh-index-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglefan,pr_trianglestrip" />
+  <meta name="search-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip,pr_trianglefan" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_primitive_begin</h1>
+  <p>Diese Funktion muss aufgerufen werden, bevor Sie irgendwelche Primitive definieren können. Es gibt 6 Arten von Primitiven, die Sie mit den folgenden Konstanten definieren können:</p>
+  <ul class="colour">
+    <li><b>pr_punktliste</b></li>
+    <li><b>pr_linelist</b></li>
+    <li><b>pr_linestrip</b></li>
+    <li><b>pr_dreiecksliste</b></li>
+    <li><b>pr_trianglestrip</b></li>
+    <li><b>pr_trianglefan</b></li>
+  </ul>
+  <p> </p>
+  <p>Das folgende Bild veranschaulicht, wie diese grundsätzlich aussehen sollten und auch die Reihenfolge, in der Sie die Eckpunkte definieren sollten:</p>
+  <p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png">Bitte beachten Sie, dass auf einigen Plattformen<span class="notranslate">(Windows</span>, UWP, XBox) der Typ <tt>pr_trianglefan</tt> nicht nativ
+    nicht nativ unterstützt wird und <span class="notranslate">GameMaker Studio 2</span> daher eine Konvertierung vornimmt, wenn das Spiel kompiliert wird, damit es funktioniert. Das bedeutet, dass auf diesen Plattformen der <tt>pr_trianglefan-Typ</tt> viel langsamer ist als die anderen. Beachten Sie außerdem, dass Sie zur Verwendung dieser
+    Funktion auf HTML5 zu verwenden, <i>müssen</i> Sie WebGL in den Spieloptionen aktivieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_primitive_begin(kind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>freundlich</td>
+        <td>Die Art des Primitivs, das Sie zeichnen werden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _steps = 20;<br> var _xx = 50;<br> var _yy = 50;<br> var _radius = 30;<br> draw_primitive_begin(pr_trianglefan);
+    <br> draw_vertex(_xx, _yy);<br> for(var i = 0; i &lt;= _steps; ++i;)<br> {
+    <br> draw_vertex(_xx + lengthdir_x(_radius, 270 * i / _steps), _yy + lengthdir_y(_radius, 270 * i / _steps));<br> }
+    <br> draw_primitive_end();
+  </p>
+  <p>Der obige Code zeichnet drei Viertel eines Kreises, der aus Primitiven besteht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Primitives_And_Vertex_Formats.htm">Primitive und Vertex-Formate</a></div>
+        <div style="float:right">Weiter: <a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_primitive_begin
+pr_pointlist
+pr_linelist
+pr_linestrip
+pr_trianglelist
+pr_trianglestrip
+pr_trianglefan
+-->
+  <!-- TAGS
+draw_primitive_begin
+-->
+
+</body></html>

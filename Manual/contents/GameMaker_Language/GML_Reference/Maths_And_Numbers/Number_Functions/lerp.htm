@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lerp</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for lerp" />
+  <meta name="rh-index-keywords" content="lerp" />
+  <meta name="search-keywords" content="lerp" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lerp</h1>
+  <p>Mit dieser Funktion können Sie den Wert finden, der der Position zwischen zwei anderen Werten für einen bestimmten Prozentsatz entspricht. Wenn Sie also z. B:</p>
+  <p class="code">lerp(0, 10, 0,5)</p>
+  <p>würden Sie den Rückgabewert 5 erhalten, was 50 % der Eingabewerte entspricht. Sie können mit dieser Funktion auch extrapolieren, indem Sie einen positiven oder negativen Wert für den Interpolationsbetrag angeben, so dass Sie etwas tun wie:</p>
+  <p class="code">lerp(0, 10, 2)</p>
+  <p>gibt einen Wert von 20 zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">lerp(a, b, amt)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>Der erste Wert.</td>
+      </tr>
+      <tr>
+        <td>b</td>
+        <td>Der zweite Wert.</td>
+      </tr>
+      <tr>
+        <td>amt</td>
+        <td>Der Betrag, der interpoliert werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">xx = lerp(x, x + hspeed, room_speed);<br> yy = lerp(y, y + vspeed, room_speed);</p>
+  <p>Der obige Code verwendet die lineare Interpolationsfunktion, um vorherzusagen, wohin sich eine Instanz nach einer Sekunde Spielzeit bewegt haben würde.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Number_Functions.htm">Zahlenfunktionen</a></div>
+        <div style="float:right">Weiter: <a href="clamp.htm">Klemme</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+lerp
+-->
+  <!-- TAGS
+lerp
+-->
+
+</body></html>

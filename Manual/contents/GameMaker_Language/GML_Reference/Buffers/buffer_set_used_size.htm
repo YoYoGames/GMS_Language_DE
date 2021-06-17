@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_set_used_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Reference page for buffer_set_used_size" />
+  <meta name="rh-index-keywords" content="buffer_set_used_size" />
+  <meta name="search-keywords" content="buffer_set_used_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_set_used_size</h1>
+  <p>Diese Funktion ist in erster Linie für die Verwendung innerhalb von Erweiterungen gedacht und ermöglicht es Ihnen, die &quot;verwendete&quot; Größe des angegebenen Puffers einzustellen, d. h. die Anzahl der Bytes, die in ihn geschrieben wurden.</p>
+  <p>Wenn Sie Daten von einer Erweiterung in einen Puffer schreiben, weiß <span class="notranslate">GameMaker</span> nicht, wie viel des Puffers durch den Erweiterungscode gefüllt wurde und kann diese Daten nicht lesen. Diese Funktion kann von der Erweiterung aufgerufen werden, um der Engine mitzuteilen, wie viele Bytes an Daten
+    in den Puffer geschrieben wurden, so dass die Engine diese Daten lesen kann.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_set_used_size(buffer, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu verwendenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Größe</td>
+        <td>Die Anzahl der Bytes, die als &quot;verwendete&quot; Größe eingestellt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">buffer_write(_bufferAddress, buffer_u8, 1);<br> buffer_write(_bufferAddress, buffer_u8, 2);<br> buffer_write(_bufferAddress, buffer_u16, 400);<br>
+    <br> buffer_set_used_size(_bufferAddress, 4);</p>
+  <p>Die obigen Funktionen würden in einer Erweiterung aufgerufen werden, um einige Daten in einen <span class="notranslate">GameMaker-Puffer</span> zu schreiben (über seine Speicheradresse) und dann die Anzahl der Bytes zu setzen, die in ihn geschrieben wurden, damit die Engine diese Daten lesen kann.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_exists.htm">buffer_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_set_used_size
+-->
+  <!-- TAGS
+buffer_set_used_size
+-->
+</body>
+</html>

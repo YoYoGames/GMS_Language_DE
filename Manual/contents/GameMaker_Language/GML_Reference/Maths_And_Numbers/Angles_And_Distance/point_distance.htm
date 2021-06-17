@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Punkt_Abstand</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for point_distance" />
+  <meta name="rh-index-keywords" content="point_distance" />
+  <meta name="search-keywords" content="point_distance" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Punkt_Abstand</h1>
+  <p>Diese Funktion gibt die Länge eines Vektors zurück, der aus den angegebenen Komponenten [x1,y1] und [x2,y2] gebildet wird. Wenn wir z. B. in der Abbildung unten den Abstand zwischen der Position des Spielerschiffs und der Position des Feindes ermitteln wollen, um zu berechnen, ob der
+    Feind nahe genug ist, um auf ihn zu schießen, dann würden wir diese Funktion verwenden (den genauen Code finden Sie im Beispiel unter dem Bild):</p>
+  <p><img alt="Point distance example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/point_distance.png" /></p>
+  <p> </p>
+  <h4><b>Syntax:</b></h4>
+  <p class="code">point_distance(x1, y1, x2, y2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die x-Koordinate der ersten Komponente des Vektors</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die y-Koordinate der ersten Komponente des Vektors</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die x-Koordinate der zweiten Komponente des Vektors</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die y-Koordinate der zweiten Komponente des Vektors</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var ex, ey;<br> ex = instance_nearest(x, y, enemy).x;<br> ey = instance_nearest(x, y, enemy).y;<br> if (point_distance(x, y, ex, ey) &lt; 200)<br> {
+    <br> instance_create_layer(x, y, &quot;Bullets&quot;, obj_Missile)<br> }
+  </p>
+  <p>Der obige Code ermittelt die x- und y-Koordinaten des nächstgelegenen Gegners und prüft damit den Abstand (die Länge) des von ihnen und den Spielerkoordinaten gebildeten Vektors. Wenn der Wert kleiner als 200 ist, erzeugt das Player-Objekt eine Instanz von
+    &quot;obj_Missile&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Angles_And_Distance.htm">Winkel und Abstand</a></div>
+        <div style="float:right">Weiter: <a href="point_distance_3d.htm">point_distance_3d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+point_distance
+-->
+  <!-- TAGS
+point_distance
+-->
+
+</body></html>

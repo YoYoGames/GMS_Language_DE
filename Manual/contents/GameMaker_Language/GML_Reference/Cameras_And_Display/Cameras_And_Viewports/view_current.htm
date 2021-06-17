@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ansicht_aktuell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_current" />
+  <meta name="rh-index-keywords" content="view_current" />
+  <meta name="search-keywords" content="view_current" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ansicht_aktuell</h1>
+  <p>Diese <b>nur lesbare</b> Variable ist nur im <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm"><b>Ereignis Zeichnen</b></a> und gibt den aktuell gerenderten Ansichtsanschluss zurück. Der Rückgabewert ändert sich während des Draw-Ereignisses
+    wenn Sie verschiedene Ansichten haben, da das Draw-Ereignis <i>einmal für jeden View-Port nacheinander</i> aufgerufen wird. Wenn Sie also (zum Beispiel) view port[0] und view port[1] in Ihrem Spielraum verwenden, wird das draw-Ereignis für <i>ALLE</i> Instanzen zweimal ausgeführt, einmal
+    für jeden Port, und mit dieser Variablen können Sie überprüfen, welche Ansicht gerade gezeichnet wird. Im Allgemeinen wird dies verwendet, um nur bestimmte Details an einen einzelnen Port zu rendern, wenn mehrere View-Ports gleichzeitig im Raum sichtbar sind. Siehe das Beispiel
+    Code unten.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">view_current;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Ansicht Port-Index von 0 bis 7)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if view_current == 0<br> {
+    <br> var xx = camera_get_view_x(view_camera[0]);<br> var yy = camera_get_view_y(view_camera[0]);<br> draw_text(xx + 32, yy + 32, &quot;Spieler 1&quot;);<br> }
+    <br> sonst
+    <br> {
+    <br> var xx = camera_get_view_x(view_camera[1]);<br> var yy = camera_get_view_y(view_camera[1]);<br> draw_text(xx + 32, yy + 32, &quot;Spieler 2&quot;);<br> }
+  </p>
+  <p>Der obige Code prüft, welche Ansicht gerade gezeichnet wird, und zeichnet dann auf der Grundlage des Rückgabewerts für jede Ansicht einen anderen Text.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="view_enabled.htm">view_enabled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_current
+-->
+  <!-- TAGS
+view_current
+-->
+</body>
+</html>

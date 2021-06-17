@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Fenster_Größe_setzen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_set_size" />
+  <meta name="rh-index-keywords" content="window_set_size" />
+  <meta name="search-keywords" content="window_set_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Fenster_Größe_setzen</h1>
+  <p>Mit dieser Funktion können Sie die Größe des Spielfensters ändern. Wenn Sie diese Funktion verwenden, um die Größe des Spielfensters zu ändern, wird der Inhalt des Fensters so skaliert, dass er im Verhältnis 1:1 zur Hintergrundleinwand passt, wodurch das Bild scharf und klar bleibt
+    und klar bleibt (obwohl es skaliert wird, wenn das Fenster eine andere als die Raum- oder Ansichtsgröße hat). Wenn Sie z. B. ein Fenster mit 200 x 150 Pixeln haben und der Spieler das Fenster durch Ziehen an den Rändern vergrößert, kann die endgültige Fenstergröße 400 x 300 Pixel betragen, aber die Zeichen
+    Leinwand ist aber immer noch 200 x 150, was zu einem unscharfen Bild führt, da das Pixelverhältnis jetzt 1:2 ist. Wenn Sie jedoch diese Funktion verwenden, um die Fenstergröße einzustellen, wird das Verhältnis 1:1 beibehalten, auch wenn das Bild an die neue Fenstergröße angepasst wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">window_set_size( w, h );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die neue Breite des Fensters.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die neue Höhe des Fensters.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> global.scale += 1;<br> window_set_size(200 * global.scale, 150 * global.scale);<br> }
+  </p>
+  <p>Der obige Code ändert die Größe des Fensters basierend auf dem Wert der Variablen &quot;global.scale&quot;, wenn die Maustaste gedrückt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../The_Game_Window/The_Game_Window.htm">Das Spielfenster</a></div>
+        <div style="float:right">Weiter: <a href="../The_Game_Window/window_set_rectangle.htm">window_set_rectangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_set_size
+-->
+  <!-- TAGS
+window_set_size
+-->
+
+</body></html>

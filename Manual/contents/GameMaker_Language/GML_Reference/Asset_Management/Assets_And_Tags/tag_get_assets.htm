@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tag_get_assets</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function tag_get_assets" />
+  <meta name="rh-index-keywords" content="tag_get_assets" />
+  <meta name="search-keywords" content="tag_get_assets" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tag_get_assets</h1>
+  <p>Mit dieser Funktion können Sie die Namen aller Assets abrufen, denen das angegebene Tag oder die angegebenen Tags zugewiesen wurden. Sie geben entweder eine einzelne Tag-Zeichenkette oder ein <a href="../../../GML_Overview/Arrays.htm">Array</a> an, wobei jedes Element im Array eine Tag-Zeichenkette ist.
+    Die Funktion gibt ein Array zurück, in dem jeder Eintrag der Name (als String) des Assets mit dem angegebenen Tag ist. Wenn Sie den eindeutigen Index für das Asset benötigen, dann können Sie die Funktion <a href="asset_get_index.htm"><tt>asset_get_index()</tt></a> zusammen mit
+    mit dem zurückgegebenen Namen verwenden. Wenn es keine Assets mit dem/den angegebenen Tag(s) gibt, oder wenn ein Fehler auftritt (z. B.: die angegebenen Tags existieren nicht), wird ein leeres Array zurückgegeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">tag_get_assets(tags);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>tags</td>
+        <td>Eine einzelne Asset-Tag-Zeichenkette oder ein Array mit verschiedenen Asset-Tags.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">backgrounds = ds_list_create();<br> var _assets = tag_get_assets(&quot;background&quot;);<br> for (var i = 0; i&lt; array_length(_assets); ++i;) <br> {
+    <br> if asset_get_type(_assets[i]) == asset_sprite<br> {
+    <br> ds_list_add(backgrounds, asset_get_index(_assets[i]));<br> }
+    <br> }
+  </p>
+  <p>Der obige Code erstellt eine Liste und ruft dann die Namen aller Elemente mit dem Tag &quot;background&quot; ab. Er durchläuft das Array der zurückgegebenen Namen in einer Schleife und prüft, ob es sich um Sprite-Assets handelt, und wenn ja, wird der eindeutige Indexwert
+    für das Element zur zukünftigen Verwendung zur Liste hinzugefügt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Assets_And_Tags.htm">Assets und Tags</a></div>
+        <div style="float:right">Weiter: <a href="asset_get_tags.htm">asset_get_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+tag_get_assets
+-->
+  <!-- TAGS
+tag_get_assets
+-->
+</body>
+</html>

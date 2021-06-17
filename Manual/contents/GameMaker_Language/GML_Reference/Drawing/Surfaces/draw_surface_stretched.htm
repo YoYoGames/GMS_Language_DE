@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Fläche_gestreckt_zeichnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_stretched" />
+  <meta name="rh-index-keywords" content="draw_surface_stretched" />
+  <meta name="search-keywords" content="draw_surface_stretched" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Fläche_gestreckt_zeichnen</h1>
+  <p>Diese Funktion nimmt einfach eine Fläche und spannt sie über die angegebene Breite und Höhe auf, so dass sie den Bereich einnimmt. Wie bei <a href="draw_surface.htm"><tt>draw_surface()</tt></a> können Sie eine Fläche angeben und dann die x/y-Position im Raum für
+    die Fläche gezeichnet werden soll, und schließlich eine Breite und eine Höhe (die Pixelwerte sein müssen).</p>
+  <p class="note"><b></b><b>HINWEIS</b>: Bei der Arbeit mit Oberflächen besteht die Möglichkeit, dass diese jederzeit aufhören können zu existieren, da sie im Texturspeicher abgelegt sind. Sie sollten <b>IMMER</b> prüfen, ob eine Oberfläche existiert, indem Sie <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    überprüfen, bevor Sie sie direkt referenzieren.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_surface_stretched(id, x, y, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Der eindeutige ID-Wert der zu zeichnenden Oberfläche.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die Breite, in der die Fläche gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe, in der die Fläche gezeichnet werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_surface_stretched(surf, 10, 10, 100, 100);</p>
+  <p>Dadurch wird die in der Variablen &quot;surf&quot; indizierte Fläche mit ihrer linken Ecke bei (10,10) gezeichnet. Die Breite und die Höhe werden beide auf 100 gesetzt, da sie unabhängig von der tatsächlichen Breite und Höhe der Fläche so viel Platz einnehmen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Surfaces.htm">Oberflächen</a></div>
+        <div style="float:right">Weiter: <a href="draw_surface_stretched_ext.htm">draw_surface_stretched_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_stretched
+-->
+  <!-- TAGS
+draw_surface_stretched
+-->
+</body>
+</html>

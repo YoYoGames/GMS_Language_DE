@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wenn ein beliebiges Objekt am Ort</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Any Object At Place action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Any Object At Place" />
+  <meta name="search-keywords" content="If Any Object At Place" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Any Object At Place Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Any.png"> Wenn ein beliebiges Objekt am Ort</h1>
+  <p>Diese Aktion wird verwendet, um zu prüfen, ob sich eine Instanz eines <i>beliebigen</i> Objekts an einer Position befindet, die auf der Kollisionsmaske der aufrufenden Instanz basiert. Sie geben die Position an, die eine absolute Position oder eine Position relativ zur Instanz sein kann,
+    und die Aktion gibt <tt>"true"</tt> zurück, wenn es eine Kollision gibt, oder <tt>"false"</tt>, wenn es keine gibt. Sie können auch das &quot;Not&quot;-Flag ankreuzen, um zu prüfen, ob es an der angegebenen Position keine Kollision gibt, und die Aktion gibt dann true zurück, wenn <tt>keine</tt> Kollisionen gefunden werden, und false, wenn <tt>nicht</tt>. Kollisionen werden auf der Grundlage der Kollisionsmaske der aufrufenden Instanz berechnet, die sich mit der Kollisionsmaske einer beliebigen Instanz an der Position überschneidet (so als würde sie an der Position &quot;platziert&quot; werden).</p>
+  <p class="note"><b>WICHTIG!</b> Kollisionen werden nur für die Instanzen registriert, die eine gültige Kollisionsmaske haben, d. h.: sie haben ein Sprite, das dem <tt>sprite_index</tt> zugeordnet ist, oder ein Sprite, das dem <tt>mask_index</tt> zugeordnet ist. Wenn <b>eine der</b> Instanzen in
+    der Kollision keine Kollisionsmaske hat, wird die Kollision nicht erkannt, unabhängig davon, was die Instanz zu diesem Zeitpunkt gerade zeichnet.</p>
+  <p>Beachten Sie, dass zum Hinzufügen von Aktionen in einen &quot;<span class="inline">if</span>&quot; Block, diese an der Seite <i>der</i> Aktion abgelegt werden sollten, wie im Bild unten gezeigt:</p>
+  <p><img alt="If Any Object At Place drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_Any.png" /></p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="If Any Object At Place Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_Any.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die zu prüfende x-Position</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die zu prüfende y-Position</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="If Any Object At Place Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_Any.png">Der obige Aktionsblockcode prüft auf eine Kollision an der Position, an der die Instanz
+    platziert ist, und wenn eine gefunden wird, überblendet er die Instanz mit Rot, andernfalls belässt er die Überblendung als normal (weiß).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Collision_Actions.htm">Kollisions-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="If_Object_At_Place.htm">Wenn Objekt am Ort</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Any Object At Place
+-->
+  <!-- TAGS
+action_if_any_object_at_place
+-->
+</body>
+</html>

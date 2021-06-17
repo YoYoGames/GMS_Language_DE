@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Schicht_Geschwindigkeit</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_hspeed" />
+  <meta name="rh-index-keywords" content="layer_hspeed" />
+  <meta name="search-keywords" content="layer_hspeed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Schicht_Geschwindigkeit</h1>
+  <p>Mit dieser Funktion können Sie die horizontale Geschwindigkeit (in Pixel pro Spielframe) der Ebene innerhalb des aktuell bearbeiteten Raums einstellen. Sie geben die Ebenen-ID an (die Sie erhalten, wenn Sie die Ebene mit <a href="layer_create.htm"><tt>ebene_erzeugen()</tt></a>)
+    oder den Ebenennamen (als String - dies hat Auswirkungen auf die Performance) und den zu setzenden Geschwindigkeitswert, wobei ein positiver Wert nach rechts und ein negativer Wert nach links zeigt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_hspeed(layer_id, hspd)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der Ebene zum Einstellen der horizontalen Geschwindigkeit von</td>
+      </tr>
+      <tr>
+        <td>hspd</td>
+        <td>Die einzustellende horizontale Geschwindigkeit (in Pixel pro Spielframe)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Sprites&quot;);<br> if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0<br> {
+    <br> layer_hspeed(lay_id, 0);<br> layer_vspeed(lay_id, 0);<br> }
+  </p>
+  <p>Der obige Code prüft die angegebenen horizontalen und vertikalen Geschwindigkeiten der Schicht und setzt sie auf 0, wenn sie nicht beide auf 0 gesetzt sind.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_vspeed.htm">layer_vspeed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_hspeed
+-->
+  <!-- TAGS
+layer_hspeed
+-->
+</body>
+</html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_erzeugen_aus_der_Oberfläche</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_create_from_surface" />
+  <meta name="rh-index-keywords" content="sprite_create_from_surface" />
+  <meta name="search-keywords" content="sprite_create_from_surface" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_erzeugen_aus_der_Oberfläche</h1>
+  <p>Mit dieser Funktion können Sie ein Sprite aus einer zuvor initialisierten Oberfläche erstellen (der Wert der Oberflächenindex-ID wird zurückgegeben, wenn Sie die Oberfläche mit <a href="../../../Drawing/Surfaces/surface_create.htm"><tt>surface_create()</tt></a>). Die x- und
+    y-Koordinaten, die Sie dann in die Funktion eingeben, sollten sich auf die (0,0)-Position der <i>Oberfläche</i> (die linke obere Ecke) beziehen und nicht auf das Spielfenster (oder die Ansicht, falls Sie eine aktiv haben). Die Argumente für Breite und Höhe sind in Pixel und
+    definieren die Breite und Höhe des zu verwendenden Teils der Oberfläche.</p>
+  <p>Wenn Sie das Argument &quot;removeback&quot; auf true setzen, wird eine Farbe aus dem Sprite entfernt, indem das untere <i>linke Pixel des</i> Sprites auf die dortige Farbe überprüft wird und diese dann als die zu entfernende Farbe verwendet wird.</p>
+  <p>Wenn Sie die Option &quot;removeback&quot; wählen, möchten Sie vielleicht auch, dass GameMaker <span class="notranslate">Studio 2</span> die Kanten des Sprites <span class="notranslate">glättet</span>, indem Sie das Argument &quot;smooth&quot; auf true setzen. Dadurch wird lediglich ein halbtransparenter Rand um die Kanten des
+    des Sprites, nachdem der Hintergrund entfernt wurde.</p>
+  <p>Schließlich können Sie auch den x- und <i>y-Ursprung</i> für das Sprite angeben. Dies ist der Punkt, an dem das Sprite auf der Instanz &quot;fixiert&quot; ist, die es verwendet, und wird immer relativ zur 0,0 oberen linken Ecke eines Sprite-Subbildes berechnet. Also,
+    Ein Sprite, das 32 x 32 Pixel groß ist und bei dem diese Werte auf (16,16) gesetzt sind, hat seinen Ursprung also in der Mitte.</p>
+  <p>Standardmäßig werden die Boundingboxen aller neuen Sprites automatisch berechnet (die genaue Bbox hängt von der Größe und der Transparenz des Sprites ab), Sie können dies jedoch anpassen, in diesem Fall sollten Sie auch die Funktion <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p class="note"><b>HINWEIS:</b> Wenn Sie ein Sprite in <span class="notranslate">GameMaker Studio 2</span> mit dieser Methode erstellen, müssen Sie daran denken, es wieder zu entfernen (mit <a href="sprite_delete.htm"><tt>sprite_delete()</tt></a>), wenn es nicht mehr benötigt wird, sonst besteht die Gefahr eines Speicherlecks, das
+    verlangsamen und schließlich Ihr Spiel zum Absturz bringen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_create_from_surface(index, x, y, w, h, removeback, smooth, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index der Oberfläche, von der aus erstellt werden soll.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, ab der kopiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, ab der kopiert werden soll.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Die Breite des zu kopierenden Bereichs (ab der x-Position).</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Die Höhe des zu kopierenden Bereichs (ab der y-Position).</td>
+      </tr>
+      <tr>
+        <td>zurück entfernen</td>
+        <td>Gibt an, ob alle Pixel mit der Hintergrundfarbe (linkes unteres Pixel) transparent gemacht werden sollen.</td>
+      </tr>
+      <tr>
+        <td>glatt</td>
+        <td>Gibt an, ob die Kanten geglättet werden sollen.</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td>Gibt die x-Position des Ursprungs im Sprite an.</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td>Gibt die y-Position des Ursprungs im Sprite an.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe</h4>
+  <p class="code">Real (eindeutiger Sprite-ID-Wert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var surf;<br> surf = surface_create(32, 32);<br> surface_set_target(surf);
+    <br> draw_clear_alpha(c_black, 0);<br> draw_sprite(spr_Body, 0, 0, 0);<br> draw_sprite(spr_Clothes, 0, 0, 0);<br> draw_sprite(spr_Hair, 0, 0, 0);<br> spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16);<br> surface_reset_target();
+    <br> surface_free(surf);
+  </p>
+  <p>Der obige Code erzeugt eine Oberfläche und speichert ihren Index in der lokalen Variablen &quot;surf&quot;. Er zielt dann auf diese Oberfläche, löscht sie und zeichnet mehrere Sprites übereinander. Schließlich wird ein neues Sprite aus dem zusammengesetzten Bild auf der
+    Oberfläche gezeichneten zusammengesetzten Bild und weist dessen Index &quot;spr_Custom&quot; zu, bevor er den von der Oberfläche verwendeten Speicher freigibt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Manipulation.htm">Sprite-Manipulation</a></div>
+        <div style="float:right">Weiter: <a href="sprite_add_from_surface.htm">sprite_add_from_surface</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_create_from_surface
+-->
+  <!-- TAGS
+sprite_create_from_surface
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_density</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_density" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_density" />
+  <meta name="search-keywords" content="physics_fixture_set_density" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_density</h1>
+  <p>Die Dichte von etwas ist definiert als seine Masse pro Volumeneinheit, was im Grunde bedeutet, <i>wie viel Masse in den Raum gezwängt ist, den es in der Welt einnimmt</i>. So würde ein Luftballon eine niedrige Dichte haben, da er wenig Masse hat, die einen großen Raum einnimmt,
+    während ein Bleistab eine hohe Dichte haben würde, da er eine große Masse hat, aber wenig Raum einnimmt.</p>
+  <p><img alt="Physics density illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_density_image.png">In der 2D-Physikwelt von <span class="notranslate">GameMaker Studio 2</span> wird die Masse automatisch berechnet
+    aus den Werten, die Sie für die <b>Dichte</b> eingeben, und der <b>Oberfläche</b> der Form, die Sie für das Fixture definieren. Dies hat einen direkten Einfluss darauf, wie viel Trägheit ein Fixture hat und wie es auf Kollisionen und Kräfte reagiert, also
+    Wenn Sie eine kleine Form mit einer hohen Dichte definieren, hat sie eine sehr große Masse (wie ein Stab aus Blei), aber wenn Sie eine große Form mit einer niedrigen Dichte definieren, hat sie eine viel kleinere Masse (wie ein Luftballon).</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie möchten, dass die Instanz, die das Fixture erhält, <strong>statisch </strong> ist (d. h. unbeweglich in der Spielwelt), dann sollte die Dichte auf 0 gesetzt werden, was im Wesentlichen eine unendliche Dichte ergibt.</p>
+  <p class="note">HINWEIS: Ein statisches Fixture kann <strong>kinematisch</strong> gemacht werden (d.h. es kann sich bewegen, aber ohne die Auswirkungen von Kraft oder Schwerkraft), indem es eine Dichte von 0 erhält und dann die <span class="inline"><a href="../Physics_Variables/phy_speed_x.htm"><span style="font-size:14px;">phy_speed_x</span>
+    , <span class="inline"><a href="../Physics_Variables/phy_speed_y.htm"><span style="font-size:14px;">phy_speed_y</span>
+    , oder <span class="inline"><a href="../Physics_Variables/phy_angular_velocity.htm"><span style="font-size:14px;">phy_angular_velocity</span>
+     Variablen setzen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_fixture_set_density(fixture, density)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Halterung</td>
+        <td>der Index der Halterung</td>
+      </tr>
+      <tr>
+        <td>Dichte</td>
+        <td>die Dichte des Einbauteils, berechnet in kg/m²</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">physics_fixture_set_density(fix_Ballon, 0.1);</p>
+  <p>Der obige Code setzt die Dichte des in &quot;fix_Ballon&quot; indizierten Geräts auf 0,1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Fixtures.htm">Fixtures</a></div>
+        <div style="float:right">Weiter: <a href="physics_fixture_set_friction.htm">physics_fixture_set_friction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_density
+-->
+  <!-- TAGS
+physics_fixture_set_density
+-->
+</body>
+</html>

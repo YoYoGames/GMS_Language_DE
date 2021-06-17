@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_async_group_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_async_group_begin" />
+  <meta name="rh-index-keywords" content="buffer_async_group_begin" />
+  <meta name="search-keywords" content="buffer_async_group_begin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_async_group_begin</h1>
+  <p>Diese Funktion wird aufgerufen, wenn Sie das Auslagern von mehreren Puffern in mehrere Dateien beginnen wollen. Der &quot;Gruppenname&quot; ist eine Zeichenkette und wird als Verzeichnisname für den Ort verwendet, an dem die Dateien gespeichert werden, und sollte als Teil des Dateipfads verwendet werden
+    Pfad verwendet werden, wenn Sie die Dateien später wieder in die IDE laden (mit einer der <a href="buffer_load.htm"><tt>buffer_load()</tt></a> Funktionen). Diese Funktion ist <i>nur</i> für die Verwendung mit der <a href="buffer_save_async.htm"><tt>buffer_save_async()</tt></a> Funktion
+    und Sie müssen auch die Speicherdefinition mit dem Aufruf der <a href="buffer_async_group_end.htm"><tt>buffer_async_group_end()</tt></a> Funktion abschließen, sonst werden die Dateien nicht abgespeichert.</p>
+  <p>Beachten Sie, dass für die Konsolenplattformen (wie z. B. PS4) der &quot;Gruppenname&quot; als Beschreibung des Speicherplatzes verwendet wird, und dass Sie mit dieser Funktion vermeiden können, dass die Benutzeroberfläche für jede Datei, die gespeichert wird, angezeigt wird. Beachten Sie auch, dass Sie bei
+    bei der Verwendung von UWP Ihre Spielstände zwischen nativen XBox- und Microsoft-Store-Fenstern umherwandern können, indem Sie eine Gruppe erstellen, die z. B. mit einer ERA-Xbox-Gruppe identisch ist:</p>
+  <p class="code">if os_type == os_uwp<br> {
+    <br> buffer_async_group_begin(&quot;root/yourgroupname&quot;);
+    <br> }
+    <br> sonst
+    <br> {
+    <br> buffer_async_group_begin(&quot;ihrgruppenname&quot;);
+    <br> }
+  </p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_async_group_begin(groupname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gruppenname</td>
+        <td>Der Name der Gruppe (als Zeichenkette).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">buffer_async_group_begin(&quot;SaveGame&quot;);<br> save1 = buffer_save_async(buff1, &quot;Player_Save1.sav&quot;, 0, 16384);<br> save2 = buffer_save_async(buff2, &quot;Player_Save2.sav&quot;, 0, 16384);<br> save3 = buffer_save_async(buff3, &quot;Player_Save3.sav&quot;,
+    0, 16384);<br> save4 = buffer_save_async(buff4, &quot;Player_Save4.sav&quot;, 0, 16384);<br> buffer_async_group_end();
+  </p>
+  <p>Der obige Code startet eine Puffergruppe und stellt sie dann so ein, dass 4 Dateien asynchron gespeichert werden. Die Gruppendefinition wird dann beendet (zu diesem Zeitpunkt beginnt das Speichern).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_async_group_option.htm">buffer_async_group_option</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_async_group_begin
+-->
+  <!-- TAGS
+buffer_async_group_begin
+-->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_shuffle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_shuffle" />
+  <meta name="rh-index-keywords" content="ds_grid_shuffle" />
+  <meta name="search-keywords" content="ds_grid_shuffle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_shuffle</h1>
+  <p>Diese Funktion kann verwendet werden, um die Positionen aller Werte in allen Zellen innerhalb eines Gitters zu randomisieren.</p>
+  <p class="note"><b>HINWEIS:</b> Diese Funktion mischt die Gitterzellen bei jedem neuen Durchlauf des Spiels an dieselben Positionen, da <span class="notranslate">GameMaker Studio 2</span> jedes Mal denselben anfänglichen Zufallswert generiert, um das Debuggen von Code zu erleichtern. Zur Vermeidung von
+    dieses Verhalten zu vermeiden, verwenden Sie <a href="../../Maths_And_Numbers/Number_Functions/randomise.htm"><tt><span style="font-size:14px;">randomisieren()</span></tt></a> beim Start Ihres Spiels. Dies gilt nur für das Testen und Debuggen des Spiels, da das endgültige ausführbare
+    Paket wird dieses Verhalten nicht zeigen und bei jedem Spiel zufällig sein.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_grid_shuffle(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Rasters, das gemischt werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">ds_grid_shuffle(raster)</p>
+  <p>Dies würde alle Werte im DS-Gitter nehmen, die in der Variablen &quot;grid&quot; indiziert sind, und sie umherschieben, um eine andere Reihenfolge zu erhalten.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Grids.htm">DS-Gitter</a></div>
+        <div style="float:right">Weiter: <a href="ds_grid_sort.htm">ds_grid_sort</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_shuffle
+-->
+  <!-- TAGS
+ds_grid_shuffle
+-->
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_user_is_signing_in</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_user_is_signing_in" />
+  <meta name="rh-index-keywords" content="xboxlive_user_is_signing_in" />
+  <meta name="search-keywords" content="xboxlive_user_is_signing_in" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_user_is_signing_in</h1>
+  <p>Die Funktion prüft, ob ein Benutzer dabei ist, sich anzumelden und gibt <tt>true</tt> zurück, wenn dies der Fall ist, und <tt>false</tt>, wenn nicht.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_user_is_signing_in();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !xboxlive_user_is_signed_in()<br> {
+    <br> if !xboxlive_user_is_signing_in()<br> {
+    <br> xboxlive_show_account_picker();
+    <br> }
+    <br> }
+    <br> sonst
+    <br> {
+    <br> global.GamerTag = xboxlive_gamertag_for_user();<br> }
+  </p>
+  <p>Der obige Code prüft, ob ein Benutzer bei XBox Live angemeldet ist. Wenn dies der Fall ist, ermittelt der Code den Gamertag des Benutzers und speichert ihn in einer globalen Variablen für die zukünftige Verwendung. Wenn er nicht angemeldet ist, prüft der Code, ob er gerade
+    Wenn dies nicht der Fall ist, öffnet der Code die Kontoauswahl und fordert den Benutzer auf, sich anzumelden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Users_And_Accounts.htm">Benutzer und Konten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_gamertag_for_user.htm">xboxlive_gamertag_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_user_is_signing_in
+-->
+  <!-- TAGS
+xboxlive_user_is_signing_in
+-->
+</body>
+</html>

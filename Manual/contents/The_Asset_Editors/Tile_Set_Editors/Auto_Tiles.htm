@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Auto-Kacheln</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor auto tiles  works" />
+  <meta name="rh-index-keywords" content="Tile Sets - Autotiles" />
+  <meta name="search-keywords" content="16 tiles,47 tiles,autotile,auto tile" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Auto-Kacheln</h1>
+  <p>Die Funktion " <strong>Auto-Kacheln</strong> " ist ein unglaublich leistungsfähiges Werkzeug, das die Erstellung von Ebenen erheblich vereinfacht, egal ob es sich um ein Projekt in der Draufsicht oder in der Seitenansicht handelt. Im Wesentlichen erstellen Sie eine automatische <em>Kachelbibliothek</em>, und wenn Sie dann
+    Wenn Sie dann eine Kachel aus dieser Bibliothek verlegen, &quot;verbindet&quot; sie sich mit den umliegenden Kacheln und bildet eine nahtlose Wand oder Plattform.</p>
+  <p>Bevor Sie jedoch mit der Auto-Kachel-Funktion beginnen, ist es sehr wichtig, dass Sie das Kachelsatz-Sprite korrekt eingerichtet haben und dass Sie einen geeigneten Typ von Auto-Kacheln wählen. Sie können zwischen folgenden Typen wählen: <strong>47-Kachel-Autokacheln </strong>oder
+   <strong>16-Kachel-Autokacheln </strong>, wobei (im Allgemeinen) 16-Kacheln für Top-Down- oder Landschaftsansichten verwendet werden (da sie schönere Übergänge ergeben) und 47-Kacheln für Platformer/Seitenansichten oder Top-Down-Ansichten, bei denen Wände mehrere Verbindungen erfordern, aber das
+    aber das ist keineswegs eine feste Regel und hängt davon ab, wie Ihr endgültiges Projekt aussehen soll.</p>
+  <p>Das Bild unten zeigt einen typischen Satz von 47 Kacheln und 16 Kacheln für die automatische Verlegung:</p>
+  <p><img alt="Two Autotile Examples" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Autotiles.png">Wenn Sie sich die Bilder ansehen, wissen Sie noch nicht, wie sie zusammenpassen, also öffnen wir den <strong>Autotile-Editor vom</strong> <a href="../Tile_Sets.htm">Kachelsatz-Editor</a> <strong>aus</strong> <a href="../Tile_Sets.htm">und fügen</a> sie <a href="../Tile_Sets.htm">hinzu</a>. Der Autotile-Editor sieht wie folgt aus:</p>
+  <p><img alt="Autotile Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AutotileEditor.png">Beachten Sie, dass das verwendete Kachelset-Sprite ALLE benötigten Kacheln hat und auch andere Kacheln haben kann, da Sie auswählen können
+    welche Kacheln in der Auto-Kachel sein sollen. Sie können jetzt auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf die Schaltfläche "47 Kacheln" im Bereich "Vorlagen" klicken, um einen neuen Bibliothekseintrag mit 47 Kacheln zu erstellen, und es wird
+    Sie können nun auf die Schaltfläche "47 Kacheln" im Bereich "Vorlagen" klicken, um einen neuen Eintrag für die Bibliothek mit 47 Kacheln zu erstellen:</p>
+  <p><img alt="47 Tile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_47tiles.png">In der Vorlage stellt der hellgraue Bereich die Außenkante der verwendeten Kachel dar und das dunklere Grau ist der &quot;Füllbereich&quot;.
+    Um eine Kachel in die Schablone einzufügen, klicken Sie einfach auf die erste verfügbare Schablonenzelle und wählen dann die hinzuzufügende Kachel von links aus:</p>
+  <p><img alt="Adding Auto Tiles To The Library" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Add_AutoTiles.gif">Wenn Sie einen Fehler machen, wählen Sie einfach die Autokachel, die Sie entfernen möchten, und wählen Sie die &quot;leere&quot; Kachel aus
+    dem Kachelsatz. Nachdem Sie alle Kacheln hinzugefügt haben, können Sie die Kacheln mit der Vorlage abgleichen, indem Sie oben auf die Schaltfläche &quot;Vorlage anzeigen&quot; <img alt="Show Template Icon" class="icon" src="../../assets/Images/Icons/Icon_Tiles_Template.png"> klicken.
+    Dadurch wird das Overlay der Vorlage auf der endgültigen Autokachel eingeblendet, wie in der Abbildung unten gezeigt:</p>
+  <p><img alt="Show The Autotile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Show_Template.gif">Wenn Sie ein Autotile mit 16 Kacheln erstellen möchten, ist die Vorgehensweise genau wie oben beschrieben, nur dass Sie statt der
+    der 47-Kacheln-Vorlage verwenden Sie die 16-Kacheln-Vorlage:</p>
+  <p><img alt="16 Tile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_16Tiles.gif">Wir haben jetzt einige Auto-Kacheln in unserer Auto-Kachelbibliothek, die aus einem Kachelsatz stammen. Diese können im Raumeditor verwendet werden, indem Sie einfach eine Kachel
+    Map-Ebene erstellen und dann eine der Auto-Kacheln aus der Bibliothek auswählen (die automatisch den Auto-Kachel-Pinsel oben im Raumeditor auswählt) und in Ihrem Raum malen. Die Kacheln verbinden sich nun &quot;auto-magisch&quot; und erzeugen
+    richtig aufeinanderfolgende Kachel-Maps.</p>
+  <p><img alt="Autotile In The Room Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_RoomTile.gif">Bitte beachten Sie, dass das Verhalten einer Autokachel entlang der Raumkanten von der Schaltfläche <strong>Offene oder geschlossene Kanten</strong> <img alt="Open Close Edges Icon" class="icon" src="../../assets/Images/Icons/Icon_Tiles_OpenCloseEdges.png"> abhängt. Wenn eine Autofliese entlang der Kante eines Raums platziert wird, wählt sie standardmäßig eine Fliese aus, als ob die Außenseite des Raums leer wäre (d. h:
+    Es wird dem Raum eine &quot;Kante&quot; geben). Wenn Sie jedoch auf diese Schaltfläche klicken, wird die Autokachel den Raum so kacheln, als ob der Bereich außerhalb mit Kacheln gefüllt wäre und somit Kacheln wählen, die sich vermischen und keinen &quot;Rand&quot; haben.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Tile_Sets.htm">Kachel-Sets</a></div>
+        <div style="float:right">Nächste: <a href="Brush_Builder.htm">Der Pinsel-Ersteller</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Auto Tile
+Autotiles
+-->
+  <!-- TAGS
+tile_set_editor_autotiles
+-->
+</body>
+</html>

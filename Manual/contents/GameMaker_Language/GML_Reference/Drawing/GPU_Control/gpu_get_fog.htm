@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_fog</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_fog" />
+  <meta name="rh-index-keywords" content="gpu_get_fog" />
+  <meta name="search-keywords" content="gpu_get_fog" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_fog</h1>
+  <p>Mit dieser Funktion können Sie die Nebeleinstellungen abrufen. Die Funktion gibt ein 4-Element-1D-Array mit den folgenden Informationen zurück:</p>
+  <ul class="colour">
+    <li>0] = aktivierter Toggle (ein Boolean, entweder <tt>true</tt> oder <tt>false</tt>), Voreinstellung <tt>false</tt></li>
+    <li>[1] = Farbe (real), Voreinstellung <tt>c_black</tt></li>
+    <li>[2] = Startabstand (real), Voreinstellung 0</li>
+    <li>[3] = Endabstand (real), Voreinstellung 1</li>
+  </ul>
+  <p>Beachten Sie, dass Sie diese Werte ändern können und das gesamte Array an die <a href="gpu_set_fog.htm"><tt>gpu_set_fog()</tt></a> Funktion als ein einziges Argument übergeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_get_fog();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">4 Element 1D Array (Arrayelemente siehe oben)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var fog_a = gpu_get_fog();<br> fog_a[1] = c_red;<br> gpu_set_fog(fog_a);
+  </p>
+  <p>Der obige Code ruft die aktuellen Nebeleinstellungen ab und setzt dann das Farbelement des Arrays auf <tt>c_red</tt>, bevor der Nebel mit dem geänderten Array erneut eingestellt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GPU_Control.htm">GPU-Steuerung</a></div>
+        <div style="float:right">Weiter: <a href="gpu_get_cullmode.htm">gpu_get_cullmode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_fog
+-->
+  <!-- TAGS
+gpu_get_fog
+-->
+</body>
+</html>

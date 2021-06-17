@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ini-Datei schließen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Close Ini File action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Close Ini File" />
+  <meta name="search-keywords" content="Close Ini File" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Close Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Close_Ini_File.png"> Ini-Datei schließen</h1>
+  <p>Mit dieser Aktion wird die aktuell geöffnete Ini-Datei geschlossen. Diese Aktion sollte in dem Moment aufgerufen werden, in dem Sie mit dem Lesen oder Schreiben in eine geöffnete Ini-Datei fertig sind (Ini-Dateien werden mit der Aktion <a href="Open_Ini_File.htm">Open Ini File</a> geöffnet). Wenn Sie diese Aktion <i>nicht</i> verwenden, nachdem Sie die Aktion <a href="Write_To_Ini_File.htm">Write To Ini File</a> verwendet haben, wird nichts auf die Festplatte geschrieben, da die Dateiinformationen im Speicher gehalten werden, bis diese Aktion aufgerufen wird, woraufhin sie aus dem Speicher
+    und in die Datei auf der Festplatte geschrieben. Beachten Sie auch, dass Sie einen Fehler erhalten, wenn Sie versuchen, eine Ini-Datei zu öffnen, ohne zuvor eine andere (oder dieselbe) geschlossen zu haben.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Close Ini File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Close_Ini_File.png" /></p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Close Ini File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Open_Ini_File.png">Der obige Code des Aktionsblocks öffnet eine Ini-Datei zur Verwendung und ruft dann den Wert ab, der mit
+    dem Schlüssel &quot;name&quot; unter der Kopfzeile &quot;player&quot;. Wenn der zurückgegebene Name mit dem Standardwert für den Namen übereinstimmt (d. h.: die Datei, der Abschnitt oder der Schlüssel existiert <i>nicht</i> ), wird eine globale Variable in die Datei geschrieben, bevor sie geschlossen wird (und die neuen Daten auf die Festplatte geschrieben werden).
+    der neuen Daten auf die Festplatte).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="File_Actions.htm">Datei-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Write_To_Ini_File.htm">In die Ini-Datei schreiben</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Close Ini File
+-->
+  <!-- TAGS
+action_close_ini
+-->
+
+</body></html>

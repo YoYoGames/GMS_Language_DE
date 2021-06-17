@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_set" />
+  <meta name="rh-index-keywords" content="matrix_set,matrix_view,matrix_projection,matrix_world" />
+  <meta name="search-keywords" content="matrix_set,matrix_view,matrix_projection,matrix_world" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_set</h1>
+  <p>Diese Funktion nimmt ein <a href="../../../GML_Overview/Arrays.htm">Array</a> mit 16 Werten entgegen, die einem gegebenen 4x4-Matrixtyp entsprechen, wobei die Elemente [0 - 3] die Zeile 1, die Elemente [4 -7] die Zeile 2 usw. wären... (siehe das Bild auf der <a href="Matrix_Functions.htm">Hauptseite</a>).
+    Sie können eine solche Matrix mit den Befehlen <a href="matrix_build.htm"><tt>matrix_build()</tt></a> oder <a href="matrix_get.htm"><tt>matrix_get()</tt></a> Funktionen erstellen oder einfach das Array selbst aufbauen und dieses an die Funktion übergeben. Die verfügbaren Matrix
+    Typen sind <i>view</i>, <i>projection</i> und <i>world</i>, für die Sie eine der folgenden Konstanten verwenden würden:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>matrix_view</td>
+        <td>Die aktuelle Ansichtsmatrix</td>
+      </tr>
+      <tr>
+        <td>matrix_projektion</td>
+        <td>Die aktuelle Projektionsmatrix</td>
+      </tr>
+      <tr>
+        <td>matrix_welt</td>
+        <td>Die aktuelle Weltmatrix</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">matrix_set(typ, matrix);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der Typ der Matrix, für die die Werte ermittelt werden sollen (siehe die oben aufgeführten <i>Konstanten</i> )</td>
+      </tr>
+      <tr>
+        <td>Matrix</td>
+        <td>Die Matrixdaten als Array</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">NA</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">matrix_set(matrix_world, m_array);</p>
+  <p>Der obige Code setzt die Werte der aktuellen Weltmatrix auf diejenigen, die in der Array-Matrix &quot;m_array&quot; gespeichert sind.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Matrix_Functions.htm">Matrix-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="matrix_build.htm">matrix_build</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_set
+matrix_view
+matrix_projection
+matrix_world
+-->
+  <!-- TAGS
+matrix_set
+-->
+
+</body></html>

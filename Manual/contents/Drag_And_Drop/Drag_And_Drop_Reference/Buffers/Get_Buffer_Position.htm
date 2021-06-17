@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pufferposition holen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Get Buffer Position action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Buffer Position" />
+  <meta name="search-keywords" content="Get Buffer Position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Buffer Position Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png"> Pufferposition holen</h1>
+  <p>Mit dieser Aktion können Sie die aktuelle Position für das Lesen/Schreiben in den Puffer abrufen. Wenn Sie einen Puffer erstellen, wird die Lese-/Schreibposition auf 0 Bytes gesetzt, und wenn Sie dem Puffer Daten hinzufügen, bewegt sich diese Position sequentiell weiter, was bedeutet, dass
+    Sie können diese Aktion verwenden, um die Anzahl der Bytes in den Puffer zu bekommen, auf die er zu jeder Zeit eingestellt ist. Sie geben den eindeutigen Puffer-ID-Wert an, der von der Aktion " <a href="Create_Buffer.htm">Puffer erstellen</a> " zurückgegeben wird, und geben dann eine Zielvariable an, an die
+    den Positionswert. Die Zielvariable kann als temporäre lokale Variable gekennzeichnet werden. In diesem Fall wird sie für Sie erstellt und am Ende des aktuellen Aktionsskripts oder Ereignisses wieder aus dem Speicher entfernt.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Get Buffer Position Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Get_Buffer_Position.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Pufferindex (gespeichert in einer Variablen)</td>
+      </tr>
+      <tr>
+        <td>Position</td>
+        <td>Die Lese-/Schreibposition (in Bytes) innerhalb des Puffers</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Get Buffer Position Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Get_Buffer_Position.png">Der obige Aktionsblockcode ermittelt die Lese-/Schreibposition für den angegebenen Puffer
+    und wenn sie nicht 0 ist (d. h.: am Anfang des Puffers), wird sie auf den Anfang des Puffers gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffer_Actions.htm">Puffer-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="If_Buffer_Exists.htm">Wenn Puffer vorhanden ist</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get Buffer Position
+-->
+  <!-- TAGS
+action_buffer_get_position
+-->
+</body>
+</html>

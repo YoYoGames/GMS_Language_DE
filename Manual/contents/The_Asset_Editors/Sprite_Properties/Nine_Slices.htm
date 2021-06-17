@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Neun Scheibe</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page detailing how the Nine Slice technique works" />
+  <meta name="rh-index-keywords" content="Sprite Editor" />
+  <meta name="search-keywords" content="nine slice,nineslice,9slice,9-slice,9 slice" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Neun Scheibe</h1>
+  <p><span data-keyref="Nine Slicing">Nine Slicing</span> (auch als 9-Slicing bekannt) ist eine Technik zur Skalierung von rechteckigen Bildern, um Details zu erhalten, so dass sie nach der Skalierung ihre ursprüngliche Form beibehalten.</p>
+  <p>Dies wird erreicht, indem das Bild in neun separate Teile oder &quot;Slices&quot; aufgeteilt wird. Die Eck-Slices werden beim Skalieren verschoben und im gleichen Maßstab gezeichnet, dann werden die Rand- und Mittel-Slices gedehnt oder wiederholt (je nach Einstellung), um den
+    den Raum zu füllen.</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Nine_Slice_0_Preview.png">Vier <strong>Hilfslinien </strong>werden auf einem Sprite platziert, um das Bild in neun Slices zu unterteilen. Das folgende Bild zeigt, wie die Hilfslinien an ihrem Platz bleiben, nachdem das
+    Sprite mit Nine Slice skaliert wird:</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Nine_Slice_1_Guides.png">Der <strong>Kachelmodus</strong> einer Slice bestimmt, wie diese Slice bei der Skalierung des Sprites dargestellt wird. Er kann nur für die Rand- und Mittel-Slices eingestellt werden (da Eck
+    Slices nicht skaliert werden).</p>
+  <p>Das folgende Bild demonstriert jeden Kachelmodus, wenn er auf das mittlere Slice angewendet wird:<img class="center" height="746" src="../../assets/Images/Asset_Editors/Nine_Slice_3_TileModes.png" width="1258">Wenn <strong>Nine Slicing</strong> für ein Sprite aktiviert ist,
+    wird es für die Größenänderung des Sprites verwendet, wo immer es erscheint, und funktioniert an allen vorhandenen Stellen, an denen das Sprite verwendet wurde, ohne dass weitere Änderungen erforderlich sind.</p>
+  <p class="note"><strong>HINWEIS</strong>: Nine Slicing funktioniert nicht mit Funktionen, die nur einen Teil des Sprites zeichnen oder es verzerren, wie <a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_part.htm">draw_sprite_part()</a> und
+   <a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_pos.htm">draw_sprite_pos()</a>.</p>
+  <p>In Verbindung mit <a href="../Sequences.htm">Sequenzen</a> kann diese Funktion zum Aufbau von Benutzeroberflächen verwendet werden und kann z. B. zum Erstellen von rechteckigen Wänden in einem Spielelevel verwendet werden. Der Texturspeicher kann auch mit <strong><span data-keyref="Nine Slicing">Neuner-Slicing</span></strong>,
+    da ein kleineres Bild verwendet werden kann, um einen größeren Bereich auf dem Bildschirm abzudecken.</p>
+  <p><span data-keyref="Nine Slicing">Nine Slicing</span> kann für Sprites in der IDE aktiviert werden. Weitere Informationen finden Sie unter <a href="../Sprites.htm">Der Sprite-Editor</a>.</p>
+  <p>Für Informationen über die <a class="glossterm" data-glossterm="Laufzeit" href="#"><span class="notranslate">Laufzeit</span></a> Funktionen, die für <span data-keyref="Nine Slicing">Nine Slicing</span> zur Verfügung stehen, finden Sie auf der folgenden Seite:</p>
+  <ul class="colour">
+    <li><a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Functions.htm" title="Nine Slice Functions">Neun Slice-Funktionen</a></li>
+  </ul>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Sprites.htm">Der Sprite-Editor</a></div>
+        <div style="float:right">Nächste: <a href="../Tile_Sets.htm">Kachel-Sets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Nine Slice
+Nineslice
+9Slice
+9-Slice
+9 Slice
+-->
+  <!-- TAGS
+sprite_editor_nine_slice
+-->
+
+</body></html>

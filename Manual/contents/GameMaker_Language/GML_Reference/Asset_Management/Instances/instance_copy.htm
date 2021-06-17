@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz_kopieren</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_copy" />
+  <meta name="rh-index-keywords" content="instance_copy" />
+  <meta name="search-keywords" content="instance_copy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Instanz_kopieren</h1>
+  <p>Mit dieser Funktion können Sie eine Instanz &quot;klonen&quot;, da dadurch eine neue Version der Instanz erzeugt wird, die den Code an derselben Stelle ausführt. Mit dem Argument &quot;perf&quot; wird diese neue Instanz angewiesen, das Ereignis &quot;create&quot; auszuführen oder nicht.
+    Diese Funktion gibt die <a href="Instance_Variables/id.htm"><tt>id</tt></a> der neuen Instanz zurück, die dann in einer Variablen gespeichert oder für den Zugriff auf diese Instanz verwendet werden kann.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie das Ereignis "create" nicht ausführen, können Fehler auftreten, wenn die Instanz von Variablen abhängt, die in diesem Ereignis initialisiert wurden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">instance_copy(perf);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>perf</td>
+        <td>Ob das Ereignis "Create" der neuen Instanz ausgeführt werden soll (true) oder nicht (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Wert der Instanz-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var inst = instance_number(object_index);<br> if inst &lt; 10<br> {
+    <br> instance_copy(true);
+    <br> }
+  </p>
+  <p>Der obige Code erstellt eine lokale Variable und verwendet sie, um die Anzahl der Instanzen des Objekts zu speichern, das den Code im Raum ausführt. Wenn die Anzahl kleiner als 10 ist, erstellt die Instanz dann eine Kopie von sich selbst.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="instance_find.htm">instance_find</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_copy
+-->
+  <!-- TAGS
+instance_copy
+-->
+</body>
+</html>

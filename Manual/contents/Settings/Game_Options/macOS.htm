@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>macOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details the macOS Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - macOS" />
+  <meta name="search-keywords" content="macOS Game Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">macOS</span> Spieloptionen</h1>
+  <p>In diesem Abschnitt werden die verschiedenen Optionen beschrieben, die Ihnen zur Verfügung stehen und die steuern, wie Ihre <span class="notranslate">macOS-Spielprojekte</span> kompiliert werden. Die verschiedenen Abschnitte sind:</p>
+  <p> </p>
+  <h2>Allgemein</h2>
+  <p><img alt="Mac General Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_General_Options.png">Geben Sie im Abschnitt " <strong>Product Information" </strong>als erstes den <strong>Anzeigenamen </strong>Ihres Spiels ein
+    dann geben Sie die <strong>Versionsnummer</strong>, die <strong>App-ID</strong>, die <strong>App-Ausgabedatei</strong> und die <strong>Copyright-Angaben</strong> ein. Die App-Ausgabe ist der Speicherort, an den die Installationsdateien Ihres Spiels auf Ihrem Mac-Entwicklungsrechner
+    Rechner. Wenn Sie Ihre <span class="inline">.app.zip</span> erstellen, kann diese Datei überall hingehen (der Speicherort, den Sie beim Speicherdialog angeben, ist nicht die einzige Kopie, die von dieser <span class="inline">.app.zip</span> erstellt wird), aber die <span class="inline">.pkg</span> und andere Dateien werden in diesem Ordner belassen, so dass Sie lokale Installationen über Terminal testen können, um den Kauf im Mac Store zu simulieren usw..</p>
+  <p>Hier müssen Sie auch die <strong>Team-Kennung</strong> angeben, die Sie zum Signieren der endgültigen Anwendung, die <span class="notranslate">GameMaker Studio 2</span> für Sie erstellt, verwenden möchten. Die Einstellung hier überschreibt die Team-Kennung, die Sie in den <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/macOS.htm"><span class="notranslate">macOS-Einstellungen</span></a> angegeben haben.
+    Nach der Team-Kennung haben Sie auch die Möglichkeit, die <strong>Signier-Kennung</strong> anzugeben, die von Apple für alle Nicht-Appstore-Anwendungen (wie z. B. <span class="notranslate">Steam-Spiele</span> ) benötigt wird.</p>
+  <p>Die nächste Option ist für die Aktivierung von <strong><span class="notranslate">Dampf</span> </strong>in Ihrem Spiel. Wenn Sie diese Option aktivieren, stellen Sie sicher, dass Sie das <span class="notranslate">Steamworks-SDK</span>installiert haben (siehe <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">hier</a>), und dass
+    Sie die <strong><span class="notranslate">Steam-App-ID</span></strong> in den <a href="../Game_Options.htm">allgemeinen Optionen</a> für das Spiel hinzugefügt haben.</p>
+  <p>Schließlich haben Sie die Möglichkeit, <strong>die Dateisystem-Sandbox zu deaktivieren</strong>. Wenn Sie diese Option aktivieren, wird die <span class="notranslate">GameMaker Studio 2-Sandbox</span> für das Speichern und Laden von Dateien deaktiviert, so dass Ihre Spiele von überall auf dem System, auf dem das Spiel läuft, auf Dateien zugreifen können.
+    Diese Option ist standardmäßig nicht aktiviert, da wir empfehlen, die GameMaker <span class="notranslate">Studio 2-Sandbox</span> für Dateien auf allen Systemen beizubehalten, und wenn sie aktiviert ist, sind einige Speicher-/Ladebereiche je nach den Berechtigungen auf Betriebssystemebene möglicherweise immer noch nicht verfügbar. Für weitere Informationen
+    zur Sandbox finden Sie auf den Seiten über das GameMaker <span class="notranslate">Studio</span> <a href="../../Additional_Information/The_File_System.htm">2-Dateisystem</a>.</p>
+  <p> </p>
+  <h2>Grafiken</h2>
+  <p><img alt="Mac Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Graphics_Options.png">Die Grafikoptionen sind diejenigen, die Sie konfigurieren sollten, um festzulegen, wie Ihr Spiel die Grafikkarte Ihres Ziel-Macs verwendet.
+    Die folgenden Optionen sind enthalten, die Sie ändern können:</p>
+  <ul class="colour">
+    <li><strong>Menü und Dock im Vollbildmodus zulassen</strong>: Wenn diese Option aktiviert ist, werden das OS-Menü und das Dock angezeigt, wenn sich das Spiel im Vollbildmodus befindet. Diese Option ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Cursor anzeigen</strong>: Wenn diese Option aktiviert ist, wird der normale <span class="notranslate">macOS-Cursor</span> angezeigt. Wenn Sie die Option deaktivieren, wird kein Cursor angezeigt, es sei denn, Sie haben in Ihrem Spielcode einen erstellt. Diese Option ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Vollbild starten</strong>: Wenn dies aktiviert ist, wird das Spiel im Vollbildmodus gestartet, andernfalls wird es im Fenstermodus gestartet. Dies ist standardmäßig ausgeschaltet.</li>
+    <li><strong> <span class="notranslate">Vollbildumschaltung</span></strong> zulassen: Wenn diese Option aktiviert ist, kann der Benutzer mit den <span class="notranslate">Standard-MacOS-Tastenkombinationen</span> von Vollbild auf Fenster umschalten und wieder zurück. Dies ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Interpoliert Farben zwischen Pixeln</strong>: Schaltet die <a class="glossterm" data-glossterm="lineare Interpolation" href="#">lineare Interpolation</a> ein, die im Grunde die Pixel &quot;glättet&quot;. Für scharfe Pixelgrafiken sollte sie ausgeschaltet sein, aber
+      wenn Sie schöne Alpha-Mischungen und geglättete Kanten haben, ist es besser, sie eingeschaltet zu lassen. Standardmäßig ist dies ausgeschaltet.</li>
+    <li><strong>Synchronisation verwenden, um Tearing zu vermeiden</strong>: Hiermit schalten Sie <a class="glossterm" data-glossterm="v-sync" href="#">v-sync</a> ein oder aus. Beachten Sie, dass wenn Sie ein Spiel mit einer Raumgeschwindigkeit von 120 haben und der Spieler einen Monitor mit einer Bildwiederholrate
+      von 60 hat, wird durch das Einschalten dieser Option die Spielgeschwindigkeit ebenfalls auf 60 festgelegt. Diese Option ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Größenänderung des Fensters zulassen</strong>: Wenn diese Option aktiviert ist, kann der Benutzer die Größe des Spielfensters ändern (die Option "Randloses Fenster" muss deaktiviert sein, damit dies funktioniert). Diese Option ist standardmäßig ausgeschaltet.</li>
+    <li><strong>Enable Retina (Retina aktivieren)</strong>: Wenn Sie diese Option aktivieren, wird der hintere Puffer auf die höhere (tatsächliche) Auflösung eingestellt, wenn das Spiel auf einem Retina-fähigen Monitor ausgeführt wird, während die Deaktivierung den hinteren Puffer auf die scheinbare (niedrigere) Auflösung einstellt.
+      Das bedeutet, dass das anfängliche Spielfenster auf die doppelte Breite und Höhe des Raums/Ansichtsport eingestellt wird, auf den der erste Raum eingestellt ist. Dadurch wird die Anwendungsoberfläche jedoch NICHT entsprechend skaliert, und wenn Sie also möchten, dass Ihr Spiel das
+      Wenn Sie also möchten, dass Ihr Spiel das Retina-Display optimal nutzt, sollten Sie die Anwendungsoberfläche so einstellen, dass sie der Fenstergröße entspricht (beachten Sie, dass dadurch die Pixel entlang der Breite und Höhe verdoppelt werden, aktivieren Sie dies also nur und skalieren Sie die Anwendungsoberfläche, wenn Ihr Spiel von der erhöhten Auflösung profitieren wird).
+      von der erhöhten Auflösung profitiert).<br>
+      <br> Diese Option ist standardmäßig ausgeschaltet, und wenn Sie sie aktivieren, wird es keinen Unterschied machen, wenn Sie das Spiel mit VM ausführen oder debuggen, da der Runner in diesem Fall bereits vordefiniert ist. Sie funktioniert nur, wenn Sie eine ausführbare Datei über VM erstellen oder YYC zum Testen oder
+      das Spiel erstellen, da dies den Runner mit Ihren angepassten Spieloptionen neu erstellt.</li>
+    <li><strong>Skalieren</strong>: Hier können Sie wählen, ob das Seitenverhältnis beibehalten werden soll (so dass ein 4:3-Raum auf einem 16:9-Bildschirm &quot;im Letterbox-Format&quot; dargestellt wird) oder ob das Bild vollständig skaliert werden soll (so dass es auf den gesamten Bildschirm passt).<br>
+      <br>
+      <span style="font-size:16px;"><strong>WARNUNG!</strong> <em>Wenn<span class="notranslate">Sie</span>die Anwendungsoberfläche ausschalten, werden alle in den <span class="notranslate">Windows-Spieloptionen</span> eingestellten Skalierungsoptionen deaktiviert, bis sie wieder eingeschaltet wird. Siehe Die Anwendungsoberfläche für weitere Details.</em></span></li>
+  </ul>
+  <p>Schließlich gibt es noch die Möglichkeit, die Größe der <a class="glossterm" data-glossterm="Textur-Seite" href="#">Texturseite</a> einzustellen. Die Standardgröße (und die kompatibelste) ist 2048x2048, aber Sie können zwischen 256x256 bis zu 8192x8192 wählen. Es
+    gibt es auch eine Schaltfläche mit der Bezeichnung <strong><strong>Vorschau </strong></strong>die die Texturseiten für diese Plattform generiert und dann ein Fenster öffnet, in dem Sie sehen können, wie sie aussehen. Dies kann sehr nützlich sein, wenn Sie sehen wollen, wie die Texturseiten aufgebaut sind
+    strukturiert sind, und um zu verhindern, dass die Texturseiten größer (oder kleiner) als nötig sind. Weitere Informationen zu Texturseiten finden Sie <a href="../Texture_Information/Texture_Pages.htm">hier</a>.</p>
+  <p class="note"><strong>HINWEIS</strong>: Beachten Sie, dass Ihr Spiel auf PCs mit niedrigeren Spezifikationen umso weniger kompatibel ist, je größer die Texturseite ist.</p>
+  <p> </p>
+  <h2>Bilder</h2>
+  <p><img alt="Mac Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Images_Options.png">Im Abschnitt "Bilder" stellen Sie die Bilder bereit, die Ihr Spiel benötigt. Für Mac müssen Sie eine <strong>Icon-Datei </strong>
+    (im Format <span class="inline">.png</span> und 1024x1024px) und einen <strong>Splash Screen</strong> (im Format <span class="inline">.png</span>, <span class="inline">.bmp</span>, <span class="inline">.jpg</span> oder <span class="inline">.gif</span> ). Der Splash-Screen wird angezeigt, während das Spiel geladen wird.</p>
+  <p>Für DMG-Pakete können Sie ein <strong>Installer-Hintergrundbild</strong> bereitstellen, das als Hintergrund des DMG-Installationsprogramms angezeigt wird.</p>
+  <p>Es ist erwähnenswert, dass <span class="notranslate">GameMaker Studio 2</span> über ein <a href="../../IDE_Tools/Project_Image_Generator.htm">Projektbild-Generator-Tool</a> verfügt, das verwendet werden kann, um automatisch alle Bilder zu erstellen, die für die verschiedenen Zielplattformen benötigt werden, für die Ihr Spiel
+    kompiliert wird. Wenn Sie dieses Tool verwenden, sollten Sie die erstellten Bilder überarbeiten, um sicherzustellen, dass sie Ihren Anforderungen entsprechen.</p>
+  <p> </p>
+  <h2>Verpackung</h2>
+  <p><img alt="Mac Packaging Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Packaging_Options.png">Wenn Sie möchten, dass das fertige Spiel App Store Ready ist, müssen Sie die Option <strong>Build for Mac App Store</strong> aktivieren,
+    aber beachten Sie, dass dies nur funktioniert, wenn Sie ein registrierter Entwickler sind und die notwendigen Zertifikate besitzen. Darunter befinden sich die <strong>App-Berechtigungen </strong>, die Sie nur aktivieren sollten, wenn sie zutreffend sind, da Apple Ihre App ablehnen kann, wenn sie
+    Apple kann Ihre App ablehnen, wenn diese Optionen aktiviert sind, obwohl sie nicht benötigt werden, oder andersherum. Diese Optionen erlauben Ihrem Spiel lediglich, die Funktionen <span class="inline">http_</span> und <span class="inline">url_</span> zu nutzen. Es ist erwähnenswert, dass, wenn Sie GamePads in Ihrem Spiel unterstützen möchten
+    Wenn Sie GamePads in Ihrem Spiel unterstützen möchten, sollte die Option zum Erstellen eines App Store-kompatiblen Pakets <em>deaktiviert</em> sein.</p>
+  <p>Schließlich müssen Sie die <strong>App-Kategorie</strong> auswählen (weitere Informationen finden Sie <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html">hier</a>).</p>
+  <p> </p>
+  <h2>Sozial</h2>
+  <p><img alt="Mac Social Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Social_Options.png">Diese Option ist für die Verwendung der <strong>Apple Sign In Extension</strong> auf dem Mac. Sie können diese Erweiterung von der <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">YoYo Spiele</span> <span class="notranslate">Marktplatz</span></a>,
+    und die Erweiterung selbst enthält eine vollständige Anleitung zur Verwendung. Wenn Sie diese Erweiterung nicht verwenden, sollten Sie diese Option nicht ankreuzen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Game_Options.htm">Spiel-Optionen</a></div>
+        <div style="float:right">Nächste: <a href="Ubuntu.htm"><span class="notranslate">Ubuntu</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">macOS</span> Game Options
+Enable Retina
+-->
+  <!-- TAGS
+game_settings
+macos_options
+-->
+
+</body></html>

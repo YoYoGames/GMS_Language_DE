@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_view_pos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_view_pos" />
+  <meta name="rh-index-keywords" content="camera_set_view_pos" />
+  <meta name="search-keywords" content="camera_set_view_pos" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_view_pos</h1>
+  <p>Mit dieser Funktion können Sie die Position der Kameraansicht innerhalb des Raums aktualisieren. Sie geben den eindeutigen Kamera-ID-Wert an (wie er von den verschiedenen <tt><a href="camera_create.htm">camera_create()</a></tt> Funktionen zurückgegeben wird) und geben Sie dann die x- und y-Positionen
+    auf die die Kamera gesetzt werden soll.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_set_view_pos(camera_id, x, y)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der die Ansicht platziert werden soll (im Raum)</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der die Ansicht platziert werden soll (im Raum)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">camera_set_view_pos(view_camera[0], x - (view_wport[0] / 2), y - (view_hport[0] / 2));</p>
+  <p>Der obige Code setzt die Position der Fachkamera für die Kamera, die dem Anschluss view[0] zugewiesen ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_set_view_size.htm">camera_set_view_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_view_pos
+-->
+  <!-- TAGS
+camera_set_view_pos
+-->
+</body>
+</html>

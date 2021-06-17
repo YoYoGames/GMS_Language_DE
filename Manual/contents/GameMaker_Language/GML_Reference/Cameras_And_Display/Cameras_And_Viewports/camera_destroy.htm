@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>kamera_zerstören</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_destroy" />
+  <meta name="rh-index-keywords" content="camera_destroy" />
+  <meta name="search-keywords" content="camera_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>kamera_zerstören</h1>
+  <p>Mit dieser Funktion können Sie eine beliebige Kamera zerstören. Beim Aufruf der Funktion übergeben Sie den eindeutigen Kamera-ID-Wert, den Sie aus den <tt>camera_create_*-Funktionen</tt> oder aus dem <a href="view_camera.htm"><tt>Ansicht_Kamera</tt></a> Array, wenn Sie den
+    Raum-Editor verwenden, um den Ansichtsanschluss und die Ansicht einzurichten. Sie sollten <i>niemals</i> eine Kamera zerstören, die gerade einer sichtbaren Ansicht zugewiesen ist, es sei denn, Sie weisen dieser Ansicht im selben Schritt eine neue Kamera zu, und Sie sollten <i>immer</i> alle Kameras zerstören
+    Sie können auch die Standardkameras zerstören, wenn Sie welche im Raum-Editor zugewiesen haben, aber Sie sollten dem Ansichtsanschluss eine neue Kamera zuweisen (oder sie deaktivieren), da Sie sonst seltsame Ergebnisse erhalten.
+    deaktivieren), sonst erhalten Sie merkwürdige Ergebnisse.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">camera_destroy(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Kamera_id</td>
+        <td>Der eindeutige Kamera-ID-Wert, der beim Erstellen der Kamera zurückgegeben wurde.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (eindeutiger Kamera-ID-Wert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">camera_destroy(view_camera[0]);<br> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1);</p>
+  <p>Der obige Code zerstört die Kamera, die derzeit dem Ansichtsanschluss [0] zugewiesen ist, erstellt dann eine neue Kamera und weist ihre ID diesem Anschluss zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="camera_apply.htm">camera_apply</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_destroy
+-->
+  <!-- TAGS
+camera_destroy
+-->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>werfen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the throw function" />
+  <meta name="rh-index-keywords" content="throw" />
+  <meta name="search-keywords" content="throw" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>werfen</h1>
+  <p>Mit der <span class="notranslate">throw-Laufzeitanweisung</span> können Sie Ihre eigenen <a href="../../../Additional_Information/Errors/Runner_Errors.htm"><span class="notranslate">Laufzeitausnahmen</span></a> erzeugen, die das Spiel beenden und eine Fehlermeldung anzeigen, und zwar mit der folgenden Syntax:</p>
+  <p class="code">werfen (&lt;Ausdruck&gt;);</p>
+  <p>Der verwendete Ausdruck kann ein Wert oder eine Zeichenkette oder ein beliebiger anderer Datentyp sein, und dies erzeugt dann einen Ausnahmefehler, der - standardmäßig - auf dem Bildschirm angezeigt wird, und beim Schließen der Fehlermeldung wird das Spiel beendet. Zum Beispiel wird dies aufgerufen:</p>
+  <p class="code">throw (&quot;Hallo Welt!&quot;);</p>
+  <p>führt dazu, dass der folgende unbehandelte Ausnahmefehler angezeigt wird:</p>
+  <p><img alt="Unhandled runtime exception error message example" class="center" src="../../../assets/Images/Scripting_Reference/GML/Overview/ThrowUnhandledMessage.png">Sie können diese Fehlermeldung jedoch übernehmen und Ihren eigenen Handler-Code verwenden, indem Sie die Funktion
+    die Funktion <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm"><tt>exception_unhandled_handler()</tt></a>. Mit dieser <a href="../Runtime_Functions.htm"><span class="notranslate">Laufzeitfunktion</span></a> können Sie eine benutzerdefinierte <a href="../Method_Variables.htm">Methode</a> bereitstellen, die immer dann aufgerufen wird, wenn in Ihrem Spiel unbehandelte Exceptions auftreten.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="new.htm">neu</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+throw
+-->
+  <!-- TAGS
+throw
+-->
+</body>
+</html>

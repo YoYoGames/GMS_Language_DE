@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>puffer_laden_teilweise</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load_partial" />
+  <meta name="rh-index-keywords" content="buffer_load_partial" />
+  <meta name="search-keywords" content="buffer_load_partial" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>puffer_laden_teilweise</h1>
+  <p><span>Diese Funktion lädt einen Teil der Pufferdaten, die zuvor mit der Funktion </span><a href="buffer_save.htm"><tt>buffer_save()</tt></a><span> Funktionen in einen bereits erstellten Puffer. Sie geben die ID des zuvor erstellten Puffers an, in den geladen werden soll, dann die gespeicherte Pufferdatei, die geladen werden soll, und dann den Offset vom Start des Puffers (in Bytes), von dem Sie die Daten laden möchten. Die folgenden Argumente dienen zum Festlegen der Länge der Pufferdaten (in Bytes) ab dem Offset-Anfangspunkt, den Sie laden möchten, und des Offset-Punkts, bis zu dem die Daten im Puffer geladen werden sollen (wiederum in Bytes).</span></p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">buffer_load_partial(buffer, Dateiname, offset, src_len, dest_offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Puffer</td>
+        <td>Der Index des zu ladenden Puffers.</td>
+      </tr>
+      <tr>
+        <td>Dateiname</td>
+        <td>Der Name der zu ladenden Datei.</td>
+      </tr>
+      <tr>
+        <td>Offset</td>
+        <td>Der Offset innerhalb des Puffers, in den geladen werden soll (in Bytes).</td>
+      </tr>
+      <tr>
+        <td>src_len</td>
+        <td>Die Länge des zu ladenden Teils des Puffers (in Bytes).</td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td>Der Offset, ab dem die Teildaten in den neuen Puffer eingefügt werden sollen (in Bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">buff = buffer_create(256, buffer_grow, 1);<br> var _file = &quot;save.dat&quot;;<br> var _so = 6;<br> var _sl = 5;<br> var _do= 0;<br> buffer_load_partial(buff, _file, _so, _sl, _do);</p>
+  <p>Der obige Code erzeugt einen neuen &quot;grow&quot;-Puffer und lädt dann einen Teil der in der Datei &quot;save.dat&quot; gespeicherten Daten in diesen.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Buffers.htm">Puffer</a></div>
+        <div style="float:right">Weiter: <a href="buffer_compress.htm">buffer_compress</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load_partial
+-->
+  <!-- TAGS
+buffer_load_partial
+-->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_bündig</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_flush" />
+  <meta name="rh-index-keywords" content="sprite_flush" />
+  <meta name="search-keywords" content="sprite_flush" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_bündig</h1>
+  <p>Mit dieser Funktion können Sie die angegebene Texturseite für das angegebene Sprite aus dem Texturspeicher entfernen. Sie geben den Sprite-Index an (wie beim Erstellen der Sprite-Ressource definiert) und die Textur-Seite, der sie zugewiesen ist, wird aus dem Textur-Speicher entfernt.
+    Beachten Sie, dass, wenn die Texturseite an anderer Stelle im Raum verwendet wird (durch ein anderes Instanz-Sprite oder einen Hintergrund, etc...), Sie einen kleinen Performance-Schlag bekommen können, da die Seite sofort neu geladen wird, daher sollte man bei der Verwendung dieser Funktion vorsichtig sein. Beachten Sie, dass die
+    Funktion <tt>-1</tt> zurückgibt, wenn flush für die gewählte Ressource nicht unterstützt wird, oder sie gibt <tt>0</tt> zurück, wenn alles korrekt funktioniert hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_flush(ind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index (Ressourcenname) des zu spülenden Sprite-Assets</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Int (-1 oder 0)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">sprite_flush(spr_Player_Aura);</p>
+  <p>Der obige Code löscht das Sprite &quot;spr_Player_Aura&quot; aus dem Speicher.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Manipulation.htm">Sprite-Manipulation</a></div>
+        <div style="float:right">Weiter: <a href="sprite_flush_multi.htm">sprite_flush_multi</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_flush
+-->
+  <!-- TAGS
+sprite_flush
+-->
+</body>
+</html>

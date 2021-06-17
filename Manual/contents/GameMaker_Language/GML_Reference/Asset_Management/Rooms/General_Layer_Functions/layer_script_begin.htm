@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_script_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_script_begin" />
+  <meta name="rh-index-keywords" content="layer_script_begin" />
+  <meta name="search-keywords" content="layer_script_begin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_script_begin</h1>
+  <p>Mit dieser Funktion können Sie einer Ebene eine <a href="../../../../GML_Overview/Script_Functions.htm">Skriptfunktion</a> zuweisen, die aufgerufen wird, bevor die Ebene gerendert wird. Wenn Sie eine Funktion zu einer Ebene hinzufügen, wird sie auf diese Weise zu Beginn
+   <i>jedes der verschiedenen Zeichenereignisse</i> ausgeführt, so dass Sie in der zugewiesenen Funktion prüfen sollten, welches Ereignis gerade gerendert wird, und den Code entsprechend anpassen sollten. Dies können Sie tun, indem Sie die <a href="../../Objects/Object_Events/event_type.htm"><tt>event_type</tt></a>    und/oder der <a href="../../Objects/Object_Events/event_number.htm"><tt>event_number</tt></a> (siehe das erweiterte Beispiel unten). Beachten Sie, dass die Funktion <i>nicht</i> in allen Draw-Events oder Step-Events aufgerufen werden soll, sondern nur
+    beim Start des Raums im <strong>Raumerstellungscode</strong> oder im <strong>Erstellungsereignis </strong>/ <strong>Raumstart-Ereignis</strong> einer Instanz.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_script_begin(layer_id, script);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Der eindeutige ID-Wert der anzuvisierenden Ebene (oder der Ebenenname als String)</td>
+      </tr>
+      <tr>
+        <td>Skript</td>
+        <td>Der Index der Skriptfunktion, der der Ebene zugewiesen werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>In diesem erweiterten Beispiel zeigen wir Ihnen zunächst, wie eine einfache Skriptfunktion aufgebaut ist, um einige einheitliche Daten für den <span class="notranslate">Shader</span> zu setzen, damit beim Zeichnen der gegebenen Ebene diese Funktion ausgeführt wird und der <span class="notranslate">Shader</span> korrekt arbeitet. In dem Beispiel ist es erwähnenswert
+    Im Beispiel ist zu beachten, wie wir prüfen, welches Ereignis aufgerufen wird, damit der Rest der Funktion nur bei dem spezifischen Ereignis ausgeführt wird, bei dem wir sie benötigen - in diesem Fall nur beim Hauptzeichnungsereignis:</p>
+  <p class="code">/// @function layer_shader_start();<br> function layer_shader_start()
+    <br> {
+    <br> if event_type == ev_draw<br> {
+    <br> if event_number == 0<br> {
+    <br> farbe_zu_finden = <span class="notranslate">shader_get_uniform</span>(sShaderDemo5, &quot;f_Colour1&quot;);<br> farbe_zu_setzen = shader_get_uniform(sShaderDemo5<span class="notranslate">, &quot;f_Colour2</span>&quot;);<br> shader_set(s_ColourChanger);
+    <br> <span class="notranslate">shader_set_uniform_f</span>(color_to_find, 1,1,1 );<br> <span class="notranslate">shader_set_uniform_f</span>(color_to_set, 1,0,0 );<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Wir würden dann eine begleitende Funktion haben, um den <span class="notranslate">Shader</span> zurückzusetzen, nachdem das Zeichnen beendet ist:</p>
+  <p class="code">/// @function layer_shader_end();<br> function layer_shader_end()
+    <br> {
+    <br> if event_type == ev_draw<br> {
+    <br> if event_number == 0<br> {
+    <br> <span class="notranslate">shader_reset</span>();
+    <br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Nachdem wir nun unsere Skriptfunktionen für die Einstellung des <span class="notranslate">Shaders</span> definiert haben, müssen wir sie einer bestimmten Ebene zuweisen, damit die Ebene weiß, dass sie aufgerufen werden soll. Dies würde im Code für die Raumerstellung oder im Ereignis "create" oder "room start" eines
+    Controller-Objekts (sie müssen nicht bei jedem Schritt gesetzt werden, sondern einmal beim Start des Raums oder beim erstmaligen Anlegen der Ebene):</p>
+  <p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br> layer_script_begin(lay_id, layer_shader_start<span class="notranslate">);</span><br> layer_script_end(lay_id, layer_shader_end<span class="notranslate">);</span></p>
+  <p>Dieser letzte Codeblock weist die Skripte der Ebene zu.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="General_Layer_Functions.htm">Allgemeine Layer-Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="layer_script_end.htm">layer_script_end</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_script_begin
+-->
+  <!-- TAGS
+layer_script_begin
+-->
+</body>
+</html>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_set_group_flags</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_set_group_flags" />
+  <meta name="rh-index-keywords" content="physics_particle_set_group_flags,phy_particle_group_flag_solid,phy_particle_group_flag_rigid" />
+  <meta name="search-keywords" content="physics_particle_set_group_flags,phy_particle_group_flag_solid,phy_particle_group_flag_rigid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_set_group_flags</h1>
+  <p>Mit dieser Funktion können Sie die Gruppenflags für eine Gruppe von Partikeln ändern. Der <tt>Gruppenwert</tt> ist derjenige, der zurückgegeben wurde, als Sie die Gruppe von Partikeln mit der Funktion <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>,
+    erstellt haben, während die Flags der Rückgabewert einer Kombination der folgenden <b>Konstanten</b> sind:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>phy_particle_group_flag_solid</td>
+        <td>Eine Festkörpergruppe verhindert, dass sich andere Einbauten in ihr festsetzen. Sollte etwas in sie eindringen, so drückt die Festkörpergruppe das störende Einbauteil wieder an ihre Oberfläche zurück, wodurch eine Festkörpergruppe eine besonders starke
+          Abstoßungskraft.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_group_flag_rigid</td>
+        <td>Starre Partikelgruppen sind solche, deren Form sich nicht ändert, auch wenn sie mit anderen Einbauten kollidieren.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Diese Gruppenflags verwenden Bit-Maskierung, um einen endgültigen Ausgangswert zu erzeugen, der dann geprüft wird, um die verschiedenen grundlegenden Eigenschaften der Gruppe einzustellen, abgesehen von denen, die durch die Partikelflags eingestellt werden. Sie können keine, eine oder beide dieser Konstanten verwenden, indem Sie die entsprechenden Bits <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitweise <i>oder</i></a> mit &quot;|&quot; maskieren (wie im Beispiel unten gezeigt).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_particle_set_group_flags(group, flags)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gruppe</td>
+        <td>Die einzustellende Partikelgruppe.</td>
+      </tr>
+      <tr>
+        <td>Flaggen</td>
+        <td>Die Flags, die auf dem Partikel gesetzt werden sollen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var flags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid;<br> physics_particle_set_group_flags(group, flags);</p>
+  <p>Der obige Code erstellt eine Variable zum Speichern des Wertes &quot;flags&quot; und verwendet diese dann zum Setzen der Flags aller Partikel, die in der durch die Variable &quot;group&quot; indizierten Gruppe erstellt wurden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Soft_Body_Particles.htm">Weichkörperpartikel</a></div>
+        <div style="float:right">Weiter: <a href="physics_particle_get_group_flags.htm">physics_particle_get_group_flags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_set_group_flags
+phy_particle_group_flag_solid
+phy_particle_group_flag_rigid
+-->
+  <!-- TAGS
+physics_particle_set_group_flags
+-->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_verbindung_schweißen_erzeugen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_weld_create" />
+  <meta name="rh-index-keywords" content="physics_joint_weld_create" />
+  <meta name="search-keywords" content="physics_joint_weld_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_verbindung_schweißen_erzeugen</h1>
+  <p>Die Schweißverbindung wurde entwickelt, um zwei Vorrichtungen in einer starken, aber flexiblen Verbindung miteinander zu verbinden. Die Schweißverbindung erlaubt eine Biegung zwischen den beiden verbundenen Vorrichtungen, jedoch ohne die Dehnung, die z. B. bei einer Abstandsverbindung auftritt, und wird immer versuchen
+    Sie wird immer versuchen, in den Bezugswinkel zurückzuspringen, wenn sie unter Spannung oder Last steht. Sie definieren den Punkt im Raum, an dem die Verbindung erzeugt werden soll, sowie den Winkel, den die Verbindung stets beizubehalten versuchen soll, wie in
+    Bild unten gezeigt:</p>
+  <p><img alt="Weld joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/weld_joint_image.png">Wie Sie sehen können, werden die Ankerpunkte als Raumkoordinaten angegeben, so dass bei ihrer Definition Vorsicht geboten ist
+    Besonders dann, wenn die Instanzen gleichzeitig mit den Joints erstellt werden und nicht über den Raumeditor im Raum platziert werden. Sie sollten auch wissen, dass die Joints unabhängig von der Größe des Sprites der Instanzen
+    oder der Einbauten, die sie angehängt haben, erstellt werden. Wenn Sie also eine Schweißnaht an einer anderen Stelle als dem Ursprung der Instanz erstellen, ist sie immer noch gültig und schränkt die beiden Instanzen relativ zu der Position ein, an der sie erstellt wurde.</p>
+  <p>Da die Schweißnaht flexibel ist und sich bei Belastung verbiegt und durchbiegt, können Sie die Schwingungsfrequenz (in Hz) sowie das Dämpfungsverhältnis für die Naht einstellen, um verschiedene Effekte zu erzielen - möglicherweise müssen Sie mit diesen Werten spielen, um sie fein abzustimmen
+    Es wird empfohlen, mit kleineren Werten zu beginnen und diese zu erhöhen, bis Sie den gewünschten Effekt erzielen.</p>
+  <p>Wenn Sie den &quot;col&quot;-Wert auf &quot;true&quot; setzen, können <tt>die</tt> beiden Instanzen miteinander interagieren und kollidieren, aber nur, wenn <i>sie</i> Kollisionsereignisse haben; wenn er jedoch auf &quot;false&quot; gesetzt ist, werden <tt>sie</tt> nicht kollidieren, egal was passiert.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_joint_weld_create(inst1, inst2, anchor_x, anchor_y, ref_angle, freq_hz, damping_ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>Die erste Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>Die zweite Instanz zum Verbinden mit dem Gelenk</td>
+      </tr>
+      <tr>
+        <td>Anker_x</td>
+        <td>Die x-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>Anker_y</td>
+        <td>Die y-Koordinate für das Gelenk, innerhalb der Spielwelt</td>
+      </tr>
+      <tr>
+        <td>ref_angle</td>
+        <td>Der zu erhaltende Gelenkwinkel</td>
+      </tr>
+      <tr>
+        <td>freq_hz</td>
+        <td>Dies ist die Schwingungsfrequenz für das Gelenk, in Hertz</td>
+      </tr>
+      <tr>
+        <td>Dämpfungsverhältnis</td>
+        <td>Dieses Dämpfungsverhältnis für das Gelenk</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Ob die beiden Instanzen kollidieren können (true) oder nicht (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Integer (Index des Gelenks)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var i, fix, o_id, p_id;<br> p_id = noone;<br> o_id = noone;<br> fix = physics_fixture_create();<br> physics_fixture_set_box_shape(fix, 64, 32);<br> for (i = 0; i &lt; 5; i++;)<br> {
+    <br> o_id = instance_create_layer(x + (128 * i), y, &quot;Instances&quot;, obj_BridgePart);<br> physics_fixture_bind(fix, o_id);<br> if i &gt; 0 &amp;&amp; i &lt; 4<br> {
+    <br> physics_joint_weld_create(p_id, o_id, x + (128 * i) - 64, y, 0, 10, 12, true);<br> }
+    <br> p_id = o_id;<br> }
+    <br> physics-fixture_delete(fix);
+  </p>
+  <p>Der obige Code erzeugt eine Einspannvorrichtung, erstellt dann in einer Schleife eine Reihe von Instanzen, bindet die Einspannvorrichtung an jede neue Instanz und verbindet sie dann alle mit einer Schweißverbindung. Zum Schluss wird das Fixture aus dem Speicher gelöscht.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Rücken: <a href="Joints.htm">Gelenke</a></div>
+        <div style="float:right">Weiter: <a href="physics_joint_friction_create.htm">physics_joint_friction_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_weld_create
+-->
+  <!-- TAGS
+physics_joint_weld_create
+-->
+</body>
+</html>

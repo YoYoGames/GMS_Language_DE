@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Räume</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the room editor works" />
+  <meta name="rh-index-keywords" content="Room Editor" />
+  <meta name="search-keywords" content="room,rooms,room editor,convert image" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Der Raum-Editor</h1>
+  <p><img class="center" src="../assets/Images/Asset_Editors/Editor_Room.png" style="cursor: nesw-resize;" /></p>
+  <p>Im Raumeditor erstellen Sie Ihre <strong>Spielräume</strong>. Jedes Spiel benötigt <em>mindestens einen Raum, um zu laufen</em>, und im Raum können Sie Instanzen, Sprites, Kacheln, Pfade und Hintergründe platzieren. Jedes dieser verschiedenen Elemente kann auf einer eigenen Ebene platziert werden.
+    auf einer eigenen <strong>Ebene </strong>platziert werden, die Sie dann im <strong>Ebenen-Editor</strong> beliebig anordnen können. Aufgrund der Komplexität des Raumeditors geben wir Ihnen zunächst einen kurzen Überblick über die wichtigsten Funktionen, und dann
+    finden Sie unter den unten aufgeführten Abschnitts-Links weiterführende Details.</p>
+  <p>Wenn Sie eine Raumressource erstellen, können Sie im Asset-Browser mit der rechten Maustaste auf <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> klicken, um das Kontextmenü zu öffnen, mit dem Sie <strong>untergeordnete Räume </strong> erstellen können (siehe
+    Weitere Informationen finden Sie auf der Seite über <a href="Room_Properties/Room_Inheritance.htm">Vererbung</a> ), den Raum zur Bearbeitung öffnen, eine neue Ressourcengruppe hinzufügen, um die Räume besser zu organisieren, den Raum umbenennen oder ihn löschen. Beachten Sie, dass Sie zum Ändern der Raumreihenfolge
+    und/oder die Vererbung zu ändern, müssen Sie den <a href="../Settings/The_Room_Manager.htm">Raum-Manager</a> verwenden, den Sie über das Menü oben rechts im Asset-Browser öffnen können.</p>
+  <p><img class="center" src="../assets/Images/Asset_Editors/Editor_Room_RoomManager.png">Der Raum-Editor ist selbst ein <a href="../Introduction/Workspaces.htm">Arbeitsbereich</a> und als solcher können Sie auf <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> auf die Registerkarte klicken und sie aus dem Hauptfenster in ein neues, eigenes Fenster ziehen - zum Beispiel in eine andere Anzeige. Sie können ihn auch wieder im Hauptfenster platzieren, indem Sie die Registerkarte an den oberen Rand der IDE ziehen und die Maustaste loslassen.</p>
+  <p>Die Benutzeroberfläche des Raumeditors ist einfach zu navigieren und in verschiedene diskrete Bereiche aufgeteilt. Die Teile des Editors, die angedockt sind - die <strong>Raumeigenschaften</strong> und der <strong>Ebenen-Editor</strong> sowie die verschiedenen Ebenen
+    Die angedockten Teile des Editors - der Raumeigenschaften- und der Ebenen-Editor sowie die verschiedenen Ebenen-Eigenschaftsbereiche - können auch durch einfaches Ziehen in den Arbeitsbereich aus dem Dock entfernt und durch Ziehen an die Seiten oder den Boden des Arbeitsbereichs wieder in die Docks eingefügt werden.</p>
+  <p>Im Folgenden finden Sie eine kurze Übersicht über die einzelnen Bereiche des Raumeditors:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Lineale / Führungen</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Die Lineale entlang des Randes der Leinwand zeigen Ihnen die Position der Dinge, die darin platziert sind, und sind von (0, 0) aus markiert, was die Mitte der Leinwand und den Ursprung für den Raum darstellt. Sie können auf die Lineale klicken und ziehen, um eine horizontale
+      Sie können auf die Lineale klicken und ziehen, um eine horizontale oder vertikale Hilfslinie in den Raum zu ziehen, und diese Hilfslinie kann dann verwendet werden, um die verschiedenen verwendeten Elemente genau zu positionieren, da das Bewegen eines Elements in die Nähe einer Hilfslinie es an der Hilfslinie &quot;einrasten&quot; lässt. Während der Positionierung von Kühlstellen im Raum werden auch Smart
+      Hilfslinien eingeblendet, die den Abstand zwischen den Kühlstellen sowie den Abstand von der Raumgrenze oder dem Mittelpunkt angeben.</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png" src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png" class="center" alt="Guides and Smart Guides in the Sequences Editor">Der Abstand, in dem Assets an Hilfslinien &quot;einrasten&quot;
+      an Hilfslinien einrastet, sowie andere Eigenschaften, können in den <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Room_Editor_Preferences.htm">Raumeditor-Voreinstellungen</a> festgelegt werden.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Ebenen-Editor</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Der Raumeditor platziert Dinge auf Ebenen innerhalb des Raums. Jede Ebene hat eine diskrete &quot;Tiefe&quot;, wobei diejenigen, die unten in der Liste im Ebenenfenster erscheinen, unter denjenigen gezeichnet werden, die oben erscheinen.</p>
+    <p class="note"><strong>WICHTIG!</strong> Es gibt eine minimale und maximale Ebenentiefe von -16000 bis 16000. Alles, was auf einer Ebene außerhalb dieses Bereichs platziert wird, wird nicht gezeichnet, obwohl alle Ereignisse weiterhin normal ablaufen.</p>
+    <p class="dropspot">Ebenen werden erstellt, indem Sie auf die entsprechende Schaltfläche für die Art der Ebene klicken, die Sie erstellen möchten, das sind:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Instance Layer Icon" src="../assets/Images/Icons/Icon_Instance.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Instanzen</strong></td>
+          <td class="text">Diese Ebene ist für alle <a href="../Quick_Start_Guide/Objects_And_Instances.htm">Instanzen</a>, die Ihr Spiel verwenden wird.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Tile map Layer Icon" src="../assets/Images/Icons/Icon_Tilemap.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Kachelkarten</strong></td>
+          <td class="text">Diese Ebene dient zum Platzieren von Kacheln aus <a href="../Quick_Start_Guide/Creating_Tile_Sets.htm">Kachelsätzen</a> als<span class="glossextra">Kachelkarten</span>.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Path Layer Icon" height="30" src="../assets/Images/Icons/Icon_Paths.png" style="margin-left: 24px;" width="30" /></td>
+          <td class="icons"><strong>Pfade</strong></td>
+          <td class="text">Diese Ebene dient zum Anzeigen und Hinzufügen von <a href="Paths.htm">Pfaden</a> in einem Raum.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Asset Layer Icon" src="../assets/Images/Icons/Icon_Assets.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Vermögenswerte</strong></td>
+          <td class="text">Diese Ebene ist für visuelle Assets, die dem Raum hinzugefügt werden, wie <a href="../Quick_Start_Guide/Creating_Sprites.htm">Sprites</a> und <a href="../Quick_Start_Guide/Sequences.htm">Sequenzen</a>.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Background Layer Icon" src="../assets/Images/Icons/Icon_Background.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Hintergrund</strong></td>
+          <td class="text">Dieser Ebenentyp definiert einen Hintergrund, der im Wesentlichen eine einzelne Farbe oder ein Sprite-Bild ist, das über den gesamten Raum gezeichnet wird.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Sie können auch mit der Ordner-Schaltfläche <img alt="Folder Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Folder.png" width="24"> einen Ebenenordner erstellen, in dem Sie ausgewählte Ebenen gruppieren können, sowie die ausgewählten Ebenen löschen
+      mit der Schaltfläche "Löschen" <img alt="Delete Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_DeleteLayer.png" width="24">. Jeder dieser Ebenentypen wird <a href="Room_Properties/Layer_Properties.htm">hier</a> näher erläutert.
+      näher erläutert.
+    </p>
+    <p class="dropspot">Beachten Sie, dass Sie die <a href="Room_Properties/Room_Inheritance.htm">Vererbung</a> für den Ebenen-Editor umschalten können, was sich auf die Ebenenreihenfolge und die Sichtbarkeit auswirkt. Die Sichtbarkeit selbst kann durch Klicken auf das Augensymbol <img alt="Eye Icon" class="icon" height="21" src="../assets/Images/Icons/Icon_Eye.png" width="21"> neben jeder der Ebenen eingestellt werden, oder Sie können auf das Symbol ganz oben klicken, um alle Ebenen auf einmal zu aktivieren/deaktivieren. Sie haben auch die Möglichkeit, eine Ebene (oder alle) zu &quot;sperren&quot;, so dass
+      sie nicht verändert werden können, indem Sie auf das Vorhängeschloss-Symbol <img alt="Padlock Icon" class="icon" src="../assets/Images/Icons/Icon_Padlock.png"> klicken. Beachten Sie, dass Ebenen, die als unsichtbar gekennzeichnet sind, beim Ausführen des Spiels <strong>nicht</strong> angezeigt werden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Layer-Eigenschaften</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Das Fenster mit den Eigenschaften der Raumebene ändert sich in Abhängigkeit von der aktuell im Ebenen-Editor ausgewählten Ebene.<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Room_LayerProperties.png" src="../assets/Images/Asset_Editors/Editor_Room_LayerProperties.png" alt="Room Layer Properties In Full" class="center"> Jedes Fenster hat die verschiedenen
+      Eigenschaften und Listen, die mit dem aktuell ausgewählten Ebenentyp verbunden sind, und Sie können grundlegende Details bearbeiten, wie die Ebene angezeigt wird und was sich tatsächlich auf der Ebene befindet. Weitere Details finden Sie <a href="Room_Properties/Layer_Properties.htm">hier</a>.<br></p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Raum-Eigenschaften</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">In diesem Abschnitt des Raum-Editors können Sie alle Basiseigenschaften für den Raum festlegen, z. B. seine Größe, ob er Physik verwendet oder welche Kameras und Ansichtsfenster er benötigt. Dieser Abschnitt wird <a href="Room_Properties/Room_Properties.htm">hier</a> ausführlicher behandelt.<br></p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Layer-Werkzeugkasten</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Bei bestimmten Ebenentypen werden oben in der IDE in der <strong>Ebenen-Werkzeugpalette</strong> zusätzliche Werkzeuge hinzugefügt (z. B. bei Kachelebenen oder Pfadebenen). Die genauen Werkzeuge ändern sich je nach dem Ebenentyp, der gerade bearbeitet wird, und werden daher
+      auf der Seite erklärt, die jede Ebene erklärt, <a href="Room_Properties/Layer_Properties.htm">hier</a>.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Raum-Werkzeugkasten</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Oben im Hauptfenster des Raum-Editors gibt es ein paar Steuerelemente, mit denen Sie die Darstellung der Dinge beeinflussen können. Sie sind:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png"> <strong>Canvas-Raster umschalten</strong>: Hiermit schalten Sie das Canvas-Raster des Raumeditors ein/aus. Dies ist ein Raster, das <span class="notranslate">GameMaker Studio 2</span> über die Hauptleinwand zieht
+        um es in Abschnitte zu unterteilen, und ist standardmäßig auf eine Größe von 32x32px eingestellt. Wenn Sie jedoch auf das Symbol "Rastermenü" <img alt="Icon Grid Menu" class="icon" src="../assets/Images/Icons/Icon_CanvasOptions.png"> klicken, werden die Rasteroptionen geöffnet:<img alt="Room Grid Options" class="center" src="../assets/Images/Asset_Editors/Editor_RoomGridControls.png">Mit diesen Optionen können Sie die Rasterfarbe und das Alpha sowie die Zellenwerte für das Raster entlang der X- und Y-Achse einstellen. Außerdem können Sie hier das Rasterraster aktivieren oder deaktivieren
+        Sie haben hier auch die Möglichkeit, das Einrasten des Rasters zu aktivieren oder zu deaktivieren (standardmäßig aktiviert). Sie können die Tastaturkürzel &quot;G&quot; und <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;G&quot; verwenden, um die Sichtbarkeit des Rasters
+        und das Einrasten des Gitters ein- bzw. ausschalten.</li>
+      <li class="dropspot"><img alt="Canvas Zoom Controls Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120"> <strong>Canvas-Zoom-Steuerungen</strong>: Diese Schaltflächen steuern die aktuelle Zoomstufe der Leinwand. Sie können ein- oder auszoomen und
+        Wenn Sie auf die Schaltfläche <img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png"> klicken, wird die Leinwand auf 1:1 mit dem bearbeiteten Raum zurückgesetzt. Sie können auch auf die Schaltfläche "Window Fit" (Fenster anpassen) <img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"> klicken, um die gesamte Raum-Leinwand in den aktuellen Arbeitsbereich des Editors einzupassen (dadurch wird sie entsprechend vergrößert/verkleinert). Beachten Sie, dass Sie auch mit <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> und dem Mausrad <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> zoomen können. Durch Drücken von <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> wird die Raumleinwand auf 1:1 mit den Raumeinstellungen gesetzt.</li>
+      <li class="dropspot"><strong><img alt="Canvas View Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasViews.png"> </strong> Ansichten anzeigen: Wenn Sie hierauf klicken, wird das Ansichtsrechteck aktiviert oder deaktiviert. Wenn es aktiviert ist, sehen Sie einen hervorgehobenen Bereich, der die verschiedenen
+        Ansichten, die für den Raum aktiviert sind.</li>
+      <li class="dropspot"><strong><img alt="Play Room Icon" class="icon" src="../assets/Images/Icons/Icon_PlayRoom.png"> </strong> Animationen abspielen: Wenn Sie Sprites, Sequenzen oder animierte Kacheln hinzufügen, möchten Sie vielleicht eine Vorstellung davon bekommen, wie diese im Raum selbst aussehen werden
+        ohne das gesamte Projekt kompilieren zu müssen, und so können Sie auf diese Schaltfläche klicken, um alle verschiedenen Animationen abzuspielen. Wenn Sie erneut darauf klicken, wird die Animation gestoppt.</li>
+      <li class="dropspot"><strong><img alt="Canvas Layer Select Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasSelect.png"> </strong> Canvas Von jeder Ebene auswählen: Wenn Sie auf ein Element im Raum-Canvas klicken, können Sie standardmäßig nur die Assets auswählen, die sich auf der gerade bearbeiteten Ebene befinden.
+        Wenn Sie jedoch diese Option aktivieren, können Sie auf ein beliebiges Element klicken und es wird ausgewählt, wobei die Zielebene auf die Ebene geändert wird, auf der sich das Element befindet. Sie können das Tastaturkürzel &quot;
+        <span class="inline">P</span> &quot; verwenden, um diese Option vorübergehend zu aktivieren (halten Sie &quot;<span class="inline">P</span>&quot; gedrückt, um sie zu aktivieren und lassen Sie sie los, um sie zu deaktivieren).
+       <p class="dropspot"> </p>
+      </li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Raum-Leinwand</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Die Mitte des Raumeditor-Fensters wird von dem Bereich eingenommen, in dem die eigentliche Bearbeitung stattfindet. Hier werden Sie Ihre Instanzen und Assets platzieren, Ihre Kacheln zeichnen oder Ihre Pfade positionieren. Sie können die Ansicht mit dem
+      Mausrad oder die Raumsteuerung am oberen Rand vergrößern und verkleinern, und Sie können den Raum verschieben, indem Sie die mittlere Maustaste <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> gedrückt halten und die Maus bewegen oder <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> verwenden, während Sie sich bewegen.</p>
+    <p class="dropspot">Beim Erstellen von Asset-Ebenen oder Instanz-Ebenen können Sie das Asset oder die Instanz platzieren, indem Sie es einfach aus dem Asset-Browser ziehen und dann an der gewünschten Stelle ablegen. Alternativ dazu können Sie ein Asset oder eine Instanz aus dem Asset
+      Alternativ können Sie ein Asset oder eine Instanz aus dem Asset-Browser auswählen und dann die Taste <img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> gedrückt halten, um eine Vorschau der Ressource &quot;an Ort und Stelle&quot; anzuzeigen. Wenn Sie zusätzlich die linke Maustaste <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> drücken, können Sie die Instanz hinzufügen und sogar in die Raumebene &quot;malen&quot;, indem Sie die Taste gedrückt halten und die Maus ziehen. Beachten Sie, dass Instanzen und Sprites, die einem Raum auf diese Weise hinzugefügt werden, standardmäßig
+      Instanzen und Sprites, die auf diese Weise zu einem Raum hinzugefügt werden, standardmäßig an den definierten Raumrastereinstellungen ausgerichtet werden, aber Sie können <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> gedrückt halten, damit die Instanz der Maus genau folgt und nicht einrastet (wenn Sie <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> loslassen, wird das Einrasten wieder möglich).</p>
+    <p class="dropspot">Für Pfade können Sie eine neue Pfadebene und eine Pfadressource direkt im Raumeditor erstellen - oder eine neue Pfadressource erstellen und sie dann in das Haupteditorfenster ziehen, wie Sie es für eine Instanz tun würden - und dann den Pfad und seine Verbindungen im
+      dem Editor-Fenster bearbeiten. Für Kachelsätze können Sie sie aus dem Kachelsatz-Editor &quot;einmalen&quot;.</p>
+    <p class="dropspot">Beachten Sie, dass Sie mehrere Kühlstellen auf derselben Ebene auswählen und verschieben oder löschen können, indem Sie <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf den gewünschten Kühlstellen gedrückt halten, und bei den meisten Kühlstellen im Raum-Editor können Sie sie drehen und skalieren (einzeln oder als Gruppe), indem Sie an den äußeren Kanten und Ecken gedrückt halten und die Maus ziehen.
+      oder als Gruppe) drehen und skalieren, indem Sie auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> entlang der Außenkanten oder Ecken klicken, die Maustaste gedrückt halten und die Maus ziehen. Sie können auch auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auf ein einzelnes Element (Kacheln, Instanzen, Sprites) doppelklicken, um den Editor darauf schwenken zu lassen und das Eigenschaftsfenster für das ausgewählte Element zu öffnen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Statusleiste</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Die Statusleiste wird verwendet, um Ihnen kontextspezifische Informationen anzuzeigen. Die Statusleiste zeigt immer an, wo sich der Mauszeiger im Raum befindet, aber sie zeigt auch zusätzliche Informationen an, die auf der bearbeiteten Ebene, dem verwendeten Werkzeug und dem Status
+      dieses Werkzeugs.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p> </p>
+  <p>Weitere Informationen zu einigen der oben genannten Bereiche erhalten Sie auf den folgenden Seiten:</p>
+  <ul class="colour">
+    <li><a href="Room_Properties/Layer_Properties.htm">Ebenentypen und Eigenschaften</a></li>
+    <li><a href="Room_Properties/Room_Properties.htm">Raum-Eigenschaften</a></li>
+    <li><a href="Room_Properties/Room_Inheritance.htm">Raumvererbung</a></li>
+  </ul>
+  <p>Abgesehen von den In-Editor-Tools sehen Sie auch ein neues Dropdown-Menü, das oben in der IDE hinzugefügt wurde.</p>
+  <p><img alt="Room Editor Menus" class="center" src="../assets/Images/Asset_Editors/Editor_RoomContextMenu.png">Diese Menüs werden im Folgenden erklärt:</p>
+  <ul class="colour">
+    <li><strong>Ebenenansicht</strong>: Damit wird das Ebenen-Editor-Fenster wieder geöffnet, falls Sie es zu irgendeinem Zeitpunkt geschlossen haben.</li>
+    <li><strong>Raumeigenschaften</strong>: Damit wird das Fenster "Raumeigenschaften" wieder geöffnet, falls Sie es zu irgendeinem Zeitpunkt geschlossen haben.</li>
+    <li><strong>Ebeneneigenschaften</strong>: Damit wird das <a href="Room_Properties/Layer_Properties.htm">Fenster "Ebeneneigenschaften</a> " wieder geöffnet, falls Sie es zu irgendeinem Zeitpunkt geschlossen haben.</li>
+    <li><strong>Instance Creation Order</strong>: Dadurch wird das <strong>Fenster "Instance Creation Order </strong>" geöffnet (das auch über die Schaltfläche im Fenster " <a href="Room_Properties/Room_Properties.htm">Room Properties"</a><strong> </strong>geöffnet werden kann): <br>
+      <img alt="Room Creation Order Window" class="center" src="../assets/Images/Asset_Editors/Editor_Room_CreationOrder.png"> In diesem Fenster werden alle Instanzen des Raums in der Reihenfolge aufgelistet, in der sie erstellt werden (von oben nach unten). Sollten Sie wünschen
+      eine bestimmte Instanz vor einer anderen erstellt werden soll, können Sie einfach auf <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> klicken und sie an die gewünschte Position ziehen.</li>
+    <li><strong> <span class="notranslate">Fenster</span></strong> auf dem aktuellen Desktop zurücksetzen: Damit wird die Fensteranordnung des Raumeditors auf die Standardwerte für den aktuell fokussierten Desktop-Arbeitsbereich zurückgesetzt.</li>
+  </ul>
+  <p> </p>
+  <ul class="colour">
+    <li><strong>Kachelbearbeitung</strong>: Wenn Sie mit einer Kachelebene arbeiten, wird diese Option im Dropdown-Menü hervorgehoben. Es hat das folgende Untermenü:<br>
+      <img alt="Room Tile Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Room_TileMenu.png">Bei der Bearbeitung der Kachelebene können Sie mehrere Kacheln durch Klicken, Halten und Ziehen der linken Maustaste auswählen <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">, oder Sie können einzelne Kacheln mit <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> auswählen und gruppieren, oder einzelne Kacheln mit <img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> aus der Auswahl entfernen. Von diesem Menü aus können Sie dann die Auswahl löschen oder invertieren sowie die Auswahl ausschneiden, kopieren oder auf einer anderen Ebene (oder sogar auf derselben Ebene, aber an einer anderen Position) einfügen.
+      an anderer Stelle). Mit der letzten Option wird das angedockte Fenster des Kachelsatz-Editors wieder geöffnet, falls Sie es geschlossen haben.</li>
+    <li><strong>Bild in Kachelplan konvertieren</strong>: Die Option "Bild in Kachelplan konvertieren" ist ein leistungsfähiges Werkzeug, mit dem Sie ein einzelnes Bild importieren und dann die verwendeten Kacheln aus dem Bild extrahieren und als Kachelplan-Ebene im Raum-Editor neu erstellen können.
+      Dabei wird das erforderliche Kachelset und Sprite erstellt. Wenn Sie dieses Werkzeug auswählen, werden Sie aufgefordert, eine unkomprimierte Bilddatei (<span class="inline">PNG</span>, <span class="inline">GIF </span>oder <span class="inline">BMP</span>) anzugeben, die dann
+      dann geladen wird. Nach dem Laden wird das <strong>Bildimport-Tool</strong> angezeigt:<br>
+      <img alt="Convert Image To Tilemap Tool" class="center" src="../assets/Images/Asset_Editors/Editor_Room_ConvertImage.png">Hier erhalten Sie Optionen, wie die Kachel beim Erstellen des Kachelsatzes aufgeteilt werden soll, und Sie können die Zellenbreite und -höhe einstellen
+      sowie alle erforderlichen Versätze an den Rändern einstellen. Sie können auch die ungefähre Breite (in Pixeln) für das endgültige Sprite, das erstellt wird, festlegen. Wenn der Kachelsatz z. B. aus 64x64 Kachelzellen besteht und Sie hier eine Breite von 200 einstellen, wird das endgültige Sprite
+      das für die Verwendung im Kachelsatz erstellt wird, 192 Pixel breit (d. h.: 3 Kachelzellen). Wenn Sie den Standardwert 0 beibehalten, versucht <span class="notranslate">GameMaker Studio 2</span>, ein möglichst &quot;quadratisches&quot; Sprite mit ungefähr der gleichen Anzahl an horizontalen und vertikalen Kachelzellen zu erstellen.
+      <br>
+      <br> Nachdem Sie festgelegt haben, wie das Bild aufgeteilt werden soll, klicken Sie auf das Feld neben der Option " <strong>Farbe entfernen"</strong>, um den Farbwähler zu öffnen und eine Farbe auszuwählen, die aus dem endgültigen Sprite entfernt werden soll. Dies ist normalerweise
+      Wenn Sie dieses Feld auf einen anderen Wert als 100 % transparent (Alpha 0) einstellen, wird die ausgewählte Farbe beim Import entfernt.<br>
+      <br> Schließlich haben Sie die Möglichkeit, das Sprite, das Kachelset und die Kachelkartenebene zu benennen, die mit diesem Werkzeug für Sie erstellt werden. Wenn Sie den Import abschließen, wird ein Sprite mit allen in einem Raster angeordneten Bildern sowie ein Kachelsatz aus diesem Sprite erstellt.
+      diesem Sprite. Im Raum wird eine neue Kachel-Map-Ebene erstellt und das Bild mit dem erzeugten Kachelsatz reproduziert. Beachten Sie, dass das Werkzeug <em>keine </em>Kacheln dupliziert und stattdessen erkennt, wenn eine Zelle Bilddaten hat, die sich mit
+      einer anderen Zelle übereinstimmen (dies schließt gedrehte Kacheln ein). Sie können dies im folgenden Bild sehen, in dem nur eine Blumenkachel und eine Kistenkachel erstellt wurde, jedoch gibt es mehrere Instanzen von beiden, wobei einige Instanzen im Basisbild gedreht sind:<br>
+      <img alt="Convert Image To Tilemap Example Tileset" class="center" src="../assets/Images/Asset_Editors/Editor_Room_TileExample.png"></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="The_Asset_Editors.htm">Die Asset-Redaktion</a></div>
+        <div style="float:right">Nächste: <a href="Scripts.htm">Skripte</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Editor
+Rooms
+Layers
+Layer Properties
+-->
+  <!-- TAGS
+room_editor
+-->
+
+</body></html>

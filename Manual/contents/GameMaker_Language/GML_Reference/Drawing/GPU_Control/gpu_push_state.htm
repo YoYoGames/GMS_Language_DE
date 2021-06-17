@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_push_state</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_push_state" />
+  <meta name="rh-index-keywords" content="gpu_push_state" />
+  <meta name="search-keywords" content="gpu_push_state" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_push_state</h1>
+  <p>Mit dieser Funktion können Sie den aktuellen GPU-Status auf einen Stack schieben, um ihn später zu verwenden. Im Allgemeinen verwenden Sie diese Funktion, wenn Sie den aktuellen GPU-Zustand &quot;speichern&quot; wollen (Dinge wie Blend Mode, Alpha Writing, Culling usw. werden alle auf den
+    ), dann etwas mit anderen Einstellungen zeichnen und dann den GPU-Stack auf den vorherigen Zustand zurücksetzen (durch Aufruf von <a href="gpu_pop_state.htm"><tt>gpu_pop_state()</tt></a>).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_push_state();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">gpu_push_state();<br> gpu_set_blendmode(bm_add);
+    <br> gpu_set_blendenable(false);
+    <br> gpu_set_cullmode(true);
+    <br> with (obj_Effect_Parent)<br> {
+    <br> draw_self();
+    <br> }
+    <br> gpu_pop_state();
+  </p>
+  <p>Der obige Code &quot;speichert&quot; den aktuellen GPU-Zustand auf dem Stack, ändert dann bestimmte GPU-Einstellungen und zeichnet eine Gruppe von Instanzen, bevor er den GPU-Zustand auf den vorherigen Zustand zurücksetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GPU_Control.htm">GPU-Steuerung</a></div>
+        <div style="float:right">Weiter: <a href="gpu_pop_state.htm">gpu_pop_state</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_push_state
+-->
+  <!-- TAGS
+gpu_push_state
+-->
+</body>
+</html>

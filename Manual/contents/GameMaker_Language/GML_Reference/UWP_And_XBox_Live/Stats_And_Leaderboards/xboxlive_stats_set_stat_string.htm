@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_set_stat_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_set_stat_string" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_set_stat_string" />
+  <meta name="search-keywords" content="xboxlive_stats_set_stat_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_set_stat_string</h1>
+  <p>Diese Funktion kann verwendet werden, um eine Statistik für die angegebene Benutzer-ID auf eine Zeichenkette zu setzen. Sie übergeben die Benutzer-ID, wie sie z. B. von der Funktion <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>zurückgegeben wird, und dann die Zeichenkette
+    die gesetzt werden soll<b>(wenn die Statistikzeichenkette nicht bereits existiert, wird eine neue Statistik erstellt und auf den angegebenen Wert gesetzt</b>) und dann die Zeichenkette, auf die die Statistik gesetzt werden soll. Beachten Sie, dass der Name der Statistik nur alphanumerisch sein darf, ohne Symbole oder Leerzeichen, aber der String
+    Wert, den Sie setzen, kann Leerzeichen und Sonderzeichen enthalten.</p>
+  <p>Beim Einstellen des Statistikstrings wird jeder vorherige String überschrieben, daher liegt es an Ihnen, zu bestimmen, ob der Statistikstring aktualisiert werden soll oder nicht, indem Sie den aktuellen Statistikstring mit dem neuen vergleichen, bevor Sie ihn einstellen.</p>
+  <p>Die Funktion gibt -1 zurück, wenn ein Fehler auftrat oder die Benutzer-ID ungültig ist, oder einen beliebigen anderen Wert, wenn die Funktion erfolgreich aufgerufen wurde.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_stats_set_stat_string(user_id, stat, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Der Zeiger für die Benutzer-ID, für die der Status gesetzt werden soll</td>
+      </tr>
+      <tr>
+        <td>stat</td>
+        <td>Die zu setzende Statistik (eine Zeichenkette)</td>
+      </tr>
+      <tr>
+        <td>Wert</td>
+        <td>Der Wert, auf den die Statistik gesetzt werden soll (eine Zeichenkette)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">xboxlive_stats_set_stat_string(p_user_id, &quot;LevelName&quot;, global.LevelName);</p>
+  <p>Der obige Code setzt den Status &quot;LevelName&quot; auf die Zeichenkette, die in der angegebenen globalen Variablen gespeichert ist. </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Stats_And_Leaderboards.htm">Statistiken und Ranglisten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_stats_delete_stat.htm">xboxlive_stats_delete_stat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_set_stat_string
+-->
+  <!-- TAGS
+xboxlive_stats_set_stat_string
+-->
+</body>
+</html>

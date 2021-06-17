@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>raum_neustart</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_restart" />
+  <meta name="rh-index-keywords" content="room_restart" />
+  <meta name="search-keywords" content="room_restart" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>raum_neustart</h1>
+  <p>Mit dieser Funktion wird der aktuelle Raum neu gestartet, als ob er gerade betreten worden wäre. Beachten Sie, dass der Raum erst am Ende des Ereignisses, in dem die Funktion aufgerufen wurde, neu gestartet wird, so dass jeglicher Code nach dem Aufruf dieser Funktion weiterhin ausgeführt wird, wenn er sich im selben Ereignis befindet. Die
+    Einschränkung hierbei ist, dass jeglicher Code, der Instanzen erzeugt, der nach dieser Funktion aufgerufen wird, die Instanz <i>nicht</i> erzeugt und daher vor dem Raumwechsel aufgerufen werden sollte. Diese Funktion löst auch das Ereignis " <b>Room End"</b> aus.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">room_restart();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">wenn lebt &lt; 1 room_restart();</p>
+  <p>Der obige Code prüft, ob die Variable &quot;lives&quot; kleiner als 1 ist, und wenn dies der Fall ist, wird der Raum neu gestartet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Rooms.htm">Räume</a></div>
+        <div style="float:right">Weiter: <a href="room_exists.htm">room_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_restart
+-->
+  <!-- TAGS
+room_restart
+-->
+</body>
+</html>

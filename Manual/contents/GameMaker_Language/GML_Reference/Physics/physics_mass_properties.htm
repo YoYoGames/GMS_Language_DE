@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physik_masse_eigenschaften</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_mass_properties" />
+  <meta name="rh-index-keywords" content="physics_mass_properties" />
+  <meta name="search-keywords" content="physics_mass_properties" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physik_masse_eigenschaften</h1>
+  <p>Mit dieser Funktion können Sie benutzerdefinierte Masse- und Trägheitswerte für eine physikaktivierte Instanz festlegen. Normalerweise werden die Masse, der Massenschwerpunkt und die Trägheit für eine Instanz anhand einer Kombination aus der Oberfläche der gebundenen Einbauten und ihrer Dichte berechnet.
+    In besonderen Fällen kann es jedoch erforderlich sein, den Massenschwerpunkt zu verschieben oder die Trägheit zu ändern, und in diesem Fall würden Sie diese Funktion verwenden. Beachten Sie, dass die Masse in der realen Welt berechnet wird (d.h. in Kilogramm) und Sie sollten immer versuchen
+    Sie sollten immer versuchen, realistische Werte für das zu modellierende Objekt zu verwenden. Wenn Ihr physikalisches Objekt also eine Person darstellen soll, würde deren Masse etwa 70 Kilo betragen.</p>
+  <p>Der Massenschwerpunkt wird automatisch für Sie berechnet, basierend auf der Form des Fixtures (oder der Fixtures), die Sie definiert haben. Um eine ungefähre Vorstellung davon zu bekommen, wo dieser liegen könnte, wenn Sie ein Sprite haben, das die gleiche Form hat wie die Einbauten, die Sie erstellen möchten, und dann
+    wählen Sie die Option &quot;center origin&quot; aus, dann sehen Sie ungefähr, wo auch der Massenschwerpunkt liegen wird. Es kann jedoch sein, dass dies nicht korrekt ist oder dass Sie einen bestimmten Effekt von Ihrem Physikobjekt erwarten, in diesem Fall kann diese Funktion auch
+    in diesem Fall kann diese Funktion auch verwendet werden, um die x- und y-Koordinaten für den Massenschwerpunkt zu ändern. Dies sind <b>lokale</b> Werte, also ist 0,0 der Punkt, an dem die Fixtures an die Instanz gebunden sind (der Ursprung der Instanz). Ein Masseschwerpunkt von -4,0
+    würde also den Massenschwerpunkt nach links vom Ursprung verschieben.</p>
+  <p>Was die Trägheit betrifft, so definiert diese im Wesentlichen, wie widerstandsfähig die Instanz gegenüber Änderungen ihrer Richtung und Geschwindigkeit ist, so dass eine höhere Trägheit sie widerstandsfähiger macht und eine niedrige Trägheit sie weniger widerstandsfähig macht (Trägheit und Masse können keine negativen Werte sein!).</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion setzt Masse und Trägheit nicht für einzelne Geräte, sondern für die gesamte physikalisch aktivierte Instanz, unabhängig davon, wie viele Geräte an sie gebunden sind.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion sollte nur bei Bedarf verwendet werden, da die Physiksimulation so ausgelegt ist, dass die Masse und die Trägheit auf der Grundlage der Dichte und Größe des Geräts optimal sind. Das Ändern dieser Werte kann unvorhergesehene Auswirkungen haben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_mass_properties(mass, local_center_x, local_center_y, trägheit)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Masse</td>
+        <td>Die neue Masse, die das Gerät haben soll.</td>
+      </tr>
+      <tr>
+        <td>lokales_Zentrum_x</td>
+        <td>Die lokale x-Koordinate des neuen Massenschwerpunkts.</td>
+      </tr>
+      <tr>
+        <td>lokales_Zentrum_y</td>
+        <td>Die lokale y-Koordinate des neuen Massenschwerpunkts.</td>
+      </tr>
+      <tr>
+        <td>Trägheit</td>
+        <td>Stellen Sie das Trägheitsmoment für die Vorrichtung ein.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">physics_mass_properties(phy_mass, -10, -10, phy_inertia);</p>
+  <p>Der obige Code verschiebt den Massenschwerpunkt des physischen Körpers nach links.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Physics.htm">Physik</a></div>
+        <div style="float:right">Weiter: <a href="physics_test_overlap.htm">physics_test_overlap</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_mass_properties
+-->
+  <!-- TAGS
+physics_mass_properties
+-->
+
+</body></html>

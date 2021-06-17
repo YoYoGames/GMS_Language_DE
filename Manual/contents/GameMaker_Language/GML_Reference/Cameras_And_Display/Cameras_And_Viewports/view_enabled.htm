@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>view_enabled</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_enabled" />
+  <meta name="rh-index-keywords" content="view_enabled" />
+  <meta name="search-keywords" content="view_enabled" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>view_enabled</h1>
+  <p>Diese Variable steuert, ob alle View Ports, die innerhalb des Raums sichtbar sind, aktiviert sind oder nicht. Wenn Sie die Ansichtsfenster auf "sichtbar" eingestellt haben und diese Option dann deaktivieren, wird der gesamte Raum auf den Bildschirm gezeichnet, der auf die Fenstergröße skaliert ist, anstatt die
+    die verschiedenen Kameras durch die Ansichtsfenster gezeichnet werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">view_enabled;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolean<tt>(true</tt>: aktiviert, <tt>false</tt>: deaktiviert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !view_enabled<br> {
+    <br> view_visible[0] = true;<br> view_enabled = true;<br> }
+  </p>
+  <p>Der obige Code prüft, ob Ansichten für den Raum aktiviert sind, und wenn dies nicht der Fall ist, stellt er sicher, dass view port[0] sichtbar ist und aktiviert dann Ansichten für den Raum.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="view_visible.htm">view_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_enabled
+-->
+  <!-- TAGS
+view_enabled
+-->
+</body>
+</html>

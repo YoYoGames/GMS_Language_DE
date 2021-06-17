@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_values_to_array</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_values_to_array" />
+  <meta name="rh-index-keywords" content="ds_map_values_to_array" />
+  <meta name="search-keywords" content="ds_map_values_to_array" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_values_to_array</h1>
+  <p>Mit dieser Funktion können Sie alle Werte abrufen, die eine DS-Map für jeden Schlüssel in der Map enthält. Sie geben die ID der DS-Map an, von der Sie die Schlüssel abrufen wollen (wie sie von <a href="ds_map_create.htm"><span class="inline">ds_map_create()</span></a>) und die
+    Funktion gibt ein <a href="../../../GML_Overview/Arrays.htm">Array</a> zurück, bei dem jeder Eintrag im Array ein Wert aus der DS-Map ist (wenn die Map z. B. 10 Schlüssel hat, wird ein Array mit 10 Einträgen zurückgegeben, wobei jeder Eintrag einem Wert für einen Schlüssel
+    einem Wert für einen Schlüssel entspricht). Die Funktion hat ein optionales zweites Argument, in dem Sie ein von Ihnen erstelltes Array angeben können. In diesem Fall werden die Schlüsselwertdaten der Map an die bereits vorhandenen Daten im Array angehängt. Beachten Sie, dass die Funktion
+    das übergebene Array direkt ändert, aber auch einen Verweis darauf zurückgibt (oder einen Verweis auf ein neues Array, wenn keines übergeben wird).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span class="misspell-word">ds_map_values_to_array</span>(id, [array])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der zu verwendenden Karte.</td>
+      </tr>
+      <tr>
+        <td>[array]</td>
+        <td>OPTIONAL! Das Array, an das die DS-Map-Werte angehängt werden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _values = <span class="misspell-word">ds_map_values_to_array(lvl_score);<br>
+var _total = 0;<br>
+for (var i = 0; i &lt; array_lengh(values); ++i;)<br>
+    {<br>
+    _total += _values[i];<br>
+    }<br>
+draw_text(32, 32, &quot;Gesamtpunktzahl für alle Stufen = &quot; + string(_total&quot;));</span></p>
+  <p>Die obige Funktion ruft alle Werte aus einer DS-Map für jeden Schlüssel in der Map ab und speichert sie in einer lokalen Variablen als Array. Dann wird das Array in einer Schleife durchlaufen und jeder der Werte zu einer lokalen Variablen hinzugefügt, die dann verwendet wird, um die Summe aller Werte anzuzeigen.
+    Werte anzeigt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Maps.htm">DS-Karten</a></div>
+        <div style="float:right">Weiter: <a href="ds_map_set.htm">ds_map_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_values_to_array
+-->
+  <!-- TAGS
+ds_map_values_to_array
+-->
+</body>
+</html>

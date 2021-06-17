@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_duplicate</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_duplicate" />
+  <meta name="rh-index-keywords" content="sprite_duplicate" />
+  <meta name="search-keywords" content="sprite_duplicate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_duplicate</h1>
+  <p>Diese Funktion gibt den Index eines neu erstellten Sprites zurück, das ein Duplikat (Kopie) desjenigen ist, das als Argument &quot;index&quot; eingegeben wurde. Wenn die Funktion fehlschlägt, wird -1 zurückgegeben. Diese Funktion <i>muss</i> verwendet werden, um alle
+    Sprites aus den ursprünglichen Assets zu kopieren, bevor irgendwelche Transformationen an ihnen vorgenommen werden können. Wenn Sie z. B. den Begrenzungsrahmen für ein Sprite ändern oder sein Alpha von einem anderen Sprite aus einstellen möchten, müssen Sie es zuerst duplizieren, dann die Operation an dem
+    duplizierten Sprite durchführen und dieses verwenden. Ein dupliziertes Sprite wird bei der Erstellung auf seiner eigenen, eindeutigen Texturseite platziert, was bedeutet, dass das Duplizieren mehrerer Sprites mehrere Texturseiten erzeugt und sich auf die Leistung auswirkt, weshalb Sie diese Funktion nur
+    wenn nötig.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie ein Sprite in <span class="notranslate">GameMaker Studio 2</span> duplizieren, müssen Sie daran denken, es wieder zu entfernen (mit <span style="font-size:1px;"><a href="sprite_delete.htm"><tt style="font-size: 14px">sprite_delete()</tt></a></span>)
+    zu löschen, wenn es nicht mehr benötigt wird, sonst besteht die Gefahr eines Speicherlecks, das Ihr Spiel verlangsamt und schließlich zum Absturz bringt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_duplicate(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu duplizierenden Sprites.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe</h4>
+  <p class="code">Real (eindeutiger Sprite-ID-Wert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">new_spr = sprite_duplicate(sprite_index)</p>
+  <p>Der obige Code dupliziert das aktuell verwendete Sprite als Sprite-Index der Instanz und speichert den Index für dieses neue Sprite in der Variablen &quot;new_spr&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Manipulation.htm">Sprite-Manipulation</a></div>
+        <div style="float:right">Weiter: <a href="sprite_assign.htm">sprite_assign</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_duplicate
+-->
+  <!-- TAGS
+sprite_duplicate
+-->
+</body>
+</html>

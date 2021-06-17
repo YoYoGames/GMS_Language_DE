@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instanz_zerstören</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_destroy" />
+  <meta name="rh-index-keywords" content="instance_destroy" />
+  <meta name="search-keywords" content="instance_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instanz_zerstören</h1>
+  <p>Sie rufen diese Funktion immer dann auf, wenn Sie eine Instanz &quot;zerstören&quot; möchten, was normalerweise ein <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Destroy-Ereignis und auch</a> ein Clean <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Up-Ereignis</a> auslöst <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">.</a>
+    Dadurch wird sie aus dem Raum entfernt, bis der Raum neu gestartet wird (sofern der Raum nicht persistent ist). Wenn Sie die Funktion ohne Argumente aufrufen, wird einfach die Instanz zerstört, die gerade im Gültigkeitsbereich ist und den Code ausführt, aber Sie können ein optionales
+    &quot;id&quot;-Argument angeben und eine bestimmte Instanz anvisieren, indem Sie den Wert der Instanz <span class="inline"><a href="Instance_Variables/id.htm">id</a></span> verwenden, oder Sie können alle Instanzen eines bestimmten Objekts anvisieren, indem Sie ein <a href="../Objects/object_index.htm"><tt>Objekt_Index</tt></a>.
+    Zum Beispiel:</p>
+  <p class="code">instance_destroy(other); // zerstört die Instanz &quot;other&quot; bei einem Kollisionsereignis<br> instance_destroy(obj_Bullet); // zerstört ALLE Instanzen des Objekts &quot;obj_Bullet&quot;</p>
+  <p>Mit dem zweiten <i>optionalen</i> Flag können Sie das Destroy-Event für die zu zerstörende Instanz &quot;ausschalten&quot;. Standardmäßig wird das Zerstörungsereignis <i>immer</i> ausgeführt, aber wenn Sie dieses Flag auf <tt>false</tt> setzen, können Sie die
+    Instanz selbst zerstören und die Ausführung dieses Ereignisses überspringen.</p>
+  <p class="note"><b>WICHTIG!</b> Dadurch wird das Ereignis "Zerstören" übersprungen, aber das Ereignis "Aufräumen" wird trotzdem aufgerufen.</p>
+  <p>Es ist erwähnenswert, dass, wenn Sie eine Instanz zerstören, ihr Zerstörungsereignis <i>unmittelbar</i> nach dem Code oder der Aktion aufgerufen wird, die die Zerstörungsfunktion aufruft. Auch wenn das Zerstörungsereignis ausgeführt wird, <i>wird</i> die Instanz <i>nicht sofort aus dem Spiel entfernt</i>,
+    Sie wird weiterhin den im aktuellen Ereignis enthaltenen Code ausführen. Erst wenn das aktuelle Ereignis vorbei ist, wird sie aus dem Spiel entfernt.</p>
+  <p>Wenn Sie also z. B. diesen Code haben:</p>
+  <p class="code">f hp &lt;= 0 instance_destroy();<br> score += 10;</p>
+  <p>Die Variable &quot;score&quot; wird inkrementiert, <i>obwohl die <tt>Funktion</tt></i> instance_destroy aufgerufen wurde, und die Instanz wird schließlich am Ende des Ereignisses aus Ihrem Spiel entfernt. Seien Sie damit vorsichtig, denn wenn Sie (zum Beispiel)
+    Wenn Sie (z. B.) eine dynamische Ressource für die Instanz erstellt haben, wie z. B. eine Datenstruktur, und diese Ressource dann im destroy-Ereignis zerstört haben, werden Sie, wenn es irgendwelche Referenzen darauf gibt, nachdem die destroy-Funktion oder -Aktion ausgeführt wurde, einen &quot;unknown
+    Ressource&quot;-Fehler, da das Zerstörungsereignis sie aus dem Spiel entfernt hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">instance_destroy([id, execute_event_flag]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die zu zerstörende Instanz-ID oder der Objekt_Index (optional, Standard ist die aufrufende Instanz)</td>
+      </tr>
+      <tr>
+        <td>ereignis_ausfuehren_flag</td>
+        <td>Auf <tt>true</tt> oder <tt>false</tt> setzen, um das Zerstörungsereignis auszuführen oder nicht (optional, Standard ist <tt>true</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if bbox_right &lt; 0 || bbox_left &gt; room_width || bbox_bottom &lt; 0 || bbox_top &gt; room_height<br> {
+    <br> instance_destroy(id, false);<br> }
+  </p>
+  <p>Der obige Code zerstört die Instanz, die den Code ausführt, ohne das Destroy-Ereignis aufzurufen, wenn sich die Instanz außerhalb der Raumbegrenzung befindet.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="instance_exists.htm">instance_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_destroy
+-->
+  <!-- TAGS
+instance_destroy
+-->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>bbox_left</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable bbox_left" />
+  <meta name="rh-index-keywords" content="bbox_left" />
+  <meta name="search-keywords" content="bbox_left" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>bbox_left</h1>
+  <p>Diese <b>schreibgeschützte</b> Variable gibt die Position (entlang der x-Achse) innerhalb des Raums des linken Begrenzungsrahmens für die Instanz zurück, wobei der Begrenzungsrahmen durch die maximale Breite und Höhe der Maske für die Instanz definiert ist
+    (wie von <span class="inline"><a href="sprite_index.htm">sprite_index</a></span> oder von <span class="inline"><a href="mask_index.htm">mask_index</a></span> festgelegt). Auch wenn ein Sprite eine präzise Kollisionsmaske hat, existiert der Begrenzungsrahmen und wird
+    für bestimmte Dinge verwendet, und so können Sie diese Variable verwenden, um sie zu finden. Beachten Sie, dass, wenn der Instanz kein Sprite zugewiesen ist, der zurückgegebene Wert mit der X-Position der Instanz identisch ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">bbox_left;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Ganzzahl)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if bbox_left &lt; 0<br> {
+    <br> x = sprite_xoffset;<br> }
+  </p>
+  <p>Der obige Code prüft, ob der Begrenzungsrahmen der Instanz außerhalb des Raums liegt, und wenn ja, setzt er die Instanz an eine neue Position.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Instance_Variables.htm">Sprite-Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="bbox_top.htm">bbox_top</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+bbox_left
+-->
+  <!-- TAGS
+bbox_left
+-->
+</body>
+</html>

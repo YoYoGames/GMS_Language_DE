@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_alpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function draw_set_alpha" />
+  <meta name="rh-index-keywords" content="draw_set_alpha" />
+  <meta name="search-keywords" content="draw_set_alpha" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_set_alpha</h1>
+  <p>Mit dieser Funktion können Sie das Basis-Alpha für das Spiel einstellen. Dieser Wert kann von 0 bis 1 eingestellt werden, wobei 0 vollständig transparent und 1 vollständig undurchsichtig ist (der Standardwert), und wirkt sich auf alle weiteren Zeichnungen aus, einschließlich Hintergründe, Sprites, Schriftarten,
+    Primitive und 3D.</p>
+  <p>Beachten Sie, dass, wenn Sie eines der Assets zeichnen und ein Alpha-Argument als Teil der Funktion übergeben (zum Beispiel bei der Verwendung von <a href="../Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>), dann wird der hier eingestellte Alpha-Wert von
+    überschrieben. Wenn Sie also ein Sprite mit <tt>draw_sprite_ext()</tt> mit einem Alpha-Argument von 1 zeichnen, wird das Sprite vollständig undurchsichtig gezeichnet, unabhängig von dem mit <tt>draw_set_alpha()</tt> gesetzten Alpha-Wert (dies funktioniert genauso, wenn Sie <a href="../Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>    und Setzen des <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm"><tt>bild_alpha</tt></a> der Instanz). Beachten Sie auch, dass, wenn eine Instanz <i>standardmäßig</i> gezeichnet wird (d.h.: sie hat ein Sprite, aber kein Draw-Ereignis), dann wird die
+   <tt>image_alpha-Variable</tt> auf das mit <tt>draw_set_alpha()</tt> gesetzte Alpha geklemmt wird, so dass ein <tt>image_alpha</tt> von 1 und ein draw alpha von 0.5 das Sprite bei Alpha 0.5 zeichnet, während ein <tt>image_alpha</tt> von 0.25 und ein draw alpha
+    von 0,5 das Sprite mit 0,25 Alpha zeichnet.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_set_alpha(alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td>Das einzustellende Alpha (zwischen 0 und 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_set_alpha(0.5);<br> draw_set_colour(c_black);
+    <br> draw_text(x+5, y+5, &quot;LEVEL 1&quot;);<br> draw_set_alpha(1);
+    <br> draw_set_colour(c_white);
+    <br> draw_text(x, y, &quot;STUFE 1&quot;);</p>
+  <p>Der obige Code zeichnet einen Text an der angegebenen Position mit einem Schatteneffekt, der durch eine Änderung von Alpha und Farbe beim Zeichnen erzeugt wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Colour_And_Alpha.htm">Farbe und Alpha</a></div>
+        <div style="float:right">Weiter: <a href="draw_set_colour.htm">draw_set_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_alpha
+-->
+  <!-- TAGS
+draw_set_alpha
+-->
+</body>
+</html>

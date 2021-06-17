@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_clear</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_clear" />
+  <meta name="rh-index-keywords" content="ds_map_clear" />
+  <meta name="search-keywords" content="ds_map_clear" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_clear</h1>
+  <p>Diese Funktion löscht die (zuvor erstellte) DS-Map von allen Schlüssel/Wert-Paaren, aber sie löscht nicht die DS-Map selbst aus dem Speicher. Hierfür sollten Sie die Funktion <a href="ds_map_destroy.htm"><tt>ds_map_destroy()</tt></a>. Beachten Sie, dass das Löschen
+    einer Map alle in der Map gespeicherten Datenstrukturen de-referenziert, was zu einem Speicherleck führt. Um dies zu verhindern, müssen Sie also alle Datenstrukturelemente manuell löschen, bevor Sie die Map löschen. Dies ist nur dann nicht erforderlich, wenn
+    Wenn Sie Elemente in der Map als <a href="../DS_Lists/DS_Lists.htm">DS-Liste</a> oder als eine andere <a href="DS_Maps.htm">DS-Map</a> gekennzeichnet haben, werden diese Elemente zerstört (nicht gelöscht!) und ihr Speicher wird automatisch bereinigt, wenn die
+    übergeordnete Map gelöscht wird.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_map_clear(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der zu löschenden Datenstruktur.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if global.new_game<br> {
+    <br> ds_map_clear(inventory);
+    <br> }</p>
+  <p>Die obige Funktion prüft eine globale Variable, um zu sehen, ob sie wahr ist, und wenn dies der Fall ist, dann wird die in der Instanzvariablen &quot;inventory&quot; indizierte DS-Map von allen Schlüssel/Wert-Paaren gelöscht (aber nicht <i>zerstört</i> ).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="DS_Maps.htm">DS-Karten</a></div>
+        <div style="float:right">Weiter: <a href="ds_map_copy.htm">ds_map_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_clear
+-->
+  <!-- TAGS
+ds_map_clear
+-->
+
+</body></html>

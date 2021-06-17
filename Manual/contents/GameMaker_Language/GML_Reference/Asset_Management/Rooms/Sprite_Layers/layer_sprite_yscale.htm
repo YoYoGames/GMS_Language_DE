@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_yscale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_yscale" />
+  <meta name="rh-index-keywords" content="layer_sprite_yscale" />
+  <meta name="search-keywords" content="layer_sprite_yscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_yscale</h1>
+  <p>Mit dieser Funktion können Sie ändern, ob das angegebene Sprite-Element auf einer Ebene entlang der y-Achse skaliert werden soll oder nicht. Sie geben die ID des Sprite-Elements an (die Sie erhalten, wenn Sie ein Sprite-Element mit <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    oder wenn Sie die Funktion <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), und legen dann den Skalierungswert fest. Ein Skalierungswert von 1 bedeutet keine Skalierung (1:1), kleinere Werte skalieren nach unten (0,5 z. B. halbiert die Höhe des
+    Sprites), größere Werte skalieren nach oben, und negative Werte spiegeln das Sprite und skalieren es, es sei denn, der verwendete Wert ist genau -1 (in diesem Fall wird das verwendete Sprite einfach von oben nach unten an seiner (0, 0)-Position ohne Skalierung gespiegelt).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_sprite_yscale(sprite_element_id, yscale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>Der eindeutige ID-Wert des zu ändernden Sprite-Elements</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Der y-Skalenwert (Standard ist 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var asset_sprite = layer_sprite_get_id(layer, &quot;gfc_Trees&quot;);<br> if layer_sprite_get_xscale(asset_sprite) != 1 || layer_sprite_get_yscale(asset_sprite) != 1<br> {
+    <br> layer_sprite_xscale(asset_sprite, 1);<br> layer_sprite_yscale(asset_sprite, 1);<br> }
+  </p>
+  <p>Der obige Code prüft das Sprite-Element, das der Ebene zugewiesen ist, auf der sich die Instanz befindet, die den Code ausführt, und wenn es in eine der beiden Richtungen skaliert ist, werden sowohl die x-Achsen-Skala als auch die y-Achsen-Skala auf 1 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Layers.htm">Sprite-Ebenen</a></div>
+        <div style="float:right">Weiter: <a href="layer_sprite_angle.htm">layer_sprite_angle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_yscale
+-->
+  <!-- TAGS
+layer_sprite_yscale
+-->
+</body>
+</html>

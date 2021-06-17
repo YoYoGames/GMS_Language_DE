@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_draw_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_draw_ext" />
+  <meta name="rh-index-keywords" content="physics_particle_draw_ext" />
+  <meta name="search-keywords" content="physics_particle_draw_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_draw_ext</h1>
+  <p>Diese Funktion zeichnet ein Sprite an der Position aller Partikel, die den gleichen benutzerdefinierten Kategoriewert haben und deren Flags mit denen der Maske übereinstimmen. Der Maskenwert wird auf die gleiche Weise definiert, wie Sie die
+    Flags beim Erstellen der Partikel definieren (siehe die Funktionen <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a> für ein Beispiel), d. h.: mit der <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitweisen <i>oder</i></a> &quot;|&quot;-Methode werden die entsprechenden Bits für jedes Flag maskiert.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion zeichnet <b>alle</b> Partikel in der Physiksimulation mit Flaggen, die mit denen der Maske übereinstimmen, unabhängig davon, ob es sich um einzelne Partikel oder Gruppen handelt, wenn die Benutzerkategorie dieselbe ist.</p>
+  <p>Der gezeichnete Partikel ignoriert die Farb- und Alphawerte, die bei seiner Erstellung eingestellt wurden, und wird stattdessen mit den in dieser Funktion angegebenen Parametern Skala, Winkel, Farbe und Alpha gezeichnet. Beachten Sie, dass dies nur zum Zeichnen eines Sprites an der Partikelposition dient
+    dient und das Verhalten des Partikels in keiner Weise beeinflusst.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">physics_particle_draw_ext(typemask, category, sprite, subimg, xscale, yscale, ang, col, alpha)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typemaske</td>
+        <td>Die Maske, mit der die Partikel-Flags verglichen werden sollen.</td>
+      </tr>
+      <tr>
+        <td>Kategorie</td>
+        <td>Die benutzerdefinierte Kategorie, die gezeichnet werden soll (verwenden Sie 0, um alle Kategorien zu zeichnen).</td>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>Das Sprite, das für jeden Partikel verwendet werden soll.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Der <tt>image_index</tt> des zu zeichnenden Sprites.</td>
+      </tr>
+      <tr>
+        <td>x-Skala</td>
+        <td>Der Skalierungsfaktor, der auf das Sprite entlang der X-Achse angewendet werden soll.</td>
+      </tr>
+      <tr>
+        <td>y-Skala</td>
+        <td>Der Skalierungsfaktor, der auf das Sprite entlang der y-Achse angewendet werden soll.</td>
+      </tr>
+      <tr>
+        <td>ang</td>
+        <td>Der Winkel (in Grad), in dem das Sprite gezeichnet werden soll.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Die Farbe, die mit dem Sprite überblendet werden soll (Standard ist <tt>c_white</tt>).</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td>Der Alphawert, der beim Zeichnen verwendet werden soll (0 - 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> physics_particle_draw_ext(flags, 2, sprBlob, 0, 2, 2, 0, c_white, 0.5);</p>
+  <p>Der obige Code zeichnet ein Sprite für alle Partikel der benutzerdefinierten Kategorie &quot;2&quot;, die die gleichen Flags wie die angegebene Maske haben, skaliert um 2 entlang beider Achsen und mit einem Alpha von 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Soft_Body_Particles.htm">Weichkörperpartikel</a></div>
+        <div style="float:right">Weiter: <a href="physics_particle_count.htm">physics_particle_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_draw_ext
+-->
+  <!-- TAGS
+physics_particle_draw_ext
+-->
+</body>
+</html>

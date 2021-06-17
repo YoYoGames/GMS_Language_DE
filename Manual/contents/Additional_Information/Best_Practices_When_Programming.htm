@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bewährte Praktiken bei der Programmierung</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains some best practices when programming using GameMaker Studio 2" />
+  <meta name="rh-index-keywords" content="Best Practices When Programming" />
+  <meta name="search-keywords" content="best practices" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Bewährte Praktiken bei der Programmierung</h1>
+  <p>Auf dieser Seite werden wir einige &quot;Best Practices&quot; bei der Programmierung Ihres Spiels behandeln und gleichzeitig ein wenig über das Innenleben von GameMaker <span class="notranslate">Studio 2</span> erklären <span class="notranslate">.</span> Bevor wir jedoch fortfahren, sollten Sie sich zwei sehr wichtige Punkte merken
+    Punkte:</p>
+  <ul class="colour">
+    <li>Dies ist ein <em>Leitfaden</em> und nicht die alles entscheidende-100%-perfekte Methode, um Ihr Spiel zu schreiben! Die hier erwähnten Dinge sind im Allgemeinen eher auf der Organisations- und Mikro-Optimierungsskala und sollten in Ihre Programmiergewohnheiten
+      Gewohnheiten integriert werden, wenn Sie sich mit <span class="notranslate">GML</span> wohl fühlen und sie für angemessen halten.</li>
+    <li>Wenn Ihr Spiel gut läuft und Sie mit den Dingen zufrieden sind, wie sie sind, dann sollten Sie <em>nicht überstürzt alles ändern, nur um ein paar zusätzliche FPS herauszuquetschen.</em> Sie müssen ein Gleichgewicht zwischen lesbarem, flexiblem und modularem Code mit der Zeit und Energie
+      die nötig sind, um Dinge zu ändern, sowie dem Gesamtgewinn am Ende. Grundsätzlich gilt: Wenn es nicht kaputt ist, reparieren Sie es nicht und heben Sie das, was Sie hier lernen, für Ihr nächstes Projekt auf.</li>
+  </ul>
+  <p>Nach diesen Ausführungen wollen wir uns nun einige allgemeine Tipps für das Schreiben von gutem <span class="notranslate">GML-Code</span> ansehen, die Sie jederzeit anwenden können...<br>
+  </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Programmierstil</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Wenn es um das Schreiben von Code geht, hat jeder einen <em>Stil</em>. Der Stil, in dem Sie programmieren, ist die Art und Weise, wie Sie Ihre Klammern setzen, wie Sie die Zeilen einrücken, wie Sie Variablen deklarieren und benennen usw., und er ist wesentlich, um Ihren Code klar und lesbar zu machen
+      für andere Leute (und für Ihr zukünftiges Ich, wenn Sie nach einer Zeit mit etwas anderem zu diesem Projekt zurückkehren müssen).</p>
+    <p class="dropspot">Es gibt viele, viele <a href="http://en.wikipedia.org/wiki/Programming_style">Programmierstile</a>, und einige würden behaupten, dass ihr Stil der beste ist, aber die Wahrheit ist, dass fast jeder Stil in Ordnung ist, solange Sie <strong>konsistent </strong>sind, wenn Sie
+      und es <em>klar </em>und <em>deutlich </em>ist, was alles ist und tut.</p>
+    <p class="dropspot"><img alt="Code Style Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BestPractice_Style_Example.png">Das obige Bild ist ein Beispiel für eine Funktionsdeklaration in einem Skript, um die obigen Punkte zu verdeutlichen. Sie
+      Sie können sehen, dass die Kommentare im JSDoc-Stil verwendet werden, um klar zu erklären, was alles getan wird, und der Codierungsstil ist konsistent, mit Einrückungen von 4 Leerzeichen, Unterstrichen für lokale Variablen, protokollierten Ausgaben usw...</p>
+    <p class="dropspot">Beachten Sie auch, dass der Skript-Editor zwar erlaubt, Code an jeder der offenen/geschlossenen Klammern zu falten, Sie aber auch <span class="inline">#region</span> und <span class="inline">#endregion</span> Tags verwenden können, um Teile Ihres Codes abzutrennen und so die
+      Lesbarkeit zu verbessern, insbesondere bei größeren Skripten, die mehrere Funktionen enthalten. Regionen können auch kommentiert werden - siehe den Abschnitt "Bearbeiten" auf dieser Seite im Handbuch):</p>
+    <p class="dropspot"><img alt="Example Of Using Regions" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BestPractice_Regions.png">Wenn Sie Code schreiben, sollten Sie sich bewusst sein, dass <span class="notranslate">GameMaker Studio 2</span> beim Kompilieren Ihres fertigen Spiels
+      Kommentare entfernt, unnötige Zeilenumbrüche und Leerzeichen entfernt, Konstanten-/Makro-/Enum-Werte einfügt und Ihren Code im Allgemeinen als Teil des Prozesses komprimiert. Das bedeutet, dass Sie so viel Leerraum um Ihren Code herum einfügen können wie nötig und
+      Sie müssen sich nicht darum kümmern, Ihre Kommentare kurz zu halten oder sie nur sparsam zu verwenden.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Lokale Variablen verwenden</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Eine Sache, die viele Anfänger tun, ist, so viel wie möglich in eine Zeile Code zu packen. Zum Beispiel:</p>
+    <p class="code">draw_sprite(sprite_index, image_index, x + lengthdir_x(100, point_direction(x, y, mouse_x, mouse_y)), y + lengthdir_y(100, point_direction(x, y, mouse_x, mouse_y)));</p>
+    <p class="dropspot">Es ist zwar nicht völlig unlesbar, aber ineffizient (die Funktion <span class="inline">point_direction()</span> wird z. B. zweimal aufgerufen) und es ist unübersichtlich. Es wäre viel besser ausgedrückt als:</p>
+    <p class="code">var p_dir = point_direction(x, y, mouse_x, mouse_y);<br> var local_x = x + lengthdir_x(100, p_dir);<br> var local_y = y + lengthdir_y(100, p_dir);<br> draw_sprite(sprite_index, image_index, local_x, local_y);</p>
+    <p class="dropspot">Der Speicher- und Ressourcenbedarf für das Anlegen dieser lokalen Variablen ist vernachlässigbar und wird bei weitem durch den unmittelbaren Nutzen aufgewogen, den Sie (oder jeder andere, der den Code später liest) aus seiner Übersichtlichkeit zieht. Die gleiche Idee sollte auch auf Funktionen angewendet werden, wobei
+      Sie sollten den Eingabevariablen sinnvolle Namen zuweisen und bei Bedarf klare Formatierungen und lokale Variablen verwenden, um den Code so lesbar wie möglich zu machen.</p>
+    <p class="dropspot">Lokale Variablen sind im Spiel schnell zu verarbeiten, machen Sie also das Beste daraus, und wenn ein Ausdruck in einem Codeblock oder Skript zwei- oder mehrmals vorkommt, denken Sie darüber nach, eine lokale Variable dafür zu erstellen. Wenn Sie bei der Verwendung der <a class="glossterm" data-glossterm="YoYo Compiler (YYC)" href="#"><span class="notranslate">YoYo</span></a> Compiler (YYC) Targets <span class="inline">global</span> oder Instanzvariablen mehrfach in einer Funktion oder einem Codeblock referenzieren, ist es besonders vorteilhaft, diese am Anfang Ihres Codes einer lokalen Variable zuzuweisen
+      zuzuweisen und dann diese lokale Variable zu referenzieren, da dies eine wesentlich bessere Performance ergibt.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Arrays</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><a href="../GameMaker_Language/GML_Overview/Arrays.htm">Arrays</a> sind schnell in der Anwendung und benötigen weniger Speicher als Datenstrukturen, aber sie können noch weiter optimiert werden. Wenn Sie ein Array erstellen, wird ihm Speicher basierend auf seiner Größe zugewiesen, daher sollten Sie
+      Sie sollten daher versuchen, ein Array zunächst auf seine maximale Größe zu initialisieren, auch wenn Sie es erst später füllen wollen. Wenn Sie zum Beispiel wissen, dass Sie ein Array für maximal 100 Werte benötigen, würden Sie es gleich auf 100 Slots initialisieren,
+      indem Sie die <a href="../GameMaker_Language/GML_Reference/Variable_Functions/array_create.htm"><span class="inline">array_create()</span></a> Funktion:</p>
+    <p class="code">array = array_create(100, 0);</p>
+    <p class="dropspot">Dadurch wird der Speicher dafür in einem &quot;Chunk&quot; zugewiesen, wobei alle Array-Werte auf den Standardwert 0 gesetzt werden. Dies hilft, die Dinge schnell zu halten, da sonst jedes Mal, wenn Sie dem Array einen neuen Wert hinzufügen, der gesamte Speicher wieder neu zugewiesen werden muss.</p>
+    <p class="note"><strong>HINWEIS</strong>: Auf dem HTML5-Ziel gilt die Zuweisung von Arrays wie diese nicht und Ihre Arrays sollten von 0 für dieses Ziel initialisiert werden! Sie können dies einfach handhaben, indem Sie z. B. die os_browser-Variable überprüfen:</p>
+    <p class="code"><span style="padding-left:1px;">if (os_browser == browser_not_a_browser)<br>
+    {<br>
+    array_create(100, 0);<br>
+    }<br>
+sonst<br>
+    {<br>
+    for (var i = 0; i &lt; 100; ++i;)<br>
+        {<br>
+        array[i] = 0;<br>
+        }<br>
+    }</span></p>
+    <p class="dropspot">Sie können auch den mit einem Array verbundenen Speicher freigeben, indem Sie die verwendete Variable auf 0 setzen. Um also das Array aus dem obigen Codebeispiel zu löschen, würden Sie einfach verwenden:</p>
+    <p class="code">array = 0;</p>
+    <p class="dropspot">Beachten Sie auch, dass Arrays <strong>per Referenz übergeben</strong> werden, aber bei einer Änderung das Ganze kopieren (dieses Verhalten wird <strong>copy on write</strong> genannt). Wenn Sie also ein Array an eine Funktion übergeben, übergeben Sie eine <em>Referenz </em>auf
+      das ursprüngliche Array und alle Werte, die daraus gelesen werden, stammen aus der ursprünglichen Quelle. Das ist schön und schnell, aber wenn Sie einen der Array-Werte ändern müssen, wird das Array selbst an der Stelle des Schreibens dupliziert und alle vorgenommenen Änderungen <strong>müssen von der Funktion zurückgegeben werden, sonst gehen sie verloren</strong>.
+      Dies ist viel langsamer und verbraucht mehr Speicher, also seien Sie vorsichtig, wie Sie Arrays in Funktionen verwenden.</p>
+    <p class="dropspot">Sie können dieses Copy-on-Write-Verhalten jedoch vermeiden, indem Sie den speziellen <a href="../GameMaker_Language/GML_Overview/Accessors.htm">Array-Accessor</a> <span class="inline">@</span> verwenden, da dieser direkten Zugriff auf das zugrunde liegende Array ermöglicht. Zum Beispiel:</p>
+    <p class="code">// Aufruf einer Funktion, Übergabe unseres Arrays<br> my_function(my_array);
+    </p>
+    <p class="code">// Die Funktion sieht so aus:<br>
+      <br> function my_function(_a)<br> {
+      <br> // Das Array wird kopiert und die Kopie modifiziert,<br> // was später die Verwendung von &quot;return _a&quot; erfordert<br> _a[0] = 100;<br> // Dies modifiziert das ORIGINAL-Array direkt und<br> // erfordert nicht, dass es zurückgegeben wird<br> _a[@0]
+      = 100;<br> }
+    </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Daten-Strukturen</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">In <span class="notranslate">GameMaker Studio 2</span> wurden die <a href="../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm">Datenstrukturen</a> so optimiert, dass sie wesentlich schneller sind als in früheren <span class="notranslate">GameMaker-Versionen</span>. Sie müssen immer noch aufgeräumt (zerstört) werden, wenn
+      Sie müssen immer noch aufgeräumt (zerstört) werden, wenn sie nicht benutzt werden, um Speicher freizugeben, und sie können immer noch langsamer sein als z. B. Arrays, aber die einfache Benutzung und die zusätzlichen Funktionen für den Umgang mit den Daten, die sie enthalten, können den minimalen Geschwindigkeitsunterschied oft aufwiegen, also scheuen Sie sich nicht, sie in Ihren
+      Spielen.
+    </p>
+    <p class="dropspot">Es ist anzumerken, dass von allen Datenstrukturen vor allem DS-Maps blitzschnell sind, sowohl beim Lesen als auch beim Schreiben, was sie zu einer hervorragenden Option für alle Arten von Aufgaben macht.</p>
+    <p class="dropspot">Bisher haben wir <a href="../GameMaker_Language/GML_Overview/Accessors.htm">Accessors</a> für Arrays erwähnt, aber sie stehen auch für Datenstrukturen zur Verfügung, was dazu beitragen kann, Ihren Code aufzuräumen und ihn viel leichter lesbar zu machen.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Kollisionen</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Es gibt <a href="../GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/Collisions.htm">mehrere Möglichkeiten, mit Kollisionen</a> in <span class="notranslate">GameMaker Studio 2</span> <a href="../GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/Collisions.htm">umzugehen</a>, und die meisten von ihnen sind mit einem gewissen zusätzlichen CPU-Overhead verbunden. Die Funktionen <span class="inline">collision_</span> und <span class="inline">point_</span>, <span class="inline">place_</span> und <span class="inline">instance_</span> basieren alle auf <a class="glossterm" data-glossterm="Begrenzungsrechteck" href="#">Bounding-Box-Prüfungen</a> mit
+      und obwohl die Engine einige Optimierungen enthält, um diese Überprüfungen zu begrenzen, sind Kollisionen nie die effizienteste Lösung. Wenn Sie anfangen, präzise Kollisionen zu verwenden, wird die Leistung
+      Wenn Sie anfangen, präzise Kollisionen zu verwenden, wird auch die Leistung merklich schlechter, da Sie nicht nur Bounding-Box-Prüfungen durchführen, sondern auch Prüfungen pro Pixel, was in der Tat sehr langsam ist. Es gibt einen technischen Blog von <span class="notranslate">YoYo Games</span>, der dies hier diskutiert:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="https://www.yoyogames.com/blog/32/the-hazards-of-precise-collision-detection">Die Gefahren einer präzisen Kollisionsabfrage</a></li>
+    </ul>
+    <p class="dropspot">Das heißt nicht, dass Sie diese Funktionen nicht verwenden sollten, da sie sehr praktisch sein können. Sie sollten jedoch wissen, welche Sie wann verwenden sollten, da sie alle etwas anders funktionieren und unterschiedliche Geschwindigkeiten haben. Als grobe Faustregel gilt, dass die
+      <span class="inline">place_</span> Funktionen schneller sind als die <span class="inline">instance_</span> Funktionen, die wiederum schneller sind als die <span class="inline">collision_</span> und <span class="inline">point_</span> Funktionen, also lesen Sie die Seiten
+      im Handbuch für jeden dieser Funktionstypen und stellen Sie sicher, dass Sie die für die jeweilige Situation am besten geeignete wählen.</p>
+    <p class="dropspot">Alternativ können Sie auch ein<strong> kachelbasiertes Kollisionssystem</strong> erstellen, das mit den <a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">Tilemap-Funktionen</a> oder sogar
+      ein benutzerdefiniertes 2D-Array oder DS-Gitter. Diese sind sehr schnell und helfen, die Geschwindigkeit Ihres Spiels zu erhöhen. Wenn Sie jedoch unregelmäßiges Terrain oder Wände und Objekte verwenden, die nicht an einem Raster ausgerichtet sind, sind sie möglicherweise nicht geeignet. Sie finden ein sehr einfaches
+      Tutorial zu Tilemap-Kollisionen finden Sie unter folgendem Video-Link</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="https://youtu.be/UyKdQQ3UR_0">Kachelkollisionen in <span class="notranslate">GameMaker Studio 2</span></a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Texturvertauschungen und Vertex-Batches</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Wenn Sie das <a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><strong>Debug-Overlay</strong></a>einschalten, werden Sie sehen, dass beim Testen zwei Zahlen in Klammern am oberen Bildschirmrand angezeigt werden. Die erste ist die Anzahl
+      der <strong>Textur-Swaps </strong>und die zweite die Anzahl der <strong>Vertex-Batches</strong>. Diese Zahlen werden von einer Reihe von Faktoren beeinflusst, und Sie werden sie nie auf (0) (0) bringen, da die Engine bei jedem Schritt ein oder zwei von ihnen benötigt.
+      aber Sie sollten versuchen, diese Werte so niedrig wie möglich zu halten.</p>
+    <p class="dropspot"><img alt="The Debug Overlay Bar" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BestPractices_DebugOverlay.png">Für Textur-Swaps ist es am besten und effizientesten, wenn Sie die Art und Weise optimieren, wie Ihre Sprites und Hintergründe
+      auf der Texturseite gespeichert werden. Dies geschieht über die <a href="../The_Asset_Editors/Sprites.htm">Sprite-Eigenschaften</a>, und Sie können Texturseiten im <a href="../Settings/Texture_Groups.htm">Texturgruppen-Editor</a> erstellen. Wenn Sie eine Anzahl
+      von Bildern haben, die nur im Hauptmenü verwendet werden (zum Beispiel), dann legen Sie sie zusammen auf einer separaten <a href="../Settings/Texture_Information/Texture_Pages.htm">Texturseite</a> ab. Dasselbe gilt, wenn Sie Level-spezifische Bilder haben, oder den Spieler und die Feinde,
+      usw. Grundsätzlich wollen Sie sie nach Verwendung gruppieren, so dass die Vertauschungen so weit wie möglich reduziert werden. Zusätzlich können Sie dann zur <a class="glossterm" data-glossterm="VRAM" href="#">VRAM-Optimierung</a> die verschiedenen <a href="../GameMaker_Language/GML_Reference/Drawing/Textures/Textures.htm">Prefetch- und Flush-Funktionen</a> verwenden, um Texturen nach Bedarf aus dem Speicher zu laden und zu entfernen.</p>
+    <p class="note"><strong>HINWEIS</strong>: Wie am Anfang dieser Seite erwähnt, wenn Ihr Spiel gut mit einer anständigen FPS läuft, dann machen Sie sich nicht zu viele Gedanken über Textur-Swaps... besonders wenn Sie Projekte auf den Desktop-Zielen erstellen. Diese Optimierungen sind am besten, wenn
+      Diese Optimierungen werden am besten bei großen Spielen oder auf Low-End-Mobilgeräten verwendet und können sich bei falscher Anwendung sogar negativ auf die Leistung auswirken.</p>
+    <p class="dropspot">Vertex-Informationen werden zum Zeichnen in &quot;Stapeln&quot; an die GPU gesendet, und im Allgemeinen gilt: je größer der Stapel, desto besser. Daher sollte beim Zeichnen ein &quot;Aufbrechen&quot; des Stapels vermieden werden, da dadurch die Anzahl der an die GPU gesendeten Vertex-Stapel erhöht wird.
+      die GPU gesendet werden. Es gibt eine Reihe von Dingen, die den Stapel unterbrechen. Die wichtigsten davon sind <strong>Mischmodi</strong>, das Einstellen der <strong>Zeichenfarbe</strong>, das Einstellen des <strong>Alphawerts</strong> und das Zeichnen mit den eingebauten Formen und
+      Primitiven.
+    </p>
+    <p class="dropspot">Wenn Sie also z. B. mehrere Bullet-Instanzen haben, die mit dem Blend-Mode <span class="inline">bm_add</span> zeichnen, werden Sie für jede einen neuen Vertex-Stapel erstellen, was definitiv eine schlechte Sache ist! Stattdessen sollten Sie ein Controller-Objekt
+      in Ihrem Spiel, das stattdessen alle Kugeln zeichnet, etwa so:</p>
+    <p class="code">gpu_set_blendmode(bm_add);<br> with (obj_BULLET)<br> {<br> draw_self();<br> } <br> gpu_set_blendmode(bm_normal);
+    </p>
+    <p class="note"><strong>HINWEIS</strong>: Dies gilt nicht nur für die Verwendung von bm_add <span class="inline" style="font-size: 14px">-</span> jede Überblendungsänderung unterbricht den Stapel und führt zu Leistungseinbußen.</p>
+    <p class="dropspot">Auf diese Weise werden alle Kugeln im gleichen Stapel gezeichnet. Diese Methode kann auch auf Alpha und die Zeichenfarbe angewendet werden, und zwar durch geschickte Verwendung der Funktionen <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendenable.htm"><span class="inline">gpu_set_blendenable()</span></a>,
+      <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_alphatestref.htm"><span class="inline">gpu_set_alphatestref()</span></a>, und <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_alphatestenable.htm"><span class="inline">gpu_set_alphatestenable()</span></a> kann
+      kann die Leistung erheblich verbessern und kann je nach Bedarf im gesamten Projektcode aktiviert/deaktiviert werden, obwohl sie möglicherweise nicht für alle Arten von Grafiken oder Projekten geeignet sind.</p>
+    <p class="note"><strong>HINWEIS</strong>: Wenn Sie nicht möchten, dass die Instanz sich selbst zeichnet, wenn Sie einen Controller auf diese Weise verwenden, können Sie einfach einen Kommentar in das Draw-Ereignis einfügen, um das standardmäßige Zeichnen zu unterdrücken, oder die Instanz unsichtbar machen (obwohl dies
+      verhindern, dass der gesamte Code für die Instanz in allen Draw-Ereignissen ausgeführt wird).</p>
+    <p class="dropspot">Eine weitere Möglichkeit, diese Zahlen zu reduzieren, besteht darin, die Option " <strong>Separate Texture Page"</strong> für Sprites zu deaktivieren, sofern dies nicht unbedingt erforderlich ist. Jedes Bild, das auf diese Weise gespeichert wird, wird an eine eigene Texturseite gesendet und anders gepackt, so dass es besser ist, diese Bilder
+      auf einer regulären Texturseite ist besser. Sie können dann die UVS-Koordinaten mit der <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_uvs.htm"><span class="inline">sprite_get_uvs()</span></a> Funktion
+      abrufen und für die spätere Verwendung in Variablen speichern. Es ist zwar eine kleine Menge an zusätzlichem Code, aber der Gewinn, den Sie dadurch erhalten, ist es wert. Beachten Sie, dass diese Methode keine Texturwiederholungen zulässt!</p>
+    <p class="dropspot">Wie bei all diesen Tipps gilt auch hier: Wenn es Ihnen das Leben schwerer macht, sie zu ändern, und Ihr Spiel gut läuft, machen Sie sich nicht zu viele Gedanken darüber...</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Partikel</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particles.htm">Partikel</a> bieten eine sehr schnelle und effiziente Möglichkeit, dynamische Effekte in Ihrem Spiel zu erzeugen, und im Allgemeinen bieten sie eine gute Leistung. Es ist jedoch erwähnenswert, dass
+      die Verwendung von additivem Blending, Alpha-Blending und Color-Blending auf den Partikeln diese Leistung verringern kann, insbesondere auf mobilen Zielgeräten, also wenn Sie es nicht brauchen, verwenden Sie es nicht! Insbesondere das additive Blending kann die Vertex
+      Batches erhöhen und sollte mit Vorsicht verwendet werden.</p>
+    <p class="dropspot">Beachten Sie, dass auf dem Nicht-WebGL-HTML5-Ziel mehrfarbige, verblassende Partikel eine Menge Bild-Caching erfordern und sehr langsam sein werden. Da Partikel-Sprites jedoch animiert werden können, können Sie ein animiertes Sprite erstellen, das Unterbilder hat, die
+      die ihre Farbe ändern, und diese dann stattdessen für die Partikel verwenden. Es wird immer noch wie eine allmähliche Farbänderung aussehen, aber nicht die ständige Erstellung von Cache-Bildern erfordern.</p>
+    <p class="dropspot">Weitere Informationen zu Partikeln finden Sie auf der Seite <a href="Guide_To_Using_Particles.htm">Anleitung zur Verwendung von Partikeln</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Oberflächen</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Zum Schluss wollen wir noch kurz auf die Verwendung von <a href="../GameMaker_Language/GML_Reference/Drawing/Surfaces/Surfaces.htm">Oberflächen</a> eingehen <a href="../GameMaker_Language/GML_Reference/Drawing/Surfaces/Surfaces.htm">, denn</a> GameMaker <span class="notranslate">Studio 2 hat</span> eine ziemlich bedeutende Optimierung bei der Verwendung von Oberflächen in Ihren Spielen: die Möglichkeit, den Tiefenpuffer
+      den <strong>Tiefenpuffer</strong> ein- und auszuschalten.</p>
+    <p class="dropspot">Wenn Sie Oberflächen wie gewohnt verwenden, erstellt GMS2 eine Oberfläche und einen dazugehörigen Tiefenpuffer, um eine korrekte Tiefensortierung zu gewährleisten, wenn Sie etwas in 3D zeichnen. Für die meisten 2D-Spiele wird dieser zusätzliche Tiefenpuffer jedoch nicht benötigt und nimmt daher
+      nimmt zusätzlichen Speicherplatz und Verarbeitungszeit in Anspruch, die für andere Dinge verwendet werden könnte. An dieser Stelle kommt die Funktion <a href="../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_depth_disable.htm"><span class="inline">surface_depth_disable()</span></a> kommt
+      ins Spiel...</p>
+    <p class="dropspot">Diese Funktion kann vor dem Erzeugen einer Oberfläche aufgerufen werden, um die Tiefenpuffererzeugung zu deaktivieren. Für alle danach erzeugten Oberflächen wird dann kein Tiefenpuffer erzeugt. Sie können diese Funktion nach Bedarf aktivieren/deaktivieren und können sie sogar
+      Sie können sie sogar einmal zu Beginn des Spiels aufrufen, um die Tiefenpuffer für alle nachfolgenden Oberflächenaufrufe zu deaktivieren (was in den meisten 2D-Spielen problemlos möglich ist). Es wird keinen großen Leistungsschub bringen, aber es ist sicherlich etwas, das Sie im Hinterkopf behalten sollten, wenn Ihr Spiel stark auf Oberflächen angewiesen ist.
+      auf Oberflächen angewiesen ist, und es könnte verhindern, dass Ihrem Spiel auf Geräten mit geringerer Leistung der Speicher ausgeht.</p>
+  </div>
+  <p> </p>
+  <p>Abgesehen von den oben genannten Hauptpunkten gibt es noch andere, allgemeinere Dinge, die bei der Leistung helfen können und die ebenfalls als &quot;gute Praktiken&quot; gelten:</p>
+  <ul class="colour">
+    <li>scheuen Sie sich nicht, die trigonometrischen Funktionen zu verwenden, da sie (entgegen der landläufigen Meinung) ziemlich schnell sind, besonders im Vergleich zu Teilchen, Kollisionen, Strings, etc.</li>
+    <li>Legen Sie keinen Code, der nicht zum Zeichnen von Dingen dient, in die Draw-Events</li>
+    <li>einen Alarm verwenden, um jeden Code aufzurufen, der nicht bei jedem Schritt aufgerufen werden muss (anstatt dies einfach nur in das Step-Ereignis einzufügen)</li>
+  </ul>
+  <p>Aber, wie wir am Anfang der Seite erwähnt haben, sind all diese Optimierungen optional und wenn Ihr Spiel mit 60 Vertex-Batches, 80 Textur-Swaps, additivem Blending usw. gut läuft, dann machen Sie sich nicht zu viele Gedanken darüber! Behalten Sie diese Dinge einfach im Hinterkopf
+    wenn Sie Ihr nächstes Spiel programmieren...</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Additional_Information.htm">Zusätzliche Informationen</a></div>
+        <div style="float:right">Weiter: <a href="The_File_System.htm">Das Dateisystem</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Nest Practices
+-->
+  <!-- TAGS
+best_practices
+-->
+
+</body></html>

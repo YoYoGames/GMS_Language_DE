@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Physik-Objekte</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing object physics" />
+  <meta name="rh-index-keywords" content="Objects - Physics" />
+  <meta name="search-keywords" content="Object Physics,Physics,fixtures,binding,physics shape editor,shape editor,physics properties" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Physik-Objekte</h1>
+  <p>Wenn Sie zum ersten Mal eine neue Objektressource erstellen, gibt es ein Kontrollkästchen mit der Bezeichnung " <strong>Uses Physics"</strong>, das standardmäßig <em>nicht </em>aktiviert ist. Wenn Sie diese Option auswählen, ändert sich das Verhalten Ihres Objekts radikal, wenn eine Instanz davon in einem Raum platziert wird.
+    in einem Raum platziert wird, da dies die physikalischen Eigenschaften des Objekts einschaltet und bedeutet, dass seine &quot;traditionellen&quot; Bewegungs- und Kollisionsfunktionen nicht mehr gültig sind (allerdings nur, wenn der Raum, in dem es platziert wird, auch als Physikraum markiert ist. Siehe .
+    den Abschnitt über die <a href="../Room_Properties/Room_Properties.htm">Eigenschaften des Raumeditors</a>). Wenn Sie dies aktivieren, öffnet das Objekt-Ressourcenfenster ein neues verkettetes Fenster für den Physik-Editor:</p>
+  <p><img alt="Object Editor Physics" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Physics.png">Bevor Sie mit der Bearbeitung der Werte für das Physikverhalten beginnen, sollten Sie zunächst die <strong>Kollisionsform</strong> festlegen <strong>.</strong>
+    Mit dem &quot;normalen&quot; Kollisionssystem basieren Ihre Kollisionen auf der Maske des dem Objekt zugewiesenen Sprites, aber mit aktivierter Physik ist dies nicht <strong>mehr der Fall.</strong> Wir müssen dem Objekt selbst eine <strong>Kollisionsform</strong> zuweisen (dies wird korrekt als <strong>Fixture</strong> bezeichnet, siehe <a href="../../GameMaker_Language/GML_Reference/Physics/Physics.htm">Die Physikfunktionen</a> für weitere Informationen), die entweder ein Kreis, ein Rechteck oder ein Polygon sein kann
+    Form sein kann, die Sie selbst definieren. Wenn Sie auf die Schaltfläche <strong>Modify Collision Shape</strong> klicken, wird das folgende verkettete Fenster zum Bearbeiten der Form geöffnet:</p>
+  <p><img alt="Object Editor Physics Shape Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_PhysicsShape.png">Dieser sieht ähnlich aus wie der <a href="../Paths.htm">Pfad-Editor</a> und funktioniert auch ähnlich. Je nach
+    der von Ihnen gewählten Maske kann er jedoch etwas restriktiver sein:</p>
+  <ul class="colour">
+    <li>Wenn Sie eine <strong>kreisförmige </strong>Maske haben, dann können Sie nur einen der Pfadpunkte ziehen, um den Kreisdurchmesser größer oder kleiner zu machen</li>
+    <li>Wenn Sie eine <strong>rechteckige </strong>Maske haben, können Sie jede der vier Ecken verschieben, aber die entsprechenden Ecken passen ihre Position automatisch an, um immer ein Rechteck zu erhalten</li>
+    <li>Wenn Sie eine <strong>benutzerdefinierte </strong>(Polygon-)Maske haben, muss diese mindestens 3 und maximal 8 Punkte aufweisen und konvex sein (siehe Bild unten).</li>
+  </ul>
+  <p><img alt="Object Editor Physics Shape Type" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_PhysicsShape.png">Nachdem Sie Ihre Form festgelegt haben, müssen Sie die grundlegenden physikalischen Eigenschaften definieren, die Ihr Objekt haben soll. Diese
+    werden durch Ändern der folgenden Parameter konfiguriert:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Dichte</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Die Dichte von etwas ist definiert als seine Masse pro Volumeneinheit, was im Grunde bedeutet, wie viel Masse in den Raum gezwängt ist, den es in der Welt einnimmt. Ein Luftballon hat also eine geringe Dichte, da er wenig Masse hat, die einen großen Raum einnimmt, während
+      ein Bleistab eine hohe Dichte hätte, da er eine große Masse hat, aber wenig Raum einnimmt. In der 2D-Physikwelt von <span class="notranslate">GameMaker Studio 2</span> wird die Masse automatisch aus den Werten, die Sie für die Dichte eingeben, und aus der Fläche der Form, die Sie für die Vorrichtung definieren, berechnet.
+      Form, die Sie für die Halterung definieren. Dies hat einen direkten Einfluss auf die Trägheit und das Verhalten bei Kollisionen und Kräften, d. h., wenn Sie eine kleine Form mit einer hohen Dichte definieren, hat sie eine sehr große Masse (wie ein Stab aus
+      Blei), aber wenn Sie eine große Form mit einer niedrigen Dichte definieren, wird sie eine viel geringere Masse haben (wie ein Luftballon).</p>
+    <p class="dropspot">Beachten Sie, dass das Setzen der Dichte auf 0 ein &quot;statisches&quot; Einbauteil erzeugt, das im Wesentlichen unendlich dicht ist und nicht durch externe Kräfte oder Kollisionen beeinflusst wird, außer in speziellen Fällen, in denen die Instanz als kinematisch erzeugt wurde <strong>(siehe</strong> 
+      unten für weitere Details).</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Rückgabe</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">In der Physik ist die Restitution definiert als &quot;die Rückkehr eines Objekts oder Systems in seinen ursprünglichen Zustand nach elastischer Verformung&quot;, aber da die Fixtures im GameMaker <span class="notranslate">Studio 2</span> wirklich starre Körper <span class="notranslate">sind</span> und nicht verformt werden können, ist die Restitution eigentlich
+      eine Art, zu sagen, wie &quot;federnd&quot; das Fixture ist. Diese Einstellung wirkt sich darauf aus, wie stark ein Objekt &quot;hüpft&quot;, wenn es mit anderen Objekten kollidiert, und ist abhängig von anderen Kräften, die auf die Instanz wirken, wie Schwerkraft und Reibung.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Kollisionsgruppe</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Standardmäßig ist die Kollisionsgruppe für alle Physikobjekte 0, und das bedeutet, dass sie wie normal interagieren, was wiederum bedeutet, dass sie <strong>ein Kollisionsereignis haben müssen, um zu interagieren</strong> (ein einfacher Kommentar reicht aus, um die Kollision auszulösen), ansonsten
+      wird keine Kollision registriert. Sie können jedoch auch festlegen, dass ein Objekt zu einer bestimmten, nummerierten <strong>Kollisionsgruppe</strong> gehören soll. Indem Sie Objekte einer <em>positiven </em>Kollisionsgruppe zuordnen (z. B.: drei Objekte sind alle in Gruppe
+      &quot;2&quot;) teilen Sie GameMaker <span class="notranslate">Studio 2</span> mit <span class="notranslate">, dass Instanzen</span> dieser Objekte immer <em>kollidieren </em>sollen, auch wenn sie nichts in ihrem Kollisionsereignis haben, und zwar unter Berücksichtigung der physikalischen Eigenschaften, die Sie ihnen zugewiesen haben, und
+      dem Raum, in dem sie sich befinden. Wenn Sie umgekehrt Objekte mit einer <em>negativen </em>Kollisionsgruppe haben (d. h. vier Objekte, denen &quot; -1&quot; zugewiesen ist), teilen Sie GameMaker <span class="notranslate">Studio 2</span> mit, dass diese nie kollidieren sollen <em>und </em>alle Kollisionsereignisse zwischen ihnen ignoriert werden.
+      Ereignisse zwischen ihnen werden ignoriert.</p>
+    <p class="note"><strong>HINWEIS</strong>: Die Verwendung von Kollisionsgruppen erhöht den Verarbeitungsaufwand für das Physiksystem dramatisch und sollte nur verwendet werden, wenn es unbedingt notwendig ist, und Sie sollten so wenige Gruppen wie möglich haben.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Lineare Dämpfung</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Die Dämpfung wird verwendet, um die Geschwindigkeit einer Instanz in der Physikwelt zu reduzieren, während sie sich durch den Raum bewegt. Im Prinzip ist dies wie die Reibung an einer Oberfläche in der &quot;echten&quot; Welt, aber im GameMaker <span class="notranslate">Studio 2-Physiksystem</span> wird die Reibung tatsächlich
+      aber im Physiksystem von GameMaker Studio 2 wird Reibung nur angewendet, wenn zwei Instanzen mit Kollisionsformen (Fixtures) in Kontakt sind. Sie können die lineare Dämpfung also eher als eine Art &quot;Luftreibung&quot; betrachten, die jede sich bewegende Physikinstanz mit der Zeit verlangsamt, ohne dass ein Kontakt mit einer anderen Physikinstanz erforderlich ist.
+      einer anderen physikalischen Instanz.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Dämpfung winklig</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Wenn Sie an ein beliebiges rotierendes Objekt in der &quot;realen Welt&quot; denken, sofern es nicht über einen Motor verfügt oder sich im Weltraum befindet, wird seine Rotation mit der Zeit durch den Einfluss äußerer Kräfte (wie mechanische Reibung oder Reibung gegen die Luft oder das Wasser
+      die ihn umgeben). Wir können die Option "Winkeldämpfung" verwenden, um diesen Effekt zu simulieren und die Rotationsgeschwindigkeit von Instanzen in der physikalischen Welt zu reduzieren, da sich sonst jede rotierende Instanz unendlich weiterdrehen würde.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Reibung</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Reibung ist die Kraft, die der Relativbewegung von aneinander gleitenden Materialelementen entgegenwirkt, was in der <span class="notranslate">GameMaker Studio 2-Physikwelt</span> als Impulsverlust durch die Kollision zweier Instanzen mit physikalischen Fixtures übersetzt wird.
+      Wenn also zwei Instanzen kollidieren, wird ihre Bewegung durch diesen Wert beeinflusst, wobei eine hohe Reibung einen größeren Impulsverlust verursacht als ein niedrigerer Wert.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>Schließlich gibt es noch drei weitere Optionen, die für Ihr Gerät ein- oder ausgeschaltet werden können: <strong>Sensor</strong>, <strong>Start Awake</strong> und <strong>Kinematic</strong>. Jedes dieser Flags verändert das Verhalten des Geräts auf folgende Weise
+    Weise:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Sensor</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Wenn Sie dieses Kontrollkästchen aktivieren, weisen Sie <span class="notranslate">GameMaker Studio 2</span> an, die physischen Eigenschaften des Objekts grundsätzlich zu &quot;ignorieren&quot;, aber dennoch ein Kollisionsereignis mit den Objekten in der Umgebung zurückzugeben. Auf diese Weise können Sie eine Instanz haben, die keine physische Präsenz
+      im Raum haben, die aber auf die Kollision einer anderen Instanz, z. B. des Spielers, reagieren und ihrerseits etwas tun kann, z. B. eine Tür öffnen oder eine Aktion an einer anderen Stelle des Raums auslösen.</p>
+    <p class="note"><strong>HINWEIS</strong>: Eine Sensorbefestigung löst das Kollisionsereignis <strong>nur</strong> dann aus, wenn die Kollision <strong>zum ersten Mal auftritt</strong>, d. h. Sie erhalten keinen Strom von Kollisionsereignissen, wenn sich die beiden Körper weiter überlappen (was traditionell
+      auftreten). Wenn sie aufhören, sich zu überlappen und sich anschließend überlappen, wird ein weiteres Kollisionsereignis ausgelöst.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Start wach</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Dies ist standardmäßig aktiviert und stellt den anfänglichen &quot;Zustand&quot; des Geräts zu Beginn des Raums dar, in dem es platziert wurde. Normalerweise möchten Sie, dass es von Anfang an wach ist (d. h. an der Physikwelt teilnimmt), aber manchmal kann dies
+      Dies kann jedoch manchmal zu bestimmten Instabilitäten und unerwünschten Effekten führen, die durch den abrupten Start der Physiksimulation entstehen. Um diese Effekte zu vermeiden, können Sie dieses Flag deaktivieren, und die Instanz wird mit schlafendem Fixture erstellt und nimmt nicht an der
+      an der Physiksimulation teil, bis etwas auf sie einwirkt.</p>
+    <p class="dropspot">Beachten Sie, dass Physikinstanzen als &quot;schlafend&quot; gekennzeichnet werden, wenn sie sich nicht mehr bewegen oder mit anderen Physikinstanzen interagieren, und eine &quot;schlafende&quot; Instanz ist einfach eine, die derzeit nicht vollständig von der Physiksimulation
+      von der Physiksimulation verarbeitet wird (was <a class="glossterm" data-glossterm="CPU-Overhead" href="#">CPU-Overhead</a> spart).</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Kinematisch</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">In einem physikbasierten Spiel wird es bestimmte Situationen geben, in denen Sie sich bewegen möchten, aber nicht möchten, dass Kräfte wie die Schwerkraft oder Kräfte, die durch Kollisionen mit dynamischen Objekten entstehen, auf Sie einwirken (denken Sie zum Beispiel an sich bewegende Plattformen in einem Plattformspiel
+      Beispiel). Wenn Sie bei solchen Objekten einfach die Dichte auf 0 setzen, geht die Physik davon aus, dass das Objekt <strong>statisch </strong>sein soll, und es reagiert auf nichts. Wenn Sie dieses Kontrollkästchen jedoch aktivieren, wird
+      ein statisches Objekt <strong>kinematisch </strong>und obwohl es immer noch nicht von Kollisionen und Kräften wie der Schwerkraft beeinflusst wird, kann es nun mit den entsprechenden Variablen bewegt oder gedreht werden (siehe <a href="../../GameMaker_Language/GML_Reference/Physics/Physics_Variables/phy_position_x.htm"><span class="inline">phy_position_x</span></a> und
+      <a href="../../GameMaker_Language/GML_Reference/Physics/Physics_Variables/phy_position_y.htm"><span class="inline">phy_position_y</span></a>, zum Beispiel).</p>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Objects.htm">Der Objekteditor</a></div>
+        <div style="float:right">Nächste: <a href="Object_Variables.htm">Objekt-Variablen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Physics Objects
+-->
+  <!-- TAGS
+objects_physics
+-->
+
+</body></html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sequenz_erstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_create" />
+  <meta name="rh-index-keywords" content="sequence_create" />
+  <meta name="search-keywords" content="sequence_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sequenz_erstellen</h1>
+  <p>Mit dieser Funktion können Sie ein neues Sequenz-Objekt erzeugen, dem Sie dann Spuren hinzufügen können. Die Funktion gibt eine <a href="../../../GML_Overview/Structs.htm">struct</a> zurück, auf die Sie dann zugreifen können, um die neu erstellte Sequenz einzurichten. Der Inhalt
+    dieser Struktur ist auf <a href="Sequence_Structs/The_Sequence_Object_Struct.htm">dieser Seite</a> beschrieben. Das Sequenz-Objekt struct kann dann verwendet werden, um Instanzen der Sequenz auf einer Raumebene mit der Funktion <a href="../Rooms/Sequence_Layers/layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>.
+    Beachten Sie, dass Sie Sequenz-Objekte, die Sie auf diese Weise anlegen, durch Aufruf der Funktion <a href="sequence_destroy.htm"><tt>sequence_destroy()</tt></a> entfernen, wenn sie nicht mehr benötigt werden, da sonst ein Speicherleck entsteht, das
+    Ihr Spiel verlangsamen und schließlich zum Absturz bringen kann.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sequence_create();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">myseq = sequence_create();<br> myseq.length = 120;<br> myseq.loopmode = seqplay_pingpong;</p>
+  <p>Der obige Code erzeugt eine neue Sequenz-Objektstruktur und legt deren Wiedergabelänge und Schleifenmodus fest.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequences.htm">Sequenzen</a></div>
+        <div style="float:right">Weiter: <a href="sequence_destroy.htm">sequence_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_create
+-->
+  <!-- TAGS
+sequence_create
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Alarm einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Alarm action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Alarm" />
+  <meta name="search-keywords" content="Set Alarm" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Alarm Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Alarm.png"> Alarm-Countdown einstellen</h1>
+  <p>Dieser Aktionsblock setzt einen bestimmten Alarm auf einen Countdown, und wenn der Alarm Null erreicht, wird das zugehörige <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Alarmereignis</a> ausgelöst. Sie geben die Alarmnummer von 0 bis 11 und
+    dann den Wert, auf den der Alarm gesetzt werden soll. Der verwendete Wert ist die Anzahl der &quot;Spielschritte&quot;, die vergehen sollen, bevor das Alarmereignis ausgelöst wird, und Sie können diesen Wert relativ zum aktuellen Alarmwert einstellen (addierend oder subtrahierend zum aktuellen
+    Wert). Beachten Sie, dass der Wert ein ganzzahliger Wert sein muss, und Sie können ihn auf -1 setzen, um den Alarm zu stoppen. Beachten Sie, dass beim Abwärtszählen eines Alarms das Ereignis ausgeführt wird, wenn es 0 erreicht, der Alarm dann aber auf -1 herunterzählt, um anzuzeigen, dass er beendet ist. Das Setzen eines
+    Alarms auf 0 wird das Ereignis <i>nicht</i> ausgeführt, da er dann im nächsten Schritt auf -1 herunterzählt. Beachten Sie, dass Sie weitere Alarme in derselben Aktion einstellen können, indem Sie auf das Plus-Symbol <img alt="Expand Arguments Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> neben der Aktion klicken.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Alarm Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Alarm.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Alarm</td>
+        <td>Der zu setzende Alarm (das entsprechende Alarmereignis wird ausgelöst, wenn er 0 erreicht).</td>
+      </tr>
+      <tr>
+        <td>Countdown</td>
+        <td>Der Rückwärtszählwert in Spielschritten.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Set Alarm Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Alarm.png">Der obige Aktionsblockcode erstellt eine lokale (temporäre) Variable und speichert den aktuellen Wert von
+    des Alarms[0]. Dieser wird dann überprüft und wenn er kleiner als 0 ist, wird der Alarm auf 60 gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Actions_Library.htm">Instanz-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Get_Alarm.htm">Alarm-Countdown erhalten</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Alarm
+-->
+  <!-- TAGS
+action_set_alarm
+-->
+</body>
+</html>

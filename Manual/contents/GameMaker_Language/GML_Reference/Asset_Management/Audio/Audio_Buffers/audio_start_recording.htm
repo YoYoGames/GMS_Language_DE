@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_start_aufzeichnung</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_start_recording" />
+  <meta name="rh-index-keywords" content="audio_start_recording" />
+  <meta name="search-keywords" content="audio_start_recording" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_start_aufzeichnung</h1>
+  <p>Diese Funktion startet die Audioaufnahme von der indizierten Rekorderquelle. Sie können die Anzahl der Rekorderquellen mit der Funktion <a href="audio_get_recorder_count.htm"><tt>audio_get_recorder_count()</tt></a>abrufen, und sobald Sie die Aufnahme starten, wird das
+    Audio wird in einem temporären Puffer gespeichert und löst ein <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">asynchrones Ereignis für die Audioaufzeichnung</a> aus. Dieses Ereignis wird bei jedem Schritt ausgelöst, bei dem die Aufnahme
+    stattfindet und erzeugt die spezielle <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a> in der Variablen <a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> mit den folgenden
+    Schlüssel/Wert-Paaren:</p>
+  <ul class="colour">
+    <li>&quot;<strong>buffer_id&quot; -</strong> die ID des temporären Puffers, den Sie zum Abrufen der Audiodaten verwenden können</li>
+    <li>&quot;<strong>channel_index&quot; -</strong> der Index des Aufnahmekanals (wie von der Funktion zurückgegeben), von dem diese Daten stammen</li>
+    <li>&quot;data_len<strong>&quot; -</strong> die Länge der empfangenen Daten (in Bytes)</li>
+  </ul>
+  <p>Beachten Sie, dass nach dem Auslösen des asynchronen Ereignisses die Audiodaten im temporären Puffer gelöscht werden, so dass Sie die Daten in einen benutzerdefinierten Puffer kopieren sollten, den Sie zuvor erstellt haben.</p>
+  <p class="note"><b>HINWEIS: </b>Die meisten Plattformen <b>mit Ausnahme von HTML5</b> unterstützen die Aufnahme von Audio in irgendeiner Form, aber das bedeutet nicht, dass alle Geräte dies zulassen, selbst wenn die Plattform dies tut, daher sollten Sie immer prüfen, ob die <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count()</tt></a></span>    Funktion einen Wert größer als 0 zurückgibt, um zu prüfen, ob Aufnahmegeräte verfügbar sind, bevor Sie die restlichen Aufnahmefunktionen verwenden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_start_aufzeichnung(recorder_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>schreiber_index</td>
+        <td>Der Index der zu verwendenden Schreiberquelle.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Puffer-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">audio_record = audio_start_recording(0);</p>
+  <p>Der obige Code startet die Aufnahme von der Rekorderquelle 0 und speichert den Kanalindex der Aufnahme in der Variablen &quot;audio_record&quot; zur Verwendung im asynchronen <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">Ereignis &quot;Audioaufnahme&quot;.</a> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Audio.htm">Audio-Puffer</a></div>
+        <div style="float:right">Nächste: <a href="audio_stop_recording.htm">Audio_Stop_Aufnahme</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_start_recording
+-->
+  <!-- TAGS
+audio_start_recording
+-->
+</body>
+</html>

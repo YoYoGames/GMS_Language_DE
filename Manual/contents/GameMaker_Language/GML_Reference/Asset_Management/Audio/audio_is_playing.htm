@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_ist_abspielend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_is_playing" />
+  <meta name="rh-index-keywords" content="audio_is_playing" />
+  <meta name="search-keywords" content="audio_is_playing" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_ist_abspielend</h1>
+  <p>Diese Funktion prüft den angegebenen Sound, um zu sehen, ob er gerade abgespielt wird. Der Sound kann entweder eine einzelne Instanz eines Sounds sein (der Index für einzelne abgespielte Sounds kann in einer Variablen gespeichert werden, wenn die Funktion <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> oder 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> Funktionen gespeichert werden) oder ein Sound-Asset sein. In diesem Fall werden <i>alle</i> Instanzen des angegebenen Sounds überprüft, und wenn einer von ihnen abgespielt wird, gibt die Funktion <tt>true</tt> zurück, andernfalls
+      wird sie <tt>false</tt> zurückgeben. Beachten Sie, dass diese Funktion auch dann <tt>true</tt> zurückgibt, wenn der überprüfte Sound zuvor mit der Funktion <a href="audio_pause_sound.htm"><tt>audio_pause_klang()</tt></a> Funktion angehalten wurde.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_is_playing(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu prüfenden Tons.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !audio_is_playing(snd_Wasserfall)<br> {
+    <br> audio_play_sound_at(snd_Wasserfall, x, y, 0, 300, true, 1);<br> }
+  </p>
+  <p>Der obige Code prüft, ob der in der Variablen &quot;snd_Waterfall&quot; indizierte Sound gerade abgespielt wird, und wenn er false zurückgibt, wird <tt>der</tt> Sound an seiner Raumposition geloopt, mit einer Fall-off-Distanz
+    von 300 und einer niedrigen Priorität.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_is_paused.htm">audio_is_paused</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_is_playing
+-->
+  <!-- TAGS
+audio_is_playing
+-->
+</body>
+</html>

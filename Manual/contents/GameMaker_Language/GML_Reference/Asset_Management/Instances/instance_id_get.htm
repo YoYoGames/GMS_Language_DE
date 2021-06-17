@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_id_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_id_get" />
+  <meta name="rh-index-keywords" content="instance_id_get" />
+  <meta name="search-keywords" content="instance_id_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_id_get</h1>
+  <p>Mit dieser Funktion können Sie den eindeutigen ID-Wert einer beliebigen Instanz aus der aktuell aktiven Instanzliste abrufen. Sie geben den Index in der Instanzliste an, von dem Sie die ID erhalten möchten, und die Funktion gibt den Wert zum Speichern in einer Variablen zurück.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">instance_id_get(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index innerhalb der Instanzliste von 0 - (Instanzanzahl - 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Instanz-ID-Wert (real)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">for (var i = 0; i &lt; instance_count; ++i;)<br> {
+    <br> var temp_id = instance_id_get(i);<br> with (temp_id)<br> {<br> speed += 0.1;<br> } <br> }</p>
+  <p>Der obige Code geht in einer Schleife durch alle Instanzen innerhalb des Raums und addiert 0,1 zu ihrer Geschwindigkeit.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="instance_id.htm">instance_id</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_id_get
+-->
+  <!-- TAGS
+instance_id_get
+-->
+</body>
+</html>

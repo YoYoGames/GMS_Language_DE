@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Geräteeingang</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Device Input" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Device Input,mb_left,mb_middle,mb_right,mb_none,mb_any" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Geräteeingang</h1>
+  <p>Wenn Ihr Spiel auf die Plattformen ausgerichtet ist, die Multi-Touch erlauben, sollten Sie diese Funktionen verwenden. Sie funktionieren so, wie ein PC mit mehreren angeschlossenen Mäusen funktionieren würde, und die Konstanten, auf die geprüft wird, sind die gleichen wie die für die Standard-Mausfunktionen
+    die für die <a href="../Mouse_Input/Mouse_Input.htm">Standard-Mausfunktionen</a> verwendet werden:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>mb_links</td>
+        <td>Die linke Maustaste</td>
+      </tr>
+      <tr>
+        <td>mb_middle</td>
+        <td>Die mittlere Maustaste (dies ist möglicherweise nicht für alle Zielplattformen gültig)</td>
+      </tr>
+      <tr>
+        <td>mb_rechts</td>
+        <td>Die rechte Maustaste</td>
+      </tr>
+      <tr>
+        <td>mb_side1*</td>
+        <td>Seitliche Maustaste 1</td>
+      </tr>
+      <tr>
+        <td>mb_side2*</td>
+        <td>Seitliche Maustaste 2</td>
+      </tr>
+      <tr>
+        <td>mb_beliebig</td>
+        <td>Eine der Maustasten</td>
+      </tr>
+      <tr>
+        <td>mb_keine</td>
+        <td>Keine Maustaste</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><br> * <strong>HINWEIS</strong>: Die Schaltflächen <strong>mb_side1</strong> und <strong>mb_side2 </strong>sind nur unter <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span>, <span class="notranslate">Ubuntu</span> und HTML5 verfügbar.</p>
+  <p>Die Funktionen können alle einen &quot;Touch&quot;-Wert annehmen, der einer Berührung auf dem Gerätedisplay entspricht. Die maximale Anzahl der Berührungen, die erkannt werden können, hängt jedoch stark vom Gerät und dem verwendeten Betriebssystem ab. Zum Beispiel können einige <span class="notranslate">Low-End-Android</span>
+    Geräte möglicherweise nur 2 oder 3 Berührungen gleichzeitig erkennen, während ein UWP-Gerät möglicherweise bis zu 10 Berührungen erkennen kann. Beachten Sie auch, dass auf Touchscreen-Geräten ein Doppeltipp als das Äquivalent eines Ereignisses der <b>rechten Maustaste</b> zurückgegeben wird. Wenn Sie also
+    Wenn Sie also z. B. mehrere Berührungen in schneller Folge erkennen müssen, müssen Sie <b>sowohl</b> auf <tt>mb_left</tt> als auch auf <tt>mb_right</tt> prüfen. Diese Funktionalität kann ein- oder ausgeschaltet werden mit <a href="device_mouse_dbclick_enable.htm"><tt>device_mouse_dbclick_enable()</tt></a>.</p>
+  <p>Nachfolgend finden Sie eine Liste aller gerätespezifischen Steuerfunktionen:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="device_mouse_check_button.htm">device_mouse_check_button</a></li>
+    <li><a href="device_mouse_check_button_pressed.htm">device_mouse_check_button_pressed</a></li>
+    <li><a href="device_mouse_check_button_released.htm">device_mouse_check_button_released</a></li>
+    <li><a href="device_mouse_dbclick_enable.htm">device_mouse_dbclick_enable</a></li>
+    <li><a href="device_mouse_x.htm">gerät_maus_x</a></li>
+    <li><a href="device_mouse_y.htm">gerät_maus_y</a></li>
+    <li><a href="device_mouse_raw_x.htm">device_mouse_raw_x</a></li>
+    <li><a href="device_mouse_raw_y.htm">device_mouse_raw_y</a></li>
+    <li><a href="device_mouse_x_to_gui.htm">gerät_maus_x_zu_gui</a></li>
+    <li><a href="device_mouse_y_to_gui.htm">gerät_maus_y_zu_gui</a></li>
+    <li><a href="device_is_keypad_open.htm">gerät_ist_tastatur_offen</a></li>
+    <li><a href="device_get_tilt_x.htm">gerät_gekippt_x</a></li>
+    <li><a href="device_get_tilt_y.htm">gerät_gekippt_y</a></li>
+    <li><a href="device_get_tilt_z.htm">gerät_gekippt_z</a></li>
+  </ul>
+  <p> </p>
+  <p>Bitte beachten Sie, dass Sie auf mobilen Geräten<span class="notranslate">(Android</span>, <span class="notranslate">iOS</span> und <span class="notranslate">Windows Phone</span>) jederzeit die Zurück-Taste verwenden können, da sie der <b>Tastaturrücktaste</b> zugeordnet ist, die die <span class="notranslate">GameMaker Studio</span> <a href="../Keyboard_Input/Keyboard_Input.htm">2-Tastaturkonstante</a> <tt>vk_backspace</tt> ist, so dass Sie Prüfungen für diese Taste durchführen und Aktionen auf diesen Geräten ausführen können, als ob die Zurück-Taste verwendet worden wäre. Beachten Sie auch, dass das HTML5-Target nur für &quot;Gerät 0&quot; Eingaben korrekt akzeptiert, wenn Sie diese Funktionen verwenden.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Game_Input.htm">Spiel-Eingabe</a></div>
+        <div style="float:right">Nächste: <a href="../Gesture_Input/Gesture_Input.htm">Gesteneingabe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Device Input Functions
+mb_left
+mb_middle
+mb_right
+mb_none
+mb_any
+-->
+  <!-- TAGS
+device_functions
+-->
+</body>
+</html>

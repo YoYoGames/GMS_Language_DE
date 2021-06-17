@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_section_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_section_exists" />
+  <meta name="rh-index-keywords" content="ini_section_exists" />
+  <meta name="search-keywords" content="ini_section_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_section_exists</h1>
+  <p>Diese Funktion prüft, ob ein Abschnitt in der aktuell geöffneten ini existiert und gibt <tt>true</tt> zurück, wenn dies der Fall ist, andernfalls <tt>false</tt>. Diese Prüfung ist nicht notwendig, um Fehler zu vermeiden, denn wenn ein Abschnitt nicht existiert, gibt das Lesen aus einem nicht existierenden
+    Diese Prüfung ist nicht notwendig, um Fehler zu vermeiden, denn wenn ein Abschnitt nicht existiert, wird beim Lesen aus einem nicht existierenden Abschnitt nur ein Standardwert zurückgegeben, aber sie kann nützlich sein, um zu sehen, ob eine Ini-Datei bestimmte Daten gespeichert hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ini_section_exists(section);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Abschnitt</td>
+        <td>Der Abschnitt in der geöffneten .ini-Datei, auf den geprüft werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> if !ini_section_exists(&quot;save1&quot;)<br> {
+    <br> global.savegame = &quot;1&quot;;<br> }
+    <br> ini_close();
+  </p>
+  <p>Dadurch wird die Variable global.savegame auf &quot;1&quot; gesetzt, wenn &quot;save1&quot; NICHT gefunden wird. Mit einer for-Schleife könnte dies als grundlegende Methode verwendet werden, um herauszufinden, wie viele Savegames es für ein Spiel gibt (d. h.: Erstellen eines Systems für mehrere gleichzeitige Savegames
+    Spiele für ein Spiel).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Ini_Files.htm">Ini-Dateien</a></div>
+        <div style="float:right">Weiter: <a href="ini_key_delete.htm">ini_key_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_section_exists
+-->
+  <!-- TAGS
+ini_section_exists
+-->
+</body>
+</html>

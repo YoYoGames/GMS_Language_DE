@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_get" />
+  <meta name="rh-index-keywords" content="array_get" />
+  <meta name="search-keywords" content="array_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_get</h1>
+  <p>Mit dieser Funktion können Sie den Wert von einem Index in einem Array abrufen. Die Funktion erfordert, dass Sie eine Variable bereitstellen, die das Array und den Index enthält, um den Wert aus diesem Array zu erhalten. Beachten Sie, dass das Spiel mit einem Fehler abstürzt, wenn der angegebene Array-Index außerhalb der Grenzen liegt.
+    dann stürzt das Spiel mit einem Fehler ab. Diese Funktion kann auch für mehrdimensionale Arrays verwendet werden, solange Sie bei der Angabe des Array-Indexes angeben, welche Dimension Sie abrufen wollen, indem Sie diesem Muster folgen:</p>
+  <p class="code">// 1D-Array<br> array_get(mein_Array, 0);<br> // 2D-Array<br> array_get(mein_Array[0], 0);<br> // 3D-Array<br> array_get(mein_Array[0][0], 0);<br> // usw...</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">array_get(variable, index);</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argument</th>
+          <th>Beschreibung</th>
+        </tr>
+        <tr>
+          <td>variabel</td>
+          <td>Die Variable, die das Array enthält.</td>
+        </tr>
+        <tr>
+          <td>index</td>
+          <td>Der Index des Arrays, aus dem der Wert geholt werden soll.</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Jeder gültige Datentyp, den ein Array aufnehmen kann.</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> show_debug_message(array_get(my_array, i));<br> }
+  </p>
+  <p>Der obige Code gibt die ersten 10 Elemente des angegebenen auf der Konsole aus.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Variable_Functions.htm">Variable Funktionen</a></div>
+        <div style="float:right">Weiter: <a href="array_set.htm">array_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_get
+-->
+  <!-- TAGS
+array_get
+-->
+</body>
+</html>

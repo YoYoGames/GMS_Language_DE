@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprung_pos zeichnen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_pos" />
+  <meta name="rh-index-keywords" content="draw_sprite_pos" />
+  <meta name="search-keywords" content="draw_sprite_pos" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprung_pos zeichnen</h1>
+  <p>Mit dieser Funktion können Sie ein Sprite verzerrt über den durch die vier Eckkoordinaten definierten Bereich zeichnen. Die ersten beiden Argumente sind das zu zeichnende Sprite und das Sub-Image des Sprites (das gleiche wie bei der Funktion <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a>)
+    aber die nächsten sind diejenigen, die die Position jeder der vier Ecken des <b>Begrenzungsrahmens</b> des angegebenen Sprites definieren. Diese sollten im <i>Uhrzeigersinn</i> angegeben werden, also ist die erste Koordinate die obere linke, dann die obere rechte, dann die untere
+    rechts und schließlich die untere linke. Sie können auch einen Wert für das Alpha des Sprites setzen, um es mit Transparenz zu zeichnen. Das folgende Bild veranschaulicht, wie diese Funktion funktioniert:</p>
+  <p><img alt="draw_sprite_pos example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_sprite_pos.png" /></p>
+  <p class="note"><b>WARNUNG!</b> Das obige Bild dient nur zur Veranschaulichung. Wenn Sie diese Funktion auf ein Sprite anwenden, erhalten Sie andere Ergebnisse und es kann zu einer &quot;Scherung&quot; der Textur kommen, da ein Sprite aus einem Quad von Primitiven aufgebaut ist.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktion ist nur für <b>Bitmap-Sprites</b> nützlich und funktioniert nicht mit SWF- oder JSON (Spine)-Sprites.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie diese Funktion verwenden, sollten Sie die Einstellung " <a href="../../../../Settings/Texture_Groups.htm">Automatisch beschneiden"</a> für Texturseiten deaktiviert haben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">draw_sprite_pos(sprite, subimg, x1, y1, x2, y2, x3, y3, x4, y4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>Der Index des zu zeichnenden Sprites.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Das Subimg (Frame) des zu zeichnenden Sprites (image_index oder -1 entsprechen dem aktuellen Frame der Animation im Objekt).</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Die erste x-Koordinate.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Die erste y-Koordinate.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Die zweite x-Koordinate.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Die zweite y-Koordinate.</td>
+      </tr>
+      <tr>
+        <td>x3</td>
+        <td>Die dritte x-Koordinate.</td>
+      </tr>
+      <tr>
+        <td>y3</td>
+        <td>Die dritte y-Koordinate.</td>
+      </tr>
+      <tr>
+        <td>x4</td>
+        <td>Die vierte x-Koordinate.</td>
+      </tr>
+      <tr>
+        <td>y4</td>
+        <td>Die vierte y-Koordinate.</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td>Das Alpha des Sprites (von 0 bis 1, wobei 0 transparent und 1 undurchsichtig ist).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">draw_sprite_pos(sprite_index, image_index, x - 100, y - 50, x - 50, y +150, x + 100, y + 200, x + 100, y, 1);</p>
+  <p>Der obige Code zeichnet das Sprite, das mit der Instanz verbunden ist, die den Code ausführt, verzerrt um die x/y-Position der Instanz und mit einem vollständig opaken Alpha.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprites_And_Tiles.htm">Sprites und Kacheln</a></div>
+        <div style="float:right">Weiter: <a href="draw_sprite_tiled.htm">draw_sprite_tiled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_pos
+-->
+  <!-- TAGS
+draw_sprite_pos
+-->
+</body>
+</html>

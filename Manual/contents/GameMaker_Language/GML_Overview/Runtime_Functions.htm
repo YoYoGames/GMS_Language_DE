@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Laufzeit-Funktionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the use of runtime functions" />
+  <meta name="rh-index-keywords" content="Runtime Functions" />
+  <meta name="search-keywords" content="functions,built-in functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Laufzeit-Funktionen</span> </h1>
+  <p>Die allgemeine Definition einer Funktion ist etwa so:</p>
+  <p><i>Eine Funktion hat einen Eingang und einen Ausgang, und der Ausgang ist irgendwie mit dem Eingang verbunden.</i></p>
+  <p>In <span class="notranslate">GameMaker Studio 2</span> bedeutet dies zwei verschiedene Dinge, die aber beide auf die gleiche Weise funktionieren:</p>
+  <ul class="colour">
+    <li><b><span class="notranslate">Laufzeitfunktionen</span></b> - Eine <i><span class="notranslate">runtime</span></i> Funktion ist eine Funktion, die als Teil des <b><span class="notranslate">GameMaker-Sprache</span></b><span class="notranslate">(GML</span>). Diese sind in die Sprache eingebaut und können verwendet werden, um Dinge in Ihren Spielen zu bewirken, und es gibt eine große Anzahl von <span class="notranslate">GML</span>
+     <span class="notranslate">Laufzeitfunktionen</span> zur Verfügung, die alle im Abschnitt " <a href="../GML_Reference/GML_Reference.htm">Sprachreferenz</a> " des Handbuchs erläutert werden.</li>
+    <li><b>Skriptfunktionen und Methoden </b>- <a href="Script_Functions.htm"><em>Skript </em><em>Funktionen</em></a> und <a href="Method_Variables.htm"><em>M</em><i>ethoden-Variablen</i></a> sind Funktionen, die Sie selbst erstellt haben, indem Sie die Grundbausteine
+      Bausteine des <b><span class="notranslate">GameMaker-Sprache</span></b><span class="notranslate">(GML</span>) erstellt haben, und diese können als Teil ihres Codes <span class="notranslate">Laufzeitfunktionen</span> enthalten.</li>
+  </ul>
+  <p>In beiden obigen Fällen hat eine Funktion die Form eines <i>Funktionsnamens</i>, gefolgt von den <i><span class="glossextra">Eingangsargumenten</span></i> zwischen Klammern <tt>()</tt> und getrennt
+    durch Kommata getrennt sind (wenn die Funktion keine Eingabeargumente hat, werden nur Klammern verwendet). Diese Seite konzentriert sich auf die <strong><span class="notranslate">Runtime-Funktionen</span></strong> (d. h. die Funktionen, die in <span class="notranslate">GameMaker</span> eingebaut sind und die <span class="notranslate">GameMaker-Sprache</span> bilden), aber die allgemeinen Regeln
+    gelten für alle Funktionstypen.</p>
+  <p>Hier sehen Sie einen Überblick über den Aufbau einer Funktion:</p>
+  <p class="code">&lt;Funktion&gt;(&lt;arg0&gt;, &lt;arg1&gt; ,... &lt;argN&gt;);</p>
+  <p>Einige Funktionen können Werte zurückgeben und in <a class="glossterm" data-glossterm="Ausdruck" href="#">Ausdrücken</a>verwendet werden, während andere einfach nur Befehle ausführen, wie in den folgenden zwei <span class="notranslate">Laufzeitfunktionen</span> gezeigt wird
+    Beispiele:</p>
+  <p class="code">// Zerstört die aufrufende Instanz<br> // Dies erfordert keine Argumente und gibt nichts zurück<br> instance_destroy();
+    <br>
+    <br> // Ermittelt den Abstand von der aktuellen Instanzposition zur Mausposition<br> // Dies benötigt vier Argumente und gibt einen reellen Wert zurück<br> dist = point_distance(x, y, mouse_x, mouse_y);</p>
+  <p class="note"><strong>HINWEIS</strong>: Überall dort, wo im Handbuch &quot;N/A&quot; als Rückgabewert für eine Funktion angegeben ist, bedeutet dies, dass die Funktion keinen Wert als Teil ihrer Operation zurückgeben soll. Wenn Sie versuchen, nach einem Rückgabewert dieser Funktionen zu suchen, erhalten Sie
+    erhalten Sie den Wert <span class="inline">undefined</span>. </p>
+  <p>Manchmal kann der Rückgabewert einer Funktion ein Wert sein, den Sie in einer <a class="glossterm" data-glossterm="Zuordnung" href="#">Zuweisung</a> verwenden möchten, aber Sie sollten beachten, dass es nicht möglich ist, jede Funktion <em>direkt</em> als linke
+    Seite einer Zuweisung zu verwenden. Zum Beispiel würde der folgende Code zum Einstellen der Geschwindigkeit einer Instanz einen Fehler ergeben:</p>
+  <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
+  <p>Der Rückgabewert für den Ausdruck in diesem Codebeispiel ist eine Ganzzahl (der eindeutige ID-Wert für die nächste Instanz) und muss daher in Klammern eingeschlossen werden, um auf diese Weise verwendet zu werden und die erforderliche Instanz korrekt zu adressieren (weitere Informationen finden Sie unter <a href="Addressing_Variables_In_Other_Instances.htm">Adressieren von Variablen in anderen Instanzen</a> ). Der obige Code würde korrekt geschrieben werden als:</p>
+  <p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
+    <br> /oder richtiger noch<br>
+    <br> var inst = instance_nearest(x, y, obj);<br> inst.speed = 0;</p>
+  <p>Der Abschnitt " <a href="../GML_Reference/GML_Reference.htm">Sprachreferenz"</a> des Handbuchs listet alle Ihnen zur Verfügung stehenden <span class="notranslate">Laufzeitfunktionen</span> auf und gibt Beispiele für deren Verwendung sowie weitere wichtige Informationen darüber, was sie zurückgeben können
+    oder Ereignisse, die sie auslösen können, etc. Weitere Informationen zu benutzerdefinierten Skriptfunktionen und Methoden finden Sie im Abschnitt über <a href="Script_Functions.htm">Skriptfunktionen</a> und im Abschnitt über <a href="Method_Variables.htm">Methodenvariablen</a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GML_Overview.htm"><span class="notranslate">GML-Übersicht</span></a></div>
+        <div style="float:right">Nächste: <a href="Commenting_Code.htm">Code auskommentieren</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Runtime</span> Functions
+-->
+  <!-- TAGS
+<span class="notranslate">runtime</span>_functions
+-->
+
+</body></html>

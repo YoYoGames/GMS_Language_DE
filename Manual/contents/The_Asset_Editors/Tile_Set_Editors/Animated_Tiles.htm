@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Animierte Kacheln</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor animated tiles works" />
+  <meta name="rh-index-keywords" content="Tile Sets - Animated Tiles" />
+  <meta name="search-keywords" content="animated tiles,tile animation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Animierte Kacheln</h1>
+  <p>Kacheln werden im Allgemeinen als statische Zellen innerhalb des Spielraums betrachtet, aber mit <span class="notranslate">GameMaker Studio 2</span> ist es möglich, sie zu animieren, genau wie Sie es mit einem Sprite tun würden. Warum nicht einfach Sprites verwenden, fragen Sie? Nun, Sprites haben einen gewissen Verarbeitungsaufwand, da sie
+    da sie mit einer Bounding Box verbunden sind und die Art und Weise, wie sie gerendert werden, aber Kacheln haben einen viel geringeren Verarbeitungsaufwand und sind daher schneller zu rendern. Dies hat jedoch den Nachteil, dass Sie mit Kachelsatz-Animationen auf Folgendes beschränkt sind
+    Animationen zu erstellen, die eine Potenz von zwei Frames lang sein müssen - d. h. 2, 4, 8, 16 usw. Frames - und sie müssen natürlich innerhalb des Kachelrasters erstellt werden, <em>und </em>sie müssen alle mit der gleichen Geschwindigkeit animiert werden (auf einer Kachel-Set-Basis). Aber selbst
+    Auch mit diesen Einschränkungen sind animierte Kacheln eine leistungsstarke Funktion, die verwendet werden kann, um ansonsten statischen Umgebungen und Hintergründen Leben und Farbe zu verleihen.</p>
+  <p>Um eine Kachelanimation zu erstellen, müssen Sie zunächst ein Kachelset haben, das die benötigten Kacheln alle innerhalb eines Sprite-Bildes hat (aber nicht als Sprite-Frames, also ein einziges großes Sprite-Frame mit allen Animationsbildern darin), und dann klicken Sie im <a href="../Tile_Sets.htm">Kachelset-Editor</a> auf die Schaltfläche <strong>Kachelanimation</strong>, um den Animationseditor aufzurufen:</p>
+  <p><img alt="Tile Animation Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Animations.png">Das obige Beispielbild ist ein einzelnes Bild mit allen darin enthaltenen Animationsframes, aber es ist zu beachten, dass das Bild auch andere Nicht-Animationskacheln enthalten könnte.
+    auch andere Nicht-Animationskacheln enthalten kann, da Sie einen einzigen großen Kachelsatz verwenden und dann die Teile davon &quot;herauspicken&quot; können, aus denen Sie die Animation erstellen möchten. Sie könnten zum Beispiel ein großes Landschaftskachelset mit Bäumen, Erde und Wasser haben,
+    Erde und Wasser, und innerhalb des Kachelsatzes mehrere Kacheln haben, die animiert werden sollen, um das Wasser plätschern zu lassen.</p>
+  <p>Um eine Kachelanimation zu erstellen, müssen Sie zunächst eine Animation zur Animationsbibliothek hinzufügen, indem Sie auf die Schaltfläche <strong>Animation hinzufügen </strong> <img alt="Add Animation Icon" class="icon" src="../../assets/Images/Icons/Icon_AddArgument.png"> klicken.
+    einen leeren Animationsstreifen zur Bibliothek hinzufügt und Sie auffordert, eine Anzahl von Bildern auszuwählen, die verwendet werden sollen:</p>
+  <p><img alt="Add Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AnimationAdd.png">Sie erhalten dann eine Ansicht jedes leeren Animationsrahmens, wobei der Anfangsrahmen für Sie hervorgehoben ist:</p>
+  <p><img alt="An Empty Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_EmptyAnim.png">Wenn Sie dann zum Kachelsatzbild auf der linken Seite des Editors zurückgehen, können Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf eine beliebige Kachel klicken, um sie in die Animation einzufügen, und das Bild wird zum nächsten weitergeschaltet. Wenn Sie auf <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> auf aufeinanderfolgende Kacheln klicken, wird die Animation ausgefüllt.
+    Animation, die Sie dann durch Klicken auf die &quot;Play&quot;-Schaltfläche neben den Frames in der Vorschau anzeigen können:</p>
+  <p><img alt="Add Animation Frames" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AddFrames.gif">Sobald Sie das getan haben, wird Ihre Animation Teil der Animationsbibliothek und wenn Sie den <a href="../Rooms.htm">Raumeditor</a> aufrufen, können Sie sie auswählen und im Raum platzieren. Beachten Sie, dass, wenn Sie eine der Kacheln aus einer Animation auswählen, um sie in einem Raum zu platzieren, diese Kachel ab der ausgewählten Kachel animiert wird, so dass Sie eine Animation &quot;desynchronisieren&quot; können, indem Sie separate
+    Rahmen innerhalb des Raums platzieren und sie werden alle animiert. Der einzige Nachteil dabei ist, dass die Animationsgeschwindigkeit immer die gleiche ist, da sie für den gesamten Kachelsatz und nicht für einzelne Animationen innerhalb der Bibliothek definiert ist.</p>
+  <p>Ein paar Dinge sind bei Kacheln, die in Animationen verwendet werden, zu beachten:</p>
+  <ul class="colour">
+    <li>Wenn für die Kachel eine eigene Animation festgelegt wurde (es also eine Animation gibt, bei der sie als erste Kachel festgelegt ist), dann wird sie diese Animation verwenden.</li>
+    <li>Wenn die Kachel keine eigene Animation hat, sondern nur in einer anderen Animation verwendet wird, dann wird diese Animation ab der ersten Position verwendet, an der die Kachel in der Animation vorhanden ist.</li>
+    <li>Wenn die Kachel keine eigene Animation hat und in mehreren anderen Animationen verwendet wird, dann wird sie überhaupt nicht animiert. Sie müssen dann explizit eine Animation mit ihr als erste Kachel angeben.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Tile_Sets.htm">Kachel-Sets</a></div>
+        <div style="float:right">Nächste: <a href="Auto_Tiles.htm">Auto-Kacheln</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Animated Tiles
+-->
+  <!-- TAGS
+tile_set_editor_animated_tiles
+-->
+</body>
+</html>

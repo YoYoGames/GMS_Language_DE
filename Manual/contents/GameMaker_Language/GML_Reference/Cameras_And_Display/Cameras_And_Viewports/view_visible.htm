@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>anzeigen_sichtbar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_visible" />
+  <meta name="rh-index-keywords" content="view_visible" />
+  <meta name="search-keywords" content="view_visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>anzeigen_sichtbar</h1>
+  <p>Diese Variable kann verwendet werden, um herauszufinden, ob ein bestimmter Ansichtsanschluss derzeit sichtbar ist oder nicht. Sie können diese Variable auch setzen, um eine Ansicht effektiv &quot;ein-&quot; oder &quot;auszuschalten&quot;, indem Sie den Wert auf true (sichtbar) oder <tt>false</tt> (unsichtbar) setzen <tt>.</tt> Beachten Sie, dass selbst wenn Sie einen Ansichtsanschluss auf "sichtbar" gesetzt haben, wenn die Ansichtsanschlüsse nicht aktiviert sind (mithilfe der integrierten Variable <a href="view_enabled.htm"><tt>view_enabled</tt></a> oder im Raum-Editor aktivieren), werden sie nicht auf dem Bildschirm
+    dem Bildschirm angezeigt.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">view_visible[0 ... 7];</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolean<tt>(true</tt>: aktiviert, <tt>false</tt>: deaktiviert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !view_visible[0]<br> {
+    <br> view_visible[0] = true;<br> }
+  </p>
+  <p>Der obige Code prüft, ob view[0] sichtbar ist oder nicht, und wenn nicht, dann wird es auf sichtbar gesetzt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="view_xport.htm">view_xport</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_visible
+-->
+  <!-- TAGS
+view_visible
+-->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>weak_ref_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for weak_ref_create" />
+  <meta name="rh-index-keywords" content="weak_ref_create" />
+  <meta name="search-keywords" content="weak_ref_create,weak references" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>weak_ref_create</h1>
+  <p>Mit dieser Funktion können Sie eine <a class="glossterm" data-glossterm="schwacher Hinweis" href="#">schwache Referenz</a> auf eine struct erzeugen, die dann verwendet werden kann, um zu prüfen, ob die struct noch &quot;lebendig&quot; (referenziert) ist oder nicht im Spiel. Sie liefern die
+    Referenz auf die Struktur, die Sie verfolgen wollen, und die Funktion gibt eine andere Struktur zurück, die eine schwache Referenz auf diese Struktur ist. Beachten Sie, dass Sie überprüfen können, ob eine Referenz &quot;strong&quot; oder &quot;weak&quot; ist, indem Sie die Funktion <span class="inline"><a href="../Variable_Functions/instanceof.htm">instanceof()</a></span> verwenden,
+    da eine starke Referenz entweder &quot;<span class="inline">struct</span>&quot; oder den Namen der Konstruktorfunktion zurückgibt, die die Struktur erzeugt hat, oder &quot;<span class="inline">weakref</span>&quot;, wenn es sich um eine schwache Referenz handelt. Beachten Sie auch, dass
+    die &quot;weak reference&quot;-Struktur eine Variable &quot;<span class="inline">ref</span>&quot; hat, auf die zugegriffen werden kann, um die String-Referenz auf die betreffende Struktur zu erhalten, es sei denn, es wurde Garabage gesammelt, in diesem Fall wird <span class="inline">undefined</span> zurückgegeben.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">weak_ref_create(struct_to_track);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>struct_to_track</td>
+        <td>Die Struktur, für die Sie eine schwache Referenz erzeugen wollen</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Struktur</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">inventory_ref = weak_ref_create(inventory);</p>
+  <p>Der obige Code erzeugt eine schwache Referenz auf eine struct und speichert sie in einer Instanzvariablen zur späteren Verwendung.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Garbage_Collection.htm">Müllabfuhr</a></div>
+        <div style="float:right">Weiter: <a href="weak_ref_alive.htm">weak_ref_alive</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+weak_ref_create
+-->
+  <!-- TAGS
+weak_ref_create
+-->
+
+</body></html>

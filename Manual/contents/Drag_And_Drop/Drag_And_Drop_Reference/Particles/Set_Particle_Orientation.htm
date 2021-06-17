@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Partikelausrichtung einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Orientation action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particle Orientation" />
+  <meta name="search-keywords" content="Set Particle Orientation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Orientation Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Orientation.png"> Partikelausrichtung einstellen</h1>
+  <p>Diese Aktion wird verwendet, um die Partikelausrichtung einzustellen - den Winkel, in dem die Partikelbilder gezeichnet werden - der statisch sein oder so eingestellt werden kann, dass er im Laufe der Zeit zunimmt/abnimmt. Sie geben den eindeutigen ID-Wert für den Typ an, dessen Größe eingestellt werden soll (wie er zurückgegeben wurde, als
+    Sie geben den eindeutigen ID-Wert für den Typ an, für den Sie die Größe festlegen möchten (der zurückgegeben wurde, als Sie den Typ mit der Aktion &quot; <a href="Create_Particle_Type.htm">Partikeltyp erstellen</a>&quot; erstellt haben), und geben dann einen Bereich von anfänglichen Startausrichtungen an, dann den Betrag der Zunahme und schließlich das &quot;Wackeln&quot;. Die Ausrichtung, mit der ein Partikel erzeugt wird
+    Die Ausrichtung, mit der ein Partikel erzeugt wird, wird so berechnet, dass 0 rechts, 90 oben, 180 links und 270 unten ist, so dass eine minimale Einstellung von 0 und eine maximale Einstellung von 360 Partikel emittiert, bei denen jeder um einen zufälligen Betrag um 360° gedreht wird (beachten Sie, dass dies <b>keinen</b> Einfluss auf die Partikelrichtung hat).</p>
+  <p>Mit der Option zum Erhöhen einer Partikelausrichtung können Sie einen Wert eingeben, der bei jedem Spielbild der Partikellebensdauer zum Basisausrichtungswinkel addiert wird. Wenn Sie diesen Wert also z. B. auf 0,1 setzen, wird dem Bildwinkel in jedem Spielframe 0,1
+    Spiel-Frame. Beachten Sie, dass Sie hier auch negative Werte verwenden können, um den Partikel auch in die entgegengesetzte Richtung rotieren zu lassen, so dass positive Werte den Partikel gegen den Uhrzeigersinn rotieren lassen und negative im Uhrzeigersinn. Beachten Sie, dass die minimale Ausrichtungs
+   <i>Dekrement</i> -0,01 und das minimale <i>Inkrement</i> 0,01 ist.</p>
+  <p>Sie können auch die Option &quot;Wiggle&quot; für die Partikelausrichtung einstellen. Dies ist ein Wert, der zufällig zwischen 0 und dem von Ihnen angegebenen Wert generiert wird und dann bei jedem Schritt der Partikellebensdauer zum Partikelbildwinkel addiert oder subtrahiert wird,
+    wodurch das gezeichnete Bild in seiner Drehung schwankt. Offensichtlich sind größere Werte stärker ausgeprägt als kleinere, und dieser Wert kann sogar negativ sein, wobei der maximale Bereich zwischen -20 und 20 liegt.</p>
+  <p>Schließlich können Sie wählen, ob die Ausrichtung <i>relativ</i> zur Partikelrichtung sein soll oder nicht. Das bedeutet, dass, während der Partikel eine Richtung (und Geschwindigkeit) eingestellt hat, das Partikelbild auf der Grundlage dieses Vektors ausgerichtet wird. Beachten Sie, dass, wenn
+    Wenn Sie die Geschwindigkeit des Partikels reduzieren und diese während der Lebensdauer des Partikels den Wert 0 erreicht, setzt die fehlende Geschwindigkeit die Richtung auf den Standardwert von 0°.
+    Orientierungswinkel.</p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Particle Orientation Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Orientation.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Typ</td>
+        <td>Der eindeutige ID-Wert für den Partikeltyp, für den die Ausrichtung festgelegt werden soll</td>
+      </tr>
+      <tr>
+        <td>Min-Winkel</td>
+        <td>Die minimale Ausrichtung für den Partikeltyp (von -360 bis +360, Standardwert 0)</td>
+      </tr>
+      <tr>
+        <td>Max Winkel</td>
+        <td>Die maximale Ausrichtung für den Partikeltyp (von -360 bis +360, Voreinstellung 360)</td>
+      </tr>
+      <tr>
+        <td>Erhöhen Sie</td>
+        <td>Der Wert, der bei jedem Spiel-Frame zur Partikel-Typ-Orientierung hinzuaddiert wird (kann negativ sein, Minimum +/-0,01)</td>
+      </tr>
+      <tr>
+        <td>Wackeln</td>
+        <td>Der maximale Wert, der pro Schritt zufällig zur Partikelausrichtung addiert oder subtrahiert wird (+/-20).</td>
+      </tr>
+      <tr>
+        <td>Relativ zur Richtung</td>
+        <td>Ob der Partikelbildwinkel relativ zur Bewegungsrichtung des Partikels eingestellt werden soll (aktiviert) oder nicht (deaktiviert).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">Der obige Code des Aktionsblocks erstellt einen neuen Partikeltyp und weist seinen eindeutigen
+    ID-Wert einer globalen Variablen zu. Anschließend werden alle Eigenschaften für den Partikeltyp festgelegt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Actions.htm">Partikel-Aktionen</a></div>
+        <div style="float:right">Nächste: <a href="Set_Particle_Gravity.htm">Partikel Gravitation einstellen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Orientation
+-->
+  <!-- TAGS
+action_part_type_orientation
+-->
+</body>
+</html>

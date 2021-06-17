@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_exists" />
+  <meta name="rh-index-keywords" content="layer_sequence_exists" />
+  <meta name="search-keywords" content="layer_sequence_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_exists</h1>
+  <p>Mit dieser Funktion können Sie prüfen, ob ein Sequenzelement auf der angegebenen Ebene existiert. Sie geben die Ebenen-ID an, die eine Zeichenkette des Ebenennamens sein kann - wie im Raumeditor definiert - oder die eindeutige Ebenen-ID - wie von der Funktion <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>,
+    zurückgegeben wird, sowie die ID des Sequenzelements - wie sie von <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> oder von einer der <a href="../General_Layer_Functions/General_Layer_Functions.htm">Ebenenelement-Funktionen</a> zurückgegeben wird - und es wird
+   <tt>true</tt> zurück, wenn das angegebene Element existiert, ansonsten <tt>false</tt>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">layer_sequence_exists(layer_id, sequence_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Schicht_ID</td>
+        <td>Die eindeutige ID oder der Name der zu prüfenden Ebene</td>
+      </tr>
+      <tr>
+        <td>sequenz_element_id</td>
+        <td>Der eindeutige ID-Wert des Sequenzelements, auf das abgezielt werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Boolesche</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !layer_sequence_exists(&quot;Hintergrund&quot;, my_seq)<br> {
+    <br> my_seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_pause(my_seq);
+    <br> }
+  </p>
+  <p>Der obige Code prüft, ob das angegebene Sequenzelement vorhanden ist, und wenn nicht, wird eine neue Sequenz auf der angegebenen Ebene erstellt und dann pausiert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sequence_Layers.htm">Sequenzschichten</a></div>
+        <div style="float:right">Weiter: <a href="layer_sequence_create.htm">layer_sequence_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_exists
+-->
+  <!-- TAGS
+layer_sequence_exists
+-->
+</body>
+</html>

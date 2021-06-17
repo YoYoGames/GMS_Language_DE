@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_assign</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_assign" />
+  <meta name="rh-index-keywords" content="sprite_assign" />
+  <meta name="search-keywords" content="sprite_assign" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_assign</h1>
+  <p>Diese Funktion nimmt zwei zuvor erstellte (oder eingebundene) Sprite-Indizes und kopiert das Bild von einem in den anderen. Auf diese Weise können Sie ein Sprite in einen anderen Index kopieren (oder &quot;klonen&quot;). Beachten Sie, dass <i>Sie nicht in eine Spielressource kopieren können</i>.
+    Sie müssen das Sprite, in das kopiert werden soll, zuvor mit den Befehlen <a href="sprite_add.htm"><tt>sprite_add()</tt></a> oder  <a href="sprite_duplicate.htm"><tt>sprite_duplicate()</tt></a> Funktionen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">sprite_assign(index, sprite);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Sprites, in das kopiert (d. h. überschrieben) werden soll.</td>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>Das Sprite, von dem kopiert werden soll.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if sprite_exists(global.Player_Sprite)<br> {
+    <br> var t_spr = sprite_add(&quot;player.png&quot;, 16, true, true, 0, 0);<br> sprite_assign(global.Player_Sprite, t_spr);<br> sprite_delete(t_spr);
+    <br> }
+    <br> sonst
+    <br> {
+    <br> global.Player_Sprite = sprite_add(&quot;player.png&quot;, 16, true, true, 0, 0);<br> }
+  </p>
+  <p>Der obige Code prüft, ob die globale Variable &quot;Player_Sprite&quot; ein Sprite enthält, und wenn ja, verwendet er sprite_assign, um es gegen ein Sprite auszutauschen, das aus einer externen Datei geladen wurde. Wenn sie kein Sprite enthält, wird eines geladen und sein
+    Index wird in dieser Variablen gespeichert.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Sprite_Manipulation.htm">Sprite-Manipulation</a></div>
+        <div style="float:right">Weiter: <a href="sprite_merge.htm">sprite_merge</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_assign
+-->
+  <!-- TAGS
+sprite_assign
+-->
+</body>
+</html>

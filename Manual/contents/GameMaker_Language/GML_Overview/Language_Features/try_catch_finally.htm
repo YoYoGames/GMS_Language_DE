@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>try / catch / finally</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the try / catch / finally functions" />
+  <meta name="rh-index-keywords" content="try,catch,finally" />
+  <meta name="search-keywords" content="try,catch,finally" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>try / catch / finally</h1>
+  <p>Die Anweisungen <tt>"try"</tt>, " <tt>catch"</tt> und <tt>"finally"</tt> können in Ihrem Spiel zur Fehlerprüfung verwendet werden und ermöglichen es Ihnen, Codeblöcke zu testen und zu kontrollieren, was passiert, wenn irgendwelche <a href="../../../Additional_Information/Errors/Runner_Errors.htm"><span class="notranslate">Laufzeitausnahmen</span></a> auftreten. Die Verwendung dieser Anweisungen verhindert, dass die Ausnahme das Spiel beendet und dem Benutzer die Standardfehlermeldung anzeigt, aber das bedeutet, dass Sie sich darum kümmern müssen, was in diesem Fall als Nächstes passiert, wie z. B. das Speichern von Protokolldateien und das Beenden des
+    Spiel zu beenden (beachten Sie, dass Ihr Spiel instabil werden und nicht mehr richtig funktionieren kann, wenn Sie nichts tun).</p>
+  <p>In ihrer einfachsten Form sieht die Try-Syntax wie folgt aus:</p>
+  <p class="code">try<br> {
+    <br> &lt;Anweisung1&gt;;
+    <br> &lt;Anweisung2&gt;;
+    <br> ...<br> }
+  </p>
+  <p>Allerdings ist ein <tt>try</tt> ohne irgendetwas zur Behandlung von Ausnahmen, die der Code erzeugen könnte, nicht sehr hilfreich, daher verbinden wir es normalerweise mit einem <tt>catch</tt>, mit der folgenden Syntax:</p>
+  <p class="code">try<br> {
+    <br> &lt;Anweisung1&gt;;
+    <br> &lt;Anweisung2&gt;;
+    <br> ...
+    <br> }
+    <br> catch(&lt;Variable&gt;)
+    <br> {
+    <br> &lt;Anweisung1&gt;;
+    <br> &lt;Anweisung2&gt;;
+    <br> ...
+    <br> }
+  </p>
+  <p>Mit <tt>catch</tt> können Sie zusätzlichen Code ausführen, der im folgenden Block bereitgestellt wird, wenn eine Ausnahme aus dem vorherigen <tt>Try</tt> abgefangen wurde. Wenn es sich um eine <span class="notranslate">Laufzeitausnahme</span> handelt, kann über die übergebene Variable auf eine <a href="../Structs.htm">Struktur</a> zugegriffen werden, die die folgenden Informationen enthält:</p>
+  <p class="code">{<br> message : &quot;&quot;, // eine Zeichenkette, die eine kurze Meldung für diese Ausnahme darstellt<br> longMessage : &quot;&quot;, // eine Zeichenkette, die eine längere Meldung für diese Ausnahme darstellt<br> script : &quot;&quot;, // eine Zeichenkette
+    der beschreibt, woher die Exception kam<br> stacktrace : [ &quot;&quot;, &quot;&quot; ], // ein Array von Strings, das den Stackframe darstellt, in dem die Exception erzeugt wurde<br> }
+  </p>
+  <p>Ein einfaches Anwendungsbeispiel wird unten gezeigt:</p>
+  <p class="code">var a = 0, b = 0, c = 0;<br> try
+    <br> {
+    <br> c = a div b;<br> }
+    <br> catch( _exception)<br> {
+    <br> show_debug_message(_exception.message);
+    <br> show_debug_message(_exception.longMessage);
+    <br> show_debug_message(_exception.script);
+    <br> show_debug_message(_exception.stacktrace);
+    <br> }
+  </p>
+  <p>Es kann sein, dass Sie einen Code unabhängig davon ausführen wollen, ob eine Exception geworfen wurde oder nicht, und dafür können Sie einen <tt>finally-Block</tt> einfügen. Die Syntax von <span class="inline">finally</span> lautet:</p>
+  <p class="code">finally<br> {
+    <br> &lt;Anweisung1&gt;;
+    <br> &lt;Anweisung2&gt;;
+    <br> usw...
+    <br> }
+  </p>
+  <p>Es ist erwähnenswert, dass Sie eine beliebige Kombination von diesen zusammen haben können, d. h.:</p>
+  <ul class="colour">
+    <li><tt>versuchen</tt> / <tt>endgültig</tt></li>
+    <li><tt>try</tt> / <tt>catch</tt></li>
+    <li><tt>try</tt> / <tt>catch</tt> / <tt>finally</tt></li>
+  </ul>
+  <p>Beachten Sie, dass Sie innerhalb des <tt>finally-Blocks</tt> <em>nicht </em>mit <a href="break.htm"><tt>Pause</tt></a>, <a href="continue.htm"><tt>weiter</tt></a>, <a href="exit.htm"><tt>exit</tt></a> oder <a href="return.htm"><tt>return</tt></a> Anweisungen verwenden können, da
+    sie in diesem Zusammenhang keine Bedeutung haben und der Compiler einen Fehler erzeugt, wenn sie verwendet werden.</p>
+  <p>Schließlich können Sie auch verschiedene <tt>try</tt> / <tt>catch</tt> / <tt>finally</tt> ineinander verschachteln, zum Beispiel:</p>
+  <p class="code">var a = 0, b = 0, c = 0;<br> try
+    <br> {
+    <br> try
+    <br> {
+    <br> c = a div b;<br> }
+    <br> finally
+    <br> {
+    <br> ++a;
+    <br> }
+    <br> }
+    <br> catch(_exception)
+    <br> {
+    <br> ++a;
+    <br> show_debug_message(_exception.message);
+    <br> show_debug_message(_exception.longMessage);
+    <br> show_debug_message(_exception.script);
+    <br> show_debug_message(_exception.stacktrace);
+    <br> }
+    <br> finally
+    <br> {
+    <br> show_debug_message(&quot;a = &quot; + string(a));<br> }
+  </p>
+  <p>Es ist erwähnenswert, dass Sie die <span class="notranslate">Standard-GML-Fehlermeldung</span> übernehmen und Ihren eigenen Handler-Code verwenden können, indem Sie die Funktion <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm"><tt>exception_unhandled_handler()</tt></a>. Diese
+   <a href="../<span class=" notranslate"="">Runtime_Functions.htm"><span class="notranslate">Laufzeitfunktion</span></a> ermöglicht es Ihnen, eine benutzerdefinierte <a href="../Method_Variables.htm">Methode</a> bereitzustellen, die immer dann aufgerufen wird, wenn in Ihrem Spiel eine unbehandelte Ausnahme auftritt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Language_Features.htm">Spracheigenschaften</a></div>
+        <div style="float:right">Weiter: <a href="throw.htm">werfen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+try
+catch
+finally
+-->
+  <!-- TAGS
+try
+catch
+finally
+-->
+</body>
+</html>

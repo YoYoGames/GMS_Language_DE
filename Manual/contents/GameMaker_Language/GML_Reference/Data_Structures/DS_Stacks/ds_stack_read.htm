@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_stack_read</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_stack_read" />
+  <meta name="rh-index-keywords" content="ds_stack_read" />
+  <meta name="search-keywords" content="ds_stack_read" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_stack_read</h1>
+  <p>Mit dieser Funktion können Sie einen gespeicherten DS-Stapel wiederherstellen (einen, der zuvor als String mit <a href="ds_stack_write.htm"><tt>ds_stack_write()</tt></a>). Sie müssen zuerst einen neuen DS-Stack erstellen, um den String einzulesen, und wenn der DS-Stack
+    bereits existiert und Informationen darin gespeichert sind, wird dieser vor dem Lesen gelöscht. Diese Funktion ist von entscheidender Bedeutung, wenn Sie Speicher-/Lademechanismen für Ihr Spiel erstellen. Beachten Sie, dass wenn die Datenstruktur mit früheren Versionen von
+    <i><span class="notranslate">GameMaker</span></i> erstellt wurde, sollten Sie das optionale Argument &quot;legacy&quot; hinzufügen, indem Sie es auf true setzen, da sich <tt>das</tt> String-Format mit dieser Version geändert hat.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">ds_stack_read(id, str [, legacy] );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Die ID der Datenstruktur, in die eingelesen werden soll.</td>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>Die Zeichenkette, aus der gelesen werden soll.</td>
+      </tr>
+      <tr>
+        <td>Vermächtnis<i>(optional</i>)</td>
+        <td>Kann entweder <tt>wahr</tt> oder <tt>falsch</tt> sein oder komplett weggelassen werden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">stack = ds_stack_create();<br> ini_open(&quot;save.ini&quot;);
+    <br> var str = ini_read_string(&quot;Stacks&quot;, &quot;0&quot;, &quot;&quot;);<br> if (str != &quot;&quot;)<br> {
+    <br> ds_stack_read(stack, str);<br> }
+    <br> ini_close();
+  </p>
+  <p>Der obige Code erzeugt einen Stack und speichert den Index in der Variablen &quot;stack&quot;. Er öffnet dann eine <tt>ini-Datei</tt> und liest eine Zeichenkette aus dieser, wobei er zuerst überprüft, ob die Zeichenkette nicht als leer zurückgegeben wird. Diese Zeichenkette wird dann in
+    den neu angelegten DS-Stack eingelesen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="ds_stack_create.htm">ds_stack_create</a></div>
+        <div style="float:right">Weiter: <a href="ds_stack_write.htm">ds_stack_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_read
+-->
+  <!-- TAGS
+ds_stack_read
+-->
+
+</body></html>

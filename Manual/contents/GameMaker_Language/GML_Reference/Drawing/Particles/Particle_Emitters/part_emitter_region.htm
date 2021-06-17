@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_emitter_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_region" />
+  <meta name="rh-index-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+  <meta name="search-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_emitter_region</h1>
+  <p>Diese Funktion wird verwendet, um die Position eines Partikelemitters innerhalb des aktuellen Raums festzulegen. Sie geben die Bounding Box des Bereichs innerhalb der Funktion an und verwenden dann eine beliebige Konstante, um die endgültige Emitterform innerhalb dieser Bounding Box sowie die Verteilung der Partikel innerhalb dieser Form zu definieren.
+    sowie die Verteilung der Partikel innerhalb dieser Form. Die verfügbaren Konstanten für Verteilungsformen sind unten aufgeführt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ps_shape_rectangle</td>
+        <td>Eine rechteckige Form, die den angegebenen Bereich ausfüllt.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_ellipse</td>
+        <td>Eine Ellipse, deren Breite und Höhe durch den Bereich definiert ist.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_diamond</td>
+        <td>Eine Rautenform mit den Spitzen auf halber Breite und halber Höhe.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_line</td>
+        <td>Eine einzelne Linie, bei der der Startpunkt links und oben und der Endpunkt rechts und unten ist.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Emitter Shapes" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Shapes.png">Neben den Verteilungsformen können Sie auch die Verteilungskurve für die zu emittierenden Partikel festlegen
+    emittiert werden. Die verfügbaren Konstanten für Verteilungskurven sind unten aufgeführt:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Konstant</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ps_distr_linear</td>
+        <td>Eine lineare Verteilung, bei der alle Partikel die gleiche Chance haben, irgendwo in dem Bereich aufzutauchen.</td>
+      </tr>
+      <tr>
+        <td>ps_distr_gaussian</td>
+        <td>Eine Gaußverteilung, bei der mehr Partikel in der Mitte als an den Rändern erzeugt werden.</td>
+      </tr>
+      <tr>
+        <td>ps_distr_invgaussian</td>
+        <td>Eine inverse Gauß-Verteilung, bei der mehr Partikel an den Rändern als in der Mitte erzeugt werden.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Emitter Distribution" class="center" height="321" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Distribution.png" width="848" /></p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie benötigen, dass sich der Emitter mit einer Instanz bewegt, müssen Sie diese Funktion im Step-Ereignis verwenden und die Emitterposition auf diese Weise aktualisieren. Es ist auch erwähnenswert, dass für Punkt-Emissionen, bei denen Sie keine Partikel erzeugen müssen
+    über eine Fläche oder mit einer bestimmten Verteilung erzeugen müssen, ist es oft einfacher, die Funktion <span style="font-size:1px;"><a href="../Particle_Systems/part_particles_create.htm"><tt style="font-size: 14px">part_particles_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">part_emitter_region(ps, ind, xmin, xmax, ymin, ymax, shape, distribution);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>Das Partikelsystem, in dem sich der Emitter befindet.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Der Index des zu setzenden Emitters.</td>
+      </tr>
+      <tr>
+        <td>xmin</td>
+        <td>Die x-Koordinate der linken Seite des Bereichs.</td>
+      </tr>
+      <tr>
+        <td>xmax</td>
+        <td>Die x-Koordinate der rechten Seite.</td>
+      </tr>
+      <tr>
+        <td>ymin</td>
+        <td>Die y-Koordinate des oberen Randes der Region.</td>
+      </tr>
+      <tr>
+        <td>ymax</td>
+        <td>Die y-Koordinate des Bodens der Region.</td>
+      </tr>
+      <tr>
+        <td>Form</td>
+        <td>Die Form der Region.</td>
+      </tr>
+      <tr>
+        <td>Verteilung</td>
+        <td>Der Verteilungsstil der Partikel.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">part_emitter_region(global.Sname , emit_1, x - 50, x + 50, y - 50, y + 50, ps_shape_ellipse, ps_distr_linear);</p>
+  <p>Der obige Code setzt einen Emitter auf eine 100px hohe und 100px breite elliptische Form um die aktuelle (x,y) Position der Instanz, die den Code ausführt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Particle_Emitters.htm">Partikel-Emitter</a></div>
+        <div style="float:right">Weiter: <a href="part_emitter_burst.htm">part_emitter_burst</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_region
+ps_shape_rectangle
+ps_shape_ellipse
+ps_shape_diamond
+ps_shape_line
+ps_distr_linear
+ps_distr_gaussian
+ps_distr_invgaussian
+-->
+  <!-- TAGS
+part_emitter_region
+-->
+</body>
+</html>

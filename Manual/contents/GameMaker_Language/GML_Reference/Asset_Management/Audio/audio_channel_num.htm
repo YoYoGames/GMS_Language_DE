@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_channel_num</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_channel_num" />
+  <meta name="rh-index-keywords" content="audio_channel_num" />
+  <meta name="search-keywords" content="audio_channel_num" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_channel_num</h1>
+  <p>Mit dieser Funktion können Sie einstellen, wie viele Audiokanäle für die Wiedergabe von Audio in <span class="notranslate">GameMaker Studio 2</span> zur Verfügung stehen. Das bedeutet im Wesentlichen, dass Sie die Anzahl der gleichzeitig abspielbaren Sounds angeben, und wenn die Anzahl
+    Wenn diese Anzahl überschritten wird, werden die Sounds mit einer niedrigeren <i>Priorität</i> gestoppt, um einen Kanal für die Sounds mit einer höheren <i>Priorität</i> freizugeben. Sie können diese Funktion nutzen, um Ihr Spiel für Geräte zu optimieren
+    denn je geringer die Anzahl der Audiokanäle ist, desto besser ist die Leistung, aber bedenken Sie, dass dies auch zu einem merklichen Abschneiden bestimmter Sounds führen kann, wenn viele auf einmal abgespielt werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_channel_num(num);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>num</td>
+        <td>Anzahl der verfügbaren Audiokanäle (Standard ist 128).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">switch (os_browser)<br> {
+    <br> case browser_not_a_browser:<br> switch (os_type)<br> {
+    <br> case os_windows:<br> case os_macos:<br> audio_channel_num(200);
+    <br> break;
+    <br> default:
+    <br> audio_channel_num(64);
+    <br> break;
+    <br> }
+    <br> break;
+    <br> default:
+    <br> audio_channel_num(16);
+    <br> break;
+    <br> }
+  </p>
+  <p>Der obige Code prüft die Plattform, auf der das Spiel läuft, und ändert die Anzahl der verfügbaren Tonkanäle, um die Leistung zu erhöhen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_debug.htm">audio_debug</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_channel_num
+-->
+  <!-- TAGS
+audio_channel_num
+-->
+</body>
+</html>

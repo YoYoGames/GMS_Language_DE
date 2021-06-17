@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bewegung_hinzufügen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function motion_add" />
+  <meta name="rh-index-keywords" content="motion_add" />
+  <meta name="search-keywords" content="motion_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Bewegung_hinzufügen</h1>
+  <p>Diese Funktion ändert die aktuellen <span class="inline"><a href="../../Asset_Management/Instances/Instance_Variables/direction.htm">direction</a></span> und <span class="inline"><a href="../../Asset_Management/Instances/Instance_Variables/speed.htm">speed</a></span> der
+    der Instanz, die den Code ausführt, indem sie die angegebenen Werte mit den aktuellen Werten kombiniert. Wenn Sie diese Werte einfach nur ändern möchten, sollten Sie die Funktion <span class="inline"><a href="motion_set.htm">motion_set()</a></span> verwenden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">motion_add(dir, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>Die zusätzliche Richtung.</td>
+      </tr>
+      <tr>
+        <td>Geschwindigkeit</td>
+        <td>Die zusätzliche Geschwindigkeit.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var pdir;<br> pdir = point_direction(other.x, other.y, x, y);<br> motion_add(pdir, other.speed);<br> if speed &gt; 8 speed = 8;</p>
+  <p>der obige Code würde im Kollisionsereignis mit einem anderen Objekt aufgerufen werden. Er fügt der Bewegungsrichtung und der Geschwindigkeit der Instanz einen Vektor hinzu, der auf der Position und Geschwindigkeit der anderen an der Kollision beteiligten Instanz basiert. Er begrenzt dann die
+    Geschwindigkeit, wenn sie über 8 (Pixel pro Schritt) liegt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Movement.htm">Uhrwerk</a></div>
+        <div style="float:right">Weiter: <a href="motion_set.htm">motion_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+motion_add
+-->
+  <!-- TAGS
+motion_add
+-->
+</body>
+</html>

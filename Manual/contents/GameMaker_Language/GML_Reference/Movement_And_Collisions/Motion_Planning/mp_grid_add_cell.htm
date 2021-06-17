@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_add_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_add_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_add_cell" />
+  <meta name="search-keywords" content="mp_grid_add_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_add_cell</h1>
+  <p>Mit dieser Funktion können wir einzelne Zellen innerhalb des gegebenen MP-Gitters als &quot;verboten&quot; markieren, was bedeutet, dass die Pfadfindungsfunktionen sie niemals durchqueren werden. Nun arbeiten Sie normalerweise in <i>x/y-Raumkoordinaten</i> und nicht in <i>MP-Gitterzellenkoordinaten</i>. Betrachten wir also das folgende Bild, das zeigt, wie die beiden miteinander korrelieren können:</p>
+  <p><img alt="Add cell example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_cell_image.png">Wie Sie sehen können, ist das mp_grid als eine Reihe von Zellen nummeriert (beginnend bei 0,0 in der oberen linken Ecke
+    Ecke), und wenn Sie dieses Raster über den Raum legen, gibt es eine direkte Korrelation zwischen den Raumkoordinaten (die ebenfalls bei 0,0 oben links beginnen) und den Zellen innerhalb des Rasters. Im Bild können Sie sehen, dass eine Instanz an der Position 260,130
+    auf die Gitterzelle 8,4 fällt. Sie können die genaue Zelle, auf der eine Position landet, mathematisch leicht berechnen, indem Sie entweder die Zahl durch die Gitterauflösung teilen und dann abrunden <i>oder</i>, wenn Sie Potenzen von 2 Gitterauflösungen verwenden (wie 8,
+    16, 32 etc...) können Sie die <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitweisen Operatoren</a> verwenden. Es ist zu beachten, dass die bitweise Operation schneller ist und das folgende Beispiel zeigt beide Methoden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">mp_grid_add_cell(id, h, v);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Index des mp_grid, das verwendet werden soll</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Horizontale Position der Zelle im Raster</td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>Vertikale Position der Zelle im Raster</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">with (obj_Wall)<br> {
+    <br> mp_grid_add_cell(grid, floor(x / 32), floor(y / 32));<br> }
+    <br> with (obj_Door)<br> {
+    <br> mp_grid_add_cell(grid, x&gt;&gt;5, y&gt;&gt;5);<br> }
+  </p>
+  <p>Der obige Code bewirkt, dass alle &quot;obj_Wall&quot; und alle obj_Door ihre entsprechenden Zellenpositionen in das in der Variablen &quot;grid&quot; indizierte mp_grid einfügen. Im ersten Teil des Beispiels geschieht dies, indem man die x/y-Koordinaten des Objekts
+    genommen und durch die Auflösung des Gitters geteilt werden (mit Hilfe von <tt>"floor"</tt>, um die Werte als ganze Zahlen zu erhalten), und im zweiten Teil (da die Auflösung des Gitters eine Potenz von 2 ist) geschieht dies durch Bit-Verschiebung der x,y-Koordinaten um 5 Stellen nach rechts.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Motion_Planning.htm">Bewegungsplanung</a></div>
+        <div style="float:right">Weiter: <a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_add_cell
+-->
+  <!-- TAGS
+mp_grid_add_cell
+-->
+</body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pfad_loeschen_punkt</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_delete_point" />
+  <meta name="rh-index-keywords" content="path_delete_point" />
+  <meta name="search-keywords" content="path_delete_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>pfad_loeschen_punkt</h1>
+  <p>Mit dieser Funktion können Sie einen Punkt aus dem angegebenen Pfad entfernen. Pfadpunkte werden von 0 an nummeriert, so dass der erste Punkt immer der 0. und der letzte Pfadpunkt der 1. ist. <a href="../path_get_number.htm"><tt>path_get_number()</tt></a> - 1. Wenn Sie
+    Wenn Sie diese Funktion für eine Pfadanlage aufrufen, <strong>ist das Entfernen des Punkts dauerhaft</strong>, und allen Instanzen, die dem Pfad in Zukunft zugewiesen werden, fehlt der entfernte Punkt. Wenn Sie dies nicht wünschen, sollten Sie
+    eine Funktion wie <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> verwenden, um zuerst eine Kopie des Pfades zu erstellen, und dann diese Funktion für das duplizierte Asset aufrufen (vergessen Sie nicht, <span class="inline"><a href="path_delete.htm">path_delete()</a></span> für das Asset aufzurufen, wenn es nicht mehr benötigt wird).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_delete_point(ind, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Pfades, aus dem ein Punkt gelöscht werden soll.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Der definierende Punkt zum Löschen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var _col = true;<br> while (_col)<br> {
+    <br> var _num = path_get_number(my_path) - 1;<br> if (_num &gt; 2)<br> {<br> var _x1 = path_get_point_x(my_path, _num);<br> var _y1 = path_get_point_y(my_path, _num);<br> var _x2 = path_get_point_x(my_path, _num -1);<br> var
+    _y2 = path_get_point_y(mein_pfad, _num -1);<br> if collision_line(_x1, _y1, _x2, _y2, obj_Wall, true, false)<br> {<br> path_delete_point(mein_pfad, _num);<br> _num -= 1;<br> } <br> sonst _col = false;<br> 
+      } <br> sonst _col = false;<br> }
+  </p>
+  <p>Der obige Code erzeugt eine Schleife, die die Punkte auf einer Rückwärtsstrecke vom Ende aus auf eine Kollision mit dem angegebenen Objekt prüft. Wenn eine Kollision gefunden wird, wird ein Pfadpunkt gelöscht, bis es keine Kollision mehr gibt oder der Pfad nur noch 2 Punkte lang ist.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Manipulation.htm">Pfadmanipulation</a></div>
+        <div style="float:right">Weiter: <a href="path_clear_points.htm">path_clear_points</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_delete_point
+-->
+  <!-- TAGS
+path_delete_point
+-->
+</body>
+</html>

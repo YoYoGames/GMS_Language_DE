@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Objekt-Variablen</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing object variables" />
+  <meta name="rh-index-keywords" content="Objects - Variables" />
+  <meta name="search-keywords" content="object variables,instance variables" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Objekt-Variablen</h1>
+  <p>Wenn Sie auf die Schaltfläche " <strong>Variablen" </strong>klicken, öffnet sich das Fenster " <strong>Objektvariablen </strong>", in dem Sie <em>vor dem </em>Erstellungsereignis des Objekts eine beliebige Anzahl von Variablen erzeugen können:</p>
+  <p><img alt="Object Editor Variables Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_Variables.png">In diesem Fenster können Sie auf die Schaltfläche <strong>Hinzufügen </strong>klicken, um eine neue Variable in die Liste aufzunehmen. Sie können die Variable dann <strong>benennen </strong>
+    Variable benennen sowie ihren <strong>Typ </strong>festlegen und ihre <strong>Eigenschaften</strong> anpassen:</p>
+  <p><img alt="Object Editor New Variable" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_NewVariable.png">Der Variablenname muss mit einem Buchstaben beginnen und darf nur Buchstaben, Zahlen und das Unterstrichsymbol '_' enthalten, mit
+    einer maximalen Länge von 64 Zeichen. Gültige Variablen sind also Dinge wie <span class="inline">fish</span>, <span class="inline">foo_bar</span>, <span class="inline">num1</span>, und <em>ungültige</em> Variablen wären <span class="inline">6fish</span>,
+    <span class="inline">foo bar</span> , oder <span class="inline">*num</span>. Nachdem Sie den Namen der Variable angegeben haben, müssen Sie ihren Typ festlegen, der einer der folgenden sein kann: <img alt="Object Editor Variable Types" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_VariableTypes.png"> Es ist erwähnenswert, dass diese Funktion besonders nützlich ist, wenn Sie mit Parent/Child-Instanzen arbeiten - da Sie ein Parent-Objekt mit einem Satz definierter Variablen haben und diese dann einfach im Child-Objekt ändern können (siehe den Abschnitt <strong>Objektvariablen und Child-Objekte</strong> weiter unten für weitere Details) - und wenn Sie Instanzen in den <a href="../Rooms.htm">Raum-Editor</a> hinzufügen (siehe den Abschnitt über <strong>Ebenen </strong>&gt; <strong>Instanz-Ebene),</strong> da Sie diese Variablen auch für einzelne Instanzen ändern können
+    die im Raum platziert wurden.</p>
+  <p>Die verschiedenen Variablentypen, die Sie erstellen können, sind unten aufgeführt:</p>
+  <ul class="colour">
+    <li><strong>Real</strong>: Eine reelle Zahl ist jede Zahl, die keine ganze Zahl ist und positiv oder negativ sein kann. Also, <span class="inline">124.5</span>, <span class="inline">45639.566546456</span>, <span class="inline">0.9</span>, <span class="inline">-45.5</span> usw... sind alles Beispiele für reelle Zahlen. Alle reellen Zahlen werden als <a class="glossterm" data-glossterm="Fließkomma" href="#">64-Bit-Fließkommazahlen</a> (Doubles) gespeichert. Die <strong>reellen </strong>(und <strong>ganzzahligen</strong>) Datentypen<strong> </strong>
+      Typen haben eine Option zum Einstellen eines Wertebereichs, die durch Klicken auf die Schaltfläche " <strong>Optionen</strong> " <img alt="Variable Options Icon" class="icon" src="../../assets/Images/Icons/Icon_VariableOptions.png"> aufgerufen werden kann:<img alt="Object Editor Real Variable Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_RealOptions.png">Wenn Sie dies aktivieren, können Sie einen Start- und einen Endwert eingeben, und anstelle eines festen Werts für die Variable im Fenster "Objektvariablen" wird ein Schieberegler angezeigt,
+      wird ein Schieberegler angezeigt, der an diese Werte geklammert ist:<br>
+      <img alt="Object Editor Variable Range" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_VariableRange.png"></li>
+    <li><strong>Ganzzahl</strong>: Eine ganze Zahl ist eine ganze Zahl und kann positiv oder negativ sein, zum Beispiel <span class="inline">30004</span>, <span class="inline">19</span>, <span class="inline">0</span>, <span class="inline">-300</span>. Beachten Sie, dass Sie
+      einen Wertebereich für die Ausgangs-Ganzzahl festlegen können, wie oben für reelle Zahlen erklärt.</li>
+    <li><strong>Zeichenkette</strong>: Ein String ist alles, was in doppelte Anführungszeichen gesetzt wurde, z. B. &quot;fish&quot;, &quot;Hello World&quot; oder &quot;12345&quot;.</li>
+    <li><strong>Boolesch</strong>: Ein Boolescher Wert ist ein Wert, der entweder wahr oder falsch ist. Im Variablenfenster des Objekteditors wird dies einfach als ein Kästchen angezeigt, das Sie für wahr aktivieren und für falsch deaktivieren.</li>
+    <li><strong>Ausdruck</strong>: Ein Ausdruck ist eine mathematische Phrase, die normale Zahlen, Variablen, Strings oder <span class="notranslate">GML-Funktionen</span> sowie einen oder mehrere Operatoren enthalten kann. Zum Beispiel ist <span class="inline">sqrt(85 * 6) + 5.5</span> ein Ausdruck.</li>
+    <li><strong>Ressource</strong>: Eine Ressource ist einfach eine der Ressourcen, die Sie im Asset-Browser definiert haben. Wenn Sie diesen Ressourcentyp auswählen, können Sie anschließend auf die Schaltfläche <strong>Asset Explorer öffnen </strong><img alt="Open Asset Explorer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_OpenAssetExplorer.png" width="24"> klicken, um den Asset Explorer zu öffnen und die gewünschte Ressource auszuwählen.</li>
+    <li><strong>Liste</strong>: Die Auswahl eines Listeneingangstyps bedeutet, dass Sie dann eine Auswahl von Werten erstellen können (dies können Strings, Reals, Ausdrücke usw. sein), von denen Sie dann einen oder mehrere für die Variable auswählen können, die sie zurückgeben soll. Um die Elemente zu definieren, die
+      Um die Elemente zu definieren, die in die Liste aufgenommen werden sollen, müssen Sie sie zuerst in die <strong>Optionen</strong> aufnehmen (klicken Sie auf die Schaltfläche <img alt="Variable Options Icon" class="icon" src="../../assets/Images/Icons/Icon_VariableOptions.png"> ):<br>
+      <img alt="List Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ListOptions.png">Sie können das Element als Standardwert für die Variable im Hauptfenster aus dem Dropdown-Menü auswählen:<br>
+      <img alt="Object Editor List Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ListType.png">Beachten Sie, dass die Variable ein Array aller ausgewählten Optionen wird, wenn Sie in den Listenoptionen die <strong>Mehrfachauswahl</strong> aktiviert haben
+      ausgewählten Optionen:<br>
+      <img alt="List Array Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ListArray.png"></li>
+    <li><strong>Farbe</strong>: Mit dem Farbtyp können Sie einen Farbwert definieren, der in der Variablen gespeichert werden soll. Sie können eine reelle Zahl (von 0 bis 16777216, diese hat einen Alpha-Wert von 255) oder einen Hex-Wert (im Format $RRGGBBAA) eingeben, oder Sie können
+      können auf <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> auf das Farbfeld doppelklicken, um den <strong>Farbwähler</strong> zu öffnen und die Farbe dort zu definieren.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h1>Objektvariablen und untergeordnete Objekte</h1>
+  <p>Ein wichtiges Merkmal der Objektvariablen ist, dass sie an alle untergeordneten Objekte im Asset-Browser <em>vererbt </em>werden (weitere Informationen finden Sie im Abschnitt über <a href="Parent_Objects.htm">übergeordnete Objekte</a> ), was bedeutet, dass Sie
+    Das bedeutet, dass Sie einzelne oder alle Variablen überschreiben oder ändern können, wenn Sie dies wünschen.</p>
+  <p>Wenn Sie ein untergeordnetes Objekt einer anderen Objektressource erstellen, für die Variablen definiert sind, werden diese im Fenster "Objektvariablen" wie folgt angezeigt:</p>
+  <p><img alt="Object Editor Variable In A Child Object" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ChildVariables.png">Im oberen Bild können Sie sehen, dass das Parent-Objekt vier Objektvariablen hat, und im unteren Bild sind diese
+    werden diese ebenfalls angezeigt, nur &quot;ausgegraut&quot; und mit dem Symbol Vererbt<strong> von Parent</strong> <img alt="Inherited From Parent Icon" class="icon" src="../../assets/Images/Icons/Icon_InheritedVariable.png">, um anzuzeigen, dass sie vererbt wurden.
+    Diese geerbten Variablen können dann bearbeitet werden, wenn Sie auf die Schaltfläche <strong>Override Variable</strong> <img alt="Override Variable Icon" class="icon" src="../../assets/Images/Icons/Icon_OverrideVariable.png"> klicken, so dass Sie dann den Bereichsschieberegler
+    oder Werte ändern, oder verschiedene Elemente aus Listen auswählen usw.. Beachten Sie, dass Sie beim Bearbeiten einer übergeordneten Variable <em>nur den definierten Wert</em>, nicht aber den Namen und auch nicht die Variablenoptionen <em>ändern können</em>. Beachten Sie auch, dass Sie neue Objektvariablen
+    auch zu untergeordneten Objekten hinzufügen können (und im obigen Beispielbild sehen Sie, dass &quot;Zeichentyp&quot; eine neue Objektvariable nur für das untergeordnete Objekt ist).</p>
+  <p>Wenn Sie eine geerbte Objektvariable bearbeitet haben, können Sie auf die Schaltfläche Löschen <img alt="Delete Variable Icon" class="icon" src="../../assets/Images/Icons/Icon_DeleteVariable.png"> klicken, um die Bearbeitung zu entfernen, aber nicht die Variable. Die Variable wird
+    wird weiterhin vom übergeordneten Objekt geerbt, verwendet aber wieder den Standardwert des übergeordneten Objekts. Wenn Sie die Variable vollständig entfernen möchten, müssen Sie dies über das übergeordnete Objekt tun.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Objects.htm">Der Objekteditor</a></div>
+        <div style="float:right">Nächste: <a href="Object_Events.htm">Objekt-Ereignisse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Object Variables
+-->
+  <!-- TAGS
+object_variables
+-->
+
+</body></html>

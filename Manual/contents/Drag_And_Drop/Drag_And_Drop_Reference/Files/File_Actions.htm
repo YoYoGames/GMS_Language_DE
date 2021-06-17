@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Datei-Aktionen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing all the File actions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - File Actions Library" />
+  <meta name="search-keywords" content="File Actions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Dateien Aktionsbibliothek</h1>
+  <p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/Lib_Files.png" /></p>
+  <p>Die <b>Datei-Aktionen</b> befassen sich mit zwei verschiedenen Dateitypen - Pufferdateien und Ini-Dateien - und verfügen außerdem über bestimmte generische Datei-Aktionen zum Umbenennen oder Kopieren vorhandener Dateien.<b></b></p>
+  <p><b>Pufferdateien</b> werden erstellt, indem Sie die Daten aus einem zuvor erstellten Puffer auslagern und diese Daten zu einem beliebigen Zeitpunkt in der Zukunft wieder in einen Puffer laden können. Weitere Informationen zu Puffern finden Sie hier: <a href="../Buffers/Buffer_Actions.htm">Puffer-Aktionen</a>.<b></b></p>
+  <p><b>Ini-Dateien</b> sind kleine, leichtgewichtige Dateien, die mit den meisten Plattformen kompatibel sind. Sie sind ideal zum Speichern kleiner Informationen, wie z. B. Oberflächeneinstellungen, lokale Highscores, Leveldaten usw... und sind sehr einfach zu verwenden. Ini-Dateien müssen nicht
+    müssen nicht vorher erstellt worden sein, um diese Aktionen zu verwenden, und Sie können aus einer nicht existierenden Ini-Datei lesen und erhalten einfach einen <tt>Standard-Rückgabewert</tt> (den Sie angeben), allerdings empfehlen wir, dass Sie zumindest eine &quot;Basis&quot;-Ini-Datei
+    ini-Datei zum Öffnen und Ändern zu erstellen, bevor Sie die Aktionen verwenden. Diese Basis-Ini-Datei kann durch den einfachen Aufruf der Aktion <a a="" href="Open_Ini_File.htm">"Open Ini File"</a> gefolgt von der Aktion " <a href="Close_Ini_File.htm">Close Ini File</a>" erstellt werden, da das Schließen
+    der Datei auf die Festplatte geschrieben wird, oder Sie können eine solche Datei in die <a href="../../../Settings/Included_Files.htm">eingeschlossenen Dateien</a> des Asset-Browsers aufnehmen. Wenn Sie eine im Asset-Browser enthaltene Datei als Basis-Ini verwenden, sollten Sie auch den Abschnitt
+    den Abschnitt des Handbuchs über die <a href="../../../Additional_Information/The_File_System.htm">Funktionsweise des Dateisystems</a> lesen.</p>
+  <p class="note"><b>HINWEIS</b>: Für Spiele mit Lokalisierungen ist es sehr wichtig, dass akzentuierte Buchstaben aus externen Dateien gelesen werden können. Das bedeutet, dass Sie die ini-Datei zunächst im <b>UTF8-Format</b> erstellen und sie dann in <span class="notranslate">GameMaker Studio 2</span> als eingebundene Datei hinzufügen sollten
+    einfügen, damit sie beim Ausführen des Spiels exportiert und anstelle der standardmäßigen Ini-Datei im ANSI-Format verwendet wird, die von den Ini-Funktionen erzeugt wird, wenn zuvor keine mitgeliefert wurde. Auf diese Weise können Sie sie korrekt lesen und schreiben, wobei alle Akzente und nicht-römischen
+    Buchstaben beibehalten werden.</p>
+  <p>Für die Arbeit mit Dateien gibt es die folgenden Aktionen:</p>
+  <p> </p>
+  <table class="dnd" style="text-align: left;margin-left:">
+    <tbody>
+      <tr style="height: 1px;">
+        <td class="icons" style="margin-left: 16px;"><img alt="Load Buffer Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Load_Buffer.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Load_Buffer.htm">Puffer laden</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Save Buffer Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Save_Buffer.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Save_Buffer.htm">Puffer speichern</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Rename File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Rename_File.png" /></td>
+        <td class="dnd" style=""><a href="Rename_File.htm">Datei umbenennen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Copy File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Copy_File.png" /></td>
+        <td class="dnd" style=""><a href="Copy_File.htm">Datei kopieren</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Delete File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Delete_File.png" /></td>
+        <td class="dnd" style=""><a href="Delete_File.htm">Datei löschen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Open Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Open_Ini_File.png" /></td>
+        <td class="dnd" style=""><a href="Open_Ini_File.htm">Ini-Datei öffnen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Close Ini File Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Close_Ini_File.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Close_Ini_File.htm">Ini-Datei schließen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Write To Ini File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Write_To_Ini_File.png" /></td>
+        <td class="dnd" style=""><a href="Write_To_Ini_File.htm">Schreiben in Ini-Datei</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Read Ini File Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Read_Ini_File.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Read_Ini_File.htm">Ini-Datei lesen</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If File Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_If_File_Exists.png" /></td>
+        <td class="dnd" style=""><a href="If_File_Exists.htm">Wenn Datei vorhanden ist</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../DnD_Reference.htm">Index</a></div>
+        <div style="float:right">Nächste: <a href="../Data_Types/Data_Type_Actions.htm">Datentyp-Aktionen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> File Actions
+File Actions
+-->
+  <!-- TAGS
+dnd_files
+-->
+
+</body></html>

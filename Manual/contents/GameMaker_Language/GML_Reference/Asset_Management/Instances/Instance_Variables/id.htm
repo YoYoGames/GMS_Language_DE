@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable id" />
+  <meta name="rh-index-keywords" content="id" />
+  <meta name="search-keywords" content="id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>id</h1>
+  <p>Diese <b>schreibgeschützte</b> Variable enthält die eindeutige Identifikationsnummer für die Instanz. Jede Instanz, die Sie erstellen - ob durch Code oder durch Hinzufügen zu einem Raum im Raum-Editor - erhält eine Nummer, die intern zur Identifizierung dieser Instanz verwendet wird
+    und die Variable <span class="inline">id</span> ist das, was Sie verwenden können, um sie zu referenzieren. Die <span class="inline">id</span> wird auch zurückgegeben (und kann in einer Variablen gespeichert werden), wenn eine Instanz mit <tt><a href="../instance_create_layer.htm">instance_create_layer()</a></tt> oder  erstellt wird.
+    <span class="inline"><a href="../instance_create_depth.htm">instance_create_depth()</a></span> erstellt wird, sowie bei anderen Instanzfunktionen.</p>
+  <p class="note"><b>HINWEIS</b>: Der Wert dieser Variablen ist <i>nicht</i> derselbe wie der Bezeichner, der der Instanz im Raumeditor zugewiesen wird, und unterscheidet sich auch von dem <span style="font-size:1px;"><a href="../instance_id.htm" style="font-size: 14px"><tt style="font-size: 14px">instanz_id</tt></a></span> Array
+    das die IDs aller derzeit aktiven Instanzen enthält.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">id;</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Ganzzahl - Instanz-ID-Wert)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">for(var i = 0; i &lt; instance_count; i++;)<br> {
+    <br> if instance_id[i] != id<br> {
+    <br> instance_id[i].scr += 5;<br> }
+    <br> }
+  </p>
+  <p>Der obige Code fügt der Variablen &quot;scr&quot; für jede aktive Instanz im Raum außer der, die den Code ausführt, 5 hinzu. Er tut dies, indem er eine Schleife durch ALLE aktiven Instanzen durchläuft (mit dem Array &quot;instance_id&quot;, um jede aktive Instanz zurückzugeben
+    ID) und vergleicht sie mit der eingebauten &quot;id&quot;-Variablen, die die ID der ursprünglichen Instanz ist, die den Code ausführt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Variables.htm">Instanz-Variablen</a></div>
+        <div style="float:right">Weiter: <a href="visible.htm">sichtbar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+id
+-->
+  <!-- TAGS
+id
+-->
+</body>
+</html>

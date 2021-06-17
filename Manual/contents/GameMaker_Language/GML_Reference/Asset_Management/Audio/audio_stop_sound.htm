@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_stop_ton</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_stop_sound" />
+  <meta name="rh-index-keywords" content="audio_stop_sound" />
+  <meta name="search-keywords" content="audio_stop_sound" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_stop_ton</h1>
+  <p>Diese Funktion hält den angegebenen Sound an, wenn er gerade abgespielt wird. Der Sound kann entweder eine einzelne Instanz eines Sounds sein (der Index für einzelne abgespielte Sounds kann in einer Variablen gespeichert werden, wenn die Funktion <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> oder
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> Funktionen) oder ein Sound-Asset sein, wobei in diesem Fall <i>alle</i> Instanzen des angegebenen Sounds gestoppt werden.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">audio_stop_sound(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des zu stoppenden Tons.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if !global.SFX<br> {
+    <br> audio_stop_sound(snd_Wasserfall);
+    <br> }
+    <br> sonst
+    <br> {
+    <br> audio_play_sound_at(snd_Wasserfall, x, y, 0, 100, 300, 1, true, 1);<br> }
+  </p>
+  <p>Der obige Code prüft die globale Variable &quot;SFX&quot; und wenn er false zurückgibt, <tt>wird</tt> der in der Variable &quot;snd_Waterfall&quot; indizierte Sound, der gerade abgespielt wird, gestoppt, und wenn er true zurückgibt,
+    wird der Ton in einer Schleife abgespielt.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Weiter: <a href="audio_stop_all.htm">audio_stop_all</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_stop_sound
+-->
+  <!-- TAGS
+audio_stop_sound
+-->
+</body>
+</html>

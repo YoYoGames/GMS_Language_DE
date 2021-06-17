@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_delete_stat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_delete_stat" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_delete_stat" />
+  <meta name="search-keywords" content="xboxlive_stats_delete_stat" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_delete_stat</h1>
+  <p>Mit dieser Funktion können Sie eine Statistik für die angegebene Benutzer-ID aus dem Statistik-Manager löschen. Sie geben die Benutzer-ID an, wie sie z. B. von der Funktion <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>zurückgegeben wird, und dann die
+    stat-Zeichenfolge, die gelöscht werden soll. Dadurch wird der Statistikwert gelöscht und aus dem Statistikmanager entfernt, d. h. er wird nicht mehr von den Funktionen <a href="xboxlive_stats_get_stat_names.htm"><tt>xboxlive_stats_get_stat_names()</tt></a> oder  zurückgegeben wird. <a href="xboxlive_stats_get_stat.htm"><tt>xboxlive_stats_get_stat()</tt></a>.</p>
+  <p>Die Funktion gibt -1 zurück, wenn ein Fehler auftrat oder die Benutzer-ID ungültig ist, oder einen beliebigen anderen Wert, wenn die Funktion erfolgreich aufgerufen wurde</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">xboxlive_stats_delete_stat(user_id, stat);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>Der Benutzer-ID-Zeiger zum Löschen des Status von</td>
+      </tr>
+      <tr>
+        <td>stat</td>
+        <td>Die zu löschende Statistik (eine Zeichenkette)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); i++;) <br> {
+    <br> user_id[i] = xboxlive_get_user(i);<br> xboxlive_stats_delete_stat(user_id[i], &quot;HighScore&quot;);<br> }
+  </p>
+  <p>Der obige Code läuft in einer Schleife durch die verbundenen Benutzer und löscht für jeden die angegebene Statistik aus dem Statistikmanager.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Stats_And_Leaderboards.htm">Statistiken und Ranglisten</a></div>
+        <div style="float:right">Weiter: <a href="xboxlive_stats_get_stat_names.htm">xboxlive_stats_get_stat_names</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_delete_stat
+-->
+  <!-- TAGS
+xboxlive_stats_delete_stat
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>view_surface_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_surface_id" />
+  <meta name="rh-index-keywords" content="view_surface_id" />
+  <meta name="search-keywords" content="view_surface_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>view_surface_id</h1>
+  <p>Mit dieser Variablen können Sie den Inhalt eines gegebenen Ansichtsports zum Zeichnen auf eine Oberfläche festlegen oder die aktuelle Oberflächen-ID abrufen, wenn einem Ansichtsport eine zugewiesen wurde. Wenn Sie mit Oberflächen arbeiten, ist es oft erforderlich, dass Sie den <i>gesamten</i> sichtbaren
+    Bereich des Bildschirms auf die Oberfläche abgebildet werden soll, und so würden Sie sie mit dieser Variablen einem ViewPort zuweisen. Dies bedeutet, dass alles, was in der gewählten Ansicht angezeigt wird, nun auf die zugewiesene Oberfläche gezeichnet wird. Die Ansicht wird nun <i>nicht</i> auf den Bildschirm gezeichnet
+    Bildschirm gezeichnet, was bedeutet, dass Sie entweder:</p>
+  <ul class="colour">
+    <li>Aktivieren Sie eine neue Ansicht und zeichnen Sie die Oberfläche nur in dieser Ansicht (mit <a href="view_current.htm"><tt>view_current</tt></a> um zu prüfen, welche Ansicht gezeichnet wird)</li>
+    <li>Zeichnen Sie die Oberfläche im Ereignis "Draw GUI" einer Instanz, da die GUI-Ebene unabhängig von Ansichten ist.</li>
+  </ul>
+  <p>Sie können diese Variable auch lesen, um den Index der Oberfläche zu erhalten, die der gewählten Ansicht zugewiesen wurde, oder sie gibt -1 zurück, wenn keine Oberfläche zugewiesen wurde, und im Allgemeinen sollte die für diese Funktion verwendete Oberfläche die Größe der Fachkamera selbst sein
+    sein (nicht der Ansichtsanschluss). Das erweiterte Beispiel unten zeigt einen grundlegenden Aufbau für das Erfassen einer Ansicht und das Zeichnen im <b>Draw-GUI-Ereignis</b>, und für weitere Informationen zu Oberflächen siehe den Abschnitt <a href="../../Drawing/Surfaces/Surfaces.htm">Oberflächen</a>.</p>
+  <p>Beachten Sie, dass Sie einen View-Port auch auf eine Oberfläche setzen können, indem Sie die Funktion <a href="view_set_surface_id.htm"><tt>view_set_surface_id()</tt></a>.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">view_surface_id[0...7];</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Oberflächenindex oder -1, wenn keine Oberfläche zugewiesen wurde)</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel:</h4>
+  <p>In diesem erweiterten Beispiel werden wir eine Oberfläche erstellen und sie dem View-Port[0] zuweisen, damit sie die diesem Port zugewiesene Kameraansicht erfasst, und diese dann im Ereignis "Draw GUI" auf den Bildschirm zeichnen. Zu Beginn müssen wir unsere Surface-Variable im
+   <b>Create-Ereignis</b> einer Controller-Instanz initialisieren:</p>
+  <p class="code">surf = -1;</p>
+  <p>Wir setzen die Oberflächenvariable auf -1, da alle Oberflächenfunktionen wirklich in den <b>Draw-Events</b> verwendet werden sollten, um seltsame Fehler oder undefiniertes Verhalten zu vermeiden. Damit hätten wir dies dann im Hauptereignis " <b>Zeichnen"</b>:</p>
+  <p class="code">if !surface_exists(surf)<br> {
+    <br> surf = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));<br> view_surface_id[0] = surf;<br> }
+  </p>
+  <p>Oberflächen sind <i>flüchtig</i>, was bedeutet, dass sie jederzeit aufgrund der Speicherverwaltung des Betriebssystems und anderer Dinge aus dem Speicher entfernt werden können. Hier prüfen wir also, ob unsere Oberfläche existiert, und wenn nicht, erstellen wir sie und weisen sie der Ansicht 0 zu.
+    wird nun alles, was in der Ansicht 0 erscheinen würde, stattdessen auf die von uns erstellte Oberfläche gezeichnet. Wenn Sie an dieser Stelle nichts weiter tun, erhalten Sie beim Starten Ihres Spiels einfach einen leeren Bildschirm, da alles auf der Oberfläche gezeichnet wird,
+    aber die Oberfläche selbst wird nirgendwo gezeichnet. Daher müssen wir jetzt die Oberfläche im <b>Draw-GUI-Ereignis</b> wie folgt auf den Bildschirm zeichnen:</p>
+  <p class="code">if surface_exists(surf)<br> {
+    <br> draw_surface_stretched(surf, 0, 0, display_get_gui_width(), display_get_gui_height());<br> }
+  </p>
+  <p>Dieser Code zeichnet nun die Oberfläche, die wir aus der Fachkamera erstellt haben, gestreckt, um die gesamte GUI-Ebene zu füllen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Cameras_And_View_Ports.htm">Kameras und View Ports</a></div>
+        <div style="float:right">Weiter: <a href="view_get_camera.htm">view_get_camera</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_surface_id
+-->
+  <!-- TAGS
+view_surface_id
+-->
+</body>
+</html>

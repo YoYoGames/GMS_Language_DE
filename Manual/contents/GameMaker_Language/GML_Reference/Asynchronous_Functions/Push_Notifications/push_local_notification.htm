@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>push_local_notification</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for push_local_notification" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="push_local_notification" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>push_local_notification</h1>
+  <p>Mit dieser Funktion können Sie eine lokale Benachrichtigung einstellen, die an einem bestimmten Datum zu einer bestimmten Uhrzeit angezeigt werden soll. Die &quot;fire_time&quot; ist das Datum/die Uhrzeit, zu der die Benachrichtigung an das Benutzergerät gesendet werden soll (Sie können die GameMaker <span class="notranslate">Studio 2-Datums- und</span> <a href="../../Maths_And_Numbers/Date_And_Time/Date_And_Time.htm">Uhrzeitfunktionen</a> verwenden <a href="../../Maths_And_Numbers/Date_And_Time/Date_And_Time.htm">, um</a> dies zu <a href="../../Maths_And_Numbers/Date_And_Time/Date_And_Time.htm">erhalten</a> ), und Sie können der Benachrichtigung einen Titel und einen Nachrichtentext sowie eine Nutzdatenzeichenfolge geben, die an Ihr Spiel übergeben wird, wenn der Benutzer auf die Benachrichtigung tippt.</p>
+  <p class="note"><b>HINWEIS</b>: Das Argument &quot;title&quot; wird unter iOS ignoriert und stattdessen wird <span class="notranslate">der</span> Name des Spiels angezeigt.</p>
+  <p>Durch Antippen der Benachrichtigung wird das Spiel auf dem Gerät gestartet und ein <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">asynchrones Push-Benachrichtigungsereignis</a> ausgelöst, bei dem die <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    DS-Map dann geparst werden kann, um den Payload-String zu prüfen und die erforderliche Aktion durchzuführen.</p>
+  <p class="note"><b>HINWEIS</b>: Diese Funktionalität ist beschränkt auf die <b><span class="notranslate">iOS</span></b> und <b><span class="notranslate">Android</span></b> Zielmodule.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">push_local_notification(fire_time, title, message, data);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Feuer_Zeit</td>
+        <td>Datum/Uhrzeit für das Auslösen der Benachrichtigung</td>
+      </tr>
+      <tr>
+        <td>Titel</td>
+        <td>Der Titel der Benachrichtigung (eine Zeichenkette)</td>
+      </tr>
+      <tr>
+        <td>Nachricht</td>
+        <td>Der Text der Benachrichtigungsmeldung (eine Zeichenkette)</td>
+      </tr>
+      <tr>
+        <td>Daten</td>
+        <td>Das Datenpaket, das an Ihr Spiel gesendet werden soll (eine Zeichenkette)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Erweitertes Beispiel</h4>
+  <p>In diesem Beispiel werden wir eine lokale Push-Benachrichtigung mit dem folgenden Code senden:</p>
+  <p class="code">var fireTime = date_inc_day(date_current_datetime(), 1);<br> var data = &quot;daily_reward&quot;;<br> push_local_notification(fireTime, &quot;Ahoi!&quot;, &quot;Catch The Haggis Has A Present&quot;, data);</p>
+  <p>Dadurch wird ein Timer gesetzt, der eine Benachrichtigung an das Gerät &quot;schiebt&quot;, wenn ein Tag verstrichen ist. Wenn der Tag abgelaufen ist und Ihr Spiel entweder im Hintergrund ist oder nicht läuft, wird dem Benutzer eine Benachrichtigung mit dem angegebenen Titel und der Nachricht angezeigt (auf
+   <span class="notranslate">iOS</span> wird der Spielname angezeigt und der Titel ignoriert), und dann wird ein asynchrones Push-Benachrichtigungsereignis aufgerufen. Beachten Sie, dass, wenn das Spiel im Vordergrund ist, wenn die Zeit für die Benachrichtigung kommt, es <i>nicht</i> angezeigt wird, aber das asynchrone
+    Ereignis <b>wird trotzdem ausgelöst</b>. Im Ereignis selbst würden Sie den Callback etwa so handhaben: Async-Ereignis auf folgende Weise:</p>
+  <p class="code">var type = ds_map_find_value(async_load, &quot;type&quot;);<br> var status = ds_map_find_value(async_load, &quot;status&quot;);<br> if status == 0<br> {
+    <br> //Fehler irgendeiner Art<br> var error = ds_map_find_value(async_load, &quot;error&quot;);<br> show_debug_message(&quot;error=&quot; + string(error));<br> }
+    <br> sonst
+    <br> {
+    <br> if type == &quot;register&quot;<br> {
+    <br> global.reg_id = ds_map_find_value(async_load, &quot;reg_id&quot;);<br> }
+    <br> sonst
+    <br> {
+    <br> var data = ds_map_find_value(async_load, &quot;data&quot;);<br> if data == &quot;daily_reward&quot;<br> {
+    <br> global.Gold += 1000;<br> }
+    <br> }
+    <br> }
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Push_Notifications.htm">Push-Benachrichtigungen</a></div>
+        <div style="float:right">Weiter: <a href="push_get_first_local_notification.htm">push_get_first_local_notification</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+push_local_notification
+-->
+  <!-- TAGS
+push_local_notification
+-->
+</body>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Kachelkartenebenen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Tile Map Layers" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Tile Map Layers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Kachelkartenebenen</h1>
+  <p>Der <span class="notranslate">GameMaker Studio</span> <a href="../../../../../The_Asset_Editors/Rooms.htm">2-Raumeditor</a> ermöglicht es Ihnen, mithilfe von <i>Ebenen</i> Kacheln in jeden beliebigen Raum einzufügen. Wie der Name schon sagt, ist eine Kachelebene einfach eine Sammlung von Kachelsätzen, die sich alle in der gleichen Tiefe im Raum befinden.
+    Wie der Name schon sagt, ist eine Kachelplan-Ebene einfach eine Sammlung von Kachelsätzen, die sich alle in der gleichen Tiefe innerhalb des Raums befinden, und durch das Stapeln von Ebenen können Sie einige Dinge über oder unter andere zeichnen. Sie können auch bestimmte Aspekte der Ebenen vom Code aus steuern, indem Sie Dinge hinzufügen oder entfernen oder bestimmte Eigenschaften der
+    Ebene oder ihrer Inhalte zur Laufzeit ändern. Beachten Sie, dass Sie im Raumeditor auf eine Kachelkarte pro Ebene beschränkt sind (die <a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm"><i>Kachel-Ebene</i></a>), aber wenn Sie mit ihnen im
+    Code können Sie einer einzelnen Ebene mehrere Kachelmaps zuweisen, wobei jede Map ihre eigene eindeutige ID und ihre eigenen Eigenschaften hat, so:</p>
+  <ul class="colour">
+    <li>Das <i>Kachelset</i> ist die Ressource, die Sie zum Erstellen von Kachelschichten und Kachelkarten verwenden</li>
+    <li>Die <i>Kachelebene</i> ist das, was Sie im Raum-Editor erstellen, um Kachelsätze hinzuzufügen</li>
+    <li>Als <i>Kachel-Map</i> wird die Sammlung von Kacheln bezeichnet, die einer Ebene entweder im Raumeditor oder durch Code als einzelnes Element auf dieser Ebene hinzugefügt werden</li>
+  </ul>
+  <p>Nachfolgend finden Sie eine Liste aller Funktionen, die zur Bearbeitung von <b>Kachelkartenebenen</b> verwendet werden können:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_tilemap_get_id.htm">layer_tilemap_get_id</a></li>
+    <li><a href="layer_tilemap_exists.htm">layer_tilemap_exists</a></li>
+    <li><a href="layer_tilemap_create.htm">layer_tilemap_create</a></li>
+    <li><a href="layer_tilemap_destroy.htm">layer_tilemap_destroy</a></li>
+    <li><a href="tilemap_tileset.htm">tilemap_tileset</a></li>
+    <li><a href="tilemap_clear.htm">tilemap_clear</a></li>
+    <li><a href="tilemap_x.htm">tilemap_x</a></li>
+    <li><a href="tilemap_y.htm">tilemap_y</a></li>
+    <li><a href="tilemap_set.htm">tilemap_set</a></li>
+    <li><a href="tilemap_set_at_pixel.htm">tilemap_set_at_pixel</a></li>
+    <li><a href="tilemap_set_mask.htm">tilemap_set_mask</a></li>
+    <li><a href="tilemap_set_global_mask.htm">tilemap_set_global_mask</a></li>
+    <li><a href="tilemap_set_width.htm">tilemap_set_width</a></li>
+    <li><a href="tilemap_set_height.htm">tilemap_set_height</a></li>
+    <li><a href="tilemap_get_mask.htm">tilemap_get_mask</a></li>
+    <li><a href="tilemap_get_global_mask.htm">tilemap_get_global_mask</a></li>
+    <li><a href="tilemap_get_tileset.htm">tilemap_get_tileset</a></li>
+    <li><a href="tilemap_get_frame.htm">tilemap_get_frame</a></li>
+    <li><a href="tilemap_get_tile_width.htm">tilemap_get_tile_width</a></li>
+    <li><a href="tilemap_get_tile_height.htm">tilemap_get_tile_height</a></li>
+    <li><a href="tilemap_get_width.htm">tilemap_get_width</a></li>
+    <li><a href="tilemap_get_height.htm">tilemap_get_height</a></li>
+    <li><a href="tilemap_get_x.htm">tilemap_get_x</a></li>
+    <li><a href="tilemap_get_y.htm">tilemap_get_y</a></li>
+    <li><a href="tilemap_get.htm">tilemap_get</a></li>
+    <li><a href="tilemap_get_at_pixel.htm">tilemap_get_at_pixel</a></li>
+    <li><a href="tilemap_get_cell_x_at_pixel.htm">tilemap_get_cell_x_at_pixel</a></li>
+    <li><a href="tilemap_get_cell_y_at_pixel.htm">tilemap_get_cell_y_at_pixel</a></li>
+    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tilemap.htm">draw_tilemap</a></li>
+  </ul>
+  <p> </p>
+  <p>Neben den oben aufgeführten Funktionen zum Setzen von Tilemaps gibt es noch eine Reihe von Funktionen, mit denen die Daten einzelner Kacheln manipuliert werden können. Ein &quot;Blob&quot; von Kacheldaten besteht aus dem Kachelindex und ein paar zusätzlichen Bits, die anzeigen, ob
+    die Kachel gedreht, gespiegelt oder gewendet wurde. Sie haben auch die Möglichkeit, Ihre eigene Bitmaske zu den Kacheldaten hinzuzufügen, obwohl dies nur für fortgeschrittene Benutzer geeignet ist, da Sie damit Bits ausblenden, die für den Kachelindex reserviert sind - im Wesentlichen
+    gibt es 19 Bits, die für Ihre Kachelindizes reserviert sind, aber wenn Sie nur 8 davon verwenden, bleiben 11 Bits übrig, die Sie zum Erstellen einer eigenen Maske verwenden können. Diese Maske kann dann im Code verwendet und überprüft werden, um benutzerdefinierte Kachelkollisionen oder ähnliches zu erstellen.
+    Normalerweise brauchen Sie jedoch keine eigenen Kacheldaten-Blobs zu erstellen, sondern verwenden stattdessen die Funktion <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a> verwenden, um die Kacheldaten zu erhalten, sie dann mit den folgenden Funktionen zu bearbeiten und dann
+    setzen Sie sie wieder mit <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a>.</p>
+  <p>Nachfolgend finden Sie eine Liste aller Funktionen, die zum Bearbeiten einzelner <b>Kacheln</b> verwendet werden können:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="tile_get_empty.htm">tile_get_empty</a></li>
+    <li><a href="tile_get_index.htm">tile_get_index</a></li>
+    <li><a href="tile_get_flip.htm">tile_get_flip</a></li>
+    <li><a href="tile_get_mirror.htm">tile_get_mirror</a></li>
+    <li><a href="tile_get_rotate.htm">tile_get_rotate</a></li>
+    <li><a href="tile_set_empty.htm">tile_set_empty</a></li>
+    <li><a href="tile_set_index.htm">tile_set_index</a></li>
+    <li><a href="tile_set_flip.htm">tile_set_flip</a></li>
+    <li><a href="tile_set_mirror.htm">tile_set_mirror</a></li>
+    <li><a href="tile_set_rotate.htm">tile_set_rotate</a></li>
+    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tile.htm">kachel_zeichnen</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="../Rooms.htm">Räume</a></div>
+        <div style="float:right">Nächste: <a href="../Background_Layers/Background_Layers.htm">Hintergrund-Ebenen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Tile Map Layers
+-->
+  <!-- TAGS
+tilemap_layer_functions
+-->
+</body>
+</html>

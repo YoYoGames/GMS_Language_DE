@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pfad_einfuegen_punkt</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_insert_point" />
+  <meta name="rh-index-keywords" content="path_insert_point" />
+  <meta name="search-keywords" content="path_insert_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>pfad_einfuegen_punkt</h1>
+  <p>Mit dieser Funktion können Sie einen neuen Punkt in einen Pfad einfügen (der Pfad kann im Pfadeditor oder durch Code mit <a href="path_add.htm"><tt>path_add()</tt></a>). Der Punkt wird vor dem Punkt &quot;n&quot; in den Pfad eingefügt
+    der in der Funktion angegeben ist.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">path_insert_point(index, n, x, y, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td>Der Index des Pfades, in den der Punkt eingefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Der definierende Punkt, vor dem der neue Punkt eingefügt werden soll.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Koordinate (relativ zum Pfad) des neuen Punkts.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Koordinate (relativ zum Pfad) des neuen Punkts.</td>
+      </tr>
+      <tr>
+        <td>Geschwindigkeit</td>
+        <td>Der Geschwindigkeitsfaktor des Punktes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">path_insert_point(mypath, 0, 50, 50, 100);</p>
+  <p>Dies fügt einen Punkt ganz am Anfang des Pfades ein, der in der Variablen &quot;mypath&quot; indiziert ist, bei (50,50), mit einem Geschwindigkeitsfaktor von 100 %.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Path_Manipulation.htm">Pfadmanipulation</a></div>
+        <div style="float:right">Weiter: <a href="path_delete_point.htm">path_delete_point</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_insert_point
+-->
+  <!-- TAGS
+path_insert_point
+-->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz-Skala einstellen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Instance Scale action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Instance Scale" />
+  <meta name="search-keywords" content="Set Instance Scale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Instance Scale Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Scale.png" width="32"> Instanz Skala einstellen</h1>
+  <p>Dieser Aktionsblock setzt die Werte <tt>image_xscale</tt> und <tt>image_yscale</tt> für die Instanz. Die Eingabewerte hier sind Modifikatoren, die auf das der Instanz zugewiesene Sprite angewendet werden, wobei ein Maßstab von 1 (der Standardwert) keine
+    Skalierung (1:1), kleinere Werte skalieren nach unten (z. B. 0,5 halbiert die Breite des Sprites), und größere Werte skalieren nach oben. Sie können negative Werte verwenden, um das Sprite zu spiegeln und zu skalieren, es sei denn, der verwendete Wert ist genau -1 (in diesem Fall wird das
+    (in diesem Fall wird das Sprite nur gespiegelt oder um seinen Ursprung gedreht, ohne Skalierung). Sie können die horizontale oder vertikale Skalierung relativ zu den aktuellen Werten einstellen. In diesem Fall addieren oder subtrahieren Sie den neuen Wert von den aktuellen Skalierungswerten.</p>
+  <p>Beachten Sie, dass eine Änderung dieser Werte auch die Art und Weise ändert, wie die Instanz Kollisionen erkennt, es sei denn, Sie haben im <a href="../../../The_Asset_Editors/Objects.htm">Objekteditor</a> eine separate <tt>mask_index</tt> (Kollisionsmaske) angegeben. Bitte beachten Sie, dass
+    damit Änderungen in dieser Variablen sichtbar werden, sollte die Instanz entweder <i>kein</i> Draw-Ereignis haben (und somit wird das Sprite von <span class="notranslate">GameMaker Studio 2</span> standardmäßig gezeichnet) oder mit der Aktion <a href="../Drawing/Draw_Self.htm">Draw Self</a> gezeichnet werden.</p>
+  <p><img alt="Examples of scaled sprites" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/sprite_scale.png" /></p>
+  <p> </p>
+  <h4>Aktion Syntax:</h4>
+  <p><img alt="Set Instance Scale Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Scale.png" /></p>
+  <h4>Argumente:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Horizontal</td>
+        <td>Der zu verwendende vertikale Skalierungsfaktor (Standard ist 1).</td>
+      </tr>
+      <tr>
+        <td>Vertikal</td>
+        <td>Der zu verwendende horizontale Skalierungsfaktor (Standard ist 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p><span><img alt="Set Instance Scale Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Sprite.png"></span>Der obige Code des Aktionsblocks setzt ein neues Sprite sowie eine Reihe anderer
+    Eigenschaften, wie dieses Sprite angezeigt werden soll, einschließlich der Skalierung auf drei Viertel seiner Basisgröße entlang beider Achsen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instance_Actions_Library.htm">Instanz-Aktionen</a></div>
+        <div style="float:right">Weiter: <a href="Set_Instance_Alpha.htm">Instanz Alpha setzen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Instance Scale
+-->
+  <!-- TAGS
+action_sprite_scale
+-->
+</body>
+</html>

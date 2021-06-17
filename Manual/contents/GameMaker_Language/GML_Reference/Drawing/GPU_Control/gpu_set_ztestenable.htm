@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_ztestenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_ztestenable" />
+  <meta name="rh-index-keywords" content="gpu_set_ztestenable" />
+  <meta name="search-keywords" content="gpu_set_ztestenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_ztestenable</h1>
+  <p>Diese Funktion kann verwendet werden, um den Z-Puffer-Test ein- oder auszuschalten, was sich auf die Art und Weise auswirkt, wie Dinge gezeichnet werden (im Allgemeinen nur von Nutzen, wenn Sie mit 3D-Projekten arbeiten). Wenn die Z-Prüfung standardmäßig ausgeschaltet ist und Sie zwei Objekte haben, die in denselben Raum zeichnen, werden beide Objekte gerendert,
+    werden <i>beide</i> Objekte gerendert, unabhängig davon, ob das eine das andere überzeichnet, was zu unnötigen Zeichenaufrufen führt. Wenn Sie dies einschalten, wird der Z-Puffer getestet, um festzustellen, ob ein Objekt &quot;sichtbar&quot; ist, und nicht gezeichnet, wenn es
+    nicht. Beachten Sie, dass dies das <i>Standardverhalten</i> ist, aber Sie können dies ändern, indem Sie die Art des Vergleichs ändern, der für den Z-Puffer-Test verwendet wird (siehe die Funktion <a href="gpu_get_zfunc.htm"><tt>gpu_set_zfunc()</tt></a>.</p>
+  <p>Standardmäßig ist der z-Puffer-Test ausgeschaltet<tt>(false</tt>).</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">gpu_set_ztestenable(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>aktivieren.</td>
+        <td>Aktivieren oder deaktivieren Sie den Z-Puffer-Test<tt>(true</tt> oder <tt>false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">gpu_set_ztestenable(true);<br> draw_sprite(spr_Background, 0, 0, 0);<br> gpu_set_ztestenable(false);
+  </p>
+  <p>Der obige Code schaltet den Z-Puffer-Test ein, um ein Hintergrund-Sprite zu zeichnen, und schaltet ihn dann wieder aus, um mit dem Zeichnen fortzufahren.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="GPU_Control.htm">GPU-Steuerung</a></div>
+        <div style="float:right">Weiter: <a href="gpu_set_zfunc.htm">gpu_set_zfunc</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_ztestenable
+-->
+  <!-- TAGS
+gpu_set_ztestenable
+-->
+</body>
+</html>

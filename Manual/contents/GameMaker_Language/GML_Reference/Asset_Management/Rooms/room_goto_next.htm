@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>raum_zur_nächsten</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_goto_next" />
+  <meta name="rh-index-keywords" content="room_goto_next" />
+  <meta name="search-keywords" content="room_goto_next" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>raum_zur_nächsten</h1>
+  <p>Mit dieser Funktion können Sie dafür sorgen, dass Ihr Spiel in den nächsten Raum geht, der zum Zeitpunkt der Kompilierung des Spiels im <a href="../../../../Settings/The_Room_Manager.htm">Raum-Manager</a> aufgelistet ist. Wenn dieser Raum nicht existiert, wird ein Fehler ausgelöst und das Spiel wird
+    gezwungen, sich zu schließen. Beachten Sie, dass sich der Raum erst am Ende des Ereignisses ändert, in dem die Funktion aufgerufen wurde, so dass jeglicher Code nach dem Aufruf dieser Funktion weiterhin ausgeführt wird, wenn er sich im selben Ereignis befindet. Der Nachteil dabei ist, dass jeder Code, der Instanzen erzeugt
+    der danach aufgerufen wird, die Instanz <i>nicht</i> erzeugt und daher vor dem Raumwechsel aufgerufen werden sollte. Diese Funktion löst auch das Ereignis " <b>Room End"</b> aus.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">room_goto_next();</p>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">if room_exists(room_next(room))<br> {<br> room_goto_next();<br> }</p>
+  <p>Der obige Code prüft, ob es einen weiteren Raum nach dem aktuellen gibt, und wenn ja, geht er zu diesem Raum.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Rooms.htm">Räume</a></div>
+        <div style="float:right">Weiter: <a href="room_goto_previous.htm">room_goto_previous</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_goto_next
+-->
+  <!-- TAGS
+room_goto_next
+-->
+</body>
+</html>

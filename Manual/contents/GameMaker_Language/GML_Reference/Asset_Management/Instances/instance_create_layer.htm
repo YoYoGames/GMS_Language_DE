@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Instanz_erzeugen_Schicht</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_create_layer" />
+  <meta name="rh-index-keywords" content="instance_create_layer" />
+  <meta name="search-keywords" content="instance_create_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Instanz_erzeugen_Schicht</h1>
+  <p>Mit dieser Funktion können Sie eine neue Instanz des angegebenen Objekts an einem beliebigen Punkt innerhalb des Raums und auf der angegebenen Ebene erzeugen. Die Ebene kann über den Wert der Ebenen-ID identifiziert werden (wie von der Funktion <a href="../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>)
+    oder durch den Namen der Schicht (als String, z. B. &quot;instance_layer&quot;), wie im <a href="../../../../The_Asset_Editors/Rooms.htm">Raumeditor</a> definiert <a href="../../../../The_Asset_Editors/Rooms.htm">.</a></p>
+  <p>Diese Funktion gibt die <a href="Instance_Variables/id.htm"><tt>id</tt></a> der neuen Instanz zurück, die dann in einer Variablen gespeichert oder für den Zugriff auf diese Instanz verwendet werden kann. Beachten Sie, dass diese Funktion auch das <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Ereignis "Create"</a> der zu erstellenden Instanz aufruft <i>, bevor</i> sie mit dem Code oder den Aktionen für das Ereignis fortfährt, das die Funktion aufgerufen hat.</p>
+  <p class="note"><b>WICHTIG!</b> Es gibt eine minimale und maximale Ebenentiefe von -16000 bis 16000. Alles, was auf einer Ebene außerhalb dieses Bereichs platziert wird <b>, wird nicht gezeichnet</b>, obwohl alle Ereignisse weiterhin normal ablaufen.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">instance_create_layer(x, y, layer_id, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Die x-Position, an der das Objekt erstellt werden soll</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Die y-Position, an der das Objekt erstellt werden soll</td>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>Die Ebenen-ID (oder der Name), der die erstellte Instanz zugewiesen werden soll</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Der Objektindex des Objekts, von dem eine Instanz erzeugt werden soll</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real (Wert der Instanz-ID)</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var inst = instance_create_layer(x, y, &quot;instance_layer&quot;, obj_Bullet);<br> with (inst)<br> {
+    <br> speed = other.shoot_speed;<br> direction = other.image_angle;<br> }
+  </p>
+  <p>Der obige Code erzeugt eine neue Instanz des Objekts &quot;obj_Bullet&quot; und speichert die Instanz-ID in einer Variablen. Diese Variable wird dann verwendet, um der neuen Instanz <tt>Geschwindigkeit</tt> und <tt>Richtung</tt> zuzuweisen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="Instances.htm">Instanzen</a></div>
+        <div style="float:right">Weiter: <a href="instance_create_depth.htm">instance_create_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_create_layer
+-->
+  <!-- TAGS
+instance_create_layer
+-->
+</body>
+</html>

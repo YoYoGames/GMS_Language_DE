@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>http_Anfrage</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for http_request" />
+  <meta name="rh-index-keywords" content="http_request" />
+  <meta name="search-keywords" content="http_request" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>http_Anfrage</h1>
+  <p>Mit dieser Funktion können Sie eine HTTP-Header-Anforderung erstellen, um die Betriebsparameter einer HTTP-Transaktion zu definieren, was für viele Dinge wie (zum Beispiel) Authentifizierung über HTTP-Header verwendet werden kann, wenn Sie RESTful-APIs verwenden. Die Funktion erfordert
+    die vollständige IP-Adresse des Servers, von dem angefragt werden soll, sowie die Art der Anfrage (als String, siehe Hinweis unten): &quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;, &quot;TRACE&quot;, &quot;OPTIONS&quot;,
+    oder &quot;CONNECT&quot;. Sie müssen auch eine <tt><a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS-Map</a></tt> von Schlüssel/Wert-Paaren (als Zeichenketten, wobei der Schlüssel das Header-Feld und der Wert die erforderlichen Daten für den Header ist), und
+    das letzte Argument ist ein optionaler Datenstring, den Sie der Anfrage hinzufügen können, und wenn er nicht benötigt wird, kann er entweder 0 oder ein leerer String &quot;&quot; sein. Beachten Sie, dass Sie auch einen Puffer senden können (siehe den Abschnitt über <a href="../../Buffers/Buffers.htm">Puffer</a> für weitere Details), in diesem Fall wäre das letzte Argument das &quot;Handle&quot; des zu sendenden Puffers.</p>
+  <p class="note"><b>HINWEIS</b>: HTTP-Header folgen normalerweise dem Format &quot;Schlüssel:Wert&quot;, aber da GMS diese Paare für Sie aus der ds_map erstellt, ist es nicht erforderlich, den Doppelpunkt &quot;:&quot; in Ihre Map-Schlüssel- oder -Wert-Strings einzufügen.</p>
+  <p class="note"><b>HINWEIS</b>: Wenn Sie einen Puffer für das Argument "body" verwenden und die Suchposition des Puffers am Anfang (0) liegt, wird kein Body gesendet und der Puffer wird mit der Antwort des http-Aufrufs gefüllt, aber wenn die Suchposition des Puffers ungleich Null ist, wird der
+    String-Inhalt als Body gesendet.</p>
+  <p class="note"><b>HINWEIS</b>: Sie sollten sich bewusst sein, dass aufgrund des XSS-Schutzes in Browsern Anfragen an und Versuche zum Laden von Ressourcen aus domänenübergreifenden Bereichen blockiert werden und scheinbar leere Ergebnisse liefern können. Weitere Informationen finden Sie im Abschnitt zu <a href="HTTP.htm">domänenübergreifenden Problemen</a>.</p>
+  <p>Dieses Ereignis erzeugt einen &quot;Rückruf&quot;, der von allen <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">HTTP-Ereignissen</a> abgeholt wird <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">, in diesem</a> Fall wird eine DS-Map ( <tt>besser</tt> bekannt als &quot;Wörterbuch&quot;) erzeugt
+    die exklusiv für dieses Ereignis ist und in der speziellen Variable <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><b>async_load</b></a>. Diese DS-Map hat die folgenden zwei Schlüssel, die sich auf die Anfragefunktion beziehen:</p>
+  <ul class="colour">
+    <li><b>id: </b>Die ID, die vom Befehl zurückgegeben wurde. Wenn Sie eine Reihe von <tt>http_-Anfragen</tt> abfeuern, müssen Sie wissen, auf welche Sie eine Antwort erhalten, und deshalb würden Sie diesen Wert mit dem Wert vergleichen, den Sie gespeichert haben, als Sie die ursprüngliche
+      Anfrage gespeichert haben, um die richtige Anfrage zu finden.</li>
+    <li><b>response_headers:</b> Wenn dies einen Wert größer oder gleich 0 hat, enthält es eine DS-Map, die die HTTP-Header enthält, die mit der Antwort auf die HTTP-Anfrage zurückgegeben werden.</li>
+  </ul>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code">http_request(url, method, header_map, body);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>Die Webadresse des Servers, von dem Sie Informationen erhalten möchten</td>
+      </tr>
+      <tr>
+        <td>Methode</td>
+        <td>Die Anfragemethode (normalerweise &quot;POST&quot; oder &quot;GET&quot;, aber alle Methoden werden unterstützt)</td>
+      </tr>
+      <tr>
+        <td>header_map</td>
+        <td>Eine ds_map mit den erforderlichen Kopffeldern</td>
+      </tr>
+      <tr>
+        <td>Körper</td>
+        <td>Die zu übertragenden Daten im Anschluss an die Header (kann ein binäres Puffer-Handle sein)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Rückgabe:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Beispiel:</h4>
+  <p class="code">var map = ds_map_create();<br> ds_map_add(map, &quot;Host&quot;, &quot;225.0.0.97:3000&quot;);<br> ds_map_add(map, &quot;Connection&quot;, &quot;keep-alive&quot;);<br> ds_map_add(map, &quot;Content-Length&quot;, &quot;169&quot;);<br> ds_map_add(map,
+    &quot;Cache-Control&quot;, &quot;max-age=0&quot;);<br> ds_map_add(map, &quot;Authorization&quot;, &quot;Basic eW95b19hZG1pbjpjNG5lZmllbGQ=&quot;);<br> ds_map_add(map, &quot;Accept&quot;, &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&quot;);<br> ds_map_add(map, &quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 6.3; WOW64<span class="notranslate">)</span> AppleWebKit/537.36 (KHTML, wie Gecko) Chrome/31.0.1650.57 Safari/537.36&quot;);<br> ds_map_add(map, &quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);<br> ds_map_add(map, &quot;Accept-Encoding&quot;, &quot;gzip,deflate,sdch&quot;);<br> ds_map_add(map, &quot;Accept-Language&quot;, &quot;en-GB,en-US;q=0.8,en;q=0.6&quot;);<br> ds_map_add(map, &quot;Cookie&quot;, &quot;request_method=GET; _InAppPurchases_session=69bb6ef6eec2b&quot;);<br> var data=&quot;utf8=%E2%9C%93&amp;authenticity_token=kPmS14DcYcuKgMFZUsN3XFfj3mhs%3D&amp;product%5Bname%5D=CatchTheHaggis&amp;product%5Bproduct_id%5D=http_test&amp;commit=Create+Product&quot;;<br> request = http_request(&quot;http:225.0.0.97:3000/products&quot;,
+    &quot;POST&quot;, map, data);</p>
+  <p>Der obige Code erstellt eine DS-Map mit den relevanten HTTP-Headern für die Funktion, dann wird ein Datenstring zur Verwendung erstellt, da es sich um eine POST-Anfrage handelt. Schließlich wird die Funktion aufgerufen, wobei ihr ID-Wert in der Variablen &quot;request&quot; gespeichert wird, um
+    Prüfung im asynchronen HTTP-Ereignis gespeichert wird.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Zurück: <a href="HTTP.htm">HTTP</a></div>
+        <div style="float:right">Weiter: <a href="http_get.htm">http_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Alle Rechte vorbehalten</span></h5>
+  </div>
+  <!-- KEYWORDS
+http_request
+-->
+  <!-- TAGS
+http_request
+-->
+</body>
+</html>
